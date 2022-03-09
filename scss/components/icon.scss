@@ -1,0 +1,47 @@
+// Look up icons at: https://material.io/resources/icons/
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons.scss';
+.material-icons {
+  font-size: 1.3em;
+  line-height: 0.9em;
+
+  max-width: 28px;
+}
+
+.icon--lg {
+  font-size: 2rem;
+}
+
+.icon--xl {
+  font-size: 3rem;
+}
+
+.icon--xxl {
+  font-size: 4rem;
+}
+
+.custom-icons {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+
+  &.icon--lg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &.icon--xl {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &.icon--xxl {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.custom-icons svg {
+  width: 100%;
+  height: 100%;
+}

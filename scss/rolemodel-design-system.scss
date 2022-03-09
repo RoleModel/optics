@@ -1,0 +1,44 @@
+// Third party Vendors
+@import 'tom-select/dist/scss/tom-select.scss';
+@import 'vendor/normalize';
+
+// Default Colors
+@import 'theme/default_colors'; // Provide example color hsl values to use in the base theme
+// @import 'variables/themes/example_colors'; // Provide example color hsl values to use in the base theme
+
+// Base Theme with tokens
+@import 'theme/base_theme';
+
+// Breakpoints - SCSS variables until support is available for custom properties
+$breakpoint-xs: 32rem; // ~512px phone
+$breakpoint-sm: 48rem; // ~768px vertical ipad
+$breakpoint-md: 64rem; // ~1024px landscape ipad
+$breakpoint-lg: 80rem; // ~1280px small laptop
+$breakpoint-xl: 90rem; // ~1440px big laptop
+
+// Dynamic Color Engine
+@import 'dynamic_color_engine';
+
+// Dark Mode overrides
+@import 'theme/dark_mode'; // Define how to adjust the scales for dark mode
+
+// Base styles and utilities
+@import 'base';
+@import 'utilities';
+
+// Components
+@import 'components/button.scss';
+@import 'components/card';
+@import 'components/custom-tom-select';
+@import 'components/flash';
+@import 'components/form';
+@import 'components/header';
+@import 'components/icon';
+@import 'components/semantic_colors';
+@import 'components/sidebar';
+@import 'components/swatch';
+@import 'components/table';
+
+// Panel and Modal styles
+@import 'components/panel';
+@import 'components/modal';

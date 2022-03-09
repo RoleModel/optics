@@ -1,0 +1,72 @@
+.flash {
+  position: absolute;
+  right: var(--space-lg);
+  display: flex;
+  align-items: center;
+  top: var(--space-lg);
+  z-index: 10;
+  width: auto;
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--text-sm);
+  background: var(--color-white);
+  animation: animateMessage 5s normal forwards;
+  box-shadow: var(--elevation-1);
+  border-radius: var(--radius-sm);
+
+  border-left: solid 4px;
+}
+
+@keyframes animateMessage {
+  0% {
+    right: -100%;
+  }
+  1% {
+    right: -100%;
+  }
+  10% {
+    right: var(--space-lg);
+  }
+  70% {
+    right: var(--space-lg);
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+.flash--notice {
+  border-color: var(--color-notice-base);
+  color: var(--color-notice-base);
+}
+
+.flash--info {
+  border-color: var(--color-info-base);
+  color: var(--color-info-base);
+}
+
+.flash--alert {
+  border-color: var(--color-danger-base);
+  color: var(--color-danger-base);
+}
+
+.flash--warning {
+  border-color: var(--color-warning-base);
+  color: var(--color-warning-base);
+}
+
+.flash__message-type {
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+.flash__message {
+  font-size: var(--text-xs);
+  color: var(--color-black);
+}
+
+.flash--demo {
+  position: relative;
+  animation: none;
+  top: 0;
+  right: 0;
+}

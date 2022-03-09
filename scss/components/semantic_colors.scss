@@ -1,0 +1,43 @@
+// Semantic colors
+$semantic_color_scales: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
+@each $color in $semantic_color_scales {
+  .background-#{$color}-base {
+    background-color: var(--color-#{$color}-base);
+    color: var(--color-on-#{$color}-base);
+  }
+
+  .background-#{$color}-light {
+    background-color: var(--color-#{$color}-light);
+    color: var(--color-on-#{$color}-light);
+  }
+
+  .background-#{$color}-lighter {
+    background-color: var(--color-#{$color}-lighter);
+    color: var(--color-on-#{$color}-lighter);
+  }
+
+  .background-#{$color}-lightest {
+    background-color: var(--color-#{$color}-lightest);
+    color: var(--color-on-#{$color}-lightest);
+  }
+
+  .background-#{$color}-dark {
+    background-color: var(--color-#{$color}-dark);
+    color: var(--color-on-#{$color}-dark);
+  }
+
+  .background-#{$color}-darker {
+    background-color: var(--color-#{$color}-darker);
+    color: var(--color-on-#{$color}-darker);
+  }
+
+  .background-#{$color}-darkest {
+    background-color: var(--color-#{$color}-darkest);
+    color: var(--color-on-#{$color}-darkest);
+  }
+}
+
+.background-surface {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+}

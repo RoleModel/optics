@@ -1,0 +1,38 @@
+.panel {
+  --panel-width: 40%;
+  --panel-transition-speed: 400ms;
+
+  height: 100vh;
+  width: var(--panel-width);
+  z-index: 100;
+  position: absolute;
+  right: calc(-1 * var(--panel-width)); // this pushes the panel off the sceen to the right
+  background: var(--color-background);
+  color: var(--color-on-background);
+  transition: right var(--panel-transition-speed);
+
+  overflow-y: scroll;
+  padding-bottom: var(--space-lg);
+}
+
+.panel--active {
+  right: 0;
+  box-shadow: var(--elevation-5);
+}
+
+.panel__close {
+  float: right;
+  cursor: pointer;
+  display: flex;
+  padding: var(--space-md);
+  border-radius: 100%;
+
+  &:hover {
+    background: var(--color-neutral-variant-lightest);
+  }
+}
+
+#panel-content {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}

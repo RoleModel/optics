@@ -1,0 +1,69 @@
+:root {
+  // Numbered color weights base on luminance
+  $color_scales: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
+  @each $color in $color_scales {
+    --color-#{$color}-0: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 0%);
+    --color-#{$color}-10: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 10%);
+    --color-#{$color}-20: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 20%);
+    --color-#{$color}-30: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 30%);
+    --color-#{$color}-40: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 40%);
+    --color-#{$color}-50: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 50%);
+    --color-#{$color}-60: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 60%);
+    --color-#{$color}-70: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 70%);
+    --color-#{$color}-80: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 80%);
+    --color-#{$color}-90: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 90%);
+    --color-#{$color}-95: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 95%);
+    --color-#{$color}-98: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 98%);
+    --color-#{$color}-100: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 100%);
+  }
+
+  // Ideal colors
+  --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  --color-secondary: hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l));
+  --color-tertiary: hsl(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l));
+  --color-neutral: hsl(var(--color-neutral-h), var(--color-neutral-s), var(--color-neutral-l));
+  --color-neutral-variant: hsl(var(--color-neutral-variant-h), var(--color-neutral-variant-s), var(--color-neutral-variant-l));
+
+  // Semantic variables mapped to luminosity scale
+  $semantic_color_scales: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
+  @each $color in $semantic_color_scales {
+    --color-#{$color}-lightest: var(--color-#{$color}-95);
+    --color-#{$color}-lighter:  var(--color-#{$color}-80);
+    --color-#{$color}-light:    var(--color-#{$color}-70);
+    --color-#{$color}-hover:    var(--color-#{$color}-50);
+    --color-#{$color}-base:     var(--color-#{$color}-40);
+    --color-#{$color}-dark:     var(--color-#{$color}-30);
+    --color-#{$color}-darker:   var(--color-#{$color}-20);
+    --color-#{$color}-darkest:  var(--color-#{$color}-10);
+
+    --color-on-#{$color}-lightest: var(--color-#{$color}-10);
+    --color-on-#{$color}-lighter:  var(--color-#{$color}-10);
+    --color-on-#{$color}-light:    var(--color-#{$color}-0);
+    --color-on-#{$color}-hover:    var(--color-#{$color}-0);
+    --color-on-#{$color}-base:     var(--color-#{$color}-100);
+    --color-on-#{$color}-dark:     var(--color-#{$color}-90);
+    --color-on-#{$color}-darker:   var(--color-#{$color}-95);
+    --color-on-#{$color}-darkest:  var(--color-#{$color}-100);
+  }
+
+  // Miscellaneous Colors
+  --color-background:    var(--color-neutral-98);
+  --color-on-background: var(--color-neutral-10);
+  --color-outline:       var(--color-neutral-variant-80);
+
+  // Alert Colors
+  $alert_color_scales: ('warning': 'yellow', 'danger': 'red', 'info': 'blue', 'notice': 'green');
+  @each $name, $color in $alert_color_scales {
+    --color-#{$name}-lighter: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 80%);
+    --color-#{$name}-light: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 70%);
+    --color-#{$name}-base: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 40%);
+    --color-#{$name}-dark: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 30%);
+    --color-#{$name}-darker: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 20%);
+
+    --color-on-#{$name}-lighter: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 10%);
+    --color-on-#{$name}-light: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 0%);
+    --color-on-#{$name}-base: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 100%);
+    --color-on-#{$name}-dark: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 90%);
+    --color-on-#{$name}-darker: hsl(var(--color-#{$color}-h), var(--color-#{$color}-s), 95%);
+  }
+}

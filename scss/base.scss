@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+
+  font-family: var(--font-primary);
+  font-size: 16px;
+}
+
+body {
+  height: inherit;
+  overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
+  background: var(--color-background);
+  color: var(--color-on-background);
+}
+
+button, input, optgroup, select, textarea {
+  margin: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  margin: 0;
+  border: 0;
+  outline: 0;
+  padding: 0;
+
+  background: none;
+  cursor: pointer;
+
+  color: var(--color-black);
+}
+
+a {
+  color: var(--color-primary);
+
+  &:visited {
+    color: var(--color-primary);
+  }
+}
+
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, pre {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+
+  font-weight: 400;
+}
+
+h1 {
+  font-size: var(--text-xxl);
+}
+
+h2 {
+  font-size: var(--text-xl);
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+h4 {
+  font-size: var(--text-md);
+}
+
+h5 {
+  font-size: var(--text-sm);
+}
+
+h6 {
+  font-size: var(--text-xs);
+}
+
+p {
+  margin-bottom: var(--space-sm);
+
+  font-size: 1rem;
+}
+
+small {
+  font-size: var(--text-sm);
+}
+
+.container {
+  max-width: $breakpoint-md;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  width: 100%;
+}
+
+.container--sm {
+  max-width: $breakpoint-sm;
+}
+
+.container--md-padding {
+  padding: 0 var(--space-md);
+}
+
+.container--sm-padding {
+  padding: 0 var(--space-sm);
+}
+
+.container--xs {
+  max-width: $breakpoint-xs;
+}
+
+.wrapper--main {
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100vh;
+}
