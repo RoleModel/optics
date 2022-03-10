@@ -17,14 +17,14 @@ $breakpoint-lg: 80rem; // ~1280px small laptop
 $breakpoint-xl: 90rem; // ~1440px big laptop
 
 // Dynamic Color Engine
-@import 'dynamic_color_engine';
+@import 'core/dynamic_color_engine';
 
-// Dark Mode overrides
-@import 'theme/dark_mode'; // Define how to adjust the scales for dark mode
+// Dark Theme overrides
+@import 'theme/dark_theme'; // Adjust the dynamic color engine to work for dark sytem preference
 
 // Base styles and utilities
-@import 'base';
-@import 'utilities';
+@import 'core/base';
+@import 'core/utilities';
 
 // Components
 @import 'components/button.scss';

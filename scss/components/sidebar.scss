@@ -1,17 +1,17 @@
 .sidebar {
-  --sidebar-width: 280px;
+  --rms-sidebar-width: 280px;
 
   display: flex;
   flex: 1;
   overflow: auto;
-  flex: 0 0 var(--sidebar-width);
+  flex: 0 0 var(--rms-sidebar-width);
   flex-direction: column;
   justify-content: flex-start;
   height: 100vh;
   width: 100%;
-  padding: var(--space-md);
-  background: var(--color-primary-lightest);
-  color: var(--color-on-primary-lightest);
+  padding: var(--rms-space-medium);
+  background: var(--rms-colors-primary-lightest);
+  color: var(--rms-colors-primary-on-lightest);
   z-index: 1;
 }
 
@@ -20,7 +20,7 @@
   flex-grow: 1;
   align-items: flex-start;
   width: 100%;
-  margin: var(--space-xl) 0 var(--space-lg) 0;
+  margin: var(--rms-space-x-large) 0 var(--rms-space-large) 0;
 }
 
 .sidebar-nav__list {
@@ -33,10 +33,10 @@
 .sidebar-nav__section-title {
   font-weight: 500;
 
-  margin-bottom: var(--space-sm);
-  padding: var(--space-md) var(--space-md);
+  margin-bottom: var(--rms-space-small);
+  padding: var(--rms-space-medium) var(--rms-space-medium);
 
-  color: var(--color-on-primary-lightest);
+  color: var(--rms-colors-primary-on-lightest);
 }
 
 .sidebar-nav__item {
@@ -45,11 +45,11 @@
   justify-content: flex-start;
   align-items: center;
   list-style: none;
-  margin-bottom: var(--space-sm);
-  padding: var(--space-md) var(--space-md);
-  border-radius: var(--radius-lg);
+  margin-bottom: var(--rms-space-small);
+  padding: var(--rms-space-medium) var(--rms-space-medium);
+  border-radius: var(--radius-xl);
   text-decoration: none;
-  color: var(--color-on-primary-lightest);
+  color: var(--rms-colors-primary-on-lightest);
   transition: 300ms;
   white-space: nowrap;
   overflow: hidden;
@@ -62,11 +62,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: var(--space-sm);
+    margin-right: var(--rms-space-small);
   }
 
   @media(max-width: $breakpoint-xs) {
-    padding: var(--space-md);
+    padding: var(--rms-space-medium);
   }
 
   &:last-of-type {
@@ -74,13 +74,13 @@
   }
 
   &:hover {
-    background: var(--color-primary-hover);
-    color: var(--color-on-primary-hover);
+    background: var(--rms-colors-primary-hover);
+    color: var(--rms-colors-primary-on-hover);
   }
 
   &.active {
-    background: var(--color-primary-base);
-    color: var(--color-on-primary-base);
+    background: var(--rms-colors-primary-base);
+    color: var(--rms-colors-primary-on-base);
   }
 }
 

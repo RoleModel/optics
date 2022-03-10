@@ -4,101 +4,102 @@
 // A 5 color theme. 3 main colors, a neutral color and a neutral variant
 @mixin color-varieties {
   // Primary HSL
-  --color-primary-h: var(--color-blue-h);
-  --color-primary-s: var(--color-blue-s);
-  --color-primary-l: var(--color-blue-l);
+  --rms-colors-primary-h: var(--rms-colors-blue-h);
+  --rms-colors-primary-s: var(--rms-colors-blue-s);
+  --rms-colors-primary-l: var(--rms-colors-blue-l);
 
   // Secondary HSL
-  --color-secondary-h: var(--color-teal-h);
-  --color-secondary-s: var(--color-teal-s);
-  --color-secondary-l: var(--color-teal-l);
+  --rms-colors-secondary-h: var(--rms-colors-teal-h);
+  --rms-colors-secondary-s: var(--rms-colors-teal-s);
+  --rms-colors-secondary-l: var(--rms-colors-teal-l);
 
   // Tertiary HSL
-  --color-tertiary-h: var(--color-violet-h);
-  --color-tertiary-s: var(--color-violet-s);
-  --color-tertiary-l: var(--color-violet-l);
+  --rms-colors-tertiary-h: var(--rms-colors-violet-h);
+  --rms-colors-tertiary-s: var(--rms-colors-violet-s);
+  --rms-colors-tertiary-l: var(--rms-colors-violet-l);
 
   // Neutral HSL
-  --color-neutral-h: 240;
-  --color-neutral-s: 2%;
-  --color-neutral-l: 38%;
+  --rms-colors-neutral-h: 240;
+  --rms-colors-neutral-s: 2%;
+  --rms-colors-neutral-l: 38%;
 
   // Neutral Variant HSL
-  --color-neutral-variant-h: 229;
-  --color-neutral-variant-s: 6%;
-  --color-neutral-variant-l: 38%;
+  --rms-colors-neutral-variant-h: 229;
+  --rms-colors-neutral-variant-s: 6%;
+  --rms-colors-neutral-variant-l: 38%;
 }
 
 @mixin fonts {
-  --font-primary: 'Roboto', sans-serif;
+  --rms-font-family: 'Roboto', sans-serif;
 }
 
 @mixin border-radius {
-  --radius-xs:  2px;
-  --radius-sm:  4px;
-  --radius-md:  8px;
-  --radius:     12px;
-  --radius-lg:  16px;
-  --radius-xl:  20px;
-  --radius-max: 999px;
+  --radius-sm:     2px;
+  --radius-md:     4px;
+  --radius-lg:     8px;
+  --radius-xl:     16px;
+  --radius-circle: 50%;
+  --radius-pill:   9999px;
 }
 
 @mixin border-width {
-  --border-width: 1px;
+  --rms-border-width: 1px;
 }
 
 @mixin border-strokes {
-  --border-card-outline: 0 0 0 var(--border-width) var(--color-outline);
+  --rms-border-card-outline: 0 0 0 var(--rms-border-width) var(--rms-colors-outline);
 }
 
-@mixin text-scales {
+@mixin font-scales {
   // Visit https://codyhouse.co/ds/globals/typography to play around with different text sizes
-  --text-base-size: 1rem;
-  --text-scale-ratio: 1.15;
-  --text-unit: var(--text-base-size);
+  --rms-font-scale-ration: 1.15;
+  --rms-font-size-unit: 1rem;
 
-  --text-xxs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio)); // ~12px
-  --text-xs: calc(var(--text-xxs) * var(--text-scale-ratio)); // ~14px
-  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio)); // ~16px
-  --text-md: calc(var(--text-sm) * var(--text-scale-ratio)); // ~18px
-  --text-lg: calc(var(--text-md) * var(--text-scale-ratio)); // ~21px
-  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio)); // ~24px
-  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio)); // ~28px
-  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio)); // ~32px
-  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio)); // ~37px
-  --text-xxxxxl: calc(var(--text-xxxxl) * var(--text-scale-ratio)); // ~42px
+  --rms-font-2x-small: calc((var(--rms-font-size-unit) / var(--rms-font-scale-ration)) / var(--rms-font-scale-ration)); // ~12px
+  --rms-font-x-small: calc(var(--rms-font-2x-small) * var(--rms-font-scale-ration)); // ~14px
+  --rms-font-small: calc(var(--rms-font-x-small) * var(--rms-font-scale-ration)); // ~16px
+  --rms-font-medium: calc(var(--rms-font-small) * var(--rms-font-scale-ration)); // ~18px
+  --rms-font-large: calc(var(--rms-font-medium) * var(--rms-font-scale-ration)); // ~21px
+  --rms-font-x-large: calc(var(--rms-font-large) * var(--rms-font-scale-ration)); // ~24px
+  --rms-font-2x-large: calc(var(--rms-font-x-large) * var(--rms-font-scale-ration)); // ~28px
+  --rms-font-3x-large: calc(var(--rms-font-2x-large) * var(--rms-font-scale-ration)); // ~32px
+  --rms-font-4x-large: calc(var(--rms-font-3x-large) * var(--rms-font-scale-ration)); // ~37px
+  --rms-font-5x-large: calc(var(--rms-font-4x-large) * var(--rms-font-scale-ration)); // ~42px
+}
+
+@mixin font-weights {
+  --rms-font-weight-light:     300;
+  --rms-font-weight-normal:    400;
+  --rms-font-weight-semi-bold: 600;
+  --rms-font-weight-bold:      700;
 }
 
 @mixin line-heights {
-  --line-height-none:     0;
-  --line-height-tightest: 1;
-  --line-height-tighter:  1.15;
-  --line-height-tight:    1.3;
-  --line-height-base:     1.5;
-  --line-height-loose:    1.6;
-  --line-height-looser:   1.7;
-  --line-height-loosest:  1.8;
+  --rms-line-height-none:   0;
+  --rms-line-height-dense:  1.3;
+  --rms-line-height-normal: 1.5;
+  --rms-line-height-loose:  1.6;
 }
 
 @mixin spacing-scales {
   // This is using the Golden Ratio to get these numbers
   // Visit https://codyhouse.co/ds/globals/spacing to play around with different ratios
-  --space-unit: 1rem;
-  --space-xxxs: calc(0.123 * var(--space-unit)); // 2px
-  --space-xxs: calc(0.236 * var(--space-unit)); // 4px
-  --space-xs: calc(0.382 * var(--space-unit)); // 6px
-  --space-sm: calc(0.618 * var(--space-unit)); // 10px
-  --space-md: calc(1 * var(--space-unit)); // 16px
-  --space-lg: calc(1.618 * var(--space-unit)); // 26px
-  --space-xl: calc(2.618 * var(--space-unit)); // 42px
+  --rms-space-unit: 1rem;
+  --rms-space-3x-small: calc(0.123 * var(--rms-space-unit)); // 2px
+  --rms-space-2x-small: calc(0.236 * var(--rms-space-unit)); // 4px
+  --rms-space-x-small: calc(0.382 * var(--rms-space-unit)); // 6px
+  --rms-space-small: calc(0.618 * var(--rms-space-unit)); // 10px
+  --rms-space-medium: calc(1 * var(--rms-space-unit)); // 16px
+  --rms-space-large: calc(1.618 * var(--rms-space-unit)); // 26px
+  --rms-space-x-large: calc(2.618 * var(--rms-space-unit)); // 42px
 }
 
-@mixin elevations {
-  --elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --elevation-2: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
-  --elevation-4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
-  --elevation-5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+@mixin shadows {
+  --rms-shadow-x-small: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --rms-shadow-small: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --rms-shadow-medium: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+  --rms-shadow-large: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+  --rms-shadow-x-large: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 :root {
@@ -113,8 +114,10 @@
   @include border-radius;
   @include border-width;
 
-  // Text Ratios
-  @include text-scales;
+  // Font Ratios
+  @include font-scales;
+
+  @include font-weights;
 
   // Line heights
   @include line-heights;
@@ -122,6 +125,6 @@
   // Spacing
   @include spacing-scales;
 
-  // Elevations
-  @include elevations;
+  // Shadows
+  @include shadows;
 }

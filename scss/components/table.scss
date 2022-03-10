@@ -4,35 +4,35 @@ table.table {
   border-collapse: collapse;
 
   thead {
-    background: var(--color-background);
+    background: var(--rms-colors-background);
   }
 
   th {
-    padding: var(--space-md) var(--space-md);
+    padding: var(--rms-space-medium) var(--rms-space-medium);
 
     text-align: left;
     text-transform: uppercase;
 
-    color: var(--color-on-background);
-    border-bottom: var(--border-width) solid var(--color-outline);
+    color: var(--rms-colors-on-background);
+    border-bottom: var(--rms-border-width) solid var(--rms-colors-outline);
 
-    font-size: var(--text-sm);
+    font-size: var(--rms-font-small);
     font-weight: 400;
 
     &:first-child {
-      border-top-left-radius: var(--radius);
+      border-top-left-radius: var(--radius-lg);
     }
 
     &:last-child {
-      border-top-right-radius: var(--radius);
+      border-top-right-radius: var(--radius-lg);
     }
   }
 
   td {
-    padding: 0.75rem var(--space-md);
+    padding: 0.75rem var(--rms-space-medium);
 
-    color: var(--color-on-background);
-    border-bottom: var(--border-width) solid var(--color-outline);
+    color: var(--rms-colors-on-background);
+    border-bottom: var(--rms-border-width) solid var(--rms-colors-outline);
 
     font-size: 0.875rem;
   }

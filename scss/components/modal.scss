@@ -1,7 +1,7 @@
 .modal {
   // Modals
-  --modal-width: 564px;
-  --modal-transition-speed: 300ms;
+  --rms-modal-width: 564px;
+  --rms-modal-transition-speed: 300ms;
 
   visibility: hidden;
   display: flex;
@@ -30,22 +30,22 @@
   background: black;
   visibility: hidden;
   opacity: 0;
-  transition: all var(--modal-transition-speed);
+  transition: all var(--rms-modal-transition-speed);
 }
 
 .modal__content {
   max-height: 500px;
-  width: var(--modal-width);
-  padding: var(--space-lg);
-  background: var(--color-background);
-  color: var(--color-on-background);
+  width: var(--rms-modal-width);
+  padding: var(--rms-space-large);
+  background: var(--rms-colors-background);
+  color: var(--rms-colors-on-background);
 
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   z-index: 12;
   transform: scale(0.7);
   opacity: 0;
   overflow-y: auto;
-  transition: all var(--modal-transition-speed);
+  transition: all var(--rms-modal-transition-speed);
 }
 
 .modal--active {
@@ -71,10 +71,10 @@
   float: right;
   cursor: pointer;
 
-  padding: var(--space-md);
-  border-radius: var(--radius-max);
+  padding: var(--rms-space-medium);
+  border-radius: var(--radius-circle);
 
   &:hover {
-    background: var(--color-neutral-variant-lightest);
+    background: var(--rms-colors-neutral-variant-lightest);
   }
 }

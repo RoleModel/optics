@@ -1,38 +1,38 @@
 .panel {
-  --panel-width: 40%;
-  --panel-transition-speed: 400ms;
+  --rms-panel-width: 40%;
+  --rms-panel-transition-speed: 400ms;
 
   height: 100vh;
-  width: var(--panel-width);
+  width: var(--rms-panel-width);
   z-index: 100;
   position: absolute;
-  right: calc(-1 * var(--panel-width)); // this pushes the panel off the sceen to the right
-  background: var(--color-background);
-  color: var(--color-on-background);
-  transition: right var(--panel-transition-speed);
+  right: calc(-1 * var(--rms-panel-width)); // this pushes the panel off the sceen to the right
+  background: var(--rms-colors-background);
+  color: var(--rms-colors-on-background);
+  transition: right var(--rms-panel-transition-speed);
 
   overflow-y: scroll;
-  padding-bottom: var(--space-lg);
+  padding-bottom: var(--rms-space-large);
 }
 
 .panel--active {
   right: 0;
-  box-shadow: var(--elevation-5);
+  box-shadow: var(--rms-shadow-x-large);
 }
 
 .panel__close {
   float: right;
   cursor: pointer;
   display: flex;
-  padding: var(--space-md);
+  padding: var(--rms-space-medium);
   border-radius: 100%;
 
   &:hover {
-    background: var(--color-neutral-variant-lightest);
+    background: var(--rms-colors-neutral-variant-lightest);
   }
 }
 
 #panel-content {
-  padding-top: var(--space-lg);
-  padding-bottom: var(--space-lg);
+  padding-top: var(--rms-space-large);
+  padding-bottom: var(--rms-space-large);
 }

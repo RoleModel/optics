@@ -1,0 +1,82 @@
+@mixin default_colors_dark {
+  --rms-colors-white: hsl(0, 0%, 0%);
+  --rms-colors-black: hsl(0, 100%, 100%);
+}
+
+@mixin dynamic_color_engine_dark {
+  $color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
+  @each $color in $color_varieties {
+    // Luminosity Scale (Weighted towards lower luminosity)
+    --rms-colors-#{$color}-0:   hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 0%);
+    --rms-colors-#{$color}-10:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 5%);
+    --rms-colors-#{$color}-20:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 10%);
+    --rms-colors-#{$color}-30:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 15%);
+    --rms-colors-#{$color}-40:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 20%);
+    --rms-colors-#{$color}-50:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 25%);
+    --rms-colors-#{$color}-60:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 35%);
+    --rms-colors-#{$color}-70:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 40%);
+    --rms-colors-#{$color}-80:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 60%);
+    --rms-colors-#{$color}-90:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 70%);
+    --rms-colors-#{$color}-95:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 80%);
+    --rms-colors-#{$color}-98:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 90%);
+    --rms-colors-#{$color}-100: hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 100%);
+
+    // Semantic Scale
+    --rms-colors-#{$color}-lightest: var(--rms-colors-#{$color}-20);
+    --rms-colors-#{$color}-lighter:  var(--rms-colors-#{$color}-30);
+    --rms-colors-#{$color}-light:    var(--rms-colors-#{$color}-40);
+    --rms-colors-#{$color}-hover:    var(--rms-colors-#{$color}-40);
+    --rms-colors-#{$color}-base:     var(--rms-colors-#{$color}-50);
+    --rms-colors-#{$color}-dark:     var(--rms-colors-#{$color}-60);
+    --rms-colors-#{$color}-darker:   var(--rms-colors-#{$color}-70);
+    --rms-colors-#{$color}-darkest:  var(--rms-colors-#{$color}-80);
+
+    --rms-colors-#{$color}-on-lightest: var(--rms-colors-#{$color}-100);
+    --rms-colors-#{$color}-on-lighter:  var(--rms-colors-#{$color}-100);
+    --rms-colors-#{$color}-on-light:    var(--rms-colors-#{$color}-98);
+    --rms-colors-#{$color}-on-hover:    var(--rms-colors-#{$color}-98);
+    --rms-colors-#{$color}-on-base:     var(--rms-colors-#{$color}-95);
+    --rms-colors-#{$color}-on-dark:     var(--rms-colors-#{$color}-98);
+    --rms-colors-#{$color}-on-darker:   var(--rms-colors-#{$color}-100);
+    --rms-colors-#{$color}-on-darkest:  var(--rms-colors-#{$color}-10);
+  }
+
+  // Miscellaneous
+  --rms-colors-background:    var(--rms-colors-neutral-10);
+  --rms-colors-on-background: var(--rms-colors-neutral-90);
+  --rms-colors-outline:       var(--rms-colors-neutral-variant-40);
+}
+
+:root {
+  @media (prefers-color-scheme: dark) {
+    & {
+      @include default_colors_dark;
+
+      @include dynamic_color_engine_dark;
+
+      // Modal Overrides
+      .modal__content {
+        background: var(--rms-colors-neutral-variant-lightest);
+        color: var(--rms-colors-neutral-variant-on-lightest);
+      }
+
+      .modal__close {
+        &:hover {
+          background: var(--rms-colors-background);
+        }
+      }
+
+      // Panel Overrides
+      .panel {
+        background: var(--rms-colors-neutral-variant-lightest);
+        color: var(--rms-colors-neutral-variant-on-lightest);
+      }
+
+      .panel__close {
+        &:hover {
+          background: var(--rms-colors-background);
+        }
+      }
+    }
+  }
+}

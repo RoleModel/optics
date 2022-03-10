@@ -1,0 +1,66 @@
+:root {
+  // Base Theme/Brand colors
+  --rms-colors-primary-original:         hsl(var(--rms-colors-primary-h), var(--rms-colors-primary-s), var(--rms-colors-primary-l));
+  --rms-colors-secondary-original:       hsl(var(--rms-colors-secondary-h), var(--rms-colors-secondary-s), var(--rms-colors-secondary-l));
+  --rms-colors-tertiary-original:        hsl(var(--rms-colors-tertiary-h), var(--rms-colors-tertiary-s), var(--rms-colors-tertiary-l));
+  --rms-colors-neutral-original:         hsl(var(--rms-colors-neutral-h), var(--rms-colors-neutral-s), var(--rms-colors-neutral-l));
+  --rms-colors-neutral-variant-original: hsl(var(--rms-colors-neutral-variant-h), var(--rms-colors-neutral-variant-s), var(--rms-colors-neutral-variant-l));
+
+  $color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
+  @each $color in $color_varieties {
+    // Luminosity Scale (Weighted towards higher luminosity)
+    --rms-colors-#{$color}-luminosity-0:   hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 0%);
+    --rms-colors-#{$color}-luminosity-10:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 10%);
+    --rms-colors-#{$color}-luminosity-20:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 20%);
+    --rms-colors-#{$color}-luminosity-30:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 30%);
+    --rms-colors-#{$color}-luminosity-40:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 40%);
+    --rms-colors-#{$color}-luminosity-50:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 50%);
+    --rms-colors-#{$color}-luminosity-60:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 60%);
+    --rms-colors-#{$color}-luminosity-70:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 70%);
+    --rms-colors-#{$color}-luminosity-80:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 80%);
+    --rms-colors-#{$color}-luminosity-90:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 90%);
+    --rms-colors-#{$color}-luminosity-95:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 95%);
+    --rms-colors-#{$color}-luminosity-98:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 98%);
+    --rms-colors-#{$color}-luminosity-100: hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 100%);
+
+    // Semantic Scale
+    --rms-colors-#{$color}-lightest: var(--rms-colors-#{$color}-luminosity-95);
+    --rms-colors-#{$color}-lighter:  var(--rms-colors-#{$color}-luminosity-80);
+    --rms-colors-#{$color}-light:    var(--rms-colors-#{$color}-luminosity-70);
+    --rms-colors-#{$color}-hover:    var(--rms-colors-#{$color}-luminosity-50);
+    --rms-colors-#{$color}-base:     var(--rms-colors-#{$color}-luminosity-40);
+    --rms-colors-#{$color}-dark:     var(--rms-colors-#{$color}-luminosity-30);
+    --rms-colors-#{$color}-darker:   var(--rms-colors-#{$color}-luminosity-20);
+    --rms-colors-#{$color}-darkest:  var(--rms-colors-#{$color}-luminosity-10);
+
+    --rms-colors-#{$color}-on-lightest: var(--rms-colors-#{$color}-luminosity-10);
+    --rms-colors-#{$color}-on-lighter:  var(--rms-colors-#{$color}-luminosity-10);
+    --rms-colors-#{$color}-on-light:    var(--rms-colors-#{$color}-luminosity-0);
+    --rms-colors-#{$color}-on-hover:    var(--rms-colors-#{$color}-luminosity-0);
+    --rms-colors-#{$color}-on-base:     var(--rms-colors-#{$color}-luminosity-100);
+    --rms-colors-#{$color}-on-dark:     var(--rms-colors-#{$color}-luminosity-90);
+    --rms-colors-#{$color}-on-darker:   var(--rms-colors-#{$color}-luminosity-95);
+    --rms-colors-#{$color}-on-darkest:  var(--rms-colors-#{$color}-luminosity-100);
+  }
+
+  // Miscellaneous Colors
+  --rms-colors-background:    var(--rms-colors-neutral-luminosity-98);
+  --rms-colors-on-background: var(--rms-colors-neutral-luminosity-10);
+  --rms-colors-outline:       var(--rms-colors-neutral-variant-luminosity-80);
+
+  // Alert Colors
+  $alert_color_varieties: ('warning': 'yellow', 'danger': 'red', 'info': 'blue', 'notice': 'green');
+  @each $name, $color in $alert_color_varieties {
+    --rms-colors-alerts-#{$name}-lighter: hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 80%);
+    --rms-colors-alerts-#{$name}-light:   hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 70%);
+    --rms-colors-alerts-#{$name}-base:    hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 40%);
+    --rms-colors-alerts-#{$name}-dark:    hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 30%);
+    --rms-colors-alerts-#{$name}-darker:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 20%);
+
+    --rms-colors-alerts-#{$name}-on-lighter: hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 10%);
+    --rms-colors-alerts-#{$name}-on-light:   hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 0%);
+    --rms-colors-alerts-#{$name}-on-base:    hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 100%);
+    --rms-colors-alerts-#{$name}-on-dark:    hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 90%);
+    --rms-colors-alerts-#{$name}-on-darker:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 95%);
+  }
+}

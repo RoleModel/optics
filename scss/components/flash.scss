@@ -1,16 +1,16 @@
 .flash {
-  position: absolute;
-  right: var(--space-lg);
+  position: fixed;
+  right: var(--rms-space-large);
   display: flex;
   align-items: center;
-  top: var(--space-lg);
+  top: var(--rms-space-large);
   z-index: 10;
   width: auto;
-  padding: var(--space-xs) var(--space-md);
-  font-size: var(--text-sm);
-  background: var(--color-white);
+  padding: var(--rms-space-x-small) var(--rms-space-medium);
+  font-size: var(--rms-font-small);
+  background: var(--rms-colors-white);
   animation: animateMessage 5s normal forwards;
-  box-shadow: var(--elevation-1);
+  box-shadow: var(--rms-shadow-x-small);
   border-radius: var(--radius-sm);
 
   border-left: solid 4px;
@@ -24,10 +24,10 @@
     right: -100%;
   }
   10% {
-    right: var(--space-lg);
+    right: var(--rms-space-large);
   }
   70% {
-    right: var(--space-lg);
+    right: var(--rms-space-large);
   }
   100% {
     right: -100%;
@@ -35,33 +35,33 @@
 }
 
 .flash--notice {
-  border-color: var(--color-notice-base);
-  color: var(--color-notice-base);
+  border-color: var(--rms-colors-alerts-notice-base);
+  color: var(--rms-colors-alerts-notice-base);
 }
 
 .flash--info {
-  border-color: var(--color-info-base);
-  color: var(--color-info-base);
+  border-color: var(--rms-colors-alerts-info-base);
+  color: var(--rms-colors-alerts-info-base);
 }
 
 .flash--alert {
-  border-color: var(--color-danger-base);
-  color: var(--color-danger-base);
+  border-color: var(--rms-colors-alerts-danger-base);
+  color: var(--rms-colors-alerts-danger-base);
 }
 
 .flash--warning {
-  border-color: var(--color-warning-base);
-  color: var(--color-warning-base);
+  border-color: var(--rms-colors-alerts-warning-base);
+  color: var(--rms-colors-alerts-warning-base);
 }
 
 .flash__message-type {
   font-weight: bold;
-  color: var(--color-black);
+  color: var(--rms-colors-black);
 }
 
 .flash__message {
-  font-size: var(--text-xs);
-  color: var(--color-black);
+  font-size: var(--rms-font-x-small);
+  color: var(--rms-colors-black);
 }
 
 .flash--demo {

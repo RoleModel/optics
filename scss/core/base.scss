@@ -8,15 +8,15 @@
 html {
   height: 100%;
 
-  font-family: var(--font-primary);
+  font-family: var(--rms-font-family);
   font-size: 16px;
 }
 
 body {
   height: inherit;
   overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
-  background: var(--color-background);
-  color: var(--color-on-background);
+  background: var(--rms-colors-background);
+  color: var(--rms-colors-on-background);
 }
 
 button, input, optgroup, select, textarea {
@@ -36,14 +36,14 @@ button {
   background: none;
   cursor: pointer;
 
-  color: var(--color-black);
+  color: var(--rms-colors-black);
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--rms-colors-primary-original);
 
   &:visited {
-    color: var(--color-primary);
+    color: var(--rms-colors-primary-original);
   }
 }
 
@@ -53,49 +53,49 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, pre {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--rms-space-small);
 
   font-weight: 400;
 }
 
 h1 {
-  font-size: var(--text-xxl);
+  font-size: var(--rms-font-2x-large);
 }
 
 h2 {
-  font-size: var(--text-xl);
+  font-size: var(--rms-font-x-large);
 }
 
 h3 {
-  font-size: var(--text-lg);
+  font-size: var(--rms-font-large);
 }
 
 h4 {
-  font-size: var(--text-md);
+  font-size: var(--rms-font-medium);
 }
 
 h5 {
-  font-size: var(--text-sm);
+  font-size: var(--rms-font-small);
 }
 
 h6 {
-  font-size: var(--text-xs);
+  font-size: var(--rms-font-x-small);
 }
 
 p {
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--rms-space-small);
 
   font-size: 1rem;
 }
 
 small {
-  font-size: var(--text-sm);
+  font-size: var(--rms-font-small);
 }
 
 .container {
   max-width: $breakpoint-md;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 var(--rms-space-large);
   width: 100%;
 }
 
@@ -104,11 +104,11 @@ small {
 }
 
 .container--md-padding {
-  padding: 0 var(--space-md);
+  padding: 0 var(--rms-space-medium);
 }
 
 .container--sm-padding {
-  padding: 0 var(--space-sm);
+  padding: 0 var(--rms-space-small);
 }
 
 .container--xs {

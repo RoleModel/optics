@@ -1,5 +1,5 @@
 :root {
-  --mobile-min-height: 44px;
+  --rms-mobile-min-height: 44px;
 }
 
 %btn {
@@ -11,21 +11,25 @@
   transition: all 120ms;
 
   border: 0;
-  border-width: var(--border-width);
-  border-radius: var(--radius);
-  padding: var(--space-sm) var(--space-md);
+  border-width: var(--rms-border-width);
+  border-radius: var(--radius-lg);
+  padding: var(--rms-space-small) var(--rms-space-medium);
 
   cursor: pointer;
 
-  font-size: var(--text-xs);
+  font-size: var(--rms-font-x-small);
   font-weight: 500;
   text-align: center;
   text-decoration: none;
-  color: var(--color-black);
+  color: var(--rms-colors-black);
+
+  &:visited {
+    color: var(--rms-colors-black);
+  }
 
   @media(max-width: $breakpoint-sm) {
     align-items: center;
-    min-height: var(--mobile-min-height);
+    min-height: var(--rms-mobile-min-height);
   }
 }
 
@@ -35,75 +39,52 @@
 }
 
 // Theme Styles
-.btn--primary {
-  @extend %btn;
+$button_varieties: 'primary', 'secondary', 'tertiary';
+@each $color in $button_varieties {
+  .btn--#{$color} {
+    @extend %btn;
 
-  background: var(--color-primary-base);
-  color: var(--color-on-primary-base);
+    background: var(--rms-colors-#{$color}-base);
+    color: var(--rms-colors-#{$color}-on-base);
 
-  &:hover {
-    background: var(--color-primary-hover);
-  }
-}
+    &:visited {
+      color: var(--rms-colors-#{$color}-on-base);
+    }
 
-.btn--secondary {
-  @extend %btn;
-
-  background: var(--color-secondary-base);
-  color: var(--color-on-secondary-base);
-
-  &:hover {
-    background: var(--color-secondary-hover);
-  }
-}
-
-.btn--tertiary {
-  @extend %btn;
-
-  background: var(--color-tertiary-base);
-  color: var(--color-on-tertiary-base);
-
-  &:hover {
-    background: var(--color-tertiary-hover);
+    &:hover {
+      background: var(--rms-colors-#{$color}-hover);
+    }
   }
 }
 
 .btn--outline {
   @extend %btn;
 
-  background: var(--color-background);
-  border: var(--border-width) solid var(--color-outline);
-  color: var(--color-on-background);
+  background: var(--rms-colors-background);
+  border: var(--rms-border-width) solid var(--rms-colors-outline);
+  color: var(--rms-colors-on-background);
+
+  &:visited {
+    color: var(--rms-colors-on-background);
+  }
 
   &:hover {
-    background: var(--color-neutral-variant-lightest);
-    color: var(--color-on-neutral-variant-lightest);
+    background: var(--rms-colors-neutral-variant-lightest);
+    color: var(--rms-colors-neutral-variant-on-lightest);
   }
 
-  &.btn--primary {
-    border-color: var(--color-primary-base);
-    color: var(--color-primary-base);
+  @each $color in $button_varieties {
+    &.btn--#{$color} {
+      border-color: var(--rms-colors-#{$color}-base);
+      color: var(--rms-colors-#{$color}-base);
 
-    &:hover {
-      background: var(--color-primary-lightest);
-    }
-  }
+      &:visited {
+        color: var(--rms-colors-#{$color}-base);
+      }
 
-  &.btn--secondary {
-    border-color: var(--color-secondary-base);
-    color: var(--color-secondary-base);
-
-    &:hover {
-      background: var(--color-secondary-lightest);
-    }
-  }
-
-  &.btn--tertiary {
-    border-color: var(--color-tertiary-base);
-    color: var(--color-tertiary-base);
-
-    &:hover {
-      background: var(--color-tertiary-lightest);
+      &:hover {
+        background: var(--rms-colors-#{$color}-lightest);
+      }
     }
   }
 }
@@ -111,31 +92,35 @@
 .btn--small {
   @extend %btn;
 
-  font-size: var(--text-xxs);
-  padding: var(--space-xs) var(--space-md);
+  font-size: var(--rms-font-2x-small);
+  padding: var(--rms-space-x-small) var(--rms-space-medium);
 }
 
 .btn--large {
   @extend %btn;
 
-  font-size: var(--text-sm);
-  padding: var(--space-md) var(--space-lg);
+  font-size: var(--rms-font-small);
+  padding: var(--rms-space-medium) var(--rms-space-large);
 }
 
 .btn--pill {
   @extend %btn;
 
-  border-radius: var(--radius-max);
+  border-radius: var(--radius-pill);
 }
 
 .btn--active {
   @extend %btn;
 
-  background: var(--color-primary-base);
-  color: var(--color-on-primary-base);
+  background: var(--rms-colors-primary-base);
+  color: var(--rms-colors-primary-on-base);
+
+  &:visited {
+    color: var(--rms-colors-primary-on-base);
+  }
 
   &:hover:not(:disabled) {
-    background: var(--color-primary-base);
-    color: var(--color-on-primary-base);
+    background: var(--rms-colors-primary-base);
+    color: var(--rms-colors-primary-on-base);
   }
 }
