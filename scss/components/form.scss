@@ -273,10 +273,10 @@ label {
 
 // simple_form styles
 .form__error-summary {
-  background-color: var(--rms-colors-danger-lighter);
-  color: var(--rms-colors-danger-on-lighter);
+  background-color: var(--rms-colors-alerts-danger-lighter);
+  color: var(--rms-colors-alerts-danger-on-lighter);
 
-  border: 1px solid var(--rms-colors-danger-light);
+  border: 1px solid var(--rms-colors-alerts-danger-light);
   border-radius: var(--radius-lg);
 
   margin-bottom: var(--rms-space-large);
@@ -293,8 +293,8 @@ label {
 .form__error {
   padding: var(--rms-space-2x-small) var(--rms-space-x-small);
 
-  background: var(--rms-colors-danger-lighter);
-  color: var(--rms-colors-danger-on-lighter);
+  background: var(--rms-colors-alerts-danger-lighter);
+  color: var(--rms-colors-alerts-danger-on-lighter);
 
   border-radius: var(--radius-md);
 
@@ -305,7 +305,7 @@ label {
 
 .from__input--error {
   input {
-    box-shadow: inset 0 0 0 1px var(--rms-colors-danger-dark);
+    box-shadow: inset 0 0 0 1px var(--rms-colors-alerts-danger-dark);
   }
 }
 
