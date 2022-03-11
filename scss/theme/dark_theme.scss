@@ -7,19 +7,19 @@
   $color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
   @each $color in $color_varieties {
     // Luminosity Scale (Weighted towards lower luminosity)
-    --rms-colors-#{$color}-0:   hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 0%);
-    --rms-colors-#{$color}-10:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 5%);
-    --rms-colors-#{$color}-20:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 10%);
-    --rms-colors-#{$color}-30:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 15%);
-    --rms-colors-#{$color}-40:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 20%);
-    --rms-colors-#{$color}-50:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 25%);
-    --rms-colors-#{$color}-60:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 35%);
-    --rms-colors-#{$color}-70:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 40%);
-    --rms-colors-#{$color}-80:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 60%);
-    --rms-colors-#{$color}-90:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 70%);
-    --rms-colors-#{$color}-95:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 80%);
-    --rms-colors-#{$color}-98:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 90%);
-    --rms-colors-#{$color}-100: hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 100%);
+    --rms-colors-#{$color}-luminosity-0:   hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 0%);
+    --rms-colors-#{$color}-luminosity-10:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 5%);
+    --rms-colors-#{$color}-luminosity-20:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 10%);
+    --rms-colors-#{$color}-luminosity-30:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 15%);
+    --rms-colors-#{$color}-luminosity-40:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 20%);
+    --rms-colors-#{$color}-luminosity-50:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 25%);
+    --rms-colors-#{$color}-luminosity-60:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 35%);
+    --rms-colors-#{$color}-luminosity-70:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 40%);
+    --rms-colors-#{$color}-luminosity-80:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 60%);
+    --rms-colors-#{$color}-luminosity-90:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 70%);
+    --rms-colors-#{$color}-luminosity-95:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 80%);
+    --rms-colors-#{$color}-luminosity-98:  hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 90%);
+    --rms-colors-#{$color}-luminosity-100: hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 100%);
 
     // Semantic Scale
     --rms-colors-#{$color}-lightest: var(--rms-colors-#{$color}-20);
