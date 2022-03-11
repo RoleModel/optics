@@ -52,19 +52,19 @@
 
 @mixin font-scales {
   // Visit https://codyhouse.co/ds/globals/typography to play around with different text sizes
-  --rms-font-scale-ration: 1.15;
+  --rms-font-scale-ratio: 1.15;
   --rms-font-size-unit: 1rem;
 
-  --rms-font-2x-small: calc((var(--rms-font-size-unit) / var(--rms-font-scale-ration)) / var(--rms-font-scale-ration)); // ~12px
-  --rms-font-x-small: calc(var(--rms-font-2x-small) * var(--rms-font-scale-ration)); // ~14px
-  --rms-font-small: calc(var(--rms-font-x-small) * var(--rms-font-scale-ration)); // ~16px
-  --rms-font-medium: calc(var(--rms-font-small) * var(--rms-font-scale-ration)); // ~18px
-  --rms-font-large: calc(var(--rms-font-medium) * var(--rms-font-scale-ration)); // ~21px
-  --rms-font-x-large: calc(var(--rms-font-large) * var(--rms-font-scale-ration)); // ~24px
-  --rms-font-2x-large: calc(var(--rms-font-x-large) * var(--rms-font-scale-ration)); // ~28px
-  --rms-font-3x-large: calc(var(--rms-font-2x-large) * var(--rms-font-scale-ration)); // ~32px
-  --rms-font-4x-large: calc(var(--rms-font-3x-large) * var(--rms-font-scale-ration)); // ~37px
-  --rms-font-5x-large: calc(var(--rms-font-4x-large) * var(--rms-font-scale-ration)); // ~42px
+  --rms-font-2x-small: calc((var(--rms-font-size-unit) / var(--rms-font-scale-ratio)) / var(--rms-font-scale-ratio)); // ~12px
+  --rms-font-x-small: calc(var(--rms-font-2x-small) * var(--rms-font-scale-ratio)); // ~14px
+  --rms-font-small: calc(var(--rms-font-x-small) * var(--rms-font-scale-ratio)); // ~16px
+  --rms-font-medium: calc(var(--rms-font-small) * var(--rms-font-scale-ratio)); // ~18px
+  --rms-font-large: calc(var(--rms-font-medium) * var(--rms-font-scale-ratio)); // ~21px
+  --rms-font-x-large: calc(var(--rms-font-large) * var(--rms-font-scale-ratio)); // ~24px
+  --rms-font-2x-large: calc(var(--rms-font-x-large) * var(--rms-font-scale-ratio)); // ~28px
+  --rms-font-3x-large: calc(var(--rms-font-2x-large) * var(--rms-font-scale-ratio)); // ~32px
+  --rms-font-4x-large: calc(var(--rms-font-3x-large) * var(--rms-font-scale-ratio)); // ~37px
+  --rms-font-5x-large: calc(var(--rms-font-4x-large) * var(--rms-font-scale-ratio)); // ~42px
 }
 
 @mixin font-weights {
