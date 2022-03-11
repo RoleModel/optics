@@ -31,27 +31,27 @@
 // Gap Properties
 .gap-xxs {
   gap: var(--rms-space-2x-small);
-  --gap: var(--rms-space-2x-small);
+  --rms-gap: var(--rms-space-2x-small);
 }
 .gap-xs {
   gap: var(--rms-space-x-small);
-  --gap: var(--rms-space-x-small);
+  --rms-gap: var(--rms-space-x-small);
 }
 .gap-sm {
   gap: var(--rms-space-small);
-  --gap: var(--rms-space-small);
+  --rms-gap: var(--rms-space-small);
 }
 .gap-md {
   gap: var(--rms-space-medium);
-  --gap: var(--rms-space-medium);
+  --rms-gap: var(--rms-space-medium);
 }
 .gap-lg {
   gap: var(--rms-space-large);
-  --gap: var(--rms-space-large);
+  --rms-gap: var(--rms-space-large);
 }
 .gap-xl {
   gap: var(--rms-space-x-large);
-  --gap: var(--rms-space-x-large);
+  --rms-gap: var(--rms-space-x-large);
 }
 
 // Justify Content
@@ -445,19 +445,19 @@
   & > * {
     flex: 1;
 
-    &.four-fifths-width { flex-basis: calc(calc(100% * 4/5) - var(--gap)); }
-    &.three-fifths-width { flex-basis: calc(calc(100% * 3/5) - var(--gap)); }
-    &.two-fifths-width { flex-basis: calc(calc(100% * 2/5) - var(--gap)); }
-    &.one-fifth-width { flex-basis: calc(calc(100% * 1/5) - var(--gap)); }
+    &.four-fifths-width { flex-basis: calc(calc(100% * 4/5) - var(--rms-gap)); }
+    &.three-fifths-width { flex-basis: calc(calc(100% * 3/5) - var(--rms-gap)); }
+    &.two-fifths-width { flex-basis: calc(calc(100% * 2/5) - var(--rms-gap)); }
+    &.one-fifth-width { flex-basis: calc(calc(100% * 1/5) - var(--rms-gap)); }
 
-    &.three-quarters-width { flex-basis: calc(calc(100% * 3/4) - var(--gap)); }
-    &.one-quarter-width { flex-basis: calc(calc(100% * 1/4) - var(--gap)); }
+    &.three-quarters-width { flex-basis: calc(calc(100% * 3/4) - var(--rms-gap)); }
+    &.one-quarter-width { flex-basis: calc(calc(100% * 1/4) - var(--rms-gap)); }
 
-    &.two-thirds-width { flex-basis: calc(calc(100% * 2/3) - var(--gap)); }
-    &.one-third-width { flex-basis: calc(calc(100% * 1/3) - var(--gap)); }
+    &.two-thirds-width { flex-basis: calc(calc(100% * 2/3) - var(--rms-gap)); }
+    &.one-third-width { flex-basis: calc(calc(100% * 1/3) - var(--rms-gap)); }
 
-    &.full-width { flex-basis: calc(100% - var(--gap)); }
-    &.half-width { flex-basis: calc(50% - var(--gap)); }
+    &.full-width { flex-basis: calc(100% - var(--rms-gap)); }
+    &.half-width { flex-basis: calc(50% - var(--rms-gap)); }
   }
 
   @media screen and (max-width: $breakpoint-sm) {
