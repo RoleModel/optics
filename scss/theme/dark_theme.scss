@@ -22,23 +22,23 @@
     --rms-colors-#{$color}-luminosity-100: hsl(var(--rms-colors-#{$color}-h), var(--rms-colors-#{$color}-s), 100%);
 
     // Semantic Scale
-    --rms-colors-#{$color}-lightest: var(--rms-colors-#{$color}-20);
-    --rms-colors-#{$color}-lighter:  var(--rms-colors-#{$color}-30);
-    --rms-colors-#{$color}-light:    var(--rms-colors-#{$color}-40);
-    --rms-colors-#{$color}-hover:    var(--rms-colors-#{$color}-40);
-    --rms-colors-#{$color}-base:     var(--rms-colors-#{$color}-50);
-    --rms-colors-#{$color}-dark:     var(--rms-colors-#{$color}-60);
-    --rms-colors-#{$color}-darker:   var(--rms-colors-#{$color}-70);
-    --rms-colors-#{$color}-darkest:  var(--rms-colors-#{$color}-80);
+    --rms-colors-#{$color}-lightest: var(--rms-colors-#{$color}-luminosity-20);
+    --rms-colors-#{$color}-lighter:  var(--rms-colors-#{$color}-luminosity-30);
+    --rms-colors-#{$color}-light:    var(--rms-colors-#{$color}-luminosity-40);
+    --rms-colors-#{$color}-hover:    var(--rms-colors-#{$color}-luminosity-40);
+    --rms-colors-#{$color}-base:     var(--rms-colors-#{$color}-luminosity-50);
+    --rms-colors-#{$color}-dark:     var(--rms-colors-#{$color}-luminosity-60);
+    --rms-colors-#{$color}-darker:   var(--rms-colors-#{$color}-luminosity-70);
+    --rms-colors-#{$color}-darkest:  var(--rms-colors-#{$color}-luminosity-80);
 
-    --rms-colors-#{$color}-on-lightest: var(--rms-colors-#{$color}-100);
-    --rms-colors-#{$color}-on-lighter:  var(--rms-colors-#{$color}-100);
-    --rms-colors-#{$color}-on-light:    var(--rms-colors-#{$color}-98);
-    --rms-colors-#{$color}-on-hover:    var(--rms-colors-#{$color}-98);
-    --rms-colors-#{$color}-on-base:     var(--rms-colors-#{$color}-95);
-    --rms-colors-#{$color}-on-dark:     var(--rms-colors-#{$color}-98);
-    --rms-colors-#{$color}-on-darker:   var(--rms-colors-#{$color}-100);
-    --rms-colors-#{$color}-on-darkest:  var(--rms-colors-#{$color}-10);
+    --rms-colors-#{$color}-on-lightest: var(--rms-colors-#{$color}-luminosity-100);
+    --rms-colors-#{$color}-on-lighter:  var(--rms-colors-#{$color}-luminosity-100);
+    --rms-colors-#{$color}-on-light:    var(--rms-colors-#{$color}-luminosity-98);
+    --rms-colors-#{$color}-on-hover:    var(--rms-colors-#{$color}-luminosity-98);
+    --rms-colors-#{$color}-on-base:     var(--rms-colors-#{$color}-luminosity-95);
+    --rms-colors-#{$color}-on-dark:     var(--rms-colors-#{$color}-luminosity-98);
+    --rms-colors-#{$color}-on-darker:   var(--rms-colors-#{$color}-luminosity-100);
+    --rms-colors-#{$color}-on-darkest:  var(--rms-colors-#{$color}-luminosity-10);
   }
 
   // Miscellaneous
