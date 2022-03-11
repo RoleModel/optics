@@ -42,9 +42,9 @@
   }
 
   // Miscellaneous
-  --rms-colors-background:    var(--rms-colors-neutral-10);
-  --rms-colors-on-background: var(--rms-colors-neutral-90);
-  --rms-colors-outline:       var(--rms-colors-neutral-variant-40);
+  --rms-colors-background:    var(--rms-colors-neutral-luminosity-10);
+  --rms-colors-on-background: var(--rms-colors-neutral-luminosity-90);
+  --rms-colors-outline:       var(--rms-colors-neutral-variant-luminosity-40);
 }
 
 :root {
