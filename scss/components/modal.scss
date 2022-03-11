@@ -40,7 +40,7 @@
   background: var(--rms-colors-background);
   color: var(--rms-colors-on-background);
 
-  border-radius: var(--radius-lg);
+  border-radius: var(--rms-radius-large);
   z-index: 12;
   transform: scale(0.7);
   opacity: 0;
@@ -72,7 +72,7 @@
   cursor: pointer;
 
   padding: var(--rms-space-medium);
-  border-radius: var(--radius-circle);
+  border-radius: var(--rms-radius-circle);
 
   &:hover {
     background: var(--rms-colors-neutral-variant-lightest);

@@ -20,11 +20,11 @@ table.table {
     font-weight: 400;
 
     &:first-child {
-      border-top-left-radius: var(--radius-md);
+      border-top-left-radius: var(--rms-radius-medium);
     }
 
     &:last-child {
-      border-top-right-radius: var(--radius-md);
+      border-top-right-radius: var(--rms-radius-medium);
     }
   }
 

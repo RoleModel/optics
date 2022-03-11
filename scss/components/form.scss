@@ -34,7 +34,7 @@ label {
   border: var(--rms-border-width) solid var(--rms-colors-outline);
   font-weight: 300;
   will-change: border-color, box-shadow;
-  border-radius: var(--radius-lg);
+  border-radius: var(--rms-radius-large);
   box-shadow: none;
 
   &:focus {
@@ -56,7 +56,7 @@ label {
   border: var(--rms-border-width) solid var(--rms-colors-outline);
   font-weight: 300;
   font-size: var(--rms-font-small);
-  border-radius: var(--radius-lg);
+  border-radius: var(--rms-radius-large);
   display: inline-block;
   width: 100%;
   appearance: none;
@@ -277,7 +277,7 @@ label {
   color: var(--rms-colors-alerts-danger-on-lighter);
 
   border: 1px solid var(--rms-colors-alerts-danger-light);
-  border-radius: var(--radius-lg);
+  border-radius: var(--rms-radius-large);
 
   margin-bottom: var(--rms-space-large);
   padding: var(--rms-space-large);
@@ -296,7 +296,7 @@ label {
   background: var(--rms-colors-alerts-danger-lighter);
   color: var(--rms-colors-alerts-danger-on-lighter);
 
-  border-radius: var(--radius-md);
+  border-radius: var(--rms-radius-medium);
 
   font-size: var(--rms-font-x-small);
 

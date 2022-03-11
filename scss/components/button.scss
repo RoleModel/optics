@@ -12,7 +12,7 @@
 
   border: 0;
   border-width: var(--rms-border-width);
-  border-radius: var(--radius-lg);
+  border-radius: var(--rms-radius-large);
   padding: var(--rms-space-small) var(--rms-space-medium);
 
   cursor: pointer;
@@ -106,7 +106,7 @@ $button_varieties: 'primary', 'secondary', 'tertiary';
 .btn--pill {
   @extend %btn;
 
-  border-radius: var(--radius-pill);
+  border-radius: var(--rms-radius-pill);
 }
 
 .btn--active {
