@@ -29,10 +29,6 @@
   --rms-colors-neutral-variant-l: 38%;
 }
 
-@mixin fonts {
-  --rms-font-family: 'Roboto', sans-serif;
-}
-
 @mixin border-radius {
   --rms-radius-small:   2px;
   --rms-radius-medium:  4px;
@@ -81,6 +77,12 @@
   --rms-line-height-loose:  1.6;
 }
 
+@mixin fonts {
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+  --rms-font-family: 'Roboto', sans-serif;
+  --rms-font-weight-semi-bold: 500; // Roboto does not have a semi bold variant so we adjust down to medium
+}
+
 @mixin spacing-scales {
   // This is using the Golden Ratio to get these numbers
   // Visit https://codyhouse.co/ds/globals/spacing to play around with different ratios
@@ -106,18 +108,15 @@
   // Color HSLs
   @include color-varieties;
 
-  // Font Families
-  @include fonts;
-
   // Border
   @include border-strokes;
   @include border-radius;
   @include border-width;
 
-  // Font Ratios
+  // Font
   @include font-scales;
-
   @include font-weights;
+  @include fonts;
 
   // Line heights
   @include line-heights;

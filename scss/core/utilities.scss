@@ -155,6 +155,12 @@
 .font-xxxxl { font-size: var(--rms-font-4x-large); }
 .font-xxxxxl { font-size: var(--rms-font-5x-large); }
 
+// Font Weight
+.font-light { font-weight: var(--rms-font-weight-light); }
+.font-normal { font-weight: var(--rms-font-weight-normal); }
+.font-semi-bold { font-weight: var(--rms-font-weight-semi-bold); }
+.font-bold { font-weight: var(--rms-font-weight-bold); }
+
 // Box Margin
 
 .margin-xl {
