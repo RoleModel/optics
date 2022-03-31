@@ -1,10 +1,14 @@
 {
   "name": "@rolemodel/rolemodel-design-system",
-  "version": "0.0.7-alpha",
+  "version": "0.0.8-alpha",
   "description": "The design system RoleModel uses to kickstart projects with a consistent starting point",
-  "main": "scss/rolemodel-design-system.scss",
+  "main": "dist/scss/rolemodel-design-system.scss",
   "scripts": {
-    "test": "exit 0"
+    "test": "exit 0",
+    "build": "npm run build:css && npm run build:scss && npm run build:tokens",
+    "build:css": "sass src/rolemodel-design-system.scss dist/css/rolemodel-design-system.css --load-path=node_modules/",
+    "build:scss": "cp -r src dist/scss",
+    "build:tokens": "mkdir -p dist/tokens && cp docs/token_structure.json dist/tokens/tokens.json"
   },
   "repository": {
     "type": "git",
@@ -29,5 +33,8 @@
   "dependencies": {
     "material-icons": "^1.10.0",
     "tom-select": "^2.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.49.10"
   }
 }
