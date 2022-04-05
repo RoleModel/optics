@@ -7,10 +7,1121 @@
     <title>Rolemodel Design System</title>
 
     <link rel="stylesheet" href="dist/css/rolemodel-design-system.css">
+
+    <style>
+      .spacing-example {
+        position: relative;
+
+        display: block;
+
+        height: 2rem;
+        margin-bottom: var(--rms-space-large);
+
+        background: var(--rms-colors-primary-original);
+      }
+    </style>
   </head>
-  <body>
-    <div class="container margin-top-md">
-      <h1>RoleModel Design System</h1>
-    </div>
+  <body class="'flex">
+    <main class="wrapper--main" role='main'>
+      <div class="container margin-y-xl">
+        <div class="flex items-center gap-lg">
+          <h1>RoleModel Design System</h1>
+          <!-- Tokens? -->
+        </div>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <div class="flex justify-between items-center">
+              <h2 class="styleguide-section__title">Typography</h2>
+              <h4>--rms-font-family: Roboto</h4>
+            </div>
+          </div>
+          <div class="card__body">
+            <div class="flex gap-md">
+              <div class="card two-thirds-width">
+                <div class="card__header background-primary-lighter">
+                  <h3>Scale</h3>
+                </div>
+                <div class="card__body">
+                  <div class="font-xxxxxl">--rms-font-5x-large - 42px</div>
+                  <div class="font-xxxxl">--rms-font-4x-large - 37px</div>
+                  <div class="font-xxxl">--rms-font-3x-large - 32px</div>
+                  <div class="font-xxl">--rms-font-2x-large - Heading 1 - 28px</div>
+                  <div class="font-xl">--rms-font-x-large - Heading 2 - 24px</div>
+                  <div class="font-lg">--rms-font-large - Heading 3 - 21px</div>
+                  <div class="font-md">--rms-font-medium - Heading 4 - 18px</div>
+                  <div class="font-sm">--rms-font-small - Heading 5 - 16px</div>
+                  <div class="font-xs">--rms-font-x-small - Heading 6 - 14px</div>
+                  <div class="font-xxs">--rms-font-2x-small - 12px</div>
+                </div>
+              </div>
+
+              <div class="card one-third-width">
+                <div class="card__header background-primary-lighter">
+                  <h3>Weight</h3>
+                </div>
+                <div class="card__body">
+                  <div class="font-light">--rms-font-weight-light: 300</div>
+                  <div class="font-normal">--rms-font-weight-normal: 400</div>
+                  <div class="font-semi-bold">--rms-font-weight-semi-bold: 600</div>
+                  <div class="font-bold">--rms-font-weight-bold: 700</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Radius</h2>
+          </div>
+          <div class="card__body">
+            <div class="flex justify-between items-center gap-xs">
+              <div class="card card--padded" style="border-radius: var(--rms-radius-small)">Small</div>
+              <div class="card card--padded" style="border-radius: var(--rms-radius-medium)">Medium</div>
+              <div class="card card--padded" style="border-radius: var(--rms-radius-large)">Large</div>
+              <div class="card card--padded" style="border-radius: var(--rms-radius-x-large)">Extra Large</div>
+              <div class="card card--padded flex items-center" style="border-radius: var(--rms-radius-circle); height: 78px;">
+                Circle</div>
+              <div class="card card--padded" style="border-radius: var(--rms-radius-pill); width: 100px; text-align: center;">
+                Pill</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lighter">
+            <h2 class="styleguide-section__title">Line Height</h2>
+          </div>
+          <div class="card__body">
+            <div class="flex layout-row gap-xs">
+              <div>
+                <p>--rms-line-height-none</p>
+                <p style="line-height: var(--rms-line-height-none)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div>
+                <p>--rms-line-height-dense</p>
+                <p style="line-height: var(--rms-line-height-dense)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div>
+                <p>--rms-line-height-normal</p>
+                <p style="line-height: var(--rms-line-height-normal)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div>
+                <p>--rms-line-height-loose</p>
+                <p style="line-height: var(--rms-line-height-loose)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Spacing Reference</h2>
+          </div>
+          <div class="card__body">
+            <div class="flex layout-row flex-wrap gap-md">
+              <div class="one-third-width">
+                <div class="spacing-example" style="width: var(--rms-space-3x-small)"></div>
+                <span>--rms-space-3x-small (2px)</span>
+              </div>
+              <div class="one-third-width">
+                <div class="spacing-example" style="width: var(--rms-space-2x-small)"></div>
+                <span>--rms-space-2x-small (4px)</span>
+              </div>
+              <div class="one-third-width">
+                <div class="spacing-example" style="width: var(--rms-space-x-small)"></div>
+                <span>--rms-space-x-small (6px)</span>
+              </div>
+              <div class="one-third-width">
+                <div class="spacing-example" style="width: var(--rms-space-small)"></div>
+                <span>--rms-space-small (10px)</span>
+              </div>
+              <div class="one-third-width">
+                <div class="spacing-example" style="width: var(--rms-space-medium)"></div>
+                <span>--rms-space-medium (16px)</span>
+              </div>
+              <div class="one-third-width">
+                <div class="spacing-example" style="width: var(--rms-space-large)"></div>
+                <span>--rms-space-large (26px)</span>
+              </div>
+              <div class="one-third-width">
+                <div class="spacing-example" style="width: var(--rms-space-x-large)"></div>
+                <span>--rms-space-x-large (42px)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Shadows</h2>
+          </div>
+          <div class="card__body">
+            <div class="flex layout-row gap-md flex-wrap">
+              <div class="card card--padded">No Shadow</div>
+              <div class="card card--padded shadow-x-small">Extra small shadow</div>
+              <div class="card card--padded shadow-small">Small shadow</div>
+              <div class="card card--padded shadow-medium">Medium shadow</div>
+              <div class="card card--padded shadow-large">Large shadow</div>
+              <div class="card card--padded shadow-x-large">Extra large shadow</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Color Scales</h2>
+            <p>Example --rms-colors-primary-30</p>
+          </div>
+          <div class="card__body">
+            <div class="margin-top-md">
+              <h4>Primary</h4>
+              <div class="flex layout-row flex-wrap">
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-0);">
+                  <span>0</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-10);">
+                  <span>10</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-20);">
+                  <span>20</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-30);">
+                  <span>30</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-40);">
+                  <span>40</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-50);">
+                  <span>50</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-60);">
+                  <span>60</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-70);">
+                  <span>70</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-80);">
+                  <span>80</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-90);">
+                  <span>90</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-95);">
+                  <span>95</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-98);">
+                  <span>98</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-primary-luminosity-100);">
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-top-md">
+              <h4>Secondary</h4>
+              <div class="flex layout-row flex-wrap">
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-0);">
+                  <span>0</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-10);">
+                  <span>10</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-20);">
+                  <span>20</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-30);">
+                  <span>30</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-40);">
+                  <span>40</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-50);">
+                  <span>50</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-60);">
+                  <span>60</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-70);">
+                  <span>70</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-80);">
+                  <span>80</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-90);">
+                  <span>90</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-95);">
+                  <span>95</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-98);">
+                  <span>98</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-secondary-luminosity-100);">
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-top-md">
+              <h4>Tertiary</h4>
+              <div class="flex layout-row flex-wrap">
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-0);">
+                  <span>0</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-10);">
+                  <span>10</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-20);">
+                  <span>20</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-30);">
+                  <span>30</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-40);">
+                  <span>40</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-50);">
+                  <span>50</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-60);">
+                  <span>60</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-70);">
+                  <span>70</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-80);">
+                  <span>80</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-90);">
+                  <span>90</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-95);">
+                  <span>95</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-98);">
+                  <span>98</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-tertiary-luminosity-100);">
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-top-md">
+              <h4>Neutral</h4>
+              <div class="flex layout-row flex-wrap">
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-0);">
+                  <span>0</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-10);">
+                  <span>10</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-20);">
+                  <span>20</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-30);">
+                  <span>30</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-40);">
+                  <span>40</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-50);">
+                  <span>50</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-60);">
+                  <span>60</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-70);">
+                  <span>70</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-80);">
+                  <span>80</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-90);">
+                  <span>90</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-95);">
+                  <span>95</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-98);">
+                  <span>98</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-luminosity-100);">
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-top-md">
+              <h4>Neutral Variant</h4>
+              <div class="flex layout-row flex-wrap">
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-0);">
+                  <span>0</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-10);">
+                  <span>10</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-20);">
+                  <span>20</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-30);">
+                  <span>30</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-40);">
+                  <span>40</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-50);">
+                  <span>50</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-60);">
+                  <span>60</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-70);">
+                  <span>70</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-80);">
+                  <span>80</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-90);">
+                  <span>90</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-95);">
+                  <span>95</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-98);">
+                  <span>98</span>
+                </div>
+                <div class="swatch" style="background: var(--rms-colors-neutral-variant-luminosity-100);">
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Semantic Colors</h2>
+          </div>
+          <div class="card__body">
+            <div class="margin-top-md">
+              <h4>Primary</h4>
+              <div class="flex layout-row gap-md">
+                <div class="card card--padded background-primary-lightest">
+                  <code class="font-xxs">.background-primary-lightest</code>
+                  <p class="font-xxs">background-color: var(--rms-colors-primary-lightest)</p>
+                  <p class="font-xxs">color: var(--rms-colors-primary-on-lightest)
+                  </p>
+                  <div class="card card--padded background-primary-lighter">
+                    <code class="font-xxs">.background-primary-lighter</code>
+                    <p class="font-xxs">background-color: var(--rms-colors-primary-lighter)</p>
+                    <p class="font-xxs">color: var(--rms-colors-primary-on-lighter)
+                    </p>
+                    <div class="card card--padded background-primary-light">
+                      <code class="font-xxs">.background-primary-light</code>
+                      <p class="font-xxs">background-color: var(--rms-colors-primary-light)</p>
+                      <p class="font-xxs">color: var(--rms-colors-primary-on-light)
+                      </p>
+                      <div class="card card--padded background-primary-base">
+                        <code class="font-xxs">.background-primary-base</code>
+                        <p class="font-xxs">background-color: var(--rms-colors-primary-base)</p>
+                        <p class="font-xxs">color: var(--rms-colors-primary-on-base)
+                        </p>
+                        <div class="card card--padded background-primary-dark">
+                          <code class="font-xxs">.background-primary-dark</code>
+                          <p class="font-xxs">background-color: var(--rms-colors-primary-dark)</p>
+                          <p class="font-xxs">color: var(--rms-colors-primary-on-dark)
+                          </p>
+                          <div class="card card--padded background-primary-darker">
+                            <code class="font-xxs">.background-primary-darker</code>
+                            <p class="font-xxs">background-color: var(--rms-colors-primary-darker)</p>
+                            <p class="font-xxs">color: var(--rms-colors-primary-on-darker)
+                            </p>
+                            <div class="card card--padded background-primary-darkest">
+                              <code class="font-xxs">.background-primary-darkest</code>
+                              <p class="font-xxs">background-color: var(--rms-colors-primary-darkest)</p>
+                              <p class="font-xxs">color: var(--rms-colors-primary-on-darkest)</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-top-md">
+              <h4>Secondary</h4>
+              <div class="flex layout-row gap-md">
+                <div class="card card--padded background-secondary-lightest">
+                  <code class="font-xxs">.background-secondary-lightest</code>
+                  <p class="font-xxs">background-color: var(--rms-colors-secondary-lightest)</p>
+                  <p class="font-xxs">color: var(--rms-colors-secondary-on-lightest)
+                  </p>
+                  <div class="card card--padded background-secondary-lighter">
+                    <code class="font-xxs">.background-secondary-lighter</code>
+                    <p class="font-xxs">background-color: var(--rms-colors-secondary-lighter)</p>
+                    <p class="font-xxs">color: var(--rms-colors-secondary-on-lighter)
+                    </p>
+                    <div class="card card--padded background-secondary-light">
+                      <code class="font-xxs">.background-secondary-light</code>
+                      <p class="font-xxs">background-color: var(--rms-colors-secondary-light)</p>
+                      <p class="font-xxs">color: var(--rms-colors-secondary-on-light)
+                      </p>
+                      <div class="card card--padded background-secondary-base">
+                        <code class="font-xxs">.background-secondary-base</code>
+                        <p class="font-xxs">background-color: var(--rms-colors-secondary-base)</p>
+                        <p class="font-xxs">color: var(--rms-colors-secondary-on-base)
+                        </p>
+                        <div class="card card--padded background-secondary-dark">
+                          <code class="font-xxs">.background-secondary-dark</code>
+                          <p class="font-xxs">background-color: var(--rms-colors-secondary-dark)</p>
+                          <p class="font-xxs">color: var(--rms-colors-secondary-on-dark)
+                          </p>
+                          <div class="card card--padded background-secondary-darker">
+                            <code class="font-xxs">.background-secondary-darker</code>
+                            <p class="font-xxs">background-color: var(--rms-colors-secondary-darker)</p>
+                            <p class="font-xxs">color: var(--rms-colors-secondary-on-darker)
+                            </p>
+                            <div class="card card--padded background-secondary-darkest">
+                              <code class="font-xxs">.background-secondary-darkest</code>
+                              <p class="font-xxs">background-color: var(--rms-colors-secondary-darkest)</p>
+                              <p class="font-xxs">color: var(--rms-colors-secondary-on-darkest)</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-top-md">
+              <h4>Tertiary</h4>
+              <div class="flex layout-row gap-md">
+                <div class="card card--padded background-tertiary-lightest">
+                  <code class="font-xxs">.background-tertiary-lightest</code>
+                  <p class="font-xxs">background-color: var(--rms-colors-tertiary-lightest)</p>
+                  <p class="font-xxs">color: var(--rms-colors-tertiary-on-lightest)
+                  </p>
+                  <div class="card card--padded background-tertiary-lighter">
+                    <code class="font-xxs">.background-tertiary-lighter</code>
+                    <p class="font-xxs">background-color: var(--rms-colors-tertiary-lighter)</p>
+                    <p class="font-xxs">color: var(--rms-colors-tertiary-on-lighter)
+                    </p>
+                    <div class="card card--padded background-tertiary-light">
+                      <code class="font-xxs">.background-tertiary-light</code>
+                      <p class="font-xxs">background-color: var(--rms-colors-tertiary-light)</p>
+                      <p class="font-xxs">color: var(--rms-colors-tertiary-on-light)
+                      </p>
+                      <div class="card card--padded background-tertiary-base">
+                        <code class="font-xxs">.background-tertiary-base</code>
+                        <p class="font-xxs">background-color: var(--rms-colors-tertiary-base)</p>
+                        <p class="font-xxs">color: var(--rms-colors-tertiary-on-base)
+                        </p>
+                        <div class="card card--padded background-tertiary-dark">
+                          <code class="font-xxs">.background-tertiary-dark</code>
+                          <p class="font-xxs">background-color: var(--rms-colors-tertiary-dark)</p>
+                          <p class="font-xxs">color: var(--rms-colors-tertiary-on-dark)
+                          </p>
+                          <div class="card card--padded background-tertiary-darker">
+                            <code class="font-xxs">.background-tertiary-darker</code>
+                            <p class="font-xxs">background-color: var(--rms-colors-tertiary-darker)</p>
+                            <p class="font-xxs">color: var(--rms-colors-tertiary-on-darker)
+                            </p>
+                            <div class="card card--padded background-tertiary-darkest">
+                              <code class="font-xxs">.background-tertiary-darkest</code>
+                              <p class="font-xxs">background-color: var(--rms-colors-tertiary-darkest)</p>
+                              <p class="font-xxs">color: var(--rms-colors-tertiary-on-darkest)</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-top-md">
+              <h4>Neutral</h4>
+              <div class="flex layout-row gap-md">
+                <div class="card card--padded background-neutral-lightest">
+                  <code class="font-xxs">.background-neutral-lightest</code>
+                  <p class="font-xxs">background-color: var(--rms-colors-neutral-lightest)</p>
+                  <p class="font-xxs">color: var(--rms-colors-neutral-on-lightest)
+                  </p>
+                  <div class="card card--padded background-neutral-lighter">
+                    <code class="font-xxs">.background-neutral-lighter</code>
+                    <p class="font-xxs">background-color: var(--rms-colors-neutral-lighter)</p>
+                    <p class="font-xxs">color: var(--rms-colors-neutral-on-lighter)
+                    </p>
+                    <div class="card card--padded background-neutral-light">
+                      <code class="font-xxs">.background-neutral-light</code>
+                      <p class="font-xxs">background-color: var(--rms-colors-neutral-light)</p>
+                      <p class="font-xxs">color: var(--rms-colors-neutral-on-light)
+                      </p>
+                      <div class="card card--padded background-neutral-base">
+                        <code class="font-xxs">.background-neutral-base</code>
+                        <p class="font-xxs">background-color: var(--rms-colors-neutral-base)</p>
+                        <p class="font-xxs">color: var(--rms-colors-neutral-on-base)
+                        </p>
+                        <div class="card card--padded background-neutral-dark">
+                          <code class="font-xxs">.background-neutral-dark</code>
+                          <p class="font-xxs">background-color: var(--rms-colors-neutral-dark)</p>
+                          <p class="font-xxs">color: var(--rms-colors-neutral-on-dark)
+                          </p>
+                          <div class="card card--padded background-neutral-darker">
+                            <code class="font-xxs">.background-neutral-darker</code>
+                            <p class="font-xxs">background-color: var(--rms-colors-neutral-darker)</p>
+                            <p class="font-xxs">color: var(--rms-colors-neutral-on-darker)
+                            </p>
+                            <div class="card card--padded background-neutral-darkest">
+                              <code class="font-xxs">.background-neutral-darkest</code>
+                              <p class="font-xxs">background-color: var(--rms-colors-neutral-darkest)</p>
+                              <p class="font-xxs">color: var(--rms-colors-neutral-on-darkest)</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-top-md">
+              <h4>Neutral Variant</h4>
+              <div class="flex layout-row gap-md">
+                <div class="card card--padded background-neutral-variant-lightest">
+                  <code class="font-xxs">.background-neutral-variant-lightest</code>
+                  <p class="font-xxs">background-color: var(--rms-colors-neutral-variant-lightest)</p>
+                  <p class="font-xxs">color: var(--rms-colors-neutral-variant-on-lightest)
+                  </p>
+                  <div class="card card--padded background-neutral-variant-lighter">
+                    <code class="font-xxs">.background-neutral-variant-lighter</code>
+                    <p class="font-xxs">background-color: var(--rms-colors-neutral-variant-lighter)</p>
+                    <p class="font-xxs">color: var(--rms-colors-neutral-variant-on-lighter)
+                    </p>
+                    <div class="card card--padded background-neutral-variant-light">
+                      <code class="font-xxs">.background-neutral-variant-light</code>
+                      <p class="font-xxs">background-color: var(--rms-colors-neutral-variant-light)</p>
+                      <p class="font-xxs">color: var(--rms-colors-neutral-variant-on-light)
+                      </p>
+                      <div class="card card--padded background-neutral-variant-base">
+                        <code class="font-xxs">.background-neutral-variant-base</code>
+                        <p class="font-xxs">background-color: var(--rms-colors-neutral-variant-base)</p>
+                        <p class="font-xxs">color: var(--rms-colors-neutral-variant-on-base)
+                        </p>
+                        <div class="card card--padded background-neutral-variant-dark">
+                          <code class="font-xxs">.background-neutral-variant-dark</code>
+                          <p class="font-xxs">background-color: var(--rms-colors-neutral-variant-dark)</p>
+                          <p class="font-xxs">color: var(--rms-colors-neutral-variant-on-dark)
+                          </p>
+                          <div class="card card--padded background-neutral-variant-darker">
+                            <code class="font-xxs">.background-neutral-variant-darker</code>
+                            <p class="font-xxs">background-color: var(--rms-colors-neutral-variant-darker)</p>
+                            <p class="font-xxs">color: var(--rms-colors-neutral-variant-on-darker)
+                            </p>
+                            <div class="card card--padded background-neutral-variant-darkest">
+                              <code class="font-xxs">.background-neutral-variant-darkest</code>
+                              <p class="font-xxs">background-color: var(--rms-colors-neutral-variant-darkest)</p>
+                              <p class="font-xxs">color: var(--rms-colors-neutral-variant-on-darkest)</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="margin-top-md">
+              <h4>Miscellaneous</h4>
+              <div class="flex layout-row gap-md flex-wrap">
+                <div class="swatch shadow-x-small" style="background: var(--rms-colors-background); color: var(--rms-colors-on-background)" >Background (Neutral 98)</div>
+                <div class="swatch shadow-x-small" style="background: var(--rms-colors-on-background); color: var(--rms-colors-background)">On Background (Neutral 10)</div>
+                <div class="swatch shadow-x-small" style="background: var(--rms-colors-outline); color: var(--rms-colors-background)">Outline (Neutral Variant 80)</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Text Colors</h2>
+            <p>Badges</p>
+          </div>
+          <div class="card__body">
+            <h4>Danger</h4>
+            <div class="flex layout-row gap-md flex-wrap margin-bottom-md">
+              <div class="swatch" style="background: var(--rms-colors-alerts-danger-lighter)">
+                <span>--rms-colors-alerts-danger-lighter</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-danger-light)">
+                <span>--rms-colors-alerts-danger-light</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-danger-base)">
+                <span>--rms-colors-alerts-danger-base</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-danger-dark)">
+                <span>--rms-colors-alerts-danger-dark</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-danger-darker)">
+                <span>--rms-colors-alerts-danger-darker</span>
+              </div>
+            </div>
+
+            <h4>Warning</h4>
+            <div class="flex layout-row gap-md flex-wrap margin-bottom-md">
+              <div class="swatch" style="background: var(--rms-colors-alerts-warning-lighter)">
+                <span>--rms-colors-alerts-warning-lighter</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-warning-light)">
+                <span>--rms-colors-alerts-warning-light</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-warning-base)">
+                <span>--rms-colors-alerts-warning-base</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-warning-dark)">
+                <span>--rms-colors-alerts-warning-dark</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-warning-darker)">
+                <span>--rms-colors-alerts-warning-darker</span>
+              </div>
+            </div>
+
+            <h4>Info</h4>
+            <div class="flex layout-row gap-md flex-wrap margin-bottom-md">
+              <div class="swatch" style="background: var(--rms-colors-alerts-info-lighter)">
+                <span>--rms-colors-alerts-info-lighter</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-info-light)">
+                <span>--rms-colors-alerts-info-light</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-info-base)">
+                <span>--rms-colors-alerts-info-base</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-info-dark)">
+                <span>--rms-colors-alerts-info-dark</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-info-darker)">
+                <span>--rms-colors-alerts-info-darker</span>
+              </div>
+            </div>
+
+            <h4>Notice</h4>
+            <div class="flex layout-row gap-md flex-wrap margin-bottom-md">
+              <div class="swatch" style="background: var(--rms-colors-alerts-notice-lighter)">
+                <span>--rms-colors-alerts-notice-lighter</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-notice-light)">
+                <span>--rms-colors-alerts-notice-light</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-notice-base)">
+                <span>--rms-colors-alerts-notice-base</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-notice-dark)">
+                <span>--rms-colors-alerts-notice-dark</span>
+              </div>
+              <div class="swatch" style="background: var(--rms-colors-alerts-notice-darker)">
+                <span>--rms-colors-alerts-notice-darker</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Cards</h2>
+          </div>
+          <div class="card__body">
+            <div class="flex layout-row gap-md flex-wrap">
+              <div class="card">
+                <span>Just a Card</span>
+                <div>
+                  <code>.card</code>
+                </div>
+              </div>
+              <div class="card card--padded">
+                <span>Padded Card</span>
+                <div>
+                  <code>.card.card--padded</code>
+                </div>
+              </div>
+              <div class="card shadow-medium">
+                <div class="card__header">
+                  <span>Card with Shadow</span>
+                </div>
+                <div class="card__body">
+                  <code>.card.shadow-medium</code>
+                </div>
+              </div>
+            </div>
+
+            <div class="card margin-top-md">
+              <div class="card__header background-primary-lighter">
+                <h3>Colored with header and body</h3>
+              </div>
+              <div class="card__body background-primary-lightest">
+                <pre>
+                  <div>.card</div>
+                  <div class="margin-left-sm">.card__header.background-primary-lighter</div>
+                  <div class="margin-left-sm">.card__body.background-primary-lightest</div>
+                </pre>
+              </div>
+            </div>
+            <div class="card shadow-large margin-top-md">
+              <div class="card__header background-primary-darker">
+                <div class="flex justify-between items-center">
+                  <h3>Styled</h3>
+                  <button class="btn btn--primary">Edit</button>
+                </div>
+              </div>
+              <div class="card__body background-primary-dark">
+                <pre>
+                  <div>.card.shadow-large</div>
+                  <div class="margin-left-sm">.card__header.background-primary-darker</div>
+                  <div class="margin-left-sm">.card__body.background-primary-dark</div>
+                  <div class="margin-left-sm">.card__footer.background-primary-base</div>
+                </pre>
+              </div>
+              <div class="card__footer background-primary-base">
+                <span>Footer</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Button</h2>
+          </div>
+          <div class="card__body">
+            <div class="flex justify-between items-center flex-wrap gap-md margin-bottom-sm">
+              <button class="btn">Basic</button>
+              <button class="btn--outline">Outline</a>
+              <button class="btn--outline btn--rounded">Rounded</button>
+              <button class="btn--outline btn--small">Small</button>
+              <button class="btn--active">Active</button>
+            </div>
+
+            <div class="flex justify-between items-center flex-wrap gap-md margin-bottom-sm">
+              <button class="btn--primary">Primary</button>
+              <button class="btn--outline btn--primary">Primary Outline</button>
+              <button class="btn--outline btn--primary btn--rounded">Primary Rounded</button>
+              <button class="btn--outline btn--primary btn--small">Primary Small</button>
+            </div>
+
+            <div class="flex justify-between items-center flex-wrap gap-md margin-bottom-sm">
+              <button class="btn--secondary">Secondary</button>
+              <button class="btn--outline btn--secondary">Secondary Outline</button>
+              <button class="btn--outline btn--secondary btn--rounded">Secondary Rounded</button>
+              <button class="btn--outline btn--secondary btn--small">Secondary Small</button>
+            </div>
+
+            <div class="flex justify-between items-center flex-wrap gap-md">
+              <button class="btn--tertiary">Tertiary</button>
+              <button class="btn--outline btn--tertiary">Tertiary Outline</button>
+              <button class="btn--outline btn--tertiary btn--rounded">Tertiary Rounded</button>
+              <button class="btn--outline btn--tertiary btn--small">Tertiary Small</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Form</h2>
+          </div>
+          <div class="card__body">
+            <div class="form__error-summary">
+              <h2>2 errors prohibited this from being saved</h2>
+              <ul>
+                <li>Tags rank is not a number</li>
+                <li>Title can't be blank
+                </li>
+              </ul>
+            </div>
+            <form>
+              <div class="form__group form__input--error">
+                <label class="form__label">Text Input</label>
+                <span class="form__error">Can't be blank</span>
+                <input class="form__input" type="text" />
+              </div>
+              <div class="form__group">
+                <label class="form__label">Password Input</label>
+                <input class="form__input" type="password" />
+                <span class="form__hint">Here's a password hint
+                </span>
+              </div>
+              <div class="form__group">
+                <label class="form__label">Number Input</label>
+                <input class="form__input" type="number" />
+              </div>
+              <div class="form__group">
+                <label class="form__label">Email Input</label>
+                <input class="form__input" type="email" />
+              </div>
+              <div class="form__group">
+                <label class="form__label">Phone Input</label>
+                <input class="form__input" type="phone" />
+              </div>
+              <div class="form__group">
+                <label class="form__label">Select Dropdown</label>
+                <select class="form__dropdown">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3
+                  </option>
+                </select>
+              </div>
+              <div class="form__group--checkbox">
+                <input id="checkbox" type="checkbox" />
+                <label class="form__label" for="checkbox">Checkbox</label>
+              </div>
+              <div class="form__group--checkbox">
+                <input disabled="disabled" id="checkbox-disabled" type="checkbox" />
+                <label class="form__label" for="checkbox-disabled">Disabled checkbox</label>
+              </div>
+              <div class="form__group--checkbox">
+                <input checked="checked" disabled="disabled" id="checkbox-disabled-checked" type="checkbox" />
+                <label class="form__label" for="checkbox-disabled-checked">Disabled checkbox (checked)
+                </label>
+              </div>
+              <div class="form__group">
+                <input class="form__radio" id="form-radio-1" name="radio" type="radio" value="1" />
+                <label class="form__label" for="form-radio-1">Radio 1
+                </label>
+                <input class="form__radio" id="form-radio-2" name="radio" type="radio" value="2" />
+                <label class="form__label" for="form-radio-2">Radio 2
+                </label>
+              </div>
+              <div class="form__group">
+                <input class="form__radio" disabled="disabled" id="form-radio-disabled" name="disabled-radio" type="radio"
+                  value="1" />
+                <label class="form__label" for="form-radio-disabled">Radio Disabled
+                </label>
+                <input checked="checked" class="form__radio" disabled="disabled" id="form-radio-disabled-checked"
+                  name="disabled-radio" type="radio" value="1" />
+                <label class="form__label" for="form-radio-disabled-checked">Radio Disabled checked</label>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">flash</h2>
+          </div>
+          <div class="card__body">
+            <div class="flash flash--notice">
+              <div class="margin-left-md">
+                <div class="flash__message-type">Notice</div>
+                <div class="flash__message">.flash.flash--notice
+                </div>
+              </div>
+            </div>
+            <div class="flex layout-row gap-md">
+              <div class="flash flash--notice flash--demo">
+                <div class="margin-left-md">
+                  <div class="flash__message-type">Notice</div>
+                  <div class="flash__message">.flash.flash--notice
+                  </div>
+                </div>
+              </div>
+              <div class="flash flash--info flash--demo">
+                <div class="margin-left-md">
+                  <div class="flash__message-type">Info</div>
+                  <div class="flash__message">.flash.flash--info
+                  </div>
+                </div>
+              </div>
+              <div class="flash flash--alert flash--demo">
+                <div class="margin-left-md">
+                  <div class="flash__message-type">Alert</div>
+                  <div class="flash__message">.flash.flash--alert
+                  </div>
+                </div>
+              </div>
+              <div class="flash flash--warning flash--demo">
+                <div class="margin-left-md">
+                  <div class="flash__message-type">Warning</div>
+                  <div class="flash__message">.flash.flash--warning</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Tables</h2>
+          </div>
+          <div class="card__body">
+            <h2 class="margin-y-md margin-left-md">Table
+            </h2>
+            <table class="table">
+              <thead>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>
+                  <div class="text-right">Action</div>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="flex items-center justify-start margin-right-lg">
+                      Data 1
+                    </div>
+                  </td>
+                  <td>Data 2</td>
+                  <td class="text-right">
+                    <a class="btn btn--outline btn--small">Label</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center justify-start margin-right-lg">
+                      Data 4
+                    </div>
+                  </td>
+                  <td>Data 5</td>
+                  <td class="text-right">
+                    <a class="btn btn--outline btn--small">Label
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="margin-top-sm">
+              <h2 class="margin-y-md margin-left-md">Form Table
+              </h2>
+              <form>
+                <table class="table">
+                  <thead>
+                    <th>Button</th>
+                    <th>Measure</th>
+                    <th>
+                      <div class="flex justify-end">Link</div>
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input class="margin-right-sm" id="radio-1" name="radio-button" type="radio">Button 1</input>
+                      </td>
+                      <td>item/unit</td>
+                      <td>
+                        <div class="flex justify-end">Other Information</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input class="margin-right-sm" id="radio-2" name="radio-button" type="radio">Button 2</input>
+                      </td>
+                      <td>item/unit</td>
+                      <td>
+                        <div class="flex justify-end">Other Information</div>
+                      </td>
+                    </tr>
+                    <tr class="form__submit">
+                      <td>
+                      </td>
+                      <td>
+                      </td>
+                      <td>
+                        <div class="flex justify-end items-center">
+                          <button class="btn btn--outline">Cancel</button>
+                          <button class="btn btn--primary margin-left-sm" type="submit">Submit
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+            </div>
+            <div class="margin-top-sm">
+              <h2 class="margin-y-md margin-left-md">Styled Table
+              </h2>
+              <div class="card elevation-3">
+                <table class="table table--no-last-divider">
+                  <thead>
+                    <th class="background-primary-lighter">Column 1</th>
+                    <th class="background-primary-lighter">Column 2</th>
+                    <th class="background-primary-lighter">
+                      <div class="text-right">Action</div>
+                    </th>
+                  </thead>
+                  <tbody class="background-primary-lightest">
+                    <tr>
+                      <td>Data 1</td>
+                      <td>Data 2</td>
+                      <td class="text-right">
+                        <a class="btn btn--outline btn--small">Label</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Data 3</td>
+                      <td>Data 4</td>
+                      <td class="text-right">
+                        <a class="btn btn--outline btn--small">Label</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card margin-top-md">
+          <div class="card__header background-primary-lightest">
+            <h2 class="styleguide-section__title">Icons</h2>
+          </div>
+          <div class="card__body">
+            <div class="flex gap-sm">
+              <div class="card">
+                <div class="card__header">
+                  <h4>Material Icons</h4>
+                </div>
+                <div class="card__body">
+                  <div class="flex items-center margin-bottom-sm">
+                    <code>icon('settings')</code>
+                  </div>
+                  <div class="flex items-center margin-bottom-sm">
+                    <code>icon('delete', color: danger)</code>
+                  </div>
+                  <div class="flex items-center margin-bottom-sm">
+                    <code>icon('info', color: 'primary', classes: 'icon--lg')</code>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card__header">
+                  <h4>Custom Icons</h4>
+                </div>
+                <div class="card__body">
+                  <div class="flex items-center margin-bottom-sm">
+                    <span>Located in</span>
+                    <code class="margin-left-sm">app/javascript/images/icons</code>
+                  </div>
+                  <div class="flex items-center margin-bottom-sm">
+                    <code>icon('custom-icon')</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
   </body>
 </html>
