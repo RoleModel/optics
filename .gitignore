@@ -18,4 +18,5 @@ node_modules/
 .env.test
 
 # Distribution files
-dist
+dist/scss
+dist/tokens
