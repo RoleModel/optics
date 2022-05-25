@@ -73,9 +73,7 @@
 }
 
 @mixin fonts {
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-  --rm-font-family: 'Roboto', sans-serif;
-  --rm-font-weight-semi-bold: 500; // Roboto does not have a semi bold variant so we adjust down to medium
+  --rm-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
 }
 
 @mixin spacing-scales {
