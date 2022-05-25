@@ -79,16 +79,16 @@
 }
 
 @mixin spacing-scales {
-  // This is using the Golden Ratio to get these numbers
-  // Visit https://codyhouse.co/ds/globals/spacing to play around with different ratios
-  --rm-space-unit: 1rem;
-  --rm-space-3x-small: calc(0.123 * var(--rm-space-unit)); // 2px
-  --rm-space-2x-small: calc(0.236 * var(--rm-space-unit)); // 4px
-  --rm-space-x-small: calc(0.382 * var(--rm-space-unit)); // 6px
-  --rm-space-small: calc(0.618 * var(--rm-space-unit)); // 10px
-  --rm-space-medium: calc(1 * var(--rm-space-unit)); // 16px
-  --rm-space-large: calc(1.618 * var(--rm-space-unit)); // 26px
-  --rm-space-x-large: calc(2.618 * var(--rm-space-unit)); // 42px
+  --rm-space-3x-small: .2rem; // 2px
+  --rm-space-2x-small: .4rem; // 4px
+  --rm-space-x-small: .8rem; // 8px
+  --rm-space-small: 1.2rem; // 12px
+  --rm-space-medium: 1.6rem; // 16px
+  --rm-space-large: 2rem; // 20px
+  --rm-space-x-large: 2.4rem; // 24px
+  --rm-space-2x-large: 2.8rem; // 28px
+  --rm-space-3x-large: 4rem; // 40px
+  --rm-space-4x-large: 8rem; // 80px
 }
 
 @mixin shadows {
