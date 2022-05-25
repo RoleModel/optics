@@ -4,7 +4,7 @@
 
   height: 100vh;
   width: var(--rm-panel-width);
-  z-index: 100;
+  z-index: var(--rms-z-index-drawer);
   position: absolute;
   right: calc(-1 * var(--rm-panel-width)); // this pushes the panel off the sceen to the right
   background: var(--rm-color-background);

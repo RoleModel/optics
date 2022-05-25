@@ -339,6 +339,14 @@
       "medium": "",
       "large": "",
       "x-large": ""
+    },
+    "z-index": {
+      "header": "",
+      "drawer": "",
+      "dialog": "",
+      "dropdown": "",
+      "alert-group": "",
+      "tooltip": ""
     }
   }
 }

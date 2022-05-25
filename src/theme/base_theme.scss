@@ -104,6 +104,15 @@
   --rm-shadow-x-large: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
+@mixin z-indexes {
+  --rm-z-index-header: 500;
+  --rm-z-index-drawer: 700;
+  --rm-z-index-dialog: 800;
+  --rm-z-index-dropdown: 900;
+  --rm-z-index-alert-group: 950;
+  --rm-z-index-tooltip: 1000;
+}
+
 :root {
   // Color HSLs
   @include color-varieties;
@@ -126,4 +135,7 @@
 
   // Shadows
   @include shadows;
+
+  // Z Index
+  @include z-indexes;
 }

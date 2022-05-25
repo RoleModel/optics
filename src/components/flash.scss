@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   top: var(--rm-space-large);
-  z-index: 10;
+  z-index: var(--rms-z-index-alert-group);
   width: auto;
   padding: var(--rm-space-x-small) var(--rm-space-medium);
   font-size: var(--rm-font-small);
