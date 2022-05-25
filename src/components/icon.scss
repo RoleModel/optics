@@ -1,23 +1,74 @@
-// Look up icons at: https://fonts.google.com/icons
-$material-icons-font-path: '~material-icons/iconfont/';
-@import 'material-icons/iconfont/material-icons.scss';
-.material-icons {
-  font-size: 1.3em;
-  line-height: 0.9em;
+// Look up icons at: https: //fonts.google.com/icons?icon.set=Material+Symbols
+// https://github.com/marella/material-symbols/tree/main/material-symbols#readme
+$material-symbols-font-path: '~material-symbols/';
+@import '~material-symbols/outlined';
 
-  max-width: 28px;
+.material-symbols-outlined,
+.material-symbols {
+  --mso-fill: 0;
+  --mso-weight: var(--rms-font-weight-normal);
+  --mso-grade: 0;
+  --mso-optical-sizing: 20;
+
+  font-variation-settings: 'FILL' var(--mso-fill), 'wght' var(--mso-weight), 'GRAD' var(--mso-grade), 'opsz' var(--mso-optical-sizing);
+
+  font-size: 1.5em;
+  line-height: var(--rms-line-height-tight);
 }
 
-.icon--lg {
+// Fill
+.icon--outlined {
+  --mso-fill: 0;
+}
+
+.icon--filled {
+  --mso-fill: 1;
+}
+
+// Weight
+.icon--weight-light {
+  --mso-weight: var(--rms-font-weight-light);
+}
+
+.icon--weight-normal {
+  --mso-weight: var(--rms-font-weight-normal);
+}
+
+.icon--weight-semi-bold {
+  --mso-weight: var(--rms-font-weight-semi-bold);
+}
+
+.icon--weight-bold {
+  --mso-weight: var(--rms-font-weight-bold);
+}
+
+// Emphasis
+.icon--low-emphasis {
+  --mso-grade: -20;
+}
+
+.icon--normal-emphasis {
+  --mso-grade: 0;
+}
+
+.icon--high-emphasis {
+  --mso-grade: 200;
+}
+
+// Size
+.icon--medium {
+  font-size: 1.5em;
+  --mso-optical-sizing: 20;
+}
+
+.icon--large {
   font-size: 2rem;
+  --mso-optical-sizing: 40;
 }
 
-.icon--xl {
+.icon--x-large {
   font-size: 3rem;
-}
-
-.icon--xxl {
-  font-size: 4rem;
+  --mso-optical-sizing: 48;
 }
 
 .custom-icons {
@@ -25,23 +76,27 @@ $material-icons-font-path: '~material-icons/iconfont/';
   width: 24px;
   height: 24px;
 
-  &.icon--lg {
+  &.icon--medium {
+    font-size: 1.3em;
+    --mso-optical-sizing: 20;
+  }
+
+  &.icon--large {
     width: 2rem;
     height: 2rem;
   }
 
-  &.icon--xl {
+  &.icon--x-large {
     width: 3rem;
     height: 3rem;
-  }
-
-  &.icon--xxl {
-    width: 4rem;
-    height: 4rem;
   }
 }
 
 .custom-icons svg {
   width: 100%;
   height: 100%;
+}
+
+.icon-link {
+  line-height: 0;
 }
