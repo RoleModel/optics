@@ -12,7 +12,7 @@
  * governing permissions and limitations under the License.
  *
  */
- .ts-wrapper.plugin-drag_drop.multi > .ts-control > div.ui-sortable-placeholder {
+.ts-wrapper.plugin-drag_drop.multi > .ts-control > div.ui-sortable-placeholder {
   visibility: visible !important;
   background: #f2f2f2 !important;
   background: rgba(0, 0, 0, 0.06) !important;
@@ -187,18 +187,6 @@
   @extend .form__dropdown;
 
   height: 100% !important;
-
-  // border: 1px solid #d0d0d0;
-  // padding: 8px 8px;
-  // width: 100%;
-  // overflow: hidden;
-  // position: relative;
-  // z-index: 1;
-  // box-sizing: border-box;
-  // box-shadow: none;
-  // border-radius: 3px;
-  // display: flex;
-  // flex-wrap: wrap;
 }
 .ts-wrapper.multi.has-items .ts-control {
   padding: calc(8px - 2px) 8px calc(8px - 2px - 3px);
@@ -222,16 +210,12 @@
   padding: 0 6px;
   background: var(--rm-color-neutral-90);
   border-radius: 2px;
-  // background: #f2f2f2;
-  // color: #303030;
   border: 0 solid #d0d0d0;
 }
 .ts-wrapper.multi .ts-control > div.active {
   background-color: var(--rm-color-primary-dark);
   color: var(--rm-color-primary-on-dark);
 
-  // background: #e8e8e8;
-  // color: #303030;
   border: 0 solid #cacaca;
 }
 .ts-wrapper.multi.disabled .ts-control > div, .ts-wrapper.multi.disabled .ts-control > div.active {
@@ -335,8 +319,6 @@
 .ts-dropdown .option:hover,
 .ts-dropdown .active {
   background-color: var(--rm-color-primary-lightest);
-  // background-color: #f5fafd;
-  // color: #495c68;
 }
 .ts-dropdown .create:hover.create,
 .ts-dropdown .option:hover.create,
