@@ -144,16 +144,15 @@
 
 // Font size
 
-.font-xxs { font-size: var(--rm-font-2x-small); }
-.font-xs { font-size: var(--rm-font-x-small); }
-.font-sm { font-size: var(--rm-font-small); }
-.font-md { font-size: var(--rm-font-medium); }
-.font-lg { font-size: var(--rm-font-large); }
-.font-xl { font-size: var(--rm-font-x-large); }
-.font-xxl { font-size: var(--rm-font-2x-large); }
-.font-xxxl { font-size: var(--rm-font-3x-large); }
-.font-xxxxl { font-size: var(--rm-font-4x-large); }
-.font-xxxxxl { font-size: var(--rm-font-5x-large); }
+.font-x-small { font-size: var(--rm-font-x-small); }
+.font-small { font-size: var(--rm-font-small); }
+.font-medium { font-size: var(--rm-font-medium); }
+.font-large { font-size: var(--rm-font-large); }
+.font-x-large { font-size: var(--rm-font-x-large); }
+.font-2x-large { font-size: var(--rm-font-2x-large); }
+.font-3x-large { font-size: var(--rm-font-3x-large); }
+.font-4x-large { font-size: var(--rm-font-4x-large); }
+.font-5x-large { font-size: var(--rm-font-5x-large); }
 
 // Font Weight
 .font-light { font-weight: var(--rm-font-weight-light); }

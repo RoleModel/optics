@@ -47,20 +47,15 @@
 }
 
 @mixin font-scales {
-  // Visit https://codyhouse.co/ds/globals/typography to play around with different text sizes
-  --rm-font-scale-ratio: 1.15;
-  --rm-font-size-unit: 1rem;
-
-  --rm-font-2x-small: calc((var(--rm-font-size-unit) / var(--rm-font-scale-ratio)) / var(--rm-font-scale-ratio)); // ~12px
-  --rm-font-x-small: calc(var(--rm-font-2x-small) * var(--rm-font-scale-ratio)); // ~14px
-  --rm-font-small: calc(var(--rm-font-x-small) * var(--rm-font-scale-ratio)); // ~16px
-  --rm-font-medium: calc(var(--rm-font-small) * var(--rm-font-scale-ratio)); // ~18px
-  --rm-font-large: calc(var(--rm-font-medium) * var(--rm-font-scale-ratio)); // ~21px
-  --rm-font-x-large: calc(var(--rm-font-large) * var(--rm-font-scale-ratio)); // ~24px
-  --rm-font-2x-large: calc(var(--rm-font-x-large) * var(--rm-font-scale-ratio)); // ~28px
-  --rm-font-3x-large: calc(var(--rm-font-2x-large) * var(--rm-font-scale-ratio)); // ~32px
-  --rm-font-4x-large: calc(var(--rm-font-3x-large) * var(--rm-font-scale-ratio)); // ~37px
-  --rm-font-5x-large: calc(var(--rm-font-4x-large) * var(--rm-font-scale-ratio)); // ~42px
+  --rm-font-x-small: 1.2rem; // 12px
+  --rm-font-small: 1.4rem; // 14px
+  --rm-font-medium: 1.6rem; // 16px
+  --rm-font-large: 1.8rem; // 18px
+  --rm-font-x-large: 2.4rem; // 24px
+  --rm-font-2x-large: 2.8rem; // 28px
+  --rm-font-3x-large: 3.2rem; // 32px
+  --rm-font-4x-large: 3.6rem; // 36px
+  --rm-font-5x-large: 4.8rem; // 48px
 }
 
 @mixin font-weights {

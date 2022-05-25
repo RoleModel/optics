@@ -9,7 +9,7 @@ html {
   height: 100%;
 
   font-family: var(--rm-font-family);
-  font-size: 16px;
+  font-size: 62.5%; // 1rem = 10px
 }
 
 body {
@@ -17,6 +17,7 @@ body {
   overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
   background: var(--rm-color-background);
   color: var(--rm-color-on-background);
+  font-size: var(--rm-font-medium);
 }
 
 button, input, optgroup, select, textarea {
@@ -85,7 +86,7 @@ h6 {
 p {
   margin-bottom: var(--rm-space-small);
 
-  font-size: 1rem;
+  font-size: var(--rm-font-medium);
 }
 
 small {
