@@ -27,7 +27,7 @@
     color: var(--rm-color-black);
   }
 
-  @media(max-width: $breakpoint-sm) {
+  @media(max-width: $breakpoint-small) {
     align-items: center;
     min-height: var(--rm-mobile-min-height);
   }

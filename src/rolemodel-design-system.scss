@@ -9,13 +9,6 @@
 // Base Theme with tokens
 @import 'theme/base_theme';
 
-// Breakpoints - SCSS variables until support is available for custom properties
-$breakpoint-xs: 51.2rem; // ~512px phone
-$breakpoint-sm: 76.8rem; // ~768px vertical ipad
-$breakpoint-md: 102.4rem; // ~1024px landscape ipad
-$breakpoint-lg: 128rem; // ~1280px small laptop
-$breakpoint-xl: 144rem; // ~1440px big laptop
-
 // Dynamic Color Engine
 @import 'core/dynamic_color_engine';
 

@@ -399,7 +399,7 @@
     flex: 1;
   }
 
-  @media screen and (max-width: $breakpoint-sm) {
+  @media screen and (max-width: $breakpoint-small) {
     // Use flex wrapping strategy instead of responsive wrapping at sm breakpoint.
     &:not(.flex-wrap) {
       flex-direction: column;
@@ -411,7 +411,7 @@
 // Flexible Layout
 // This allows for creating a grid like area using one flex container with multiple lines
 // Percentage based widths can be used to define the areas of each row.
-// Note: This responsively breaks at $breakpoint-sm to a single column.
+// Note: This responsively breaks at $breakpoint-small to a single column.
 // You can add the .flex-no-wrap class to prevent that.
 // This can also be combined with .gap-{size} to space items without having
 // them wrap when you don't want them to.
@@ -465,7 +465,7 @@
     &.half-width { flex-basis: calc(50% - var(--rm-gap)); }
   }
 
-  @media screen and (max-width: $breakpoint-sm) {
+  @media screen and (max-width: $breakpoint-small) {
     &:not(.flex-no-wrap) {
       flex-direction: column;
 
