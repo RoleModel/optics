@@ -135,7 +135,7 @@
   vertical-align: middle;
   display: inline-block;
   padding: 0 6px;
-  border-left: 1px solid var(--rms-colors-neutral-80);
+  border-left: 1px solid var(--rm-colors-neutral-80);
   border-radius: 0 2px 2px 0;
   box-sizing: border-box;
   margin-left: 6px;
@@ -145,7 +145,7 @@
   align-self: stretch;
 }
 .ts-wrapper.plugin-remove_button .item .remove:hover {
-  background-color: var(--rms-colors-neutral-70);
+  background-color: var(--rm-colors-neutral-70);
 }
 .ts-wrapper.plugin-remove_button .item.active .remove {
   border-left-color: #cacaca;
@@ -220,15 +220,15 @@
   cursor: pointer;
   margin: 0 3px 3px 0;
   padding: 0 6px;
-  background: var(--rms-colors-neutral-90);
+  background: var(--rm-colors-neutral-90);
   border-radius: 2px;
   // background: #f2f2f2;
   // color: #303030;
   border: 0 solid #d0d0d0;
 }
 .ts-wrapper.multi .ts-control > div.active {
-  background-color: var(--rms-colors-primary-dark);
-  color: var(--rms-colors-primary-on-dark);
+  background-color: var(--rm-colors-primary-dark);
+  color: var(--rm-colors-primary-on-dark);
 
   // background: #e8e8e8;
   // color: #303030;
@@ -334,7 +334,7 @@
 .ts-dropdown .create:hover,
 .ts-dropdown .option:hover,
 .ts-dropdown .active {
-  background-color: var(--rms-colors-primary-lightest);
+  background-color: var(--rm-colors-primary-lightest);
   // background-color: #f5fafd;
   // color: #495c68;
 }

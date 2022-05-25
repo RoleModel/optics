@@ -1,17 +1,17 @@
 .sidebar {
-  --rms-sidebar-width: 280px;
+  --rm-sidebar-width: 280px;
 
   display: flex;
   flex: 1;
   overflow: auto;
-  flex: 0 0 var(--rms-sidebar-width);
+  flex: 0 0 var(--rm-sidebar-width);
   flex-direction: column;
   justify-content: flex-start;
   height: 100vh;
   width: 100%;
-  padding: var(--rms-space-medium);
-  background: var(--rms-colors-primary-lightest);
-  color: var(--rms-colors-primary-on-lightest);
+  padding: var(--rm-space-medium);
+  background: var(--rm-colors-primary-lightest);
+  color: var(--rm-colors-primary-on-lightest);
   z-index: 1;
 }
 
@@ -20,7 +20,7 @@
   flex-grow: 1;
   align-items: flex-start;
   width: 100%;
-  margin: var(--rms-space-x-large) 0 var(--rms-space-large) 0;
+  margin: var(--rm-space-x-large) 0 var(--rm-space-large) 0;
 }
 
 .sidebar-nav__list {
@@ -33,10 +33,10 @@
 .sidebar-nav__section-title {
   font-weight: 500;
 
-  margin-bottom: var(--rms-space-small);
-  padding: var(--rms-space-medium) var(--rms-space-medium);
+  margin-bottom: var(--rm-space-small);
+  padding: var(--rm-space-medium) var(--rm-space-medium);
 
-  color: var(--rms-colors-primary-on-lightest);
+  color: var(--rm-colors-primary-on-lightest);
 }
 
 .sidebar-nav__item {
@@ -45,11 +45,11 @@
   justify-content: flex-start;
   align-items: center;
   list-style: none;
-  margin-bottom: var(--rms-space-small);
-  padding: var(--rms-space-medium) var(--rms-space-medium);
-  border-radius: var(--rms-radius-x-large);
+  margin-bottom: var(--rm-space-small);
+  padding: var(--rm-space-medium) var(--rm-space-medium);
+  border-radius: var(--rm-radius-x-large);
   text-decoration: none;
-  color: var(--rms-colors-primary-on-lightest);
+  color: var(--rm-colors-primary-on-lightest);
   transition: 300ms;
   white-space: nowrap;
   overflow: hidden;
@@ -62,11 +62,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: var(--rms-space-small);
+    margin-right: var(--rm-space-small);
   }
 
   @media(max-width: $breakpoint-xs) {
-    padding: var(--rms-space-medium);
+    padding: var(--rm-space-medium);
   }
 
   &:last-of-type {
@@ -74,13 +74,13 @@
   }
 
   &:hover {
-    background: var(--rms-colors-primary-hover);
-    color: var(--rms-colors-primary-on-hover);
+    background: var(--rm-colors-primary-hover);
+    color: var(--rm-colors-primary-on-hover);
   }
 
   &.active {
-    background: var(--rms-colors-primary-base);
-    color: var(--rms-colors-primary-on-base);
+    background: var(--rm-colors-primary-base);
+    color: var(--rm-colors-primary-on-base);
   }
 }
 

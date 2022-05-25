@@ -2,42 +2,42 @@
 $semantic_color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
 @each $color in $semantic_color_varieties {
   .background-#{$color}-base {
-    background-color: var(--rms-colors-#{$color}-base);
-    color: var(--rms-colors-#{$color}-on-base);
+    background-color: var(--rm-colors-#{$color}-base);
+    color: var(--rm-colors-#{$color}-on-base);
   }
 
   .background-#{$color}-light {
-    background-color: var(--rms-colors-#{$color}-light);
-    color: var(--rms-colors-#{$color}-on-light);
+    background-color: var(--rm-colors-#{$color}-light);
+    color: var(--rm-colors-#{$color}-on-light);
   }
 
   .background-#{$color}-lighter {
-    background-color: var(--rms-colors-#{$color}-lighter);
-    color: var(--rms-colors-#{$color}-on-lighter);
+    background-color: var(--rm-colors-#{$color}-lighter);
+    color: var(--rm-colors-#{$color}-on-lighter);
   }
 
   .background-#{$color}-lightest {
-    background-color: var(--rms-colors-#{$color}-lightest);
-    color: var(--rms-colors-#{$color}-on-lightest);
+    background-color: var(--rm-colors-#{$color}-lightest);
+    color: var(--rm-colors-#{$color}-on-lightest);
   }
 
   .background-#{$color}-dark {
-    background-color: var(--rms-colors-#{$color}-dark);
-    color: var(--rms-colors-#{$color}-on-dark);
+    background-color: var(--rm-colors-#{$color}-dark);
+    color: var(--rm-colors-#{$color}-on-dark);
   }
 
   .background-#{$color}-darker {
-    background-color: var(--rms-colors-#{$color}-darker);
-    color: var(--rms-colors-#{$color}-on-darker);
+    background-color: var(--rm-colors-#{$color}-darker);
+    color: var(--rm-colors-#{$color}-on-darker);
   }
 
   .background-#{$color}-darkest {
-    background-color: var(--rms-colors-#{$color}-darkest);
-    color: var(--rms-colors-#{$color}-on-darkest);
+    background-color: var(--rm-colors-#{$color}-darkest);
+    color: var(--rm-colors-#{$color}-on-darkest);
   }
 }
 
 .background-surface {
-  background-color: var(--rms-colors-background);
-  color: var(--rms-colors-on-background);
+  background-color: var(--rm-colors-background);
+  color: var(--rm-colors-on-background);
 }
