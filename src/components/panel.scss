@@ -7,8 +7,8 @@
   z-index: 100;
   position: absolute;
   right: calc(-1 * var(--rm-panel-width)); // this pushes the panel off the sceen to the right
-  background: var(--rm-colors-background);
-  color: var(--rm-colors-on-background);
+  background: var(--rm-color-background);
+  color: var(--rm-color-on-background);
   transition: right var(--rm-panel-transition-speed);
 
   overflow-y: scroll;
@@ -28,7 +28,7 @@
   border-radius: 100%;
 
   &:hover {
-    background: var(--rm-colors-neutral-variant-lightest);
+    background: var(--rm-color-neutral-variant-lightest);
   }
 }
 

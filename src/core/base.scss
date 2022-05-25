@@ -15,8 +15,8 @@ html {
 body {
   height: inherit;
   overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
-  background: var(--rm-colors-background);
-  color: var(--rm-colors-on-background);
+  background: var(--rm-color-background);
+  color: var(--rm-color-on-background);
 }
 
 button, input, optgroup, select, textarea {
@@ -36,14 +36,14 @@ button {
   background: none;
   cursor: pointer;
 
-  color: var(--rm-colors-black);
+  color: var(--rm-color-black);
 }
 
 a {
-  color: var(--rm-colors-primary-original);
+  color: var(--rm-color-primary-original);
 
   &:visited {
-    color: var(--rm-colors-primary-original);
+    color: var(--rm-color-primary-original);
   }
 }
 

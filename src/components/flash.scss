@@ -8,7 +8,7 @@
   width: auto;
   padding: var(--rm-space-x-small) var(--rm-space-medium);
   font-size: var(--rm-font-small);
-  background: var(--rm-colors-white);
+  background: var(--rm-color-white);
   animation: animateMessage 5s normal forwards;
   box-shadow: var(--rm-shadow-x-small);
   border-radius: var(--rm-radius-small);
@@ -35,33 +35,33 @@
 }
 
 .flash--notice {
-  border-color: var(--rm-colors-alerts-notice-base);
-  color: var(--rm-colors-alerts-notice-base);
+  border-color: var(--rm-color-alerts-notice-base);
+  color: var(--rm-color-alerts-notice-base);
 }
 
 .flash--info {
-  border-color: var(--rm-colors-alerts-info-base);
-  color: var(--rm-colors-alerts-info-base);
+  border-color: var(--rm-color-alerts-info-base);
+  color: var(--rm-color-alerts-info-base);
 }
 
 .flash--alert {
-  border-color: var(--rm-colors-alerts-danger-base);
-  color: var(--rm-colors-alerts-danger-base);
+  border-color: var(--rm-color-alerts-danger-base);
+  color: var(--rm-color-alerts-danger-base);
 }
 
 .flash--warning {
-  border-color: var(--rm-colors-alerts-warning-base);
-  color: var(--rm-colors-alerts-warning-base);
+  border-color: var(--rm-color-alerts-warning-base);
+  color: var(--rm-color-alerts-warning-base);
 }
 
 .flash__message-type {
   font-weight: bold;
-  color: var(--rm-colors-black);
+  color: var(--rm-color-black);
 }
 
 .flash__message {
   font-size: var(--rm-font-x-small);
-  color: var(--rm-colors-black);
+  color: var(--rm-color-black);
 }
 
 .flash--demo {

@@ -4,7 +4,7 @@ table.table {
   border-collapse: collapse;
 
   thead {
-    background: var(--rm-colors-background);
+    background: var(--rm-color-background);
   }
 
   th {
@@ -13,8 +13,8 @@ table.table {
     text-align: left;
     text-transform: uppercase;
 
-    color: var(--rm-colors-on-background);
-    border-bottom: var(--rm-border-width) solid var(--rm-colors-outline);
+    color: var(--rm-color-on-background);
+    border-bottom: var(--rm-border-width) solid var(--rm-color-outline);
 
     font-size: var(--rm-font-small);
     font-weight: 400;
@@ -31,8 +31,8 @@ table.table {
   td {
     padding: 0.75rem var(--rm-space-medium);
 
-    color: var(--rm-colors-on-background);
-    border-bottom: var(--rm-border-width) solid var(--rm-colors-outline);
+    color: var(--rm-color-on-background);
+    border-bottom: var(--rm-border-width) solid var(--rm-color-outline);
 
     font-size: 0.875rem;
   }

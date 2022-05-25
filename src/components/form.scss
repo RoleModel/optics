@@ -16,7 +16,7 @@ label {
   padding-bottom: var(--rm-space-x-small);
   margin-bottom: 0;
   line-height: 1.5;
-  color: var(--rm-colors-on-background);
+  color: var(--rm-color-on-background);
   font-weight: 400;
   font-size: var(--rm-font-small);
   letter-spacing: 0.4px;
@@ -29,18 +29,18 @@ label {
   padding: var(--rm-space-small) var(--rm-space-medium);
   font-size: var(--rm-font-small);
   line-height: 1.5;
-  background-color: var(--rm-colors-background);
-  color: var(--rm-colors-on-background);
-  border: var(--rm-border-width) solid var(--rm-colors-outline);
+  background-color: var(--rm-color-background);
+  color: var(--rm-color-on-background);
+  border: var(--rm-border-width) solid var(--rm-color-outline);
   font-weight: 300;
   will-change: border-color, box-shadow;
   border-radius: var(--rm-radius-large);
   box-shadow: none;
 
   &:focus {
-    color: var(--rm-colors-black);
+    color: var(--rm-color-black);
     outline: 0;
-    border-color: var(--rm-colors-on-background);
+    border-color: var(--rm-color-on-background);
   }
 }
 
@@ -51,9 +51,9 @@ label {
   outline: 0;
   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=') center right no-repeat;
   background-size: 30px 15px;
-  background-color: var(--rm-colors-background);
-  color: var(--rm-colors-on-background);
-  border: var(--rm-border-width) solid var(--rm-colors-outline);
+  background-color: var(--rm-color-background);
+  color: var(--rm-color-on-background);
+  border: var(--rm-border-width) solid var(--rm-color-outline);
   font-weight: 300;
   font-size: var(--rm-font-small);
   border-radius: var(--rm-radius-large);
@@ -64,12 +64,12 @@ label {
 
   &:hover:not(:focus):not(:disabled) {
     cursor: pointer;
-    border-color: var(--rm-colors-on-background);
+    border-color: var(--rm-color-on-background);
   }
 
   &:focus,
   &:focus-within {
-    border-color: var(--rm-colors-on-background);
+    border-color: var(--rm-color-on-background);
     outline: 0;
   }
 }
@@ -87,7 +87,7 @@ label {
   label {
     // Label text
     position: relative;
-    color: var(--rm-colors-on-background);
+    color: var(--rm-color-on-background);
     font-weight: 500;
     cursor: pointer;
     display: inline;
@@ -108,16 +108,16 @@ label {
 
     &:hover {
       &:before {
-        border-color: var(--rm-colors-primary-base);
+        border-color: var(--rm-color-primary-base);
       }
     }
 
     &:before {
       width: 20px;
       height: 20px;
-      background: var(--rm-colors-background);
-      color: var(--rm-colors-on-background);
-      border: var(--rm-border-width) solid var(--rm-colors-outline);
+      background: var(--rm-color-background);
+      color: var(--rm-color-on-background);
+      border: var(--rm-border-width) solid var(--rm-color-outline);
       border-radius: var(--rm-space-2x-small);
       cursor: pointer;
       transition: background 300ms, border 300ms;
@@ -133,15 +133,15 @@ label {
     &:checked {
       + label:before {
         // background color of box when checked
-        background: var(--rm-colors-primary-base);
-        border-color: var(--rm-colors-primary-base);
+        background: var(--rm-color-primary-base);
+        border-color: var(--rm-color-primary-base);
       }
 
       + label:after {
         // Checkmark
         transition: transform 300ms ease, opacity 200ms;
         transform: rotate(var(--r, -40deg));
-        border: 3px solid var(--rm-colors-white);
+        border: 3px solid var(--rm-color-white);
         border-top-style: none;
         border-right-style: none;
         left: -11px;
@@ -157,21 +157,21 @@ label {
         cursor: not-allowed;
 
         &:before{
-          border-color: var(--rm-colors-neutral-variant-on-lightest);
-          background-color: var(--rm-colors-neutral-variant-lightest);
+          border-color: var(--rm-color-neutral-variant-on-lightest);
+          background-color: var(--rm-color-neutral-variant-lightest);
           cursor: not-allowed;
         }
 
         &:after {
           // Checkmark
-          border-color: var(--rm-colors-neutral-variant-on-lightest);
+          border-color: var(--rm-color-neutral-variant-on-lightest);
         }
       }
 
       &:checked {
         + label:before {
-          border-color: var(--rm-colors-neutral-variant-on-lightest);
-          background-color: var(--rm-colors-neutral-variant-lightest);
+          border-color: var(--rm-color-neutral-variant-on-lightest);
+          background-color: var(--rm-color-neutral-variant-lightest);
           cursor: not-allowed;
         }
       }
@@ -190,15 +190,15 @@ label {
   position: relative;
   margin: 0;
   cursor: pointer;
-  border: var(--rm-border-width) solid var(--rm-colors-outline);
-  background: var(--rm-colors-white);
+  border: var(--rm-border-width) solid var(--rm-color-outline);
+  background: var(--rm-color-white);
   transition: background .3s, border-color .3s, box-shadow .2s;
   border-radius: 50%;
 
   // Blue circle when checked
   &:checked {
-    background: var(--rm-colors-primary-base);
-    border-color: var(--rm-colors-primary-base);
+    background: var(--rm-color-primary-base);
+    border-color: var(--rm-color-primary-base);
   }
 
   // White circle
@@ -206,7 +206,7 @@ label {
     width: 19px;
     height: 19px;
     border-radius: 50%;
-    background: var(--rm-colors-white);
+    background: var(--rm-color-white);
     transform: scale(.5);
     opacity: 1;
     content: '';
@@ -219,23 +219,23 @@ label {
 
   // Disabled
   &:disabled {
-    background-color: var(--rm-colors-neutral-variant-lightest);
-    border-color: var(--rm-colors-neutral-variant-on-lightest);
+    background-color: var(--rm-color-neutral-variant-lightest);
+    border-color: var(--rm-color-neutral-variant-on-lightest);
     cursor: not-allowed;
 
     &:after {
       // hide white circle
       opacity: 0;
-      color: var(--rm-colors-neutral-variant-on-lightest);
-      background-color: var(--rm-colors-neutral-variant-on-lightest);
+      color: var(--rm-color-neutral-variant-on-lightest);
+      background-color: var(--rm-color-neutral-variant-on-lightest);
     }
 
     &:checked {
       // background: var(--neutral-layer-2-background);
       // border-color: var(--neutral-layer-2-border);
 
-      background-color: var(--rm-colors-neutral-variant-lightest);
-      border-color: var(--rm-colors-neutral-variant-on-lightest);
+      background-color: var(--rm-color-neutral-variant-lightest);
+      border-color: var(--rm-color-neutral-variant-on-lightest);
 
       &:after {
         // show white circle
@@ -252,13 +252,13 @@ label {
   &:hover {
     &:not(:checked) {
       &:not(:disabled) {
-        border-color: var(--rm-colors-primary-base);
+        border-color: var(--rm-color-primary-base);
       }
     }
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px var(--rm-colors-info-lighter);
+    box-shadow: 0 0 0 2px var(--rm-color-info-lighter);
   }
 
   & + label {
@@ -273,10 +273,10 @@ label {
 
 // simple_form styles
 .form__error-summary {
-  background-color: var(--rm-colors-alerts-danger-lighter);
-  color: var(--rm-colors-alerts-danger-on-lighter);
+  background-color: var(--rm-color-alerts-danger-lighter);
+  color: var(--rm-color-alerts-danger-on-lighter);
 
-  border: 1px solid var(--rm-colors-alerts-danger-light);
+  border: 1px solid var(--rm-color-alerts-danger-light);
   border-radius: var(--rm-radius-large);
 
   margin-bottom: var(--rm-space-large);
@@ -293,8 +293,8 @@ label {
 .form__error {
   padding: var(--rm-space-2x-small) var(--rm-space-x-small);
 
-  background: var(--rm-colors-alerts-danger-lighter);
-  color: var(--rm-colors-alerts-danger-on-lighter);
+  background: var(--rm-color-alerts-danger-lighter);
+  color: var(--rm-color-alerts-danger-on-lighter);
 
   border-radius: var(--rm-radius-medium);
 
@@ -305,7 +305,7 @@ label {
 
 .from__input--error {
   input {
-    box-shadow: inset 0 0 0 1px var(--rm-colors-alerts-danger-dark);
+    box-shadow: inset 0 0 0 1px var(--rm-color-alerts-danger-dark);
   }
 }
 

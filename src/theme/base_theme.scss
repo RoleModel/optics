@@ -4,29 +4,29 @@
 // A 5 color theme. 3 main colors, a neutral color and a neutral variant
 @mixin color-varieties {
   // Primary HSL
-  --rm-colors-primary-h: var(--rm-colors-blue-h);
-  --rm-colors-primary-s: var(--rm-colors-blue-s);
-  --rm-colors-primary-l: var(--rm-colors-blue-l);
+  --rm-color-primary-h: var(--rm-color-blue-h);
+  --rm-color-primary-s: var(--rm-color-blue-s);
+  --rm-color-primary-l: var(--rm-color-blue-l);
 
   // Secondary HSL
-  --rm-colors-secondary-h: var(--rm-colors-teal-h);
-  --rm-colors-secondary-s: var(--rm-colors-teal-s);
-  --rm-colors-secondary-l: var(--rm-colors-teal-l);
+  --rm-color-secondary-h: var(--rm-color-teal-h);
+  --rm-color-secondary-s: var(--rm-color-teal-s);
+  --rm-color-secondary-l: var(--rm-color-teal-l);
 
   // Tertiary HSL
-  --rm-colors-tertiary-h: var(--rm-colors-violet-h);
-  --rm-colors-tertiary-s: var(--rm-colors-violet-s);
-  --rm-colors-tertiary-l: var(--rm-colors-violet-l);
+  --rm-color-tertiary-h: var(--rm-color-violet-h);
+  --rm-color-tertiary-s: var(--rm-color-violet-s);
+  --rm-color-tertiary-l: var(--rm-color-violet-l);
 
   // Neutral HSL
-  --rm-colors-neutral-h: 240;
-  --rm-colors-neutral-s: 2%;
-  --rm-colors-neutral-l: 38%;
+  --rm-color-neutral-h: 240;
+  --rm-color-neutral-s: 2%;
+  --rm-color-neutral-l: 38%;
 
   // Neutral Variant HSL
-  --rm-colors-neutral-variant-h: 229;
-  --rm-colors-neutral-variant-s: 6%;
-  --rm-colors-neutral-variant-l: 38%;
+  --rm-color-neutral-variant-h: 229;
+  --rm-color-neutral-variant-s: 6%;
+  --rm-color-neutral-variant-l: 38%;
 }
 
 @mixin border-radius {
@@ -43,7 +43,7 @@
 }
 
 @mixin border-strokes {
-  --rm-border-card-outline: 0 0 0 var(--rm-border-width) var(--rm-colors-outline);
+  --rm-border-card-outline: 0 0 0 var(--rm-border-width) var(--rm-color-outline);
 }
 
 @mixin font-scales {

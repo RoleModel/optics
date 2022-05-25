@@ -5,10 +5,10 @@
   span {
     display: block;
     padding: var(--rm-space-2x-small) var(--rm-space-x-small);
-    background: var(--rm-colors-background);
-    color: var(--rm-colors-on-background);
+    background: var(--rm-color-background);
+    color: var(--rm-color-on-background);
 
-    border: 1px solid var(--rm-colors-outline);
+    border: 1px solid var(--rm-color-outline);
     border-radius: var(--rm-radius-large);
   }
 }

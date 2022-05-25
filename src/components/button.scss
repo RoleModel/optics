@@ -21,10 +21,10 @@
   font-weight: 500;
   text-align: center;
   text-decoration: none;
-  color: var(--rm-colors-black);
+  color: var(--rm-color-black);
 
   &:visited {
-    color: var(--rm-colors-black);
+    color: var(--rm-color-black);
   }
 
   @media(max-width: $breakpoint-sm) {
@@ -44,15 +44,15 @@ $button_varieties: 'primary', 'secondary', 'tertiary';
   .btn--#{$color} {
     @extend %btn;
 
-    background: var(--rm-colors-#{$color}-base);
-    color: var(--rm-colors-#{$color}-on-base);
+    background: var(--rm-color-#{$color}-base);
+    color: var(--rm-color-#{$color}-on-base);
 
     &:visited {
-      color: var(--rm-colors-#{$color}-on-base);
+      color: var(--rm-color-#{$color}-on-base);
     }
 
     &:hover {
-      background: var(--rm-colors-#{$color}-hover);
+      background: var(--rm-color-#{$color}-hover);
     }
   }
 }
@@ -60,30 +60,30 @@ $button_varieties: 'primary', 'secondary', 'tertiary';
 .btn--outline {
   @extend %btn;
 
-  background: var(--rm-colors-background);
-  border: var(--rm-border-width) solid var(--rm-colors-outline);
-  color: var(--rm-colors-on-background);
+  background: var(--rm-color-background);
+  border: var(--rm-border-width) solid var(--rm-color-outline);
+  color: var(--rm-color-on-background);
 
   &:visited {
-    color: var(--rm-colors-on-background);
+    color: var(--rm-color-on-background);
   }
 
   &:hover {
-    background: var(--rm-colors-neutral-variant-lightest);
-    color: var(--rm-colors-neutral-variant-on-lightest);
+    background: var(--rm-color-neutral-variant-lightest);
+    color: var(--rm-color-neutral-variant-on-lightest);
   }
 
   @each $color in $button_varieties {
     &.btn--#{$color} {
-      border-color: var(--rm-colors-#{$color}-base);
-      color: var(--rm-colors-#{$color}-base);
+      border-color: var(--rm-color-#{$color}-base);
+      color: var(--rm-color-#{$color}-base);
 
       &:visited {
-        color: var(--rm-colors-#{$color}-base);
+        color: var(--rm-color-#{$color}-base);
       }
 
       &:hover {
-        background: var(--rm-colors-#{$color}-lightest);
+        background: var(--rm-color-#{$color}-lightest);
       }
     }
   }
@@ -112,15 +112,15 @@ $button_varieties: 'primary', 'secondary', 'tertiary';
 .btn--active {
   @extend %btn;
 
-  background: var(--rm-colors-primary-base);
-  color: var(--rm-colors-primary-on-base);
+  background: var(--rm-color-primary-base);
+  color: var(--rm-color-primary-on-base);
 
   &:visited {
-    color: var(--rm-colors-primary-on-base);
+    color: var(--rm-color-primary-on-base);
   }
 
   &:hover:not(:disabled) {
-    background: var(--rm-colors-primary-base);
-    color: var(--rm-colors-primary-on-base);
+    background: var(--rm-color-primary-base);
+    color: var(--rm-color-primary-on-base);
   }
 }

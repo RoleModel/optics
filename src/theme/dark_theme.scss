@@ -1,50 +1,50 @@
 @mixin default_colors_dark {
-  --rm-colors-white: hsl(0, 0%, 0%);
-  --rm-colors-black: hsl(0, 100%, 100%);
+  --rm-color-white: hsl(0, 0%, 0%);
+  --rm-color-black: hsl(0, 100%, 100%);
 }
 
 @mixin dynamic_color_engine_dark {
   $color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
   @each $color in $color_varieties {
     // Luminosity Scale (Weighted towards lower luminosity)
-    --rm-colors-#{$color}-luminosity-0:   hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 0%);
-    --rm-colors-#{$color}-luminosity-10:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 5%);
-    --rm-colors-#{$color}-luminosity-20:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 10%);
-    --rm-colors-#{$color}-luminosity-30:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 15%);
-    --rm-colors-#{$color}-luminosity-40:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 20%);
-    --rm-colors-#{$color}-luminosity-50:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 25%);
-    --rm-colors-#{$color}-luminosity-60:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 35%);
-    --rm-colors-#{$color}-luminosity-70:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 40%);
-    --rm-colors-#{$color}-luminosity-80:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 60%);
-    --rm-colors-#{$color}-luminosity-90:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 70%);
-    --rm-colors-#{$color}-luminosity-95:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 80%);
-    --rm-colors-#{$color}-luminosity-98:  hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 90%);
-    --rm-colors-#{$color}-luminosity-100: hsl(var(--rm-colors-#{$color}-h), var(--rm-colors-#{$color}-s), 100%);
+    --rm-color-#{$color}-luminosity-0:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 0%);
+    --rm-color-#{$color}-luminosity-10:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 5%);
+    --rm-color-#{$color}-luminosity-20:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 10%);
+    --rm-color-#{$color}-luminosity-30:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 15%);
+    --rm-color-#{$color}-luminosity-40:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 20%);
+    --rm-color-#{$color}-luminosity-50:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 25%);
+    --rm-color-#{$color}-luminosity-60:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 35%);
+    --rm-color-#{$color}-luminosity-70:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 40%);
+    --rm-color-#{$color}-luminosity-80:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 60%);
+    --rm-color-#{$color}-luminosity-90:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 70%);
+    --rm-color-#{$color}-luminosity-95:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 80%);
+    --rm-color-#{$color}-luminosity-98:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 90%);
+    --rm-color-#{$color}-luminosity-100: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 100%);
 
     // Semantic Scale
-    --rm-colors-#{$color}-lightest: var(--rm-colors-#{$color}-luminosity-20);
-    --rm-colors-#{$color}-lighter:  var(--rm-colors-#{$color}-luminosity-30);
-    --rm-colors-#{$color}-light:    var(--rm-colors-#{$color}-luminosity-40);
-    --rm-colors-#{$color}-hover:    var(--rm-colors-#{$color}-luminosity-40);
-    --rm-colors-#{$color}-base:     var(--rm-colors-#{$color}-luminosity-50);
-    --rm-colors-#{$color}-dark:     var(--rm-colors-#{$color}-luminosity-60);
-    --rm-colors-#{$color}-darker:   var(--rm-colors-#{$color}-luminosity-70);
-    --rm-colors-#{$color}-darkest:  var(--rm-colors-#{$color}-luminosity-80);
+    --rm-color-#{$color}-lightest: var(--rm-color-#{$color}-luminosity-20);
+    --rm-color-#{$color}-lighter:  var(--rm-color-#{$color}-luminosity-30);
+    --rm-color-#{$color}-light:    var(--rm-color-#{$color}-luminosity-40);
+    --rm-color-#{$color}-hover:    var(--rm-color-#{$color}-luminosity-40);
+    --rm-color-#{$color}-base:     var(--rm-color-#{$color}-luminosity-50);
+    --rm-color-#{$color}-dark:     var(--rm-color-#{$color}-luminosity-60);
+    --rm-color-#{$color}-darker:   var(--rm-color-#{$color}-luminosity-70);
+    --rm-color-#{$color}-darkest:  var(--rm-color-#{$color}-luminosity-80);
 
-    --rm-colors-#{$color}-on-lightest: var(--rm-colors-#{$color}-luminosity-100);
-    --rm-colors-#{$color}-on-lighter:  var(--rm-colors-#{$color}-luminosity-100);
-    --rm-colors-#{$color}-on-light:    var(--rm-colors-#{$color}-luminosity-98);
-    --rm-colors-#{$color}-on-hover:    var(--rm-colors-#{$color}-luminosity-98);
-    --rm-colors-#{$color}-on-base:     var(--rm-colors-#{$color}-luminosity-95);
-    --rm-colors-#{$color}-on-dark:     var(--rm-colors-#{$color}-luminosity-98);
-    --rm-colors-#{$color}-on-darker:   var(--rm-colors-#{$color}-luminosity-100);
-    --rm-colors-#{$color}-on-darkest:  var(--rm-colors-#{$color}-luminosity-10);
+    --rm-color-#{$color}-on-lightest: var(--rm-color-#{$color}-luminosity-100);
+    --rm-color-#{$color}-on-lighter:  var(--rm-color-#{$color}-luminosity-100);
+    --rm-color-#{$color}-on-light:    var(--rm-color-#{$color}-luminosity-98);
+    --rm-color-#{$color}-on-hover:    var(--rm-color-#{$color}-luminosity-98);
+    --rm-color-#{$color}-on-base:     var(--rm-color-#{$color}-luminosity-95);
+    --rm-color-#{$color}-on-dark:     var(--rm-color-#{$color}-luminosity-98);
+    --rm-color-#{$color}-on-darker:   var(--rm-color-#{$color}-luminosity-100);
+    --rm-color-#{$color}-on-darkest:  var(--rm-color-#{$color}-luminosity-10);
   }
 
   // Miscellaneous
-  --rm-colors-background:    var(--rm-colors-neutral-luminosity-10);
-  --rm-colors-on-background: var(--rm-colors-neutral-luminosity-90);
-  --rm-colors-outline:       var(--rm-colors-neutral-variant-luminosity-40);
+  --rm-color-background:    var(--rm-color-neutral-luminosity-10);
+  --rm-color-on-background: var(--rm-color-neutral-luminosity-90);
+  --rm-color-outline:       var(--rm-color-neutral-variant-luminosity-40);
 }
 
 :root {
@@ -56,25 +56,25 @@
 
       // Modal Overrides
       .modal__content {
-        background: var(--rm-colors-neutral-variant-lightest);
-        color: var(--rm-colors-neutral-variant-on-lightest);
+        background: var(--rm-color-neutral-variant-lightest);
+        color: var(--rm-color-neutral-variant-on-lightest);
       }
 
       .modal__close {
         &:hover {
-          background: var(--rm-colors-background);
+          background: var(--rm-color-background);
         }
       }
 
       // Panel Overrides
       .panel {
-        background: var(--rm-colors-neutral-variant-lightest);
-        color: var(--rm-colors-neutral-variant-on-lightest);
+        background: var(--rm-color-neutral-variant-lightest);
+        color: var(--rm-color-neutral-variant-on-lightest);
       }
 
       .panel__close {
         &:hover {
-          background: var(--rm-colors-background);
+          background: var(--rm-color-background);
         }
       }
     }
