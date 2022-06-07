@@ -10,13 +10,9 @@ $material-symbols-font-path: '~material-symbols/';
   --mso-grade: 0;
   --mso-optical-sizing: 20;
 
-  --mso-font-medium: 1.5em;
-  --mso-font-large: 2em;
-  --mso-font-x-large: 3em;
-
   font-variation-settings: 'FILL' var(--mso-fill), 'wght' var(--mso-weight), 'GRAD' var(--mso-grade), 'opsz' var(--mso-optical-sizing);
 
-  font-size: var(--mso-font-medium);
+  font-size: var(--rm-font-medium);
   line-height: var(--rms-line-height-tight);
 }
 
@@ -61,38 +57,38 @@ $material-symbols-font-path: '~material-symbols/';
 
 // Size
 .icon--medium {
-  font-size: var(--mso-font-medium);
+  font-size: var(--rm-font-medium);
   --mso-optical-sizing: 20;
 }
 
 .icon--large {
-  font-size: var(--mso-font-large);
+  font-size: var(--rm-font-large);
   --mso-optical-sizing: 40;
 }
 
 .icon--x-large {
-  font-size: var(--mso-font-x-large);
+  font-size: var(--rm-font-x-large);
   --mso-optical-sizing: 48;
 }
 
 .custom-icons {
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: var(--rm-font-x-large);
+  height: var(--rm-font-x-large);
 
   &.icon--medium {
-    font-size: 1.3em;
+    font-size: var(--rm-font-small);
     --mso-optical-sizing: 20;
   }
 
   &.icon--large {
-    width: 2rem;
-    height: 2rem;
+    width: var(--rm-font-large);
+    height: var(--rm-font-large);
   }
 
   &.icon--x-large {
-    width: 3rem;
-    height: 3rem;
+    width: var(--rm-font-2x-large);
+    height: var(--rm-font-2x-large);
   }
 }
 
