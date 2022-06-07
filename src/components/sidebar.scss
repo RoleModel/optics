@@ -12,7 +12,7 @@
   padding: var(--rm-space-medium);
   background: var(--rm-color-primary-lightest);
   color: var(--rm-color-primary-on-lightest);
-  z-index: var(--rms-z-index-drawer); // Might make sense to make a new z-index for this
+  z-index: var(--rm-z-index-drawer); // Might make sense to make a new z-index for this
 }
 
 .sidebar-nav__wrapper {
