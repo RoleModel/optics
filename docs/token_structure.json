@@ -287,6 +287,8 @@
     },
     "border": {
       "width": "",
+      "width-large": "",
+      "width-x-large": "",
       "card-outline": ""
     },
     "shadow": {
@@ -305,9 +307,6 @@
       "pill": ""
     },
     "font": {
-      "scale-ratio": "",
-      "scale-size-unit": "",
-      "2x-small": "",
       "x-small": "",
       "small": "",
       "medium": "",
@@ -318,32 +317,46 @@
       "4x-large": "",
       "5x-large": "",
       "weight": {
+        "thin": "",
+        "extra-light": "",
         "light": "",
         "normal": "",
+        "medium": "",
         "semi-bold": "",
-        "bold": ""
-      }
+        "bold": "",
+        "extra-bold": "",
+        "black": ""
+      },
+      "family": ""
     },
     "line-height": {
       "none": "",
+      "densest": "",
+      "denser": "",
       "dense": "",
-      "normal": "",
-      "loose": ""
+      "base": "",
+      "loose": "",
+      "looser": "",
+      "loosest": ""
     },
     "space": {
-      "unit": "",
       "3x-small": "",
       "2x-small": "",
       "x-small": "",
       "small": "",
       "medium": "",
       "large": "",
-      "x-large": ""
+      "x-large": "",
+      "2x-large": "",
+      "3x-large": "",
+      "4x-large": ""
     },
     "z-index": {
       "header": "",
       "drawer": "",
       "dialog": "",
+      "dialog-backdrop": "",
+      "dialog-content": "",
       "dropdown": "",
       "alert-group": "",
       "tooltip": ""
