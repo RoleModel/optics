@@ -66,10 +66,14 @@
 }
 
 @mixin line-heights {
-  --rm-line-height-none:   0;
-  --rm-line-height-dense:  1.3;
-  --rm-line-height-normal: 1.5;
-  --rm-line-height-loose:  1.6;
+  --rm-line-height-none:    0;
+  --rm-line-height-densest: 1;
+  --rm-line-height-denser:  1.15;
+  --rm-line-height-dense:   1.3;
+  --rm-line-height-base:    1.5;
+  --rm-line-height-loose:   1.6;
+  --rm-line-height-looser:  1.7;
+  --rm-line-height-loosest: 1.8;
 }
 
 @mixin fonts {
