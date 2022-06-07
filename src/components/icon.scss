@@ -10,9 +10,13 @@ $material-symbols-font-path: '~material-symbols/';
   --mso-grade: 0;
   --mso-optical-sizing: 20;
 
+  --mso-font-medium: 1.5em;
+  --mso-font-large: 2em;
+  --mso-font-x-large: 3em;
+
   font-variation-settings: 'FILL' var(--mso-fill), 'wght' var(--mso-weight), 'GRAD' var(--mso-grade), 'opsz' var(--mso-optical-sizing);
 
-  font-size: 1.5em;
+  font-size: var(--mso-font-medium);
   line-height: var(--rms-line-height-tight);
 }
 
@@ -57,17 +61,17 @@ $material-symbols-font-path: '~material-symbols/';
 
 // Size
 .icon--medium {
-  font-size: 1.5em;
+  font-size: var(--mso-font-medium);
   --mso-optical-sizing: 20;
 }
 
 .icon--large {
-  font-size: 2rem;
+  font-size: var(--mso-font-large);
   --mso-optical-sizing: 40;
 }
 
 .icon--x-large {
-  font-size: 3rem;
+  font-size: var(--mso-font-x-large);
   --mso-optical-sizing: 48;
 }
 
