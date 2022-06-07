@@ -31,7 +31,7 @@
 }
 
 .sidebar-nav__section-title {
-  font-weight: 500;
+  font-weight: var(--rm-font-weight-medium);
 
   margin-bottom: var(--rm-space-small);
   padding: var(--rm-space-medium) var(--rm-space-medium);

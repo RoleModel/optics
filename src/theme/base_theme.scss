@@ -59,10 +59,15 @@
 }
 
 @mixin font-weights {
-  --rm-font-weight-light:     300;
-  --rm-font-weight-normal:    400;
-  --rm-font-weight-semi-bold: 600;
-  --rm-font-weight-bold:      700;
+  --rm-font-weight-thin:        100;
+  --rm-font-weight-extra-light: 200;
+  --rm-font-weight-light:       300;
+  --rm-font-weight-normal:      400;
+  --rm-font-weight-medium:      500;
+  --rm-font-weight-semi-bold:   600;
+  --rm-font-weight-bold:        700;
+  --rm-font-weight-extra-bold:  800;
+  --rm-font-weight-black:       900;
 }
 
 @mixin line-heights {

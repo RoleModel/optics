@@ -17,7 +17,7 @@ label {
   margin-bottom: 0;
   line-height: 1.5;
   color: var(--rm-color-on-background);
-  font-weight: 400;
+  font-weight: var(--rm-font-weight-normal);
   font-size: var(--rm-font-small);
   letter-spacing: 0.4px;
 }
@@ -32,7 +32,7 @@ label {
   background-color: var(--rm-color-background);
   color: var(--rm-color-on-background);
   border: var(--rm-border-width) solid var(--rm-color-outline);
-  font-weight: 300;
+  font-weight: var(--rm-font-weight-light);
   will-change: border-color, box-shadow;
   border-radius: var(--rm-radius-large);
   box-shadow: none;
@@ -54,7 +54,7 @@ label {
   background-color: var(--rm-color-background);
   color: var(--rm-color-on-background);
   border: var(--rm-border-width) solid var(--rm-color-outline);
-  font-weight: 300;
+  font-weight: var(--rm-font-weight-light);
   font-size: var(--rm-font-small);
   border-radius: var(--rm-radius-large);
   display: inline-block;
@@ -88,7 +88,7 @@ label {
     // Label text
     position: relative;
     color: var(--rm-color-on-background);
-    font-weight: 500;
+    font-weight: var(--rm-font-weight-medium);
     cursor: pointer;
     display: inline;
     line-height: var(--rm-font-medium);
