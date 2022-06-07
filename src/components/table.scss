@@ -29,12 +29,12 @@ table.table {
   }
 
   td {
-    padding: 0.75rem var(--rm-space-medium);
+    padding: var(--rm-font-x-small) var(--rm-space-medium);
 
     color: var(--rm-color-on-background);
     border-bottom: var(--rm-border-width) solid var(--rm-color-outline);
 
-    font-size: 0.875rem;
+    font-size: var(--rm-font-small);
   }
 }
 
