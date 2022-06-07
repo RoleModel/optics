@@ -6,14 +6,14 @@ $material-symbols-font-path: '~material-symbols/';
 .material-symbols-outlined,
 .material-symbols {
   --mso-fill: 0;
-  --mso-weight: var(--rms-font-weight-normal);
+  --mso-weight: var(--rm-font-weight-normal);
   --mso-grade: 0;
   --mso-optical-sizing: 20;
 
   font-variation-settings: 'FILL' var(--mso-fill), 'wght' var(--mso-weight), 'GRAD' var(--mso-grade), 'opsz' var(--mso-optical-sizing);
 
   font-size: var(--rm-font-medium);
-  line-height: var(--rms-line-height-tight);
+  line-height: var(--rm-line-height-tight);
 }
 
 // Fill
@@ -27,19 +27,19 @@ $material-symbols-font-path: '~material-symbols/';
 
 // Weight
 .icon--weight-light {
-  --mso-weight: var(--rms-font-weight-light);
+  --mso-weight: var(--rm-font-weight-light);
 }
 
 .icon--weight-normal {
-  --mso-weight: var(--rms-font-weight-normal);
+  --mso-weight: var(--rm-font-weight-normal);
 }
 
 .icon--weight-semi-bold {
-  --mso-weight: var(--rms-font-weight-semi-bold);
+  --mso-weight: var(--rm-font-weight-semi-bold);
 }
 
 .icon--weight-bold {
-  --mso-weight: var(--rms-font-weight-bold);
+  --mso-weight: var(--rm-font-weight-bold);
 }
 
 // Emphasis
