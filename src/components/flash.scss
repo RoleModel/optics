@@ -13,7 +13,8 @@
   box-shadow: var(--rm-shadow-x-small);
   border-radius: var(--rm-radius-small);
 
-  border-left: solid 4px;
+  border-left-width: var(--rm-border-width-x-large);
+  border-left-style: solid;
 }
 
 @keyframes animateMessage {

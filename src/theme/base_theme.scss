@@ -39,7 +39,9 @@
 }
 
 @mixin border-width {
-  --rm-border-width: 1px;
+  --rm-border-width:         1px;
+  --rm-border-width-large:   2px;
+  --rm-border-width-x-large: 4px;
 }
 
 @mixin border-strokes {
