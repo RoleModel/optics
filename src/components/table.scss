@@ -4,37 +4,37 @@ table.table {
   border-collapse: collapse;
 
   thead {
-    background: var(--rms-colors-background);
+    background: var(--rm-color-background);
   }
 
   th {
-    padding: var(--rms-space-medium) var(--rms-space-medium);
+    padding: var(--rm-space-medium) var(--rm-space-medium);
 
     text-align: left;
     text-transform: uppercase;
 
-    color: var(--rms-colors-on-background);
-    border-bottom: var(--rms-border-width) solid var(--rms-colors-outline);
+    color: var(--rm-color-on-background);
+    border-bottom: var(--rm-border-width) solid var(--rm-color-outline);
 
-    font-size: var(--rms-font-small);
-    font-weight: 400;
+    font-size: var(--rm-font-small);
+    font-weight: var(--rm-font-weight-normal);
 
     &:first-child {
-      border-top-left-radius: var(--rms-radius-medium);
+      border-top-left-radius: var(--rm-radius-medium);
     }
 
     &:last-child {
-      border-top-right-radius: var(--rms-radius-medium);
+      border-top-right-radius: var(--rm-radius-medium);
     }
   }
 
   td {
-    padding: 0.75rem var(--rms-space-medium);
+    padding: var(--rm-font-x-small) var(--rm-space-medium);
 
-    color: var(--rms-colors-on-background);
-    border-bottom: var(--rms-border-width) solid var(--rms-colors-outline);
+    color: var(--rm-color-on-background);
+    border-bottom: var(--rm-border-width) solid var(--rm-color-outline);
 
-    font-size: 0.875rem;
+    font-size: var(--rm-font-small);
   }
 }
 

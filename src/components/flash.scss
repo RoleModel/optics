@@ -1,19 +1,20 @@
 .flash {
   position: fixed;
-  right: var(--rms-space-large);
+  right: var(--rm-space-large);
   display: flex;
   align-items: center;
-  top: var(--rms-space-large);
-  z-index: 10;
+  top: var(--rm-space-large);
+  z-index: var(--rm-z-index-alert-group);
   width: auto;
-  padding: var(--rms-space-x-small) var(--rms-space-medium);
-  font-size: var(--rms-font-small);
-  background: var(--rms-colors-white);
+  padding: var(--rm-space-x-small) var(--rm-space-medium);
+  font-size: var(--rm-font-small);
+  background: var(--rm-color-white);
   animation: animateMessage 5s normal forwards;
-  box-shadow: var(--rms-shadow-x-small);
-  border-radius: var(--rms-radius-small);
+  box-shadow: var(--rm-shadow-x-small);
+  border-radius: var(--rm-radius-small);
 
-  border-left: solid 4px;
+  border-left-width: var(--rm-border-width-x-large);
+  border-left-style: solid;
 }
 
 @keyframes animateMessage {
@@ -24,10 +25,10 @@
     right: -100%;
   }
   10% {
-    right: var(--rms-space-large);
+    right: var(--rm-space-large);
   }
   70% {
-    right: var(--rms-space-large);
+    right: var(--rm-space-large);
   }
   100% {
     right: -100%;
@@ -35,33 +36,33 @@
 }
 
 .flash--notice {
-  border-color: var(--rms-colors-alerts-notice-base);
-  color: var(--rms-colors-alerts-notice-base);
+  border-color: var(--rm-color-alerts-notice-base);
+  color: var(--rm-color-alerts-notice-base);
 }
 
 .flash--info {
-  border-color: var(--rms-colors-alerts-info-base);
-  color: var(--rms-colors-alerts-info-base);
+  border-color: var(--rm-color-alerts-info-base);
+  color: var(--rm-color-alerts-info-base);
 }
 
 .flash--alert {
-  border-color: var(--rms-colors-alerts-danger-base);
-  color: var(--rms-colors-alerts-danger-base);
+  border-color: var(--rm-color-alerts-danger-base);
+  color: var(--rm-color-alerts-danger-base);
 }
 
 .flash--warning {
-  border-color: var(--rms-colors-alerts-warning-base);
-  color: var(--rms-colors-alerts-warning-base);
+  border-color: var(--rm-color-alerts-warning-base);
+  color: var(--rm-color-alerts-warning-base);
 }
 
 .flash__message-type {
   font-weight: bold;
-  color: var(--rms-colors-black);
+  color: var(--rm-color-black);
 }
 
 .flash__message {
-  font-size: var(--rms-font-x-small);
-  color: var(--rms-colors-black);
+  font-size: var(--rm-font-x-small);
+  color: var(--rm-color-black);
 }
 
 .flash--demo {

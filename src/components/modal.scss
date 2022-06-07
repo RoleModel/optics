@@ -1,7 +1,7 @@
 .modal {
   // Modals
-  --rms-modal-width: 564px;
-  --rms-modal-transition-speed: 300ms;
+  --rm-modal-width: 564px;
+  --rm-modal-transition-speed: 300ms;
 
   visibility: hidden;
   display: flex;
@@ -10,7 +10,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: var(--rm-z-index-dialog);
   overflow: hidden;
   /*Prevent Chrome on Windows from adding a focus outline. For details, see*/
   /*https://github.com/twbs/bootstrap/pull/10951.*/
@@ -26,26 +26,26 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 11;
+  z-index: var(--rm-z-index-dialog-backdrop);
   background: black;
   visibility: hidden;
   opacity: 0;
-  transition: all var(--rms-modal-transition-speed);
+  transition: all var(--rm-modal-transition-speed);
 }
 
 .modal__content {
   max-height: 500px;
-  width: var(--rms-modal-width);
-  padding: var(--rms-space-large);
-  background: var(--rms-colors-background);
-  color: var(--rms-colors-on-background);
+  width: var(--rm-modal-width);
+  padding: var(--rm-space-large);
+  background: var(--rm-color-background);
+  color: var(--rm-color-on-background);
 
-  border-radius: var(--rms-radius-large);
-  z-index: 12;
+  border-radius: var(--rm-radius-large);
+  z-index: var(--rm-z-index-dialog-content);
   transform: scale(0.7);
   opacity: 0;
   overflow-y: auto;
-  transition: all var(--rms-modal-transition-speed);
+  transition: all var(--rm-modal-transition-speed);
 }
 
 .modal--active {
@@ -71,10 +71,10 @@
   float: right;
   cursor: pointer;
 
-  padding: var(--rms-space-medium);
-  border-radius: var(--rms-radius-circle);
+  padding: var(--rm-space-medium);
+  border-radius: var(--rm-radius-circle);
 
   &:hover {
-    background: var(--rms-colors-neutral-variant-lightest);
+    background: var(--rm-color-neutral-variant-lightest);
   }
 }

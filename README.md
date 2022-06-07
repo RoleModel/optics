@@ -39,7 +39,7 @@ Within them, you can set token overrides like:
 }
 
 @mixin fonts {
-  --rms-font-family: 'Poppins', 'Roboto', sans-serif;
+  --rm-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
 }
 
 :root {

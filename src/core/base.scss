@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 *, ::after, ::before {
   box-sizing: border-box;
@@ -8,15 +8,16 @@
 html {
   height: 100%;
 
-  font-family: var(--rms-font-family);
-  font-size: 16px;
+  font-family: var(--rm-font-family);
+  font-size: 62.5%; // 1rem = 10px
 }
 
 body {
   height: inherit;
   overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
-  background: var(--rms-colors-background);
-  color: var(--rms-colors-on-background);
+  background: var(--rm-color-background);
+  color: var(--rm-color-on-background);
+  font-size: var(--rm-font-medium);
 }
 
 button, input, optgroup, select, textarea {
@@ -36,14 +37,14 @@ button {
   background: none;
   cursor: pointer;
 
-  color: var(--rms-colors-black);
+  color: var(--rm-color-black);
 }
 
 a {
-  color: var(--rms-colors-primary-original);
+  color: var(--rm-color-primary-original);
 
   &:visited {
-    color: var(--rms-colors-primary-original);
+    color: var(--rm-color-primary-original);
   }
 }
 
@@ -53,66 +54,66 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, pre {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: var(--rms-space-small);
+  margin-bottom: var(--rm-space-small);
 
-  font-weight: 400;
+  font-weight: var(--rm-font-weight-normal);
 }
 
 h1 {
-  font-size: var(--rms-font-2x-large);
+  font-size: var(--rm-font-2x-large);
 }
 
 h2 {
-  font-size: var(--rms-font-x-large);
+  font-size: var(--rm-font-x-large);
 }
 
 h3 {
-  font-size: var(--rms-font-large);
+  font-size: var(--rm-font-large);
 }
 
 h4 {
-  font-size: var(--rms-font-medium);
+  font-size: var(--rm-font-medium);
 }
 
 h5 {
-  font-size: var(--rms-font-small);
+  font-size: var(--rm-font-small);
 }
 
 h6 {
-  font-size: var(--rms-font-x-small);
+  font-size: var(--rm-font-x-small);
 }
 
 p {
-  margin-bottom: var(--rms-space-small);
+  margin-bottom: var(--rm-space-small);
 
-  font-size: 1rem;
+  font-size: var(--rm-font-medium);
 }
 
 small {
-  font-size: var(--rms-font-small);
+  font-size: var(--rm-font-small);
 }
 
 .container {
-  max-width: $breakpoint-md;
+  max-width: $breakpoint-medium;
   margin: 0 auto;
-  padding: 0 var(--rms-space-large);
+  padding: 0 var(--rm-space-large);
   width: 100%;
 }
 
 .container--sm {
-  max-width: $breakpoint-sm;
+  max-width: $breakpoint-small;
 }
 
 .container--md-padding {
-  padding: 0 var(--rms-space-medium);
+  padding: 0 var(--rm-space-medium);
 }
 
 .container--sm-padding {
-  padding: 0 var(--rms-space-small);
+  padding: 0 var(--rm-space-small);
 }
 
 .container--xs {
-  max-width: $breakpoint-xs;
+  max-width: $breakpoint-x-small;
 }
 
 .wrapper--main {

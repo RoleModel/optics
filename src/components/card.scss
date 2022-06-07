@@ -16,17 +16,17 @@
 //   {{Content}}
 
 :root {
-  --rms-card-padding: var(--rms-space-medium);
+  --rm-card-padding: var(--rm-space-medium);
 }
 
 %card {
   position: relative;
-  background-color: var(--rms-colors-white);
-  box-shadow: var(--rms-border-card-outline);
-  border-radius: var(--rms-radius-medium);
-  color: var(--rms-colors-neutral-darker);
-  font-size: var(--rms-font-medium);
-  line-height: var(--rms-line-height-normal);
+  background-color: var(--rm-color-white);
+  box-shadow: var(--rm-border-card-outline);
+  border-radius: var(--rm-radius-medium);
+  color: var(--rm-color-neutral-darker);
+  font-size: var(--rm-font-medium);
+  line-height: var(--rm-line-height-base);
   overflow: hidden;
 }
 
@@ -37,13 +37,13 @@
 .card--padded {
   @extend %card;
 
-  padding: var(--rms-card-padding);
+  padding: var(--rm-card-padding);
 }
 
 .card__header,
 .card__body,
 .card__footer {
-  padding: var(--rms-card-padding);
+  padding: var(--rm-card-padding);
 }
 
 .card__header {

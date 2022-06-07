@@ -1,14 +1,14 @@
 .swatch {
-  padding: var(--rms-space-medium);
-  height: 7rem;
+  padding: var(--rm-space-medium);
+  height: var(--rm-space-4x-large);
 
   span {
     display: block;
-    padding: var(--rms-space-2x-small) var(--rms-space-x-small);
-    background: var(--rms-colors-background);
-    color: var(--rms-colors-on-background);
+    padding: var(--rm-space-2x-small) var(--rm-space-x-small);
+    background: var(--rm-color-background);
+    color: var(--rm-color-on-background);
 
-    border: 1px solid var(--rms-colors-outline);
-    border-radius: var(--rms-radius-large);
+    border: 1px solid var(--rm-color-outline);
+    border-radius: var(--rm-radius-large);
   }
 }

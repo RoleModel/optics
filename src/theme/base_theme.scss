@@ -4,105 +4,131 @@
 // A 5 color theme. 3 main colors, a neutral color and a neutral variant
 @mixin color-varieties {
   // Primary HSL
-  --rms-colors-primary-h: var(--rms-colors-blue-h);
-  --rms-colors-primary-s: var(--rms-colors-blue-s);
-  --rms-colors-primary-l: var(--rms-colors-blue-l);
+  --rm-color-primary-h: var(--rm-color-blue-h);
+  --rm-color-primary-s: var(--rm-color-blue-s);
+  --rm-color-primary-l: var(--rm-color-blue-l);
 
   // Secondary HSL
-  --rms-colors-secondary-h: var(--rms-colors-teal-h);
-  --rms-colors-secondary-s: var(--rms-colors-teal-s);
-  --rms-colors-secondary-l: var(--rms-colors-teal-l);
+  --rm-color-secondary-h: var(--rm-color-teal-h);
+  --rm-color-secondary-s: var(--rm-color-teal-s);
+  --rm-color-secondary-l: var(--rm-color-teal-l);
 
   // Tertiary HSL
-  --rms-colors-tertiary-h: var(--rms-colors-violet-h);
-  --rms-colors-tertiary-s: var(--rms-colors-violet-s);
-  --rms-colors-tertiary-l: var(--rms-colors-violet-l);
+  --rm-color-tertiary-h: var(--rm-color-violet-h);
+  --rm-color-tertiary-s: var(--rm-color-violet-s);
+  --rm-color-tertiary-l: var(--rm-color-violet-l);
 
   // Neutral HSL
-  --rms-colors-neutral-h: 240;
-  --rms-colors-neutral-s: 2%;
-  --rms-colors-neutral-l: 38%;
+  --rm-color-neutral-h: 240;
+  --rm-color-neutral-s: 2%;
+  --rm-color-neutral-l: 38%;
 
   // Neutral Variant HSL
-  --rms-colors-neutral-variant-h: 229;
-  --rms-colors-neutral-variant-s: 6%;
-  --rms-colors-neutral-variant-l: 38%;
+  --rm-color-neutral-variant-h: 229;
+  --rm-color-neutral-variant-s: 6%;
+  --rm-color-neutral-variant-l: 38%;
 }
 
 @mixin border-radius {
-  --rms-radius-small:   2px;
-  --rms-radius-medium:  4px;
-  --rms-radius-large:   8px;
-  --rms-radius-x-large: 16px;
-  --rms-radius-circle:  50%;
-  --rms-radius-pill:    9999px;
+  --rm-radius-small:   2px;
+  --rm-radius-medium:  4px;
+  --rm-radius-large:   8px;
+  --rm-radius-x-large: 16px;
+  --rm-radius-circle:  50%;
+  --rm-radius-pill:    9999px;
 }
 
 @mixin border-width {
-  --rms-border-width: 1px;
+  --rm-border-width:         1px;
+  --rm-border-width-large:   2px;
+  --rm-border-width-x-large: 4px;
 }
 
 @mixin border-strokes {
-  --rms-border-card-outline: 0 0 0 var(--rms-border-width) var(--rms-colors-outline);
+  --rm-border-card-outline: 0 0 0 var(--rm-border-width) var(--rm-color-outline);
 }
 
 @mixin font-scales {
-  // Visit https://codyhouse.co/ds/globals/typography to play around with different text sizes
-  --rms-font-scale-ratio: 1.15;
-  --rms-font-size-unit: 1rem;
-
-  --rms-font-2x-small: calc((var(--rms-font-size-unit) / var(--rms-font-scale-ratio)) / var(--rms-font-scale-ratio)); // ~12px
-  --rms-font-x-small: calc(var(--rms-font-2x-small) * var(--rms-font-scale-ratio)); // ~14px
-  --rms-font-small: calc(var(--rms-font-x-small) * var(--rms-font-scale-ratio)); // ~16px
-  --rms-font-medium: calc(var(--rms-font-small) * var(--rms-font-scale-ratio)); // ~18px
-  --rms-font-large: calc(var(--rms-font-medium) * var(--rms-font-scale-ratio)); // ~21px
-  --rms-font-x-large: calc(var(--rms-font-large) * var(--rms-font-scale-ratio)); // ~24px
-  --rms-font-2x-large: calc(var(--rms-font-x-large) * var(--rms-font-scale-ratio)); // ~28px
-  --rms-font-3x-large: calc(var(--rms-font-2x-large) * var(--rms-font-scale-ratio)); // ~32px
-  --rms-font-4x-large: calc(var(--rms-font-3x-large) * var(--rms-font-scale-ratio)); // ~37px
-  --rms-font-5x-large: calc(var(--rms-font-4x-large) * var(--rms-font-scale-ratio)); // ~42px
+  --rm-font-x-small: 1.2rem; // 12px
+  --rm-font-small: 1.4rem; // 14px
+  --rm-font-medium: 1.6rem; // 16px
+  --rm-font-large: 1.8rem; // 18px
+  --rm-font-x-large: 2.4rem; // 24px
+  --rm-font-2x-large: 2.8rem; // 28px
+  --rm-font-3x-large: 3.2rem; // 32px
+  --rm-font-4x-large: 3.6rem; // 36px
+  --rm-font-5x-large: 4.8rem; // 48px
 }
 
 @mixin font-weights {
-  --rms-font-weight-light:     300;
-  --rms-font-weight-normal:    400;
-  --rms-font-weight-semi-bold: 600;
-  --rms-font-weight-bold:      700;
+  --rm-font-weight-thin:        100;
+  --rm-font-weight-extra-light: 200;
+  --rm-font-weight-light:       300;
+  --rm-font-weight-normal:      400;
+  --rm-font-weight-medium:      500;
+  --rm-font-weight-semi-bold:   600;
+  --rm-font-weight-bold:        700;
+  --rm-font-weight-extra-bold:  800;
+  --rm-font-weight-black:       900;
 }
 
 @mixin line-heights {
-  --rms-line-height-none:   0;
-  --rms-line-height-dense:  1.3;
-  --rms-line-height-normal: 1.5;
-  --rms-line-height-loose:  1.6;
+  --rm-line-height-none:    0;
+  --rm-line-height-densest: 1;
+  --rm-line-height-denser:  1.15;
+  --rm-line-height-dense:   1.3;
+  --rm-line-height-base:    1.5;
+  --rm-line-height-loose:   1.6;
+  --rm-line-height-looser:  1.7;
+  --rm-line-height-loosest: 1.8;
 }
 
 @mixin fonts {
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-  --rms-font-family: 'Roboto', sans-serif;
-  --rms-font-weight-semi-bold: 500; // Roboto does not have a semi bold variant so we adjust down to medium
+  --rm-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
 }
 
 @mixin spacing-scales {
-  // This is using the Golden Ratio to get these numbers
-  // Visit https://codyhouse.co/ds/globals/spacing to play around with different ratios
-  --rms-space-unit: 1rem;
-  --rms-space-3x-small: calc(0.123 * var(--rms-space-unit)); // 2px
-  --rms-space-2x-small: calc(0.236 * var(--rms-space-unit)); // 4px
-  --rms-space-x-small: calc(0.382 * var(--rms-space-unit)); // 6px
-  --rms-space-small: calc(0.618 * var(--rms-space-unit)); // 10px
-  --rms-space-medium: calc(1 * var(--rms-space-unit)); // 16px
-  --rms-space-large: calc(1.618 * var(--rms-space-unit)); // 26px
-  --rms-space-x-large: calc(2.618 * var(--rms-space-unit)); // 42px
+  --rm-space-3x-small: .2rem; // 2px
+  --rm-space-2x-small: .4rem; // 4px
+  --rm-space-x-small: .8rem; // 8px
+  --rm-space-small: 1.2rem; // 12px
+  --rm-space-medium: 1.6rem; // 16px
+  --rm-space-large: 2rem; // 20px
+  --rm-space-x-large: 2.4rem; // 24px
+  --rm-space-2x-large: 2.8rem; // 28px
+  --rm-space-3x-large: 4rem; // 40px
+  --rm-space-4x-large: 8rem; // 80px
 }
 
 @mixin shadows {
-  --rms-shadow-x-small: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --rms-shadow-small: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --rms-shadow-medium: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
-  --rms-shadow-large: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
-  --rms-shadow-x-large: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+  --rm-shadow-x-small: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --rm-shadow-small: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --rm-shadow-medium: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+  --rm-shadow-large: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+  --rm-shadow-x-large: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
+
+@mixin z-indexes {
+  --rm-z-index-header: 500;
+  --rm-z-index-drawer: 700;
+  --rm-z-index-dialog: 800;
+  --rm-z-index-dialog-backdrop: 801;
+  --rm-z-index-dialog-content: 802;
+  --rm-z-index-dropdown: 900;
+  --rm-z-index-alert-group: 950;
+  --rm-z-index-tooltip: 1000;
+}
+
+// We use SCSS variables outside the root since support for custom properties / css variables
+// is not yet available
+// https://drafts.csswg.org/css-env-1/
+// https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+
+$breakpoint-x-small: 51.2rem; // ~512px phone
+$breakpoint-small: 76.8rem; // ~768px vertical ipad
+$breakpoint-medium: 102.4rem; // ~1024px landscape ipad
+$breakpoint-large: 128rem; // ~1280px small laptop
+$breakpoint-x-large: 144rem; // ~1440px big laptop
 
 :root {
   // Color HSLs
@@ -126,4 +152,7 @@
 
   // Shadows
   @include shadows;
+
+  // Z Index
+  @include z-indexes;
 }

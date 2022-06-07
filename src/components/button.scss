@@ -1,5 +1,5 @@
 :root {
-  --rms-mobile-min-height: 44px;
+  --rm-mobile-min-height: 44px;
 }
 
 %btn {
@@ -11,25 +11,25 @@
   transition: all 120ms;
 
   border: 0;
-  border-width: var(--rms-border-width);
-  border-radius: var(--rms-radius-large);
-  padding: var(--rms-space-small) var(--rms-space-medium);
+  border-width: var(--rm-border-width);
+  border-radius: var(--rm-radius-large);
+  padding: var(--rm-space-small) var(--rm-space-medium);
 
   cursor: pointer;
 
-  font-size: var(--rms-font-x-small);
-  font-weight: 500;
+  font-size: var(--rm-font-x-small);
+  font-weight: var(--rm-font-weight-medium);
   text-align: center;
   text-decoration: none;
-  color: var(--rms-colors-black);
+  color: var(--rm-color-black);
 
   &:visited {
-    color: var(--rms-colors-black);
+    color: var(--rm-color-black);
   }
 
-  @media(max-width: $breakpoint-sm) {
+  @media(max-width: $breakpoint-small) {
     align-items: center;
-    min-height: var(--rms-mobile-min-height);
+    min-height: var(--rm-mobile-min-height);
   }
 }
 
@@ -44,15 +44,15 @@ $button_varieties: 'primary', 'secondary', 'tertiary';
   .btn--#{$color} {
     @extend %btn;
 
-    background: var(--rms-colors-#{$color}-base);
-    color: var(--rms-colors-#{$color}-on-base);
+    background: var(--rm-color-#{$color}-base);
+    color: var(--rm-color-#{$color}-on-base);
 
     &:visited {
-      color: var(--rms-colors-#{$color}-on-base);
+      color: var(--rm-color-#{$color}-on-base);
     }
 
     &:hover {
-      background: var(--rms-colors-#{$color}-hover);
+      background: var(--rm-color-#{$color}-hover);
     }
   }
 }
@@ -60,30 +60,30 @@ $button_varieties: 'primary', 'secondary', 'tertiary';
 .btn--outline {
   @extend %btn;
 
-  background: var(--rms-colors-background);
-  border: var(--rms-border-width) solid var(--rms-colors-outline);
-  color: var(--rms-colors-on-background);
+  background: var(--rm-color-background);
+  border: var(--rm-border-width) solid var(--rm-color-outline);
+  color: var(--rm-color-on-background);
 
   &:visited {
-    color: var(--rms-colors-on-background);
+    color: var(--rm-color-on-background);
   }
 
   &:hover {
-    background: var(--rms-colors-neutral-variant-lightest);
-    color: var(--rms-colors-neutral-variant-on-lightest);
+    background: var(--rm-color-neutral-variant-lightest);
+    color: var(--rm-color-neutral-variant-on-lightest);
   }
 
   @each $color in $button_varieties {
     &.btn--#{$color} {
-      border-color: var(--rms-colors-#{$color}-base);
-      color: var(--rms-colors-#{$color}-base);
+      border-color: var(--rm-color-#{$color}-base);
+      color: var(--rm-color-#{$color}-base);
 
       &:visited {
-        color: var(--rms-colors-#{$color}-base);
+        color: var(--rm-color-#{$color}-base);
       }
 
       &:hover {
-        background: var(--rms-colors-#{$color}-lightest);
+        background: var(--rm-color-#{$color}-lightest);
       }
     }
   }
@@ -92,35 +92,35 @@ $button_varieties: 'primary', 'secondary', 'tertiary';
 .btn--small {
   @extend %btn;
 
-  font-size: var(--rms-font-2x-small);
-  padding: var(--rms-space-x-small) var(--rms-space-medium);
+  font-size: var(--rm-font-2x-small);
+  padding: var(--rm-space-x-small) var(--rm-space-medium);
 }
 
 .btn--large {
   @extend %btn;
 
-  font-size: var(--rms-font-small);
-  padding: var(--rms-space-medium) var(--rms-space-large);
+  font-size: var(--rm-font-small);
+  padding: var(--rm-space-medium) var(--rm-space-large);
 }
 
 .btn--pill {
   @extend %btn;
 
-  border-radius: var(--rms-radius-pill);
+  border-radius: var(--rm-radius-pill);
 }
 
 .btn--active {
   @extend %btn;
 
-  background: var(--rms-colors-primary-base);
-  color: var(--rms-colors-primary-on-base);
+  background: var(--rm-color-primary-base);
+  color: var(--rm-color-primary-on-base);
 
   &:visited {
-    color: var(--rms-colors-primary-on-base);
+    color: var(--rm-color-primary-on-base);
   }
 
   &:hover:not(:disabled) {
-    background: var(--rms-colors-primary-base);
-    color: var(--rms-colors-primary-on-base);
+    background: var(--rm-color-primary-base);
+    color: var(--rm-color-primary-on-base);
   }
 }
