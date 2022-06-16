@@ -1,0 +1,11 @@
+.chip {
+  box-shadow: var(--rm-border-card-outline);
+  border-radius: var(--rm-radius-pill);
+
+  padding: var(--rm-space-2x-small) var(--rm-space-small);
+
+  font-size: var(--rm-font-x-small);
+
+  background: var(--rm-color-background);
+  color: var(--rm-color-on-background);
+}
