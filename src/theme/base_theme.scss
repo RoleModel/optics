@@ -124,11 +124,11 @@
 // https://drafts.csswg.org/css-env-1/
 // https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 
-$breakpoint-x-small: 51.2rem; // ~512px phone
-$breakpoint-small: 76.8rem; // ~768px vertical ipad
-$breakpoint-medium: 102.4rem; // ~1024px landscape ipad
-$breakpoint-large: 128rem; // ~1280px small laptop
-$breakpoint-x-large: 144rem; // ~1440px big laptop
+$breakpoint-x-small: 51.2em; // ~512px phone
+$breakpoint-small: 76.8em; // ~768px vertical ipad
+$breakpoint-medium: 102.4em; // ~1024px landscape ipad
+$breakpoint-large: 128em; // ~1280px small laptop
+$breakpoint-x-large: 144em; // ~1440px medium laptop
 
 :root {
   // Color HSLs
