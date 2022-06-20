@@ -23,24 +23,26 @@
     --rm-color-#{$color}-luminosity-98:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 98%);
     // luminosity 100 is white
 
-    // Semantic Scale
-    --rm-color-#{$color}-lightest: var(--rm-color-#{$color}-luminosity-95);
-    --rm-color-#{$color}-lighter:  var(--rm-color-#{$color}-luminosity-80);
-    --rm-color-#{$color}-light:    var(--rm-color-#{$color}-luminosity-70);
-    --rm-color-#{$color}-hover:    var(--rm-color-#{$color}-luminosity-50);
-    --rm-color-#{$color}-base:     var(--rm-color-#{$color}-luminosity-40);
-    --rm-color-#{$color}-dark:     var(--rm-color-#{$color}-luminosity-30);
-    --rm-color-#{$color}-darker:   var(--rm-color-#{$color}-luminosity-20);
-    --rm-color-#{$color}-darkest:  var(--rm-color-#{$color}-luminosity-10);
+    // Semantic Scale: plus adds luminosity, minus removes luminosity
+    // This borrows from the photography concept of Aperture f-stops.
+    // https://www.adobe.com/creativecloud/photography/discover/f-stop.html
+    --rm-color-#{$color}-plus-3:  var(--rm-color-#{$color}-luminosity-95);
+    --rm-color-#{$color}-plus-2:  var(--rm-color-#{$color}-luminosity-80);
+    --rm-color-#{$color}-plus-1:  var(--rm-color-#{$color}-luminosity-70);
+    --rm-color-#{$color}-hover:   var(--rm-color-#{$color}-luminosity-50);
+    --rm-color-#{$color}-base:    var(--rm-color-#{$color}-luminosity-40);
+    --rm-color-#{$color}-minus-1: var(--rm-color-#{$color}-luminosity-30);
+    --rm-color-#{$color}-minus-2: var(--rm-color-#{$color}-luminosity-20);
+    --rm-color-#{$color}-minus-3: var(--rm-color-#{$color}-luminosity-10);
 
-    --rm-color-#{$color}-on-lightest: var(--rm-color-#{$color}-luminosity-10);
-    --rm-color-#{$color}-on-lighter:  var(--rm-color-#{$color}-luminosity-10);
-    --rm-color-#{$color}-on-light:    var(--rm-color-black);
-    --rm-color-#{$color}-on-hover:    var(--rm-color-black);
-    --rm-color-#{$color}-on-base:     var(--rm-color-white);
-    --rm-color-#{$color}-on-dark:     var(--rm-color-#{$color}-luminosity-90);
-    --rm-color-#{$color}-on-darker:   var(--rm-color-#{$color}-luminosity-95);
-    --rm-color-#{$color}-on-darkest:  var(--rm-color-white);
+    --rm-color-#{$color}-on-plus-3:  var(--rm-color-#{$color}-luminosity-10);
+    --rm-color-#{$color}-on-plus-2:  var(--rm-color-#{$color}-luminosity-10);
+    --rm-color-#{$color}-on-plus-1:  var(--rm-color-black);
+    --rm-color-#{$color}-on-hover:   var(--rm-color-black);
+    --rm-color-#{$color}-on-base:    var(--rm-color-white);
+    --rm-color-#{$color}-on-minus-1: var(--rm-color-#{$color}-luminosity-90);
+    --rm-color-#{$color}-on-minus-2: var(--rm-color-#{$color}-luminosity-95);
+    --rm-color-#{$color}-on-minus-3: var(--rm-color-white);
   }
 
   // Miscellaneous Colors
