@@ -7,7 +7,7 @@
   $color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
   @each $color in $color_varieties {
     // Luminosity Scale (Weighted towards lower luminosity)
-    --rm-color-#{$color}-luminosity-0:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 0%);
+    // luminosity 0 is black
     --rm-color-#{$color}-luminosity-10:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 5%);
     --rm-color-#{$color}-luminosity-20:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 10%);
     --rm-color-#{$color}-luminosity-30:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 15%);
@@ -19,7 +19,7 @@
     --rm-color-#{$color}-luminosity-90:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 70%);
     --rm-color-#{$color}-luminosity-95:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 80%);
     --rm-color-#{$color}-luminosity-98:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 90%);
-    --rm-color-#{$color}-luminosity-100: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 100%);
+    // luminosity 100 is white
 
     // Semantic Scale
     --rm-color-#{$color}-lightest: var(--rm-color-#{$color}-luminosity-20);
@@ -31,13 +31,13 @@
     --rm-color-#{$color}-darker:   var(--rm-color-#{$color}-luminosity-70);
     --rm-color-#{$color}-darkest:  var(--rm-color-#{$color}-luminosity-80);
 
-    --rm-color-#{$color}-on-lightest: var(--rm-color-#{$color}-luminosity-100);
-    --rm-color-#{$color}-on-lighter:  var(--rm-color-#{$color}-luminosity-100);
+    --rm-color-#{$color}-on-lightest: var(--rm-color-white);
+    --rm-color-#{$color}-on-lighter:  var(--rm-color-white);
     --rm-color-#{$color}-on-light:    var(--rm-color-#{$color}-luminosity-98);
     --rm-color-#{$color}-on-hover:    var(--rm-color-#{$color}-luminosity-98);
     --rm-color-#{$color}-on-base:     var(--rm-color-#{$color}-luminosity-95);
     --rm-color-#{$color}-on-dark:     var(--rm-color-#{$color}-luminosity-98);
-    --rm-color-#{$color}-on-darker:   var(--rm-color-#{$color}-luminosity-100);
+    --rm-color-#{$color}-on-darker:   var(--rm-color-white);
     --rm-color-#{$color}-on-darkest:  var(--rm-color-#{$color}-luminosity-10);
   }
 

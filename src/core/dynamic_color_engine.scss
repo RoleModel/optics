@@ -35,12 +35,12 @@
 
     --rm-color-#{$color}-on-lightest: var(--rm-color-#{$color}-luminosity-10);
     --rm-color-#{$color}-on-lighter:  var(--rm-color-#{$color}-luminosity-10);
-    --rm-color-#{$color}-on-light:    var(--rm-color-#{$color}-luminosity-0);
-    --rm-color-#{$color}-on-hover:    var(--rm-color-#{$color}-luminosity-0);
-    --rm-color-#{$color}-on-base:     var(--rm-color-#{$color}-luminosity-100);
+    --rm-color-#{$color}-on-light:    var(--rm-color-black);
+    --rm-color-#{$color}-on-hover:    var(--rm-color-black);
+    --rm-color-#{$color}-on-base:     var(--rm-color-white);
     --rm-color-#{$color}-on-dark:     var(--rm-color-#{$color}-luminosity-90);
     --rm-color-#{$color}-on-darker:   var(--rm-color-#{$color}-luminosity-95);
-    --rm-color-#{$color}-on-darkest:  var(--rm-color-#{$color}-luminosity-100);
+    --rm-color-#{$color}-on-darkest:  var(--rm-color-white);
   }
 
   // Miscellaneous Colors
