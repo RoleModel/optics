@@ -7,33 +7,33 @@ $semantic_color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutr
   }
 
   .background-#{$color}-light {
-    background-color: var(--rm-color-#{$color}-light);
-    color: var(--rm-color-#{$color}-on-light);
+    background-color: var(--rm-color-#{$color}-plus-1);
+    color: var(--rm-color-#{$color}-on-plus-1);
   }
 
   .background-#{$color}-lighter {
-    background-color: var(--rm-color-#{$color}-lighter);
-    color: var(--rm-color-#{$color}-on-lighter);
+    background-color: var(--rm-color-#{$color}-plus-2);
+    color: var(--rm-color-#{$color}-on-plus-2);
   }
 
   .background-#{$color}-lightest {
-    background-color: var(--rm-color-#{$color}-lightest);
-    color: var(--rm-color-#{$color}-on-lightest);
+    background-color: var(--rm-color-#{$color}-plus-3);
+    color: var(--rm-color-#{$color}-on-plus-3);
   }
 
   .background-#{$color}-dark {
-    background-color: var(--rm-color-#{$color}-dark);
-    color: var(--rm-color-#{$color}-on-dark);
+    background-color: var(--rm-color-#{$color}-minus-1);
+    color: var(--rm-color-#{$color}-on-minus-1);
   }
 
   .background-#{$color}-darker {
-    background-color: var(--rm-color-#{$color}-darker);
-    color: var(--rm-color-#{$color}-on-darker);
+    background-color: var(--rm-color-#{$color}-minus-2);
+    color: var(--rm-color-#{$color}-on-minus-2);
   }
 
   .background-#{$color}-darkest {
-    background-color: var(--rm-color-#{$color}-darkest);
-    color: var(--rm-color-#{$color}-on-darkest);
+    background-color: var(--rm-color-#{$color}-minus-3);
+    color: var(--rm-color-#{$color}-on-minus-3);
   }
 }
 
