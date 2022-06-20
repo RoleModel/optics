@@ -53,16 +53,16 @@
   // Alert Colors
   $alert_color_varieties: ('warning': 'yellow', 'danger': 'red', 'info': 'blue', 'notice': 'green');
   @each $name, $color in $alert_color_varieties {
-    --rm-color-alerts-#{$name}-lighter: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 80%);
-    --rm-color-alerts-#{$name}-light:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 70%);
+    --rm-color-alerts-#{$name}-plus-2:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 80%);
+    --rm-color-alerts-#{$name}-plus-1:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 70%);
     --rm-color-alerts-#{$name}-base:    hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 40%);
-    --rm-color-alerts-#{$name}-dark:    hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 30%);
-    --rm-color-alerts-#{$name}-darker:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 20%);
+    --rm-color-alerts-#{$name}-minus-1: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 30%);
+    --rm-color-alerts-#{$name}-minus-2: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 20%);
 
-    --rm-color-alerts-#{$name}-on-lighter: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 10%);
-    --rm-color-alerts-#{$name}-on-light:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 0%);
-    --rm-color-alerts-#{$name}-on-base:    hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 100%);
-    --rm-color-alerts-#{$name}-on-dark:    hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 90%);
-    --rm-color-alerts-#{$name}-on-darker:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 95%);
+    --rm-color-alerts-#{$name}-on-plus-2: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 10%);
+    --rm-color-alerts-#{$name}-on-plus-1: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 0%);
+    --rm-color-alerts-#{$name}-on-base:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 100%);
+    --rm-color-alerts-#{$name}-on-plus-1: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 90%);
+    --rm-color-alerts-#{$name}-on-plus-2: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 95%);
   }
 }
