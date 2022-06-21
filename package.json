@@ -1,6 +1,6 @@
 {
   "name": "@rolemodel/rolemodel-design-system",
-  "version": "0.0.1-beta",
+  "version": "0.0.2-beta",
   "description": "The design system RoleModel uses to kickstart projects with a consistent starting point",
   "main": "dist/scss/rolemodel-design-system.scss",
   "scripts": {
