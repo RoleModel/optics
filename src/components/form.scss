@@ -157,21 +157,21 @@ label {
         cursor: not-allowed;
 
         &:before{
-          border-color: var(--rm-color-neutral-variant-on-lightest);
-          background-color: var(--rm-color-neutral-variant-lightest);
+          border-color: var(--rm-color-neutral-variant-on-plus-3);
+          background-color: var(--rm-color-neutral-variant-plus-3);
           cursor: not-allowed;
         }
 
         &:after {
           // Checkmark
-          border-color: var(--rm-color-neutral-variant-on-lightest);
+          border-color: var(--rm-color-neutral-variant-on-plus-3);
         }
       }
 
       &:checked {
         + label:before {
-          border-color: var(--rm-color-neutral-variant-on-lightest);
-          background-color: var(--rm-color-neutral-variant-lightest);
+          border-color: var(--rm-color-neutral-variant-on-plus-3);
+          background-color: var(--rm-color-neutral-variant-plus-3);
           cursor: not-allowed;
         }
       }
@@ -219,23 +219,23 @@ label {
 
   // Disabled
   &:disabled {
-    background-color: var(--rm-color-neutral-variant-lightest);
-    border-color: var(--rm-color-neutral-variant-on-lightest);
+    background-color: var(--rm-color-neutral-variant-plus-3);
+    border-color: var(--rm-color-neutral-variant-on-plus-3);
     cursor: not-allowed;
 
     &:after {
       // hide white circle
       opacity: 0;
-      color: var(--rm-color-neutral-variant-on-lightest);
-      background-color: var(--rm-color-neutral-variant-on-lightest);
+      color: var(--rm-color-neutral-variant-on-plus-3);
+      background-color: var(--rm-color-neutral-variant-on-plus-3);
     }
 
     &:checked {
       // background: var(--neutral-layer-2-background);
       // border-color: var(--neutral-layer-2-border);
 
-      background-color: var(--rm-color-neutral-variant-lightest);
-      border-color: var(--rm-color-neutral-variant-on-lightest);
+      background-color: var(--rm-color-neutral-variant-plus-3);
+      border-color: var(--rm-color-neutral-variant-on-plus-3);
 
       &:after {
         // show white circle
@@ -273,10 +273,10 @@ label {
 
 // simple_form styles
 .form__error-summary {
-  background-color: var(--rm-color-alerts-danger-lighter);
-  color: var(--rm-color-alerts-danger-on-lighter);
+  background-color: var(--rm-color-alerts-danger-plus-2);
+  color: var(--rm-color-alerts-danger-on-plus-2);
 
-  border: 1px solid var(--rm-color-alerts-danger-light);
+  border: 1px solid var(--rm-color-alerts-danger-plus-1);
   border-radius: var(--rm-radius-large);
 
   margin-bottom: var(--rm-space-large);
@@ -293,8 +293,8 @@ label {
 .form__error {
   padding: var(--rm-space-2x-small) var(--rm-space-x-small);
 
-  background: var(--rm-color-alerts-danger-lighter);
-  color: var(--rm-color-alerts-danger-on-lighter);
+  background: var(--rm-color-alerts-danger-plus-2);
+  color: var(--rm-color-alerts-danger-on-plus-2);
 
   border-radius: var(--rm-radius-medium);
 
@@ -305,7 +305,7 @@ label {
 
 .form__input--error {
   input {
-    box-shadow: inset 0 0 0 1px var(--rm-color-alerts-danger-dark);
+    box-shadow: inset 0 0 0 1px var(--rm-color-alerts-danger-minus-1);
   }
 }
 

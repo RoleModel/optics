@@ -10,8 +10,8 @@
   height: 100vh;
   width: 100%;
   padding: var(--rm-space-medium);
-  background: var(--rm-color-primary-lightest);
-  color: var(--rm-color-primary-on-lightest);
+  background: var(--rm-color-primary-plus-3);
+  color: var(--rm-color-primary-on-plus-3);
   z-index: var(--rm-z-index-drawer);
 }
 
@@ -36,7 +36,7 @@
   margin-bottom: var(--rm-space-small);
   padding: var(--rm-space-medium) var(--rm-space-medium);
 
-  color: var(--rm-color-primary-on-lightest);
+  color: var(--rm-color-primary-on-plus-3);
 }
 
 .sidebar-nav__item {
@@ -49,7 +49,7 @@
   padding: var(--rm-space-medium) var(--rm-space-medium);
   border-radius: var(--rm-radius-x-large);
   text-decoration: none;
-  color: var(--rm-color-primary-on-lightest);
+  color: var(--rm-color-primary-on-plus-3);
   transition: 300ms;
   white-space: nowrap;
   overflow: hidden;
