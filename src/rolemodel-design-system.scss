@@ -2,25 +2,18 @@
 @import 'tom-select/dist/scss/tom-select.scss';
 @import 'vendor/normalize';
 
-// Default Colors
-@import 'theme/default_colors'; // Provide example color hsl values to use in the base theme
-// @import 'variables/themes/example_colors'; // Provide example color hsl values to use in the base theme
-
-// Base Theme with tokens
-@import 'theme/base_theme';
-
-// Dynamic Color Engine
-@import 'core/dynamic_color_engine';
-
-// Dark Theme overrides
-@import 'theme/dark_theme'; // Adjust the dynamic color engine to work for dark sytem preference
+// Tokens
+@import 'core/tokens/base_tokens';
+@import 'core/tokens/example_color_tokens';
+@import 'core/tokens/scale_color_tokens';
+@import 'core/tokens/dark_mode_token_overrides';
 
 // Base styles and utilities
 @import 'core/base';
 @import 'core/utilities';
 
 // Components
-@import 'components/button.scss';
+@import 'components/button';
 @import 'components/card';
 @import 'components/custom-tom-select';
 @import 'components/flash';
@@ -28,7 +21,6 @@
 @import 'components/icon';
 @import 'components/semantic_colors';
 @import 'components/sidebar';
-@import 'components/swatch';
 @import 'components/table';
 
 // Panel and Modal styles
