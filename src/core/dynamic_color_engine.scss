@@ -9,9 +9,13 @@
   // Luminosity Scales (Weighted towards higher luminosity)
 
   // Primary
+  --rm-color-primary-luminosity-5:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 5%);
   --rm-color-primary-luminosity-10: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 10%);
+  --rm-color-primary-luminosity-15: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 15%);
   --rm-color-primary-luminosity-20: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 20%);
+  --rm-color-primary-luminosity-25: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 25%);
   --rm-color-primary-luminosity-30: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 30%);
+  --rm-color-primary-luminosity-35: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 35%);
   --rm-color-primary-luminosity-40: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 40%);
   --rm-color-primary-luminosity-50: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 50%);
   --rm-color-primary-luminosity-60: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 60%);
@@ -22,9 +26,13 @@
   --rm-color-primary-luminosity-98: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 98%);
 
   // Secondary
+  --rm-color-secondary-luminosity-5:  hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 5%);
   --rm-color-secondary-luminosity-10: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 10%);
+  --rm-color-secondary-luminosity-15: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 15%);
   --rm-color-secondary-luminosity-20: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 20%);
+  --rm-color-secondary-luminosity-25: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 25%);
   --rm-color-secondary-luminosity-30: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 30%);
+  --rm-color-secondary-luminosity-35: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 35%);
   --rm-color-secondary-luminosity-40: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 40%);
   --rm-color-secondary-luminosity-50: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 50%);
   --rm-color-secondary-luminosity-60: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 60%);
@@ -35,9 +43,13 @@
   --rm-color-secondary-luminosity-98: hsl(var(--rm-color-secondary-h), var(--rm-color-secondary-s), 98%);
 
   // Tertiary
+  --rm-color-tertiary-luminosity-5:  hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 5%);
   --rm-color-tertiary-luminosity-10: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 10%);
+  --rm-color-tertiary-luminosity-15: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 15%);
   --rm-color-tertiary-luminosity-20: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 20%);
+  --rm-color-tertiary-luminosity-25: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 25%);
   --rm-color-tertiary-luminosity-30: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 30%);
+  --rm-color-tertiary-luminosity-35: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 35%);
   --rm-color-tertiary-luminosity-40: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 40%);
   --rm-color-tertiary-luminosity-50: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 50%);
   --rm-color-tertiary-luminosity-60: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 60%);
@@ -48,9 +60,13 @@
   --rm-color-tertiary-luminosity-98: hsl(var(--rm-color-tertiary-h), var(--rm-color-tertiary-s), 98%);
 
   // Neutral
+  --rm-color-neutral-luminosity-5:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 5%);
   --rm-color-neutral-luminosity-10: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 10%);
+  --rm-color-neutral-luminosity-15: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 15%);
   --rm-color-neutral-luminosity-20: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 20%);
+  --rm-color-neutral-luminosity-25: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 25%);
   --rm-color-neutral-luminosity-30: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 30%);
+  --rm-color-neutral-luminosity-35: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 35%);
   --rm-color-neutral-luminosity-40: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 40%);
   --rm-color-neutral-luminosity-50: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 50%);
   --rm-color-neutral-luminosity-60: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 60%);
@@ -61,9 +77,13 @@
   --rm-color-neutral-luminosity-98: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 98%);
 
   // Neutral variant
+  --rm-color-neutral-variant-luminosity-5:  hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 5%);
   --rm-color-neutral-variant-luminosity-10: hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 10%);
+  --rm-color-neutral-variant-luminosity-15: hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 15%);
   --rm-color-neutral-variant-luminosity-20: hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 20%);
+  --rm-color-neutral-variant-luminosity-25: hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 25%);
   --rm-color-neutral-variant-luminosity-30: hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 30%);
+  --rm-color-neutral-variant-luminosity-35: hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 35%);
   --rm-color-neutral-variant-luminosity-40: hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 40%);
   --rm-color-neutral-variant-luminosity-50: hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 50%);
   --rm-color-neutral-variant-luminosity-60: hsl(var(--rm-color-neutral-variant-h), var(--rm-color-neutral-variant-s), 60%);
