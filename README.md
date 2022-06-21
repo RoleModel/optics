@@ -9,8 +9,7 @@ Tokens are defined in `src/core/tokens`
 - All core tokens are defined in `src/core/tokens/base_tokens.scss`
 - Basic color tokens are defined in `src/core/tokens/example_color_tokens.scss`
 - Color scale tokens are defined in `src/core/tokens/scale_color_tokens.scss`
-- Dark mode token overrides are defined in `src/core/tokens/dark_mode_token_overrides.scss`
-
+- Dark mode tokens are defined in `src/core/tokens/dark_mode_tokens.scss`
 
 There are also a few component specific tokens that are defined in their respective component file, but those are not indented to be global or used outside of that file.
 
@@ -57,8 +56,8 @@ If you do not want all the styles RoleModel Design System provides, you can impo
 // Most components require the token files at least since they are used throughout the system.
 @import '@rolemodel/rolemodel-design-system/scss/core/tokens/base_tokens';
 @import '@rolemodel/rolemodel-design-system/scss/core/tokens/example_color_tokens';
-@import '@rolemodel/rolemodel-design-system/scss/core/scale_color_tokens';
-@import '@rolemodel/rolemodel-design-system/scss/theme/dark_mode_token_overrides';
+@import '@rolemodel/rolemodel-design-system/scss/core/tokens/scale_color_tokens';
+@import '@rolemodel/rolemodel-design-system/scss/core/tokens/dark_mode_tokens';
 
 @import '@rolemodel/rolemodel-design-system/scss/components/button.scss';
 ```
