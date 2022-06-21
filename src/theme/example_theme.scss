@@ -1,0 +1,29 @@
+@mixin color-varieties {
+  // Primary HSL
+  --rm-color-primary-h: 234;
+  --rm-color-primary-s: 32%;
+  --rm-color-primary-l: 52%;
+
+  // Secondary HSL
+  --rm-color-secondary-h: 18;
+  --rm-color-secondary-s: 7%;
+  --rm-color-secondary-l: 72%;
+
+  // Tertiary HSL
+  --rm-color-tertiary-h: 227;
+  --rm-color-tertiary-s: 33%;
+  --rm-color-tertiary-l: 80%;
+}
+
+@mixin fonts {
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  --rm-font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  @include color-varieties;
+
+  @include fonts;
+
+  --rm-card-padding: var(--rm-space-large);
+}
