@@ -9,7 +9,6 @@
   $color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
   @each $color in $color_varieties {
     // Luminosity Scale (Weighted towards higher luminosity)
-    // luminosity 0 is black
     --rm-color-#{$color}-luminosity-10:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 10%);
     --rm-color-#{$color}-luminosity-20:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 20%);
     --rm-color-#{$color}-luminosity-30:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 30%);
@@ -21,7 +20,6 @@
     --rm-color-#{$color}-luminosity-90:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 90%);
     --rm-color-#{$color}-luminosity-95:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 95%);
     --rm-color-#{$color}-luminosity-98:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 98%);
-    // luminosity 100 is white
 
     // Semantic Scale: plus adds luminosity, minus removes luminosity
     // This borrows from the photography concept of Aperture f-stops.

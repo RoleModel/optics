@@ -1,13 +1,7 @@
-@mixin default_colors_dark {
-  --rm-color-white: hsl(0, 0%, 0%);
-  --rm-color-black: hsl(0, 100%, 100%);
-}
-
 @mixin dynamic_color_engine_dark {
   $color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
   @each $color in $color_varieties {
     // Luminosity Scale (Weighted towards lower luminosity)
-    // luminosity 0 is black
     --rm-color-#{$color}-luminosity-10:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 5%);
     --rm-color-#{$color}-luminosity-20:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 10%);
     --rm-color-#{$color}-luminosity-30:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 15%);
@@ -19,7 +13,6 @@
     --rm-color-#{$color}-luminosity-90:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 70%);
     --rm-color-#{$color}-luminosity-95:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 80%);
     --rm-color-#{$color}-luminosity-98:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 90%);
-    // luminosity 100 is white
 
     // Semantic Scale: plus adds luminosity, minus removes luminosity
     // This borrows from the photography concept of Aperture f-stops.
@@ -52,8 +45,6 @@
 :root {
   @media (prefers-color-scheme: dark) {
     & {
-      @include default_colors_dark;
-
       @include dynamic_color_engine_dark;
 
       // Modal Overrides
