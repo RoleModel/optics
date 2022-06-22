@@ -75,15 +75,16 @@ $button_varieties: 'primary', 'secondary', 'tertiary';
 
   @each $color in $button_varieties {
     &.btn--#{$color} {
-      border-color: var(--rm-color-#{$color}-base);
-      color: var(--rm-color-#{$color}-base);
+      background-color: var(--rm-color-#{$color}-plus-3);
+      border-color: var(--rm-color-#{$color}-on-plus-3);
+      color: var(--rm-color-#{$color}-on-plus-3);
 
       &:visited {
-        color: var(--rm-color-#{$color}-base);
+        color: var(--rm-color-#{$color}-on-plus-3);
       }
 
       &:hover {
-        background: var(--rm-color-#{$color}-plus-3);
+        background: var(--rm-color-#{$color}-plus-2);
       }
     }
   }
