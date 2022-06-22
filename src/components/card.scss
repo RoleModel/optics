@@ -21,10 +21,12 @@
 
 %card {
   position: relative;
-  background-color: var(--rm-color-white);
+
+  background-color: var(--rm-color-background);
+  color: var(--rm-color-neutral-on-background);
+
   box-shadow: var(--rm-border-card-outline);
   border-radius: var(--rm-radius-medium);
-  color: var(--rm-color-neutral-minus-2);
   font-size: var(--rm-font-medium);
   line-height: var(--rm-line-height-base);
   overflow: hidden;
