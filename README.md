@@ -61,3 +61,7 @@ If you do not want all the styles RoleModel Design System provides, you can impo
 
 @import '@rolemodel/rolemodel-design-system/scss/components/button.scss';
 ```
+
+## Component Documentation
+
+[Buttons](./docs/components/button/button.md)
