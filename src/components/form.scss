@@ -38,7 +38,7 @@ label {
   box-shadow: none;
 
   &:focus {
-    color: var(--rm-color-black);
+    color: var(--rm-color-on-background);
     outline: 0;
     border-color: var(--rm-color-on-background);
   }
