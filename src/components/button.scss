@@ -4,10 +4,11 @@
 
 %btn {
   -webkit-appearance: none;
-  display: inline-flex;
+  display: inline-grid;
+  grid-auto-flow: column;
   justify-content: center;
   align-items: center;
-  gap: var(--rm-space-2x-small);
+  gap: var(--rm-space-x-small);
 
   white-space: nowrap;
 
