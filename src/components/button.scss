@@ -105,8 +105,8 @@
   @extend .btn--outline;
 }
 
-// Button Text Modifier
-.btn--text {
+// Button No Border Modifier
+.btn--no-border {
   border-color: var(--rm-color-background);
   background: var(--rm-color-background);
   color: var(--rm-color-primary-base);
@@ -154,8 +154,8 @@
   }
 }
 
-// Delete Button with Text Modifier
-.btn-delete.btn--text {
+// Delete Button with No Border Modifier
+.btn-delete.btn--no-border {
   border: none;
   background: none;
   color: var(--rm-color-alerts-danger-base);

@@ -35,10 +35,10 @@ They provide consistent and composable styling that should address most applicat
 <button class='btn-delete btn--outline'>Outline Delete</button>
 ```
 
-`.btn--text` This is a modifier which can be used with all button classes. It provides a text only button with the same sizing and adapts it;s color to all the btn variations.
+`.btn--no-border` This is a modifier which can be used with all button classes. It provides a button with no border, but the same sizing and adapts it's color to all the btn variations.
 ```html
-<button class='btn btn--text'>Text</button>
-<button class='btn-delete btn--text'>Text Delete</button>
+<button class='btn btn--no-border'>Text</button>
+<button class='btn-delete btn--no-border'>Text Delete</button>
 ```
 
 `.btn--disabled` Should be used on `a` elements that need to be disabled. `button` elements can use the `disabled` attribute as well as this class. This makes the button opaque and changes the cursor to the `not allowed` icon.
@@ -53,9 +53,10 @@ They provide consistent and composable styling that should address most applicat
 <a class='btn-delete btn--pill'>Pill Delete</button>
 ```
 
-`.btn--icon` Modifies the shape of any other button class by adding a full radius to the button. This should only be used with an icon as the button text.
+`.btn--icon` Modifies the shape of any other button class by adding a full radius to the button. This should only be used with an icon as the button text. You can also combine it with `.btn--no-border` for a borderless icon button.
 ```html
-<button class='btn-primary btn--circle'>👍</button>
+<button class='btn-primary btn--icon'>👍</button>
+<button class='btn-primary btn--icon btn--no-border'>👍</button>
 ```
 
 `.btn--small` Modifies the size of any other button class by changing the font and height to be smaller.
@@ -75,4 +76,4 @@ They provide consistent and composable styling that should address most applicat
 
 ## Custom Button
 
-If your application needs a new custom button, you can add it by creating a button class like `.btn-something`, defining how it behaves with the outline `.btn-something.btn--outline`, and defining how it behaves with the text `.btn-something.btn--text`. The other modifiers will automatically work with it. You can use `.btn-delete` as an example of how this would work.
+If your application needs a new custom button, you can add it by creating a button class like `.btn-something`, defining how it behaves with the outline `.btn-something.btn--outline`, and defining how it behaves with the no border `.btn-something.btn--no-border`. The other modifiers will automatically work with it. You can use `.btn-delete` as an example of how this would work.
