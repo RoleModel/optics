@@ -1,7 +1,7 @@
 :root {
-  --rm-button-height-small:  calc(8 * var(--rm-space-2x-small)); // ~ 32px
-  --rm-button-height-medium: calc(11 * var(--rm-space-2x-small)); // ~ 44px
-  --rm-button-height-large:  calc(13 * var(--rm-space-2x-small)); // ~ 52px
+  --rm-button-height-small:  calc(6 * var(--rm-space-2x-small)); // ~ 24px
+  --rm-button-height-medium: calc(8 * var(--rm-space-2x-small)); // ~ 32px
+  --rm-button-height-large:  calc(11 * var(--rm-space-2x-small)); // ~ 44px
   --rm-button-transition: 120ms;
 }
 
@@ -43,7 +43,7 @@
 
   @media(max-width: $breakpoint-small) {
     align-items: center;
-    min-height: var(--rm-button-height-medium);
+    min-height: var(--rm-button-height-large);
   }
 
   &:disabled, &.btn--disabled {
