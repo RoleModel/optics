@@ -1,19 +1,25 @@
 :root {
-  --rm-mobile-min-height: 44px;
+  --rm-button-height-small:  calc(8 * var(--rm-space-2x-small)); // ~ 32px
+  --rm-button-height-medium: calc(11 * var(--rm-space-2x-small)); // ~ 44px
+  --rm-button-height-large:  calc(13 * var(--rm-space-2x-small)); // ~ 52px
   --rm-button-transition: 120ms;
 }
 
 %btn {
   -webkit-appearance: none;
   display: inline-flex;
-
   justify-content: center;
+  align-items: center;
+
+  white-space: nowrap;
 
   transition: all var(--rm-button-transition);
 
   border-radius: var(--rm-radius-large);
 
-  padding: var(--rm-space-small) var(--rm-space-medium);
+  padding: 0 var(--rm-space-medium);
+
+  height: var(--rm-button-height-medium);
 
   cursor: pointer;
 
@@ -37,7 +43,7 @@
 
   @media(max-width: $breakpoint-small) {
     align-items: center;
-    min-height: var(--rm-mobile-min-height);
+    min-height: var(--rm-button-height-medium);
   }
 
   &:disabled, &.btn--disabled {
@@ -46,12 +52,13 @@
   }
 }
 
-// Base Style
+// Default Button
 .btn {
   @extend %btn;
 }
 
-.btn--primary {
+// Primary Button
+.btn-primary {
   @extend %btn;
 
   background: var(--rm-color-primary-base);
@@ -67,9 +74,8 @@
   }
 }
 
-.btn--secondary {
-  @extend .btn--primary;
-
+// Button Outline Modifier
+.btn--outline {
   background-color: var(--rm-color-primary-plus-3);
   border-color: var(--rm-color-primary-on-plus-3);
   color: var(--rm-color-primary-on-plus-3);
@@ -84,7 +90,40 @@
   }
 }
 
-.btn--delete {
+// Default Button with unecessary Outline Modifier
+.btn.btn--outline {
+  @extend %btn;
+
+  &:hover:not(:disabled, .btn--disabled) {
+    background: var(--rm-color-neutral-variant-plus-3);
+    color: var(--rm-color-neutral-variant-on-plus-3);
+  }
+}
+
+// Secondary Button
+.btn-secondary {
+  @extend %btn;
+  @extend .btn--outline;
+}
+
+// Button Text Modifier
+.btn--text {
+  border-color: var(--rm-color-background);
+  background: var(--rm-color-background);
+  color: var(--rm-color-primary-base);
+
+  &:visited {
+    color: var(--rm-color-primary-base);
+  }
+
+  &:hover:not(:disabled, .btn--disabled) {
+    background: none;
+    color: var(--rm-color-primary-hover);
+  }
+}
+
+// Delete Button
+.btn-delete {
   @extend %btn;
 
   background: var(--rm-color-alerts-danger-base);
@@ -100,98 +139,66 @@
   }
 }
 
-.btn--text {
-  @extend %btn;
-
-  border: none;
-  background: none;
-  color: var(--rm-color-primary-base);
+// Delete Button with Outline Modifier
+.btn-delete.btn--outline {
+  background-color: var(--rm-color-background);
+  border-color: var(--rm-color-alerts-danger-base);
+  color: var(--rm-color-alerts-danger-base);
 
   &:visited {
-    color: var(--rm-color-primary-base);
+    color: var(--rm-color-alerts-danger-base);
+  }
+
+  &:hover:not(:disabled, .btn--disabled) {
+    background: var(--rm-color-alerts-danger-plus-2);
+    color: var(--rm-color-alerts-danger-on-plus-2);
+  }
+}
+
+// Delete Button with Text Modifier
+.btn-delete.btn--text {
+  border: none;
+  background: none;
+  color: var(--rm-color-alerts-danger-base);
+
+  &:visited {
+    color: var(--rm-color-alerts-danger-base);
   }
 
   &:hover:not(:disabled, .btn--disabled) {
     background: none;
-    color: var(--rm-color-primary-hover);
-  }
-
-  // text + delete
-  &.btn--delete {
-    color: var(--rm-color-alerts-danger-base);
-
-    &:visited {
-      color: var(--rm-color-alerts-danger-base);
-    }
-
-    &:hover:not(:disabled, .btn--disabled) {
-      color: var(--rm-color-alerts-danger-hover);
-    }
+    color: var(--rm-color-alerts-danger-hover);
   }
 }
 
-.btn--outline {
-  @extend .btn--primary;
-
-  background-color: var(--rm-color-primary-plus-3);
-  border-color: var(--rm-color-primary-on-plus-3);
-  color: var(--rm-color-primary-on-plus-3);
-
-  &:visited {
-    color: var(--rm-color-primary-on-plus-3);
-  }
-
-  &:hover:not(:disabled, .btn--disabled) {
-    background: var(--rm-color-primary-plus-2);
-    color: var(--rm-color-primary-on-plus-2);
-  }
-
-  // outline + delete
-  &.btn--delete {
-    background-color: var(--rm-color-danger-plus-3);
-    border-color: var(--rm-color-danger-base);
-    color: var(--rm-color-alerts-danger-base);
-
-    &:visited {
-      color: var(--rm-color-alerts-danger-base);
-    }
-
-    &:hover:not(:disabled, .btn--disabled) {
-      background: var(--rm-color-alerts-danger-base);
-      color: var(--rm-color-alerts-danger-on-base);
-    }
-  }
-}
-
+// Pill Shape Modifier
 .btn--pill {
-  @extend %btn;
-
   border-radius: var(--rm-radius-pill);
 }
 
-.btn--circle {
-  @extend %btn;
+// Icon Shape Modifier
+.btn--icon {
+  padding: 0;
 
   border-radius: var(--rm-radius-circle);
+
+  width: var(--rm-button-height-medium);
 }
 
+// Small Size Modifier
 .btn--small {
-  @extend %btn;
-
+  height: var(--rm-button-height-small);
   font-size: var(--rm-font-x-small);
-  padding: var(--rm-space-x-small) var(--rm-space-medium);
 }
 
+// Medium Size (default size) Modifier
 .btn--medium {
-  @extend %btn;
-
+  height: var(--rm-button-height-medium);
   font-size: var(--rm-font-small);
-  padding: var(--rm-space-small) var(--rm-space-medium);
 }
 
+// Large Size Modifier
 .btn--large {
-  @extend %btn;
-
+  height: var(--rm-button-height-large);
   font-size: var(--rm-font-medium);
-  padding: var(--rm-space-medium) var(--rm-space-large);
 }
