@@ -119,6 +119,15 @@
   --rm-z-index-tooltip: 1000;
 }
 
+@mixin inputs {
+  // This should follow multiples of 4
+  // https: //uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec See example 8
+  --rm-input-height-small:   2.4rem; // 24px
+  --rm-input-height-medium:  3.2rem; // 32px
+  --rm-input-height-large:   4.4rem; // 44px
+  --rm-input-height-x-large: 5.6rem; // 56px
+}
+
 // We use SCSS variables outside the root since support for custom properties / css variables
 // is not yet available
 // https://drafts.csswg.org/css-env-1/
@@ -155,4 +164,7 @@ $breakpoint-x-large: 1440px; // medium laptop
 
   // Z Index
   @include z-indexes;
+
+  // Inputs
+  @include inputs;
 }
