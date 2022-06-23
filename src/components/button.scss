@@ -1,7 +1,4 @@
 :root {
-  --rm-button-height-small:  calc(6 * var(--rm-space-2x-small)); // ~ 24px
-  --rm-button-height-medium: calc(8 * var(--rm-space-2x-small)); // ~ 32px
-  --rm-button-height-large:  calc(11 * var(--rm-space-2x-small)); // ~ 44px
   --rm-button-transition: 120ms;
 }
 
@@ -20,7 +17,7 @@
 
   padding: 0 var(--rm-space-medium);
 
-  height: var(--rm-button-height-medium);
+  height: var(--rm-input-height-medium);
 
   cursor: pointer;
 
@@ -44,7 +41,7 @@
 
   @media(max-width: $breakpoint-small) {
     align-items: center;
-    min-height: var(--rm-button-height-large);
+    min-height: var(--rm-input-height-large);
   }
 
   &:disabled, &.btn--disabled {
@@ -183,23 +180,23 @@
 
   border-radius: var(--rm-radius-circle);
 
-  width: var(--rm-button-height-medium);
+  width: var(--rm-input-height-medium);
 }
 
 // Small Size Modifier
 .btn--small {
-  height: var(--rm-button-height-small);
+  height: var(--rm-input-height-small);
   font-size: var(--rm-font-x-small);
 }
 
 // Medium Size (default size) Modifier
 .btn--medium {
-  height: var(--rm-button-height-medium);
+  height: var(--rm-input-height-medium);
   font-size: var(--rm-font-small);
 }
 
 // Large Size Modifier
 .btn--large {
-  height: var(--rm-button-height-large);
+  height: var(--rm-input-height-large);
   font-size: var(--rm-font-medium);
 }
