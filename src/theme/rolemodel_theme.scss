@@ -1,0 +1,131 @@
+@mixin color-varieties {
+  // Primary HSL
+  --rm-color-primary-h: 216;
+  --rm-color-primary-s: 58%;
+  --rm-color-primary-l: 48%;
+
+  // Neutral HSL
+  // h and l default to be based on the primary.
+  --rm-color-neutral-s: 4%;
+}
+
+@mixin fonts {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  --rm-font-family: 'Inter', sans-serif;
+}
+
+@mixin primary-luminosity-scale {
+  --rm-color-primary-luminosity-12: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 12%);
+  --rm-color-primary-luminosity-68: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 68%);
+}
+
+@mixin neutral-luminosity-scale {
+  --rm-color-neutral-luminosity-4: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 4%);
+  --rm-color-neutral-luminosity-8: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 8%);
+  --rm-color-neutral-luminosity-12: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 12%);
+  --rm-color-neutral-luminosity-16: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 16%);
+  --rm-color-neutral-luminosity-24: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 24%);
+  --rm-color-neutral-luminosity-32: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 32%);
+  --rm-color-neutral-luminosity-68: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 68%);
+  --rm-color-neutral-luminosity-96: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 96%);
+  --rm-color-neutral-luminosity-99: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 99%);
+}
+
+@mixin primary-semantic-scale {
+  --rm-color-primary-plus-3: var(--rm-color-primary-luminosity-98);
+  --rm-color-primary-plus-2: var(--rm-color-primary-luminosity-95);
+  --rm-color-primary-plus-1: var(--rm-color-primary-luminosity-80);
+  --rm-color-primary-hover: var(--rm-color-primary-luminosity-50);
+  --rm-color-primary-base: var(--rm-color-primary-luminosity-40);
+  --rm-color-primary-minus-1: var(--rm-color-primary-luminosity-30);
+  --rm-color-primary-minus-2: var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-minus-3: var(--rm-color-primary-luminosity-10);
+
+  --rm-color-primary-on-plus-3: var(--rm-color-primary-luminosity-10);
+  --rm-color-primary-on-plus-2: var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-on-plus-1: var(--rm-color-primary-luminosity-30);
+  --rm-color-primary-on-hover: var(--rm-color-white);
+  --rm-color-primary-on-base: var(--rm-color-white);
+  --rm-color-primary-on-minus-1: var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-on-minus-2: var(--rm-color-primary-luminosity-95);
+  --rm-color-primary-on-minus-3: var(--rm-color-white);
+}
+
+@mixin neutral-semantic-scale {
+  --rm-color-neutral-plus-3: var(--rm-color-neutral-luminosity-99);
+  --rm-color-neutral-plus-2: var(--rm-color-neutral-luminosity-96);
+  --rm-color-neutral-plus-1: var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-hover: var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-base: var(--rm-color-neutral-luminosity-80);
+  --rm-color-neutral-minus-1: var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-minus-2: var(--rm-color-neutral-luminosity-16);
+  --rm-color-neutral-minus-3: var(--rm-color-neutral-luminosity-8);
+
+  --rm-color-neutral-on-plus-3: var(--rm-color-neutral-luminosity-32);
+  --rm-color-neutral-on-plus-2: var(--rm-color-neutral-luminosity-24);
+  --rm-color-neutral-on-plus-1: var(--rm-color-neutral-luminosity-10);
+  --rm-color-neutral-on-hover: var(--rm-color-neutral-luminosity-10);
+  --rm-color-neutral-on-base: var(--rm-color-neutral-luminosity-4);
+  --rm-color-neutral-on-minus-1: var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-minus-2: var(--rm-color-neutral-luminosity-80);
+  --rm-color-neutral-on-minus-3: var(--rm-color-neutral-luminosity-70);
+}
+
+@mixin primary-semantic-scale-dark {
+  --rm-color-primary-plus-3: var(--rm-color-primary-luminosity-10);
+  --rm-color-primary-plus-2: var(--rm-color-primary-luminosity-12);
+  --rm-color-primary-plus-1: var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-hover: var(--rm-color-primary-luminosity-30);
+  --rm-color-primary-base: var(--rm-color-primary-luminosity-35);
+  --rm-color-primary-minus-1: var(--rm-color-primary-luminosity-80);
+  --rm-color-primary-minus-2: var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-minus-3: var(--rm-color-primary-luminosity-98);
+
+  --rm-color-primary-on-plus-3: var(--rm-color-primary-luminosity-70);
+  --rm-color-primary-on-plus-2: var(--rm-color-primary-luminosity-68);
+  --rm-color-primary-on-plus-1: var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-on-hover: var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-on-base: var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-on-minus-1: var(--rm-color-primary-luminosity-10);
+  --rm-color-primary-on-minus-2: var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-on-minus-3: var(--rm-color-primary-luminosity-30);
+}
+
+@mixin neutral-semantic-scale-dark {
+  --rm-color-neutral-plus-3: var(--rm-color-neutral-luminosity-10);
+  --rm-color-neutral-plus-2: var(--rm-color-neutral-luminosity-12);
+  --rm-color-neutral-plus-1: var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-hover: var(--rm-color-neutral-luminosity-30);
+  --rm-color-neutral-base: var(--rm-color-neutral-luminosity-35);
+  --rm-color-neutral-minus-1: var(--rm-color-neutral-luminosity-80);
+  --rm-color-neutral-minus-2: var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-minus-3: var(--rm-color-neutral-luminosity-98);
+
+  --rm-color-neutral-on-plus-3: var(--rm-color-neutral-luminosity-70);
+  --rm-color-neutral-on-plus-2: var(--rm-color-neutral-luminosity-68);
+  --rm-color-neutral-on-plus-1: var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-hover: var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-base: var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-minus-1: var(--rm-color-neutral-luminosity-10);
+  --rm-color-neutral-on-minus-2: var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-on-minus-3: var(--rm-color-neutral-luminosity-30);
+}
+
+:root {
+  @include color-varieties;
+
+  @include fonts;
+
+  @include primary-luminosity-scale;
+  @include neutral-luminosity-scale;
+
+  @include primary-semantic-scale;
+  @include neutral-semantic-scale;
+
+  @media (prefers-color-scheme: dark) {
+    & {
+      @include primary-semantic-scale-dark;
+      @include neutral-semantic-scale-dark;
+    }
+  }
+}
