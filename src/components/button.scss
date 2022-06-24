@@ -36,8 +36,8 @@
   }
 
   &:hover:not(:disabled, .btn--disabled) {
-    background: var(--rm-color-neutral-variant-plus-3);
-    color: var(--rm-color-neutral-variant-on-plus-3);
+    background: var(--rm-color-neutral-plus-3);
+    color: var(--rm-color-neutral-on-plus-3);
   }
 
   @media(max-width: $breakpoint-small) {
@@ -94,8 +94,8 @@
   @extend %btn;
 
   &:hover:not(:disabled, .btn--disabled) {
-    background: var(--rm-color-neutral-variant-plus-3);
-    color: var(--rm-color-neutral-variant-on-plus-3);
+    background: var(--rm-color-neutral-plus-3);
+    color: var(--rm-color-neutral-on-plus-3);
   }
 }
 

@@ -1,43 +1,77 @@
 // Semantic colors
-$semantic_color_varieties: 'primary', 'secondary', 'tertiary', 'neutral', 'neutral-variant';
-@each $color in $semantic_color_varieties {
-  .background-#{$color}-base {
-    background-color: var(--rm-color-#{$color}-base);
-    color: var(--rm-color-#{$color}-on-base);
-  }
-
-  .background-#{$color}-light {
-    background-color: var(--rm-color-#{$color}-plus-1);
-    color: var(--rm-color-#{$color}-on-plus-1);
-  }
-
-  .background-#{$color}-lighter {
-    background-color: var(--rm-color-#{$color}-plus-2);
-    color: var(--rm-color-#{$color}-on-plus-2);
-  }
-
-  .background-#{$color}-lightest {
-    background-color: var(--rm-color-#{$color}-plus-3);
-    color: var(--rm-color-#{$color}-on-plus-3);
-  }
-
-  .background-#{$color}-dark {
-    background-color: var(--rm-color-#{$color}-minus-1);
-    color: var(--rm-color-#{$color}-on-minus-1);
-  }
-
-  .background-#{$color}-darker {
-    background-color: var(--rm-color-#{$color}-minus-2);
-    color: var(--rm-color-#{$color}-on-minus-2);
-  }
-
-  .background-#{$color}-darkest {
-    background-color: var(--rm-color-#{$color}-minus-3);
-    color: var(--rm-color-#{$color}-on-minus-3);
-  }
-}
-
 .background-surface {
   background-color: var(--rm-color-background);
   color: var(--rm-color-on-background);
+}
+
+// Primary
+.background-primary-base {
+  background-color: var(--rm-color-primary-base);
+  color: var(--rm-color-primary-on-base);
+}
+
+.background-primary-plus-1 {
+  background-color: var(--rm-color-primary-plus-1);
+  color: var(--rm-color-primary-on-plus-1);
+}
+
+.background-primary-plus-2 {
+  background-color: var(--rm-color-primary-plus-2);
+  color: var(--rm-color-primary-on-plus-2);
+}
+
+.background-primary-plus-3 {
+  background-color: var(--rm-color-primary-plus-3);
+  color: var(--rm-color-primary-on-plus-3);
+}
+
+.background-primary-minus-1 {
+  background-color: var(--rm-color-primary-minus-1);
+  color: var(--rm-color-primary-on-minus-1);
+}
+
+.background-primary-minus-2 {
+  background-color: var(--rm-color-primary-minus-2);
+  color: var(--rm-color-primary-on-minus-2);
+}
+
+.background-primary-minus-3 {
+  background-color: var(--rm-color-primary-minus-3);
+  color: var(--rm-color-primary-on-minus-3);
+}
+
+// Neutral
+.background-neutral-base {
+  background-color: var(--rm-color-neutral-base);
+  color: var(--rm-color-neutral-on-base);
+}
+
+.background-neutral-plus-1 {
+  background-color: var(--rm-color-neutral-plus-1);
+  color: var(--rm-color-neutral-on-plus-1);
+}
+
+.background-neutral-plus-2 {
+  background-color: var(--rm-color-neutral-plus-2);
+  color: var(--rm-color-neutral-on-plus-2);
+}
+
+.background-neutral-plus-3 {
+  background-color: var(--rm-color-neutral-plus-3);
+  color: var(--rm-color-neutral-on-plus-3);
+}
+
+.background-neutral-minus-1 {
+  background-color: var(--rm-color-neutral-minus-1);
+  color: var(--rm-color-neutral-on-minus-1);
+}
+
+.background-neutral-minus-2 {
+  background-color: var(--rm-color-neutral-minus-2);
+  color: var(--rm-color-neutral-on-minus-2);
+}
+
+.background-neutral-minus-3 {
+  background-color: var(--rm-color-neutral-minus-3);
+  color: var(--rm-color-neutral-on-minus-3);
 }
