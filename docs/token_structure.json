@@ -182,7 +182,14 @@
       "width": "",
       "width-large": "",
       "width-x-large": "",
-      "card-outline": ""
+      "color": "",
+      "all": "",
+      "top": "",
+      "right": "",
+      "bottom": "",
+      "left": "",
+      "y": "",
+      "x": ""
     },
     "shadow": {
       "x-small": "",

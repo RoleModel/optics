@@ -38,10 +38,6 @@
   --rm-color-neutral-on-minus-3: var(--rm-color-neutral-luminosity-5);
 }
 
-@mixin border-strokes-dark {
-  --rm-color-outline: var(--rm-color-neutral-luminosity-40);
-}
-
 @mixin background-dark {
   --rm-color-background: var(--rm-color-neutral-luminosity-10);
   --rm-color-on-background: var(--rm-color-neutral-luminosity-90);
@@ -83,8 +79,6 @@
       @include neutral-semantic-scale-dark;
 
       @include background-dark;
-
-      @include border-strokes-dark;
 
       @include modal-dark;
       @include panel-dark;

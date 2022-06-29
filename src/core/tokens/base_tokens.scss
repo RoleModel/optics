@@ -23,15 +23,26 @@
   --rm-radius-pill:    9999px;
 }
 
-@mixin border-width {
+@mixin border-widths {
   --rm-border-width:         1px;
   --rm-border-width-large:   2px;
   --rm-border-width-x-large: 4px;
 }
 
-@mixin border-strokes {
-  --rm-color-outline: var(--rm-color-neutral-luminosity-80);
-  --rm-border-card-outline: 0 0 0 var(--rm-border-width) var(--rm-color-outline);
+@mixin border-colors {
+  --rm-border-color: var(--rm-color-neutral-plus-1);
+}
+
+@mixin box-shadows {
+  // E.G. box-shadow: var(--rm-border-top) var(--rm-border-color);
+  --rm-border-all: 0 0 0 var(--rm-border-width);
+  --rm-border-top: 0 calc(-1 * var(--rm-border-width)) 0 0;
+  --rm-border-right: var(--rm-border-width) 0 0 0;
+  --rm-border-bottom: 0 var(--rm-border-width) 0 0;
+  --rm-border-left: calc(-1 * var(--rm-border-width)) 0 0 0;
+
+  --rm-border-y: var(--rm-border-top) var(--rm-border-color), var(--rm-border-bottom) var(--rm-border-color);
+  --rm-border-x: var(--rm-border-left) var(--rm-border-color), var(--rm-border-right) var(--rm-border-color);
 }
 
 @mixin font-scales {
@@ -130,9 +141,10 @@ $breakpoint-x-large: 1440px; // medium laptop
   @include color-varieties;
 
   // Border
-  @include border-strokes;
   @include border-radius;
-  @include border-width;
+  @include border-widths;
+  @include border-colors;
+  @include box-shadows;
 
   // Font
   @include font-scales;
