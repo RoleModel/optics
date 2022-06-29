@@ -1,32 +1,17 @@
 // Using Mixins allows us to include them at a component level
 // as needed and override them.
 
-// A 5 color theme. 3 main colors, a neutral color and a neutral variant
+// A theme comprised of a pimary color and a neutral color with a hint of the primary color.
 @mixin color-varieties {
   // Primary HSL
   --rm-color-primary-h: var(--rm-color-blue-h);
   --rm-color-primary-s: var(--rm-color-blue-s);
   --rm-color-primary-l: var(--rm-color-blue-l);
 
-  // Secondary HSL
-  --rm-color-secondary-h: var(--rm-color-teal-h);
-  --rm-color-secondary-s: var(--rm-color-teal-s);
-  --rm-color-secondary-l: var(--rm-color-teal-l);
-
-  // Tertiary HSL
-  --rm-color-tertiary-h: var(--rm-color-violet-h);
-  --rm-color-tertiary-s: var(--rm-color-violet-s);
-  --rm-color-tertiary-l: var(--rm-color-violet-l);
-
   // Neutral HSL
-  --rm-color-neutral-h: 240;
+  --rm-color-neutral-h: var(--rm-color-primary-h);
   --rm-color-neutral-s: 2%;
-  --rm-color-neutral-l: 38%;
-
-  // Neutral Variant HSL
-  --rm-color-neutral-variant-h: 229;
-  --rm-color-neutral-variant-s: 6%;
-  --rm-color-neutral-variant-l: 38%;
+  --rm-color-neutral-l: var(--rm-color-primary-l);
 }
 
 @mixin border-radius {
@@ -45,6 +30,7 @@
 }
 
 @mixin border-strokes {
+  --rm-color-outline: var(--rm-color-neutral-luminosity-80);
   --rm-border-card-outline: 0 0 0 var(--rm-border-width) var(--rm-color-outline);
 }
 

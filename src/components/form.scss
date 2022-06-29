@@ -157,21 +157,21 @@ label {
         cursor: not-allowed;
 
         &:before{
-          border-color: var(--rm-color-neutral-variant-on-plus-3);
-          background-color: var(--rm-color-neutral-variant-plus-3);
+          border-color: var(--rm-color-neutral-on-plus-3);
+          background-color: var(--rm-color-neutral-plus-3);
           cursor: not-allowed;
         }
 
         &:after {
           // Checkmark
-          border-color: var(--rm-color-neutral-variant-on-plus-3);
+          border-color: var(--rm-color-neutral-on-plus-3);
         }
       }
 
       &:checked {
         + label:before {
-          border-color: var(--rm-color-neutral-variant-on-plus-3);
-          background-color: var(--rm-color-neutral-variant-plus-3);
+          border-color: var(--rm-color-neutral-on-plus-3);
+          background-color: var(--rm-color-neutral-plus-3);
           cursor: not-allowed;
         }
       }
@@ -219,23 +219,23 @@ label {
 
   // Disabled
   &:disabled {
-    background-color: var(--rm-color-neutral-variant-plus-3);
-    border-color: var(--rm-color-neutral-variant-on-plus-3);
+    background-color: var(--rm-color-neutral-plus-3);
+    border-color: var(--rm-color-neutral-on-plus-3);
     cursor: not-allowed;
 
     &:after {
       // hide white circle
       opacity: 0;
-      color: var(--rm-color-neutral-variant-on-plus-3);
-      background-color: var(--rm-color-neutral-variant-on-plus-3);
+      color: var(--rm-color-neutral-on-plus-3);
+      background-color: var(--rm-color-neutral-on-plus-3);
     }
 
     &:checked {
       // background: var(--neutral-layer-2-background);
       // border-color: var(--neutral-layer-2-border);
 
-      background-color: var(--rm-color-neutral-variant-plus-3);
-      border-color: var(--rm-color-neutral-variant-on-plus-3);
+      background-color: var(--rm-color-neutral-plus-3);
+      border-color: var(--rm-color-neutral-on-plus-3);
 
       &:after {
         // show white circle

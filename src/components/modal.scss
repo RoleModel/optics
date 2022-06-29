@@ -68,13 +68,15 @@
 }
 
 .modal__close {
+  @extend .btn--icon;
+  @extend .btn--no-border;
+
   float: right;
   cursor: pointer;
 
-  padding: var(--rm-space-medium);
-  border-radius: var(--rm-radius-circle);
+  color: var(--rm-color-neutral-minus-3);
 
-  &:hover {
-    background: var(--rm-color-neutral-variant-plus-3);
+  &:hover:not(:disabled, .btn--disabled) {
+    color: var(--rm-color-neutral-minus-3);
   }
 }

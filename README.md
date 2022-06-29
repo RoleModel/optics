@@ -29,7 +29,7 @@ An example implementation your main scss file would look like:
 @import 'stylesheets/theme/my_app_theme';
 ```
 
-Take a look at `src/theme/example_theme.scss` for an idea of how to structure your custom theme. It generally will look like:
+Take a look at `src/theme/rolemodel_theme.scss` for an idea of how to structure your custom theme. It can change the colors, even redefine the luminosity and semantic scales. It generally will look like:
 
 ```scss
 @mixin color-varieties {
