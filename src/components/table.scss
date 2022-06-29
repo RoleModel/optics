@@ -14,7 +14,7 @@ table.table {
     text-transform: uppercase;
 
     color: var(--rm-color-on-background);
-    border-bottom: var(--rm-border-width) solid var(--rm-color-outline);
+    box-shadow: var(--rm-border-bottom) var(--rm-border-color);
 
     font-size: var(--rm-font-small);
     font-weight: var(--rm-font-weight-normal);
@@ -32,7 +32,7 @@ table.table {
     padding: var(--rm-font-x-small) var(--rm-space-medium);
 
     color: var(--rm-color-on-background);
-    border-bottom: var(--rm-border-width) solid var(--rm-color-outline);
+    box-shadow: var(--rm-border-bottom) var(--rm-border-color);
 
     font-size: var(--rm-font-small);
   }

@@ -23,7 +23,7 @@ label {
 }
 
 .form__input {
-  height: auto;
+  height: var(--rm-input-height-large);
   display: block;
   width: 100%;
   padding: var(--rm-space-small) var(--rm-space-medium);
@@ -31,21 +31,23 @@ label {
   line-height: 1.5;
   background-color: var(--rm-color-background);
   color: var(--rm-color-on-background);
-  border: var(--rm-border-width) solid var(--rm-color-outline);
+
+  border: none;
+  box-shadow: var(--rm-border-all) var(--rm-border-color);
+
   font-weight: var(--rm-font-weight-light);
   will-change: border-color, box-shadow;
   border-radius: var(--rm-radius-large);
-  box-shadow: none;
 
   &:focus {
     color: var(--rm-color-on-background);
     outline: 0;
-    border-color: var(--rm-color-on-background);
+    box-shadow: var(--rm-border-all) var(--rm-color-on-background);
   }
 }
 
 .form__dropdown {
-  height: 2.7rem;
+  height: var(--rm-input-height-large);
   padding: var(--rm-space-small) var(--rm-space-medium);
   line-height: 1.2;
   outline: 0;
@@ -53,7 +55,10 @@ label {
   background-size: 30px 15px;
   background-color: var(--rm-color-background);
   color: var(--rm-color-on-background);
-  border: var(--rm-border-width) solid var(--rm-color-outline);
+
+  border: none;
+  box-shadow: var(--rm-border-all) var(--rm-border-color);
+
   font-weight: var(--rm-font-weight-light);
   font-size: var(--rm-font-small);
   border-radius: var(--rm-radius-large);
@@ -64,13 +69,13 @@ label {
 
   &:hover:not(:focus):not(:disabled) {
     cursor: pointer;
-    border-color: var(--rm-color-on-background);
+    box-shadow: var(--rm-border-all) var(--rm-color-on-background);
   }
 
   &:focus,
   &:focus-within {
-    border-color: var(--rm-color-on-background);
     outline: 0;
+    box-shadow: var(--rm-border-all) var(--rm-color-on-background);
   }
 }
 
@@ -108,7 +113,7 @@ label {
 
     &:hover {
       &:before {
-        border-color: var(--rm-color-primary-base);
+        box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
       }
     }
 
@@ -117,7 +122,7 @@ label {
       height: 20px;
       background: var(--rm-color-background);
       color: var(--rm-color-on-background);
-      border: var(--rm-border-width) solid var(--rm-color-outline);
+      box-shadow: var(--rm-border-all) var(--rm-border-color);
       border-radius: var(--rm-space-2x-small);
       cursor: pointer;
       transition: background 300ms, border 300ms;
@@ -134,7 +139,7 @@ label {
       + label:before {
         // background color of box when checked
         background: var(--rm-color-primary-base);
-        border-color: var(--rm-color-primary-base);
+        box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
       }
 
       + label:after {
@@ -190,7 +195,7 @@ label {
   position: relative;
   margin: 0;
   cursor: pointer;
-  border: var(--rm-border-width) solid var(--rm-color-outline);
+  box-shadow: var(--rm-border-all) var(--rm-border-color);
   background: var(--rm-color-white);
   transition: background .3s, border-color .3s, box-shadow .2s;
   border-radius: 50%;
@@ -198,7 +203,7 @@ label {
   // Blue circle when checked
   &:checked {
     background: var(--rm-color-primary-base);
-    border-color: var(--rm-color-primary-base);
+    box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
   }
 
   // White circle
