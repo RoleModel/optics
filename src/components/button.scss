@@ -28,7 +28,7 @@
   text-decoration: none;
 
   background: var(--rm-color-background);
-  border: var(--rm-border-width) solid var(--rm-color-outline);
+  box-shadow: var(--rm-border-all) var(--rm-border-color);
   color: var(--rm-color-on-background);
 
   &:visited {
@@ -76,7 +76,7 @@
 // Button Outline Modifier
 .btn--outline {
   background-color: var(--rm-color-primary-plus-3);
-  border-color: var(--rm-color-primary-on-plus-3);
+  box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-3);
   color: var(--rm-color-primary-on-plus-3);
 
   &:visited {
@@ -107,7 +107,7 @@
 
 // Button No Border Modifier
 .btn--no-border {
-  border-color: var(--rm-color-background);
+  box-shadow: var(--rm-border-all) var(--rm-color-background);
   background: var(--rm-color-background);
   color: var(--rm-color-primary-base);
 
@@ -141,7 +141,7 @@
 // Delete Button with Outline Modifier
 .btn-delete.btn--outline {
   background-color: var(--rm-color-background);
-  border-color: var(--rm-color-alerts-danger-base);
+  box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-base);
   color: var(--rm-color-alerts-danger-base);
 
   &:visited {
@@ -156,7 +156,7 @@
 
 // Delete Button with No Border Modifier
 .btn-delete.btn--no-border {
-  border: none;
+  box-shadow: none;
   background: none;
   color: var(--rm-color-alerts-danger-base);
 
