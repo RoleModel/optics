@@ -239,6 +239,9 @@
       "looser": "",
       "loosest": ""
     },
+    "letter-spacing": {
+      "label": ""
+    },
     "transitions": {
       "input": ""
     },
