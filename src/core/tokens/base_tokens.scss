@@ -80,6 +80,10 @@
   --rm-line-height-loosest: 1.8;
 }
 
+@mixin transitions {
+  --rm-transition-input: 120ms;
+}
+
 @mixin fonts {
   --rm-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
 }
@@ -153,6 +157,9 @@ $breakpoint-x-large: 1440px; // medium laptop
 
   // Line heights
   @include line-heights;
+
+  // Transitions
+  @include transitions;
 
   // Spacing
   @include spacing-scales;

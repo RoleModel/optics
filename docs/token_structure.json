@@ -239,6 +239,9 @@
       "looser": "",
       "loosest": ""
     },
+    "transitions": {
+      "input": ""
+    },
     "space": {
       "3x-small": "",
       "2x-small": "",

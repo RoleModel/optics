@@ -1,7 +1,3 @@
-:root {
-  --rm-button-transition: 120ms;
-}
-
 %btn {
   -webkit-appearance: none;
   display: inline-grid;
@@ -12,7 +8,7 @@
 
   white-space: nowrap;
 
-  transition: all var(--rm-button-transition);
+  transition: all var(--rm-transition-input);
 
   border-radius: var(--rm-radius-large);
 
