@@ -8,27 +8,32 @@ label {
   }
 }
 
-[type="checkbox"] {
-  cursor: pointer;
+// Input Group
+.form__group {
+  padding: var(--rm-space-small) 0;
 }
 
+// Label
 .form__label {
   padding-bottom: var(--rm-space-x-small);
   margin-bottom: 0;
-  line-height: 1.5;
   color: var(--rm-color-on-background);
   font-weight: var(--rm-font-weight-normal);
   font-size: var(--rm-font-small);
-  letter-spacing: 0.4px;
+  line-height: var(--rm-line-height-base);
+  letter-spacing: var(--rm-letter-spacing-label);
 }
 
+// Input
 .form__input {
-  height: var(--rm-input-height-large);
   display: block;
+  height: var(--rm-input-height-large);
   width: 100%;
+
   padding: var(--rm-space-small) var(--rm-space-medium);
   font-size: var(--rm-font-small);
-  line-height: 1.5;
+  line-height: var(--rm-line-height-base);
+
   background-color: var(--rm-color-background);
   color: var(--rm-color-on-background);
 
@@ -36,266 +41,145 @@ label {
   box-shadow: var(--rm-border-all) var(--rm-border-color);
 
   font-weight: var(--rm-font-weight-light);
-  will-change: border-color, box-shadow;
   border-radius: var(--rm-radius-large);
+
+  will-change: box-shadow; // TODO: curious why we have this in here
 
   &:focus {
     color: var(--rm-color-on-background);
     outline: 0;
     box-shadow: var(--rm-border-all) var(--rm-color-on-background);
   }
+
+  &:hover:not(:focus):not(:disabled) {
+    box-shadow: var(--rm-border-all) var(--rm-color-on-background);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
+// Select Dropdown
 .form__dropdown {
-  height: var(--rm-input-height-large);
-  padding: var(--rm-space-small) var(--rm-space-medium);
-  line-height: 1.2;
-  outline: 0;
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=') center right no-repeat;
-  background-size: 30px 15px;
-  background-color: var(--rm-color-background);
-  color: var(--rm-color-on-background);
+  @extend .form__input;
 
-  border: none;
-  box-shadow: var(--rm-border-all) var(--rm-border-color);
-
-  font-weight: var(--rm-font-weight-light);
-  font-size: var(--rm-font-small);
-  border-radius: var(--rm-radius-large);
-  display: inline-block;
-  width: 100%;
   appearance: none;
-  -webkit-appearance: none;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=') center right no-repeat;
 
   &:hover:not(:focus):not(:disabled) {
     cursor: pointer;
-    box-shadow: var(--rm-border-all) var(--rm-color-on-background);
-  }
-
-  &:focus,
-  &:focus-within {
-    outline: 0;
-    box-shadow: var(--rm-border-all) var(--rm-color-on-background);
   }
 }
 
-.form__group {
-  margin: var(--rm-space-small) auto;
-  text-align: left;
-}
-
-.form__group--checkbox {
-  display: flex;
-  align-items: center;
-  margin: var(--rm-space-x-small) 0;
-
-  label {
-    // Label text
-    position: relative;
-    color: var(--rm-color-on-background);
-    font-weight: var(--rm-font-weight-medium);
-    cursor: pointer;
-    display: inline;
-    line-height: var(--rm-font-medium);
-    margin-left: var(--rm-font-medium);
-
-    &.form__label {
-      padding: 0 0 0 var(--rm-space-small);
-    }
-
-    // Box
-    &:before, &:after {
-      content: "";
-      position: absolute;
-      left: -16px;
-      top: -1px;
-    }
-
-    &:hover {
-      &:before {
-        box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
-      }
-    }
-
-    &:before {
-      width: 20px;
-      height: 20px;
-      background: var(--rm-color-background);
-      color: var(--rm-color-on-background);
-      box-shadow: var(--rm-border-all) var(--rm-border-color);
-      border-radius: var(--rm-space-2x-small);
-      cursor: pointer;
-      transition: background 300ms, border 300ms;
-    }
-  }
-
-  // Checkmark
-  input[type="checkbox"] {
-    width: var(--rm-font-medium);
-    height: auto;
-    display: none;
-
-    &:checked {
-      + label:before {
-        // background color of box when checked
-        background: var(--rm-color-primary-base);
-        box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
-      }
-
-      + label:after {
-        // Checkmark
-        transition: transform 300ms ease, opacity 200ms;
-        transform: rotate(var(--r, -40deg));
-        border: 3px solid var(--rm-color-white);
-        border-top-style: none;
-        border-right-style: none;
-        left: -11px;
-        top: 4px;
-        $checkmark-size: 1.25em - 2 * .25em;
-        width: $checkmark-size;
-        height: calc($checkmark-size /  2);
-      }
-    }
-
-    &:disabled {
-      + label {
-        cursor: not-allowed;
-
-        &:before{
-          border-color: var(--rm-color-neutral-on-plus-3);
-          background-color: var(--rm-color-neutral-plus-3);
-          cursor: not-allowed;
-        }
-
-        &:after {
-          // Checkmark
-          border-color: var(--rm-color-neutral-on-plus-3);
-        }
-      }
-
-      &:checked {
-        + label:before {
-          border-color: var(--rm-color-neutral-on-plus-3);
-          background-color: var(--rm-color-neutral-plus-3);
-          cursor: not-allowed;
-        }
-      }
-    }
-  }
-}
-
+// Radio
 .form__radio {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  height: var(--rm-font-medium);
-  width: var(--rm-font-medium);
-  outline: none;
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
+  // Reset core styles
+  appearance: none;
+  // For iOS < 15 to remove gradient background
+  background-color: var(--rm-color-white);
+  // Not removed via appearance
   margin: 0;
-  cursor: pointer;
-  box-shadow: var(--rm-border-all) var(--rm-border-color);
-  background: var(--rm-color-white);
-  transition: background .3s, border-color .3s, box-shadow .2s;
-  border-radius: 50%;
 
-  // Blue circle when checked
+  display: inline-grid;
+  place-content: center;
+
+
+  color: var(--rm-border-color);
+  width: var(--rm-space-medium);
+  height: var(--rm-space-medium);
+  box-shadow: var(--rm-border-all) var(--rm-border-color);
+  border-radius: var(--rm-radius-circle);
+
+  vertical-align: middle;
+  margin-right: var(--rm-space-2x-small);
+
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    width: var(--rm-space-small);
+    height: var(--rm-space-small);
+    border-radius: var(--rm-radius-circle);
+
+    transform: scale(0);
+    transition: var(--rm-transition-input) transform ease-in-out;
+    box-shadow: inset 0 var(--rm-space-small) var(--rm-color-primary-base);
+  }
+
   &:checked {
-    background: var(--rm-color-primary-base);
     box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
   }
 
-  // White circle
-  &:after {
-    width: 19px;
-    height: 19px;
-    border-radius: 50%;
-    background: var(--rm-color-white);
-    transform: scale(.5);
-    opacity: 1;
-    content: '';
-    display: block;
-    left: -2px;
-    top: -2px;
-    position: absolute;
-    transition: transform .6s cubic-bezier(.2, .85, .32, 1.2), opacity .2s;
-  }
-
-  // Disabled
-  &:disabled {
-    background-color: var(--rm-color-neutral-plus-3);
-    border-color: var(--rm-color-neutral-on-plus-3);
-    cursor: not-allowed;
-
-    &:after {
-      // hide white circle
-      opacity: 0;
-      color: var(--rm-color-neutral-on-plus-3);
-      background-color: var(--rm-color-neutral-on-plus-3);
-    }
-
-    &:checked {
-      // background: var(--neutral-layer-2-background);
-      // border-color: var(--neutral-layer-2-border);
-
-      background-color: var(--rm-color-neutral-plus-3);
-      border-color: var(--rm-color-neutral-on-plus-3);
-
-      &:after {
-        // show white circle
-        opacity: 1;
-      }
-    }
-
-    & + label {
-      // color: var(--color-disabled);
-      cursor: not-allowed;
-    }
-  }
-
-  &:hover {
-    &:not(:checked) {
-      &:not(:disabled) {
-        border-color: var(--rm-color-primary-base);
-      }
-    }
+  &:checked::before {
+    transform: scale(1);
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px var(--rm-color-info-lighter);
+    color: var(--rm-color-on-background);
+    outline: 0;
+    box-shadow: var(--rm-border-all) var(--rm-color-on-background);
   }
 
-  & + label {
-    font-size: 14px;
-    line-height: 21px;
-    display: inline-block;
-    vertical-align: top;
-    cursor: pointer;
-    margin-left: 4px;
+  &:disabled {
+    cursor: not-allowed;
+
+    box-shadow: var(--rm-border-all) var(--rm-border-color);
+
+    &::before {
+      box-shadow: inset 0 var(--rm-space-small) var(--rm-border-color);
+    }
+
+    + label {
+      cursor: not-allowed;
+    }
   }
 }
 
-// simple_form styles
+// Checkbox
+.form__checkbox {
+  @extend .form__radio;
+
+  border-radius: var(--rm-radius-small);
+
+  &::before {
+    width: var(--rm-space-small);
+    height: var(--rm-space-small);
+    border-radius: var(--rm-radius-small);
+
+    box-shadow: inset 0 var(--rm-space-small) var(--rm-color-primary-base);
+
+    transform-origin: center;
+
+    // This does feel a bit magic but it's what makes the checkmark shape.
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+}
+
+// simple_form error styles
 .form__error-summary {
   background-color: var(--rm-color-alerts-danger-plus-2);
   color: var(--rm-color-alerts-danger-on-plus-2);
 
-  border: 1px solid var(--rm-color-alerts-danger-plus-1);
+  box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-plus-1);
   border-radius: var(--rm-radius-large);
 
-  margin-bottom: var(--rm-space-large);
   padding: var(--rm-space-large);
+
+  margin-bottom: var(--rm-space-large); // TODO: Is there a way to get rid of this?
 
   h2 {
     font-size: var(--rm-font-medium);
   }
+
   ul {
     margin-bottom: 0;
   }
 }
 
 .form__error {
+  display: inline-block;
+
   padding: var(--rm-space-2x-small) var(--rm-space-x-small);
 
   background: var(--rm-color-alerts-danger-plus-2);
@@ -305,18 +189,17 @@ label {
 
   font-size: var(--rm-font-x-small);
 
-  display: inline-block;
 }
 
 .form__input--error {
   input {
-    box-shadow: inset 0 0 0 1px var(--rm-color-alerts-danger-minus-1);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-minus-1);
   }
 }
 
 .form__hint {
+  display: block;
   padding-top: var(--rm-space-x-small);
   font-size: var(--rm-font-small);
   font-style: italic;
-  display: block;
 }
