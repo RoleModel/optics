@@ -79,3 +79,5 @@ If your application does not use or need dark mode, it can be disabled by adding
 ### Components
 
 [Buttons](./docs/components/button/button.md)
+
+[Forms](./docs/components/form/form.md)
