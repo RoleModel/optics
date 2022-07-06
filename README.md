@@ -62,6 +62,20 @@ If you do not want all the styles RoleModel Design System provides, you can impo
 @import '@rolemodel/rolemodel-design-system/scss/components/button.scss';
 ```
 
-## Component Documentation
+## Documentation
+
+### Dark Mode
+
+Dark mode is enabled by default and will dynamically flip your semantic tokens to a dark version of it based on your system setting.
+If your application does not use or need dark mode, it can be disabled by adding a data attribute to your root `html` tag.
+
+```html
+<!DOCTYPE html>
+<html data-dark-mode='false'>
+  ...
+</html>
+```
+
+### Components
 
 [Buttons](./docs/components/button/button.md)
