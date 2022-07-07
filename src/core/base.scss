@@ -21,6 +21,14 @@ button {
   border: 0;
 }
 
+label {
+  display: inline-block;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 a {
   color: var(--rm-color-primary-original);
 
