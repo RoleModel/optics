@@ -91,29 +91,6 @@ small {
   font-size: var(--rm-font-small);
 }
 
-.container {
-  max-width: $breakpoint-medium;
-  margin: 0 auto;
-  padding: 0 var(--rm-space-large);
-  width: 100%;
-}
-
-.container--sm {
-  max-width: $breakpoint-small;
-}
-
-.container--md-padding {
-  padding: 0 var(--rm-space-medium);
-}
-
-.container--sm-padding {
-  padding: 0 var(--rm-space-small);
-}
-
-.container--xs {
-  max-width: $breakpoint-x-small;
-}
-
 .wrapper--main {
   display: flex;
   overflow: auto;
