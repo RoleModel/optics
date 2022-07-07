@@ -1,41 +1,24 @@
-
-*, ::after, ::before {
-  box-sizing: border-box;
-}
+// After a reset, introduce base element styles specific to this system
 
 html {
-  height: 100%;
+  overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
 
   font-family: var(--rm-font-family);
   font-size: 62.5%; // 1rem = 10px
 }
 
 body {
-  height: inherit;
-  overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
+  overflow: auto;
+  height: 100vh;
+
   background: var(--rm-color-background);
   color: var(--rm-color-on-background);
+
   font-size: var(--rm-font-medium);
 }
 
-button, input, optgroup, select, textarea {
-  margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
 button {
-  margin: 0;
   border: 0;
-  outline: 0;
-  padding: 0;
-
-  background: none;
-  cursor: pointer;
-
-  color: var(--rm-color-black);
 }
 
 a {
@@ -57,29 +40,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--rm-font-weight-normal);
 }
 
-h1 {
-  font-size: var(--rm-font-2x-large);
-}
-
-h2 {
-  font-size: var(--rm-font-x-large);
-}
-
-h3 {
-  font-size: var(--rm-font-large);
-}
-
-h4 {
-  font-size: var(--rm-font-medium);
-}
-
-h5 {
-  font-size: var(--rm-font-small);
-}
-
-h6 {
-  font-size: var(--rm-font-x-small);
-}
+h1 { font-size: var(--rm-font-2x-large); }
+h2 { font-size: var(--rm-font-x-large);  }
+h3 { font-size: var(--rm-font-large);    }
+h4 { font-size: var(--rm-font-medium);   }
+h5 { font-size: var(--rm-font-small);    }
+h6 { font-size: var(--rm-font-x-small);  }
 
 p {
   margin-bottom: var(--rm-space-small);
@@ -89,13 +55,4 @@ p {
 
 small {
   font-size: var(--rm-font-small);
-}
-
-.wrapper--main {
-  display: flex;
-  overflow: auto;
-  flex-direction: column;
-
-  width: 100%;
-  height: 100vh;
 }
