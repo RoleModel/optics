@@ -1,6 +1,5 @@
 // Third party Vendors
 @import 'tom-select/dist/scss/tom-select.scss';
-@import 'vendor/normalize';
 
 // Tokens
 @import 'core/tokens/base_tokens';
@@ -9,6 +8,7 @@
 @import 'core/tokens/dark_mode_tokens';
 
 // Base styles and utilities
+@import 'core/reset';
 @import 'core/base';
 @import 'core/utilities';
 
