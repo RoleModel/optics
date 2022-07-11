@@ -69,7 +69,7 @@
   }
 }
 
-:root {
+:root:not([data-allow-dark-mode-preference='false']) {
   @media (prefers-color-scheme: dark) {
     & {
       // Semantic Scales: plus adds luminosity, minus removes luminosity
