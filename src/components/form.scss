@@ -95,7 +95,7 @@
     transition: var(--rm-transition-input) transform ease-in-out;
     box-shadow: inset 0 var(--rm-space-medium) var(--rm-color-primary-base);
 
-    clip-path: circle(40% at 50% 50%);
+    clip-path: var(--rm-clippath-form-radio);
   }
 
   &:checked {

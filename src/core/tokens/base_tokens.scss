@@ -89,6 +89,7 @@
 }
 
 @mixin clip-paths {
+  --rm-clippath-form-radio: circle(40% at 50% 50%);
   --rm-clippath-form-checkmark: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
