@@ -80,6 +80,18 @@
   --rm-line-height-loosest: 1.8;
 }
 
+@mixin letter-spacing {
+  --rm-letter-spacing-label: 0.4px;
+}
+
+@mixin transitions {
+  --rm-transition-input: 120ms;
+}
+
+@mixin clip-paths {
+  --rm-clippath-form-checkmark: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
 @mixin fonts {
   --rm-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
 }
@@ -151,8 +163,15 @@ $breakpoint-x-large: 1440px; // medium laptop
   @include font-weights;
   @include fonts;
 
-  // Line heights
+  // Text
   @include line-heights;
+  @include letter-spacing;
+
+  // Transitions
+  @include transitions;
+
+  // Clip Paths
+  @include clip-paths;
 
   // Spacing
   @include spacing-scales;

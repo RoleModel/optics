@@ -239,6 +239,12 @@
       "looser": "",
       "loosest": ""
     },
+    "letter-spacing": {
+      "label": ""
+    },
+    "transitions": {
+      "input": ""
+    },
     "space": {
       "3x-small": "",
       "2x-small": "",
