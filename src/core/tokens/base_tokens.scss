@@ -88,6 +88,10 @@
   --rm-transition-input: 120ms;
 }
 
+@mixin clip-paths {
+  --rm-clippath-form-checkmark: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
 @mixin fonts {
   --rm-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
 }
@@ -165,6 +169,9 @@ $breakpoint-x-large: 1440px; // medium laptop
 
   // Transitions
   @include transitions;
+
+  // Clip Paths
+  @include clip-paths;
 
   // Spacing
   @include spacing-scales;

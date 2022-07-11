@@ -1,8 +1,6 @@
-// TODO: Should this get moved to base.scss? Seems like a base override instead of a component specific style
+// TODO: This will get moved in https://github.com/RoleModel/rolemodel-design-system/pull/38
 label {
   display: inline-block;
-  margin-right: var(--rm-space-small);
-  margin-bottom: var(--rm-space-small);
 
   &:hover {
     cursor: pointer;
@@ -10,6 +8,7 @@ label {
 }
 
 // Input Group
+// Future Idea: Can we use gap here instead of padding on the label and hint?
 .form__group {
   padding: var(--rm-space-small) 0;
 }
@@ -17,13 +16,15 @@ label {
 // Label
 .form__label {
   padding-bottom: var(--rm-space-x-small);
-  margin-bottom: 0;
   color: var(--rm-color-on-background);
   font-weight: var(--rm-font-weight-normal);
   font-size: var(--rm-font-small);
   line-height: var(--rm-line-height-base);
   letter-spacing: var(--rm-letter-spacing-label);
 }
+
+// Future ideas:
+// .form__inline-label
 
 // Input
 .form__input {
@@ -44,15 +45,9 @@ label {
   font-weight: var(--rm-font-weight-light);
   border-radius: var(--rm-radius-large);
 
-  will-change: box-shadow; // TODO: curious why we have this in here
-
   &:focus {
     color: var(--rm-color-on-background);
     outline: 0;
-    box-shadow: var(--rm-border-all) var(--rm-color-on-background);
-  }
-
-  &:hover:not(:focus):not(:disabled) {
     box-shadow: var(--rm-border-all) var(--rm-color-on-background);
   }
 
@@ -66,7 +61,10 @@ label {
   @extend .form__input;
 
   appearance: none;
+
+  // Highly specific SVG data image for the dropdown arrow.
   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=') center right no-repeat;
+  background-position-x: calc(100% - var(--rm-space-small));
 
   &:hover:not(:focus):not(:disabled) {
     cursor: pointer;
@@ -74,6 +72,7 @@ label {
 }
 
 // Radio
+// Inspired by https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 .form__radio {
   // Reset core styles
   appearance: none;
@@ -85,11 +84,10 @@ label {
   display: inline-grid;
   place-content: center;
 
-
-  color: var(--rm-border-color);
+  color: var(--rm-color-neutral-base);
   width: var(--rm-space-medium);
   height: var(--rm-space-medium);
-  box-shadow: var(--rm-border-all) var(--rm-border-color);
+  box-shadow: var(--rm-border-all) var(--rm-color-neutral-base);
   border-radius: var(--rm-radius-circle);
 
   vertical-align: middle;
@@ -148,12 +146,10 @@ label {
     height: var(--rm-space-small);
     border-radius: var(--rm-radius-small);
 
-    box-shadow: inset 0 var(--rm-space-small) var(--rm-color-primary-base);
-
     transform-origin: center;
 
     // This does feel a bit magic but it's what makes the checkmark shape.
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    clip-path: var(--rm-clippath-form-checkmark);
   }
 }
 
@@ -167,7 +163,7 @@ label {
 
   padding: var(--rm-space-large);
 
-  margin-bottom: var(--rm-space-large); // TODO: Is there a way to get rid of this?
+  margin-bottom: var(--rm-space-large);
 
   h2 {
     font-size: var(--rm-font-medium);
@@ -182,6 +178,7 @@ label {
   display: inline-block;
 
   padding: var(--rm-space-2x-small) var(--rm-space-x-small);
+  margin-left: var(--rm-space-x-small); // Is there a future solution with gap possible here?
 
   background: var(--rm-color-alerts-danger-plus-2);
   color: var(--rm-color-alerts-danger-on-plus-2);
@@ -189,7 +186,6 @@ label {
   border-radius: var(--rm-radius-medium);
 
   font-size: var(--rm-font-x-small);
-
 }
 
 .form__input--error {
