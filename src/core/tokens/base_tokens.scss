@@ -89,6 +89,7 @@
 }
 
 @mixin clip-paths {
+  --rm-clippath-form-radio: circle(40% at 50% 50%);
   --rm-clippath-form-checkmark: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
@@ -148,6 +149,8 @@ $breakpoint-medium: 1024px; // landscape ipad
 $breakpoint-large: 1280px; // small laptop
 $breakpoint-x-large: 1440px; // medium laptop
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
   // Color HSLs
   @include color-varieties;

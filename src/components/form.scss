@@ -1,12 +1,3 @@
-// TODO: This will get moved in https://github.com/RoleModel/rolemodel-design-system/pull/38
-label {
-  display: inline-block;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
 // Input Group
 // Future Idea: Can we use gap here instead of padding on the label and hint?
 .form__group {
@@ -97,13 +88,14 @@ label {
 
   &::before {
     content: '';
-    width: var(--rm-space-small);
-    height: var(--rm-space-small);
-    border-radius: var(--rm-radius-circle);
+    width: var(--rm-space-medium);
+    height: var(--rm-space-medium);
 
     transform: scale(0);
     transition: var(--rm-transition-input) transform ease-in-out;
-    box-shadow: inset 0 var(--rm-space-small) var(--rm-color-primary-base);
+    box-shadow: inset 0 var(--rm-space-medium) var(--rm-color-primary-base);
+
+    clip-path: var(--rm-clippath-form-radio);
   }
 
   &:checked {
@@ -126,7 +118,7 @@ label {
     box-shadow: var(--rm-border-all) var(--rm-border-color);
 
     &::before {
-      box-shadow: inset 0 var(--rm-space-small) var(--rm-border-color);
+      box-shadow: inset 0 var(--rm-space-medium) var(--rm-border-color);
     }
 
     + label {
@@ -148,7 +140,6 @@ label {
 
     transform-origin: center;
 
-    // This does feel a bit magic but it's what makes the checkmark shape.
     clip-path: var(--rm-clippath-form-checkmark);
   }
 }
