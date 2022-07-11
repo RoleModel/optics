@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "material-symbols": "^0.1.0",
+    "modern-css-reset": "^1.4.0",
     "tom-select": "^2.0.0"
   },
   "devDependencies": {
