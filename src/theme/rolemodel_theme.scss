@@ -123,7 +123,7 @@
   @include neutral-semantic-scale;
 }
 
-:root:not([data-dark-mode='false']) {
+:root:not([data-allow-dark-mode-preference='false']) {
   @media (prefers-color-scheme: dark) {
     & {
       @include primary-semantic-scale-dark;

@@ -71,7 +71,7 @@ If your application does not use or need dark mode, it can be disabled by adding
 
 ```html
 <!DOCTYPE html>
-<html data-dark-mode='false'>
+<html data-allow-dark-mode-preference='false'>
   ...
 </html>
 ```
