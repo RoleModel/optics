@@ -17,6 +17,10 @@ body {
   font-size: var(--rm-font-medium);
 }
 
+button {
+  background: none;
+}
+
 button, input[type='submit'] {
   border: 0;
 }
