@@ -4,6 +4,12 @@
   padding: var(--rm-space-small) 0;
 }
 
+.form__inline-group {
+  display: flex;
+  align-items: center;
+  gap: var(--rm-space-small);
+}
+
 // Label
 .form__label {
   padding-bottom: var(--rm-space-x-small);
@@ -27,8 +33,8 @@
   font-size: var(--rm-font-small);
   line-height: var(--rm-line-height-base);
 
-  background-color: var(--rm-color-background);
-  color: var(--rm-color-on-background);
+  background-color: var(--rm-color-neutral-plus-max);
+  color: var(--rm-color-neutral-on-plus-max);
 
   border: none;
   box-shadow: var(--rm-border-all) var(--rm-border-color);
@@ -62,27 +68,38 @@
   }
 }
 
+// Select Color
+.form__color {
+  @extend .form__dropdown;
+}
+
+.form__input--read-only, .form__dropdown--read-only, .form__color--read-only {
+  background-color: var(--rm-color-neutral-plus-3);
+  color: var(--rm-color-neutral-on-plus-3);
+  box-shadow: none;
+}
+
 // Radio
 // Inspired by https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 .form__radio {
   // Reset core styles
   appearance: none;
   // For iOS < 15 to remove gradient background
-  background-color: var(--rm-color-white);
+  background-color: var(--rm-color-neutral-plus-max);
   // Not removed via appearance
   margin: 0;
 
   display: inline-grid;
   place-content: center;
 
-  color: var(--rm-color-neutral-base);
+  color: var(--rm-color-neutral-on-plus-max);
   width: var(--rm-space-medium);
   height: var(--rm-space-medium);
   box-shadow: var(--rm-border-all) var(--rm-color-neutral-base);
   border-radius: var(--rm-radius-circle);
 
   vertical-align: middle;
-  margin-right: var(--rm-space-2x-small);
+  margin-right: var(--rm-space-x-small);
 
   cursor: pointer;
 
@@ -93,13 +110,13 @@
 
     transform: scale(0);
     transition: var(--rm-transition-input) transform ease-in-out;
-    box-shadow: inset 0 var(--rm-space-medium) var(--rm-color-primary-base);
+    box-shadow: inset 0 var(--rm-space-medium) var(--rm-color-primary-minus-1);
 
     clip-path: var(--rm-clippath-form-radio);
   }
 
   &:checked {
-    box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
+    box-shadow: var(--rm-border-all) var(--rm-color-primary-minus-1);
   }
 
   &:checked::before {
