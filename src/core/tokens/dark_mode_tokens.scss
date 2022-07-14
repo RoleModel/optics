@@ -1,45 +1,53 @@
 @mixin primary-semantic-scale-dark {
-  --rm-color-primary-plus-3: var(--rm-color-primary-luminosity-10);
-  --rm-color-primary-plus-2: var(--rm-color-primary-luminosity-15);
-  --rm-color-primary-plus-1: var(--rm-color-primary-luminosity-20);
-  --rm-color-primary-hover: var(--rm-color-primary-luminosity-20);
-  --rm-color-primary-base: var(--rm-color-primary-luminosity-25);
-  --rm-color-primary-minus-1: var(--rm-color-primary-luminosity-35);
-  --rm-color-primary-minus-2: var(--rm-color-primary-luminosity-40);
-  --rm-color-primary-minus-3: var(--rm-color-primary-luminosity-60);
+  --rm-color-primary-plus-max:  var(--rm-color-black);
+  --rm-color-primary-plus-3:    var(--rm-color-primary-luminosity-10);
+  --rm-color-primary-plus-2:    var(--rm-color-primary-luminosity-15);
+  --rm-color-primary-plus-1:    var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-hover:     var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-base:      var(--rm-color-primary-luminosity-25);
+  --rm-color-primary-minus-1:   var(--rm-color-primary-luminosity-35);
+  --rm-color-primary-minus-2:   var(--rm-color-primary-luminosity-40);
+  --rm-color-primary-minus-3:   var(--rm-color-primary-luminosity-60);
+  --rm-color-primary-minus-max: var(--rm-color-white);
 
-  --rm-color-primary-on-plus-3: var(--rm-color-white);
-  --rm-color-primary-on-plus-2: var(--rm-color-white);
-  --rm-color-primary-on-plus-1: var(--rm-color-primary-luminosity-90);
-  --rm-color-primary-on-hover: var(--rm-color-primary-luminosity-90);
-  --rm-color-primary-on-base: var(--rm-color-primary-luminosity-80);
-  --rm-color-primary-on-minus-1: var(--rm-color-primary-luminosity-90);
-  --rm-color-primary-on-minus-2: var(--rm-color-white);
-  --rm-color-primary-on-minus-3: var(--rm-color-primary-luminosity-5);
+  --rm-color-primary-on-plus-max:  var(--rm-color-primary-luminosity-98);
+  --rm-color-primary-on-plus-3:    var(--rm-color-white);
+  --rm-color-primary-on-plus-2:    var(--rm-color-white);
+  --rm-color-primary-on-plus-1:    var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-on-hover:     var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-on-base:      var(--rm-color-primary-luminosity-80);
+  --rm-color-primary-on-minus-1:   var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-on-minus-2:   var(--rm-color-white);
+  --rm-color-primary-on-minus-3:   var(--rm-color-primary-luminosity-5);
+  --rm-color-primary-on-minus-max: var(--rm-color-primary-luminosity-15);
 }
 
 @mixin neutral-semantic-scale-dark {
-  --rm-color-neutral-plus-3: var(--rm-color-neutral-luminosity-10);
-  --rm-color-neutral-plus-2: var(--rm-color-neutral-luminosity-15);
-  --rm-color-neutral-plus-1: var(--rm-color-neutral-luminosity-20);
-  --rm-color-neutral-hover: var(--rm-color-neutral-luminosity-20);
-  --rm-color-neutral-base: var(--rm-color-neutral-luminosity-25);
-  --rm-color-neutral-minus-1: var(--rm-color-neutral-luminosity-35);
-  --rm-color-neutral-minus-2: var(--rm-color-neutral-luminosity-40);
-  --rm-color-neutral-minus-3: var(--rm-color-neutral-luminosity-60);
+  --rm-color-neutral-plus-max:  var(--rm-color-black);
+  --rm-color-neutral-plus-3:    var(--rm-color-neutral-luminosity-10);
+  --rm-color-neutral-plus-2:    var(--rm-color-neutral-luminosity-15);
+  --rm-color-neutral-plus-1:    var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-hover:     var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-base:      var(--rm-color-neutral-luminosity-25);
+  --rm-color-neutral-minus-1:   var(--rm-color-neutral-luminosity-35);
+  --rm-color-neutral-minus-2:   var(--rm-color-neutral-luminosity-40);
+  --rm-color-neutral-minus-3:   var(--rm-color-neutral-luminosity-60);
+  --rm-color-neutral-minus-max: var(--rm-color-white);
 
-  --rm-color-neutral-on-plus-3: var(--rm-color-white);
-  --rm-color-neutral-on-plus-2: var(--rm-color-white);
-  --rm-color-neutral-on-plus-1: var(--rm-color-neutral-luminosity-90);
-  --rm-color-neutral-on-hover: var(--rm-color-neutral-luminosity-90);
-  --rm-color-neutral-on-base: var(--rm-color-neutral-luminosity-80);
-  --rm-color-neutral-on-minus-1: var(--rm-color-neutral-luminosity-90);
-  --rm-color-neutral-on-minus-2: var(--rm-color-white);
-  --rm-color-neutral-on-minus-3: var(--rm-color-neutral-luminosity-5);
+  --rm-color-neutral-on-plus-max:  var(--rm-color-neutral-luminosity-98);
+  --rm-color-neutral-on-plus-3:    var(--rm-color-white);
+  --rm-color-neutral-on-plus-2:    var(--rm-color-white);
+  --rm-color-neutral-on-plus-1:    var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-hover:     var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-base:      var(--rm-color-neutral-luminosity-80);
+  --rm-color-neutral-on-minus-1:   var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-minus-2:   var(--rm-color-white);
+  --rm-color-neutral-on-minus-3:   var(--rm-color-neutral-luminosity-5);
+  --rm-color-neutral-on-minus-max: var(--rm-color-neutral-luminosity-15);
 }
 
 @mixin background-dark {
-  --rm-color-background: var(--rm-color-neutral-luminosity-10);
+  --rm-color-background:    var(--rm-color-neutral-luminosity-10);
   --rm-color-on-background: var(--rm-color-neutral-luminosity-90);
 }
 
