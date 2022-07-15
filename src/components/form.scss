@@ -63,9 +63,7 @@
   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=') center right no-repeat;
   background-position-x: calc(100% - var(--rm-space-small));
 
-  &:hover:not(:focus):not(:disabled) {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 
 // Select Color
