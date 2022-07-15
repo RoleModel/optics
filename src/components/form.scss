@@ -71,10 +71,24 @@
   @extend .form__dropdown;
 }
 
-.form__input--read-only, .form__dropdown--read-only, .form__color--read-only {
+// Text Area
+.form__textarea {
+  @extend .form__input;
+
+  max-width: 100%;
+  min-width: var(--rm-input-height-large);
+  min-height: var(--rm-input-height-large);
+}
+
+.form__input--read-only,
+.form__dropdown--read-only,
+.form__color--read-only,
+.form__textarea--read-only {
   background-color: var(--rm-color-neutral-plus-3);
   color: var(--rm-color-neutral-on-plus-3);
   box-shadow: none;
+  height: fit-content;
+  cursor: unset;
 }
 
 // Radio
