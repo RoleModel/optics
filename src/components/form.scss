@@ -20,9 +20,6 @@
   letter-spacing: var(--rm-letter-spacing-label);
 }
 
-// Future ideas:
-// .form__inline-label
-
 // Input
 .form__input {
   display: block;
@@ -69,6 +66,10 @@
 // Select Color
 .form__color {
   @extend .form__dropdown;
+
+  &::-webkit-color-swatch {
+    margin-right: var(--rm-space-2x-large);
+  }
 }
 
 // Text Area
@@ -78,17 +79,6 @@
   max-width: 100%;
   min-width: var(--rm-input-height-large);
   min-height: var(--rm-input-height-large);
-}
-
-.form__input--read-only,
-.form__dropdown--read-only,
-.form__color--read-only,
-.form__textarea--read-only {
-  background-color: var(--rm-color-neutral-plus-3);
-  color: var(--rm-color-neutral-on-plus-3);
-  box-shadow: none;
-  height: fit-content;
-  cursor: unset;
 }
 
 // Radio
@@ -219,4 +209,21 @@
   padding-top: var(--rm-space-x-small);
   font-size: var(--rm-font-small);
   font-style: italic;
+}
+
+// Read Only
+.form__input--read-only,
+.form__dropdown--read-only,
+.form__color--read-only,
+.form__textarea--read-only {
+  background-color: var(--rm-color-neutral-plus-3);
+  background-image: none;
+  color: var(--rm-color-neutral-on-plus-3);
+  box-shadow: none;
+  height: fit-content;
+  cursor: unset;
+}
+
+.form__color--read-only {
+  height: var(--rm-input-height-large);
 }
