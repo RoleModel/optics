@@ -1,24 +1,3 @@
-// DOCS
-
-// -- For a card with header, body, and footer --
-
-// .card
-//   .card__header
-//     {{Content}}
-//   .card__body
-//     {{Content}}
-//   .card__footer
-//     {{Content}}
-
-// -- For a simple one-panel card with content --
-
-// .card--padded
-//   {{Content}}
-
-:root {
-  --rm-card-padding: var(--rm-space-medium);
-}
-
 %card {
   position: relative;
 
@@ -36,20 +15,25 @@
   @extend %card;
 }
 
-.card--padded {
+.card-padded {
   @extend %card;
 
-  padding: var(--rm-card-padding);
+  padding: var(--rm-space-medium);
 }
 
 .card__header,
 .card__body,
 .card__footer {
-  padding: var(--rm-card-padding);
+  padding: var(--rm-space-medium);
 }
 
 .card__header {
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
   }
+}
+
+.card--condensed {
+  @include spacing-scales;
+  --rm-space-scale-unit: 0.5rem;
 }
