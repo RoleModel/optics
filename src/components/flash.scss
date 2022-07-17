@@ -9,30 +9,13 @@
   padding: var(--rm-space-x-small) var(--rm-space-medium);
   font-size: var(--rm-font-small);
   background: var(--rm-color-white);
-  animation: animateMessage 5s normal forwards;
   box-shadow: var(--rm-shadow-x-small);
   border-radius: var(--rm-radius-small);
 
+  animation: rmSlideInOutFlash var(--rm-transition-flash) normal forwards;
+
   border-left-width: var(--rm-border-width-x-large);
   border-left-style: solid;
-}
-
-@keyframes animateMessage {
-  0% {
-    right: -100%;
-  }
-  1% {
-    right: -100%;
-  }
-  10% {
-    right: var(--rm-space-large);
-  }
-  70% {
-    right: var(--rm-space-large);
-  }
-  100% {
-    right: -100%;
-  }
 }
 
 .flash--notice {
