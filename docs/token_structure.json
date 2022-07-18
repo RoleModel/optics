@@ -60,21 +60,27 @@
           "95": "",
           "98": ""
         },
+        "plus-max": "",
         "plus-3": "",
         "plus-2": "",
         "plus-1": "",
+        "hover": "",
         "base": "",
         "minus-1": "",
         "minus-2": "",
         "minus-3": "",
+        "minus-max": "",
         "on": {
+          "plus-max": "",
           "plus-3": "",
           "plus-2": "",
           "plus-1": "",
+          "hover": "",
           "base": "",
           "minus-1": "",
           "minus-2": "",
-          "minus-3": ""
+          "minus-3": "",
+          "minus-max": ""
         }
       },
       "neutral": {
@@ -99,84 +105,112 @@
           "95": "",
           "98": ""
         },
+        "plus-max": "",
         "plus-3": "",
         "plus-2": "",
         "plus-1": "",
+        "hover": "",
         "base": "",
         "minus-1": "",
         "minus-2": "",
         "minus-3": "",
+        "minus-max": "",
         "on": {
+          "plus-max": "",
           "plus-3": "",
           "plus-2": "",
           "plus-1": "",
           "base": "",
           "minus-1": "",
           "minus-2": "",
-          "minus-3": ""
+          "minus-3": "",
+          "minus-max": ""
         }
       },
       "alerts": {
         "warning": {
+          "plus-max": "",
           "plus-2": "",
           "plus-1": "",
+          "hover": "",
           "base": "",
           "minus-1": "",
           "minus-2": "",
+          "minus-max": "",
           "on": {
+            "plus-max": "",
             "plus-2": "",
             "plus-1": "",
+            "hover": "",
             "base": "",
             "minus-1": "",
-            "minus-2": ""
+            "minus-2": "",
+            "minus-max": ""
           }
         },
         "danger": {
+          "plus-max": "",
           "plus-2": "",
           "plus-1": "",
+          "hover": "",
           "base": "",
           "minus-1": "",
           "minus-2": "",
+          "minus-max": "",
           "on": {
+            "plus-max": "",
             "plus-2": "",
             "plus-1": "",
+            "hover": "",
             "base": "",
             "minus-1": "",
-            "minus-2": ""
+            "minus-2": "",
+            "minus-max": ""
           }
         },
         "info": {
+          "plus-max": "",
           "plus-2": "",
           "plus-1": "",
+          "hover": "",
           "base": "",
           "minus-1": "",
           "minus-2": "",
+          "minus-max": "",
           "on": {
+            "plus-max": "",
             "plus-2": "",
             "plus-1": "",
+            "hover": "",
             "base": "",
             "minus-1": "",
-            "minus-2": ""
+            "minus-2": "",
+            "minus-max": ""
           }
         },
         "notice": {
+          "plus-max": "",
           "plus-2": "",
           "plus-1": "",
+          "hover": "",
           "base": "",
           "minus-1": "",
           "minus-2": "",
+          "minus-max": "",
           "on": {
+            "plus-max": "",
             "plus-2": "",
             "plus-1": "",
+            "hover": "",
             "base": "",
             "minus-1": "",
-            "minus-2": ""
+            "minus-2": "",
+            "minus-max": ""
           }
         }
       },
       "background": "",
-      "on-background": "",
-      "outline": ""
+      "on-background": ""
     },
     "border": {
       "width": "",
@@ -207,6 +241,7 @@
       "pill": ""
     },
     "font": {
+      "scale-unit": "",
       "x-small": "",
       "small": "",
       "medium": "",
@@ -249,7 +284,14 @@
       "panel": "",
       "flash": ""
     },
+    "clippath": {
+      "form": {
+        "radio": "",
+        "checkmark": ""
+      }
+    },
     "space": {
+      "scale-unit": "",
       "3x-small": "",
       "2x-small": "",
       "x-small": "",
@@ -270,6 +312,19 @@
       "dropdown": "",
       "alert-group": "",
       "tooltip": ""
+    },
+    "input-height": {
+      "small": "",
+      "medium": "",
+      "large": "",
+      "x-large": ""
+    },
+    "breakpoints": {
+      "x-small": "",
+      "small": "",
+      "medium": "",
+      "large": "",
+      "x-large": ""
     }
   }
 }

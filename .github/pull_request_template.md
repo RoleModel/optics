@@ -15,6 +15,13 @@ What changed in this PR?
 * [ ] Change 2
 * [ ] ...
 
+## Sanity Check
+
+* [ ] Have you updated any usage of changed tokens?
+* [ ] Have you updated the `docs/token_structure.json` file?
+* [ ] Have you updated the docs with any component changes?
+* [ ] Do you need to update the package version?
+
 ## Screenshots
 
 If any UI changes need to be shown off, please add screenshots here.

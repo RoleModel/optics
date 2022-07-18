@@ -98,8 +98,21 @@ If your application does not use or need dark mode, it can be disabled by adding
 </html>
 ```
 
+### Scale Overriding
+
+If you want to change the font or spacing scale within the context of a specific component, you can't just set the `--rm-space-scale-unit` because the css variables for the scale are already computed and won't be re-computed when you set the scale unit. You can force it to re-compute by redefining the scale. This is why each set of tokens is defined in a scss mixin. `card--condensed` is a great example of how to do this.
+
+```scss
+.card--condensed {
+  @include spacing-scales;
+  --rm-space-scale-unit: 0.5rem;
+}
+```
+
 ### Components
 
 [Buttons](./docs/components/button/button.md)
+
+[Card](./docs/components/card/card.md)
 
 [Forms](./docs/components/form/form.md)

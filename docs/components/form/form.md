@@ -14,7 +14,7 @@ They provide consistent and composable styling that should address most applicat
 <label class='form__label'>A Label</label>
 ```
 
-`.form__input` Provides basic input styles. This can be used on both `input` and `textarea` html elements. It works across a variety of types such as `text`, `number`, `password`, `email`, and `phone`
+`.form__input` Provides basic input styles. This can be used on `input` html elements. It works across a variety of types such as `text`, `number`, `password`, `email`, and `phone`
 ```html
 <input type='text' class='form__input' />
 ```
@@ -27,6 +27,19 @@ They provide consistent and composable styling that should address most applicat
 </div>
 ```
 
+`.form__inline-group` Composes an input and label together as a side by side pair. It can be used with `form__group` to get padding as well as side by side label and input.
+```html
+<div class='form__group form__inline-group'>
+  <label class='form__label'>Text Input</label>
+  <input type='text' class='form__input' />
+</div>
+```
+
+`.form__textarea` Provides basic text area styles. This can be used on `textarea` html elements.
+```html
+<textarea class='form__textarea' />
+```
+
 `.form__dropdown` Provides basic `select` element styles.
 ```html
 <select class='form__dropdown'>
@@ -34,6 +47,11 @@ They provide consistent and composable styling that should address most applicat
   <option>Option 2</option>
   <option>Option 3</option>
 </select>
+```
+
+`.form__color` Provides basic color input styles. This can be used on `input` html elements with a type of `color`.
+```html
+<input type='color' class='form__color' />
 ```
 
 `.form__radio` Provides basic input of type `radio` styles.
@@ -72,5 +90,22 @@ They provide consistent and composable styling that should address most applicat
   <label class='form__label'>Text Input</label>
   <span class='form__error'>Can't be blank</span>
   <input class='form__input' type='text' />
+</div>
+```
+
+`.form__hint` can be used inside of a `form__group` to provide help text for an input.
+```html
+<div class='form__group'>
+  <label class='form__label'>Password Input</label>
+  <input class='form__input' type='password' />
+  <span class='form__hint'>Here's a Password Hint</span>
+</div>
+```
+
+`.form__input--read-only`, `.form__dropdown--read-only`, `.form__color--read-only`, and `.form__textarea--read-only` can be used to display values in a form-like way.
+```html
+<div class='form__group'>
+  <label class='form__label'>Password Input</label>
+  <span class='form__input form__input--read-only'>Saved Value</span>
 </div>
 ```

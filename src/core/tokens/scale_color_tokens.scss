@@ -41,66 +41,78 @@
 }
 
 @mixin primary-semantic-scale {
-  --rm-color-primary-plus-3: var(--rm-color-primary-luminosity-95);
-  --rm-color-primary-plus-2: var(--rm-color-primary-luminosity-80);
-  --rm-color-primary-plus-1: var(--rm-color-primary-luminosity-70);
-  --rm-color-primary-hover: var(--rm-color-primary-luminosity-50);
-  --rm-color-primary-base: var(--rm-color-primary-luminosity-40);
-  --rm-color-primary-minus-1: var(--rm-color-primary-luminosity-30);
-  --rm-color-primary-minus-2: var(--rm-color-primary-luminosity-20);
-  --rm-color-primary-minus-3: var(--rm-color-primary-luminosity-10);
+  --rm-color-primary-plus-max:  var(--rm-color-white);
+  --rm-color-primary-plus-3:    var(--rm-color-primary-luminosity-95);
+  --rm-color-primary-plus-2:    var(--rm-color-primary-luminosity-80);
+  --rm-color-primary-plus-1:    var(--rm-color-primary-luminosity-70);
+  --rm-color-primary-hover:     var(--rm-color-primary-luminosity-50);
+  --rm-color-primary-base:      var(--rm-color-primary-luminosity-40);
+  --rm-color-primary-minus-1:   var(--rm-color-primary-luminosity-30);
+  --rm-color-primary-minus-2:   var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-minus-3:   var(--rm-color-primary-luminosity-10);
+  --rm-color-primary-minus-max: var(--rm-color-black);
 
-  --rm-color-primary-on-plus-3: var(--rm-color-primary-luminosity-10);
-  --rm-color-primary-on-plus-2: var(--rm-color-primary-luminosity-10);
-  --rm-color-primary-on-plus-1: var(--rm-color-black);
-  --rm-color-primary-on-hover: var(--rm-color-white);
-  --rm-color-primary-on-base: var(--rm-color-white);
-  --rm-color-primary-on-minus-1: var(--rm-color-primary-luminosity-90);
-  --rm-color-primary-on-minus-2: var(--rm-color-primary-luminosity-95);
-  --rm-color-primary-on-minus-3: var(--rm-color-white);
+  --rm-color-primary-on-plus-max:  var(--rm-color-primary-luminosity-15);
+  --rm-color-primary-on-plus-3:    var(--rm-color-primary-luminosity-10);
+  --rm-color-primary-on-plus-2:    var(--rm-color-primary-luminosity-10);
+  --rm-color-primary-on-plus-1:    var(--rm-color-black);
+  --rm-color-primary-on-hover:     var(--rm-color-white);
+  --rm-color-primary-on-base:      var(--rm-color-white);
+  --rm-color-primary-on-minus-1:   var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-on-minus-2:   var(--rm-color-primary-luminosity-95);
+  --rm-color-primary-on-minus-3:   var(--rm-color-white);
+  --rm-color-primary-on-minus-max: var(--rm-color-primary-luminosity-98);
 }
 
 @mixin neutral-semantic-scale {
-  --rm-color-neutral-plus-3: var(--rm-color-neutral-luminosity-95);
-  --rm-color-neutral-plus-2: var(--rm-color-neutral-luminosity-80);
-  --rm-color-neutral-plus-1: var(--rm-color-neutral-luminosity-70);
-  --rm-color-neutral-hover: var(--rm-color-neutral-luminosity-50);
-  --rm-color-neutral-base: var(--rm-color-neutral-luminosity-40);
-  --rm-color-neutral-minus-1: var(--rm-color-neutral-luminosity-30);
-  --rm-color-neutral-minus-2: var(--rm-color-neutral-luminosity-20);
-  --rm-color-neutral-minus-3: var(--rm-color-neutral-luminosity-10);
+  --rm-color-neutral-plus-max:   var(--rm-color-white);
+  --rm-color-neutral-plus-3:     var(--rm-color-neutral-luminosity-95);
+  --rm-color-neutral-plus-2:     var(--rm-color-neutral-luminosity-80);
+  --rm-color-neutral-plus-1:     var(--rm-color-neutral-luminosity-70);
+  --rm-color-neutral-hover:      var(--rm-color-neutral-luminosity-50);
+  --rm-color-neutral-base:       var(--rm-color-neutral-luminosity-40);
+  --rm-color-neutral-minus-1:    var(--rm-color-neutral-luminosity-30);
+  --rm-color-neutral-minus-2:    var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-minus-3:    var(--rm-color-neutral-luminosity-10);
+  --rm-color-neutral-minus-max:  var(--rm-color-black);
 
-  --rm-color-neutral-on-plus-3: var(--rm-color-neutral-luminosity-10);
-  --rm-color-neutral-on-plus-2: var(--rm-color-neutral-luminosity-10);
-  --rm-color-neutral-on-plus-1: var(--rm-color-black);
-  --rm-color-neutral-on-hover: var(--rm-color-white);
-  --rm-color-neutral-on-base: var(--rm-color-white);
-  --rm-color-neutral-on-minus-1: var(--rm-color-neutral-luminosity-90);
-  --rm-color-neutral-on-minus-2: var(--rm-color-neutral-luminosity-95);
-  --rm-color-neutral-on-minus-3: var(--rm-color-white);
+  --rm-color-neutral-on-plus-max:  var(--rm-color-neutral-luminosity-15);
+  --rm-color-neutral-on-plus-3:    var(--rm-color-neutral-luminosity-10);
+  --rm-color-neutral-on-plus-2:    var(--rm-color-neutral-luminosity-10);
+  --rm-color-neutral-on-plus-1:    var(--rm-color-black);
+  --rm-color-neutral-on-hover:     var(--rm-color-white);
+  --rm-color-neutral-on-base:      var(--rm-color-white);
+  --rm-color-neutral-on-minus-1:   var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-minus-2:   var(--rm-color-neutral-luminosity-95);
+  --rm-color-neutral-on-minus-3:   var(--rm-color-white);
+  --rm-color-neutral-on-minus-max: var(--rm-color-neutral-luminosity-98);
 }
 
 @mixin background {
-  --rm-color-background: var(--rm-color-neutral-luminosity-98);
+  --rm-color-background:    var(--rm-color-neutral-luminosity-98);
   --rm-color-on-background: var(--rm-color-neutral-luminosity-10);
 }
 
 @mixin alert-scale {
   $alert_color_varieties: ('warning': 'yellow', 'danger': 'red', 'info': 'blue', 'notice': 'green');
   @each $name, $color in $alert_color_varieties {
-    --rm-color-alerts-#{$name}-plus-2:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 80%);
-    --rm-color-alerts-#{$name}-plus-1:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 70%);
-    --rm-color-alerts-#{$name}-hover:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 45%);
-    --rm-color-alerts-#{$name}-base:    hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 40%);
-    --rm-color-alerts-#{$name}-minus-1: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 30%);
-    --rm-color-alerts-#{$name}-minus-2: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 20%);
+    --rm-color-alerts-#{$name}-plus-max:  var(--rm-color-white);
+    --rm-color-alerts-#{$name}-plus-2:    hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 80%);
+    --rm-color-alerts-#{$name}-plus-1:    hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 70%);
+    --rm-color-alerts-#{$name}-hover:     hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 45%);
+    --rm-color-alerts-#{$name}-base:      hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 40%);
+    --rm-color-alerts-#{$name}-minus-1:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 30%);
+    --rm-color-alerts-#{$name}-minus-2:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 20%);
+    --rm-color-alerts-#{$name}-minus-max: var(--rm-color-black);
 
-    --rm-color-alerts-#{$name}-on-plus-2: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 20%);
-    --rm-color-alerts-#{$name}-on-plus-1: var(--rm-color-black);
-    --rm-color-alerts-#{$name}-on-hover:  var(--rm-color-white);
-    --rm-color-alerts-#{$name}-on-base:   var(--rm-color-white);
-    --rm-color-alerts-#{$name}-on-minus-1: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 90%);
-    --rm-color-alerts-#{$name}-on-minus-2: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 95%);
+    --rm-color-alerts-#{$name}-on-plus-max:  hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 15%);
+    --rm-color-alerts-#{$name}-on-plus-2:    hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 20%);
+    --rm-color-alerts-#{$name}-on-plus-1:    var(--rm-color-black);
+    --rm-color-alerts-#{$name}-on-hover:     var(--rm-color-white);
+    --rm-color-alerts-#{$name}-on-base:      var(--rm-color-white);
+    --rm-color-alerts-#{$name}-on-minus-1:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 90%);
+    --rm-color-alerts-#{$name}-on-minus-2:   hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 95%);
+    --rm-color-alerts-#{$name}-on-minus-max: hsl(var(--rm-color-#{$color}-h), var(--rm-color-#{$color}-s), 98%);
   }
 }
 
