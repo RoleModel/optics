@@ -1,7 +1,6 @@
 .modal {
   // Modals
   --rm-modal-width: 564px;
-  --rm-modal-transition-speed: 300ms;
 
   visibility: hidden;
   display: flex;
@@ -30,7 +29,7 @@
   background: black;
   visibility: hidden;
   opacity: 0;
-  transition: all var(--rm-modal-transition-speed);
+  transition: all var(--rm-transition-modal);
 }
 
 .modal__content {
@@ -45,7 +44,7 @@
   transform: scale(0.7);
   opacity: 0;
   overflow-y: auto;
-  transition: all var(--rm-modal-transition-speed);
+  transition: all var(--rm-transition-modal);
 }
 
 .modal--active {

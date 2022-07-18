@@ -50,7 +50,7 @@
   border-radius: var(--rm-radius-x-large);
   text-decoration: none;
   color: var(--rm-color-primary-on-plus-3);
-  transition: 300ms;
+  transition: var(--rm-transition-sidebar);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

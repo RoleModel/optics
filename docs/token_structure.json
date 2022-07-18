@@ -243,7 +243,11 @@
       "label": ""
     },
     "transitions": {
-      "input": ""
+      "input": "",
+      "sidebar": "",
+      "modal": "",
+      "panel": "",
+      "flash": ""
     },
     "space": {
       "3x-small": "",

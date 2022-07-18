@@ -85,7 +85,11 @@
 }
 
 @mixin transitions {
-  --rm-transition-input: 120ms;
+  --rm-transition-input:   120ms;
+  --rm-transition-sidebar: 300ms;
+  --rm-transition-modal:   300ms;
+  --rm-transition-panel:   400ms;
+  --rm-transition-flash:   5s;
 }
 
 @mixin clip-paths {
@@ -187,4 +191,28 @@ $breakpoint-x-large: 1440px; // medium laptop
 
   // Inputs
   @include inputs;
+}
+
+// Animations
+@keyframes rmSlideInOutFlash {
+  // If an duration of 5s is set:
+  // Start off the Screen
+  0% {
+    right: -100%;
+  }
+
+  // Animate onto the screen for 0.5s
+  10% {
+    right: var(--rm-space-large);
+  }
+
+  // Stay on the screen for 3s
+  70% {
+    right: var(--rm-space-large);
+  }
+
+  // Animate off the screen for 1.5s
+  100% {
+    right: -100%;
+  }
 }
