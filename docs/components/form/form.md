@@ -106,6 +106,6 @@ They provide consistent and composable styling that should address most applicat
 ```html
 <div class='form__group'>
   <label class='form__label'>Password Input</label>
-  <span class='form__input.form__input--read-only'>Saved Value</span>
+  <span class='form__input form__input--read-only'>Saved Value</span>
 </div>
 ```

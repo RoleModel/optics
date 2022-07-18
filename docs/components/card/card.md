@@ -15,7 +15,7 @@ Card classes can be used to denote bordered sections of an application. They pro
 </div>
 ```
 
-`.card--padded` Provides a padded card.
+`.card-padded` Provides a padded card.
 ```html
 <div class='card-padded'>
   ...
