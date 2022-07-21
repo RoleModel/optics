@@ -8,7 +8,9 @@
     "build": "npm run build:css && npm run build:scss && npm run build:tokens",
     "build:css": "sass src/rolemodel-design-system.scss dist/css/rolemodel-design-system.css --load-path=node_modules/",
     "build:scss": "cp -r src dist/scss",
-    "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json"
+    "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,16 @@
     "tom-select": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/html": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5",
     "sass": "^1.49.10"
   }
 }
