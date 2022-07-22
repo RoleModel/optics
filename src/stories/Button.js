@@ -1,21 +1,25 @@
 import './button.css';
 
 export const createButton = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
   label,
-  onClick,
+  priority = 'default',
+  noBorder = false,
+  outlined = false,
+  pill = false,
+  icon = false,
+  size = 'medium',
 }) => {
   const btn = document.createElement('button');
-  btn.type = 'button';
   btn.innerText = label;
-  btn.addEventListener('click', onClick);
 
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  btn.className = ['storybook-button', `storybook-button--${size}`, mode].join(' ');
-
-  btn.style.backgroundColor = backgroundColor;
+  btn.className = [
+    priority === 'default' ? 'btn' : `btn-${priority}`,
+    noBorder ? 'btn--no-border' : '',
+    outlined ? 'btn--outline' : '',
+    pill ? 'btn--pill' : '',
+    icon ? 'btn--icon' : '',
+    size === 'medium' ? '' : `btn--${size}`,
+  ].filter(Boolean).join(' ');
 
   return btn;
 };
