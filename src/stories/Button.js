@@ -1,5 +1,3 @@
-import './button.css';
-
 export const createButton = ({
   label,
   priority = 'default',
