@@ -10,7 +10,7 @@
     "build:scss": "cp -r src dist/scss",
     "build:tokens": "mkdir -p dist/tokens && cp docs/token_structure.json dist/tokens/tokens.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs-build -s ./src/stories/assets"
   },
   "repository": {
     "type": "git",
