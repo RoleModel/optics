@@ -1,4 +1,5 @@
-import { createCard } from './Card';
+import { createCard } from './Card/Card.js';
+import CardDocs from './Card/Card.mdx';
 
 // More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -11,6 +12,11 @@ export default {
     header: { control: 'text' },
     body: { control: 'text' },
     footer: { control: 'text' },
+  },
+  parameters: {
+    docs: {
+      page: CardDocs
+    },
   },
 };
 
