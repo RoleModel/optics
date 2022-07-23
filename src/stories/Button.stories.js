@@ -22,10 +22,7 @@ export default {
   },
   parameters: {
     docs: {
-      page: ButtonDocs,
-      description: {
-        component: 'Button classes can be used on `button` or `a` html elements. They provide consistent and composable styling that should address most applications basic needs.'
-      }
+      page: ButtonDocs
     },
   },
 };
