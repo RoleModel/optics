@@ -1,0 +1,101 @@
+import { Title, Subtitle, Description, Primary, ArgsTable, Stories, Canvas, Story } from "@storybook/addon-docs";
+
+<Title/>
+<Subtitle/>
+<Description/>
+
+<!-- Either use <Stories /> to automatically render each story -->
+<!-- Or manually render them with custom descriptions -->
+
+## Default
+
+`.btn` Provides a default outlined black text button. This would be commonly used as a cancel button in a form.
+
+<Canvas withToolbar>
+  <Story id='components-button--default' />
+</Canvas>
+
+## Primary
+
+`.btn-primary` Provides a filled button using the primary color in your theme. This should be used as the primary action on a screen such as the login button on an account screen or the submit button on a form.
+
+<Canvas withToolbar>
+  <Story id='components-button--primary' />
+</Canvas>
+
+## Secondary
+
+`.btn-secondary` Provides an outlined button using the primary color in your theme. This should be used as a secondary action on a screen such as the create account button on a login screen.
+
+<Canvas withToolbar>
+  <Story id='components-button--secondary' />
+</Canvas>
+
+## Delete
+
+`.btn-delete` Provides a filled button using the red danger color. This should be used as a destructive action such as delete.
+
+<Canvas withToolbar>
+  <Story id='components-button--delete' />
+</Canvas>
+
+## Outline
+
+`.btn--outline` This is a modifier which can be used with all button classes. It provides an outlined button that adapts it's color to all the btn variations.
+
+<Canvas withToolbar>
+  <Story id='components-button--outline' />
+</Canvas>
+
+## No Border
+
+`.btn--no-border` This is a modifier which can be used with all button classes. It provides a button with no border, but the same sizing and adapts it's color to all the btn variations.
+
+<Canvas withToolbar>
+  <Story id='components-button--no-border' />
+</Canvas>
+
+## Disabled
+
+`.btn--disabled` Should be used on `a` elements that need to be disabled. `button` elements can use the `disabled` attribute as well as this class. This makes the button opaque and changes the cursor to the `not allowed` icon.
+
+<Canvas withToolbar>
+  <Story id='components-button--disabled' />
+</Canvas>
+
+## Pill
+
+`.btn--pill` Modifies the shape of any other buttons by adding a radius to the left and right.
+
+<Canvas withToolbar>
+  <Story id='components-button--pill' />
+</Canvas>
+
+## Icon
+
+`.btn--icon` Modifies the shape of any other button class by adding a full radius to the button. This should only be used with an icon as the button text. You can also combine it with `.btn--no-border` for a borderless icon button.
+
+<Canvas withToolbar>
+  <Story id='components-button--icon' />
+</Canvas>
+
+## Size
+
+`.btn--small`, `.btn--medium`, `.btn--large` (with medium being the default) modify the size of any other button class by changing the font and height to be smaller or larger.
+
+<Canvas withToolbar>
+  <Story id='components-button--size' />
+</Canvas>
+
+## Custom Button
+
+Your application may need a custom button (new color, special use, etc.). To add one:
+1. Create a class like `.btn-something`
+2. Define how it behaves with the outline `.btn-something.btn--outline` and no border `.btn-something.btn--no-border`
+
+The other modifiers will automatically work with it. You can use `.btn-delete` as an example of how this would work.
+
+## Playground
+
+<Primary/>
+<ArgsTable of='.' story='^'/>

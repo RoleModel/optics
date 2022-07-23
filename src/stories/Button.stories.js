@@ -1,4 +1,5 @@
-import { createButton } from './Button';
+import { createButton } from './Button/Button.js';
+import ButtonDocs from './Button/Button.mdx';
 
 // More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -17,6 +18,14 @@ export default {
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
+    },
+  },
+  parameters: {
+    docs: {
+      page: ButtonDocs,
+      description: {
+        component: 'Button classes can be used on `button` or `a` html elements. They provide consistent and composable styling that should address most applications basic needs.'
+      }
     },
   },
 };
@@ -53,6 +62,13 @@ Delete.args = {
   priority: 'delete',
 };
 
+export const Outline = Template.bind({});
+Outline.args = {
+  label: 'Outline',
+  priority: 'delete',
+  outline: true,
+};
+
 export const NoBorder = Template.bind({});
 NoBorder.args = {
   label: 'No Border',
@@ -60,12 +76,13 @@ NoBorder.args = {
   noBorder: true,
 };
 
-export const Outlined = Template.bind({});
-Outlined.args = {
-  label: 'Outlined',
-  priority: 'default',
-  outlined: true,
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: 'Disabled',
+  priority: 'primary',
+  disabled: true,
 };
+
 export const Pill = Template.bind({});
 Pill.args = {
   label: 'Pill',
@@ -80,8 +97,8 @@ Icon.args = {
   icon: true,
 };
 
-export const Small = Template.bind({});
-Small.args = {
+export const Size = Template.bind({});
+Size.args = {
   label: 'Small',
   priority: 'primary',
   size: 'small',
