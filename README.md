@@ -26,6 +26,8 @@ If you are using a different compiler such as Dart Sass, you may need to referen
 @import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system'
 ```
 
+[Documentation](https://rolemodel.github.io/rolemodel-design-system)
+
 ## Tokens
 
 Tokens are defined in `src/core/tokens`
@@ -88,7 +90,7 @@ If you do not want all the styles RoleModel Design System provides, you can impo
 @import '@rolemodel/rolemodel-design-system/scss/components/button.scss';
 ```
 
-## Documentation
+## Documentation (not yet converted to Storybook)
 
 ### Base Layout
 
@@ -140,9 +142,5 @@ If you want to change the font or spacing scale within the context of a specific
 [Shadows](./docs/components/shadow/shadow.md)
 
 ### Components
-
-[Buttons](./docs/components/button/button.md)
-
-[Card](./docs/components/card/card.md)
 
 [Forms](./docs/components/form/form.md)
