@@ -11,6 +11,9 @@ export default {
         max: 5
       }
     },
+    readonly: {
+      control: { type: 'boolean' }
+    }
   },
   parameters: {
     docs: {

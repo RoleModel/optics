@@ -68,25 +68,37 @@ export const createInput = ({ type, readonly, id = 'random' }) => {
   return input;
 };
 
-export const createTextarea = () => {
-  const input = document.createElement('textarea');
+export const createTextarea = ({ readonly }) => {
+  const element = readonly ? 'div' : 'textarea';
+  const input = document.createElement(element);
   input.placeholder = 'Textarea'
   input.className = 'form__textarea'
+
+  if (readonly) {
+    input.className += ' form__textarea--read-only'
+    input.innerHTML = 'Textarea'
+  }
 
   return input;
 };
 
-export const createSelect = ({ options }) => {
-  const input = document.createElement('select');
+export const createSelect = ({ options, readonly }) => {
+  const element = readonly ? 'div' : 'select';
+  const input = document.createElement(element);
   input.className = 'form__dropdown';
 
-  const optionStrings = Array.from(Array(options)).map((_, i) => {
-    return `<option>Option ${i + 1}</option>`;
-  });
+  if (readonly) {
+    input.className += ' form__dropdown--read-only'
+    input.innerHTML = 'Option 1'
+  } else {
+    const optionStrings = Array.from(Array(options)).map((_, i) => {
+      return `<option>Option ${i + 1}</option>`;
+    });
 
-  input.innerHTML = `
-  ${optionStrings.join("\n  ")}
-`;
+    input.innerHTML = `
+    ${optionStrings.join("\n  ")}
+  `;
+  }
 
   return input;
 };
