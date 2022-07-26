@@ -7,17 +7,63 @@ export const createLabel = ({ label, htmlFor = 'random' }) => {
   return labelElement;
 };
 
-export const createInput = ({ type, id = 'random' }) => {
+const createRadioInput = ({ readonly, id }) => {
   const input = document.createElement('input');
+  input.type = 'radio';
+  input.id = id;
+  input.className = 'form__radio';
+
+  if (readonly) {
+    input.disabled = true;
+  }
+
+  return input;
+}
+
+const createCheckboxInput = ({ readonly, id }) => {
+  const input = document.createElement('input');
+  input.type = 'checkbox';
+  input.id = id;
+  input.className = 'form__checkbox';
+
+  if (readonly) {
+    input.disabled = true;
+  }
+
+  return input;
+}
+
+const createColorInput = ({ readonly, id }) => {
+  const element = readonly ? 'div' : 'input';
+  const input = document.createElement(element);
+  input.type = 'color';
+  input.id = id;
+  input.className = 'form__color';
+
+  if (readonly) {
+    input.className += ' form__color--read-only';
+  }
+
+  return input;
+}
+
+export const createInput = ({ type, readonly, id = 'random' }) => {
+  if (type === 'radio') { return createRadioInput({ readonly, id }) }
+  if (type === 'checkbox') { return createCheckboxInput({ readonly, id }) }
+  if (type === 'color') { return createColorInput({ readonly, id }) }
+
+  const element = readonly ? 'div' : 'input';
+  const input = document.createElement(element);
   input.type = type
   input.placeholder = type
   input.id = id
 
   input.className = 'form__input'
 
-  if (type === 'color') { input.className = 'form__color' }
-  if (type === 'radio') { input.className = 'form__radio' }
-  if (type === 'checkbox') { input.className = 'form__checkbox' }
+  if (readonly) {
+    input.className += ' form__input--read-only'
+    input.innerHTML = type
+  }
 
   return input;
 };

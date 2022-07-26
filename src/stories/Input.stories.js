@@ -8,6 +8,9 @@ export default {
       control: { type: 'select' },
       options: ['text', 'number', 'email', 'password', 'tel', 'checkbox', 'radio', 'color', 'date'],
     },
+    readonly: {
+      control: { type: 'boolean' }
+    }
   },
   parameters: {
     docs: {
