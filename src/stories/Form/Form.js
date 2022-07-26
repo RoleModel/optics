@@ -1,15 +1,17 @@
-export const createLabel = ({ label }) => {
+export const createLabel = ({ label, htmlFor = 'random' }) => {
   const labelElement = document.createElement('label');
   labelElement.innerText = label;
   labelElement.className = 'form__label';
+  labelElement.htmlFor = htmlFor;
 
   return labelElement;
 };
 
-export const createInput = ({ type }) => {
+export const createInput = ({ type, id = 'random' }) => {
   const input = document.createElement('input');
   input.type = type
   input.placeholder = type
+  input.id = id
 
   input.className = 'form__input'
 
@@ -58,3 +60,38 @@ export const createErrorSummary = ({ label }) => {
   return element;
 };
 
+export const createFormGroup = ({ label, type, error, inline, hint }) => {
+  const element = document.createElement('div');
+  element.className = 'form__group';
+
+  if (inline) {
+    element.className += ' form__inline-group';
+  }
+
+  if (error) {
+    element.className += ' form__input--error';
+  }
+
+  const errorElement = document.createElement('span');
+  errorElement.className = 'form__error'
+  errorElement.innerText = error
+
+  if (type == 'checkbox' || type == 'radio') {
+    element.appendChild(createInput({ type }))
+    if (error) { element.appendChild(errorElement) }
+    element.appendChild(createLabel({ label }))
+  } else {
+    element.appendChild(createLabel({ label }))
+    if (error) { element.appendChild(errorElement) }
+    element.appendChild(createInput({ type }))
+  }
+
+  if (hint) {
+    const hintElement = document.createElement('div');
+    hintElement.className = 'form__hint'
+    hintElement.innerText = hint
+    element.appendChild(hintElement)
+  }
+
+  return element;
+}
