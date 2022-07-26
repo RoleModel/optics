@@ -42,3 +42,19 @@ export const createSelect = ({ options }) => {
 
   return input;
 };
+
+export const createErrorSummary = ({ label }) => {
+  const element = document.createElement('div');
+  element.className = 'form__error-summary';
+
+  element.innerHTML = `
+  <h2>${label}</h2>
+  <ul>
+    <li>Tags rank is not a number</li>
+    <li>Title can't be blank</li>
+  </ul>
+`;
+
+  return element;
+};
+
