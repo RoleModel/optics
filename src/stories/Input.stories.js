@@ -27,3 +27,8 @@ export const Default = Template.bind({});
 Default.args = {
   type: 'text',
 };
+
+export const Color = Template.bind({});
+Color.args = {
+  type: 'color',
+};

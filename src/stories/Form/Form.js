@@ -118,7 +118,7 @@ export const createErrorSummary = ({ label }) => {
   return element;
 };
 
-export const createFormGroup = ({ label, type, error, inline, hint }) => {
+export const createFormGroup = ({ label, type, error, inline, hint, readonly }) => {
   const element = document.createElement('div');
   element.className = 'form__group';
 
@@ -135,13 +135,13 @@ export const createFormGroup = ({ label, type, error, inline, hint }) => {
   errorElement.innerText = error
 
   if (type == 'checkbox' || type == 'radio') {
-    element.appendChild(createInput({ type }))
+    element.appendChild(createInput({ type, readonly }))
     if (error) { element.appendChild(errorElement) }
     element.appendChild(createLabel({ label }))
   } else {
     element.appendChild(createLabel({ label }))
     if (error) { element.appendChild(errorElement) }
-    element.appendChild(createInput({ type }))
+    element.appendChild(createInput({ type, readonly }))
   }
 
   if (hint) {

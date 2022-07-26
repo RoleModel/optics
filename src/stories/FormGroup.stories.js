@@ -33,9 +33,57 @@ const Template = ({ ...args }) => {
   return createFormGroup({ ...args });
 };
 
-export const FormGroup = Template.bind({});
+export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-FormGroup.args = {
+Default.args = {
   ...LabelStories.Default.args,
   ...InputStories.Default.args,
+};
+
+export const Inline = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Inline.args = {
+  ...LabelStories.Default.args,
+  ...InputStories.Default.args,
+  inline: true
+};
+
+export const Radio = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Radio.args = {
+  ...LabelStories.Default.args,
+  ...InputStories.Default.args,
+  type: 'radio'
+};
+
+export const Checkbox = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Checkbox.args = {
+  ...LabelStories.Default.args,
+  ...InputStories.Default.args,
+  type: 'checkbox'
+};
+
+export const Error = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Error.args = {
+  ...LabelStories.Default.args,
+  ...InputStories.Default.args,
+  error: "Can't be blank"
+};
+
+export const Hint = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Hint.args = {
+  ...LabelStories.Default.args,
+  ...InputStories.Default.args,
+  hint: 'Very helpful hint'
+};
+
+export const Readonly = Template.bind({});
+// More on args: https://storybook.js.org/docs/html/writing-stories/args
+Readonly.args = {
+  ...LabelStories.Default.args,
+  ...InputStories.Default.args,
+  readonly: true
 };
