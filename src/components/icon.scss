@@ -1,7 +1,7 @@
 // Look up icons at: https: //fonts.google.com/icons?icon.set=Material+Symbols
 // https://github.com/marella/material-symbols/tree/main/material-symbols#readme
 $material-symbols-font-path: '~material-symbols/';
-@import 'material-symbols/outlined';
+@import 'material-symbols/outlined.scss';
 
 .material-symbols-outlined,
 .material-symbols {
