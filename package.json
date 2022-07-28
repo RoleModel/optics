@@ -1,6 +1,6 @@
 {
   "name": "@rolemodel/rolemodel-design-system",
-  "version": "0.0.5-beta",
+  "version": "0.0.6-beta",
   "description": "The design system RoleModel uses to kickstart projects with a consistent starting point",
   "main": "dist/scss/rolemodel-design-system.scss",
   "scripts": {
@@ -31,7 +31,6 @@
     "@RoleModel:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "material-symbols": "^0.1.0",
     "modern-css-reset": "^1.4.0",
     "tom-select": "^2.0.0"
   },
