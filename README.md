@@ -133,6 +133,10 @@ If you want to change the font or spacing scale within the context of a specific
 }
 ```
 
+### Utilities
+
+[Shadows](./docs/components/shadow/shadow.md)
+
 ### Components
 
 [Buttons](./docs/components/button/button.md)
