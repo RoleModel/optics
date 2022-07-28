@@ -51,6 +51,14 @@
   --rm-color-on-background: var(--rm-color-neutral-luminosity-90);
 }
 
+@mixin shadows-dark {
+  --rm-shadow-x-small: 0px 1px 3px hsla(0, 0%, 0%, 0.15), 0px 1px 2px hsla(0, 0%, 0%, 0.3);
+  --rm-shadow-small:   0px 2px 6px hsla(0, 0%, 0%, 0.15), 0px 1px 2px hsla(0, 0%, 0%, 0.3);
+  --rm-shadow-medium:  0px 4px 8px hsla(0, 0%, 0%, 0.15), 0px 1px 3px hsla(0, 0%, 0%, 0.3);
+  --rm-shadow-large:   0px 6px 10px hsla(0, 0%, 0%, 0.15), 0px 2px 3px hsla(0, 0%, 0%, 0.3);
+  --rm-shadow-x-large: 0px 8px 12px hsla(0, 0%, 0%, 0.15), 0px 4px 4px hsla(0, 0%, 0%, 0.3);
+}
+
 @mixin modal-dark {
   .modal__content {
     background: var(--rm-color-neutral-plus-3);
@@ -87,6 +95,8 @@
       @include neutral-semantic-scale-dark;
 
       @include background-dark;
+
+      @include shadows-dark;
 
       @include modal-dark;
       @include panel-dark;
