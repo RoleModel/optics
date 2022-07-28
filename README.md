@@ -1,6 +1,30 @@
-# rolemodel-design-system
+# Rolemodel Design System
 
-An experiment in breaking the styles and design system elements out of RoleModel Rails and also experiment with packages.
+RoleModel Design System is a scss package that provides base styles and components that can be integrated and customized in a variety of projects.
+
+## Installation
+
+### NPM
+```sh
+npm install @rolemodel/rolemodel-design-system
+```
+
+### Yarn
+```sh
+yarn add @rolemodel/rolemodel-design-system
+```
+
+### Import
+
+If you are using webpack to compile, you can add this import to the top of your root level `scss` file.
+```scss
+@import '@rolemodel/rolemodel-design-system';
+```
+
+If you are using a different compiler such as Dart Sass, you may need to reference the scss file directly.
+```scss
+@import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system'
+```
 
 ## Tokens
 
