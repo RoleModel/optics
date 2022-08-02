@@ -26,7 +26,11 @@ If you are using a different compiler such as Dart Sass, you may need to referen
 @import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system'
 ```
 
-[Documentation](https://rolemodel.github.io/rolemodel-design-system)
+## Documentation
+
+We use [Storybook](https://storybook.js.org/docs/html/get-started/introduction) as a way to provide informative and interactive documentation.
+
+It can be found here [RoleModel Design System Documentation](https://rolemodel.github.io/rolemodel-design-system)
 
 ## Tokens
 
@@ -89,58 +93,3 @@ If you do not want all the styles RoleModel Design System provides, you can impo
 
 @import '@rolemodel/rolemodel-design-system/scss/components/button.scss';
 ```
-
-## Documentation (not yet converted to Storybook)
-
-### Base Layout
-
-The basic layout that this design system expects looks like the following:
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Sample Layout</title>
-    <meta content='width=device-width, initial-scale=1' name='viewport' />
-  </head>
-  <body>
-    <!-- Flash message here -->
-    <!-- Confirm here -->
-    <!-- Modal here -->
-    <!-- Panel here -->
-    <div class='container'>
-      <!-- Page Contents -->
-    </div>
-  </body>
-</html>
-```
-
-### Dark Mode
-
-Dark mode is enabled by default and will dynamically flip your semantic tokens to a dark version of it based on your system setting.
-If your application does not use or need dark mode, it can be disabled by adding a data attribute to your root `html` tag.
-
-```html
-<!DOCTYPE html>
-<html data-allow-dark-mode-preference='false'>
-  ...
-</html>
-```
-
-### Scale Overriding
-
-If you want to change the font or spacing scale within the context of a specific component, you can't just set the `--rm-space-scale-unit` because the css variables for the scale are already computed and won't be re-computed when you set the scale unit. You can force it to re-compute by redefining the scale. This is why each set of tokens is defined in a scss mixin. `card--condensed` is a great example of how to do this.
-
-```scss
-.card--condensed {
-  @include spacing-scales;
-  --rm-space-scale-unit: 0.5rem;
-}
-```
-
-### Utilities
-
-[Shadows](./docs/components/shadow/shadow.md)
-
-### Components
-
-[Documentation](https://rolemodel.github.io/rolemodel-design-system)
