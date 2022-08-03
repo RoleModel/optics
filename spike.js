@@ -13,7 +13,7 @@ try {
       console.log('number of matches for', fileName, matches?.length || 0)
       matches.forEach((match) => {
         const [key, value] = match.split(':')
-        fs.writeFileSync(targetFile, `"${key.trim()}": "${value.trim()}",`, {flag: 'a+'})
+        fs.writeFileSync(targetFile, `"${key.trim().slice(5)}": "${value.trim()}",`, {flag: 'a+'})
       })
     })
     fs.writeFileSync(targetFile, '}', {flag: 'a+'})
