@@ -1,9 +1,18 @@
 const fs = require('fs')
-console.log('hello world')
 
 try {
-  const data = fs.readFileSync('./src/core/tokens/base_tokens.scss')
-  fs.writeFileSync('./docs/test_structure.json', data, {flag: 'a+'})
+  const baseDirectory = './src/core/tokens'
+  const targetFile = './docs/test_structure.json'
+
+  fs.writeFileSync(targetFile, '')
+
+  fs.readdir(baseDirectory, (_errors, files) => {
+    files.forEach((fileName) => {
+      const fileContents = fs.readFileSync(`${baseDirectory}/${fileName}`)
+      fs.writeFileSync(targetFile, fileContents, {flag: 'a+'})
+    })
+  })
+
 } catch(err) {
   console.log(err)
 }
