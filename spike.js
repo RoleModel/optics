@@ -3,15 +3,25 @@ const fs = require('fs')
 try {
   const baseDirectory = './src/core/tokens'
   const targetFile = './docs/test_structure.json'
+  // const variableRegEx = new RegExp('\s*--;')
 
-  fs.writeFileSync(targetFile, '')
+  // fs.writeFileSync(targetFile, '')
+  fs.writeFileSync(targetFile, '{')
 
   fs.readdir(baseDirectory, (_errors, files) => {
-    files.forEach((fileName) => {
+    files.filter((fileName) => fileName !== 'dark_mode_tokens.scss').forEach((fileName) => {
       const fileContents = fs.readFileSync(`${baseDirectory}/${fileName}`)
-      fs.writeFileSync(targetFile, fileContents, {flag: 'a+'})
+      const matches = fileContents.toString().match(/^\s*--.*?(?=;)/gm)
+      console.log('number of matches for', fileName, matches?.length || 0)
+      matches.forEach((match) => {
+        const [key, value] = match.split(':')
+        fs.writeFileSync(targetFile, `"${key.trim()}": "${value.trim()}",`, {flag: 'a+'})
+      })
     })
+    fs.writeFileSync(targetFile, '}', {flag: 'a+'})
   })
+
+
 
 } catch(err) {
   console.log(err)
