@@ -8,7 +8,8 @@
     "build": "npm run build:css && npm run build:scss && npm run build:tokens",
     "build:css": "sass src/rolemodel-design-system.scss dist/css/rolemodel-design-system.css --load-path=node_modules/",
     "build:scss": "cp -r src dist/scss",
-    "build:tokens": "mkdir -p dist/tokens && cp docs/token_structure.json dist/tokens/tokens.json"
+    "build:tokens": "mkdir -p dist/tokens && cp docs/token_structure.json dist/tokens/tokens.json",
+    "spike": "node spike.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "@RoleModel:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
+    "@rolemodel/rolemodel-design-system": "^0.0.6-beta",
     "modern-css-reset": "^1.4.0",
     "tom-select": "^2.0.0"
   },
