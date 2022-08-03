@@ -3,9 +3,7 @@ const fs = require('fs')
 try {
   const baseDirectory = './src/core/tokens'
   const targetFile = './docs/test_structure.json'
-  // const variableRegEx = new RegExp('\s*--;')
 
-  // fs.writeFileSync(targetFile, '')
   fs.writeFileSync(targetFile, '{')
 
   fs.readdir(baseDirectory, (_errors, files) => {
