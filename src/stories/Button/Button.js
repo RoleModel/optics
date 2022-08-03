@@ -2,7 +2,7 @@ export const createButton = ({
   label,
   priority = 'default',
   noBorder = false,
-  outline = false,
+  outlined = false,
   pill = false,
   icon = false,
   size = 'medium',
@@ -15,7 +15,7 @@ export const createButton = ({
   btn.className = [
     priority === 'default' ? 'btn' : `btn-${priority}`,
     noBorder ? 'btn--no-border' : '',
-    outline ? 'btn--outline' : '',
+    outlined ? 'btn--outline' : '',
     pill ? 'btn--pill' : '',
     icon ? 'btn--icon' : '',
     size === 'medium' ? '' : `btn--${size}`,
