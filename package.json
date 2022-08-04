@@ -31,7 +31,6 @@
     "@RoleModel:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@rolemodel/rolemodel-design-system": "^0.0.6-beta",
     "modern-css-reset": "^1.4.0",
     "tom-select": "^2.0.0"
   },
