@@ -71,10 +71,10 @@ try {
     fs.mkdirSync(outputPath, { recursive: true })
   }
 
-  fs.readdir(source, (_errors, files) => {
+  fs.readdir(source, {withFileTypes: true}, (_errors, files) => {
     let variables = {}
-    files.filter((fileName) => fileName !== 'dark_mode_tokens.scss').forEach((fileName) => {
-      const fileContents = fs.readFileSync(`${source}/${fileName}`)
+    files.filter((directoryEntry) => directoryEntry.isFile() && directoryEntry.name !== 'dark_mode_tokens.scss').forEach((directoryEntry) => {
+      const fileContents = fs.readFileSync(`${source}/${directoryEntry.name}`)
       const matches = fileContents.toString().match(/^\s*--.*?(?=;)/gm)
       matches.forEach((match) => {
         const [key, value] = match.split(':')
