@@ -8,7 +8,7 @@
     "build": "npm run build:css && npm run build:scss && npm run build:tokens",
     "build:css": "sass src/rolemodel-design-system.scss dist/css/rolemodel-design-system.css --load-path=node_modules/",
     "build:scss": "cp -r src dist/scss",
-    "build:tokens": "mkdir -p dist/tokens && cp docs/token_structure.json dist/tokens/tokens.json"
+    "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json"
   },
   "repository": {
     "type": "git",
