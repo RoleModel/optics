@@ -1,5 +1,4 @@
 const fs = require('fs')
-const { join } = require('path')
 
 function isHyphenated(keys, length = 2) {
   return HYPHENATED_WORDS.concat(LUMINOSITY_KEYS).includes(keys.slice(0, length).join('-'))
