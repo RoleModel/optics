@@ -1,7 +1,7 @@
 const fs = require('fs')
 const { join } = require('path')
 
-function isHyphenated(keys, length = 2) {
+function  isHyphenated(keys, length = 2) {
   return HYPHENATED_WORDS.includes(keys.slice(0, length).join('-'))
 }
 
@@ -12,19 +12,24 @@ const HYPHENATED_WORDS = [
   'x-small', '2x-small', '3x-small', '4x-small', '5x-small',
   'x-large', '2x-large', '3x-large', '4x-large', '5x-large',
   'extra-light', 'extra-bold', 'semi-bold',
-  'dialog-backdrop', 'dialog-content', 'alert-group'
+  'dialog-backdrop', 'dialog-content', 'alert-group', 'minus-max', 'minus-1', 'minus-2', 'minus-3',
+  'plus-min', 'plus-max', 'plus-1', 'plus-2', 'plus-3', 'hover', 'base'
 ]
-
 
 function splitKey(key) {
   let keys = key.slice(2).split('-')
   return keys
 }
 
+function isLuminosityKey(keys) {
+  const luminosityKeys = [...Array(101).keys()].map((luminosity) => `luminosity-${luminosity}`)
+  return luminosityKeys.includes(keys.join('-'))
+}
+
 function addToJson(keys, data, value) {
   let currentKey, remainingKeys
 
-  if (isHyphenated(keys, 2)) {
+  if (isHyphenated(keys, 2) || isLuminosityKey(keys)) {
     [currentKey, remainingKeys] = [keys.join('-'), keys.slice(2)]
   } else if (isHyphenated(keys, 3)) {
     [currentKey, remainingKeys] = [keys.join('-'), keys.slice(3)]
@@ -36,15 +41,12 @@ function addToJson(keys, data, value) {
 
   switch (remainingKeys.length) {
     case 0:
-      console.log('case 0')
       data[currentKey] = value
       break;
     case 1:
-      console.log('case 1')
       data[currentKey][remainingKeys[0]] = value
       break
     default:
-      console.log('case default')
       data[currentKey] = addToJson(remainingKeys, data[currentKey], value)
       break
   }
