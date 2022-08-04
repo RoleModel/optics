@@ -81,7 +81,7 @@ try {
         variables = addToJson(splitKey(key.trim()), variables, value.trim())
       })
     })
-    fs.writeFileSync(`${outputPath}/${outputFile}`, JSON.stringify(variables))
+    fs.writeFileSync(`${outputPath}/${outputFile}`, JSON.stringify(variables, null, '\t'))
   })
 
 } catch(err) {
