@@ -52,20 +52,24 @@ function addToJson(keys, data, value) {
 }
 
 try {
-  const baseDirectory = './src/core/tokens'
-  const targetFile = './docs/test_structure.json'
+  const tokenDirectory = './src/core/tokens'
+  const targetDirectory = './dist/tokens'
 
-  fs.readdir(baseDirectory, (_errors, files) => {
+  if(!fs.existsSync(targetDirectory)) {
+    fs.mkdirSync(targetDirectory, { recursive: true })
+  }
+
+  fs.readdir(tokenDirectory, (_errors, files) => {
     let variables = {}
     files.filter((fileName) => fileName !== 'dark_mode_tokens.scss').forEach((fileName) => {
-      const fileContents = fs.readFileSync(`${baseDirectory}/${fileName}`)
+      const fileContents = fs.readFileSync(`${tokenDirectory}/${fileName}`)
       const matches = fileContents.toString().match(/^\s*--.*?(?=;)/gm)
       matches.forEach((match) => {
         const [key, value] = match.split(':')
         variables = addToJson(splitKey(key.trim()), variables, value.trim())
       })
     })
-    fs.writeFileSync(targetFile, JSON.stringify(variables))
+    fs.writeFileSync(`${targetDirectory}/tokens.json`, JSON.stringify(variables))
   })
 
 } catch(err) {
