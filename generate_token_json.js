@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 function isHyphenated(keys, length = 2) {
-  return HYPHENATED_WORDS.concat(LUMINOSITY_KEYS).includes(keys.slice(0, length).join('-'))
+  return HYPHENATED_WORDS.concat(HYPHENATED_LUMINOSITIES).includes(keys.slice(0, length).join('-'))
 }
 
 const HYPHENATED_WORDS = [
@@ -16,7 +16,8 @@ const HYPHENATED_WORDS = [
   'plus-1', 'plus-2', 'plus-3', 'plus-max', 'minus-1', 'minus-2', 'minus-3', 'minus-max', 'input-height'
 ]
 
-const LUMINOSITY_KEYS = [...Array(101).keys()].map((luminosity) => `luminosity-${luminosity}`)
+// This is used in the isHyphenated method so that any key of luminosity-x returns true.
+const HYPHENATED_LUMINOSITIES = [...Array(101).keys()].map((luminosity) => `luminosity-${luminosity}`)
 
 function splitKey(key) {
   let keys = key.slice(2).split('-')
