@@ -13,7 +13,8 @@ const HYPHENATED_WORDS = [
   'x-large', '2x-large', '3x-large', '4x-large', '5x-large',
   'extra-light', 'extra-bold', 'semi-bold',
   'dialog-backdrop', 'dialog-content', 'alert-group', 'on-minus-max', 'on-minus-1', 'on-minus-2', 'on-minus-3',
-  'on-plus-min', 'on-plus-max', 'on-plus-1', 'on-plus-2', 'on-plus-3', 'on-hover', 'on-base'
+  'on-plus-min', 'on-plus-max', 'on-plus-1', 'on-plus-2', 'on-plus-3', 'on-hover', 'on-base', 'letter-spacing', 'scale-unit',
+  'plus-1', 'plus-2', 'plus-3', 'plus-max', 'minus-1', 'minus-2', 'minus-3', 'minus-max', 'input-height'
 ]
 
 const LUMINOSITY_KEYS = [...Array(101).keys()].map((luminosity) => `luminosity-${luminosity}`)
