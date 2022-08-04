@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('node:path')
 
 function isHyphenated(keys, length = 2) {
   return HYPHENATED_WORDS.concat(HYPHENATED_LUMINOSITIES).includes(keys.slice(0, length).join('-'))
@@ -53,24 +54,34 @@ function addToJson(keys, data, value) {
 }
 
 try {
-  const tokenDirectory = './src/core/tokens'
-  const targetDirectory = './dist/tokens'
+  const arguments = {}
+  process.argv.forEach((argument) => {
+    const values = argument.slice(2).split('=')
+    if(values.length === 2) {
+      arguments[values[0]] = values[1]
+    }
+  })
 
-  if(!fs.existsSync(targetDirectory)) {
-    fs.mkdirSync(targetDirectory, { recursive: true })
+  const source = arguments['source'] || 'src/core/tokens'
+  const output = arguments['output'] || './dist/tokens'
+  const outputPath = path.dirname(output)
+  const outputFile = path.basename(output)
+
+  if(!fs.existsSync(outputPath)) {
+    fs.mkdirSync(outputPath, { recursive: true })
   }
 
-  fs.readdir(tokenDirectory, (_errors, files) => {
+  fs.readdir(source, (_errors, files) => {
     let variables = {}
     files.filter((fileName) => fileName !== 'dark_mode_tokens.scss').forEach((fileName) => {
-      const fileContents = fs.readFileSync(`${tokenDirectory}/${fileName}`)
+      const fileContents = fs.readFileSync(`${source}/${fileName}`)
       const matches = fileContents.toString().match(/^\s*--.*?(?=;)/gm)
       matches.forEach((match) => {
         const [key, value] = match.split(':')
         variables = addToJson(splitKey(key.trim()), variables, value.trim())
       })
     })
-    fs.writeFileSync(`${targetDirectory}/tokens.json`, JSON.stringify(variables))
+    fs.writeFileSync(`${outputPath}/${outputFile}`, JSON.stringify(variables))
   })
 
 } catch(err) {
