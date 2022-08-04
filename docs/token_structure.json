@@ -43,23 +43,21 @@
         "s": "",
         "l": "",
         "original": "",
-        "luminosity": {
-          "5": "",
-          "10": "",
-          "15": "",
-          "20": "",
-          "25": "",
-          "30": "",
-          "35": "",
-          "40": "",
-          "50": "",
-          "60": "",
-          "70": "",
-          "80": "",
-          "90": "",
-          "95": "",
-          "98": ""
-        },
+        "luminosity-5": "",
+        "luminosity-10": "",
+        "luminosity-15": "",
+        "luminosity-20": "",
+        "luminosity-25": "",
+        "luminosity-30": "",
+        "luminosity-35": "",
+        "luminosity-40": "",
+        "luminosity-50": "",
+        "luminosity-60": "",
+        "luminosity-70": "",
+        "luminosity-80": "",
+        "luminosity-90": "",
+        "luminosity-95": "",
+        "luminosity-98": "",
         "plus-max": "",
         "plus-3": "",
         "plus-2": "",
@@ -70,18 +68,16 @@
         "minus-2": "",
         "minus-3": "",
         "minus-max": "",
-        "on": {
-          "plus-max": "",
-          "plus-3": "",
-          "plus-2": "",
-          "plus-1": "",
-          "hover": "",
-          "base": "",
-          "minus-1": "",
-          "minus-2": "",
-          "minus-3": "",
-          "minus-max": ""
-        }
+        "on-plus-max": "",
+        "on-plus-3": "",
+        "on-plus-2": "",
+        "on-plus-1": "",
+        "on-hover": "",
+        "on-base": "",
+        "on-minus-1": "",
+        "on-minus-2": "",
+        "on-minus-3": "",
+        "on-minus-max": ""
       },
       "neutral": {
         "h": "",
@@ -115,17 +111,15 @@
         "minus-2": "",
         "minus-3": "",
         "minus-max": "",
-        "on": {
-          "plus-max": "",
-          "plus-3": "",
-          "plus-2": "",
-          "plus-1": "",
-          "base": "",
-          "minus-1": "",
-          "minus-2": "",
-          "minus-3": "",
-          "minus-max": ""
-        }
+        "on-plus-max": "",
+        "on-plus-3": "",
+        "on-plus-2": "",
+        "on-plus-1": "",
+        "on-base": "",
+        "on-minus-1": "",
+        "on-minus-2": "",
+        "on-minus-3": "",
+        "on-minus-max": ""
       },
       "alerts": {
         "warning": {
@@ -137,194 +131,186 @@
           "minus-1": "",
           "minus-2": "",
           "minus-max": "",
-          "on": {
-            "plus-max": "",
-            "plus-2": "",
-            "plus-1": "",
-            "hover": "",
-            "base": "",
-            "minus-1": "",
-            "minus-2": "",
-            "minus-max": ""
-          }
-        },
-        "danger": {
-          "plus-max": "",
-          "plus-2": "",
-          "plus-1": "",
-          "hover": "",
-          "base": "",
-          "minus-1": "",
-          "minus-2": "",
-          "minus-max": "",
-          "on": {
-            "plus-max": "",
-            "plus-2": "",
-            "plus-1": "",
-            "hover": "",
-            "base": "",
-            "minus-1": "",
-            "minus-2": "",
-            "minus-max": ""
-          }
-        },
-        "info": {
-          "plus-max": "",
-          "plus-2": "",
-          "plus-1": "",
-          "hover": "",
-          "base": "",
-          "minus-1": "",
-          "minus-2": "",
-          "minus-max": "",
-          "on": {
-            "plus-max": "",
-            "plus-2": "",
-            "plus-1": "",
-            "hover": "",
-            "base": "",
-            "minus-1": "",
-            "minus-2": "",
-            "minus-max": ""
-          }
-        },
-        "notice": {
-          "plus-max": "",
-          "plus-2": "",
-          "plus-1": "",
-          "hover": "",
-          "base": "",
-          "minus-1": "",
-          "minus-2": "",
-          "minus-max": "",
-          "on": {
-            "plus-max": "",
-            "plus-2": "",
-            "plus-1": "",
-            "hover": "",
-            "base": "",
-            "minus-1": "",
-            "minus-2": "",
-            "minus-max": ""
-          }
+          "on-plus-max": "",
+          "on-plus-2": "",
+          "on-plus-1": "",
+          "on-hover": "",
+          "on-base": "",
+          "on-minus-1": "",
+          "on-minus-2": "",
+          "on-minus-max": ""
         }
       },
-      "background": "",
-      "on-background": ""
-    },
-    "border": {
-      "width": "",
-      "width-large": "",
-      "width-x-large": "",
-      "color": "",
-      "all": "",
-      "top": "",
-      "right": "",
-      "bottom": "",
-      "left": "",
-      "y": "",
-      "x": ""
-    },
-    "shadow": {
-      "x-small": "",
-      "small": "",
-      "medium": "",
-      "large": "",
-      "x-large": ""
-    },
-    "radius": {
-      "small": "",
-      "medium": "",
-      "large": "",
-      "x-large": "",
-      "circle": "",
-      "pill": ""
-    },
-    "font": {
-      "scale-unit": "",
-      "x-small": "",
-      "small": "",
-      "medium": "",
-      "large": "",
-      "x-large": "",
-      "2x-large": "",
-      "3x-large": "",
-      "4x-large": "",
-      "5x-large": "",
-      "weight": {
-        "thin": "",
-        "extra-light": "",
-        "light": "",
-        "normal": "",
-        "medium": "",
-        "semi-bold": "",
-        "bold": "",
-        "extra-bold": "",
-        "black": ""
+      "danger": {
+        "plus-max": "",
+        "plus-2": "",
+        "plus-1": "",
+        "hover": "",
+        "base": "",
+        "minus-1": "",
+        "minus-2": "",
+        "minus-max": "",
+        "on-plus-max": "",
+        "on-plus-2": "",
+        "on-plus-1": "",
+        "on-hover": "",
+        "on-base": "",
+        "on-minus-1": "",
+        "on-minus-2": "",
+        "on-minus-max": ""
       },
-      "family": ""
-    },
-    "line-height": {
-      "none": "",
-      "densest": "",
-      "denser": "",
-      "dense": "",
-      "base": "",
-      "loose": "",
-      "looser": "",
-      "loosest": ""
-    },
-    "letter-spacing": {
-      "label": ""
-    },
-    "transitions": {
-      "input": "",
-      "sidebar": "",
-      "modal": "",
-      "panel": "",
-      "flash": ""
-    },
-    "clippath": {
-      "form": {
-        "radio": "",
-        "checkmark": ""
+      "info": {
+        "plus-max": "",
+        "plus-2": "",
+        "plus-1": "",
+        "hover": "",
+        "base": "",
+        "minus-1": "",
+        "minus-2": "",
+        "minus-max": "",
+        "on-plus-max": "",
+        "on-plus-2": "",
+        "on-plus-1": "",
+        "on-hover": "",
+        "on-base": "",
+        "on-minus-1": "",
+        "on-minus-2": "",
+        "on-minus-max": ""
+      },
+      "notice": {
+        "plus-max": "",
+        "plus-2": "",
+        "plus-1": "",
+        "hover": "",
+        "base": "",
+        "minus-1": "",
+        "minus-2": "",
+        "minus-max": "",
+        "on-plus-max": "",
+        "on-plus-2": "",
+        "on-plus-1": "",
+        "on-hover": "",
+        "on-base": "",
+        "on-minus-1": "",
+        "on-minus-2": "",
+        "on-minus-max": ""
       }
     },
-    "space": {
-      "scale-unit": "",
-      "3x-small": "",
-      "2x-small": "",
-      "x-small": "",
-      "small": "",
+    "background": "",
+    "on-background": ""
+  },
+  "border": {
+    "width": "",
+    "width-large": "",
+    "width-x-large": "",
+    "color": "",
+    "all": "",
+    "top": "",
+    "right": "",
+    "bottom": "",
+    "left": "",
+    "y": "",
+    "x": ""
+  },
+  "shadow": {
+    "x-small": "",
+    "small": "",
+    "medium": "",
+    "large": "",
+    "x-large": ""
+  },
+  "radius": {
+    "small": "",
+    "medium": "",
+    "large": "",
+    "x-large": "",
+    "circle": "",
+    "pill": ""
+  },
+  "font": {
+    "scale-unit": "",
+    "x-small": "",
+    "small": "",
+    "medium": "",
+    "large": "",
+    "x-large": "",
+    "2x-large": "",
+    "3x-large": "",
+    "4x-large": "",
+    "5x-large": "",
+    "weight": {
+      "thin": "",
+      "extra-light": "",
+      "light": "",
+      "normal": "",
       "medium": "",
-      "large": "",
-      "x-large": "",
-      "2x-large": "",
-      "3x-large": "",
-      "4x-large": ""
+      "semi-bold": "",
+      "bold": "",
+      "extra-bold": "",
+      "black": ""
     },
-    "z-index": {
-      "header": "",
-      "drawer": "",
-      "dialog": "",
-      "dialog-backdrop": "",
-      "dialog-content": "",
-      "dropdown": "",
-      "alert-group": "",
-      "tooltip": ""
-    },
-    "input-height": {
-      "small": "",
-      "medium": "",
-      "large": "",
-      "x-large": ""
-    },
-    "breakpoints": {
-      "x-small": "",
-      "small": "",
-      "medium": "",
-      "large": "",
-      "x-large": ""
+    "family": ""
+  },
+  "line-height": {
+    "none": "",
+    "densest": "",
+    "denser": "",
+    "dense": "",
+    "base": "",
+    "loose": "",
+    "looser": "",
+    "loosest": ""
+  },
+  "letter-spacing": {
+    "label": ""
+  },
+  "transitions": {
+    "input": "",
+    "sidebar": "",
+    "modal": "",
+    "panel": "",
+    "flash": ""
+  },
+  "clippath": {
+    "form": {
+      "radio": "",
+      "checkmark": ""
     }
+  },
+  "space": {
+    "scale-unit": "",
+    "3x-small": "",
+    "2x-small": "",
+    "x-small": "",
+    "small": "",
+    "medium": "",
+    "large": "",
+    "x-large": "",
+    "2x-large": "",
+    "3x-large": "",
+    "4x-large": ""
+  },
+  "z-index": {
+    "header": "",
+    "drawer": "",
+    "dialog": "",
+    "dialog-backdrop": "",
+    "dialog-content": "",
+    "dropdown": "",
+    "alert-group": "",
+    "tooltip": ""
+  },
+  "input-height": {
+    "small": "",
+    "medium": "",
+    "large": "",
+    "x-large": ""
+  },
+  "breakpoints": {
+    "x-small": "",
+    "small": "",
+    "medium": "",
+    "large": "",
+    "x-large": ""
   }
 }
