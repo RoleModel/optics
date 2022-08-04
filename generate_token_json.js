@@ -27,7 +27,7 @@ function addToJson(keys, data, value) {
   let currentKey, remainingKeys
 
   if (isHyphenated(keys, 2)) {
-    [currentKey, remainingKeys] = [keys.join('-'), keys.slice(2)]
+    [currentKey, remainingKeys] = [keys.slice(0, 2).join('-'), keys.slice(2)]
   } else if (isHyphenated(keys, 3)) {
     [currentKey, remainingKeys] = [keys.join('-'), keys.slice(3)]
   } else {
