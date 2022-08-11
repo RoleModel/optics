@@ -1,0 +1,120 @@
+import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+
+# Form
+
+Form classes can be used on a variety of `inputs` or `select` html elements.
+They provide consistent and composable styling that should address most applications basic needs.
+
+<!-- Either use <Stories /> to automatically render each story -->
+<!-- Or manually render them with custom descriptions -->
+
+## Label
+
+`.form__label` Provides basic input label styles.
+
+<Canvas withToolbar>
+  <Story id='components-form-label--default' />
+</Canvas>
+
+## Input
+
+`.form__input` Provides basic input styles. This can be used on `input` html elements. It works across a variety of types such as `text`, `number`, `password`, `email`, and `phone`
+
+<Canvas withToolbar>
+  <Story id='components-form-input--default' />
+</Canvas>
+
+## Form Group
+
+`.form__group` Composes an input and label together as a pair. It provides padding between input + label pairs in a form.
+
+<Canvas withToolbar>
+  <Story id='components-form-formgroup--default' />
+</Canvas>
+
+## Form Inline Group
+
+`.form__inline-group` Composes an input and label together as a side by side pair. It can be used with `form__group` to get padding as well as side by side label and input.
+
+<Canvas withToolbar>
+  <Story id='components-form-formgroup--inline' />
+</Canvas>
+
+## Textarea
+
+`.form__textarea` Provides basic text area styles. This can be used on `textarea` html elements.
+
+<Canvas withToolbar>
+  <Story id='components-form-textarea--default' />
+</Canvas>
+
+## Dropdown
+
+`.form__dropdown` Provides basic `select` element styles.
+
+<Canvas withToolbar>
+  <Story id='components-form-select--default' />
+</Canvas>
+
+## Color
+
+`.form__color` Provides basic color input styles. This can be used on `input` html elements with a type of `color`.
+
+<Canvas withToolbar>
+  <Story id='components-form-input--color' />
+</Canvas>
+
+## Radio
+
+`.form__radio` Provides basic input of type `radio` styles.
+
+<Canvas withToolbar>
+  <Story id='components-form-formgroup--radio' />
+</Canvas>
+
+## Checkbox
+
+`.form__checkbox` Provides basic input of type `radio` styles.
+
+<Canvas withToolbar>
+  <Story id='components-form-formgroup--checkbox' />
+</Canvas>
+
+## Error Summary
+
+`.form__error-summary` Is an error section, usually displayed above the form with a list of errors.
+
+<Canvas withToolbar>
+  <Story id='components-form-errorsummary--default' />
+</Canvas>
+
+## Input Error
+
+`.form__input--error` and `.form__error` are typically used on combination when there is a validation error on an input. They highlight the input in error along with the message provided.
+
+<Canvas withToolbar>
+  <Story id='components-form-formgroup--error' />
+</Canvas>
+
+## Input Hint
+
+`.form__hint` can be used inside of a `form__group` to provide help text for an input.
+
+<Canvas withToolbar>
+  <Story id='components-form-formgroup--hint' />
+</Canvas>
+
+## Read Only
+
+`.form__input--read-only`, `.form__dropdown--read-only`, `.form__color--read-only`, and `.form__textarea--read-only` can be used to display values in a form-like way.
+
+<Canvas withToolbar>
+  <Story id='components-form-formgroup--readonly' />
+</Canvas>
+
+## Playground
+Shows the default example of the currently selected component
+
+<Primary />
+
+<ArgsTable story='^' />

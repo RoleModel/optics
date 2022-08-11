@@ -1,6 +1,10 @@
-# Rolemodel Design System
+import { Meta } from '@storybook/addon-docs';
 
-RoleModel Design System is a scss package that provides base styles and components that can be integrated and customized in a variety of projects.
+<Meta title="Overview/Introduction" />
+
+# Welcome to RoleModel Design System
+
+RoleModel Design System is an scss package that provides base styles and components that can be integrated and customized in a variety of projects.
 
 ## Installation
 
@@ -26,12 +30,6 @@ If you are using a different compiler such as Dart Sass, you may need to referen
 @import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system'
 ```
 
-## Documentation
-
-We use [Storybook](https://storybook.js.org/docs/html/get-started/introduction) as a way to provide informative and interactive documentation.
-
-It can be found here [RoleModel Design System Documentation](https://rolemodel.github.io/rolemodel-design-system)
-
 ## Tokens
 
 Tokens are defined in `src/core/tokens`
@@ -39,7 +37,6 @@ Tokens are defined in `src/core/tokens`
 - All core tokens are defined in `src/core/tokens/base_tokens.scss`
 - Basic color tokens are defined in `src/core/tokens/example_color_tokens.scss`
 - Color scale tokens are defined in `src/core/tokens/scale_color_tokens.scss`
-- Alert color tokens are defined in `src/core/tokens/alert_color_tokens.scss`
 - Dark mode tokens are defined in `src/core/tokens/dark_mode_tokens.scss`
 
 There are also a few component specific tokens that are defined in their respective component file, but those are not indented to be global or used outside of that file.
@@ -88,7 +85,6 @@ If you do not want all the styles RoleModel Design System provides, you can impo
 @import '@rolemodel/rolemodel-design-system/scss/core/tokens/base_tokens';
 @import '@rolemodel/rolemodel-design-system/scss/core/tokens/example_color_tokens';
 @import '@rolemodel/rolemodel-design-system/scss/core/tokens/scale_color_tokens';
-@import '@rolemodel/rolemodel-design-system/scss/core/tokens/alert_color_tokens';
 @import '@rolemodel/rolemodel-design-system/scss/core/tokens/dark_mode_tokens';
 
 @import '@rolemodel/rolemodel-design-system/scss/components/button.scss';

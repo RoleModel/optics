@@ -1,0 +1,45 @@
+import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+
+# Card
+
+Card classes can be used to denote bordered sections of an application. They provide simple styles to create sections or "cards" for your interface. They can also be used as a starting point for "row" or list styles.
+
+<!-- Either use <Stories /> to automatically render each story -->
+<!-- Or manually render them with custom descriptions -->
+
+## Plain
+
+`.card` Provides basic card styles.
+
+<Canvas withToolbar>
+  <Story id='components-card--plain' />
+</Canvas>
+
+## Padded
+
+`.card-padded` Provides a padded card.
+
+<Canvas withToolbar>
+  <Story id='components-card--padded' />
+</Canvas>
+
+## Full
+
+`.card__header`, `.card__body`, and `.card__footer` Provide padded sections of a card.
+
+<Canvas withToolbar>
+  <Story id='components-card--full' />
+</Canvas>
+
+## Condensed
+
+`.card--condensed` Changes the padding scale for everything below it.
+
+<Canvas withToolbar>
+  <Story id='components-card--condensed' />
+</Canvas>
+
+## Playground
+
+<Primary/>
+<ArgsTable of='.' story='^'/>
