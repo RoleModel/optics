@@ -10,7 +10,7 @@
     "build:scss": "rsync -a src/ dist/scss --exclude stories",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build -s ./src/stories/assets"
+    "build-storybook": "build-storybook -o docs-build"
   },
   "repository": {
     "type": "git",
