@@ -1,3 +1,7 @@
+// Core Tom Select Styles
+@import 'tom-select/dist/scss/tom-select';
+
+// Design System Overrides
 .#{$select-ns}-wrapper {
   .#{$select-ns}-dropdown {
 
