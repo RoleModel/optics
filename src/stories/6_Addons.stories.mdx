@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Overview/Addons" />
+
+# Addons
+
+The RoleModel Design System provides a few addons for your applications various needs.
+
+## Tom Select
+
+[Tom Select](https://tom-select.js.org/) is a dynamic, framework agnostic, and lightweight (~16kb gzipped) `<select>` UI control. With autocomplete and native-feeling keyboard navigation, it's useful for tagging, contact lists, country selectors, and so on.
+
+If you application uses Tom Select, you can import the styles from Tom Select along with the Design Systems tokens applied to it.
+```scss
+@import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system'
+@import '@rolemodel/rolemodel-design-system/dist/scss/addons/tom-select';
+```
+
+## Modal and Panel
+
+Modal and Panel provide styles that are intended to accompany the rails configuration and javascript implemented by [RoleModel Rails Modal and Panel](https://github.com/RoleModel/rolemodel_rails/tree/master/lib/generators/rolemodel/modals)
+
+If you application uses this implementation, you can import the styles via:
+```scss
+@import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system'
+@import '@rolemodel/rolemodel-design-system/dist/scss/addons/modal-and-panel';
+```
+
+You can also import one or the other with:
+```scss
+@import '@rolemodel/rolemodel-design-system/dist/scss/addons/modal-and-panel/modal';
+// or
+@import '@rolemodel/rolemodel-design-system/dist/scss/addons/modal-and-panel/panel';
+```
