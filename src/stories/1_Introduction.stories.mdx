@@ -75,17 +75,3 @@ Take a look at `src/theme/rolemodel_theme.scss` for an idea of how to structure 
   @include fonts;
 }
 ```
-
-## Selective Imports
-
-If you do not want all the styles RoleModel Design System provides, you can import only the components your app needs like:
-
-```scss
-// Most components require the token files at least since they are used throughout the system.
-@import '@rolemodel/rolemodel-design-system/scss/core/tokens/base_tokens';
-@import '@rolemodel/rolemodel-design-system/scss/core/tokens/example_color_tokens';
-@import '@rolemodel/rolemodel-design-system/scss/core/tokens/scale_color_tokens';
-@import '@rolemodel/rolemodel-design-system/scss/core/tokens/dark_mode_tokens';
-
-@import '@rolemodel/rolemodel-design-system/scss/components/button.scss';
-```
