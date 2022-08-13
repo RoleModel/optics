@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Overview/Selective Imports" />
+
+# Selective Imports
+
+By default, if you import the design system, it will include all the basics. Css reset, All Tokens, Base styles, Utilities, and all Components.
+```scss
+@import '@rolemodel/rolemodel-design-system';
+// or
+@import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system'
+```
+
+If you don't want to include all styles provided, you can import only the files your app needs like this:
+```scss
+@import 'modern-css-reset/dist/reset';
+
+@import 'core/tokens';
+
+@import 'core/base';
+@import 'core/utilities';
+
+// Just the button and card Components
+@import 'components/button';
+@import 'components/card';
+```
+
+Or This:
+```scss
+@import 'modern-css-reset/dist/reset';
+
+@import 'base_tokens';
+@import 'example_color_tokens';
+@import 'scale_color_tokens';
+// No dark mode or alert tokens
+
+@import 'core/base';
+@import 'core/utilities';
+
+@import 'components';
+```
