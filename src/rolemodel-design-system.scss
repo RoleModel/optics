@@ -1,5 +1,4 @@
 // Third party Vendors
-@import 'tom-select/dist/scss/tom-select';
 @import 'modern-css-reset/dist/reset';
 
 // Tokens
@@ -11,7 +10,3 @@
 
 // Components
 @import 'components';
-
-// Panel and Modal styles
-@import 'components/panel';
-@import 'components/modal';
