@@ -85,21 +85,26 @@
   }
 }
 
-:root:not([data-allow-dark-mode-preference='false']) {
-  @media (prefers-color-scheme: dark) {
-    & {
-      // Semantic Scales: plus adds luminosity, minus removes luminosity
-      // This borrows from the photography concept of Aperture f-stops.
-      // https://www.adobe.com/creativecloud/photography/discover/f-stop.html
-      @include primary-semantic-scale-dark;
-      @include neutral-semantic-scale-dark;
+@mixin all-tokens-dark {
+  @include primary-semantic-scale-dark;
+  @include neutral-semantic-scale-dark;
 
-      @include background-dark;
+  @include background-dark;
 
-      @include shadows-dark;
+  @include shadows-dark;
 
-      @include modal-dark;
-      @include panel-dark;
-    }
+  @include modal-dark;
+  @include panel-dark;
+}
+
+// Follow system preference unless forced to light
+@media (prefers-color-scheme: dark) {
+  :root:not([data-allow-dark-mode-preference='false'],[data-theme-mode='light']) {
+    @include all-tokens-dark;
   }
+}
+
+// Force design system to dark
+:root[data-theme-mode='dark'] {
+  @include all-tokens-dark;
 }

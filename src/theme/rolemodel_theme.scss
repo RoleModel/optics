@@ -123,11 +123,19 @@
   @include neutral-semantic-scale;
 }
 
-:root:not([data-allow-dark-mode-preference='false']) {
-  @media (prefers-color-scheme: dark) {
-    & {
-      @include primary-semantic-scale-dark;
-      @include neutral-semantic-scale-dark;
-    }
+@mixin all-tokens-dark {
+  @include primary-semantic-scale-dark;
+  @include neutral-semantic-scale-dark;
+}
+
+// Follow system preference unless forced to light
+@media (prefers-color-scheme: dark) {
+  :root:not([data-design-theme='light']) {
+    @include all-tokens-dark;
   }
+}
+
+// Force design system to dark
+:root[data-design-theme='dark'] {
+  @include all-tokens-dark;
 }
