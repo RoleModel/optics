@@ -45,36 +45,3 @@ Tokens are defined in `src/core/tokens`
 There are also a few component specific tokens that are defined in their respective component file, but those are not indented to be global or used outside of that file.
 
 There is a JSON file in `docs/token_structure.json` that lists all the current tokens in one place and shows how the names indicate organization.
-
-## Theming
-
-RoleModel Design System defines the default theme along with it's dark mode.
-
-If you want to customize your application, you can provide your own theme files that serve as overrides to the existing tokens.
-
-An example implementation your main scss file would look like:
-
-```scss
-@import '@rolemodel/rolemodel-design-system';
-
-@import 'stylesheets/theme/my_app_theme';
-```
-
-Take a look at `src/theme/rolemodel_theme.scss` for an idea of how to structure your custom theme. It can change the colors, even redefine the luminosity and semantic scales. It generally will look like:
-
-```scss
-@mixin color-varieties {
-  --rm-color-primary-h: my-new-value;
-  --rm-color-primary-s: my-new-value;
-  --rm-color-primary-l: my-new-value;
-}
-
-@mixin fonts {
-  --rm-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
-}
-
-:root {
-  @include color-varieties;
-  @include fonts;
-}
-```
