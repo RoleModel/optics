@@ -1,29 +1,12 @@
 // Third party Vendors
-@import 'tom-select/dist/scss/tom-select';
 @import 'modern-css-reset/dist/reset';
 
 // Tokens
-@import 'core/tokens/base_tokens';
-@import 'core/tokens/example_color_tokens';
-@import 'core/tokens/scale_color_tokens';
-@import 'core/tokens/alert_color_tokens.scss';
-@import 'core/tokens/dark_mode_tokens';
+@import 'core/tokens';
 
 // Base styles and utilities
 @import 'core/base';
 @import 'core/utilities';
 
 // Components
-@import 'components/button';
-@import 'components/card';
-@import 'components/custom-tom-select';
-@import 'components/flash';
-@import 'components/form';
-@import 'components/icon';
-@import 'components/semantic_colors';
-@import 'components/sidebar';
-@import 'components/table';
-
-// Panel and Modal styles
-@import 'components/panel';
-@import 'components/modal';
+@import 'components';
