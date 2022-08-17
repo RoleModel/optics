@@ -1,0 +1,123 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Overview/Themes" />
+
+# Themes
+
+RoleModel Design System defines a default theme along with it's dark mode.
+If you import the design system, it will be used automatically.
+
+## Dark Mode
+By default, Dark mode will automatically apply when your system is set to dark mode.
+You can control the theme mode manually by setting a data attribute on the root html element to either `light` or `dark`.
+This will ignore the system preference and use specified theme mode (I.E. your application doesn't need a dark mode).
+```html
+<!DOCTYPE html>
+<html data-theme-mode='light'>
+  ...
+</html>
+```
+
+## Theme Overriding
+
+If you want to customize your application, you can provide your own theme files that serve as overrides to the existing tokens.
+An example implementation your main scss file would look like:
+
+```scss
+@import '@rolemodel/rolemodel-design-system';
+
+@import 'stylesheets/theme/my_app_theme';
+```
+
+Take a look at `src/theme/rolemodel_theme.scss` for an idea of how to structure your custom theme. It can change the colors, even redefine the luminosity and semantic scales. It generally will look like:
+
+```scss
+@mixin color-varieties {
+  --rm-color-primary-h: my-new-value;
+  --rm-color-primary-s: my-new-value;
+  --rm-color-primary-l: my-new-value;
+}
+
+@mixin fonts {
+  --rm-font-family: 'Coming Soon', sans-serif;
+}
+
+@mixin fonts-dark {
+  --rm-font-family: 'Grandstander', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  @include color-varieties;
+  @include color-varieties;
+}
+
+@media(prefers-color-scheme: dark) {
+  :root:not([data-theme-mode='light']) {
+    @include fonts-dark;
+  }
+}
+
+:root[data-theme-mode='dark'] {
+  @include fonts-dark;
+}
+
+```
+
+## Dynamic Themes
+
+Your application can have multiple predefined themes which can be switched between by setting a data attribute on the root html element.
+
+The theme can be created in a similar way to default theme overriding with the exception of a rule on when it is applied.
+This theme would always be included in your application, but only activate when setting the data attribute.
+
+```html
+<!DOCTYPE html>
+<html data-theme='example'>
+  ...
+</html>
+```
+
+```scss
+@mixin color-varieties {
+  --rm-color-primary-h: my-new-value;
+  --rm-color-primary-s: my-new-value;
+  --rm-color-primary-l: my-new-value;
+}
+
+@mixin fonts {
+  --rm-font-family: 'Coming Soon', sans-serif;
+}
+
+@mixin fonts-dark {
+  --rm-font-family: 'Grandstander', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root[data-theme='example'] {
+  @include color-varieties;
+  @include color-varieties;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme='example']:not([data-theme-mode='light']) {
+    @include fonts-dark;
+  }
+}
+
+:root[data-theme='example'][data-theme-mode='dark'] {
+  @include fonts-dark;
+}
+```
+
+Dynamic themes support both light and dark mode and can be manually controlled with data attributes.
+```html
+<!DOCTYPE html>
+<html data-theme='example' data-theme-mode='light'>
+  ...
+</html>
+```
