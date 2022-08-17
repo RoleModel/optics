@@ -10,18 +10,10 @@ If you import the design system, it will be used automatically.
 ## Dark Mode
 By default, Dark mode will automatically apply when your system is set to dark mode.
 You can control the theme mode manually by setting a data attribute on the root html element to either `light` or `dark`.
-This will ignore the system preference and use specified theme mode.
+This will ignore the system preference and use specified theme mode (I.E. your application doesn't need a dark mode).
 ```html
 <!DOCTYPE html>
 <html data-theme-mode='light'>
-  ...
-</html>
-```
-
-If your application does not use or need dark mode, you can force it to always use light mode, or disable it with:
-```html
-<!DOCTYPE html>
-<html data-allow-dark-mode-preference='false'>
   ...
 </html>
 ```

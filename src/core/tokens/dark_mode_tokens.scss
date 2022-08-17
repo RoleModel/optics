@@ -99,7 +99,7 @@
 
 // Follow system preference unless forced to light
 @media (prefers-color-scheme: dark) {
-  :root:not([data-allow-dark-mode-preference='false'],[data-theme-mode='light']) {
+  :root:not([data-theme-mode='light']) {
     @include all-tokens-dark;
   }
 }
