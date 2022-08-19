@@ -10,10 +10,14 @@ export default {
       options: ['default', 'primary', 'warning', 'danger', 'info', 'notice'],
     },
     pill: { control: 'boolean' },
+    inButton: {
+      control: { type: 'select' },
+      options: ['no', 'right', 'left'],
+    },
   },
   parameters: {
     docs: {
-      page: BadgeDocs
+      page: BadgeDocs,
     },
   },
 };
@@ -65,9 +69,10 @@ Pill.args = {
   pill: true
 };
 
-export const Notification = Template.bind({});
-Notification.args = {
+export const NotificationButton = Template.bind({});
+NotificationButton.args = {
   label: '5',
   style: 'danger',
-  pill: true
+  pill: true,
+  inButton: 'right'
 };

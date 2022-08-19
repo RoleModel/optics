@@ -64,3 +64,26 @@
 .badge--pill {
   border-radius: var(--rm-radius-pill);
 }
+
+// Button with notification style badge
+.btn--with-badge {
+  position: relative;
+}
+
+%badge-notification {
+  position: absolute;
+  top: 0px;
+  pointer-events: none;
+}
+
+.badge--notification-right {
+  @extend %badge-notification;
+  right: 0px;
+  transform: translateY(-50%) translateX(50%);
+}
+
+.badge--notification-left {
+  @extend %badge-notification;
+  left: 0px;
+  transform: translateY(-50%) translateX(-50%);
+}
