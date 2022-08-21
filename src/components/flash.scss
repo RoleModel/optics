@@ -1,21 +1,29 @@
 .flash {
+  display: inline-grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--rm-space-small);
+
   position: fixed;
   right: var(--rm-space-large);
-  display: flex;
-  align-items: center;
   top: var(--rm-space-large);
-  z-index: var(--rm-z-index-alert-group);
+  animation: rmSlideInOutFlash var(--rm-transition-flash) normal forwards;
+
   width: auto;
+
+  z-index: var(--rm-z-index-alert-group);
   padding: var(--rm-space-x-small) var(--rm-space-medium);
   font-size: var(--rm-font-small);
-  background: var(--rm-color-white);
   box-shadow: var(--rm-shadow-x-small);
   border-radius: var(--rm-radius-small);
 
-  animation: rmSlideInOutFlash var(--rm-transition-flash) normal forwards;
+  background: var(--rm-color-background);
+  color: var(--rm-color-on-background);
 
   border-left-width: var(--rm-border-width-x-large);
   border-left-style: solid;
+  border-color: var(--rm-color-on-background);
 }
 
 .flash--notice {
@@ -40,12 +48,12 @@
 
 .flash__message-type {
   font-weight: bold;
-  color: var(--rm-color-black);
+  color: var(--rm-color-on-background);
 }
 
 .flash__message {
   font-size: var(--rm-font-x-small);
-  color: var(--rm-color-black);
+  color: var(--rm-color-on-background);
 }
 
 .flash--demo {
