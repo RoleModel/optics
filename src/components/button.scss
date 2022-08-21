@@ -171,15 +171,6 @@
   border-radius: var(--rm-radius-pill);
 }
 
-// Icon Shape Modifier
-.btn--icon {
-  padding: 0;
-
-  border-radius: var(--rm-radius-circle);
-
-  width: var(--rm-input-height-medium);
-}
-
 // Small Size Modifier
 .btn--small {
   height: var(--rm-input-height-small);
@@ -196,4 +187,25 @@
 .btn--large {
   height: var(--rm-input-height-large);
   font-size: var(--rm-font-medium);
+}
+
+// Icon Shape Modifier
+.btn--icon {
+  padding: 0;
+
+  border-radius: var(--rm-radius-circle);
+
+  width: var(--rm-input-height-medium);
+}
+
+.btn--icon.btn--small {
+  width: var(--rm-input-height-small);
+}
+
+.btn--icon.btn--medium {
+  width: var(--rm-input-height-medium);
+}
+
+.btn--icon.btn--large {
+  width: var(--rm-input-height-large);
 }
