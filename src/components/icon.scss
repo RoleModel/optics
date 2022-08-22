@@ -15,7 +15,9 @@
   font-variation-settings: 'FILL' var(--mso-fill), 'wght' var(--mso-weight), 'GRAD' var(--mso-grade), 'opsz' var(--mso-optical-sizing);
 
   font-size: var(--rm-font-medium);
-  line-height: var(--rm-line-height-tight);
+
+  line-height: var(--rm-line-height-densest);
+  vertical-align: middle;
 }
 
 // Fill
