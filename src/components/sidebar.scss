@@ -1,97 +1,146 @@
 .sidebar {
   --rm-sidebar-width: 280px;
 
+  // TODO: what colors should we use for default?
+  --rm-sidebar-background-color: var(--rm-color-primary-plus-3);
+  --rm-sidebar-color: var(--rm-color-primary-on-plus-3);
+  --rm-sidebar-active-background-color: var(--rm-color-primary-plus-2);
+  --rm-sidebar-active-color: var(--rm-color-primary-on-plus-2);
+
   display: flex;
-  flex: 1;
-  overflow: auto;
-  flex: 0 0 var(--rm-sidebar-width);
   flex-direction: column;
+  flex: 0 0 var(--rm-sidebar-width);
   justify-content: flex-start;
+
+  overflow: auto;
   height: 100vh;
   width: 100%;
-  padding: var(--rm-space-medium);
-  background: var(--rm-color-primary-plus-3);
-  color: var(--rm-color-primary-on-plus-3);
+
+  padding: var(--rm-space-small);
+
   z-index: var(--rm-z-index-drawer);
+
+  background: var(--rm-sidebar-background-color);
+  color: var(--rm-sidebar-color);
 }
 
-.sidebar-nav__wrapper {
-  display: flex;
-  flex-grow: 1;
-  align-items: flex-start;
-  width: 100%;
-  margin: var(--rm-space-x-large) 0 var(--rm-space-large) 0;
+.sidebar__header, .sidebar__header--medium {
+  padding: 0 var(--rm-space-medium);
+  padding-bottom: var(--rm-space-small);
+}
+
+.sidebar__header--small {
+  padding: 0 var(--rm-space-3x-large);
+  padding-bottom: var(--rm-space-small);
+}
+
+.sidebar__header--x-small {
+  padding: 0 var(--rm-space-4x-large);
+  padding-bottom: var(--rm-space-small);
 }
 
 .sidebar-nav__list {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 0;
 }
 
 .sidebar-nav__section-title {
-  font-weight: var(--rm-font-weight-medium);
+  height: var(--rm-input-height-large);
 
-  margin-bottom: var(--rm-space-small);
-  padding: var(--rm-space-medium) var(--rm-space-medium);
+  padding: var(--rm-space-small) var(--rm-space-medium);
+  font-weight: var(--rm-font-weight-bold);
+  font-size: var(--rm-font-small);
+  color: var(--rm-sidebar-color);
 
-  color: var(--rm-color-primary-on-plus-3);
-}
-
-.sidebar-nav__item {
-  display: flex;
-  line-height: 0;
-  justify-content: flex-start;
-  align-items: center;
-  list-style: none;
-  margin-bottom: var(--rm-space-small);
-  padding: var(--rm-space-medium) var(--rm-space-medium);
-  border-radius: var(--rm-radius-x-large);
-  text-decoration: none;
-  color: var(--rm-color-primary-on-plus-3);
-  transition: var(--rm-transition-sidebar);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
 
-  .material-icons {
-    width: 20px;
-    height: 20px;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: var(--rm-space-small);
+.sidebar-nav__section-divider {
+  border-bottom: var(--rm-border-width) solid var(--rm-sidebar-color);
+  margin: 0 var(--rm-space-medium);
+}
+
+.sidebar-nav__item {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: var(--rm-space-large);
+  align-items: center;
+  height: var(--rm-input-height-large);
+
+  border-radius: var(--rm-radius-pill);
+
+  padding: var(--rm-space-x-small) var(--rm-space-medium);
+
+  text-decoration: none;
+  color: var(--rm-sidebar-color);
+
+  transition: var(--rm-transition-sidebar);
+  transition-property: background-color, color;
+
+  // Prevent label overflow. This only works if text is in an element under the item.
+  > * {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  @media(max-width: $breakpoint-x-small) {
-    padding: var(--rm-space-medium);
+  .material-symbols-outlined {
+    @extend .icon--large;
   }
 
-  &:last-of-type {
-    margin-bottom: 0;
+  &:visited {
+    color: var(--rm-sidebar-color);
   }
 
   &:hover {
-    background: var(--rm-color-primary-hover);
-    color: var(--rm-color-primary-on-hover);
+    background-color: var(--rm-sidebar-active-background-color);
+    color: var(--rm-sidebar-active-color);
   }
 
   &.active {
-    background: var(--rm-color-primary-base);
-    color: var(--rm-color-primary-on-base);
+    background-color: var(--rm-sidebar-active-background-color);
+    color: var(--rm-sidebar-active-color);
+
+    font-weight: var(--rm-font-weight-bold);
   }
 }
 
-.sidebar__footer {
-  width: 100%;
+// Sidebar Identity
+.sidebar-identity {
+  display: inline-grid;
+  grid-template-columns: var(--rm-input-height-large) 1fr;
+  align-items: center;
+  gap: var(--rm-space-small);
+
+  padding: var(--rm-space-medium);
+  font-size: var(--rm-font-small);
+
+  border-radius: var(--rm-radius-small);
+  box-shadow: var(--rm-border-all) var(--rm-sidebar-color);
 }
 
-.sidebar__logo {
-  width: 25%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  margin: auto;
+.sidebar-identity--interactable {
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--rm-sidebar-active-background-color);
+    color: var(--rm-sidebar-active-color);
+  }
+}
+
+.sidebar-identity__avatar {
+  width: var(--rm-input-height-large);
+  border-radius: var(--rm-radius-circle);
+  aspect-ratio: 1 / 1;
+}
+
+.sidebar-identity__title {
+  font-weight: var(--rm-font-weight-semi-bold);
+  font-size: var(--rm-font-medium);
+}
+
+.sidebar-identity__subtitle {
+  font-size: var(--rm-font-small);
 }
