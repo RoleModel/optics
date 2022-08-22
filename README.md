@@ -45,3 +45,7 @@ Tokens are defined in `src/core/tokens`
 There are also a few component specific tokens that are defined in their respective component file, but those are not indented to be global or used outside of that file.
 
 There is a JSON file in `docs/token_structure.json` that lists all the current tokens in one place and shows how the names indicate organization.
+
+## License
+
+[MIT](LICENSE)
