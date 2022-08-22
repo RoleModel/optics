@@ -1,0 +1,48 @@
+import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+
+import imageFile from './flash.gif';
+
+# Flash
+
+<img src={imageFile} alt='Flash' />
+
+Flash classes provide notification style alert messages that "Flash" onto the screen (top right corner) with application information.
+
+**Note:** The `flash--demo` class that each example here uses is not intended to be used in a real application. It is only used here to allow for showing the flash messages in a static way.
+
+## Notice
+
+`.flash--notice` Provides a success styled message using the alert green color with a circle checkmark icon.
+
+<Canvas withToolbar>
+  <Story id='components-flash--notice' />
+</Canvas>
+
+## Info
+
+`.flash--info` Provides an info styled message using the alert blue color with a circle info icon.
+
+<Canvas withToolbar>
+  <Story id='components-flash--info' />
+</Canvas>
+
+## Alert
+
+`.flash--alert` Provides an alert styled message using the alert danger color with a circle cross icon.
+
+<Canvas withToolbar>
+  <Story id='components-flash--alert' />
+</Canvas>
+
+## Warning
+
+`.flash--warning` Provides an warning styled message using the alert warning color with a triangle exclamation icon.
+
+<Canvas withToolbar>
+  <Story id='components-flash--warning' />
+</Canvas>
+
+## Playground
+
+<Primary/>
+<ArgsTable of='.' story='^'/>
