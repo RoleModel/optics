@@ -1,11 +1,3 @@
-// turbo-frame id="flash"
-//   - flash.each do |type, msg|
-//     .flash class="flash--#{type}"
-//       = icon(icon_name_for_flash(type), classes: 'material-icons--lg')
-//       .margin-left-md
-//         .flash__message-type = type.humanize
-//         .flash__message = msg
-
 import { createIcon } from '../Icon/Icon.js'
 
 const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1)
