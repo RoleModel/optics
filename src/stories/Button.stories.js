@@ -63,7 +63,7 @@ export const Outline = Template.bind({});
 Outline.args = {
   label: 'Outline',
   priority: 'delete',
-  outline: true,
+  outlined: true,
 };
 
 export const NoBorder = Template.bind({});
