@@ -1,0 +1,65 @@
+import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+
+# Table
+
+Table classes provide simple styling for tables and their content.
+
+## Default
+
+`.table` Provides a default style to a table element
+
+<Canvas withToolbar>
+  <Story id='components-table--default' />
+</Canvas>
+
+## Primary
+
+`.table-primary` Provides a table with a primary colored header.
+
+<Canvas withToolbar>
+  <Story id='components-table--primary' />
+</Canvas>
+
+## Danger
+
+`.table-danger` Provides a table with a danger colored header.
+
+<Canvas withToolbar>
+  <Story id='components-table--danger' />
+</Canvas>
+
+## Layout
+
+`.table--auto-layout`, `.table--fixed-layout` (with auto being the default) modify the table layout. Auto will adjust according to the contents, fixed will evenly divide based on the amount of columns.
+
+<Canvas withToolbar>
+  <Story id='components-table--fixed-layout' />
+</Canvas>
+
+## Density
+
+`.table--default-density`, `.table--comfortable-density`, `table--compact-density` (with default being the default) modify the table cell padding to expand or contract how much space they use.
+
+<Canvas withToolbar>
+  <Story id='components-table--comfortable-density' />
+</Canvas>
+<Canvas withToolbar>
+  <Story id='components-table--compact-density' />
+</Canvas>
+
+## Striping
+
+`.table--even-striped`, `.table--odd-striped` color every (odd or even) other row with a light color. The color matches the default, primary, or danger.
+
+<Canvas withToolbar>
+  <Story id='components-table--striped-even' />
+</Canvas>
+
+<Canvas withToolbar>
+  <Story id='components-table--striped-odd' />
+</Canvas>
+
+## Playground
+
+<Primary/>
+<ArgsTable of='.' story='^'/>
