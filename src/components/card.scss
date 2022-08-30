@@ -1,4 +1,4 @@
-%card {
+.card {
   position: relative;
 
   background-color: var(--rm-color-background);
@@ -11,12 +11,8 @@
   overflow: hidden;
 }
 
-.card {
-  @extend %card;
-}
-
 .card-padded {
-  @extend %card;
+  @extend .card;
 
   padding: var(--rm-space-medium);
 }
