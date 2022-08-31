@@ -1,3 +1,6 @@
+// TODO: When we get a pagination component, add it to the table styles and docs for within a table footer
+// TODO: future improvement of sticky header or footer with scrollable rows.
+
 .table {
   // Private Variables
   --_rm-table-layout: auto;
@@ -51,12 +54,9 @@
 .table-primary {
   @extend .table;
 
-  --_rm-table-striping-background-color: var(--rm-color-primary-plus-3);
-  --_rm-table-striping-text-color: var(--rm-color-primary-on-plus-3);
-
   thead {
-    background-color: var(--rm-color-primary-plus-2);
-    color: var(--rm-color-primary-on-plus-2);
+    background-color: var(--rm-color-primary-plus-3);
+    color: var(--rm-color-primary-on-plus-3);
   }
 }
 
@@ -64,12 +64,9 @@
 .table-danger {
   @extend .table;
 
-  --_rm-table-striping-background-color: var(--rm-color-alerts-danger-plus-3);
-  --_rm-table-striping-text-color: var(--rm-color-alerts-danger-on-plus-3);
-
   thead {
-    background-color: var(--rm-color-alerts-danger-plus-2);
-    color: var(--rm-color-alerts-danger-on-plus-2);
+    background-color: var(--rm-color-alerts-danger-plus-3);
+    color: var(--rm-color-alerts-danger-on-plus-3);
   }
 }
 
