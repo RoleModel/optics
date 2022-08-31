@@ -1,4 +1,5 @@
-%btn {
+// Default Button
+.btn {
   --rm-button-height: var(--rm-input-height-medium);
 
   -webkit-appearance: none;
@@ -49,14 +50,9 @@
   }
 }
 
-// Default Button
-.btn {
-  @extend %btn;
-}
-
 // Primary Button
 .btn-primary {
-  @extend %btn;
+  @extend .btn;
 
   background: var(--rm-color-primary-base);
   color: var(--rm-color-primary-on-base);
@@ -89,7 +85,7 @@
 
 // Default Button with unecessary Outline Modifier
 .btn.btn--outline {
-  @extend %btn;
+  @extend .btn;
 
   &:hover:not(:disabled, .btn--disabled) {
     background: var(--rm-color-neutral-plus-3);
@@ -99,7 +95,7 @@
 
 // Secondary Button
 .btn-secondary {
-  @extend %btn;
+  @extend .btn;
   @extend .btn--outline;
 }
 
@@ -121,7 +117,7 @@
 
 // Delete Button
 .btn-delete {
-  @extend %btn;
+  @extend .btn;
 
   background: var(--rm-color-alerts-danger-base);
   color: var(--rm-color-alerts-danger-on-base);
