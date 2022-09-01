@@ -1,26 +1,42 @@
-.card {
+%card-global {
+  // Public API
+  // Normal
+  --_rm-card-background-color: var(--rm-color-background);
+  --_rm-card-text-color: var(--rm-color-on-background);
+
+  // General Properties
+  --_rm-card-radius: var(--rm-radius-medium);
+  --_rm-card-border: var(--rm-border-all) var(--rm-border-color);
+  --_rm-card-font-size: var(--rm-font-medium);
+  --_rm-card-line-height: var(--rm-line-height-base);
+  --_rm-card-padding: var(--rm-space-medium);
+
   position: relative;
 
-  background-color: var(--rm-color-background);
-  color: var(--rm-color-on-background);
+  background-color: var(--_rm-card-background-color);
+  color: var(--_rm-card-text-color);
 
-  box-shadow: var(--rm-border-all) var(--rm-border-color);
-  border-radius: var(--rm-radius-medium);
-  font-size: var(--rm-font-medium);
-  line-height: var(--rm-line-height-base);
+  box-shadow: var(--_rm-card-border);
+  border-radius: var(--_rm-card-radius);
+  font-size: var(--_rm-card-font-size);
+  line-height: var(--_rm-card-line-height);
   overflow: hidden;
 }
 
-.card-padded {
-  @extend .card;
+.card {
+  @extend %card-global;
+}
 
-  padding: var(--rm-space-medium);
+.card-padded {
+  @extend %card-global;
+
+  padding: var(--_rm-card-padding);
 }
 
 .card__header,
 .card__body,
 .card__footer {
-  padding: var(--rm-space-medium);
+  padding: var(--_rm-card-padding);
 }
 
 .card__header {
