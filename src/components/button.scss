@@ -55,34 +55,29 @@
 
   -webkit-appearance: none;
 
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-
   gap: var(--_rm-btn-gap);
 
-  white-space: nowrap;
+  display: inline-flex;
 
   transition: all var(--rm-transition-input);
 
   border-radius: var(--_rm-btn-radius);
-
-  padding: var(--_rm-btn-padding);
-
   height: var(--__rm-btn-height);
+  padding: var(--_rm-btn-padding);
 
   cursor: pointer;
 
   font-size: var(--__rm-btn-font-size);
   font-weight: var(--_rm-btn-font-weight);
-
   text-align: center;
   text-decoration: none;
-
-  box-shadow: var(--rm-border-all) var(--_rm-btn-border-color);
+  white-space: nowrap;
 
   background: var(--_rm-btn-background-color);
   color: var(--_rm-btn-text-color);
+  box-shadow: var(--rm-border-all) var(--_rm-btn-border-color);
 
   // Note: @at-root plus the parent selector generates a style like `a.btn:visited`.
   // Doing it here prevents having to write ^ for each combo of each button variation.
@@ -122,7 +117,6 @@
   &.btn--outline:not(:disabled, .btn--disabled):hover {
     background: var(--_rm-btn-background-hover-and-outline-color);
     color: var(--_rm-btn-text-hover-and-outline-color);
-
     box-shadow: var(--rm-border-all) var(--_rm-btn-border-hover-and-outline-color);
   }
 
