@@ -35,6 +35,7 @@
 
 @mixin box-shadows {
   // E.G. box-shadow: var(--rm-border-top) var(--rm-border-color);
+  --rm-border-none: 0 0 0 0;
   --rm-border-all: 0 0 0 var(--rm-border-width);
   --rm-border-top: 0 calc(-1 * var(--rm-border-width)) 0 0;
   --rm-border-right: var(--rm-border-width) 0 0 0;
