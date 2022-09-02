@@ -59,6 +59,88 @@ Table classes provide simple styling for tables and their content.
   <Story id='components-table--striped-odd' />
 </Canvas>
 
+## Table API
+
+The table styles are built on css variables scoped to the table.
+
+Here is the full public API that the table uses.
+```scss
+// Overall Table
+--_rm-table-background-color
+--_rm-table-text-color
+
+--_rm-table-border-radius
+--_rm-table-layout
+
+// Head
+--_rm-table-head-background-color
+--_rm-table-head-text-color
+--_rm-table-head-font-weight
+
+// Striping
+--_rm-table-striping-background-color
+--_rm-table-striping-text-color
+
+// Cells (for padding, the appropriate variable is used when using the density modifiers)
+--_rm-table-cell-font-size
+--_rm-table-cell-padding
+
+--_rm-table-cell-padding-default
+--_rm-table-cell-padding-comfortable
+--_rm-table-cell-padding-compact
+
+// Borders
+--_rm-table-border-color
+--_rm-table-border
+
+--_rm-table-row-border-color
+--_rm-table-row-border
+
+--_rm-table-foot-border-color
+--_rm-table-foot-border
+```
+
+## Overriding table styles
+
+The table classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
+
+This allows multiple table classes to share the same behavior. You can modify all tables behavior by overriding the `%table-global` placeholder selector and setting any of the **general properties** documented tokens:
+```scss
+%table-global {
+  --_rm-table-cell-font-size: var(--rm-font-x-large);
+}
+```
+
+If you need to override the color of a particular table style, you can open the respective class and change the **non-general properties** documented above
+```scss
+// This will only affect the primary table, but not default or danger
+.table-primary {
+  --_rm-table-background-color: purple;
+  --_rm-table-text-color: white;
+}
+```
+
+## Custom Table
+
+Your application may need a custom table. To add one:
+1. Create a class like `.table-purple-rain`
+2. Extend `%table-global`
+3. Use the above documented API to define how it looks and feels for different states (e.g. color, radius)
+
+```scss
+.table-purple-rain {
+  @extend %table-global;
+
+  // Normal
+  --_rm-table-background-color: purple;
+  --_rm-table-text-color: white;
+
+  // General Properties
+  --_rm-table-radius: var(--rm-radius-large);
+  --_rm-table-cell-font-size: var(--rm-font-x-large);
+}
+```
+
 ## Playground
 
 <Primary/>
