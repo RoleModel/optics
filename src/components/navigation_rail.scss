@@ -24,16 +24,36 @@
   --_rm-navigation-rail-label-letter-spacing: var(--rm-letter-spacing-navigation);
   --_rm-navigation-rail-label-line-height: var(--rm-line-height-dense);
 
+  --_rm-navigation-rail-brand-padding: var(--rm-space-medium);
+
   display: flex;
   flex-direction: column;
   flex: 0 0 var(--_rm-navigation-rail-width);
 
-  gap: var(--_rm-navigation-rail-link-gap);
-
   background: var(--_rm-navigation-rail-background-color);
   color: var(--_rm-navigation-rail-text-color);
 
-  padding-top: var(--_rm-navigation-rail-link-gap);
+  .navigation-rail__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--_rm-navigation-rail-link-gap);
+
+    padding: var(--_rm-navigation-rail-link-gap) 0;
+
+    &.navigation-rail__content--start { justify-content: start; }
+    &.navigation-rail__content--center { justify-content: center; }
+    &.navigation-rail__content--end { justify-content: end; }
+  }
+
+  .navigation-rail__brand {
+    display: block;
+    padding: var(--_rm-navigation-rail-brand-padding);
+  }
+
+  .navigation-rail__brand + .navigation-rail__content {
+    padding-top: 0;
+  }
 
   .navigation-rail__item {
     cursor: pointer;
