@@ -89,8 +89,6 @@
   --rm-letter-spacing-label: 0.4px;
 }
 
-// TODO: Consider switching these to a timing scale
-// instead of component specific names
 @mixin transitions {
   --rm-transition-input:      120ms;
   --rm-transition-navigation: 200ms;
