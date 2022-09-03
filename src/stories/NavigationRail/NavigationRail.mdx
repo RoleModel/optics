@@ -1,5 +1,130 @@
 import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
 
+# Navigation Rail
+
+Navigation Rail classes provide simple styling for a mobile navigation sidebar.
+
+## Default
+
+`.navigation-rail` is the main component that everything is contained within.
+
+<Canvas withToolbar>
+  <Story id='components-navigation-rail--default' />
+</Canvas>
+
+## Primary
+
+`.navigation-rail-primary` Provides a primary colored navigation rail. This uses the primary color defined in your theme.
+
+<Canvas withToolbar>
+  <Story id='components-navigation-rail--primary' />
+</Canvas>
+
+## Red
+
+`.navigation-rail-red` Provides a red colored navigation rail. This uses the danger alert color.
+
+<Canvas withToolbar>
+  <Story id='components-navigation-rail--red' />
+</Canvas>
+
+## Brand
+
+`.navigation-rail__brand` can be used with an image tag inside. This can be used to display your applications branding or logo.
+
+The brand is not required and the rail will adjust itself accordingly.
+
+<Canvas withToolbar>
+  <Story id='components-navigation-rail--no-brand' />
+</Canvas>
+
+## Content
+
+`.navigation-rail__content` defines the container that `.navigation-rail__item` should be placed in. It can be positioned by using modifier classes.
+`.navigation-rail__content--start`, `.navigation-rail__content--center`, `.navigation-rail__content--end` with start being the default.
+
+<Canvas withToolbar>
+  <Story id='components-navigation-rail--centered' />
+</Canvas>
+
+<Canvas withToolbar>
+  <Story id='components-navigation-rail--end' />
+</Canvas>
+
+## Navigation Rail API
+
+The navigation rail styles are built on css variables scoped to the rail.
+
+Here is the full public API that the navigation rail uses.
+```scss
+// Normal
+--_rm-navigation-rail-background-color
+--_rm-navigation-rail-text-color
+
+// Hover
+--_rm-navigation-rail-icon-background-hover-color
+--_rm-navigation-rail-icon-text-hover-color
+
+// General Properties
+--_rm-navigation-rail-width
+--_rm-navigation-rail-link-gap
+--_rm-navigation-rail-link-contents-gap
+
+--_rm-navigation-rail-icon-weight
+--_rm-navigation-rail-icon-transition
+--_rm-navigation-rail-icon-padding
+--_rm-navigation-rail-icon-hover-weight
+--_rm-navigation-rail-icon-hover-radius
+
+--_rm-navigation-rail-label-font-size
+--_rm-navigation-rail-label-font-weight
+--_rm-navigation-rail-label-letter-spacing
+--_rm-navigation-rail-label-line-height
+
+--_rm-navigation-rail-brand-padding
+```
+
+## Overriding navigation rail styles
+
+The navigation rail classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
+
+This allows multiple navigation rail classes to share the same behavior. You can modify all navigation rails behavior by overriding the `%navigation-rail-global` placeholder selector and setting any of the **general properties** documented tokens:
+```scss
+%navigation-rail-global {
+  --_rm-navigation-rail-link-gap: var(--rm-space-x-large);
+}
+```
+
+If you need to override the color of a particular navigation rail style, you can open the respective class and change the **non-general properties** documented above
+```scss
+// This will only affect the primary navigation rail, but not default or red
+.navigation-rail-primary {
+  --_rm-navigation-rail-background-color: purple;
+  --_rm-navigation-rail-text-color: white;
+}
+```
+
+## Custom Navigation Rail
+
+Your application may need a custom navigation rail. To add one:
+1. Create a class like `.navigation-rail-purplerain`
+2. Extend `%navigation-rail-global`
+3. Use the above documented API to define how it looks and feels for different states (e.g. color, radius)
+
+```scss
+.navigation-rail-purplerain {
+  @extend %navigation-rail-global;
+
+  // Normal
+  --_rm-navigation-rail-background-color: purple;
+  --_rm-navigation-rail-text-color: white;
+
+  // Hover
+  --_rm-navigation-rail-icon-background-hover-color: darkpurple;
+  --_rm-navigation-rail-icon-text-hover-color: white;
+}
+```
+
 ## Playground
 
 <Primary/>
