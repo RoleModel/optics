@@ -32,10 +32,10 @@
   --_rm-table-border: var(--rm-border-all) var(--_rm-table-border-color);
 
   --_rm-table-row-border-color: var(--rm-border-color);
-  --_rm-table-row-border: var(--rm-border-bottom) var(--_rm-table-row-border-color);
+  --_rm-table-row-border: inset var(--rm-border-top) var(--_rm-table-row-border-color);
 
-  --_rm-table-foot-border-color: transparent;
-  --_rm-table-foot-border: var(--rm-border-none) var(--_rm-table-foot-border-color);
+  --_rm-table-foot-border-color: var(--_rm-table-row-border-color);
+  --_rm-table-foot-border: var(--rm-border-top) var(--_rm-table-foot-border-color);
 
   // Private API
   // These allow for overriding specific padding versions easier.
@@ -78,7 +78,7 @@
   }
 
   tfoot tr {
-    box-shadow: inset var(--_rm-table-row-border);
+    box-shadow: var(--_rm-table-foot-border);
   }
 }
 
