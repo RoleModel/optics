@@ -33,6 +33,8 @@
   background: var(--_rm-navigation-rail-background-color);
   color: var(--_rm-navigation-rail-text-color);
 
+  overflow-y: auto;
+
   .navigation-rail__content {
     flex-grow: 1;
     display: flex;
