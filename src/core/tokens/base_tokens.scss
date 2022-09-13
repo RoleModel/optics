@@ -35,14 +35,16 @@
 
 @mixin box-shadows {
   // E.G. box-shadow: var(--rm-border-top) var(--rm-border-color);
+  --rm-border-none: 0 0 0 0;
   --rm-border-all: 0 0 0 var(--rm-border-width);
   --rm-border-top: 0 calc(-1 * var(--rm-border-width)) 0 0;
   --rm-border-right: var(--rm-border-width) 0 0 0;
   --rm-border-bottom: 0 var(--rm-border-width) 0 0;
   --rm-border-left: calc(-1 * var(--rm-border-width)) 0 0 0;
-
-  --rm-border-y: var(--rm-border-top) var(--rm-border-color), var(--rm-border-bottom) var(--rm-border-color);
-  --rm-border-x: var(--rm-border-left) var(--rm-border-color), var(--rm-border-right) var(--rm-border-color);
+  --rm-border-y: var(--rm-border-top) var(--rm-border-color),
+                 var(--rm-border-bottom) var(--rm-border-color);
+  --rm-border-x: var(--rm-border-left) var(--rm-border-color),
+                 var(--rm-border-right) var(--rm-border-color);
 }
 
 @mixin font-scales {

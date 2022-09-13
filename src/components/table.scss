@@ -1,47 +1,136 @@
-table.table {
-  width: 100%;
+// TODO: When we get a pagination component, add it to the table styles and docs for within a table footer
+// TODO: future improvement of sticky header or footer with scrollable rows.
 
+%table-global {
+  // Public API
+  // Overall Table
+  --_rm-table-background-color: var(--rm-color-background);
+  --_rm-table-text-color: var(--rm-color-on-background);
+
+  --_rm-table-border-radius: var(--rm-radius-medium);
+  --_rm-table-layout: auto;
+
+  // Head
+  --_rm-table-head-background-color: var(--rm-color-neutral-plus-2);
+  --_rm-table-head-text-color: var(--rm-color-neutral-on-plus-2);
+  --_rm-table-head-font-weight: var(--rm-font-weight-normal);
+
+  // Striping
+  --_rm-table-striping-background-color: var(--rm-color-neutral-plus-3);
+  --_rm-table-striping-text-color: var(--rm-color-neutral-on-plus-3);
+
+  // Cells (for padding, the appropriate variable is used when using the density modifiers)
+  --_rm-table-cell-font-size: var(--rm-font-small);
+  --_rm-table-cell-padding: var(--rm-space-small) var(--rm-space-x-small);
+
+  --_rm-table-cell-padding-default: var(--rm-space-small) var(--rm-space-x-small);
+  --_rm-table-cell-padding-comfortable: var(--rm-space-medium) var(--rm-space-small);
+  --_rm-table-cell-padding-compact: var(--rm-space-x-small) var(--rm-space-2x-small);
+
+  // Borders
+  --_rm-table-border-color: var(--rm-border-color);
+  --_rm-table-border: var(--rm-border-all) var(--_rm-table-border-color);
+
+  --_rm-table-row-border-color: var(--rm-border-color);
+  --_rm-table-row-border: inset var(--rm-border-top) var(--_rm-table-row-border-color);
+
+  --_rm-table-foot-border-color: var(--_rm-table-row-border-color);
+  --_rm-table-foot-border: var(--rm-border-top) var(--_rm-table-foot-border-color);
+
+  // Private API
+  // These allow for overriding specific padding versions easier.
+  --__rm-table-cell-padding: var(--_rm-table-cell-padding-default);
+
+  width: 100%;
   border-collapse: collapse;
+  table-layout: var(--_rm-table-layout);
+
+  box-shadow: var(--_rm-table-border);
+  border-radius: var(--_rm-table-border-radius);
+
+  overflow: hidden;
+
+  background-color: var(--_rm-table-background-color);
+  color: var(--_rm-table-text-color);
 
   thead {
-    background: var(--rm-color-background);
+    background-color: var(--_rm-table-head-background-color);
+    color: var(--_rm-table-head-text-color);
   }
 
   th {
-    padding: var(--rm-space-medium) var(--rm-space-medium);
+    padding: var(--_rm-table-cell-padding);
 
     text-align: left;
     text-transform: uppercase;
 
-    color: var(--rm-color-on-background);
-    box-shadow: var(--rm-border-bottom) var(--rm-border-color);
+    font-size: var(--_rm-table-cell-font-size);
+    font-weight: var(--_rm-table-head-font-weight);
+  }
 
-    font-size: var(--rm-font-small);
-    font-weight: var(--rm-font-weight-normal);
-
-    &:first-child {
-      border-top-left-radius: var(--rm-radius-medium);
-    }
-
-    &:last-child {
-      border-top-right-radius: var(--rm-radius-medium);
-    }
+  tr:not(:last-child) {
+    box-shadow: var(--_rm-table-row-border);
   }
 
   td {
-    padding: var(--rm-font-x-small) var(--rm-space-medium);
+    padding: var(--_rm-table-cell-padding);
+    font-size: var(--_rm-table-cell-font-size);
+  }
 
-    color: var(--rm-color-on-background);
-    box-shadow: var(--rm-border-bottom) var(--rm-border-color);
-
-    font-size: var(--rm-font-small);
+  tfoot tr {
+    box-shadow: var(--_rm-table-foot-border);
   }
 }
 
-table.table--no-last-divider {
-  tr:last-child {
-    td {
-      border-bottom: none;
-    }
+// Default Table
+.table {
+  @extend %table-global;
+}
+
+// Primary Table
+.table-primary {
+  @extend %table-global;
+
+  --_rm-table-head-background-color: var(--rm-color-primary-plus-3);
+  --_rm-table-head-text-color: var(--rm-color-primary-oy-plus-3);
+}
+
+// Danger Table
+.table-danger {
+  @extend %table-global;
+
+  --_rm-table-head-background-color: var(--rm-color-alerts-danger-plus-3);
+  --_rm-table-head-text-color: var(--rm-color-alerts-danger-oy-plus-3);
+}
+
+// Layout Modifiers
+.table--auto-layout { --_rm-table-layout: auto; }
+.table--fixed-layout { --_rm-table-layout: fixed; }
+
+// Table Density Modifiers
+.table--default-density {
+  --_rm-table-cell-padding: var(--_rm-table-cell-padding-default);
+}
+
+.table--comfortable-density {
+  --_rm-table-cell-padding: var(--_rm-table-cell-padding-comfortable);
+}
+
+.table--compact-density {
+  --_rm-table-cell-padding: var(--_rm-table-cell-padding-compact);
+}
+
+// Striped Modifiers
+.table--even-striped {
+  tbody tr:nth-child(even) {
+    background-color: var(--_rm-table-striping-background-color);
+    color: var(--_rm-table-striping-text-color);
+  }
+}
+
+.table--odd-striped {
+  tbody tr:nth-child(odd) {
+    background-color: var(--_rm-table-striping-background-color);
+    color: var(--_rm-table-striping-text-color);
   }
 }
