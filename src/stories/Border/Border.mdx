@@ -10,7 +10,7 @@ These can be composed with other box shadows such as <LinkTo kind="utilities-sha
 
 These tokens can be applied as a box shadow with any color you wish.
 
-```scss
+```css
 box-shadow: var(--rm-border-all) var(--rm-border-color);
 // or
 box-shadow: var(--rm-border-left) var(--rm-color-primary-base);
@@ -20,7 +20,7 @@ box-shadow: var(--rm-border-left) var(--rm-color-primary-base);
 
 `inset` can be prefixed to invert a border.
 
-```scss
+```css
 box-shadow: inset var(--rm-border-all) var(--rm-border-color);
 // or
 box-shadow: inset var(--rm-border-left) var(--rm-color-primary-base);
@@ -34,17 +34,15 @@ Insetting the x and y borders is currently **not supported**. You can achieve th
 
 ## Available tokens and their definitions
 
-```scss
---rm-border-none: 0 0 0 0;
---rm-border-all: 0 0 0 var(--rm-border-width);
---rm-border-top: 0 calc(-1 * var(--rm-border-width)) 0 0;
---rm-border-right: var(--rm-border-width) 0 0 0;
+```css
+--rm-border-none:   0 0 0 0;
+--rm-border-all:    0 0 0 var(--rm-border-width);
+--rm-border-top:    0 calc(-1 * var(--rm-border-width)) 0 0;
+--rm-border-right:  var(--rm-border-width) 0 0 0;
 --rm-border-bottom: 0 var(--rm-border-width) 0 0;
---rm-border-left: calc(-1 * var(--rm-border-width)) 0 0 0;
---rm-border-y: var(--rm-border-top) var(--rm-border-color),
-                var(--rm-border-bottom) var(--rm-border-color);
---rm-border-x: var(--rm-border-left) var(--rm-border-color),
-                var(--rm-border-right) var(--rm-border-color);
+--rm-border-left:   calc(-1 * var(--rm-border-width)) 0 0 0;
+--rm-border-y:      var(--rm-border-top) var(--rm-border-color), var(--rm-border-bottom) var(--rm-border-color);
+--rm-border-x:      var(--rm-border-left) var(--rm-border-color), var(--rm-border-right) var(--rm-border-color);
 ```
 
 ## Playground
