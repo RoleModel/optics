@@ -85,8 +85,8 @@
 }
 
 @mixin letter-spacing {
-  --rm-letter-spacing-navigation: 0.1px;
-  --rm-letter-spacing-label: 0.4px;
+  --rm-letter-spacing-navigation: 0.01rem;
+  --rm-letter-spacing-label:      0.04rem;
 }
 
 @mixin transitions {
