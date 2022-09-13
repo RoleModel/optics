@@ -1,0 +1,31 @@
+@keyframes transitionDemo {
+  from {
+    background-color: var(--rm-color-white);
+    color: var(--rm-color-black);
+  }
+
+  to {
+    background-color: var(--rm-color-primary-base);
+    color: var(--rm-color-primary-on-base);
+  }
+}
+
+.transition-demo {
+  display: inline-block;
+
+  background-color: var(--rm-color-primary-base);
+  color: var(--rm-color-primary-on-base);
+
+  padding: var(--rm-space-medium);
+
+  animation-name: transitionDemo;
+  animation-duration: var(--rm-transition-input);
+  animation-iteration-count: 1;
+}
+
+.transition-demo--input { animation-duration: var(--rm-transition-input); }
+.transition-demo--navigation { animation-duration: var(--rm-transition-navigation); }
+.transition-demo--sidebar { animation-duration: var(--rm-transition-sidebar); }
+.transition-demo--modal { animation-duration: var(--rm-transition-modal); }
+.transition-demo--panel { animation-duration: var(--rm-transition-panel); }
+.transition-demo--flash { animation-duration: var(--rm-transition-flash); }

@@ -1,0 +1,31 @@
+import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+
+# Transition
+
+Transition tokens can be used for transition or keyframe animation durations.
+
+## Usage
+
+These tokens can be applied as a transition duration.
+
+```css
+transition: all var(--rm-transition-input);
+// or
+animation-duration: var(--rm-transition-input);
+```
+
+## Available tokens and their definitions
+
+```css
+--rm-transition-input:      120ms;
+--rm-transition-navigation: 200ms;
+--rm-transition-sidebar:    300ms;
+--rm-transition-modal:      300ms;
+--rm-transition-panel:      400ms;
+--rm-transition-flash:      5s;
+```
+
+## Playground
+
+<Primary/>
+<ArgsTable of='.' story='^'/>

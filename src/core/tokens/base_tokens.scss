@@ -85,15 +85,17 @@
 }
 
 @mixin letter-spacing {
-  --rm-letter-spacing-label: 0.4px;
+  --rm-letter-spacing-navigation: 0.01rem;
+  --rm-letter-spacing-label:      0.04rem;
 }
 
 @mixin transitions {
-  --rm-transition-input:   120ms;
-  --rm-transition-sidebar: 300ms;
-  --rm-transition-modal:   300ms;
-  --rm-transition-panel:   400ms;
-  --rm-transition-flash:   5s;
+  --rm-transition-input:      120ms;
+  --rm-transition-navigation: 200ms;
+  --rm-transition-sidebar:    300ms;
+  --rm-transition-modal:      300ms;
+  --rm-transition-panel:      400ms;
+  --rm-transition-flash:      5s;
 }
 
 @mixin clip-paths {

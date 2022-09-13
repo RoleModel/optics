@@ -9,3 +9,4 @@ export const parameters = {
 }
 
 import '!style-loader!css-loader!sass-loader!../src/rolemodel-design-system.scss';
+import '!style-loader!css-loader!sass-loader!./documentation.scss';
