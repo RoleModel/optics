@@ -65,7 +65,14 @@
     align-items: center;
     gap: var(--_rm-navigation-rail-link-contents-gap);
 
+    color: var(--_rm-navigation-rail-text-color);
+    text-align: center;
+
     text-decoration: none;
+
+    &:visited {
+      color: var(--_rm-navigation-rail-text-color);
+    }
 
     &:hover,
     &.active {
