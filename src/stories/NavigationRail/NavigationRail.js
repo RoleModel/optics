@@ -3,6 +3,7 @@ export const createNavigationRail = ({
   brand = true,
   position = 'start',
   activeLink = 'Home',
+  logout = false,
 }) => {
   const element = 'div'
 
@@ -21,6 +22,7 @@ export const createNavigationRail = ({
     ['home', 'Home'],
     ['apps', 'Get started'],
     ['code', 'Develop'],
+    ['refresh'],
     ['book', 'Foundations'],
     ['palette', 'Styles'],
     ['add_circle', 'Components'],
@@ -34,11 +36,20 @@ export const createNavigationRail = ({
         return `
       <a class="navigation-rail__item ${activeLink === label ? 'active' : ''}" href="/">
         <span class="material-symbols-outlined navigation-rail__item-icon" title="${icon}">${icon}</span>
-        <div class="navigation-rail__item-label">${label}</div>
+        ${label ? `<div class='navigation-rail__item-label'>${label}</div>` : ''}
       </a>
         `
       }).join('')}
     </div>
+
+    ${logout ? `
+      <div class="navigation-rail__content navigation-rail__content--end">
+        <a class="navigation-rail__item" href="/">
+          <span class="material-symbols-outlined navigation-rail__item-icon" title="logout">logout</span>
+          <div class='navigation-rail__item-label'>Logout</div>
+        </a>
+      </div>
+    ` : ''}
   </div>
   <div></div>
 `

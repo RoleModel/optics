@@ -120,14 +120,14 @@
 }
 
 // Red
-.navigation-rail-red {
+.navigation-rail-subtle-primary {
   @extend %navigation-rail-global;
 
   // Normal
-  --_rm-navigation-rail-background-color: var(--rm-color-alerts-danger-plus-3);
-  --_rm-navigation-rail-text-color: var(--rm-color-alerts-danger-on-plus-3);
+  --_rm-navigation-rail-background-color: var(--rm-color-primary-max);
+  --_rm-navigation-rail-text-color: var(--rm-color-primary-on-max);
 
   // Hover
-  --_rm-navigation-rail-icon-background-hover-color: var(--rm-color-alerts-danger-plus-2);
-  --_rm-navigation-rail-icon-text-hover-color: var(--rm-color-alerts-danger-on-plus-2);
+  --_rm-navigation-rail-icon-background-hover-color: var(--rm-color-primary-plus-2);
+  --_rm-navigation-rail-icon-text-hover-color: var(--rm-color-primary-on-plus-2);
 }

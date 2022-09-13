@@ -6,7 +6,7 @@ export default {
   argTypes: {
     style: {
       control: { type: 'select' },
-      options: ['default', 'primary', 'red'],
+      options: ['default', 'primary', 'subtle-primary'],
     },
     brand: { control: 'boolean' },
     position: {
@@ -39,9 +39,9 @@ Primary.args = {
   style: 'primary',
 };
 
-export const Red = Template.bind({});
-Red.args = {
-  style: 'red',
+export const SubtlePrimary = Template.bind({});
+SubtlePrimary.args = {
+  style: 'subtle-primary',
 };
 
 export const NoBrand = Template.bind({});
@@ -60,6 +60,12 @@ export const End = Template.bind({});
 End.args = {
   style: 'default',
   position: 'end',
+};
+
+export const Logout = Template.bind({});
+Logout.args = {
+  style: 'default',
+  logout: true,
 };
 
 export const AlternateActive = Template.bind({});
