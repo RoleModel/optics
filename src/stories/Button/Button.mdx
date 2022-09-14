@@ -99,49 +99,49 @@ See https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
 The button styles are built on css variables scoped to the button.
 
 Here is the full public API that the button uses.
-```scss
+```css
 // Normal
---_rm-btn-background-color
---_rm-btn-text-color
---_rm-btn-border-color
+--_rm-btn-background-color:
+--_rm-btn-text-color:
+--_rm-btn-border-color:
 
 // Hover
---_rm-btn-background-hover-color
---_rm-btn-text-hover-color
---_rm-btn-border-hover-color
+--_rm-btn-background-hover-color:
+--_rm-btn-text-hover-color:
+--_rm-btn-border-hover-color:
 
 // Outline
---_rm-btn-background-outline-color
---_rm-btn-text-outline-color
---_rm-btn-border-outline-color
+--_rm-btn-background-outline-color:
+--_rm-btn-text-outline-color:
+--_rm-btn-border-outline-color:
 
 // Hover and Outline
---_rm-btn-background-hover-and-outline-color
---_rm-btn-text-hover-and-outline-color
---_rm-btn-border-hover-and-outline-color
+--_rm-btn-background-hover-and-outline-color:
+--_rm-btn-text-hover-and-outline-color:
+--_rm-btn-border-hover-and-outline-color:
 
 // No Border
---_rm-btn-background-no-border-color
---_rm-btn-text-no-border-color
+--_rm-btn-background-no-border-color:
+--_rm-btn-text-no-border-color:
 
 // Hover and no Border
---_rm-btn-background-hover-and-no-border-color
---_rm-btn-text-hover-and-no-border-color
+--_rm-btn-background-hover-and-no-border-color:
+--_rm-btn-text-hover-and-no-border-color:
 
 // General Properties (for size and height, the appropriate variable is used when using the size modifiers)
---_rm-btn-font-weight
---_rm-btn-gap
---_rm-btn-transition
---_rm-btn-padding
---_rm-btn-radius
+--_rm-btn-font-weight:
+--_rm-btn-gap:
+--_rm-btn-transition:
+--_rm-btn-padding:
+--_rm-btn-radius:
 
---_rm-btn-height-small
---_rm-btn-height-medium
---_rm-btn-height-large
+--_rm-btn-height-small:
+--_rm-btn-height-medium:
+--_rm-btn-height-large:
 
---_rm-font-small
---_rm-font-medium
---_rm-font-large
+--_rm-font-small:
+--_rm-font-medium:
+--_rm-font-large:
 ```
 
 ## Overriding Button styles
@@ -149,14 +149,14 @@ Here is the full public API that the button uses.
 The button classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
 
 This allows multiple button classes to share the same behavior. You can modify all buttons behavior by overriding the `%btn-global` placeholder selector and setting any of the **general properties** documented tokens:
-```scss
+```css
 %btn-global {
   --_rm-btn-radius: var(--rm-radius-x-large);
 }
 ```
 
 If you need to override the color of a particular button style, you can open the respective class and change the **non-general properties** documented above
-```scss
+```css
 // This will only affect the default button, but not primary, secondary, etc.
 .btn {
   --_rm-btn-background-color: red;
@@ -172,7 +172,7 @@ Your application may need a custom button. To add one:
 2. Extend `%btn-global`
 3. Use the above documented API to define how it looks and feels for different states (e.g. hover, outline)
 
-```scss
+```css
 .btn-redsky {
   @extend %btn-global;
 
