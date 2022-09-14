@@ -12,9 +12,15 @@
     }
   }
 
+  .#{$select-ns}-control {
+    background: var(--rm-color-background);
+    color: var(--rm-color-on-background);
+
+    min-height: var(--rm-input-height-medium);
+  }
+
   &.multi,
   &.single {
-
     &.has-items .#{$select-ns}-control {
       padding-left: var(--rm-space-2x-small);
       padding-right: var(--rm-space-2x-small);
@@ -23,18 +29,6 @@
     .#{$select-ns}-control {
       .item {
         padding: var(--rm-space-2x-small);
-      }
-
-      [data-value] {
-        border-color: var(--rm-color-primary-base);
-        border-radius: var(--rms-radius-medium);
-        background-color: var(--rm-color-primary-base);
-        color: var(--rm-color-primary-on-base);
-
-        &.active {
-          background-color: var(--rm-color-primary-minus-1);
-          color: var(--rm-color-primary-on-minus-1);
-        }
       }
     }
 
@@ -46,6 +40,46 @@
       .remove {
         background: var(--rm-color-background);
         color: var(--rm-color-on-background);
+      }
+    }
+  }
+
+  &.single,
+  &.multi,
+  &.single.input-active,
+  &.multi.input-active {
+    .#{$select-ns}-control {
+      // Highly specific SVG data image for the dropdown arrow.
+      background-image: var(--rm-form-dropdown-arrow);
+      background-position-x: calc(100% - var(--rm-space-small));
+      background-position-y: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.single.input-active,
+  &.multi.input-active {
+    .#{$select-ns}-control {
+      // primary highlight
+      background-color: var(--rm-color-primary-plus-3);
+      color: var(--rm-color-primary-on-plus-3);
+      border-color: var(--rm-color-primary-minus-1);
+      outline: none;
+    }
+  }
+
+  &.multi {
+    .#{$select-ns}-control {
+      [data-value] {
+        border-color: var(--rm-color-primary-base);
+        border-radius: var(--rms-radius-medium);
+        background-color: var(--rm-color-primary-base);
+        color: var(--rm-color-primary-on-base);
+
+        &.active {
+          background-color: var(--rm-color-primary-minus-1);
+          color: var(--rm-color-primary-on-minus-1);
+        }
       }
     }
   }

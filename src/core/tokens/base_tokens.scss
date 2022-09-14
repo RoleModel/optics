@@ -103,6 +103,10 @@
   --rm-clippath-form-checkmark: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
+@mixin encoded-images {
+  --rm-form-dropdown-arrow: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=');
+}
+
 @mixin fonts {
   --rm-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
 }
@@ -187,6 +191,9 @@ $breakpoint-x-large: 1440px; // medium laptop
 
   // Clip Paths
   @include clip-paths;
+
+  // Encoded Images
+  @include encoded-images;
 
   // Spacing
   @include spacing-scales;
