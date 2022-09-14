@@ -136,12 +136,12 @@ export const createFormGroup = ({ label, type, error, inline, hint, readonly }) 
 
   if (type == 'checkbox' || type == 'radio') {
     element.appendChild(createInput({ type, readonly }))
-    if (error) { element.appendChild(errorElement) }
     element.appendChild(createLabel({ label }))
+    if (error) { element.appendChild(errorElement) }
   } else {
     element.appendChild(createLabel({ label }))
-    if (error) { element.appendChild(errorElement) }
     element.appendChild(createInput({ type, readonly }))
+    if (error) { element.appendChild(errorElement) }
   }
 
   if (hint) {
