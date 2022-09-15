@@ -151,6 +151,17 @@
     --__rm-btn-font-size: var(--_rm-font-large);
   }
 
+  // https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
+  @media(max-width: $breakpoint-small) {
+    --__rm-btn-height: var(--_rm-btn-height-large);
+    --__rm-btn-font-size: var(--_rm-font-large);
+
+    &.btn--small, &.btn--medium, &.btn--large {
+      --__rm-btn-height: var(--_rm-btn-height-large);
+      --__rm-btn-font-size: var(--_rm-font-large);
+    }
+  }
+
   // Disabled Modifier
   &.btn--disabled,
   &:disabled {
