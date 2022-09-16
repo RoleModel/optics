@@ -118,13 +118,9 @@ export const createErrorSummary = ({ label }) => {
   return element;
 };
 
-export const createFormGroup = ({ label, type, error, inline, hint, readonly }) => {
+export const createFormGroup = ({ label, type, error, hint, readonly }) => {
   const element = document.createElement('div');
   element.className = 'form__group';
-
-  if (inline) {
-    element.className += ' form__inline-group';
-  }
 
   if (error) {
     element.className += ' form__input--error';
