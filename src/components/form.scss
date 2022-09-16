@@ -1,12 +1,33 @@
 // Input Group
-// Future Idea: Can we use gap here instead of padding on the label and hint?
 .form__group {
   padding: var(--rm-space-small) 0;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: auto;
+  gap: var(--rm-space-x-small);
+}
+
+.form__label,
+.form__input,
+.form__error,
+.form__hint {
+  grid-column: 1 / 3;
+}
+
+.form__checkbox,
+.form__radio {
+  grid-column: 1 / 1;
+  align-self: center;
+
+  & + .form__label {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
 }
 
 // Label
 .form__label {
-  padding-bottom: var(--rm-space-x-small);
   color: var(--rm-color-on-background);
   font-weight: var(--rm-font-weight-normal);
   font-size: var(--rm-font-small);
@@ -95,7 +116,6 @@
   border-radius: var(--rm-radius-circle);
 
   vertical-align: middle;
-  margin-right: var(--rm-space-x-small);
 
   cursor: pointer;
 
@@ -182,7 +202,6 @@
   display: block;
 
   padding: var(--rm-space-2x-small) var(--rm-space-x-small);
-  margin-top: var(--rm-space-x-small); // Is there a future solution with gap possible here?
   width: fit-content;
 
   background: var(--rm-color-alerts-danger-plus-2);
@@ -201,7 +220,6 @@
 
 .form__hint {
   display: block;
-  padding-top: var(--rm-space-x-small);
   font-size: var(--rm-font-small);
   font-style: italic;
 }
