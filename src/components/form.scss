@@ -179,10 +179,10 @@
 
 // simple_form error styles
 .form__error-summary {
-  background-color: var(--rm-color-alerts-danger-plus-2);
-  color: var(--rm-color-alerts-danger-on-plus-2);
+  background-color: var(--rm-color-alerts-danger-plus-3);
+  color: var(--rm-color-alerts-danger-on-plus-3);
 
-  box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-plus-1);
+  box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-on-plus-3);
   border-radius: var(--rm-radius-large);
 
   padding: var(--rm-space-large);
@@ -204,8 +204,8 @@
   padding: var(--rm-space-2x-small) var(--rm-space-x-small);
   width: fit-content;
 
-  background: var(--rm-color-alerts-danger-plus-2);
-  color: var(--rm-color-alerts-danger-on-plus-2);
+  background: var(--rm-color-alerts-danger-plus-3);
+  color: var(--rm-color-alerts-danger-on-plus-3);
 
   border-radius: var(--rm-radius-medium);
 
