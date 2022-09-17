@@ -1,126 +1,37 @@
 %btn-global {
   // Public API
-  // Normal
-  --_rm-btn-background-color: transparent;
-  --_rm-btn-text-color: var(--rm-color-neutral-minus-max);
-  --_rm-btn-border-color: var(--rm-border-color);
-
-  // Hover
-  --_rm-btn-background-hover-color: var(--rm-color-neutral-plus-3);
-  --_rm-btn-text-hover-color: var(--rm-color-neutral-on-plus-3);
-  --_rm-btn-border-hover-color: var(--rm-border-color);
-
-  // Outline
-  --_rm-btn-background-outline-color: transparent;
-  --_rm-btn-text-outline-color: var(--rm-color-neutral-minus-max);
-  --_rm-btn-border-outline-color: var(--rm-border-color);
-
-  // Hover and Outline
-  --_rm-btn-background-hover-and-outline-color: var(--rm-color-neutral-plus-3);
-  --_rm-btn-text-hover-and-outline-color: var(--rm-color-neutral-on-plus-2);
-  --_rm-btn-border-hover-and-outline-color: var(--rm-border-color);
-
-  // No Border
-  --_rm-btn-background-no-border-color: transparent;
-  --_rm-btn-text-no-border-color: var(--rm-color-neutral-minus-max);
-
-  // Hover and no Border
-  --_rm-btn-background-hover-and-no-border-color: transparent;
-  --_rm-btn-text-hover-and-no-border-color: var(--rm-color-neutral-minus-3);
-
-  // General Properties (for size and height, the appropriate variable is used when using the size modifiers)
-  --_rm-btn-radius: var(--rm-radius-large);
-  --_rm-btn-font-weight: var(--rm-font-weight-medium);
-  --_rm-btn-gap: var(--rm-space-x-small);
-  --_rm-btn-transition: var(--rm-transition-input);
-  --_rm-btn-padding: 0 var(--rm-space-medium);
-
-  --_rm-btn-height-small: var(--rm-input-height-small);
+  --_rm-btn-height-small:  var(--rm-input-height-small);
   --_rm-btn-height-medium: var(--rm-input-height-medium);
-  --_rm-btn-height-large: var(--rm-input-height-large);
+  --_rm-btn-height-large:  var(--rm-input-height-large);
 
-  --_rm-font-small: var(--rm-font-x-small);
+  --_rm-font-small:  var(--rm-font-x-small);
   --_rm-font-medium: var(--rm-font-small);
-  --_rm-font-large: var(--rm-font-medium);
+  --_rm-font-large:  var(--rm-font-medium);
 
-  // Private variables
-  // These allow for overriding specific size versions easier.
-  // e.g. When small, font should be 2x-small instead of the normal x-small
-  --__rm-btn-height: var(--_rm-btn-height-medium);
+  // Private API
+  --__rm-btn-height:    var(--_rm-btn-height-medium);
   --__rm-btn-font-size: var(--_rm-font-medium);
-
-  -webkit-appearance: none;
 
   align-items: center;
   justify-content: center;
-  gap: var(--_rm-btn-gap);
+  gap: var(--rm-space-x-small);
 
   display: inline-flex;
+  -webkit-appearance: none;
 
-  transition: all var(--_rm-btn-transition);
+  transition: all var(--rm-transition-input);
 
-  border-radius: var(--_rm-btn-radius);
+  border-radius: var(--rm-radius-large);
   height: var(--__rm-btn-height);
-  padding: var(--_rm-btn-padding);
+  padding: 0 var(--rm-space-medium);
 
   cursor: pointer;
 
   font-size: var(--__rm-btn-font-size);
-  font-weight: var(--_rm-btn-font-weight);
+  font-weight: var(--rm-font-weight-medium);
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
-
-  background: var(--_rm-btn-background-color);
-  color: var(--_rm-btn-text-color);
-  box-shadow: var(--rm-border-all) var(--_rm-btn-border-color);
-
-  // Note: @at-root plus the parent selector generates a style like `a.btn:visited`.
-  // Doing it here prevents having to write ^ for each combo of each button variation.
-  // https://sass-lang.com/documentation/at-rules/at-root
-  // https://sass-lang.com/documentation/style-rules/parent-selector#in-sassscript
-  @at-root a#{&}:visited {
-    color: var(--_rm-btn-text-color);
-  }
-
-  &:not(:disabled, .btn--disabled):hover {
-    background: var(--_rm-btn-background-hover-color);
-    color: var(--_rm-btn-text-hover-color);
-    box-shadow: var(--rm-border-all) var(--_rm-btn-border-hover-color);
-  }
-
-  &.btn--outline {
-    background: var(--_rm-btn-background-outline-color);
-    color: var(--_rm-btn-text-outline-color);
-    box-shadow: var(--rm-border-all) var(--_rm-btn-border-outline-color);
-
-    @at-root a#{&}:visited {
-      color: var(--_rm-btn-text-outline-color);
-    }
-  }
-
-  &.btn--no-border {
-    background: var(--_rm-btn-background-no-border-color);
-    color: var(--_rm-btn-text-no-border-color);
-    box-shadow: var(--rm-border-all) transparent;
-    font-weight: var(--rm-font-weight-bold);
-
-    @at-root a#{&}:visited {
-      color: var(--_rm-btn-text-no-border-color);
-    }
-  }
-
-  &.btn--outline:not(:disabled, .btn--disabled):hover {
-    background: var(--_rm-btn-background-hover-and-outline-color);
-    color: var(--_rm-btn-text-hover-and-outline-color);
-    box-shadow: var(--rm-border-all) var(--_rm-btn-border-hover-and-outline-color);
-  }
-
-  &.btn--no-border:not(:disabled, .btn--disabled):hover {
-    background: var(--_rm-btn-background-hover-and-no-border-color);
-    color: var(--_rm-btn-text-hover-and-no-border-color);
-    box-shadow: var(--rm-border-all) transparent;
-  }
 
   // Pill Modifier
   &.btn--pill {
@@ -129,144 +40,172 @@
 
   // Icon Modifier
   &.btn--icon {
-    padding: 0;
     border-radius: var(--rm-radius-circle);
-
     width: var(--__rm-btn-height);
+    padding: 0;
   }
 
   // Size Modifiers
   &.btn--small {
-    --__rm-btn-height: var(--_rm-btn-height-small);
+    --__rm-btn-height:    var(--_rm-btn-height-small);
     --__rm-btn-font-size: var(--_rm-font-small);
   }
 
   &.btn--medium {
-    --__rm-btn-height: var(--_rm-btn-height-medium);
+    --__rm-btn-height:    var(--_rm-btn-height-medium);
     --__rm-btn-font-size: var(--_rm-font-medium);
   }
 
   &.btn--large {
-    --__rm-btn-height: var(--_rm-btn-height-large);
+    --__rm-btn-height:    var(--_rm-btn-height-large);
     --__rm-btn-font-size: var(--_rm-font-large);
-  }
-
-  // https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
-  @media(max-width: $breakpoint-small) {
-    --__rm-btn-height: var(--_rm-btn-height-large);
-    --__rm-btn-font-size: var(--_rm-font-large);
-
-    &.btn--small, &.btn--medium, &.btn--large {
-      --__rm-btn-height: var(--_rm-btn-height-large);
-      --__rm-btn-font-size: var(--_rm-font-large);
-    }
   }
 
   // Disabled Modifier
   &.btn--disabled,
   &:disabled {
-    cursor: not-allowed;
-
     opacity: 0.65;
+
+    cursor: not-allowed;
+  }
+
+  // No Border Modifier
+  &.btn--no-border {
+    font-weight: var(--rm-font-weight-bold);
+  }
+
+  // https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
+  @media(max-width: $breakpoint-small) {
+    --__rm-btn-height:    var(--_rm-btn-height-large);
+    --__rm-btn-font-size: var(--_rm-font-large);
+
+    &.btn--small, &.btn--medium, &.btn--large {
+      --__rm-btn-height:    var(--_rm-btn-height-large);
+      --__rm-btn-font-size: var(--_rm-font-large);
+    }
   }
 }
 
 .btn {
   @extend %btn-global;
+
+  background-color: transparent;
+  color: var(--rm-color-neutral-minus-max);
+  box-shadow: var(--rm-border-all) var(--rm-border-color);
+
+  &:not(:disabled, .btn--disabled):hover {
+    background-color: var(--rm-color-neutral-plus-3);
+    color: var(--rm-color-neutral-on-plus-3);
+  }
+
+  &.btn--no-border {
+    box-shadow: var(--rm-border-all) transparent;
+
+    &:not(:disabled, .btn--disabled):hover {
+      background-color: transparent;
+      color: var(--rm-color-neutral-minus-1);
+    }
+  }
 }
 
 .btn-primary {
   @extend %btn-global;
 
-  // Normal
-  --_rm-btn-background-color: var(--rm-color-primary-base);
-  --_rm-btn-text-color: var(--rm-color-primary-on-base);
-  --_rm-btn-border-color: var(--rm-color-primary-base);
+  background-color: var(--rm-color-primary-base);
+  color: var(--rm-color-primary-on-base);
+  box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
 
-  // Hover
-  --_rm-btn-background-hover-color: var(--rm-color-primary-hover);
-  --_rm-btn-text-hover-color: var(--rm-color-primary-on-hover);
-  --_rm-btn-border-hover-color: var(--rm-color-primary-hover);
+  &:not(:disabled, .btn--disabled):hover {
+    background-color: var(--rm-color-primary-hover);
+    color: var(--rm-color-primary-on-hover);
+    box-shadow: var(--rm-border-all) var(--rm-color-primary-hover);
+  }
 
-  // Outline
-  --_rm-btn-background-outline-color: var(--rm-color-primary-plus-3);
-  --_rm-btn-text-outline-color: var(--rm-color-primary-on-plus-3);
-  --_rm-btn-border-outline-color: var(--rm-color-primary-on-plus-3);
+  &.btn--no-border {
+    background-color: transparent;
+    color: var(--rm-color-primary-base);
+    box-shadow: none;
 
-  // Hover and Outline
-  --_rm-btn-background-hover-and-outline-color: var(--rm-color-primary-plus-2);
-  --_rm-btn-text-hover-and-outline-color: var(--rm-color-primary-on-plus-2);
-  --_rm-btn-border-hover-and-outline-color: var(--rm-color-primary-on-plus-3);
+    &:not(:disabled, .btn--disabled):hover {
+      background-color: transparent;
+      color: var(--rm-color-primary-hover);
+      box-shadow: none;
+    }
+  }
 
-  // No Border
-  --_rm-btn-background-no-border-color: transparent;
-  --_rm-btn-text-no-border-color: var(--rm-color-primary-base);
+  &.btn--outline {
+    background-color: var(--rm-color-primary-plus-3);
+    color: var(--rm-color-primary-on-plus-3);
+    box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-3);
 
-  // Hover and No Border
-  --_rm-btn-background-hover-and-no-border-color: transparent;
-  --_rm-btn-text-hover-and-no-border-color: var(--rm-color-primary-hover);
+    &:not(:disabled, .btn--disabled):hover {
+      background-color: var(--rm-color-primary-plus-2);
+      color: var(--rm-color-primary-on-plus-2);
+      box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-3);
+    }
+  }
 }
 
 .btn-secondary {
   @extend %btn-global;
 
-  // Normal
-  --_rm-btn-background-color: var(--rm-color-primary-plus-3);
-  --_rm-btn-text-color: var(--rm-color-primary-on-plus-3);
-  --_rm-btn-border-color: var(--rm-color-primary-on-plus-3);
+  background-color: var(--rm-color-primary-plus-3);
+  color: var(--rm-color-primary-on-plus-3);
+  box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-3);
 
-  // Hover
-  --_rm-btn-background-hover-color: var(--rm-color-primary-plus-2);
-  --_rm-btn-text-hover-color: var(--rm-color-primary-on-plus-2);
-  --_rm-btn-border-hover-color: var(--rm-color-primary-on-plus-3);
+  &:not(:disabled, .btn--disabled):hover {
+    background-color: var(--rm-color-primary-plus-2);
+    color: var(--rm-color-primary-on-plus-2);
+    box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-3);
+  }
 
-  // Outline
-  --_rm-btn-background-outline-color: var(--rm-color-primary-plus-3);
-  --_rm-btn-text-outline-color: var(--rm-color-primary-on-plus-3);
-  --_rm-btn-border-outline-color: var(--rm-color-primary-on-plus-3);
+  &.btn--no-border {
+    background-color: transparent;
+    color: var(--rm-color-primary-base);
+    box-shadow: none;
 
-  // Hover and Outline
-  --_rm-btn-background-hover-and-outline-color: var(--rm-color-primary-plus-2);
-  --_rm-btn-text-hover-and-outline-color: var(--rm-color-primary-on-plus-2);
-  --_rm-btn-border-hover-and-outline-color: var(--rm-color-primary-on-plus-3);
-
-  // No Border
-  --_rm-btn-background-no-border-color: transparent;
-  --_rm-btn-text-no-border-color: var(--rm-color-primary-base);
-
-  // Hover and No Border
-  --_rm-btn-background-hover-and-no-border-color: transparent;
-  --_rm-btn-text-hover-and-no-border-color: var(--rm-color-primary-hover);
+    &:not(:disabled, .btn--disabled):hover {
+      background-color: transparent;
+      color: var(--rm-color-primary-hover);
+      box-shadow: none;
+    }
+  }
 }
 
 .btn-delete {
   @extend %btn-global;
 
-  // Normal
-  --_rm-btn-background-color: var(--rm-color-alerts-danger-base);
-  --_rm-btn-text-color: var(--rm-color-alerts-danger-on-base);
-  --_rm-btn-border-color: var(--rm-color-alerts-danger-base);
+  background-color: var(--rm-color-alerts-danger-base);
+  color: var(--rm-color-alerts-danger-on-base);
+  box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-base);
 
-  // Hover
-  --_rm-btn-background-hover-color: var(--rm-color-alerts-danger-hover);
-  --_rm-btn-text-hover-color: var(--rm-color-alerts-danger-on-hover);
-  --_rm-btn-border-hover-color: var(--rm-color-alerts-danger-hover);
+  &:not(:disabled, .btn--disabled):hover {
+    background-color: var(--rm-color-alerts-danger-hover);
+    color: var(--rm-color-alerts-danger-on-hover);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-hover);
+  }
 
-  // Outline
-  --_rm-btn-background-outline-color: transparent;
-  --_rm-btn-text-outline-color: var(--rm-color-alerts-danger-base);
-  --_rm-btn-border-outline-color: var(--rm-color-alerts-danger-base);
+  &.btn--no-border {
+    background-color: transparent;
+    color: var(--rm-color-alerts-danger-base);
+    box-shadow: none;
 
-  // Hover and Outline
-  --_rm-btn-background-hover-and-outline-color: var(--rm-color-alerts-danger-plus-2);
-  --_rm-btn-text-hover-and-outline-color: var(--rm-color-alerts-danger-on-plus-2);
-  --_rm-btn-border-hover-and-outline-color: var(--rm-color-alerts-danger-base);
+    &:not(:disabled, .btn--disabled):hover {
+      background-color: transparent;
+      color: var(--rm-color-alerts-danger-hover);
+      box-shadow: none;
+    }
+  }
 
-  // No Border
-  --_rm-btn-background-no-border-color: transparent;
-  --_rm-btn-text-no-border-color: var(--rm-color-alerts-danger-base);
+  &.btn--outline {
+    background-color: var(--rm-color-alerts-danger-plus-3);
+    color: var(--rm-color-alerts-danger-on-plus-3);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-on-plus-3);
 
-  // Hover and No Border
-  --_rm-btn-background-hover-and-no-border-color: transparent;
-  --_rm-btn-text-hover-and-no-border-color: var(--rm-color-alerts-danger-hover);
+    &:not(:disabled, .btn--disabled):hover {
+      background-color: var(--rm-color-alerts-danger-plus-2);
+      color: var(--rm-color-alerts-danger-on-plus-2);
+      box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-on-plus-3);
+    }
+  }
 }
