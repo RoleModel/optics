@@ -209,3 +209,86 @@
     }
   }
 }
+
+// Template
+// .btn-{name} {
+//   @extend %btn-global;
+
+//   background-color:
+//   color:
+//   box-shadow:
+
+//   &:not(:disabled, .btn--disabled):hover {
+//     background-color:
+//     color:
+//     box-shadow:
+//   }
+
+//   &.btn--no-border {
+//     background-color:
+//     color:
+//     box-shadow:
+
+//     &:not(:disabled, .btn--disabled):hover {
+//       background-color:
+//       color:
+//       box-shadow:
+//     }
+//   }
+
+//   &.btn--outline {
+//     background-color:
+//     color:
+//     box-shadow:
+
+//     &:not(:disabled, .btn--disabled):hover {
+//       background-color:
+//       color:
+//       box-shadow:
+//     }
+//   }
+// }
+
+// Alternate Template
+// .btn-{name} {
+//   @extend %btn-global;
+
+//   background-color:
+//   color:
+//   box-shadow:
+// }
+
+// // Hover
+// .btn-{name}:not(:disabled, .btn--disabled):hover {
+//   background-color:
+//   color:
+//   box-shadow:
+// }
+
+// // No Border
+// .btn-{name}}.btn--no-border {
+//   background-color:
+//   color:
+//   box-shadow:
+// }
+
+// // No Border Hover
+// .btn-{name}.btn--no-border:not(:disabled, .btn--disabled):hover {
+//   background-color:
+//   color:
+//   box-shadow:
+// }
+
+// // Outline
+// .btn-{name}.btn--outline {
+//   background-color:
+//   color:
+//   box-shadow:
+// }
+
+// // Outline Hover
+// .btn-{name}.btn--outline:not(:disabled, .btn--disabled):hover {
+//   background-color:
+//   color:
+//   box-shadow:
+// }
