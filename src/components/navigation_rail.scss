@@ -35,6 +35,8 @@
 
   overflow-y: auto;
 
+  transition: var(--_rm-navigation-rail-icon-transition);
+
   .navigation-rail__content {
     flex-grow: 1;
     display: flex;
@@ -55,6 +57,14 @@
 
   .navigation-rail__brand + .navigation-rail__content {
     padding-top: 0;
+  }
+
+  .navigation-rail__section-title {
+    display: none;
+  }
+
+  .navigation-rail__section-divider {
+    display: none;
   }
 
   .navigation-rail__item {
@@ -107,6 +117,12 @@
       font-weight: var(--_rm-navigation-rail-label-font-weight);
       letter-spacing: var(--_rm-navigation-rail-label-letter-spacing);
       line-height: var(--_rm-navigation-rail-label-line-height);
+
+      max-width: 90%;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

@@ -1,146 +1,63 @@
-.sidebar {
-  --rm-sidebar-width: 280px;
+%navigation-rail-global {
+  &.drawer {
+    --_rm-navigation-rail-width: 28rem;
 
-  // TODO: what colors should we use for default?
-  --rm-sidebar-background-color: var(--rm-color-primary-plus-3);
-  --rm-sidebar-color: var(--rm-color-primary-on-plus-3);
-  --rm-sidebar-active-background-color: var(--rm-color-primary-plus-2);
-  --rm-sidebar-active-color: var(--rm-color-primary-on-plus-2);
+    .navigation-rail__content {
+      padding: var(--_rm-navigation-rail-link-gap);
+      padding-top: 0;
+      gap: 0;
+    }
 
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 var(--rm-sidebar-width);
-  justify-content: flex-start;
+    .navigation-rail__item {
+      flex-direction: row;
 
-  overflow: auto;
-  height: 100vh;
-  width: 100%;
+      height: var(--rm-input-height-large);
+      border-radius: var(--rm-radius-pill);
+      padding: var(--rm-space-x-small) var(--rm-space-medium);
 
-  padding: var(--rm-space-small);
+      gap: var(--_rm-navigation-rail-link-gap);
 
-  z-index: var(--rm-z-index-drawer);
+      &:hover,
+      &.active {
+        background-color: var(--_rm-navigation-rail-icon-background-hover-color);
+        color: var(--_rm-navigation-rail-icon-text-hover-color);
 
-  background: var(--rm-sidebar-background-color);
-  color: var(--rm-sidebar-color);
-}
+        transition: var(--_rm-navigation-rail-icon-transition);
 
-.sidebar__header, .sidebar__header--medium {
-  padding: 0 var(--rm-space-medium);
-  padding-bottom: var(--rm-space-small);
-}
+        .navigation-rail__item-icon {
+          background-color: transparent;
+        }
+      }
 
-.sidebar__header--small {
-  padding: 0 var(--rm-space-3x-large);
-  padding-bottom: var(--rm-space-small);
-}
+      .navigation-rail__item-icon {
+        transition: none;
+        padding: 0;
+      }
 
-.sidebar__header--x-small {
-  padding: 0 var(--rm-space-4x-large);
-  padding-bottom: var(--rm-space-small);
-}
+      .navigation-rail__item-label {
+        font-size: unset;
+      }
+    }
 
-.sidebar-nav__list {
-  display: flex;
-  flex-direction: column;
-}
+    .navigation-rail__section-title {
+      display: block;
+      height: var(--rm-input-height-large);
 
-.sidebar-nav__section-title {
-  height: var(--rm-input-height-large);
+      padding: var(--rm-space-small) var(--rm-space-medium);
+      font-weight: var(--rm-font-weight-bold);
+      font-size: var(--rm-font-small);
+      color: var(--rm-sidebar-color);
 
-  padding: var(--rm-space-small) var(--rm-space-medium);
-  font-weight: var(--rm-font-weight-bold);
-  font-size: var(--rm-font-small);
-  color: var(--rm-sidebar-color);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+    .navigation-rail__section-divider {
+      display: block;
 
-.sidebar-nav__section-divider {
-  border-bottom: var(--rm-border-width) solid var(--rm-sidebar-color);
-  margin: 0 var(--rm-space-medium);
-}
-
-.sidebar-nav__item {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  gap: var(--rm-space-large);
-  align-items: center;
-  height: var(--rm-input-height-large);
-
-  border-radius: var(--rm-radius-pill);
-
-  padding: var(--rm-space-x-small) var(--rm-space-medium);
-
-  text-decoration: none;
-  color: var(--rm-sidebar-color);
-
-  transition: var(--rm-transition-sidebar);
-  transition-property: background-color, color;
-
-  // Prevent label overflow. This only works if text is in an element under the item.
-  > * {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+      border-bottom: var(--rm-border-width) solid var(--rm-color-primary-on-plus-3);
+      margin: 0 var(--rm-space-medium);
+    }
   }
-
-  .material-symbols-outlined {
-    @extend .icon--large;
-  }
-
-  &:visited {
-    color: var(--rm-sidebar-color);
-  }
-
-  &:hover {
-    background-color: var(--rm-sidebar-active-background-color);
-    color: var(--rm-sidebar-active-color);
-  }
-
-  &.active {
-    background-color: var(--rm-sidebar-active-background-color);
-    color: var(--rm-sidebar-active-color);
-
-    font-weight: var(--rm-font-weight-bold);
-  }
-}
-
-// Sidebar Identity
-.sidebar-identity {
-  display: inline-grid;
-  grid-template-columns: var(--rm-input-height-large) 1fr;
-  align-items: center;
-  gap: var(--rm-space-small);
-
-  padding: var(--rm-space-medium);
-  font-size: var(--rm-font-small);
-
-  border-radius: var(--rm-radius-small);
-  box-shadow: var(--rm-border-all) var(--rm-sidebar-color);
-}
-
-.sidebar-identity--interactable {
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--rm-sidebar-active-background-color);
-    color: var(--rm-sidebar-active-color);
-  }
-}
-
-.sidebar-identity__avatar {
-  width: var(--rm-input-height-large);
-  border-radius: var(--rm-radius-circle);
-  aspect-ratio: 1 / 1;
-}
-
-.sidebar-identity__title {
-  font-weight: var(--rm-font-weight-semi-bold);
-  font-size: var(--rm-font-medium);
-}
-
-.sidebar-identity__subtitle {
-  font-size: var(--rm-font-small);
 }
