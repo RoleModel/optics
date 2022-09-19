@@ -1,5 +1,4 @@
 // TODO: When we get a pagination component, add it to the table styles and docs for within a table footer
-// TODO: future improvement of sticky header or footer with scrollable rows.
 
 %table-global {
   // Public API
@@ -133,4 +132,24 @@
     background-color: var(--_rm-table-striping-background-color);
     color: var(--_rm-table-striping-text-color);
   }
+}
+
+// Sticky Header / Footer Table Container
+.table-container {
+  @extend %table-global;
+
+  overflow-y: auto;
+}
+
+// Sticky Header Row Modifier
+.table--header-sticky thead {
+  position: sticky;
+  top: 0;
+}
+
+// Sticky Footer Row Modifier
+.table--footer-sticky tfoot {
+  position: sticky;
+  bottom: 0;
+  background-color: var(--_rm-table-background-color);
 }
