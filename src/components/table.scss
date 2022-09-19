@@ -142,13 +142,13 @@
 }
 
 // Sticky Header Row Modifier
-.table--header-sticky thead {
+.table--sticky-header thead {
   position: sticky;
   top: 0;
 }
 
 // Sticky Footer Row Modifier
-.table--footer-sticky tfoot {
+.table--sticky-footer tfoot {
   position: sticky;
   bottom: 0;
   background-color: var(--_rm-table-background-color);

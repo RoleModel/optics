@@ -3,7 +3,12 @@ export const createTable = ({
   layout = 'auto',
   density = 'default',
   striped = 'off',
+  sticky = 'off',
+  height = false,
 }) => {
+  const tableContainer = document.createElement('div')
+  tableContainer.className = 'table-container'
+
   const table = document.createElement('table');
 
   table.className = [
@@ -11,6 +16,7 @@ export const createTable = ({
     `table--${layout}-layout`,
     `table--${density}-density`,
     striped === 'off' ? '' : `table--${striped}-striped`,
+    sticky === 'off' ? '' : `table--sticky-${sticky}`,
   ].filter(Boolean).join(' ')
 
   table.innerHTML += `
@@ -84,7 +90,18 @@ export const createTable = ({
       <td colspan="1">11</td>
     </tr>
   </tfoot>
-`
+  `
 
-  return table;
+  if (height) {
+    tableContainer.style.height = '200px'
+
+    tableContainer.appendChild(table)
+
+    return tableContainer;
+
+  } else {
+
+    return table;
+  
+  }
 };

@@ -59,6 +59,25 @@ Table classes provide simple styling for tables and their content.
   <Story id='components-table--striped-odd' />
 </Canvas>
 
+## Sticky Header/Footer
+
+`.table--sticky-header`, `.table--sticky-footer` will make either the table header or table footer sticky; the default is top/bottom of the viewport.
+
+These are best used in conjunction with a fixed table height. Because the actual `table` HTML element is a bit finicky, you will need to wrap the `table` itself in a `.table-container` div in order to fix the height of a table. This will allow sticky header/footer with scrollable body rows.
+
+```slim
+.table-container // Container div to set the desired height; 200px in these examples
+  table // Actual table element
+```
+
+<Canvas withToolbar>
+  <Story id='components-table--sticky-header' />
+</Canvas>
+
+<Canvas withToolbar>
+  <Story id='components-table--sticky-footer' />
+</Canvas>
+
 ## Table API
 
 The table styles are built on css variables scoped to the table.
