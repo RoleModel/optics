@@ -152,8 +152,4 @@
   @extend %table-global;
 
   overflow-y: auto;
-
-  table {
-    overflow: unset;
-  }
 }

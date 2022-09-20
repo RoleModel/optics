@@ -97,7 +97,7 @@ export const createTable = ({
   `
 
   if (height) {
-    tableContainer.style.height = '200px'
+    tableContainer.style.height = '20vh'
     tableContainer.appendChild(table)
 
     return tableContainer;
