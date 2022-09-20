@@ -90,3 +90,9 @@ StickyFooter.args = {
   sticky: 'footer',
   height: true,
 };
+
+export const StickyBoth = Template.bind({});
+StickyBoth.args = {
+  sticky: 'both',
+  height: true,
+};
