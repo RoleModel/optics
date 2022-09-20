@@ -4,6 +4,10 @@
   --_rm-sidebar-background-color: var(--rm-color-neutral-plus-3);
   --_rm-sidebar-text-color: var(--rm-color-neutral-on-plus-3);
 
+  // Active
+  --_rm-sidebar-icon-background-active-color: var(--rm-color-neutral-plus-1);
+  --_rm-sidebar-icon-text-active-color: var(--rm-color-neutral-on-plus-1);
+
   // Hover
   --_rm-sidebar-icon-background-hover-color: var(--rm-color-neutral-plus-2);
   --_rm-sidebar-icon-text-hover-color: var(--rm-color-neutral-on-plus-2);
@@ -75,8 +79,15 @@
     &.active {
       .sidebar__item-icon {
         --mso-weight: var(--_rm-sidebar-icon-hover-weight);
-        color: var(--_rm-sidebar-icon-text-hover-color);
       }
+    }
+
+    &:hover .sidebar__item-icon {
+      color: var(--_rm-sidebar-icon-text-hover-color);
+    }
+
+    &.active .sidebar__item-icon {
+      color: var(--_rm-sidebar-icon-text-active-color);
     }
 
     .sidebar__item-icon {
@@ -124,11 +135,12 @@
     flex-direction: column;
     gap: var(--_rm-sidebar-link-contents-gap);
 
-    &:hover,
-    &.active {
-      .sidebar__item-icon {
-        background-color: var(--_rm-sidebar-icon-background-hover-color);
-      }
+    &:hover .sidebar__item-icon {
+      background-color: var(--_rm-sidebar-icon-background-hover-color);
+    }
+
+    &.active .sidebar__item-icon {
+      background-color: var(--_rm-sidebar-icon-background-active-color);
     }
 
     .sidebar__item-icon {
@@ -150,7 +162,7 @@
   }
 
   .sidebar__section-title {
-    height: var(--rm-input-height-large); // TODO: move to api
+    height: var(--rm-input-height-large); // TODO: moveto api
 
     // TODO: match link styles
     padding: var(--rm-space-small) var(--rm-space-medium);
@@ -179,10 +191,17 @@
 
     &:hover,
     &.active {
+      transition: var(--_rm-sidebar-icon-transition);
+    }
+
+    &:hover {
       background-color: var(--_rm-sidebar-icon-background-hover-color);
       color: var(--_rm-sidebar-icon-text-hover-color);
+    }
 
-      transition: var(--_rm-sidebar-icon-transition);
+    &.active {
+      background-color: var(--_rm-sidebar-icon-background-active-color);
+      color: var(--_rm-sidebar-icon-text-active-color);
     }
   }
 }
@@ -197,4 +216,38 @@
 
 .sidebar--drawer {
   @extend %sidebar-drawer-global;
+}
+
+// Primary
+.sidebar-primary {
+  @extend %sidebar-global;
+
+  // Normal
+  --_rm-sidebar-background-color: var(--rm-color-primary-plus-3);
+  --_rm-sidebar-text-color: var(--rm-color-primary-on-plus-3);
+
+  // Active
+  --_rm-sidebar-icon-background-active-color: var(--rm-color-primary-plus-1);
+  --_rm-sidebar-icon-text-active-color: var(--rm-color-primary-on-plus-1);
+
+  // Hover
+  --_rm-sidebar-icon-background-hover-color: var(--rm-color-primary-plus-2);
+  --_rm-sidebar-icon-text-hover-color: var(--rm-color-primary-on-plus-2);
+}
+
+// Red
+.sidebar-subtle-primary {
+  @extend %sidebar-global;
+
+  // Normal
+  --_rm-sidebar-background-color: var(--rm-color-primary-max);
+  --_rm-sidebar-text-color: var(--rm-color-primary-on-max);
+
+  // Active
+  --_rm-sidebar-icon-background-active-color: var(--rm-color-primary-plus-1);
+  --_rm-sidebar-icon-text-active-color: var(--rm-color-primary-on-plus-1);
+
+  // Hover
+  --_rm-sidebar-icon-background-hover-color: var(--rm-color-primary-plus-2);
+  --_rm-sidebar-icon-text-hover-color: var(--rm-color-primary-on-plus-2);
 }
