@@ -139,6 +139,10 @@
   @extend %table-global;
 
   overflow-y: auto;
+
+  table {
+    overflow: unset;
+  }
 }
 
 // Sticky Header Row Modifier
