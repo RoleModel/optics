@@ -21,6 +21,14 @@ export default {
       control: { type: 'select' },
       options: ['off', 'even', 'odd'],
     },
+    sticky: {
+      control: { type: 'select' },
+      options: ['off', 'header', 'footer', 'both'],
+    },
+    height: {
+      control: 'boolean',
+      description: 'This is not a class. It just provides a fixed height to demonstrate the sticky classes'
+    },
   },
   parameters: {
     docs: {
@@ -69,4 +77,22 @@ StripedEven.args = {
 export const StripedOdd = Template.bind({});
 StripedOdd.args = {
   striped: 'odd',
+};
+
+export const StickyHeader = Template.bind({});
+StickyHeader.args = {
+  sticky: 'header',
+  height: true,
+};
+
+export const StickyFooter = Template.bind({});
+StickyFooter.args = {
+  sticky: 'footer',
+  height: true,
+};
+
+export const StickyBoth = Template.bind({});
+StickyBoth.args = {
+  sticky: 'both',
+  height: true,
 };

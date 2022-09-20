@@ -3,14 +3,24 @@ export const createTable = ({
   layout = 'auto',
   density = 'default',
   striped = 'off',
+  sticky = 'off',
+  height = false,
 }) => {
+  const tableContainer = document.createElement('div')
+  tableContainer.className = 'table-container'
+
   const table = document.createElement('table');
+
+  let stickyClass = ''
+  if (sticky !== 'off') { stickyClass = `table--sticky-${sticky}` }
+  if (sticky === 'both') { stickyClass = 'table--sticky-header table--sticky-footer' }
 
   table.className = [
     style === 'default' ? 'table' : `table-${style}`,
     `table--${layout}-layout`,
     `table--${density}-density`,
     striped === 'off' ? '' : `table--${striped}-striped`,
+    stickyClass,
   ].filter(Boolean).join(' ')
 
   table.innerHTML += `
@@ -84,7 +94,14 @@ export const createTable = ({
       <td colspan="1">11</td>
     </tr>
   </tfoot>
-`
+  `
+
+  if (height) {
+    tableContainer.style.height = '20vh'
+    tableContainer.appendChild(table)
+
+    return tableContainer;
+  }
 
   return table;
 };
