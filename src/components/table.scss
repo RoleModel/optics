@@ -79,6 +79,51 @@
   tfoot tr {
     box-shadow: var(--_rm-table-foot-border);
   }
+
+  // Layout Modifiers
+  &.table--auto-layout { --_rm-table-layout: auto; }
+  &.table--fixed-layout { --_rm-table-layout: fixed; }
+
+  // Table Density Modifiers
+  &.table--default-density {
+    --_rm-table-cell-padding: var(--_rm-table-cell-padding-default);
+  }
+
+  &.table--comfortable-density {
+    --_rm-table-cell-padding: var(--_rm-table-cell-padding-comfortable);
+  }
+
+  &.table--compact-density {
+    --_rm-table-cell-padding: var(--_rm-table-cell-padding-compact);
+  }
+
+  // Striped Modifiers
+  &.table--even-striped {
+    tbody tr:nth-child(even) {
+      background-color: var(--_rm-table-striping-background-color);
+      color: var(--_rm-table-striping-text-color);
+    }
+  }
+
+  &.table--odd-striped {
+    tbody tr:nth-child(odd) {
+      background-color: var(--_rm-table-striping-background-color);
+      color: var(--_rm-table-striping-text-color);
+    }
+  }
+
+  // Sticky Header Row Modifier
+  &.table--sticky-header thead {
+    position: sticky;
+    top: 0;
+  }
+
+  // Sticky Footer Row Modifier
+  &.table--sticky-footer tfoot {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--_rm-table-background-color);
+  }
 }
 
 // Default Table
@@ -102,38 +147,6 @@
   --_rm-table-head-text-color: var(--rm-color-alerts-danger-oy-plus-3);
 }
 
-// Layout Modifiers
-.table--auto-layout { --_rm-table-layout: auto; }
-.table--fixed-layout { --_rm-table-layout: fixed; }
-
-// Table Density Modifiers
-.table--default-density {
-  --_rm-table-cell-padding: var(--_rm-table-cell-padding-default);
-}
-
-.table--comfortable-density {
-  --_rm-table-cell-padding: var(--_rm-table-cell-padding-comfortable);
-}
-
-.table--compact-density {
-  --_rm-table-cell-padding: var(--_rm-table-cell-padding-compact);
-}
-
-// Striped Modifiers
-.table--even-striped {
-  tbody tr:nth-child(even) {
-    background-color: var(--_rm-table-striping-background-color);
-    color: var(--_rm-table-striping-text-color);
-  }
-}
-
-.table--odd-striped {
-  tbody tr:nth-child(odd) {
-    background-color: var(--_rm-table-striping-background-color);
-    color: var(--_rm-table-striping-text-color);
-  }
-}
-
 // Sticky Header / Footer Table Container
 .table-container {
   @extend %table-global;
@@ -143,17 +156,4 @@
   table {
     overflow: unset;
   }
-}
-
-// Sticky Header Row Modifier
-.table--sticky-header thead {
-  position: sticky;
-  top: 0;
-}
-
-// Sticky Footer Row Modifier
-.table--sticky-footer tfoot {
-  position: sticky;
-  bottom: 0;
-  background-color: var(--_rm-table-background-color);
 }
