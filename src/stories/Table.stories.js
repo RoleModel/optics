@@ -23,9 +23,12 @@ export default {
     },
     sticky: {
       control: { type: 'select' },
-      options: ['header', 'footer', 'off'],
+      options: ['off', 'header', 'footer', 'both'],
     },
-    height: { control: 'boolean' },
+    height: {
+      control: 'boolean',
+      description: 'This is not a class. It just provides a fixed height to demonstrate the sticky classes'
+    },
   },
   parameters: {
     docs: {

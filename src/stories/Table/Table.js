@@ -11,12 +11,16 @@ export const createTable = ({
 
   const table = document.createElement('table');
 
+  let stickyClass = ''
+  if (sticky !== 'off') { stickyClass = `table--sticky-${sticky}` }
+  if (sticky === 'both') { stickyClass = 'table--sticky-header table--sticky-footer' }
+
   table.className = [
     style === 'default' ? 'table' : `table-${style}`,
     `table--${layout}-layout`,
     `table--${density}-density`,
     striped === 'off' ? '' : `table--${striped}-striped`,
-    sticky === 'off' ? '' : `table--sticky-${sticky}`,
+    stickyClass,
   ].filter(Boolean).join(' ')
 
   table.innerHTML += `
@@ -102,6 +106,6 @@ export const createTable = ({
   } else {
 
     return table;
-  
+
   }
 };
