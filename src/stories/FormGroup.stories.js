@@ -14,9 +14,6 @@ export default {
     error: {
       control: { type: 'text' },
     },
-    inline: {
-      control: { type: 'boolean' },
-    },
     hint: {
       control: { type: 'text' },
     }
@@ -38,14 +35,6 @@ export const Default = Template.bind({});
 Default.args = {
   ...LabelStories.Default.args,
   ...InputStories.Default.args,
-};
-
-export const Inline = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Inline.args = {
-  ...LabelStories.Default.args,
-  ...InputStories.Default.args,
-  inline: true
 };
 
 export const Radio = Template.bind({});
