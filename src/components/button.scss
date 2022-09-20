@@ -1,5 +1,5 @@
 %btn-global {
-  // Public API
+  // Public API (allowed to be overridden)
   --_rm-btn-height-small:  var(--rm-input-height-small);
   --_rm-btn-height-medium: var(--rm-input-height-medium);
   --_rm-btn-height-large:  var(--rm-input-height-large);
@@ -8,7 +8,7 @@
   --_rm-font-medium: var(--rm-font-small);
   --_rm-font-large:  var(--rm-font-medium);
 
-  // Private API
+  // Private API (don't touch these)
   --__rm-btn-height:    var(--_rm-btn-height-medium);
   --__rm-btn-font-size: var(--_rm-font-medium);
 
@@ -209,86 +209,3 @@
     }
   }
 }
-
-// Template
-// .btn-{name} {
-//   @extend %btn-global;
-
-//   background-color:
-//   color:
-//   box-shadow:
-
-//   &:not(:disabled, .btn--disabled):hover {
-//     background-color:
-//     color:
-//     box-shadow:
-//   }
-
-//   &.btn--no-border {
-//     background-color:
-//     color:
-//     box-shadow:
-
-//     &:not(:disabled, .btn--disabled):hover {
-//       background-color:
-//       color:
-//       box-shadow:
-//     }
-//   }
-
-//   &.btn--outline {
-//     background-color:
-//     color:
-//     box-shadow:
-
-//     &:not(:disabled, .btn--disabled):hover {
-//       background-color:
-//       color:
-//       box-shadow:
-//     }
-//   }
-// }
-
-// Alternate Template
-// .btn-{name} {
-//   @extend %btn-global;
-
-//   background-color:
-//   color:
-//   box-shadow:
-// }
-
-// // Hover
-// .btn-{name}:not(:disabled, .btn--disabled):hover {
-//   background-color:
-//   color:
-//   box-shadow:
-// }
-
-// // No Border
-// .btn-{name}}.btn--no-border {
-//   background-color:
-//   color:
-//   box-shadow:
-// }
-
-// // No Border Hover
-// .btn-{name}.btn--no-border:not(:disabled, .btn--disabled):hover {
-//   background-color:
-//   color:
-//   box-shadow:
-// }
-
-// // Outline
-// .btn-{name}.btn--outline {
-//   background-color:
-//   color:
-//   box-shadow:
-// }
-
-// // Outline Hover
-// .btn-{name}.btn--outline:not(:disabled, .btn--disabled):hover {
-//   background-color:
-//   color:
-//   box-shadow:
-// }

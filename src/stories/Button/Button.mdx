@@ -155,10 +155,47 @@ If you need to override the color of a particular button style, you can open the
 
 ## Custom Button
 
-Your application may need a custom button. To add one:
-1. Create a class like `.btn-notice`
-2. Extend `%btn-global`
-3. Define the `background-color`, `color`, and `box-shadow` for the different button states.
+Your application may need a custom button. To add one, just follow this template:
+
+```css
+.btn-{name} {
+  @extend %btn-global;
+
+  background-color:
+  color:
+  box-shadow:
+
+  &:not(:disabled, .btn--disabled):hover {
+    background-color:
+    color:
+    box-shadow:
+  }
+
+  &.btn--no-border {
+    background-color:
+    color:
+    box-shadow:
+
+    &:not(:disabled, .btn--disabled):hover {
+      background-color:
+      color:
+      box-shadow:
+    }
+  }
+
+  &.btn--outline {
+    background-color:
+    color:
+    box-shadow:
+
+    &:not(:disabled, .btn--disabled):hover {
+      background-color:
+      color:
+      box-shadow:
+    }
+  }
+}
+```
 
 ```css
 .btn-notice {
