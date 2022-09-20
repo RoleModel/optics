@@ -47,7 +47,7 @@
   box-shadow: var(--_rm-table-border);
   border-radius: var(--_rm-table-border-radius);
 
-  overflow: hidden;
+  contain: paint;
 
   background-color: var(--_rm-table-background-color);
   color: var(--_rm-table-text-color);

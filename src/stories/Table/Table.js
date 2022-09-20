@@ -98,14 +98,10 @@ export const createTable = ({
 
   if (height) {
     tableContainer.style.height = '200px'
-
     tableContainer.appendChild(table)
 
     return tableContainer;
-
-  } else {
-
-    return table;
-
   }
+
+  return table;
 };
