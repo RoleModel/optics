@@ -6,7 +6,7 @@
 
   font-size: var(--rm-font-medium);
   line-height: var(--rm-line-height-base);
-  overflow: hidden;
+  contain: paint;
 
   background-color: var(--rm-color-background);
   color: var(--rm-color-on-background);
