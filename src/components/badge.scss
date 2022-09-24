@@ -1,41 +1,47 @@
+@mixin badge-notification {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+}
+
 %badge-global {
-  // Public API
-  // Normal
-  --_rm-badge-background-color: var(--rm-color-neutral-base);
-  --_rm-badge-text-color: var(--rm-color-neutral-on-base);
-
-  // General Properties
-  --_rm-badge-radius: var(--rm-radius-medium);
-  --_rm-badge-font-size: var(--rm-font-x-small);
-  --_rm-badge-font-weight: var(--rm-font-weight-semi-bold);
-  --_rm-badge-letter-spacing: var(--rm-letter-spacing-label);
-  --_rm-badge-line-height: var(--rm-line-height-densest);
-  --_rm-badge-gap: var(--rm-space-3x-small);
-  --_rm-badge-padding: var(--rm-space-2x-small) var(--rm-space-x-small);
-
   align-items: center;
   justify-content: center;
-  gap: var(--_rm-badge-gap);
+  gap: var(--rm-space-3x-small);
 
   display: inline-flex;
 
   user-select: none;
 
-  font-size: var(--_rm-badge-font-size);
-  font-weight: var(--_rm-badge-font-weight);
-  letter-spacing: var(--_rm-badge-letter-spacing);
-  line-height: var(--_rm-badge-line-height);
+  font-size: var(--rm-font-x-small);
+  font-weight: var(--rm-font-weight-semi-bold);
+  letter-spacing: var(--rm-letter-spacing-label);
+  line-height: var(--rm-line-height-densest);
   white-space: nowrap;
 
-  border-radius: var(--_rm-badge-radius);
-  padding: var(--_rm-badge-padding);
+  border-radius: var(--rm-radius-medium);
+  padding: var(--rm-space-2x-small) var(--rm-space-x-small);
   cursor: inherit;
 
-  background-color: var(--_rm-badge-background-color);
-  color: var(--_rm-badge-text-color);
+  background-color: var(--rm-color-neutral-base);
+  color: var(--rm-color-neutral-on-base);
 
   &.badge--pill {
     border-radius: var(--rm-radius-pill);
+  }
+
+  &.badge--notification-right {
+    @include badge-notification;
+
+    right: 0px;
+    transform: translateY(-50%) translateX(50%);
+  }
+
+  &.badge--notification-left {
+    @include badge-notification;
+
+    left: 0px;
+    transform: translateY(-50%) translateX(-50%);
   }
 }
 
@@ -46,59 +52,34 @@
 .badge-primary {
   @extend %badge-global;
 
-  --_rm-badge-background-color: var(--rm-color-primary-base);
-  --_rm-badge-text-color: var(--rm-color-primary-on-base);
+  background-color: var(--rm-color-primary-base);
+  color: var(--rm-color-primary-on-base);
 }
 
 .badge-warning {
   @extend %badge-global;
 
-  --_rm-badge-background-color: var(--rm-color-alerts-warning-base);
-  --_rm-badge-text-color: var(--rm-color-alerts-warning-on-base);
+  background-color: var(--rm-color-alerts-warning-base);
+  color: var(--rm-color-alerts-warning-on-base);
 }
 
 .badge-danger {
   @extend %badge-global;
 
-  --_rm-badge-background-color: var(--rm-color-alerts-danger-base);
-  --_rm-badge-text-color: var(--rm-color-alerts-danger-on-base);
+  background-color: var(--rm-color-alerts-danger-base);
+  color: var(--rm-color-alerts-danger-on-base);
 }
 
 .badge-info {
   @extend %badge-global;
 
-  --_rm-badge-background-color: var(--rm-color-alerts-info-base);
-  --_rm-badge-text-color: var(--rm-color-alerts-info-on-base);
+  background-color: var(--rm-color-alerts-info-base);
+  color: var(--rm-color-alerts-info-on-base);
 }
 
 .badge-notice {
   @extend %badge-global;
 
-  --_rm-badge-background-color: var(--rm-color-alerts-notice-base);
-  --_rm-badge-text-color: var(--rm-color-alerts-notice-on-base);
-}
-
-// Button with notification style badge
-.btn--with-badge {
-  position: relative;
-}
-
-@mixin badge-notification {
-  position: absolute;
-  top: 0px;
-  pointer-events: none;
-}
-
-.badge--notification-right {
-  @include badge-notification;
-
-  right: 0px;
-  transform: translateY(-50%) translateX(50%);
-}
-
-.badge--notification-left {
-  @include badge-notification;
-
-  left: 0px;
-  transform: translateY(-50%) translateX(-50%);
+  background-color: var(--rm-color-alerts-notice-base);
+  color: var(--rm-color-alerts-notice-on-base);
 }

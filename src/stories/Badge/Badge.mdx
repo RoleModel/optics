@@ -68,64 +68,44 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
   <Story id='components-badge--notification-button' />
 </Canvas>
 
-## Badge API
-
-The badge styles are built on css variables scoped to the badge.
-
-Here is the full public API that the badge uses.
-```scss
-// Normal
---_rm-badge-background-color
---_rm-badge-text-color
-
-// General Properties
---_rm-badge-radius
---_rm-badge-font-size
---_rm-badge-font-weight
---_rm-badge-letter-spacing
---_rm-badge-line-height
---_rm-badge-gap
---_rm-badge-padding
-```
-
 ## Overriding badge styles
 
 The badge classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
 
-This allows multiple badge classes to share the same behavior. You can modify all badges behavior by overriding the `%badge-global` placeholder selector and setting any of the **general properties** documented tokens:
-```scss
+This allows multiple badge classes to share the same behavior. You can modify all badges behavior by overriding the `%badge-global` placeholder selector and setting any properties:
+```css
 %badge-global {
-  --_rm-badge-font-size: var(--rm-font-x-large);
+  font-size: var(--rm-font-x-large);
 }
 ```
 
-If you need to override the color of a particular badge style, you can open the respective class and change the **non-general properties** documented above
-```scss
+If you need to override the behavior of a particular badge style, you can open the respective class and set or change properties
+```css
 // This will only affect the primary badge, but not default, secondary, notice, etc.
 .badge-primary {
-  --_rm-badge-background-color: red;
-  --_rm-badge-text-color: white;
+  background-color: red;
+  color: white;
 }
 ```
 
 ## Custom Badge
 
-Your application may need a custom badge. To add one:
-1. Create a class like `.badge-redsky`
-2. Extend `%badge-global`
-3. Use the above documented API to define how it looks and feels for different states (e.g. color, radius)
-
-```scss
-.badge-redsky {
+Your application may need a custom badge. To add one, just follow this template:
+```css
+.badge-{name} {
   @extend %badge-global;
 
-  // Normal
-  --_rm-badge-background-color: red;
-  --_rm-badge-text-color: white;
+  background-color:
+  color:
+}
+```
 
-  // General Properties
-  --_rm-badge-radius: var(--rm-radius-large);
-  --_rm-badge-font-size: var(--rm-font-x-large);
+```css
+.badge-purple {
+  @extend %badge-global;
+
+  background-color: purple;
+  color: white;
 }
 ```
 

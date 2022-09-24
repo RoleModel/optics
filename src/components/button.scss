@@ -74,6 +74,11 @@
     font-weight: var(--rm-font-weight-bold);
   }
 
+  // Button with notification style badge
+  &.btn--with-badge {
+    position: relative;
+  }
+
   // https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
   @media(max-width: $breakpoint-small) {
     --__rm-btn-height:    var(--_rm-btn-height-large);
