@@ -29,3 +29,10 @@
 .transition-demo--modal { animation-duration: var(--rm-transition-modal); }
 .transition-demo--panel { animation-duration: var(--rm-transition-panel); }
 .transition-demo--flash { animation-duration: var(--rm-transition-flash); }
+
+.flash--demo {
+  position: relative;
+  animation: none;
+  top: 0;
+  right: 0;
+}
