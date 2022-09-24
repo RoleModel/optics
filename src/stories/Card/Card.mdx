@@ -39,62 +39,50 @@ Card classes can be used to denote bordered sections of an application. They pro
   <Story id='components-card--condensed' />
 </Canvas>
 
-## Card API
-
-The card styles are built on css variables scoped to the card.
-
-Here is the full public API that the card uses.
-```scss
-// Normal
---_rm-card-background-color
---_rm-card-text-color
-
-// General Properties
---_rm-card-radius
---_rm-card-border
---_rm-card-font-size
---_rm-card-line-height
---_rm-card-padding
-```
 
 ## Overriding card styles
 
 The card classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
 
-This allows multiple card classes to share the same behavior. You can modify all cards behavior by overriding the `%card-global` placeholder selector and setting any of the **general properties** documented tokens:
-```scss
+This allows multiple card classes to share the same behavior. You can modify all cards behavior by overriding the `%card-global` placeholder selector and setting any properties:
+```css
 %card-global {
-  --_rm-card-font-size: var(--rm-font-x-large);
+  font-size: var(--rm-font-x-large);
 }
 ```
 
-If you need to override the color of a particular card style, you can open the respective class and change the **non-general properties** documented above
-```scss
+If you need to override the behavior of a particular card style, you can open the respective class and set or change properties
+```css
 // This will only affect the card, but not card-padded
 .card {
-  --_rm-card-background-color: red;
-  --_rm-card-text-color: white;
+  background-color: red;
+  color: white;
 }
 ```
 
 ## Custom Card
 
-Your application may need a custom card. To add one:
-1. Create a class like `.card-redsky`
-2. Extend `%card-global`
-3. Use the above documented API to define how it looks and feels for different states (e.g. color, radius)
-
-```scss
-.card-redsky {
+Your application may need a custom card. To add one, just follow this template:
+```css
+.card-{name} {
   @extend %card-global;
 
-  // Normal
-  --_rm-card-background-color: red;
-  --_rm-card-text-color: white;
+  background-color:
+  color:
+}
+```
 
-  // General Properties
-  --_rm-card-radius: var(--rm-radius-large);
-  --_rm-card-font-size: var(--rm-font-x-large);
+```css
+.card-purple {
+  @extend %badge-global;
+
+  border-radius: var(--rm-radius-large);
+  font-size: var(--rm-font-x-large);
+
+  .card__header {
+    background-color: purple;
+    color: white;
+  }
 }
 ```
 
