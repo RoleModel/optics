@@ -8,7 +8,7 @@ import imageFile from './flash.gif';
 
 Flash classes provide notification style alert messages that "Flash" onto the screen (top right corner) with application information.
 
-**Note:** The `flash--demo` class that each example here uses is not intended to be used in a real application. It is only used here to allow for showing the flash messages in a static way.
+**Note:** The `flash--demo` class that each example here uses is documentation only and not available in a real application. It is only used here to allow for showing the flash messages in a static way.
 
 ## Notice
 
@@ -41,6 +41,48 @@ Flash classes provide notification style alert messages that "Flash" onto the sc
 <Canvas withToolbar>
   <Story id='components-flash--warning' />
 </Canvas>
+
+## Overriding flash styles
+
+The flash classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
+
+This allows multiple flash classes to share the same behavior. You can modify all flash behavior by overriding the `%flash-global` placeholder selector and setting any properties:
+```css
+%flash-global {
+  padding: var(--rm-space-medium) var(--rm-space-x-large);
+}
+```
+
+## Custom Flash
+
+Your application may need a custom flash. To add one, just follow this template:
+```css
+.flash-{name} {
+  @extend %flash-global;
+
+  background-color:
+  color:
+}
+```
+
+```css
+.flash-purple {
+  @extend %flash-global;
+
+  background-color: purple;
+  color: white;
+}
+```
+
+You may need a new modifier of flash or other types of notifications. You can add one by overriding the `%flash-global` placeholder selector.
+```css
+%flash-global {
+  &.flash--{name} {
+    background-color:
+    color:
+  }
+}
+```
 
 ## Playground
 

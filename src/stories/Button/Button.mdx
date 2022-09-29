@@ -96,45 +96,12 @@ See https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
 
 ## Button API
 
-The button styles are built on css variables scoped to the button.
+Size and Font button styles are built on css variables scoped to the button.
+Buttons have various states that are styled as well.
 
-Here is the full public API that the button uses.
+Here are the variables and states used
 ```css
-// Normal
---_rm-btn-background-color:
---_rm-btn-text-color:
---_rm-btn-border-color:
-
-// Hover
---_rm-btn-background-hover-color:
---_rm-btn-text-hover-color:
---_rm-btn-border-hover-color:
-
-// Outline
---_rm-btn-background-outline-color:
---_rm-btn-text-outline-color:
---_rm-btn-border-outline-color:
-
-// Hover and Outline
---_rm-btn-background-hover-and-outline-color:
---_rm-btn-text-hover-and-outline-color:
---_rm-btn-border-hover-and-outline-color:
-
-// No Border
---_rm-btn-background-no-border-color:
---_rm-btn-text-no-border-color:
-
-// Hover and no Border
---_rm-btn-background-hover-and-no-border-color:
---_rm-btn-text-hover-and-no-border-color:
-
-// General Properties (for size and height, the appropriate variable is used when using the size modifiers)
---_rm-btn-font-weight:
---_rm-btn-gap:
---_rm-btn-transition:
---_rm-btn-padding:
---_rm-btn-radius:
-
+// Variable API
 --_rm-btn-height-small:
 --_rm-btn-height-medium:
 --_rm-btn-height-large:
@@ -142,67 +109,131 @@ Here is the full public API that the button uses.
 --_rm-font-small:
 --_rm-font-medium:
 --_rm-font-large:
+
+// Different states
+.btn {} // Default behavior
+.btn:not(:disabled, .btn--disabled):hover {} // Hover behavior
+.btn.btn--no-border {} // No Border Modifier
+.btn.btn--no-border:not(:disabled, .btn--disabled):hover {} // Hovered No Border Modifier
+.btn.btn--outline {} // Outline Modifier
+.btn.btn--outline:not(:disabled, .btn--disabled):hover {} // Hovered No Border Modifier
 ```
 
 ## Overriding Button styles
 
 The button classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
 
-This allows multiple button classes to share the same behavior. You can modify all buttons behavior by overriding the `%btn-global` placeholder selector and setting any of the **general properties** documented tokens:
+This allows multiple button classes to share the same behavior. You can modify all buttons behavior by overriding the `%btn-global` placeholder selector and setting any properties:
 ```css
 %btn-global {
-  --_rm-btn-radius: var(--rm-radius-x-large);
+  border-radius: 0;
 }
 ```
 
-If you need to override the color of a particular button style, you can open the respective class and change the **non-general properties** documented above
+If you want to override how the size modifier behaves, you can use API described above to change which height and font each size uses.
+```css
+%btn-global {
+  --_rm-btn-height-small:  var(--rm-space-2x-large);
+  --_rm-btn-height-medium: var(--rm-space-3x-large);
+  --_rm-btn-height-large:  var(--rm-space-4x-large);
+
+  --_rm-font-small:  var(--rm-font-3x-large);
+  --_rm-font-medium: var(--rm-font-4x-large);
+  --_rm-font-large:  var(--rm-font-5x-large);
+}
+```
+
+If you need to override the color of a particular button style, you can open the respective class and change the `background-color`, `color`, and `box-shadow` properties to change the look.
 ```css
 // This will only affect the default button, but not primary, secondary, etc.
 .btn {
-  --_rm-btn-background-color: red;
-  --_rm-btn-text-color: white;
-  --_rm-btn-border-color: red;
+  background-color: red;
+  color: white;
+  box-shadow: red;
 }
 ```
 
 ## Custom Button
 
-Your application may need a custom button. To add one:
-1. Create a class like `.btn-redsky`
-2. Extend `%btn-global`
-3. Use the above documented API to define how it looks and feels for different states (e.g. hover, outline)
+Your application may need a custom button. To add one, just follow this template:
 
 ```css
-.btn-redsky {
+.btn-{name} {
   @extend %btn-global;
 
-  // Normal
-  --_rm-btn-background-color: red;
-  --_rm-btn-text-color: white;
-  --_rm-btn-border-color: red;
+  background-color:
+  color:
+  box-shadow:
 
-  // Hover
-  --_rm-btn-background-hover-color: darkred;
-  --_rm-btn-text-hover-color: white;
-  --_rm-btn-border-hover-color: darkred;
+  &:not(:disabled, .btn--disabled):hover {
+    background-color:
+    color:
+    box-shadow:
+  }
 
-  // Outline
-  --_rm-btn-background-outline-color: transparent;
-  --_rm-btn-text-outline-color: red;
-  --_rm-btn-border-outline-color: red;
+  &.btn--no-border {
+    background-color:
+    color:
+    box-shadow:
 
-  // Hover and Outline
-  --_rm-btn-background-hover-and-outline-color: transparent;
-  --_rm-btn-text-hover-and-outline-color: darkred;
-  --_rm-btn-border-hover-and-outline-color: darkred;
+    &:not(:disabled, .btn--disabled):hover {
+      background-color:
+      color:
+      box-shadow:
+    }
+  }
 
-  // No Border
-  --_rm-btn-background-no-border-color: transparent;
-  --_rm-btn-text-no-border-color: red;
+  &.btn--outline {
+    background-color:
+    color:
+    box-shadow:
 
-  // Hover and No Border
-  --_rm-btn-background-hover-and-no-border-color: transparent;
-  --_rm-btn-text-hover-and-no-border-color: darkred;
+    &:not(:disabled, .btn--disabled):hover {
+      background-color:
+      color:
+      box-shadow:
+    }
+  }
+}
+```
+
+```css
+.btn-notice {
+  @extend %btn-global;
+
+  background-color: var(--rm-color-alerts-notice-base);
+  color: var(--rm-color-alerts-notice-on-base);
+  box-shadow: var(--rm-border-all) var(--rm-color-alerts-notice-base);
+
+  &:not(:disabled, .btn--disabled):hover {
+    background-color: var(--rm-color-alerts-notice-hover);
+    color: var(--rm-color-alerts-notice-on-hover);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-notice-hover);
+  }
+
+  &.btn--no-border {
+    background-color: transparent;
+    color: var(--rm-color-alerts-notice-base);
+    box-shadow: none;
+
+    &:not(:disabled, .btn--disabled):hover {
+      background-color: transparent;
+      color: var(--rm-color-alerts-notice-hover);
+      box-shadow: none;
+    }
+  }
+
+  &.btn--outline {
+    background-color: var(--rm-color-alerts-notice-plus-3);
+    color: var(--rm-color-alerts-notice-on-plus-3);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-notice-on-plus-3);
+
+    &:not(:disabled, .btn--disabled):hover {
+      background-color: var(--rm-color-alerts-notice-plus-2);
+      color: var(--rm-color-alerts-notice-on-plus-2);
+      box-shadow: var(--rm-border-all) var(--rm-color-alerts-notice-on-plus-3);
+    }
+  }
 }
 ```
 

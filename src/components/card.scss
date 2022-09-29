@@ -1,26 +1,34 @@
 %card-global {
-  // Public API
-  // Normal
-  --_rm-card-background-color: var(--rm-color-background);
-  --_rm-card-text-color: var(--rm-color-on-background);
-
-  // General Properties
-  --_rm-card-radius: var(--rm-radius-medium);
-  --_rm-card-border: var(--rm-border-all) var(--rm-border-color);
-  --_rm-card-font-size: var(--rm-font-medium);
-  --_rm-card-line-height: var(--rm-line-height-base);
-  --_rm-card-padding: var(--rm-space-medium);
-
   position: relative;
 
-  background-color: var(--_rm-card-background-color);
-  color: var(--_rm-card-text-color);
+  box-shadow: var(--rm-border-all) var(--rm-border-color);
+  border-radius: var(--rm-radius-medium);
 
-  box-shadow: var(--_rm-card-border);
-  border-radius: var(--_rm-card-radius);
-  font-size: var(--_rm-card-font-size);
-  line-height: var(--_rm-card-line-height);
-  overflow: hidden;
+  font-size: var(--rm-font-medium);
+  line-height: var(--rm-line-height-base);
+  contain: paint;
+
+  background-color: var(--rm-color-background);
+  color: var(--rm-color-on-background);
+
+  // Modifiers
+  &.card--condensed {
+    @include spacing-scales;
+    --rm-space-scale-unit: 0.5rem;
+  }
+
+  // Elements
+  .card__header,
+  .card__body,
+  .card__footer {
+    padding: var(--rm-space-medium);
+  }
+
+  .card__header {
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+    }
+  }
 }
 
 .card {
@@ -30,22 +38,5 @@
 .card-padded {
   @extend %card-global;
 
-  padding: var(--_rm-card-padding);
-}
-
-.card__header,
-.card__body,
-.card__footer {
-  padding: var(--_rm-card-padding);
-}
-
-.card__header {
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-  }
-}
-
-.card--condensed {
-  @include spacing-scales;
-  --rm-space-scale-unit: 0.5rem;
+  padding: var(--rm-space-medium);
 }
