@@ -41,6 +41,7 @@
   // Icon Modifier
   &.btn--icon {
     border-radius: var(--rm-radius-circle);
+    min-width: var(--__rm-btn-height);
     width: var(--__rm-btn-height);
     padding: 0;
   }
