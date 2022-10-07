@@ -26,17 +26,17 @@
 
 // Section Properties
 
-.section-sm {
+.main-section-sm {
   margin-top: var(--rm-space-small);
   margin-bottom: var(--rm-space-medium);
 }
 
-.section {
+.main-section {
   margin-top: var(--rm-space-medium);
   margin-bottom: var(--rm-space-large);
 }
 
-.section-lg {
+.main-section-lg {
   margin-top: var(--rm-space-large);
   margin-bottom: var(--rm-space-x-large);
 }
@@ -239,38 +239,39 @@
 }
 
 // Line Height
+// To discuss
 
-.line-height-none {
-  line-height: var(--rm-line-height-none);
-}
+// .line-height-none {
+//   line-height: var(--rm-line-height-none);
+// }
 
-.line-height-densest {
-  line-height: var(--rm-line-height-densest);
-}
+// .line-height-densest {
+//   line-height: var(--rm-line-height-densest);
+// }
 
-.line-height-denser {
-  line-height: var(--rm-line-height-denser);
-}
+// .line-height-denser {
+//   line-height: var(--rm-line-height-denser);
+// }
 
-.line-height-dense {
-  line-height: var(--rm-line-height-dense);
-}
+// .line-height-dense {
+//   line-height: var(--rm-line-height-dense);
+// }
 
-.line-height-base {
-  line-height: var(--rm-line-height-base);
-}
+// .line-height-base {
+//   line-height: var(--rm-line-height-base);
+// }
 
-.line-height-loose {
-  line-height: var(--rm-line-height-loose);
-}
+// .line-height-loose {
+//   line-height: var(--rm-line-height-loose);
+// }
 
-.line-height-looser {
-  line-height: var(--rm-line-height-looser);
-}
+// .line-height-looser {
+//   line-height: var(--rm-line-height-looser);
+// }
 
-.line-height-loosest {
-  line-height: var(--rm-line-height-loosest);
-}
+// .line-height-loosest {
+//   line-height: var(--rm-line-height-loosest);
+// }
 
 // Font size
 
@@ -662,21 +663,23 @@
 }
 
 // Hover
+// To discuss
 
-.hoverable {
-  &:hover { cursor: pointer; }
-}
+// .hoverable {
+//   &:hover { cursor: pointer; }
+// }
 
-.not-hoverable {
-  &:hover { cursor: default; }
-}
+// .not-hoverable {
+//   &:hover { cursor: default; }
+// }
 
 // Overflow
+// To discuss
 
-.overflow-hidden { 
-  overflow: hidden;
-}
+// .overflow-hidden { 
+//   overflow: hidden;
+// }
 
-.overflow-scroll { 
-  overflow: scroll;
-}
+// .overflow-scroll { 
+//   overflow: scroll;
+// }
