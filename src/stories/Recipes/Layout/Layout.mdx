@@ -1,0 +1,75 @@
+import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+
+# Layout
+
+## Basic
+
+The basic layout that this design system expects looks like the following:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample Layout</title>
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+  </head>
+  <body class='app__main'>
+    <!-- Flash message here -->
+    <!-- Confirm here -->
+    <!-- Modal here -->
+    <!-- Panel here -->
+    <!--
+      If your app has a top header, use
+      <div class='page__header'></div>
+    -->
+    <div class='page__content'></div>
+    <!--
+      If your app has a bottom footer, use
+      <div class='page__footer'></div>
+    -->
+  </body>
+</html>
+```
+
+<Canvas withToolbar>
+  <Story id='recipes-layout--basic' />
+</Canvas>
+
+## With Sidebar
+
+A layout with a sidebar looks like the following:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample Layout</title>
+    <meta content='width=device-width, initial-scale=1' name='viewport' />
+  </head>
+  <body class='app-wrapper'>
+    <!-- Flash message here -->
+    <!-- Confirm here -->
+    <!-- Modal here -->
+    <!-- Panel here -->
+    <div class='sidebar sidebar--{rail or drawer}'>
+      ...
+    </div>
+    <div class='app__main'>
+      <!--
+        If your app has a top header, use
+        <div class='page__header'></div>
+      -->
+      <div class='page__content'></div>
+      <!--
+        If your app has a bottom footer, use
+        <div class='page__footer'></div>
+      -->
+    </div>
+    <!-- You could put the sidebar or some other drawer here as well -->
+  </body>
+</html>
+```
+
+<Canvas withToolbar>
+  <Story id='recipes-layout--sidebar' />
+</Canvas>
