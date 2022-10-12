@@ -1,4 +1,4 @@
-import { createNavigationRail } from '../../NavigationRail/NavigationRail.js';
+import { createSidebar } from '../../Sidebar/Sidebar.js';
 
 export const createLayout = ({
   style = 'basic'
@@ -18,7 +18,7 @@ export const createLayout = ({
   }
 
   if (style === 'sidebar') {
-    const sidebar = createNavigationRail({
+    const sidebar = createSidebar({
       style: 'default',
       brand: true,
       position: 'start',
