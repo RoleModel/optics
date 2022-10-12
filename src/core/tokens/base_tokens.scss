@@ -136,6 +136,7 @@
 
 @mixin z-indexes {
   --rm-z-index-header: 500;
+  --rm-z-index-footer: 500;
   --rm-z-index-drawer: 700;
   --rm-z-index-dialog: 800;
   --rm-z-index-dialog-backdrop: 801;
@@ -159,11 +160,19 @@
 // https://drafts.csswg.org/css-env-1/
 // https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 
-$breakpoint-x-small: 512px; // phone
+// The below values are to ensure media queries that define a boundary
+// don't leavea 1px dead space
+
+$breakpoint-x-small: 512px; // vertical phone
+$breakpoint-above-x-small: 513px; // vertical phone
 $breakpoint-small: 768px; // vertical ipad
+$breakpoint-above-small: 769px; // vertical ipad
 $breakpoint-medium: 1024px; // landscape ipad
+$breakpoint-above-medium: 1025px; // landscape ipad
 $breakpoint-large: 1280px; // small laptop
+$breakpoint-above-large: 1281px; // small laptop
 $breakpoint-x-large: 1440px; // medium laptop
+$breakpoint-above-x-large: 1441px; // medium laptop
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
