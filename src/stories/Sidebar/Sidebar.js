@@ -17,7 +17,7 @@ const createSidebarItem = ({ type, icon, label }, activeLink) => {
 
 export const createSidebar = ({
   size = 'drawer',
-  collapsible = false,
+  responsive = false,
   style = 'default',
   brand = true,
   position = 'start',
@@ -55,7 +55,7 @@ export const createSidebar = ({
   ]
 
   body.innerHTML += `
-  <div class="${style === 'default' ? 'sidebar' : `sidebar-${style}`} sidebar--${size} ${collapsible ? 'sidebar--collapsible' : ''}">
+  <div class="${style === 'default' ? 'sidebar' : `sidebar-${style}`} sidebar--${size} ${responsive ? 'sidebar--responsive' : ''}">
     ${brandSection}
     <div class="sidebar__content sidebar__content--${position}">
       ${links.map(item => createSidebarItem(item, activeLink)).join('') }

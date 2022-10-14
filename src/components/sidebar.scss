@@ -194,11 +194,11 @@
   }
 
   // Modifiers
-  &.sidebar--drawer:not(.sidebar--collapsible) {
+  &.sidebar--drawer:not(.sidebar--responsive) {
     @include sidebar-drawer-global;
   }
 
-  &.sidebar--drawer.sidebar--collapsible {
+  &.sidebar--drawer.sidebar--responsive {
     @media(width > $breakpoint-medium) {
       @include sidebar-drawer-global;
     }

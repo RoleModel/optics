@@ -8,7 +8,7 @@ export default {
       control: { type: 'select' },
       options: ['drawer', 'rail'],
     },
-    collapsible: { control: 'boolean' },
+    responsive: { control: 'boolean' },
     style: {
       control: { type: 'select' },
       options: ['default', 'primary', 'subtle-primary'],
