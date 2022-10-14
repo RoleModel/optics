@@ -199,13 +199,11 @@
   }
 
   &.sidebar--drawer.sidebar--collapsible {
-    // anything larger than medium
-    @media(min-width: $breakpoint-above-medium) {
+    @media(width > $breakpoint-medium) {
       @include sidebar-drawer-global;
     }
 
-    // anything medium and smaller
-    @media(max-width: $breakpoint-medium) {
+    @media(width <= $breakpoint-medium) {
       @include sidebar-rail-global;
     }
   }
