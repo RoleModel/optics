@@ -1,10 +1,11 @@
 import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+import LinkTo from '@storybook/addon-links/react';
 
 # Sidebar
 
 Sidebar classes provide simple styling for a navigation sidebar drawer or rail.
 
-## Default
+For instructions on how to integrate a sidebar into your applications layout, see <LinkTo LinkTo kind="recipes-layout--sidebar">Layout With Sidebar</LinkTo>.
 
 `.sidebar` is the main component that everything is contained within.
 
@@ -18,6 +19,10 @@ Sidebar classes provide simple styling for a navigation sidebar drawer or rail.
 </div>
 ```
 
+## Default
+
+`.sidebar` Provides a neutral colored sidebar. This uses the neutral color defined in your theme.
+
 <div class='flex layout-row gap-sm'>
   <Canvas withToolbar>
     <Story id='components-sidebar--default-drawer' />
@@ -30,7 +35,7 @@ Sidebar classes provide simple styling for a navigation sidebar drawer or rail.
 
 ## Primary
 
-`.sidebar-primary` Provides a primary colored navigation rail. This uses the primary color defined in your theme.
+`.sidebar-primary` Provides a primary colored sidebar. This uses the primary color defined in your theme.
 
 <div class='flex layout-row gap-sm'>
   <Canvas withToolbar>
@@ -43,7 +48,7 @@ Sidebar classes provide simple styling for a navigation sidebar drawer or rail.
 
 ## Subtle Primary
 
-`.sidebar-subtle-primary` Provides a more subtle version of the primary colored navigation rail
+`.sidebar-subtle-primary` Provides a more subtle version of the primary colored sidebar
 
 <div class='flex layout-row gap-sm'>
   <Canvas withToolbar>
