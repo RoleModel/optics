@@ -37,22 +37,7 @@ export const createLayout = ({
   <div class='app__main'>
     <div class='page__header background-primary-plus-3'>Header</div>
     <div class='page__content'>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
-      <p>Some content</p>
+      ${Array.from(Array(16)).map(_item => '<p>Some content</p>').join("\n") }
     </div>
     <div class='page__footer background-primary-plus-3'>Footer</div>
   </div>
