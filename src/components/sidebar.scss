@@ -79,6 +79,10 @@
     &:hover {
       background-color: var(--_rm-sidebar-icon-background-hover-color);
       color: var(--_rm-sidebar-icon-text-hover-color);
+
+      .sidebar__item-icon {
+        color: var(--_rm-sidebar-icon-text-hover-color);
+      }
     }
 
     &.active {
