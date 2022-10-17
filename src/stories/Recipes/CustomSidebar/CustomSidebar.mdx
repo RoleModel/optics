@@ -1,0 +1,186 @@
+import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+
+# Custom Sidebar
+
+Your app may want to customize the sidebar to change the look and feel. Here are a few examples to help you get started
+
+## Domain Registrar Example
+
+```css
+// Domains Sidebar Example
+@mixin sidebar-domains-rail-global {
+  .sidebar__brand {
+    padding: 0 var(--_rm-sidebar-spacing);
+  }
+}
+
+@mixin sidebar-domains-drawer-global {
+  .sidebar__content {
+    padding: 0;
+  }
+
+  .sidebar__item {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .sidebar__section-divider {
+    margin: var(--rm-space-small) 0;
+  }
+}
+
+.sidebar-domains {
+  @extend %sidebar-global;
+
+  // Normal
+  --_rm-sidebar-background-color: var(--rm-color-background);
+  --_rm-sidebar-text-color: var(--rm-color-on-background);
+
+  // Active
+  --_rm-sidebar-icon-background-active-color: var(--rm-color-primary-plus-3);
+  --_rm-sidebar-icon-text-active-color: var(--rm-color-primary-on-plus-3);
+
+  // Hover
+  --_rm-sidebar-icon-background-hover-color: var(--rm-color-neutral-plus-3);
+  --_rm-sidebar-icon-text-hover-color: var(--rm-color-neutral-on-plus-3);
+
+  .sidebar__brand {
+    padding: 0 var(--rm-space-4x-large);
+  }
+
+  // Modifiers
+  &.sidebar--drawer:not(.sidebar--responsive) {
+    @include sidebar-domains-drawer-global;
+  }
+
+  &.sidebar--drawer.sidebar--responsive {
+    @media(width > $breakpoint-medium) {
+      @include sidebar-domains-drawer-global;
+    }
+
+    @media(width <= $breakpoint-medium) {
+      @include sidebar-domains-rail-global;
+    }
+  }
+
+  &.sidebar--rail {
+    @include sidebar-domains-rail-global;
+  }
+}
+```
+
+<Canvas withToolbar>
+  <Story id='recipes-custom-sidebar--domains' />
+</Canvas>
+
+## Performance Management Software Example
+
+```css
+// 16Six Sidebar Example
+@mixin sidebar-16six-rail-global {
+  .sidebar__brand {
+    svg {
+      width: 100%;
+      padding: 0 var(--rm-space-small);
+    }
+
+    .sidebar__brand-label {
+      display: none;
+    }
+  }
+}
+
+@mixin sidebar-16six-drawer-global {
+  .sidebar__item {
+    border-radius: var(--rm-radius-large);
+    font-size: var(--rm-font-small);
+  }
+}
+
+.sidebar-16six {
+  @extend %sidebar-global;
+
+  --_rm-sidebar-spacing: var(--rm-space-x-small);
+
+  // Normal
+  --_rm-sidebar-background-color: var(--rm-color-primary-minus-2);
+  --_rm-sidebar-text-color: var(--rm-color-primary-on-minus-2);
+
+  // Active
+  --_rm-sidebar-icon-background-active-color: var(--rm-color-primary-minus-1);
+  --_rm-sidebar-icon-text-active-color: var(--rm-color-primary-on-minus-1);
+
+  // Hover
+  --_rm-sidebar-icon-background-hover-color: var(--rm-color-primary-minus-1);
+  --_rm-sidebar-icon-text-hover-color: var(--rm-color-primary-on-minus-1);
+
+  gap: var(--rm-space-x-large);
+
+  .sidebar__brand {
+    display: flex;
+    gap: var(--rm-space-small);
+
+    text-decoration: none;
+    color: inherit;
+
+    svg {
+      width: var(--rm-space-3x-large);
+    }
+
+    .sidebar__brand-label {
+      display: flex;
+      flex-direction: column;
+      gap: var(--rm-space-4x-small);
+    }
+  }
+
+  .sidebar__content {
+    gap: var(--rm-space-x-small);
+  }
+
+  .sidebar__item {
+    .sidebar__item-icon {
+      border-radius: var(--rm-radius-large);
+
+      &.sidebar__item-icon--rotated {
+        rotate: 90deg;
+      }
+    }
+
+    &:hover,
+    &.active {
+      .sidebar__item-icon {
+        --mso-weight: var(--rm-font-weight-medium);
+      }
+    }
+  }
+
+  // Modifiers
+  &.sidebar--drawer:not(.sidebar--responsive) {
+    @include sidebar-16six-drawer-global;
+  }
+
+  &.sidebar--drawer.sidebar--responsive {
+    @media(width > $breakpoint-medium) {
+      @include sidebar-16six-drawer-global;
+    }
+
+    @media(width <=$breakpoint-medium) {
+      @include sidebar-16six-rail-global;
+    }
+  }
+
+  &.sidebar--rail {
+    @include sidebar-16six-rail-global;
+  }
+}
+```
+
+<Canvas withToolbar>
+  <Story id='recipes-custom-sidebar--sixteen-six' />
+</Canvas>
+
+## Playground
+
+<Primary/>
+<ArgsTable of='.' story='^'/>

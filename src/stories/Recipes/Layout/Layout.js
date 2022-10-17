@@ -1,7 +1,8 @@
 import { createSidebar } from '../../Sidebar/Sidebar.js';
 
 export const createLayout = ({
-  style = 'basic'
+  style = 'basic',
+  rightSidebar = false,
 }) => {
   if (style === 'basic') {
     return `
@@ -18,14 +19,17 @@ export const createLayout = ({
   }
 
   if (style === 'sidebar') {
-    const sidebar = createSidebar({
-      style: 'default',
-      brand: true,
-      position: 'start',
-      activeLink: 'Home',
-      logout: false,
-      trailingDiv: false,
-    })
+    const sidebar = (style, size) => {
+      return createSidebar({
+        style,
+        size,
+        brand: true,
+        position: 'start',
+        activeLink: 'Home',
+        logout: false,
+        trailingDiv: false,
+      }).innerHTML
+    }
 
     return `
 <div class='app-wrapper' style="height: 40rem;"> <!-- This class should be on body. Height is for demo purposed -->
@@ -33,7 +37,7 @@ export const createLayout = ({
   <!-- Confirm here -->
   <!-- Modal here -->
   <!-- Panel here -->
-  ${sidebar.innerHTML}
+  ${sidebar('default', 'drawer')}
   <div class='app__main'>
     <div class='page__header background-primary-plus-3'>Header</div>
     <div class='page__content'>
@@ -41,6 +45,7 @@ export const createLayout = ({
     </div>
     <div class='page__footer background-primary-plus-3'>Footer</div>
   </div>
+  ${rightSidebar ? sidebar('subtle-primary', 'rail') : ''}
 </div>
 `
   }

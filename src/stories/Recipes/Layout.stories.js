@@ -8,6 +8,9 @@ export default {
       control: { type: 'select' },
       options: ['basic', 'sidebar'],
     },
+    rightSidebar: {
+      control: { type: 'boolean' },
+    }
   },
   parameters: {
     docs: {
@@ -28,4 +31,10 @@ Basic.args = {
 export const Sidebar = Template.bind({});
 Sidebar.args = {
   style: 'sidebar'
+};
+
+export const SidebarAndRight = Template.bind({});
+SidebarAndRight.args = {
+  style: 'sidebar',
+  rightSidebar: true,
 };
