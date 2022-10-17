@@ -1,0 +1,199 @@
+import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+import LinkTo from '@storybook/addon-links/react';
+
+# Sidebar
+
+Sidebar classes provide simple styling for a navigation sidebar drawer or rail.
+
+For instructions on how to integrate a sidebar into your applications layout, see <LinkTo LinkTo kind="recipes-layout--sidebar">Layout With Sidebar</LinkTo>.
+
+`.sidebar` is the main component that everything is contained within.
+
+`.sidebar--drawer` and `.sidebar--rail` are used to denote which style of sidebar you would like to use.
+
+`.sidebar--responsive` can be added to a drawer to allow for a responsive sidebar. e.g.
+
+```html
+<div class='sidebar sidebar--drawer sidebar--responsive'>
+  ...
+</div>
+```
+
+## Default
+
+`.sidebar` Provides a neutral colored sidebar. This uses the neutral color defined in your theme.
+
+<div class='flex layout-row gap-sm'>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--default-drawer' />
+  </Canvas>
+
+  <Canvas withToolbar>
+    <Story id='components-sidebar--default-rail' />
+  </Canvas>
+</div>
+
+## Primary
+
+`.sidebar-primary` Provides a primary colored sidebar. This uses the primary color defined in your theme.
+
+<div class='flex layout-row gap-sm'>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--primary-drawer' />
+  </Canvas>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--primary-rail' />
+  </Canvas>
+</div>
+
+## Subtle Primary
+
+`.sidebar-subtle-primary` Provides a more subtle version of the primary colored sidebar
+
+<div class='flex layout-row gap-sm'>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--subtle-primary-drawer' />
+  </Canvas>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--subtle-primary-rail' />
+  </Canvas>
+</div>
+
+## Brand
+
+`.sidebar__brand` can be used with an image tag inside. This can be used to display your applications branding or logo.
+
+The brand is not required and the rail will adjust itself accordingly.
+
+<div class='flex layout-row gap-sm'>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--no-brand-drawer' />
+  </Canvas>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--no-brand-rail' />
+  </Canvas>
+</div>
+
+## Content
+
+`.sidebar__content` defines the container that `.sidebar__item` should be placed in. It can be positioned by using modifier classes.
+`.sidebar__content--start`, `.sidebar__content--center`, `.sidebar__content--end` with start being the default.
+
+<div class='flex layout-row gap-sm'>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--centered-drawer' />
+  </Canvas>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--centered-rail' />
+  </Canvas>
+</div>
+
+<div class='flex layout-row gap-sm'>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--end-drawer' />
+  </Canvas>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--end-rail' />
+  </Canvas>
+</div>
+
+<div class='flex layout-row gap-sm'>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--logout-drawer' />
+  </Canvas>
+  <Canvas withToolbar>
+    <Story id='components-sidebar--logout-rail' />
+  </Canvas>
+</div>
+
+## Sidebar API
+
+Color and hover styles are built on css variables scoped to the sidebar.
+
+Here are the variables used
+
+```css
+// Normal
+--_rm-sidebar-background-color:
+--_rm-sidebar-text-color:
+
+// Active
+--_rm-sidebar-icon-background-active-color:
+--_rm-sidebar-icon-text-active-color:
+
+// Hover
+--_rm-sidebar-icon-background-hover-color:
+--_rm-sidebar-icon-text-hover-color:
+
+--_rm-sidebar-rail-width:
+--_rm-sidebar-drawer-width:
+
+--_rm-sidebar-spacing:
+--_rm-sidebar-link-spacing:
+
+--_rm-sidebar-transition:
+```
+
+## Overriding Sidebar styles
+
+The sidebar classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
+
+This allows multiple sidebar classes to share the same behavior. You can modify all sidebar behavior by overriding the `%sidebar-global` placeholder selector and setting any properties:
+```css
+%sidebar-global {
+  --_rm-sidebar-rail-width: 10rem;
+  --_rm-sidebar-drawer-width: 30rem;
+}
+```
+
+There are also mixins for the rail and drawer specific styles. They can be overridden like:
+```css
+@mixin sidebar-rail-global {
+  .sidebar__section-title,
+  .sidebar__section-divider {
+    display: block;
+  }
+}
+
+@mixin sidebar-drawer-global {
+  .sidebar__section-title {
+    font-weight: var(--rm-font-weight-black);
+  }
+}
+```
+
+If you need to override the color of a particular sidebar style, you can open the respective class and change the variables documented above
+```css
+// This will only affect the primary sidebar, but not default or subtle primary
+.sidebar-primary {
+  --_rm-sidebar-background-color: pruple;
+  --_rm-sidebar-text-color: pruple;
+}
+```
+
+## Custom Sidebar
+
+Your application may need a custom Sidebar. To add one, just follow this template:
+
+```css
+.sidebar-{name} {
+  @extend %sidebar-global;
+
+  // Normal
+  --_rm-sidebar-background-color:
+  --_rm-sidebar-text-color:
+
+  // Active
+  --_rm-sidebar-icon-background-active-color:
+  --_rm-sidebar-icon-text-active-color:
+
+  // Hover
+  --_rm-sidebar-icon-background-hover-color:
+  --_rm-sidebar-icon-text-hover-color:
+}
+```
+
+## Playground
+
+<Primary/>
+<ArgsTable of='.' story='^'/>

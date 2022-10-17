@@ -1,3 +1,5 @@
+@import './src/rolemodel-design-system.scss';
+
 @keyframes transitionDemo {
   from {
     background-color: var(--rm-color-white);
@@ -36,3 +38,6 @@
   top: 0;
   right: 0;
 }
+
+@import './src/recipes/domains-sidebar.scss';
+@import './src/recipes/16six-sidebar.scss';

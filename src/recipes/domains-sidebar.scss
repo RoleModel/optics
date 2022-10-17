@@ -1,0 +1,60 @@
+// Domains Sidebar Example
+@mixin sidebar-domains-rail-global {
+  .sidebar__brand {
+    padding: 0 var(--_rm-sidebar-spacing);
+  }
+}
+
+@mixin sidebar-domains-drawer-global {
+  .sidebar__content {
+    padding: 0;
+  }
+
+  .sidebar__item {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .sidebar__section-divider {
+    margin: var(--rm-space-small) 0;
+  }
+}
+
+.sidebar-domains {
+  @extend %sidebar-global;
+
+  // Normal
+  --_rm-sidebar-background-color: var(--rm-color-background);
+  --_rm-sidebar-text-color: var(--rm-color-on-background);
+
+  // Active
+  --_rm-sidebar-icon-background-active-color: var(--rm-color-primary-plus-3);
+  --_rm-sidebar-icon-text-active-color: var(--rm-color-primary-on-plus-3);
+
+  // Hover
+  --_rm-sidebar-icon-background-hover-color: var(--rm-color-neutral-plus-3);
+  --_rm-sidebar-icon-text-hover-color: var(--rm-color-neutral-on-plus-3);
+
+  .sidebar__brand {
+    padding: 0 var(--rm-space-4x-large);
+  }
+
+  // Modifiers
+  &.sidebar--drawer:not(.sidebar--responsive) {
+    @include sidebar-domains-drawer-global;
+  }
+
+  &.sidebar--drawer.sidebar--responsive {
+    @media(width > $breakpoint-medium) {
+      @include sidebar-domains-drawer-global;
+    }
+
+    @media(width <= $breakpoint-medium) {
+      @include sidebar-domains-rail-global;
+    }
+  }
+
+  &.sidebar--rail {
+    @include sidebar-domains-rail-global;
+  }
+}
