@@ -122,9 +122,9 @@
   box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
 
   &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--rm-color-primary-hover);
-    color: var(--rm-color-primary-on-hover);
-    box-shadow: var(--rm-border-all) var(--rm-color-primary-hover);
+    background-color: var(--rm-color-primary-plus-one);
+    color: var(--rm-color-primary-on-plus-one);
+    box-shadow: var(--rm-border-all) var(--rm-color-primary-plus-one);
   }
 
   &.btn--no-border {
@@ -134,7 +134,7 @@
 
     &:not(:disabled, .btn--disabled):hover {
       background-color: transparent;
-      color: var(--rm-color-primary-hover);
+      color: var(--rm-color-primary-plus-one);
       box-shadow: none;
     }
   }
@@ -172,7 +172,7 @@
 
     &:not(:disabled, .btn--disabled):hover {
       background-color: transparent;
-      color: var(--rm-color-primary-hover);
+      color: var(--rm-color-primary-plus-one);
       box-shadow: none;
     }
   }
@@ -186,9 +186,9 @@
   box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-base);
 
   &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--rm-color-alerts-danger-hover);
-    color: var(--rm-color-alerts-danger-on-hover);
-    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-hover);
+    background-color: var(--rm-color-alerts-danger-plus-one);
+    color: var(--rm-color-alerts-danger-on-plus-one);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-plus-one);
   }
 
   &.btn--no-border {
@@ -198,7 +198,7 @@
 
     &:not(:disabled, .btn--disabled):hover {
       background-color: transparent;
-      color: var(--rm-color-alerts-danger-hover);
+      color: var(--rm-color-alerts-danger-plus-one);
       box-shadow: none;
     }
   }
