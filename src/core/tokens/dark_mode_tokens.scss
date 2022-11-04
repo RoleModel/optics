@@ -1,25 +1,44 @@
 @mixin primary-semantic-scale-dark {
-  --rm-color-primary-plus-max:  var(--rm-color-black);
-  --rm-color-primary-plus-3:    var(--rm-color-primary-luminosity-10);
-  --rm-color-primary-plus-2:    var(--rm-color-primary-luminosity-15);
-  --rm-color-primary-plus-1:    var(--rm-color-primary-luminosity-20);
-  --rm-color-primary-hover:     var(--rm-color-primary-luminosity-20);
-  --rm-color-primary-base:      var(--rm-color-primary-luminosity-25);
-  --rm-color-primary-minus-1:   var(--rm-color-primary-luminosity-35);
-  --rm-color-primary-minus-2:   var(--rm-color-primary-luminosity-40);
-  --rm-color-primary-minus-3:   var(--rm-color-primary-luminosity-60);
-  --rm-color-primary-minus-max: var(--rm-color-white);
+  // TODO: Review
+  --rm-color-primary-minus-max:   var(--rm-color-white);
+  --rm-color-primary-minus-eight: var(--rm-color-primary-luminosity-98);
+  --rm-color-primary-minus-seven: var(--rm-color-primary-luminosity-96);
+  --rm-color-primary-minus-six:   var(--rm-color-primary-luminosity-94);
+  --rm-color-primary-minus-five:  var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-minus-four:  var(--rm-color-primary-luminosity-84);
+  --rm-color-primary-minus-three: var(--rm-color-primary-luminosity-70);
+  --rm-color-primary-minus-two:   var(--rm-color-primary-luminosity-64);
+  --rm-color-primary-minus-one:   var(--rm-color-primary-luminosity-52);
+  --rm-color-primary-base:        var(--rm-color-primary-luminosity-40);
+  --rm-color-primary-plus-one:    var(--rm-color-primary-luminosity-36);
+  --rm-color-primary-plus-two:    var(--rm-color-primary-luminosity-32);
+  --rm-color-primary-plus-three:  var(--rm-color-primary-luminosity-28);
+  --rm-color-primary-plus-four:   var(--rm-color-primary-luminosity-24);
+  --rm-color-primary-plus-five:   var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-plus-six:    var(--rm-color-primary-luminosity-16);
+  --rm-color-primary-plus-seven:  var(--rm-color-primary-luminosity-8);
+  --rm-color-primary-plus-eight:  var(--rm-color-primary-luminosity-4);
+  --rm-color-primary-plus-max:    var(--rm-color-black);
 
-  --rm-color-primary-on-plus-max:  var(--rm-color-primary-luminosity-98);
-  --rm-color-primary-on-plus-3:    var(--rm-color-white);
-  --rm-color-primary-on-plus-2:    var(--rm-color-white);
-  --rm-color-primary-on-plus-1:    var(--rm-color-primary-luminosity-90);
-  --rm-color-primary-on-hover:     var(--rm-color-primary-luminosity-90);
-  --rm-color-primary-on-base:      var(--rm-color-primary-luminosity-80);
-  --rm-color-primary-on-minus-1:   var(--rm-color-primary-luminosity-90);
-  --rm-color-primary-on-minus-2:   var(--rm-color-white);
-  --rm-color-primary-on-minus-3:   var(--rm-color-primary-luminosity-5);
-  --rm-color-primary-on-minus-max: var(--rm-color-primary-luminosity-15);
+  --rm-color-primary-on-minus-max:   var(--rm-color-black);
+  --rm-color-primary-on-minus-eight: var(--rm-color-primary-luminosity-4);
+  --rm-color-primary-on-minus-seven: var(--rm-color-primary-luminosity-8);
+  --rm-color-primary-on-minus-six:   var(--rm-color-primary-luminosity-16);
+  --rm-color-primary-on-minus-five:  var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-on-minus-four:  var(--rm-color-primary-luminosity-24);
+  --rm-color-primary-on-minus-three: var(--rm-color-primary-luminosity-20);
+  --rm-color-primary-on-minus-two:   var(--rm-color-primary-luminosity-16);
+  --rm-color-primary-on-minus-one:   hsl(60, 100%, 100%); // Where does the 60 come from?
+  --rm-color-primary-on-base:        var(--rm-color-white);
+  --rm-color-primary-on-plus-one:    var(--rm-color-primary-luminosity-94);
+  --rm-color-primary-on-plus-two:    var(--rm-color-primary-luminosity-90);
+  --rm-color-primary-on-plus-three:  var(--rm-color-primary-luminosity-86);
+  --rm-color-primary-on-plus-four:   var(--rm-color-primary-luminosity-84);
+  --rm-color-primary-on-plus-five:   var(--rm-color-primary-luminosity-88);
+  --rm-color-primary-on-plus-six:    var(--rm-color-primary-luminosity-94);
+  --rm-color-primary-on-plus-seven:  var(--rm-color-primary-luminosity-96);
+  --rm-color-primary-on-plus-eight:  var(--rm-color-primary-luminosity-98);
+  --rm-color-primary-on-plus-max:    var(--rm-color-white);
 }
 
 @mixin neutral-semantic-scale-dark {
