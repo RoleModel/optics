@@ -129,8 +129,8 @@
 }
 
 @mixin background {
-  --rm-color-background:    var(--rm-color-neutral-luminosity-98);
-  --rm-color-on-background: var(--rm-color-neutral-luminosity-10);
+  --rm-color-background:    var(--rm-color-neutral-plus-eight);
+  --rm-color-on-background: var(--rm-color-neutral-on-plus-eight);
 }
 
 :root {

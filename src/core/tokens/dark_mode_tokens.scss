@@ -256,11 +256,6 @@
   --rm-color-alerts-notice-on-plus-max:    var(--rm-color-white)
 }
 
-@mixin background-dark {
-  --rm-color-background:    var(--rm-color-neutral-luminosity-10);
-  --rm-color-on-background: var(--rm-color-neutral-luminosity-90);
-}
-
 @mixin shadows-dark {
   --rm-shadow-x-small: 0px 1px 3px hsla(0, 0%, 0%, 0.15), 0px 1px 2px hsla(0, 0%, 0%, 0.3);
   --rm-shadow-small:   0px 2px 6px hsla(0, 0%, 0%, 0.15), 0px 1px 2px hsla(0, 0%, 0%, 0.3);
@@ -303,8 +298,6 @@
   @include alerts-danger-semantic-scale-dark;
   @include alerts-info-semantic-scale-dark;
   @include alerts-notice-semantic-scale-dark;
-
-  @include background-dark;
 
   @include shadows-dark;
 
