@@ -76,9 +76,9 @@
   float: right;
   cursor: pointer;
 
-  color: var(--rm-color-neutral-minus-3);
+  color: var(--rm-color-neutral-minus-seven);
 
   &:hover:not(:disabled, .btn--disabled) {
-    color: var(--rm-color-neutral-minus-3);
+    color: var(--rm-color-neutral-minus-seven);
   }
 }

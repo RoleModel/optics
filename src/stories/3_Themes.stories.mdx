@@ -18,7 +18,7 @@ This will ignore the system preference and use specified theme mode (I.E. your a
 </html>
 ```
 
-## Theme Overriding
+## Theming
 
 If you want to customize your application, you can provide your own theme files that serve as overrides to the existing tokens.
 An example implementation your main scss file would look like:
@@ -29,7 +29,7 @@ An example implementation your main scss file would look like:
 @import 'stylesheets/theme/my_app_theme';
 ```
 
-Take a look at `src/theme/rolemodel_theme.scss` for an idea of how to structure your custom theme. It can change the colors, even redefine the luminosity and semantic scales. It generally will look like:
+Your custom theme can change any tokens, including colors, radius, fonts, even redefine the luminosity and semantic scales. It generally will look like:
 
 ```scss
 @mixin color-varieties {
@@ -51,7 +51,7 @@ Take a look at `src/theme/rolemodel_theme.scss` for an idea of how to structure 
 
 :root {
   @include color-varieties;
-  @include color-varieties;
+  @include fonts;
 }
 
 @media(prefers-color-scheme: dark) {

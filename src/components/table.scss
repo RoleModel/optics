@@ -21,8 +21,8 @@
   contain: paint;
 
   thead {
-    background-color: var(--rm-color-neutral-plus-2);
-    color: var(--rm-color-neutral-on-plus-2);
+    background-color: var(--rm-color-neutral-plus-four);
+    color: var(--rm-color-neutral-on-plus-four);
   }
 
   th {
@@ -71,15 +71,15 @@
   // Striped Modifiers
   &.table--even-striped {
     tbody tr:nth-child(even) {
-      background-color: var(--rm-color-neutral-plus-3);
-      color: var(--rm-color-neutral-on-plus-3);
+      background-color: var(--rm-color-neutral-plus-seven);
+      color: var(--rm-color-neutral-on-plus-seven);
     }
   }
 
   &.table--odd-striped {
     tbody tr:nth-child(odd) {
-      background-color: var(--rm-color-neutral-plus-3);
-      color: var(--rm-color-neutral-on-plus-3);
+      background-color: var(--rm-color-neutral-plus-seven);
+      color: var(--rm-color-neutral-on-plus-seven);
     }
   }
 
@@ -106,8 +106,8 @@
   @extend %table-global;
 
   thead {
-    background-color: var(--rm-color-primary-plus-3);
-    color: var(--rm-color-primary-on-plus-3);
+    background-color: var(--rm-color-primary-plus-seven);
+    color: var(--rm-color-primary-on-plus-seven);
   }
 }
 
@@ -116,8 +116,8 @@
   @extend %table-global;
 
   thead {
-    background-color: var(--rm-color-alerts-danger-plus-3);
-    color: var(--rm-color-alerts-danger-on-plus-3);
+    background-color: var(--rm-color-alerts-danger-plus-seven);
+    color: var(--rm-color-alerts-danger-on-plus-seven);
   }
 }
 

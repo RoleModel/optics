@@ -11,9 +11,9 @@ export const createLayout = ({
   <!-- Confirm here -->
   <!-- Modal here -->
   <!-- Panel here -->
-  <div class='page__header background-primary-plus-3'>Header</div>
+  <div class='page__header background-primary-plus-seven'>Header</div>
   <div class='page__content'>Content</div>
-  <div class='page__footer background-primary-plus-3'>Footer</div>
+  <div class='page__footer background-primary-plus-seven'>Footer</div>
 </div>
 `
   }
@@ -39,11 +39,11 @@ export const createLayout = ({
   <!-- Panel here -->
   ${sidebar('default', 'drawer')}
   <div class='app__main'>
-    <div class='page__header background-primary-plus-3'>Header</div>
+    <div class='page__header background-primary-plus-seven'>Header</div>
     <div class='page__content'>
       ${Array.from(Array(16)).map(_item => '<p>Some content</p>').join("\n") }
     </div>
-    <div class='page__footer background-primary-plus-3'>Footer</div>
+    <div class='page__footer background-primary-plus-seven'>Footer</div>
   </div>
   ${rightSidebar ? sidebar('subtle-primary', 'rail') : ''}
 </div>

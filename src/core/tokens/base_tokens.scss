@@ -10,7 +10,7 @@
 
   // Neutral HSL
   --rm-color-neutral-h: var(--rm-color-primary-h);
-  --rm-color-neutral-s: 2%;
+  --rm-color-neutral-s: 4%;
   --rm-color-neutral-l: var(--rm-color-primary-l);
 }
 
@@ -30,7 +30,7 @@
 }
 
 @mixin border-colors {
-  --rm-border-color: var(--rm-color-neutral-plus-1);
+  --rm-border-color: var(--rm-color-neutral-plus-three);
 }
 
 @mixin box-shadows {

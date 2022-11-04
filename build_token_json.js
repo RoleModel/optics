@@ -7,14 +7,20 @@ function isHyphenated(keys, length = 2) {
 
 const HYPHENATED_WORDS = [
   'z-index', 'neutral-variant', 'on-background',
-  'line-height',
+  'line-height', 'letter-spacing', 'scale-unit', 'input-height',
   'width-large', 'width-x-large', 'card-outline',
   'x-small', '2x-small', '3x-small', '4x-small', '5x-small',
   'x-large', '2x-large', '3x-large', '4x-large', '5x-large',
   'extra-light', 'extra-bold', 'semi-bold',
-  'dialog-backdrop', 'dialog-content', 'alert-group', 'on-minus-max', 'on-minus-1', 'on-minus-2', 'on-minus-3',
-  'on-plus-min', 'on-plus-max', 'on-plus-1', 'on-plus-2', 'on-plus-3', 'on-hover', 'on-base', 'letter-spacing', 'scale-unit',
-  'plus-1', 'plus-2', 'plus-3', 'plus-max', 'minus-1', 'minus-2', 'minus-3', 'minus-max', 'input-height'
+  'dialog-backdrop', 'dialog-content', 'alert-group',
+  'on-minus-one', 'on-minus-two', 'on-minus-three', 'on-minus-four', 'on-minus-five',
+  'on-minus-six', 'on-minus-seven', 'on-minus-eight', 'on-minus-max',
+  'on-plus-one', 'on-plus-two', 'on-plus-three', 'on-plus-four', 'on-plus-five',
+  'on-plus-six', 'on-plus-seven', 'on-plus-eight', 'on-plus-max',
+  'minus-one', 'minus-two', 'minus-three', 'minus-four', 'minus-five',
+  'minus-six', 'minus-seven', 'minus-eight', 'minus-max',
+  'plus-one', 'plus-two', 'plus-three', 'plus-four', 'plus-five',
+  'plus-six', 'plus-seven', 'plus-eight', 'plus-max', 'on-base',
 ]
 
 // This is used in the isHyphenated method so that any key of luminosity-x returns true.
