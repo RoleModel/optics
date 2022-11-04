@@ -95,16 +95,16 @@
 %sidebar-global {
   // Public API
   // Normal
-  --_rm-sidebar-background-color: var(--rm-color-neutral-plus-3);
-  --_rm-sidebar-text-color: var(--rm-color-neutral-on-plus-3);
+  --_rm-sidebar-background-color: var(--rm-color-neutral-plus-seven);
+  --_rm-sidebar-text-color: var(--rm-color-neutral-on-plus-seven);
 
   // Active
-  --_rm-sidebar-icon-background-active-color: var(--rm-color-neutral-plus-1);
-  --_rm-sidebar-icon-text-active-color: var(--rm-color-neutral-on-plus-1);
+  --_rm-sidebar-icon-background-active-color: var(--rm-color-neutral-plus-three);
+  --_rm-sidebar-icon-text-active-color: var(--rm-color-neutral-on-plus-three);
 
   // Hover
-  --_rm-sidebar-icon-background-hover-color: var(--rm-color-neutral-plus-2);
-  --_rm-sidebar-icon-text-hover-color: var(--rm-color-neutral-on-plus-2);
+  --_rm-sidebar-icon-background-hover-color: var(--rm-color-neutral-plus-four);
+  --_rm-sidebar-icon-text-hover-color: var(--rm-color-neutral-on-plus-four);
 
   --_rm-sidebar-rail-width: 8.8rem;
   --_rm-sidebar-drawer-width: 25rem;

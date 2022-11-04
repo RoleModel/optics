@@ -42,27 +42,46 @@
 }
 
 @mixin neutral-semantic-scale-dark {
-  --rm-color-neutral-plus-max:  var(--rm-color-black);
-  --rm-color-neutral-plus-3:    var(--rm-color-neutral-luminosity-10);
-  --rm-color-neutral-plus-2:    var(--rm-color-neutral-luminosity-15);
-  --rm-color-neutral-plus-1:    var(--rm-color-neutral-luminosity-20);
-  --rm-color-neutral-hover:     var(--rm-color-neutral-luminosity-20);
-  --rm-color-neutral-base:      var(--rm-color-neutral-luminosity-25);
-  --rm-color-neutral-minus-1:   var(--rm-color-neutral-luminosity-35);
-  --rm-color-neutral-minus-2:   var(--rm-color-neutral-luminosity-40);
-  --rm-color-neutral-minus-3:   var(--rm-color-neutral-luminosity-60);
-  --rm-color-neutral-minus-max: var(--rm-color-white);
+  // TODO: Review
+  --rm-color-neutral-minus-max:   var(--rm-color-white);
+  --rm-color-neutral-minus-eight: var(--rm-color-neutral-luminosity-98);
+  --rm-color-neutral-minus-seven: var(--rm-color-neutral-luminosity-96);
+  --rm-color-neutral-minus-six:   var(--rm-color-neutral-luminosity-94);
+  --rm-color-neutral-minus-five:  var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-minus-four:  var(--rm-color-neutral-luminosity-84);
+  --rm-color-neutral-minus-three: var(--rm-color-neutral-luminosity-70);
+  --rm-color-neutral-minus-two:   var(--rm-color-neutral-luminosity-64);
+  --rm-color-neutral-minus-one:   var(--rm-color-neutral-luminosity-52);
+  --rm-color-neutral-base:        var(--rm-color-neutral-luminosity-40);
+  --rm-color-neutral-plus-one:    var(--rm-color-neutral-luminosity-36);
+  --rm-color-neutral-plus-two:    var(--rm-color-neutral-luminosity-32);
+  --rm-color-neutral-plus-three:  var(--rm-color-neutral-luminosity-28);
+  --rm-color-neutral-plus-four:   var(--rm-color-neutral-luminosity-24);
+  --rm-color-neutral-plus-five:   var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-plus-six:    var(--rm-color-neutral-luminosity-16);
+  --rm-color-neutral-plus-seven:  var(--rm-color-neutral-luminosity-8);
+  --rm-color-neutral-plus-eight:  var(--rm-color-neutral-luminosity-4);
+  --rm-color-neutral-plus-max:    var(--rm-color-black);
 
-  --rm-color-neutral-on-plus-max:  var(--rm-color-neutral-luminosity-98);
-  --rm-color-neutral-on-plus-3:    var(--rm-color-white);
-  --rm-color-neutral-on-plus-2:    var(--rm-color-white);
-  --rm-color-neutral-on-plus-1:    var(--rm-color-neutral-luminosity-90);
-  --rm-color-neutral-on-hover:     var(--rm-color-neutral-luminosity-90);
-  --rm-color-neutral-on-base:      var(--rm-color-neutral-luminosity-80);
-  --rm-color-neutral-on-minus-1:   var(--rm-color-neutral-luminosity-90);
-  --rm-color-neutral-on-minus-2:   var(--rm-color-white);
-  --rm-color-neutral-on-minus-3:   var(--rm-color-neutral-luminosity-5);
-  --rm-color-neutral-on-minus-max: var(--rm-color-neutral-luminosity-15);
+  --rm-color-neutral-on-minus-max:   var(--rm-color-black);
+  --rm-color-neutral-on-minus-eight: var(--rm-color-neutral-luminosity-4);
+  --rm-color-neutral-on-minus-seven: var(--rm-color-neutral-luminosity-8);
+  --rm-color-neutral-on-minus-six:   var(--rm-color-neutral-luminosity-16);
+  --rm-color-neutral-on-minus-five:  var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-on-minus-four:  var(--rm-color-neutral-luminosity-24);
+  --rm-color-neutral-on-minus-three: var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-on-minus-two:   var(--rm-color-neutral-luminosity-16);
+  --rm-color-neutral-on-minus-one:   var(--rm-color-black);
+  --rm-color-neutral-on-base:        var(--rm-color-white);
+  --rm-color-neutral-on-plus-one:    var(--rm-color-neutral-luminosity-94);
+  --rm-color-neutral-on-plus-two:    var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-plus-three:  var(--rm-color-neutral-luminosity-86);
+  --rm-color-neutral-on-plus-four:   var(--rm-color-neutral-luminosity-84);
+  --rm-color-neutral-on-plus-five:   var(--rm-color-neutral-luminosity-88);
+  --rm-color-neutral-on-plus-six:    var(--rm-color-neutral-luminosity-94);
+  --rm-color-neutral-on-plus-seven:  var(--rm-color-neutral-luminosity-96);
+  --rm-color-neutral-on-plus-eight:  var(--rm-color-neutral-luminosity-98);
+  --rm-color-neutral-on-plus-max:    var(--rm-color-white)
 }
 
 @mixin alerts-warning-semantic-scale-dark {
@@ -176,8 +195,8 @@
 
 @mixin modal-dark {
   .modal__content {
-    background: var(--rm-color-neutral-plus-3);
-    color: var(--rm-color-neutral-on-plus-3);
+    background: var(--rm-color-neutral-plus-seven);
+    color: var(--rm-color-neutral-on-plus-seven);
   }
 
   .modal__close {
@@ -189,8 +208,8 @@
 
 @mixin panel-dark {
   .panel {
-    background: var(--rm-color-neutral-plus-3);
-    color: var(--rm-color-neutral-on-plus-3);
+    background: var(--rm-color-neutral-plus-seven);
+    color: var(--rm-color-neutral-on-plus-seven);
   }
 
   .panel__close {

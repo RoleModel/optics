@@ -100,8 +100,8 @@
   box-shadow: var(--rm-border-all) var(--rm-border-color);
 
   &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--rm-color-neutral-plus-3);
-    color: var(--rm-color-neutral-on-plus-3);
+    background-color: var(--rm-color-neutral-plus-seven);
+    color: var(--rm-color-neutral-on-plus-seven);
   }
 
   &.btn--no-border {
@@ -109,7 +109,7 @@
 
     &:not(:disabled, .btn--disabled):hover {
       background-color: transparent;
-      color: var(--rm-color-neutral-minus-1);
+      color: var(--rm-color-neutral-minus-three);
     }
   }
 }

@@ -25,20 +25,22 @@
   --rm-color-neutral-original: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), var(--rm-color-neutral-l));
 
   // Neutral Luminosity Scale
-  --rm-color-neutral-luminosity-5:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 5%);
-  --rm-color-neutral-luminosity-10: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 10%);
-  --rm-color-neutral-luminosity-15: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 15%);
+  --rm-color-neutral-luminosity-4:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 4%);
+  --rm-color-neutral-luminosity-8:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 8%);
+  --rm-color-neutral-luminosity-16: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 16%);
   --rm-color-neutral-luminosity-20: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 20%);
-  --rm-color-neutral-luminosity-25: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 25%);
-  --rm-color-neutral-luminosity-30: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 30%);
-  --rm-color-neutral-luminosity-35: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 35%);
+  --rm-color-neutral-luminosity-24: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 24%);
+  --rm-color-neutral-luminosity-28: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 28%);
+  --rm-color-neutral-luminosity-32: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 32%);
+  --rm-color-neutral-luminosity-36: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 36%);
   --rm-color-neutral-luminosity-40: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 40%);
-  --rm-color-neutral-luminosity-50: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 50%);
-  --rm-color-neutral-luminosity-60: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 60%);
+  --rm-color-neutral-luminosity-52: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 52%);
+  --rm-color-neutral-luminosity-64: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 64%);
   --rm-color-neutral-luminosity-70: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 70%);
-  --rm-color-neutral-luminosity-80: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 80%);
+  --rm-color-neutral-luminosity-84: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 84%);
   --rm-color-neutral-luminosity-90: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 90%);
-  --rm-color-neutral-luminosity-95: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 95%);
+  --rm-color-neutral-luminosity-94: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 94%);
+  --rm-color-neutral-luminosity-96: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 96%);
   --rm-color-neutral-luminosity-98: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 98%);
 }
 
@@ -85,27 +87,45 @@
 }
 
 @mixin neutral-semantic-scale {
-  --rm-color-neutral-plus-max:   var(--rm-color-white);
-  --rm-color-neutral-plus-3:     var(--rm-color-neutral-luminosity-95);
-  --rm-color-neutral-plus-2:     var(--rm-color-neutral-luminosity-80);
-  --rm-color-neutral-plus-1:     var(--rm-color-neutral-luminosity-70);
-  --rm-color-neutral-hover:      var(--rm-color-neutral-luminosity-50);
-  --rm-color-neutral-base:       var(--rm-color-neutral-luminosity-40);
-  --rm-color-neutral-minus-1:    var(--rm-color-neutral-luminosity-30);
-  --rm-color-neutral-minus-2:    var(--rm-color-neutral-luminosity-20);
-  --rm-color-neutral-minus-3:    var(--rm-color-neutral-luminosity-10);
-  --rm-color-neutral-minus-max:  var(--rm-color-black);
+  --rm-color-neutral-plus-max:    var(--rm-color-white);
+  --rm-color-neutral-plus-eight:  var(--rm-color-neutral-luminosity-98);
+  --rm-color-neutral-plus-seven:  var(--rm-color-neutral-luminosity-96);
+  --rm-color-neutral-plus-six:    var(--rm-color-neutral-luminosity-94);
+  --rm-color-neutral-plus-five:   var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-plus-four:   var(--rm-color-neutral-luminosity-84);
+  --rm-color-neutral-plus-three:  var(--rm-color-neutral-luminosity-70);
+  --rm-color-neutral-plus-two:    var(--rm-color-neutral-luminosity-64);
+  --rm-color-neutral-plus-one:    var(--rm-color-neutral-luminosity-52);
+  --rm-color-neutral-base:        var(--rm-color-neutral-luminosity-40);
+  --rm-color-neutral-minus-one:   var(--rm-color-neutral-luminosity-36);
+  --rm-color-neutral-minus-two:   var(--rm-color-neutral-luminosity-32);
+  --rm-color-neutral-minus-three: var(--rm-color-neutral-luminosity-28);
+  --rm-color-neutral-minus-four:  var(--rm-color-neutral-luminosity-24);
+  --rm-color-neutral-minus-five:  var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-minus-six:   var(--rm-color-neutral-luminosity-16);
+  --rm-color-neutral-minus-seven: var(--rm-color-neutral-luminosity-8);
+  --rm-color-neutral-minus-eight: var(--rm-color-neutral-luminosity-4);
+  --rm-color-neutral-minus-max:   var(--rm-color-black);
 
-  --rm-color-neutral-on-plus-max:  var(--rm-color-neutral-luminosity-15);
-  --rm-color-neutral-on-plus-3:    var(--rm-color-neutral-luminosity-10);
-  --rm-color-neutral-on-plus-2:    var(--rm-color-neutral-luminosity-10);
-  --rm-color-neutral-on-plus-1:    var(--rm-color-black);
-  --rm-color-neutral-on-hover:     var(--rm-color-white);
-  --rm-color-neutral-on-base:      var(--rm-color-white);
-  --rm-color-neutral-on-minus-1:   var(--rm-color-neutral-luminosity-90);
-  --rm-color-neutral-on-minus-2:   var(--rm-color-neutral-luminosity-95);
-  --rm-color-neutral-on-minus-3:   var(--rm-color-white);
-  --rm-color-neutral-on-minus-max: var(--rm-color-neutral-luminosity-98);
+  --rm-color-neutral-on-plus-max:    var(--rm-color-black);
+  --rm-color-neutral-on-plus-eight:  var(--rm-color-neutral-luminosity-4);
+  --rm-color-neutral-on-plus-seven:  var(--rm-color-neutral-luminosity-8);
+  --rm-color-neutral-on-plus-six:    var(--rm-color-neutral-luminosity-16);
+  --rm-color-neutral-on-plus-five:   var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-on-plus-four:   var(--rm-color-neutral-luminosity-24);
+  --rm-color-neutral-on-plus-three:  var(--rm-color-neutral-luminosity-20);
+  --rm-color-neutral-on-plus-two:    var(--rm-color-neutral-luminosity-16);
+  --rm-color-neutral-on-plus-one:    var(--rm-color-black);
+  --rm-color-neutral-on-base:        var(--rm-color-white);
+  --rm-color-neutral-on-minus-one:   var(--rm-color-neutral-luminosity-94);
+  --rm-color-neutral-on-minus-two:   var(--rm-color-neutral-luminosity-90);
+  --rm-color-neutral-on-minus-three: var(--rm-color-neutral-luminosity-86);
+  --rm-color-neutral-on-minus-four:  var(--rm-color-neutral-luminosity-84);
+  --rm-color-neutral-on-minus-five:  var(--rm-color-neutral-luminosity-88);
+  --rm-color-neutral-on-minus-six:   var(--rm-color-neutral-luminosity-94);
+  --rm-color-neutral-on-minus-seven: var(--rm-color-neutral-luminosity-96);
+  --rm-color-neutral-on-minus-eight: var(--rm-color-neutral-luminosity-98);
+  --rm-color-neutral-on-minus-max:   var(--rm-color-white);
 }
 
 @mixin background {
