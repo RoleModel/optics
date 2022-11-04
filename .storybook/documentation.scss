@@ -41,3 +41,13 @@
 
 @import './src/recipes/domains-sidebar.scss';
 @import './src/recipes/16six-sidebar.scss';
+
+.background-primary-plus-four {
+  background-color: var(--rm-color-primary-plus-four);
+  color: var(--rm-color-primary-on-plus-four);
+}
+
+.background-primary-plus-seven {
+  background-color: var(--rm-color-primary-plus-seven);
+  color: var(--rm-color-primary-on-plus-seven);
+}
