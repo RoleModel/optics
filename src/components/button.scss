@@ -140,14 +140,14 @@
   }
 
   &.btn--outline {
-    background-color: var(--rm-color-primary-plus-3);
-    color: var(--rm-color-primary-on-plus-3);
-    box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-3);
+    background-color: var(--rm-color-primary-plus-seven);
+    color: var(--rm-color-primary-on-plus-seven);
+    box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-seven);
 
     &:not(:disabled, .btn--disabled):hover {
-      background-color: var(--rm-color-primary-plus-2);
-      color: var(--rm-color-primary-on-plus-2);
-      box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-3);
+      background-color: var(--rm-color-primary-plus-four);
+      color: var(--rm-color-primary-on-plus-four);
+      box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-seven);
     }
   }
 }
@@ -155,14 +155,14 @@
 .btn-secondary {
   @extend %btn-global;
 
-  background-color: var(--rm-color-primary-plus-3);
-  color: var(--rm-color-primary-on-plus-3);
-  box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-3);
+  background-color: var(--rm-color-primary-plus-seven);
+  color: var(--rm-color-primary-on-plus-seven);
+  box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-seven);
 
   &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--rm-color-primary-plus-2);
-    color: var(--rm-color-primary-on-plus-2);
-    box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-3);
+    background-color: var(--rm-color-primary-plus-four);
+    color: var(--rm-color-primary-on-plus-four);
+    box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-seven);
   }
 
   &.btn--no-border {

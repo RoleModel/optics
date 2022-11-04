@@ -7,8 +7,8 @@
 
     .option.active,
     .option:hover {
-      background-color: var(--rm-color-primary-plus-3);
-      color: var(--rm-color-primary-on-plus-3);
+      background-color: var(--rm-color-primary-plus-seven);
+      color: var(--rm-color-primary-on-plus-seven);
     }
   }
 
@@ -61,9 +61,9 @@
   &.multi.input-active {
     .#{$select-ns}-control {
       // primary highlight
-      background-color: var(--rm-color-primary-plus-3);
-      color: var(--rm-color-primary-on-plus-3);
-      border-color: var(--rm-color-primary-minus-1);
+      background-color: var(--rm-color-primary-plus-seven);
+      color: var(--rm-color-primary-on-plus-seven);
+      border-color: var(--rm-color-primary-minus-three);
       outline: none;
     }
   }
@@ -77,8 +77,8 @@
         color: var(--rm-color-primary-on-base);
 
         &.active {
-          background-color: var(--rm-color-primary-minus-1);
-          color: var(--rm-color-primary-on-minus-1);
+          background-color: var(--rm-color-primary-minus-three);
+          color: var(--rm-color-primary-on-minus-three);
         }
       }
     }

@@ -126,13 +126,13 @@
 
     transform: scale(0);
     transition: var(--rm-transition-input) transform ease-in-out;
-    box-shadow: inset 0 var(--rm-space-medium) var(--rm-color-primary-minus-1);
+    box-shadow: inset 0 var(--rm-space-medium) var(--rm-color-primary-minus-three);
 
     clip-path: var(--rm-clippath-form-radio);
   }
 
   &:checked {
-    box-shadow: var(--rm-border-all) var(--rm-color-primary-minus-1);
+    box-shadow: var(--rm-border-all) var(--rm-color-primary-minus-three);
   }
 
   &:checked::before {
