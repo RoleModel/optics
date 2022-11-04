@@ -9,7 +9,7 @@ export const createCard = ({
   const card = document.createElement('div');
 
   const headerHtml = `
-  <div class='card__header background-primary-plus-2'>
+  <div class='card__header background-primary-plus-four'>
     ${header}
   </div>
 `;
@@ -32,7 +32,7 @@ export const createCard = ({
 
   if (footer) {
     card.innerHTML += `
-  <div class='card__footer background-primary-plus-3'>
+  <div class='card__footer background-primary-plus-seven'>
     ${footer}
   </div>
 `;
