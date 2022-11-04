@@ -73,7 +73,7 @@
   --rm-color-primary-on-plus-four:   var(--rm-color-primary-luminosity-24);
   --rm-color-primary-on-plus-three:  var(--rm-color-primary-luminosity-20);
   --rm-color-primary-on-plus-two:    var(--rm-color-primary-luminosity-16);
-  --rm-color-primary-on-plus-one:  hsl(60, 100%, 100%); // Where does the 60 come from?
+  --rm-color-primary-on-plus-one:    var(--rm-color-white);
   --rm-color-primary-on-base:        var(--rm-color-white);
   --rm-color-primary-on-minus-one:   var(--rm-color-primary-luminosity-94);
   --rm-color-primary-on-minus-two:   var(--rm-color-primary-luminosity-90);

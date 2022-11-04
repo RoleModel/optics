@@ -204,14 +204,14 @@
   }
 
   &.btn--outline {
-    background-color: var(--rm-color-alerts-danger-plus-3);
-    color: var(--rm-color-alerts-danger-on-plus-3);
-    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-on-plus-3);
+    background-color: var(--rm-color-alerts-danger-plus-seven);
+    color: var(--rm-color-alerts-danger-on-plus-seven);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-on-plus-seven);
 
     &:not(:disabled, .btn--disabled):hover {
-      background-color: var(--rm-color-alerts-danger-plus-2);
-      color: var(--rm-color-alerts-danger-on-plus-2);
-      box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-on-plus-3);
+      background-color: var(--rm-color-alerts-danger-plus-four);
+      color: var(--rm-color-alerts-danger-on-plus-four);
+      box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-on-plus-seven);
     }
   }
 }
