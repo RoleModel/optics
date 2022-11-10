@@ -1,0 +1,29 @@
+.btn-group {
+  display: inline-flex;
+  align-items: center;
+
+  .btn, .btn-primary, .btn-secondary, .btn-delete {
+    &:first-child:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:not(:first-child, :last-child) {
+      border-radius: 0;
+    }
+
+    &:last-child:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    +.btn, +.btn-primary, +.btn-secondary, +.btn-delete {
+      margin-left: 1px;
+    }
+  }
+}
+
+.btn-group-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+}
