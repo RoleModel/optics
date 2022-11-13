@@ -365,29 +365,6 @@
   margin-left: 0;
 }
 
-// Shadows
-.shadow-x-small { box-shadow: var(--rm-shadow-x-small); }
-.shadow-small { box-shadow: var(--rm-shadow-small); }
-.shadow-medium { box-shadow: var(--rm-shadow-medium); }
-.shadow-large { box-shadow: var(--rm-shadow-large); }
-.shadow-x-large { box-shadow: var(--rm-shadow-x-large); }
-
-.shadow-x-small.card, .shadow-x-small.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-x-small);
-}
-.shadow-small.card, .shadow-small.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-small);
-}
-.shadow-medium.card, .shadow-medium.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-medium);
-}
-.shadow-large.card, .shadow-large.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-large);
-}
-.shadow-x-large.card, .shadow-x-large.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-x-large);
-}
-
 // Layout properties
 // Layout row evenly spaces all elements within it.
 // It also makes it responsive at the sm breakpoint.
