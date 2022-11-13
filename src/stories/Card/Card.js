@@ -4,7 +4,8 @@ export const createCard = ({
   label,
   header = '',
   body = '',
-  footer = ''
+  footer = '',
+  shadow = 'none',
 }) => {
   const card = document.createElement('div');
 
@@ -16,7 +17,8 @@ export const createCard = ({
 
   const coreClass = padded ? 'card-padded' : 'card';
   const condensedClass = condensed ? 'card--condensed' : '';
-  const classes = [coreClass, condensedClass].filter(Boolean).join(' ');
+  const shadowClass = shadow == 'none' ? '' : `card--shadow-${shadow}`;
+  const classes = [coreClass, condensedClass, shadowClass].filter(Boolean).join(' ');
 
   card.className = classes;
 
