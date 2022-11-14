@@ -238,97 +238,6 @@
   text-align: justify;
 }
 
-// Line Height
-// To discuss
-
-// .line-height-none {
-//   line-height: var(--rm-line-height-none);
-// }
-
-// .line-height-densest {
-//   line-height: var(--rm-line-height-densest);
-// }
-
-// .line-height-denser {
-//   line-height: var(--rm-line-height-denser);
-// }
-
-// .line-height-dense {
-//   line-height: var(--rm-line-height-dense);
-// }
-
-// .line-height-base {
-//   line-height: var(--rm-line-height-base);
-// }
-
-// .line-height-loose {
-//   line-height: var(--rm-line-height-loose);
-// }
-
-// .line-height-looser {
-//   line-height: var(--rm-line-height-looser);
-// }
-
-// .line-height-loosest {
-//   line-height: var(--rm-line-height-loosest);
-// }
-
-// Font size
-
-.font-x-small { 
-  font-size: var(--rm-font-x-small); 
-}
-
-.font-small { 
-  font-size: var(--rm-font-small); 
-}
-
-.font-medium { 
-  font-size: var(--rm-font-medium); 
-}
-
-.font-large { 
-  font-size: var(--rm-font-large); 
-}
-
-.font-x-large { 
-  font-size: var(--rm-font-x-large); 
-}
-
-.font-2x-large { 
-  font-size: var(--rm-font-2x-large); 
-}
-
-.font-3x-large { 
-  font-size: var(--rm-font-3x-large); 
-}
-
-.font-4x-large { 
-  font-size: var(--rm-font-4x-large); 
-}
-
-.font-5x-large { 
-  font-size: var(--rm-font-5x-large); 
-}
-
-// Font Weight
-
-.font-light { 
-  font-weight: var(--rm-font-weight-light); 
-}
-
-.font-normal { 
-  font-weight: var(--rm-font-weight-normal); 
-}
-
-.font-semi-bold { 
-  font-weight: var(--rm-font-weight-semi-bold); 
-}
-
-.font-bold { 
-  font-weight: var(--rm-font-weight-bold); 
-}
-
 // Box Margin
 
 .margin-xl {
@@ -527,29 +436,6 @@
   margin-left: 0;
 }
 
-// Shadows
-.shadow-x-small { box-shadow: var(--rm-shadow-x-small); }
-.shadow-small { box-shadow: var(--rm-shadow-small); }
-.shadow-medium { box-shadow: var(--rm-shadow-medium); }
-.shadow-large { box-shadow: var(--rm-shadow-large); }
-.shadow-x-large { box-shadow: var(--rm-shadow-x-large); }
-
-.shadow-x-small.card, .shadow-x-small.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-x-small);
-}
-.shadow-small.card, .shadow-small.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-small);
-}
-.shadow-medium.card, .shadow-medium.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-medium);
-}
-.shadow-large.card, .shadow-large.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-large);
-}
-.shadow-x-large.card, .shadow-x-large.card-padded {
-  box-shadow: var(--rm-border-all) var(--rm-border-color), var(--rm-shadow-x-large);
-}
-
 // Layout properties
 // Layout row evenly spaces all elements within it.
 // It also makes it responsive at the sm breakpoint.
@@ -661,25 +547,3 @@
     }
   }
 }
-
-// Hover
-// To discuss
-
-// .hoverable {
-//   &:hover { cursor: pointer; }
-// }
-
-// .not-hoverable {
-//   &:hover { cursor: default; }
-// }
-
-// Overflow
-// To discuss
-
-// .overflow-hidden { 
-//   overflow: hidden;
-// }
-
-// .overflow-scroll { 
-//   overflow: scroll;
-// }
