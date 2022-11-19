@@ -53,6 +53,14 @@ Checkbox.args = {
   type: 'checkbox'
 };
 
+export const IndeterminateCheckbox = Template.bind({});
+IndeterminateCheckbox.args = {
+  ...LabelStories.Default.args,
+  ...InputStories.Default.args,
+  type: 'checkbox',
+  indeterminate: true,
+};
+
 export const Error = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Error.args = {

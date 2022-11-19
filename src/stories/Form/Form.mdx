@@ -1,4 +1,5 @@
 import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+import LinkTo from '@storybook/addon-links/react';
 
 # Form
 
@@ -102,6 +103,15 @@ They provide consistent and composable styling that should address most applicat
 
 <Canvas withToolbar>
   <Story id='components-form-formgroup--readonly' />
+</Canvas>
+
+## Indeterminate Checkbox
+
+Checkboxes that use the indeterminate psuedo-class with be displayed with a `-` inside the checkmark.
+See [MDN's documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate) for further information.
+
+<Canvas withToolbar>
+  <Story id='components-form-formgroup--indeterminate-checkbox' />
 </Canvas>
 
 ## Playground

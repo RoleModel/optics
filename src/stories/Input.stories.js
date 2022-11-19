@@ -10,6 +10,10 @@ export default {
     },
     readonly: {
       control: { type: 'boolean' }
+    },
+    indeterminate: {
+      control: { type: 'boolean' },
+      if: { arg: 'type', eq: 'checkbox' },
     }
   },
   parameters: {
