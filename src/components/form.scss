@@ -96,85 +96,14 @@
   min-height: var(--rm-input-height-large);
 }
 
-// Radio
-// Inspired by https://moderncss.dev/pure-css-custom-styled-radio-buttons/
-.form__radio {
-  // Reset core styles
-  appearance: none;
-  // For iOS < 15 to remove gradient background
-  background-color: var(--rm-color-neutral-plus-max);
-  // Not removed via appearance
-  margin: 0;
+.form__radio, .form__checkbox {
+  accent-color: var(--rm-color-primary-base);
 
-  display: inline-grid;
-  place-content: center;
-
-  color: var(--rm-color-neutral-on-plus-max);
-  width: var(--rm-space-medium);
-  height: var(--rm-space-medium);
-  box-shadow: var(--rm-border-all) var(--rm-color-neutral-base);
-  border-radius: var(--rm-radius-circle);
-
-  vertical-align: middle;
+  width: var(--rm-space-large);
+  height: var(--rm-space-large);
 
   cursor: pointer;
-
-  &::before {
-    content: '';
-    width: var(--rm-space-medium);
-    height: var(--rm-space-medium);
-
-    transform: scale(0);
-    transition: var(--rm-transition-input) transform ease-in-out;
-    box-shadow: inset 0 var(--rm-space-medium) var(--rm-color-primary-minus-three);
-
-    clip-path: var(--rm-clippath-form-radio);
-  }
-
-  &:checked {
-    box-shadow: var(--rm-border-all) var(--rm-color-primary-minus-three);
-  }
-
-  &:checked::before {
-    transform: scale(1);
-  }
-
-  &:focus {
-    color: var(--rm-color-on-background);
-    outline: 0;
-    box-shadow: var(--rm-border-all) var(--rm-color-on-background);
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-
-    box-shadow: var(--rm-border-all) var(--rm-border-color);
-
-    &::before {
-      box-shadow: inset 0 var(--rm-space-medium) var(--rm-border-color);
-    }
-
-    + label {
-      cursor: not-allowed;
-    }
-  }
-}
-
-// Checkbox
-.form__checkbox {
-  @extend .form__radio;
-
-  border-radius: var(--rm-radius-small);
-
-  &::before {
-    width: var(--rm-space-small);
-    height: var(--rm-space-small);
-    border-radius: var(--rm-radius-small);
-
-    transform-origin: center;
-
-    clip-path: var(--rm-clippath-form-checkmark);
-  }
+  margin: 0;
 }
 
 // simple_form error styles
@@ -213,6 +142,15 @@
 .form__input--error {
   input {
     box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-minus-three);
+  }
+
+  .form__radio, .form__checkbox {
+    box-shadow: none;
+
+    &+label {
+      color: var(--rm-color-alerts-danger-minus-three);
+      font-weight: var(--rm-font-weight-bold);
+    }
   }
 }
 
