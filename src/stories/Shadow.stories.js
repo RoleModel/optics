@@ -1,10 +1,10 @@
-import { createShadow } from './Shadow/Shadow.js';
+import { createCard } from './Card/Card.js';
 import ShadowDocs from './Shadow/Shadow.mdx';
 
 export default {
-  title: 'Utilities/Shadow',
+  title: 'Tokens/Shadow',
   argTypes: {
-    size: {
+    shadow: {
       control: { type: 'select' },
       options: ['x-small', 'small', 'medium', 'large', 'x-large'],
     },
@@ -16,11 +16,36 @@ export default {
   },
 };
 
-const Template = ({ size, ...args }) => {
-  return createShadow({ size, ...args });
+const Template = ({ shadow, ...args }) => {
+  return createCard({ padded: true, shadow, ...args });
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  size: 'medium',
+export const XSmall = Template.bind({});
+XSmall.args = {
+  shadow: 'x-small',
+  label: 'X Small'
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  shadow: 'small',
+  label: 'Small'
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  shadow: 'medium',
+  label: 'Medium'
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  shadow: 'large',
+  label: 'Large'
+};
+
+export const XLarge = Template.bind({});
+XLarge.args = {
+  shadow: 'x-large',
+  label: 'X Large'
 };

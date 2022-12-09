@@ -12,6 +12,10 @@ export default {
     header: { control: 'text' },
     body: { control: 'text' },
     footer: { control: 'text' },
+    shadow: {
+      control: { type: 'select' },
+      options: ['none', 'x-small', 'small', 'medium', 'large', 'x-large'],
+    },
   },
   parameters: {
     docs: {
@@ -52,4 +56,11 @@ Condensed.args = {
   header: 'Condensed',
   body: 'Body',
   footer: 'Footer',
+};
+
+export const Shadow = Template.bind({});
+Shadow.args = {
+  shadow: 'large',
+  padded: true,
+  label: 'Shadow',
 };
