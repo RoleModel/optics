@@ -98,11 +98,6 @@
   --rm-transition-flash:      5s;
 }
 
-@mixin clip-paths {
-  --rm-clippath-form-radio: circle(40% at 50% 50%);
-  --rm-clippath-form-checkmark: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-}
-
 @mixin encoded-images {
   --rm-form-dropdown-arrow: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=');
 }
@@ -189,9 +184,6 @@ $breakpoint-x-large: 1440px; // medium laptop
 
   // Transitions
   @include transitions;
-
-  // Clip Paths
-  @include clip-paths;
 
   // Encoded Images
   @include encoded-images;

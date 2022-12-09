@@ -20,11 +20,12 @@ const createRadioInput = ({ readonly, id }) => {
   return input;
 }
 
-const createCheckboxInput = ({ readonly, id }) => {
+const createCheckboxInput = ({ readonly, id, indeterminate }) => {
   const input = document.createElement('input');
   input.type = 'checkbox';
   input.id = id;
   input.className = 'form__checkbox';
+  input.indeterminate = indeterminate
 
   if (readonly) {
     input.disabled = true;
@@ -47,9 +48,9 @@ const createColorInput = ({ readonly, id }) => {
   return input;
 }
 
-export const createInput = ({ type, readonly, id = 'random' }) => {
+export const createInput = ({ type, readonly, id = 'random', indeterminate = false }) => {
   if (type === 'radio') { return createRadioInput({ readonly, id }) }
-  if (type === 'checkbox') { return createCheckboxInput({ readonly, id }) }
+  if (type === 'checkbox') { return createCheckboxInput({ readonly, id, indeterminate }) }
   if (type === 'color') { return createColorInput({ readonly, id }) }
 
   const element = readonly ? 'div' : 'input';
@@ -118,7 +119,7 @@ export const createErrorSummary = ({ label }) => {
   return element;
 };
 
-export const createFormGroup = ({ label, type, error, hint, readonly }) => {
+export const createFormGroup = ({ label, type, error, hint, readonly, indeterminate }) => {
   const element = document.createElement('div');
   element.className = 'form__group';
 
@@ -131,7 +132,7 @@ export const createFormGroup = ({ label, type, error, hint, readonly }) => {
   errorElement.innerText = error
 
   if (type == 'checkbox' || type == 'radio') {
-    element.appendChild(createInput({ type, readonly }))
+    element.appendChild(createInput({ type, readonly, indeterminate }))
     element.appendChild(createLabel({ label }))
     if (error) { element.appendChild(errorElement) }
   } else {
