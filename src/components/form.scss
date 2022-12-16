@@ -86,7 +86,8 @@
   min-height: var(--rm-input-height-large);
 }
 
-.form__radio, .form__checkbox {
+.form__radio,
+.form__checkbox {
   width: var(--rm-space-large);
   height: var(--rm-space-large);
   align-self: center;
@@ -138,10 +139,11 @@
     box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-minus-three);
   }
 
-  .form__radio, .form__checkbox {
+  .form__radio,
+  .form__checkbox {
     box-shadow: none;
 
-    &+label {
+    & + label {
       color: var(--rm-color-alerts-danger-minus-three);
       font-weight: var(--rm-font-weight-bold);
     }

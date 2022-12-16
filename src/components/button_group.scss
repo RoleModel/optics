@@ -2,8 +2,14 @@
   display: inline-flex;
   align-items: center;
 
-  .btn, .btn-primary, .btn-secondary, .btn-delete {
-    +.btn, +.btn-primary, +.btn-secondary, +.btn-delete {
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-delete {
+    + .btn,
+    + .btn-primary,
+    + .btn-secondary,
+    + .btn-delete {
       margin-left: 1px;
     }
 

@@ -45,11 +45,11 @@
   }
 
   &.sidebar--drawer.sidebar--responsive {
-    @media(width > $breakpoint-medium) {
+    @media (width > $breakpoint-medium) {
       @include sidebar-domains-drawer-global;
     }
 
-    @media(width <= $breakpoint-medium) {
+    @media (width <= $breakpoint-medium) {
       @include sidebar-domains-rail-global;
     }
   }

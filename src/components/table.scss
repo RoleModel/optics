@@ -29,12 +29,14 @@
     text-transform: uppercase;
   }
 
-  tbody, tfoot {
+  tbody,
+  tfoot {
     background-color: var(--rm-color-background);
     color: var(--rm-color-on-background);
   }
 
-  th, td {
+  th,
+  td {
     padding: var(--__rm-table-cell-padding);
     font-size: var(--rm-font-small);
   }
@@ -48,8 +50,13 @@
   }
 
   // Layout Modifiers
-  &.table--auto-layout { table-layout: auto; }
-  &.table--fixed-layout { table-layout: fixed; }
+  &.table--auto-layout {
+    table-layout: auto;
+  }
+
+  &.table--fixed-layout {
+    table-layout: fixed;
+  }
 
   // Table Density Modifiers
   &.table--default-density {

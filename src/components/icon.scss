@@ -3,7 +3,7 @@
 // from Googles CDN like we do for our other fonts
 // https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts
 
-@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200";
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200';
 
 .material-symbols-outlined,
 .material-symbols {
@@ -13,7 +13,8 @@
   --rm-mso-optical-sizing: 20;
 
   font-size: var(--rm-font-medium);
-  font-variation-settings: 'FILL' var(--rm-mso-fill), 'wght' var(--rm-mso-weight), 'GRAD' var(--rm-mso-grade), 'opsz' var(--rm-mso-optical-sizing);
+  font-variation-settings: 'FILL' var(--rm-mso-fill), 'wght' var(--rm-mso-weight),
+    'GRAD' var(--rm-mso-grade), 'opsz' var(--rm-mso-optical-sizing);
   line-height: var(--rm-line-height-densest);
   vertical-align: middle;
 }
