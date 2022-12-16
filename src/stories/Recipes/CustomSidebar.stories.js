@@ -1,5 +1,5 @@
-import { createCustomSidebar } from './CustomSidebar/CustomSidebar.js';
-import CustomSidebarDocs from './CustomSidebar/CustomSidebar.mdx';
+import { createCustomSidebar } from './CustomSidebar/CustomSidebar.js'
+import CustomSidebarDocs from './CustomSidebar/CustomSidebar.mdx'
 
 export default {
   title: 'Recipes/Custom Sidebar',
@@ -15,23 +15,23 @@ export default {
   },
   parameters: {
     docs: {
-      page: CustomSidebarDocs
+      page: CustomSidebarDocs,
     },
   },
-};
+}
 
 const Template = ({ ...args }) => {
-  return createCustomSidebar({ ...args });
-};
+  return createCustomSidebar({ ...args })
+}
 
-export const Domains = Template.bind({});
+export const Domains = Template.bind({})
 Domains.args = {
   example: 'domains',
   style: 'drawer',
-};
+}
 
-export const SixteenSix = Template.bind({});
+export const SixteenSix = Template.bind({})
 SixteenSix.args = {
   example: '16six',
   style: 'drawer',
-};
+}

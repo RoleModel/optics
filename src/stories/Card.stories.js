@@ -1,5 +1,5 @@
-import { createCard } from './Card/Card.js';
-import CardDocs from './Card/Card.mdx';
+import { createCard } from './Card/Card.js'
+import CardDocs from './Card/Card.mdx'
 
 // More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
@@ -19,48 +19,48 @@ export default {
   },
   parameters: {
     docs: {
-      page: CardDocs
+      page: CardDocs,
     },
   },
-};
+}
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template = ({ label, ...args }) => {
   // You can either use a function to create DOM elements or use a plain html string!
   // return `<div>${label}</div>`;
-  return createCard({ label, ...args });
-};
+  return createCard({ label, ...args })
+}
 
-export const Plain = Template.bind({});
+export const Plain = Template.bind({})
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Plain.args = {
   label: 'Plain',
-};
+}
 
-export const Padded = Template.bind({});
+export const Padded = Template.bind({})
 Padded.args = {
   padded: true,
   label: 'Padded',
-};
+}
 
-export const Full = Template.bind({});
+export const Full = Template.bind({})
 Full.args = {
   header: 'Full',
   body: 'Body',
   footer: 'Footer',
-};
+}
 
-export const Condensed = Template.bind({});
+export const Condensed = Template.bind({})
 Condensed.args = {
   condensed: true,
   header: 'Condensed',
   body: 'Body',
   footer: 'Footer',
-};
+}
 
-export const Shadow = Template.bind({});
+export const Shadow = Template.bind({})
 Shadow.args = {
   shadow: 'large',
   padded: true,
   label: 'Shadow',
-};
+}

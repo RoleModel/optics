@@ -1,6 +1,5 @@
-import { createTable } from './Table/Table.js';
-import TableDocs from './Table/Table.mdx';
-
+import { createTable } from './Table/Table.js'
+import TableDocs from './Table/Table.mdx'
 
 export default {
   title: 'Components/Table',
@@ -27,72 +26,73 @@ export default {
     },
     height: {
       control: 'boolean',
-      description: 'This is not a class. It just provides a fixed height to demonstrate the sticky classes'
+      description:
+        'This is not a class. It just provides a fixed height to demonstrate the sticky classes',
     },
   },
   parameters: {
     docs: {
-      page: TableDocs
+      page: TableDocs,
     },
   },
-};
+}
 
 const Template = ({ ...args }) => {
-  return createTable({ ...args });
-};
+  return createTable({ ...args })
+}
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default = Template.bind({})
+Default.args = {}
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 Primary.args = {
   style: 'primary',
-};
+}
 
-export const Danger = Template.bind({});
+export const Danger = Template.bind({})
 Danger.args = {
   style: 'danger',
-};
+}
 
-export const FixedLayout = Template.bind({});
+export const FixedLayout = Template.bind({})
 FixedLayout.args = {
   layout: 'fixed',
-};
+}
 
-export const ComfortableDensity = Template.bind({});
+export const ComfortableDensity = Template.bind({})
 ComfortableDensity.args = {
   density: 'comfortable',
-};
+}
 
-export const CompactDensity = Template.bind({});
+export const CompactDensity = Template.bind({})
 CompactDensity.args = {
   density: 'compact',
-};
+}
 
-export const StripedEven = Template.bind({});
+export const StripedEven = Template.bind({})
 StripedEven.args = {
   striped: 'even',
-};
+}
 
-export const StripedOdd = Template.bind({});
+export const StripedOdd = Template.bind({})
 StripedOdd.args = {
   striped: 'odd',
-};
+}
 
-export const StickyHeader = Template.bind({});
+export const StickyHeader = Template.bind({})
 StickyHeader.args = {
   sticky: 'header',
   height: true,
-};
+}
 
-export const StickyFooter = Template.bind({});
+export const StickyFooter = Template.bind({})
 StickyFooter.args = {
   sticky: 'footer',
   height: true,
-};
+}
 
-export const StickyBoth = Template.bind({});
+export const StickyBoth = Template.bind({})
 StickyBoth.args = {
   sticky: 'both',
   height: true,
-};
+}

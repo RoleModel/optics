@@ -1,60 +1,66 @@
 export const createLabel = ({ label, htmlFor = 'random' }) => {
-  const labelElement = document.createElement('label');
-  labelElement.innerText = label;
-  labelElement.className = 'form__label';
-  labelElement.htmlFor = htmlFor;
+  const labelElement = document.createElement('label')
+  labelElement.innerText = label
+  labelElement.className = 'form__label'
+  labelElement.htmlFor = htmlFor
 
-  return labelElement;
-};
+  return labelElement
+}
 
 const createRadioInput = ({ readonly, id }) => {
-  const input = document.createElement('input');
-  input.type = 'radio';
-  input.id = id;
-  input.className = 'form__radio';
+  const input = document.createElement('input')
+  input.type = 'radio'
+  input.id = id
+  input.className = 'form__radio'
 
   if (readonly) {
-    input.disabled = true;
+    input.disabled = true
   }
 
-  return input;
+  return input
 }
 
 const createCheckboxInput = ({ readonly, id, indeterminate }) => {
-  const input = document.createElement('input');
-  input.type = 'checkbox';
-  input.id = id;
-  input.className = 'form__checkbox';
+  const input = document.createElement('input')
+  input.type = 'checkbox'
+  input.id = id
+  input.className = 'form__checkbox'
   input.indeterminate = indeterminate
 
   if (readonly) {
-    input.disabled = true;
+    input.disabled = true
   }
 
-  return input;
+  return input
 }
 
 const createColorInput = ({ readonly, id }) => {
-  const element = readonly ? 'div' : 'input';
-  const input = document.createElement(element);
-  input.type = 'color';
-  input.id = id;
-  input.className = 'form__color';
+  const element = readonly ? 'div' : 'input'
+  const input = document.createElement(element)
+  input.type = 'color'
+  input.id = id
+  input.className = 'form__color'
 
   if (readonly) {
-    input.className += ' form__color--read-only';
+    input.className += ' form__color--read-only'
   }
 
-  return input;
+  return input
 }
 
 export const createInput = ({ type, readonly, id = 'random', indeterminate = false }) => {
-  if (type === 'radio') { return createRadioInput({ readonly, id }) }
-  if (type === 'checkbox') { return createCheckboxInput({ readonly, id, indeterminate }) }
-  if (type === 'color') { return createColorInput({ readonly, id }) }
+  if (type === 'radio') {
+    return createRadioInput({ readonly, id })
+  }
+  if (type === 'checkbox') {
+    return createCheckboxInput({ readonly, id, indeterminate })
+  }
+  if (type === 'color') {
+    return createColorInput({ readonly, id })
+  }
 
-  const element = readonly ? 'div' : 'input';
-  const input = document.createElement(element);
+  const element = readonly ? 'div' : 'input'
+  const input = document.createElement(element)
   input.type = type
   input.placeholder = type
   input.id = id
@@ -66,12 +72,12 @@ export const createInput = ({ type, readonly, id = 'random', indeterminate = fal
     input.innerHTML = type
   }
 
-  return input;
-};
+  return input
+}
 
 export const createTextarea = ({ readonly }) => {
-  const element = readonly ? 'div' : 'textarea';
-  const input = document.createElement(element);
+  const element = readonly ? 'div' : 'textarea'
+  const input = document.createElement(element)
   input.placeholder = 'Textarea'
   input.className = 'form__textarea'
 
@@ -80,33 +86,33 @@ export const createTextarea = ({ readonly }) => {
     input.innerHTML = 'Textarea'
   }
 
-  return input;
-};
+  return input
+}
 
 export const createSelect = ({ options, readonly }) => {
-  const element = readonly ? 'div' : 'select';
-  const input = document.createElement(element);
-  input.className = 'form__dropdown';
+  const element = readonly ? 'div' : 'select'
+  const input = document.createElement(element)
+  input.className = 'form__dropdown'
 
   if (readonly) {
     input.className += ' form__dropdown--read-only'
     input.innerHTML = 'Option 1'
   } else {
     const optionStrings = Array.from(Array(options)).map((_, i) => {
-      return `<option>Option ${i + 1}</option>`;
-    });
+      return `<option>Option ${i + 1}</option>`
+    })
 
     input.innerHTML = `
-    ${optionStrings.join("\n  ")}
-  `;
+    ${optionStrings.join('\n  ')}
+  `
   }
 
-  return input;
-};
+  return input
+}
 
 export const createErrorSummary = ({ label }) => {
-  const element = document.createElement('div');
-  element.className = 'form__error-summary';
+  const element = document.createElement('div')
+  element.className = 'form__error-summary'
 
   element.innerHTML = `
   <h2>${label}</h2>
@@ -114,39 +120,43 @@ export const createErrorSummary = ({ label }) => {
     <li>Tags rank is not a number</li>
     <li>Title can't be blank</li>
   </ul>
-`;
+`
 
-  return element;
-};
+  return element
+}
 
 export const createFormGroup = ({ label, type, error, hint, readonly, indeterminate }) => {
-  const element = document.createElement('div');
-  element.className = 'form__group';
+  const element = document.createElement('div')
+  element.className = 'form__group'
 
   if (error) {
-    element.className += ' form__input--error';
+    element.className += ' form__input--error'
   }
 
-  const errorElement = document.createElement('span');
+  const errorElement = document.createElement('span')
   errorElement.className = 'form__error'
   errorElement.innerText = error
 
   if (type == 'checkbox' || type == 'radio') {
     element.appendChild(createInput({ type, readonly, indeterminate }))
     element.appendChild(createLabel({ label }))
-    if (error) { element.appendChild(errorElement) }
+    if (error) {
+      element.appendChild(errorElement)
+    }
   } else {
     element.appendChild(createLabel({ label }))
     element.appendChild(createInput({ type, readonly }))
-    if (error) { element.appendChild(errorElement) }
+    if (error) {
+      element.appendChild(errorElement)
+    }
   }
 
   if (hint) {
-    const hintElement = document.createElement('div');
+    const hintElement = document.createElement('div')
     hintElement.className = 'form__hint'
     hintElement.innerText = hint
     element.appendChild(hintElement)
   }
 
-  return element;
+  return element
 }

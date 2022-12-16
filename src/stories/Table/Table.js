@@ -9,11 +9,15 @@ export const createTable = ({
   const tableContainer = document.createElement('div')
   tableContainer.className = 'table-container'
 
-  const table = document.createElement('table');
+  const table = document.createElement('table')
 
   let stickyClass = ''
-  if (sticky !== 'off') { stickyClass = `table--sticky-${sticky}` }
-  if (sticky === 'both') { stickyClass = 'table--sticky-header table--sticky-footer' }
+  if (sticky !== 'off') {
+    stickyClass = `table--sticky-${sticky}`
+  }
+  if (sticky === 'both') {
+    stickyClass = 'table--sticky-header table--sticky-footer'
+  }
 
   table.className = [
     style === 'default' ? 'table' : `table-${style}`,
@@ -21,7 +25,9 @@ export const createTable = ({
     `table--${density}-density`,
     striped === 'off' ? '' : `table--${striped}-striped`,
     stickyClass,
-  ].filter(Boolean).join(' ')
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   table.innerHTML += `
   <thead>
@@ -100,8 +106,8 @@ export const createTable = ({
     tableContainer.style.height = '20vh'
     tableContainer.appendChild(table)
 
-    return tableContainer;
+    return tableContainer
   }
 
-  return table;
-};
+  return table
+}

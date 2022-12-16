@@ -11,15 +11,15 @@ Why were the changes needed? What issues were the changes addressing?
 
 What changed in this PR?
 
-* [ ] Change 1
-* [ ] Change 2
-* [ ] ...
+- [ ] Change 1
+- [ ] Change 2
+- [ ] ...
 
 ## Sanity Check
 
-* [ ] Have you updated any usage of changed tokens?
-* [ ] Have you updated the docs with any component changes?
-* [ ] Do you need to update the package version?
+- [ ] Have you updated any usage of changed tokens?
+- [ ] Have you updated the docs with any component changes?
+- [ ] Do you need to update the package version?
 
 ## Screenshots
 

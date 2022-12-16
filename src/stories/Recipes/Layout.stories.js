@@ -1,5 +1,5 @@
-import { createLayout } from './Layout/Layout.js';
-import LayoutDocs from './Layout/Layout.mdx';
+import { createLayout } from './Layout/Layout.js'
+import LayoutDocs from './Layout/Layout.mdx'
 
 export default {
   title: 'Recipes/Layout',
@@ -10,31 +10,31 @@ export default {
     },
     rightSidebar: {
       control: { type: 'boolean' },
-    }
+    },
   },
   parameters: {
     docs: {
-      page: LayoutDocs
+      page: LayoutDocs,
     },
   },
-};
+}
 
 const Template = ({ ...args }) => {
-  return createLayout({ ...args });
-};
+  return createLayout({ ...args })
+}
 
-export const Basic = Template.bind({});
+export const Basic = Template.bind({})
 Basic.args = {
-  style: 'basic'
-};
+  style: 'basic',
+}
 
-export const Sidebar = Template.bind({});
+export const Sidebar = Template.bind({})
 Sidebar.args = {
-  style: 'sidebar'
-};
+  style: 'sidebar',
+}
 
-export const SidebarAndRight = Template.bind({});
+export const SidebarAndRight = Template.bind({})
 SidebarAndRight.args = {
   style: 'sidebar',
   rightSidebar: true,
-};
+}

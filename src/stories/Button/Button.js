@@ -6,11 +6,11 @@ export const createButton = ({
   pill = false,
   icon = false,
   size = 'medium',
-  disabled = false
+  disabled = false,
 }) => {
   const element = disabled ? 'a' : 'button'
-  const btn = document.createElement(element);
-  btn.innerText = label;
+  const btn = document.createElement(element)
+  btn.innerText = label
 
   btn.className = [
     priority === 'default' ? 'btn' : `btn-${priority}`,
@@ -20,7 +20,9 @@ export const createButton = ({
     icon ? 'btn--icon' : '',
     size === 'medium' ? '' : `btn--${size}`,
     disabled ? 'btn--disabled' : '',
-  ].filter(Boolean).join(' ');
+  ]
+    .filter(Boolean)
+    .join(' ')
 
-  return btn;
-};
+  return btn
+}

@@ -27,16 +27,18 @@ export const createSidebar = ({
 }) => {
   const element = 'div'
 
-  const body = document.createElement(element);
+  const body = document.createElement(element)
 
   body.className = 'app-wrapper'
   body.style.height = '80rem'
 
-  const brandSection = brand ? `
+  const brandSection = brand
+    ? `
     <a class="sidebar__brand" href="/">
       <img src="https://rolemodelsoftware.com/assets/rolemodel-logo--blue-5b7cee4303f5b115050586117bad8960640884812d1d51ee4b58817598c896da.svg">
     </a>
-  ` : ''
+  `
+    : ''
 
   const links = [
     { type: 'title', label: 'Mail' },
@@ -55,23 +57,29 @@ export const createSidebar = ({
   ]
 
   body.innerHTML += `
-  <div class="${style === 'default' ? 'sidebar' : `sidebar-${style}`} sidebar--${size} ${responsive ? 'sidebar--responsive' : ''}">
+  <div class="${style === 'default' ? 'sidebar' : `sidebar-${style}`} sidebar--${size} ${
+    responsive ? 'sidebar--responsive' : ''
+  }">
     ${brandSection}
     <div class="sidebar__content sidebar__content--${position}">
-      ${links.map(item => createSidebarItem(item, activeLink)).join('') }
+      ${links.map((item) => createSidebarItem(item, activeLink)).join('')}
     </div>
 
-    ${logout ? `
+    ${
+      logout
+        ? `
       <div class="sidebar__content sidebar__content--end">
         <a class="sidebar__item" href="/">
           <span class="material-symbols-outlined sidebar__item-icon" title="logout">logout</span>
           <div class='sidebar__item-label'>Logout</div>
         </a>
       </div>
-    ` : ''}
+    `
+        : ''
+    }
   </div>
   ${trailingDiv ? '<div></div>' : ''}
 `
 
-  return body;
-};
+  return body
+}

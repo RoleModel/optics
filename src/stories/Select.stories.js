@@ -1,5 +1,5 @@
-import { createSelect } from './Form/Form.js';
-import FormDocs from './Form/Form.mdx';
+import { createSelect } from './Form/Form.js'
+import FormDocs from './Form/Form.mdx'
 
 export default {
   title: 'Components/Form/Select',
@@ -8,25 +8,25 @@ export default {
       control: {
         type: 'number',
         min: 1,
-        max: 5
-      }
+        max: 5,
+      },
     },
     readonly: {
-      control: { type: 'boolean' }
-    }
+      control: { type: 'boolean' },
+    },
   },
   parameters: {
     docs: {
-      page: FormDocs
+      page: FormDocs,
     },
   },
-};
+}
 
 const Template = ({ options, ...args }) => {
-  return createSelect({ options, ...args });
-};
+  return createSelect({ options, ...args })
+}
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   options: 1,
-};
+}

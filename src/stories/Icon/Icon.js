@@ -14,7 +14,9 @@ export const createIcon = ({
     `icon--${size}`,
     `icon--weight-${weight}`,
     `icon--${emphasis}-emphasis`,
-  ].filter(Boolean).join(' ');
+  ]
+    .filter(Boolean)
+    .join(' ')
 
-  return icon;
-};
+  return icon
+}

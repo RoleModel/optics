@@ -1,5 +1,5 @@
-import { createSidebar } from './Sidebar/Sidebar.js';
-import SidebarDocs from './Sidebar/Sidebar.mdx';
+import { createSidebar } from './Sidebar/Sidebar.js'
+import SidebarDocs from './Sidebar/Sidebar.mdx'
 
 export default {
   title: 'Components/Sidebar',
@@ -20,122 +20,131 @@ export default {
     },
     activeLink: {
       control: { type: 'select' },
-      options: ['Inbox', 'Outbox', 'Favorite', 'Trash', 'Circle', 'Triangle', 'Square', 'A really long label that will overlap'],
+      options: [
+        'Inbox',
+        'Outbox',
+        'Favorite',
+        'Trash',
+        'Circle',
+        'Triangle',
+        'Square',
+        'A really long label that will overlap',
+      ],
     },
   },
   parameters: {
     docs: {
-      page: SidebarDocs
+      page: SidebarDocs,
     },
   },
-};
+}
 
 const Template = ({ ...args }) => {
-  return createSidebar({ ...args });
-};
+  return createSidebar({ ...args })
+}
 
-export const DefaultDrawer = Template.bind({});
+export const DefaultDrawer = Template.bind({})
 DefaultDrawer.args = {
   size: 'drawer',
   style: 'default',
-};
+}
 
-export const PrimaryDrawer = Template.bind({});
+export const PrimaryDrawer = Template.bind({})
 PrimaryDrawer.args = {
   size: 'drawer',
   style: 'primary',
-};
+}
 
-export const SubtlePrimaryDrawer = Template.bind({});
+export const SubtlePrimaryDrawer = Template.bind({})
 SubtlePrimaryDrawer.args = {
   size: 'drawer',
   style: 'subtle-primary',
-};
+}
 
-export const NoBrandDrawer = Template.bind({});
+export const NoBrandDrawer = Template.bind({})
 NoBrandDrawer.args = {
   size: 'drawer',
   style: 'default',
   brand: false,
-};
+}
 
-export const CenteredDrawer = Template.bind({});
+export const CenteredDrawer = Template.bind({})
 CenteredDrawer.args = {
   size: 'drawer',
   style: 'default',
   position: 'center',
-};
+}
 
-export const EndDrawer = Template.bind({});
+export const EndDrawer = Template.bind({})
 EndDrawer.args = {
   size: 'drawer',
   style: 'default',
   position: 'end',
-};
+}
 
-export const LogoutDrawer = Template.bind({});
+export const LogoutDrawer = Template.bind({})
 LogoutDrawer.args = {
   size: 'drawer',
   style: 'default',
   logout: true,
-};
+}
 
-export const AlternateActiveDrawer = Template.bind({});
+export const AlternateActiveDrawer = Template.bind({})
 AlternateActiveDrawer.args = {
   size: 'drawer',
   style: 'default',
   activeLink: 'Components',
-};
+}
 
-export const DefaultRail = Template.bind({});
+export const DefaultRail = Template.bind({})
 DefaultRail.args = {
   size: 'rail',
   style: 'default',
-};
+}
 
-export const PrimaryRail = Template.bind({});
+export const PrimaryRail = Template.bind({})
 PrimaryRail.args = {
   size: 'rail',
   style: 'primary',
-};
+}
 
-export const SubtlePrimaryRail = Template.bind({});
+export const SubtlePrimaryRail = Template.bind({})
 SubtlePrimaryRail.args = {
   size: 'rail',
   style: 'subtle-primary',
-};
+}
 
-export const NoBrandRail = Template.bind({});
+export const NoBrandRail = Template.bind({})
 NoBrandRail.args = {
   size: 'rail',
   style: 'default',
   brand: false,
-};
+}
 
-export const CenteredRail = Template.bind({});
+export const CenteredRail = Template.bind({})
 CenteredRail.args = {
   size: 'rail',
   style: 'default',
   position: 'center',
-};
+}
 
-export const EndRail = Template.bind({});
+export const EndRail = Template.bind({})
 EndRail.args = {
   size: 'rail',
   style: 'default',
   position: 'end',
-};
+}
 
-export const LogoutRail = Template.bind({});
+export const LogoutRail = Template.bind({})
 LogoutRail.args = {
   size: 'rail',
   style: 'default',
   logout: true,
-};
+}
 
-export const AlternateActiveRail = Template.bind({});
+export const AlternateActiveRail = Template.bind({})
 AlternateActiveRail.args = {
   size: 'rail',
   style: 'default',
   activeLink: 'Components',
-};
+}
