@@ -9,8 +9,8 @@ on:
     branches: ['main']
 
 jobs:
-  install:
-    name: Install Dependencies
+  build:
+    name: Run linters and check build scripts
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -22,22 +22,12 @@ jobs:
           cache: 'npm'
       - name: Install
         run: npm install
-  lint:
-    name: Run Linters
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
       - name: Run ESLint
         run: npm run lint:js
       - name: Run Stylelint
         run: npm run lint:css
       - name: Run Prettier
         run: npm run prettier-check
-  build:
-    name: Run Build scripts
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
       - name: Build CSS
         run: npm run build:css
       - name: Build SCSS
