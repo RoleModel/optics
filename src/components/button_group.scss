@@ -12,13 +12,13 @@
     }
 
     &:first-child:not(:last-child) {
-      border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
     }
 
     &:last-child:not(:first-child) {
-      border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
     }
   }
 }

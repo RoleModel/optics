@@ -12,16 +12,16 @@
   }
 
   .#{$select-ns}-control {
+    min-height: var(--rm-input-height-medium);
     background: var(--rm-color-background);
     color: var(--rm-color-on-background);
-    min-height: var(--rm-input-height-medium);
   }
 
   &.multi,
   &.single {
     &.has-items .#{$select-ns}-control {
-      padding-left: var(--rm-space-2x-small);
       padding-right: var(--rm-space-2x-small);
+      padding-left: var(--rm-space-2x-small);
     }
 
     .#{$select-ns}-control {
@@ -58,10 +58,11 @@
   &.single.input-active,
   &.multi.input-active {
     .#{$select-ns}-control {
+      border-color: var(--rm-color-primary-minus-three);
+
       // primary highlight
       background-color: var(--rm-color-primary-plus-seven);
       color: var(--rm-color-primary-on-plus-seven);
-      border-color: var(--rm-color-primary-minus-three);
       outline: none;
     }
   }

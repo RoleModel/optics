@@ -17,8 +17,8 @@
     gap: var(--rm-space-2x-small);
 
     .sidebar__item-icon {
-      transition: var(--_rm-sidebar-transition);
       padding: var(--rm-space-2x-small) var(--rm-space-medium);
+      transition: var(--_rm-sidebar-transition);
     }
 
     &:hover .sidebar__item-icon {
@@ -44,14 +44,14 @@
   }
 
   .sidebar__section-title {
+    overflow: hidden;
     height: var(--rm-input-height-large);
     padding: var(--rm-space-small) var(--rm-space-medium);
-    font-weight: var(--rm-font-weight-bold);
-    font-size: var(--rm-font-small);
     color: var(--_rm-sidebar-text-color);
-    white-space: nowrap;
-    overflow: hidden;
+    font-size: var(--rm-font-small);
+    font-weight: var(--rm-font-weight-bold);
     text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .sidebar__section-divider {
@@ -60,10 +60,10 @@
   }
 
   .sidebar__item {
-    flex-direction: row;
     height: var(--rm-input-height-large);
-    border-radius: var(--rm-radius-pill);
+    flex-direction: row;
     padding: var(--rm-space-x-small) var(--rm-space-medium);
+    border-radius: var(--rm-radius-pill);
     gap: var(--_rm-sidebar-link-spacing);
 
     &:hover,
@@ -116,12 +116,12 @@
   --__rm-sidebar-width: var(--_rm-sidebar-drawer-width);
 
   display: flex;
-  flex-direction: column;
-  gap: var(--_rm-sidebar-spacing);
-  padding: var(--_rm-sidebar-spacing) 0;
   width: var(--__rm-sidebar-width);
+  flex-direction: column;
+  padding: var(--_rm-sidebar-spacing) 0;
   background-color: var(--_rm-sidebar-background-color);
   color: var(--_rm-sidebar-text-color);
+  gap: var(--_rm-sidebar-spacing);
   overflow-y: auto;
   transition: var(--_rm-sidebar-transition);
 
@@ -132,9 +132,9 @@
   }
 
   .sidebar__content {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 
     &.sidebar__content--start { justify-content: start; }
     &.sidebar__content--center { justify-content: center; }
@@ -142,10 +142,10 @@
   }
 
   .sidebar__item {
-    cursor: pointer;
     display: flex;
     align-items: center;
     color: var(--_rm-sidebar-text-color);
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
 
@@ -178,13 +178,13 @@
     }
 
     .sidebar__item-label {
+      overflow: hidden;
+      max-width: 90%;
       font-weight: var(--rm-font-weight-medium);
       letter-spacing: var(--rm-letter-spacing-navigation);
       line-height: var(--rm-line-height-dense);
-      max-width: 90%;
-      white-space: nowrap;
-      overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 

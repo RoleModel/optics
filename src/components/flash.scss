@@ -3,22 +3,22 @@
   z-index: var(--rm-z-index-alert-group);
   top: var(--rm-space-large);
   right: var(--rm-space-large);
-  grid-auto-flow: column;
-  justify-content: center;
-  align-items: center;
-  gap: var(--rm-space-small);
   display: inline-grid;
-  animation: rm-slide-in-out-flash var(--rm-transition-flash) normal forwards;
-  box-shadow: var(--rm-shadow-x-small);
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  padding: var(--rm-space-x-small) var(--rm-space-medium);
+  border-color: var(--rm-color-on-background);
+  border-radius: var(--rm-radius-small);
   border-left-width: var(--rm-border-width-x-large);
   border-left-style: solid;
-  border-color: var(--rm-color-on-background);
-  width: auto;
-  padding: var(--rm-space-x-small) var(--rm-space-medium);
-  font-size: var(--rm-font-small);
-  border-radius: var(--rm-radius-small);
+  animation: rm-slide-in-out-flash var(--rm-transition-flash) normal forwards;
   background: var(--rm-color-background);
+  box-shadow: var(--rm-shadow-x-small);
   color: var(--rm-color-on-background);
+  font-size: var(--rm-font-small);
+  gap: var(--rm-space-small);
+  grid-auto-flow: column;
 
   // Modifiers
   &.flash--notice {
@@ -43,13 +43,13 @@
 
   // Elements
   .flash__message-type {
-    font-weight: bold;
     color: var(--rm-color-on-background);
+    font-weight: bold;
   }
 
   .flash__message {
-    font-size: var(--rm-font-x-small);
     color: var(--rm-color-on-background);
+    font-size: var(--rm-font-x-small);
   }
 }
 

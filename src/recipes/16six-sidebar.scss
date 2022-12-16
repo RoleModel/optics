@@ -40,9 +40,9 @@
 
   .sidebar__brand {
     display: flex;
+    color: inherit;
     gap: var(--rm-space-small);
     text-decoration: none;
-    color: inherit;
 
     svg {
       width: var(--rm-space-3x-large);

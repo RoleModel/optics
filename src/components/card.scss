@@ -1,12 +1,12 @@
 %card-global {
   position: relative;
-  box-shadow: var(--rm-border-all) var(--rm-border-color);
   border-radius: var(--rm-radius-medium);
+  background-color: var(--rm-color-background);
+  box-shadow: var(--rm-border-all) var(--rm-border-color);
+  color: var(--rm-color-on-background);
+  contain: paint;
   font-size: var(--rm-font-medium);
   line-height: var(--rm-line-height-base);
-  contain: paint;
-  background-color: var(--rm-color-background);
-  color: var(--rm-color-on-background);
 
   // Modifiers
   &.card--condensed {

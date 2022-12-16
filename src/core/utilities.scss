@@ -1,10 +1,10 @@
 // Container Properties
 
 .container {
-  max-width: $breakpoint-medium;
-  margin: 0 auto;
-  padding: 0 var(--rm-space-large);
   width: 100%;
+  max-width: $breakpoint-medium;
+  padding: 0 var(--rm-space-large);
+  margin: 0 auto;
 }
 
 .container--sm {
@@ -477,8 +477,8 @@
       flex-direction: column;
 
       & > * {
-        flex-basis: 100%;
         width: 100%;
+        flex-basis: 100%;
       }
     }
   }
