@@ -10,7 +10,10 @@
     "build:scss": "rsync -a src/ dist/scss --exclude stories",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build"
+    "build-storybook": "build-storybook -o docs-build",
+    "eslint": "eslint 'src/stories/**/*.js'",
+    "prettier": "prettier -w .",
+    "check_prettier": "prettier -c ."
   },
   "repository": {
     "type": "git",
@@ -52,6 +55,13 @@
     "@storybook/theming": "^6.5.9",
     "babel-loader": "^8.2.5",
     "css-loader": "^5.2.7",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^2.8.1",
     "sass": "^1.53.0",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0"
