@@ -11,10 +11,12 @@
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build",
-    "eslint": "eslint 'src/stories/**/*.js'",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint-fix": "npm run lint:js --fix && npm run lint:css --fix",
+    "lint:js": "eslint 'src/stories/**/*.js'",
+    "lint:css": "stylelint 'src/**/*.(scss|css)'",
     "prettier": "prettier -w .",
-    "check_prettier": "prettier -c .",
-    "stylelint": "stylelint 'src/**/*.scss'"
+    "prettier-check": "prettier -c ."
   },
   "repository": {
     "type": "git",
