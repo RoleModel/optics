@@ -1,4 +1,4 @@
-import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
 
 # Custom Sidebar
 
@@ -54,11 +54,11 @@ Your app may want to customize the sidebar to change the look and feel. Here are
   }
 
   &.sidebar--drawer.sidebar--responsive {
-    @media(width > $breakpoint-medium) {
+    @media (width > $breakpoint-medium) {
       @include sidebar-domains-drawer-global;
     }
 
-    @media(width <= $breakpoint-medium) {
+    @media (width <= $breakpoint-medium) {
       @include sidebar-domains-rail-global;
     }
   }
@@ -70,7 +70,7 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 ```
 
 <Canvas withToolbar>
-  <Story id='recipes-custom-sidebar--domains' />
+  <Story id="recipes-custom-sidebar--domains" />
 </Canvas>
 
 ## Performance Management Software Example
@@ -161,11 +161,11 @@ Your app may want to customize the sidebar to change the look and feel. Here are
   }
 
   &.sidebar--drawer.sidebar--responsive {
-    @media(width > $breakpoint-medium) {
+    @media (width > $breakpoint-medium) {
       @include sidebar-16six-drawer-global;
     }
 
-    @media(width <=$breakpoint-medium) {
+    @media (width <=$breakpoint-medium) {
       @include sidebar-16six-rail-global;
     }
   }
@@ -177,10 +177,10 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 ```
 
 <Canvas withToolbar>
-  <Story id='recipes-custom-sidebar--sixteen-six' />
+  <Story id="recipes-custom-sidebar--sixteen-six" />
 </Canvas>
 
 ## Playground
 
-<Primary/>
-<ArgsTable of='.' story='^'/>
+<Primary />
+<ArgsTable of="." story="^" />

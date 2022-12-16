@@ -1,5 +1,5 @@
-import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
-import LinkTo from '@storybook/addon-links/react';
+import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
 
 # Sidebar
 
@@ -14,9 +14,7 @@ For instructions on how to integrate a sidebar into your applications layout, se
 `.sidebar--responsive` can be added to a drawer to allow for a responsive sidebar. e.g.
 
 ```html
-<div class='sidebar sidebar--drawer sidebar--responsive'>
-  ...
-</div>
+<div class="sidebar sidebar--drawer sidebar--responsive">...</div>
 ```
 
 ## Default
@@ -37,12 +35,12 @@ For instructions on how to integrate a sidebar into your applications layout, se
 
 `.sidebar-primary` Provides a primary colored sidebar. This uses the primary color defined in your theme.
 
-<div class='flex layout-row gap-sm'>
+<div class="flex layout-row gap-sm">
   <Canvas withToolbar>
-    <Story id='components-sidebar--primary-drawer' />
+    <Story id="components-sidebar--primary-drawer" />
   </Canvas>
   <Canvas withToolbar>
-    <Story id='components-sidebar--primary-rail' />
+    <Story id="components-sidebar--primary-rail" />
   </Canvas>
 </div>
 
@@ -50,12 +48,12 @@ For instructions on how to integrate a sidebar into your applications layout, se
 
 `.sidebar-subtle-primary` Provides a more subtle version of the primary colored sidebar
 
-<div class='flex layout-row gap-sm'>
+<div class="flex layout-row gap-sm">
   <Canvas withToolbar>
-    <Story id='components-sidebar--subtle-primary-drawer' />
+    <Story id="components-sidebar--subtle-primary-drawer" />
   </Canvas>
   <Canvas withToolbar>
-    <Story id='components-sidebar--subtle-primary-rail' />
+    <Story id="components-sidebar--subtle-primary-rail" />
   </Canvas>
 </div>
 
@@ -65,12 +63,12 @@ For instructions on how to integrate a sidebar into your applications layout, se
 
 The brand is not required and the rail will adjust itself accordingly.
 
-<div class='flex layout-row gap-sm'>
+<div class="flex layout-row gap-sm">
   <Canvas withToolbar>
-    <Story id='components-sidebar--no-brand-drawer' />
+    <Story id="components-sidebar--no-brand-drawer" />
   </Canvas>
   <Canvas withToolbar>
-    <Story id='components-sidebar--no-brand-rail' />
+    <Story id="components-sidebar--no-brand-rail" />
   </Canvas>
 </div>
 
@@ -79,30 +77,30 @@ The brand is not required and the rail will adjust itself accordingly.
 `.sidebar__content` defines the container that `.sidebar__item` should be placed in. It can be positioned by using modifier classes.
 `.sidebar__content--start`, `.sidebar__content--center`, `.sidebar__content--end` with start being the default.
 
-<div class='flex layout-row gap-sm'>
+<div class="flex layout-row gap-sm">
   <Canvas withToolbar>
-    <Story id='components-sidebar--centered-drawer' />
+    <Story id="components-sidebar--centered-drawer" />
   </Canvas>
   <Canvas withToolbar>
-    <Story id='components-sidebar--centered-rail' />
-  </Canvas>
-</div>
-
-<div class='flex layout-row gap-sm'>
-  <Canvas withToolbar>
-    <Story id='components-sidebar--end-drawer' />
-  </Canvas>
-  <Canvas withToolbar>
-    <Story id='components-sidebar--end-rail' />
+    <Story id="components-sidebar--centered-rail" />
   </Canvas>
 </div>
 
-<div class='flex layout-row gap-sm'>
+<div class="flex layout-row gap-sm">
   <Canvas withToolbar>
-    <Story id='components-sidebar--logout-drawer' />
+    <Story id="components-sidebar--end-drawer" />
   </Canvas>
   <Canvas withToolbar>
-    <Story id='components-sidebar--logout-rail' />
+    <Story id="components-sidebar--end-rail" />
+  </Canvas>
+</div>
+
+<div class="flex layout-row gap-sm">
+  <Canvas withToolbar>
+    <Story id="components-sidebar--logout-drawer" />
+  </Canvas>
+  <Canvas withToolbar>
+    <Story id="components-sidebar--logout-rail" />
   </Canvas>
 </div>
 
@@ -139,6 +137,7 @@ Here are the variables used
 The sidebar classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
 
 This allows multiple sidebar classes to share the same behavior. You can modify all sidebar behavior by overriding the `%sidebar-global` placeholder selector and setting any properties:
+
 ```css
 %sidebar-global {
   --_rm-sidebar-rail-width: 10rem;
@@ -147,6 +146,7 @@ This allows multiple sidebar classes to share the same behavior. You can modify 
 ```
 
 There are also mixins for the rail and drawer specific styles. They can be overridden like:
+
 ```css
 @mixin sidebar-rail-global {
   .sidebar__section-title,
@@ -163,6 +163,7 @@ There are also mixins for the rail and drawer specific styles. They can be overr
 ```
 
 If you need to override the color of a particular sidebar style, you can open the respective class and change the variables documented above
+
 ```css
 // This will only affect the primary sidebar, but not default or subtle primary
 .sidebar-primary {
@@ -195,5 +196,5 @@ Your application may need a custom Sidebar. To add one, just follow this templat
 
 ## Playground
 
-<Primary/>
-<ArgsTable of='.' story='^'/>
+<Primary />
+<ArgsTable of="." story="^" />
