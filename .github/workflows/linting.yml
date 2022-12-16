@@ -4,34 +4,34 @@ name: Linting CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.x'
-        cache: 'npm'
-    - name: Install
-      run: npm install
-    - name: Run ESLint
-      run: npm run lint:js
-    - name: Run Stylelint
-      run: npm run lint:css
-    - name: Run Prettier
-      run: npm run prettier-check
-    - name: Build CSS
-      run: npm run build:css
-    - name: Build SCSS
-      run: npm run build:scss
-    - name: Build Tokens
-      run: npm run build:tokens
-    - name: Build Storybook
-      run: npm run build-storybook
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+      - name: Install
+        run: npm install
+      - name: Run ESLint
+        run: npm run lint:js
+      - name: Run Stylelint
+        run: npm run lint:css
+      - name: Run Prettier
+        run: npm run prettier-check
+      - name: Build CSS
+        run: npm run build:css
+      - name: Build SCSS
+        run: npm run build:scss
+      - name: Build Tokens
+        run: npm run build:tokens
+      - name: Build Storybook
+        run: npm run build-storybook
