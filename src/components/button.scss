@@ -3,7 +3,6 @@
   --_rm-btn-height-small:  var(--rm-input-height-small);
   --_rm-btn-height-medium: var(--rm-input-height-medium);
   --_rm-btn-height-large:  var(--rm-input-height-large);
-
   --_rm-font-small:  var(--rm-font-x-small);
   --_rm-font-medium: var(--rm-font-small);
   --_rm-font-large:  var(--rm-font-medium);
@@ -15,18 +14,13 @@
   align-items: center;
   justify-content: center;
   gap: var(--rm-space-x-small);
-
   display: inline-flex;
-  -webkit-appearance: none;
-
+  appearance: none;
   transition: all var(--rm-transition-input);
-
   border-radius: var(--rm-radius-large);
   height: var(--__rm-btn-height);
   padding: 0 var(--rm-space-medium);
-
   cursor: pointer;
-
   font-size: var(--__rm-btn-font-size);
   font-weight: var(--rm-font-weight-medium);
   text-align: center;
@@ -66,7 +60,6 @@
   &.btn--disabled,
   &:disabled {
     opacity: 0.65;
-
     cursor: not-allowed;
   }
 

@@ -56,26 +56,37 @@
 // Gap Properties
 .gap-xxs {
   gap: var(--rm-space-2x-small);
+
   --rm-gap: var(--rm-space-2x-small);
 }
+
 .gap-xs {
   gap: var(--rm-space-x-small);
+
   --rm-gap: var(--rm-space-x-small);
 }
+
 .gap-sm {
   gap: var(--rm-space-small);
+
   --rm-gap: var(--rm-space-small);
 }
+
 .gap-md {
   gap: var(--rm-space-medium);
+
   --rm-gap: var(--rm-space-medium);
 }
+
 .gap-lg {
   gap: var(--rm-space-large);
+
   --rm-gap: var(--rm-space-large);
 }
+
 .gap-xl {
   gap: var(--rm-space-x-large);
+
   --rm-gap: var(--rm-space-x-large);
 }
 
@@ -121,10 +132,6 @@
 
 .items-baseline {
   align-items: baseline;
-}
-
-.items-end {
-  align-items: flex-end;
 }
 
 // Align Self

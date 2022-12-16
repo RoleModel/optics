@@ -41,7 +41,6 @@
   .sidebar__brand {
     display: flex;
     gap: var(--rm-space-small);
-
     text-decoration: none;
     color: inherit;
 
@@ -72,7 +71,7 @@
     &:hover,
     &.active {
       .sidebar__item-icon {
-        --mso-weight: var(--rm-font-weight-medium);
+        --rm-mso-weight: var(--rm-font-weight-medium);
       }
     }
   }
@@ -87,7 +86,7 @@
       @include sidebar-16six-drawer-global;
     }
 
-    @media(width <=$breakpoint-medium) {
+    @media(width <= $breakpoint-medium) {
       @include sidebar-16six-rail-global;
     }
   }

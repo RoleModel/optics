@@ -4,7 +4,6 @@
 // Design System Overrides
 .#{$select-ns}-wrapper {
   .#{$select-ns}-dropdown {
-
     .option.active,
     .option:hover {
       background-color: var(--rm-color-primary-plus-seven);
@@ -15,7 +14,6 @@
   .#{$select-ns}-control {
     background: var(--rm-color-background);
     color: var(--rm-color-on-background);
-
     min-height: var(--rm-input-height-medium);
   }
 
@@ -72,7 +70,7 @@
     .#{$select-ns}-control {
       [data-value] {
         border-color: var(--rm-color-primary-base);
-        border-radius: var(--rms-radius-medium);
+        border-radius: var(--rm-radius-medium);
         background-color: var(--rm-color-primary-base);
         color: var(--rm-color-primary-on-base);
 

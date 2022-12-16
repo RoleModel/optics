@@ -3,76 +3,77 @@
 // from Googles CDN like we do for our other fonts
 // https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts
 
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200";
 
 .material-symbols-outlined,
 .material-symbols {
-  --mso-fill: 0;
-  --mso-weight: var(--rm-font-weight-normal);
-  --mso-grade: 0;
-  --mso-optical-sizing: 20;
+  --rm-mso-fill: 0;
+  --rm-mso-weight: var(--rm-font-weight-normal);
+  --rm-mso-grade: 0;
+  --rm-mso-optical-sizing: 20;
 
-  font-variation-settings: 'FILL' var(--mso-fill), 'wght' var(--mso-weight), 'GRAD' var(--mso-grade), 'opsz' var(--mso-optical-sizing);
-
+  font-variation-settings: 'FILL' var(--rm-mso-fill), 'wght' var(--rm-mso-weight), 'GRAD' var(--rm-mso-grade), 'opsz' var(--rm-mso-optical-sizing);
   font-size: var(--rm-font-medium);
-
   line-height: var(--rm-line-height-densest);
   vertical-align: middle;
 }
 
 // Fill
 .icon--outlined {
-  --mso-fill: 0;
+  --rm-mso-fill: 0;
 }
 
 .icon--filled {
-  --mso-fill: 1;
+  --rm-mso-fill: 1;
 }
 
 // Weight
 .icon--weight-light {
-  --mso-weight: var(--rm-font-weight-light);
+  --rm-mso-weight: var(--rm-font-weight-light);
 }
 
 .icon--weight-normal {
-  --mso-weight: var(--rm-font-weight-normal);
+  --rm-mso-weight: var(--rm-font-weight-normal);
 }
 
 .icon--weight-semi-bold {
-  --mso-weight: var(--rm-font-weight-semi-bold);
+  --rm-mso-weight: var(--rm-font-weight-semi-bold);
 }
 
 .icon--weight-bold {
-  --mso-weight: var(--rm-font-weight-bold);
+  --rm-mso-weight: var(--rm-font-weight-bold);
 }
 
 // Emphasis
 .icon--low-emphasis {
-  --mso-grade: -20;
+  --rm-mso-grade: -20;
 }
 
 .icon--normal-emphasis {
-  --mso-grade: 0;
+  --rm-mso-grade: 0;
 }
 
 .icon--high-emphasis {
-  --mso-grade: 200;
+  --rm-mso-grade: 200;
 }
 
 // Size
 .icon--medium {
   font-size: var(--rm-font-medium);
-  --mso-optical-sizing: 20;
+
+  --rm-mso-optical-sizing: 20;
 }
 
 .icon--large {
   font-size: var(--rm-font-large);
-  --mso-optical-sizing: 40;
+
+  --rm-mso-optical-sizing: 40;
 }
 
 .icon--x-large {
   font-size: var(--rm-font-x-large);
-  --mso-optical-sizing: 48;
+
+  --rm-mso-optical-sizing: 48;
 }
 
 .custom-icons {
@@ -82,7 +83,8 @@
 
   &.icon--medium {
     font-size: var(--rm-font-small);
-    --mso-optical-sizing: 20;
+
+    --rm-mso-optical-sizing: 20;
   }
 
   &.icon--large {

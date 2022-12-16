@@ -14,10 +14,8 @@
   width: 100%;
   border-collapse: collapse;
   table-layout: auto;
-
   box-shadow: var(--rm-border-all) var(--rm-border-color);
   border-radius: var(--rm-radius-medium);
-
   contain: paint;
 
   thead {
@@ -28,7 +26,6 @@
   th {
     text-align: left;
     text-transform: uppercase;
-
     font-weight: var(--rm-font-weight-normal);
   }
 
@@ -39,7 +36,6 @@
 
   th, td {
     font-size: var(--rm-font-small);
-
     padding: var(--__rm-table-cell-padding);
   }
 

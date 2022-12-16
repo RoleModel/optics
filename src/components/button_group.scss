@@ -3,22 +3,22 @@
   align-items: center;
 
   .btn, .btn-primary, .btn-secondary, .btn-delete {
-    &:first-child:not(:last-child) {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+    +.btn, +.btn-primary, +.btn-secondary, +.btn-delete {
+      margin-left: 1px;
     }
 
     &:not(:first-child, :last-child) {
       border-radius: 0;
     }
 
+    &:first-child:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
     &:last-child:not(:first-child) {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-    }
-
-    +.btn, +.btn-primary, +.btn-secondary, +.btn-delete {
-      margin-left: 1px;
     }
   }
 }

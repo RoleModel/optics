@@ -8,21 +8,16 @@
   align-items: center;
   justify-content: center;
   gap: var(--rm-space-3x-small);
-
   display: inline-flex;
-
   user-select: none;
-
   font-size: var(--rm-font-x-small);
   font-weight: var(--rm-font-weight-semi-bold);
   letter-spacing: var(--rm-letter-spacing-label);
   line-height: var(--rm-line-height-densest);
   white-space: nowrap;
-
   border-radius: var(--rm-radius-medium);
   padding: var(--rm-space-2x-small) var(--rm-space-x-small);
   cursor: inherit;
-
   background-color: var(--rm-color-neutral-base);
   color: var(--rm-color-neutral-on-base);
 
@@ -33,14 +28,14 @@
   &.badge--notification-right {
     @include badge-notification;
 
-    right: 0px;
+    right: 0;
     transform: translateY(-50%) translateX(50%);
   }
 
   &.badge--notification-left {
     @include badge-notification;
 
-    left: 0px;
+    left: 0;
     transform: translateY(-50%) translateX(-50%);
   }
 }
