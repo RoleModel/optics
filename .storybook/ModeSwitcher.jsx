@@ -85,18 +85,10 @@ const ModeSwitcher = () => {
 
   return (
     <div style={containerStyles()}>
-      <ModeButton
-        mode="light"
-        currentThemeMode={globals.themeMode}
-        updateThemeMode={updateThemeMode}
-      >
+      <ModeButton mode="light" currentThemeMode={globals.themeMode} updateThemeMode={updateThemeMode}>
         Light
       </ModeButton>
-      <ModeButton
-        mode="dark"
-        currentThemeMode={globals.themeMode}
-        updateThemeMode={updateThemeMode}
-      >
+      <ModeButton mode="dark" currentThemeMode={globals.themeMode} updateThemeMode={updateThemeMode}>
         Dark
       </ModeButton>
     </div>

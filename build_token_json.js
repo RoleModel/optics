@@ -72,9 +72,7 @@ const HYPHENATED_WORDS = [
 ]
 
 // This is used in the isHyphenated method so that any key of luminosity-x returns true.
-const HYPHENATED_LUMINOSITIES = [...Array(101).keys()].map(
-  (luminosity) => `luminosity-${luminosity}`
-)
+const HYPHENATED_LUMINOSITIES = [...Array(101).keys()].map((luminosity) => `luminosity-${luminosity}`)
 
 function splitKey(key) {
   let keys = key.slice(2).split('-')

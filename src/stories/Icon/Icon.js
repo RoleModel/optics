@@ -1,10 +1,4 @@
-export const createIcon = ({
-  name,
-  filled = false,
-  size = 'medium',
-  weight = 'normal',
-  emphasis = 'normal',
-}) => {
+export const createIcon = ({ name, filled = false, size = 'medium', weight = 'normal', emphasis = 'normal' }) => {
   const icon = document.createElement('span')
   icon.innerText = name
 

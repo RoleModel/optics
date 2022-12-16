@@ -1,7 +1,5 @@
 @mixin primary-luminosity-scale {
-  --rm-color-primary-original: hsl(
-    var(--rm-color-primary-h) var(--rm-color-primary-s) var(--rm-color-primary-l)
-  );
+  --rm-color-primary-original: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) var(--rm-color-primary-l));
 
   // Primary Luminosity Scale
   --rm-color-primary-luminosity-4: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 4%);
@@ -30,9 +28,7 @@
 }
 
 @mixin neutral-luminosity-scale {
-  --rm-color-neutral-original: hsl(
-    var(--rm-color-neutral-h) var(--rm-color-neutral-s) var(--rm-color-neutral-l)
-  );
+  --rm-color-neutral-original: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) var(--rm-color-neutral-l));
 
   // Neutral Luminosity Scale
   --rm-color-neutral-luminosity-4: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 4%);

@@ -26,8 +26,7 @@ export default {
     },
     height: {
       control: 'boolean',
-      description:
-        'This is not a class. It just provides a fixed height to demonstrate the sticky classes',
+      description: 'This is not a class. It just provides a fixed height to demonstrate the sticky classes',
     },
   },
   parameters: {
