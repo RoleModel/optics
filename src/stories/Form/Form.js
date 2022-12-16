@@ -137,7 +137,7 @@ export const createFormGroup = ({ label, type, error, hint, readonly, indetermin
   errorElement.className = 'form__error'
   errorElement.innerText = error
 
-  if (type == 'checkbox' || type == 'radio') {
+  if (type === 'checkbox' || type === 'radio') {
     element.appendChild(createInput({ type, readonly, indeterminate }))
     element.appendChild(createLabel({ label }))
     if (error) {

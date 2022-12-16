@@ -17,7 +17,7 @@ export const createCard = ({
 
   const coreClass = padded ? 'card-padded' : 'card'
   const condensedClass = condensed ? 'card--condensed' : ''
-  const shadowClass = shadow == 'none' ? '' : `card--shadow-${shadow}`
+  const shadowClass = shadow === 'none' ? '' : `card--shadow-${shadow}`
   const classes = [coreClass, condensedClass, shadowClass].filter(Boolean).join(' ')
 
   card.className = classes
