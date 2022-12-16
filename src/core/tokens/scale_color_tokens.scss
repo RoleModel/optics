@@ -1,62 +1,63 @@
 @mixin primary-luminosity-scale {
-  --rm-color-primary-original: hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), var(--rm-color-primary-l));
+  --rm-color-primary-original: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) var(--rm-color-primary-l));
 
   // Primary Luminosity Scale
-  --rm-color-primary-luminosity-4:   hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 4%);
-  --rm-color-primary-luminosity-8:   hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 8%);
-  --rm-color-primary-luminosity-12:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 12%);
-  --rm-color-primary-luminosity-14:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 14%);
-  --rm-color-primary-luminosity-16:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 16%);
-  --rm-color-primary-luminosity-20:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 20%);
-  --rm-color-primary-luminosity-24:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 24%);
-  --rm-color-primary-luminosity-28:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 28%);
-  --rm-color-primary-luminosity-32:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 32%);
-  --rm-color-primary-luminosity-36:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 36%);
-  --rm-color-primary-luminosity-40:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 40%);
-  --rm-color-primary-luminosity-48:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 48%);
-  --rm-color-primary-luminosity-52:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 52%);
-  --rm-color-primary-luminosity-64:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 64%);
-  --rm-color-primary-luminosity-70:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 70%);
-  --rm-color-primary-luminosity-72:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 72%);
-  --rm-color-primary-luminosity-80:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 80%);
-  --rm-color-primary-luminosity-84:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 84%);
-  --rm-color-primary-luminosity-88:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 88%);
-  --rm-color-primary-luminosity-90:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 90%);
-  --rm-color-primary-luminosity-94:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 94%);
-  --rm-color-primary-luminosity-96:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 96%);
-  --rm-color-primary-luminosity-98:  hsl(var(--rm-color-primary-h), var(--rm-color-primary-s), 98%);
+  --rm-color-primary-luminosity-4:   hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 4%);
+  --rm-color-primary-luminosity-8:   hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 8%);
+  --rm-color-primary-luminosity-12:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 12%);
+  --rm-color-primary-luminosity-14:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 14%);
+  --rm-color-primary-luminosity-16:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 16%);
+  --rm-color-primary-luminosity-20:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 20%);
+  --rm-color-primary-luminosity-24:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 24%);
+  --rm-color-primary-luminosity-28:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 28%);
+  --rm-color-primary-luminosity-32:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 32%);
+  --rm-color-primary-luminosity-36:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 36%);
+  --rm-color-primary-luminosity-40:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 40%);
+  --rm-color-primary-luminosity-48:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 48%);
+  --rm-color-primary-luminosity-52:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 52%);
+  --rm-color-primary-luminosity-64:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 64%);
+  --rm-color-primary-luminosity-70:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 70%);
+  --rm-color-primary-luminosity-72:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 72%);
+  --rm-color-primary-luminosity-80:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 80%);
+  --rm-color-primary-luminosity-84:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 84%);
+  --rm-color-primary-luminosity-88:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 88%);
+  --rm-color-primary-luminosity-90:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 90%);
+  --rm-color-primary-luminosity-94:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 94%);
+  --rm-color-primary-luminosity-96:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 96%);
+  --rm-color-primary-luminosity-98:  hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 98%);
 }
 
 @mixin neutral-luminosity-scale {
-  --rm-color-neutral-original: hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), var(--rm-color-neutral-l));
+  --rm-color-neutral-original: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) var(--rm-color-neutral-l));
 
   // Neutral Luminosity Scale
-  --rm-color-neutral-luminosity-4:   hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 4%);
-  --rm-color-neutral-luminosity-8:   hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 8%);
-  --rm-color-neutral-luminosity-12:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 12%);
-  --rm-color-neutral-luminosity-14:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 14%);
-  --rm-color-neutral-luminosity-16:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 16%);
-  --rm-color-neutral-luminosity-20:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 20%);
-  --rm-color-neutral-luminosity-24:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 24%);
-  --rm-color-neutral-luminosity-28:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 28%);
-  --rm-color-neutral-luminosity-32:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 32%);
-  --rm-color-neutral-luminosity-36:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 36%);
-  --rm-color-neutral-luminosity-40:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 40%);
-  --rm-color-neutral-luminosity-48:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 48%);
-  --rm-color-neutral-luminosity-52:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 52%);
-  --rm-color-neutral-luminosity-64:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 64%);
-  --rm-color-neutral-luminosity-70:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 70%);
-  --rm-color-neutral-luminosity-72:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 72%);
-  --rm-color-neutral-luminosity-80:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 80%);
-  --rm-color-neutral-luminosity-84:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 84%);
-  --rm-color-neutral-luminosity-88:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 88%);
-  --rm-color-neutral-luminosity-90:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 90%);
-  --rm-color-neutral-luminosity-94:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 94%);
-  --rm-color-neutral-luminosity-96:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 96%);
-  --rm-color-neutral-luminosity-98:  hsl(var(--rm-color-neutral-h), var(--rm-color-neutral-s), 98%);
+  --rm-color-neutral-luminosity-4:   hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 4%);
+  --rm-color-neutral-luminosity-8:   hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 8%);
+  --rm-color-neutral-luminosity-12:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 12%);
+  --rm-color-neutral-luminosity-14:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 14%);
+  --rm-color-neutral-luminosity-16:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 16%);
+  --rm-color-neutral-luminosity-20:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 20%);
+  --rm-color-neutral-luminosity-24:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 24%);
+  --rm-color-neutral-luminosity-28:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 28%);
+  --rm-color-neutral-luminosity-32:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 32%);
+  --rm-color-neutral-luminosity-36:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 36%);
+  --rm-color-neutral-luminosity-40:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 40%);
+  --rm-color-neutral-luminosity-48:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 48%);
+  --rm-color-neutral-luminosity-52:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 52%);
+  --rm-color-neutral-luminosity-64:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 64%);
+  --rm-color-neutral-luminosity-70:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 70%);
+  --rm-color-neutral-luminosity-72:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 72%);
+  --rm-color-neutral-luminosity-80:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 80%);
+  --rm-color-neutral-luminosity-84:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 84%);
+  --rm-color-neutral-luminosity-88:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 88%);
+  --rm-color-neutral-luminosity-90:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 90%);
+  --rm-color-neutral-luminosity-94:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 94%);
+  --rm-color-neutral-luminosity-96:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 96%);
+  --rm-color-neutral-luminosity-98:  hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 98%);
 }
 
 @mixin primary-semantic-scale {
+  // Main Scale
   --rm-color-primary-plus-max:    var(--rm-color-white);
   --rm-color-primary-plus-eight:  var(--rm-color-primary-luminosity-98);
   --rm-color-primary-plus-seven:  var(--rm-color-primary-luminosity-96);
@@ -77,6 +78,7 @@
   --rm-color-primary-minus-eight: var(--rm-color-primary-luminosity-4);
   --rm-color-primary-minus-max:   var(--rm-color-black);
 
+  // On Scale
   --rm-color-primary-on-plus-max:    var(--rm-color-black);
   --rm-color-primary-on-plus-eight:  var(--rm-color-primary-luminosity-4);
   --rm-color-primary-on-plus-seven:  var(--rm-color-primary-luminosity-8);
@@ -99,6 +101,7 @@
 }
 
 @mixin neutral-semantic-scale {
+  // Main Scale
   --rm-color-neutral-plus-max:    var(--rm-color-white);
   --rm-color-neutral-plus-eight:  var(--rm-color-neutral-luminosity-98);
   --rm-color-neutral-plus-seven:  var(--rm-color-neutral-luminosity-96);
@@ -119,6 +122,7 @@
   --rm-color-neutral-minus-eight: var(--rm-color-neutral-luminosity-4);
   --rm-color-neutral-minus-max:   var(--rm-color-black);
 
+  // On Scale
   --rm-color-neutral-on-plus-max:    var(--rm-color-black);
   --rm-color-neutral-on-plus-eight:  var(--rm-color-neutral-luminosity-4);
   --rm-color-neutral-on-plus-seven:  var(--rm-color-neutral-luminosity-8);

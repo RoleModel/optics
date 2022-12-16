@@ -1,4 +1,5 @@
 @mixin primary-semantic-scale-dark {
+  // Main Scale
   --rm-color-primary-plus-max:    var(--rm-color-black);
   --rm-color-primary-plus-eight:  var(--rm-color-primary-luminosity-4);
   --rm-color-primary-plus-seven:  var(--rm-color-primary-luminosity-8);
@@ -19,6 +20,7 @@
   --rm-color-primary-minus-eight: var(--rm-color-primary-luminosity-88);
   --rm-color-primary-minus-max:   var(--rm-color-white);
 
+  // On Scale
   --rm-color-primary-on-plus-max:    var(--rm-color-white);
   --rm-color-primary-on-plus-eight:  var(--rm-color-primary-luminosity-88);
   --rm-color-primary-on-plus-seven:  var(--rm-color-primary-luminosity-80);
@@ -41,6 +43,7 @@
 }
 
 @mixin neutral-semantic-scale-dark {
+  // Main Scale
   --rm-color-neutral-plus-max:    var(--rm-color-black);
   --rm-color-neutral-plus-eight:  var(--rm-color-neutral-luminosity-4);
   --rm-color-neutral-plus-seven:  var(--rm-color-neutral-luminosity-8);
@@ -61,6 +64,7 @@
   --rm-color-neutral-minus-eight: var(--rm-color-neutral-luminosity-88);
   --rm-color-neutral-minus-max:   var(--rm-color-white);
 
+  // On Scale
   --rm-color-neutral-on-plus-max:    var(--rm-color-white);
   --rm-color-neutral-on-plus-eight:  var(--rm-color-neutral-luminosity-88);
   --rm-color-neutral-on-plus-seven:  var(--rm-color-neutral-luminosity-80);
@@ -83,6 +87,7 @@
 }
 
 @mixin alerts-warning-semantic-scale-dark {
+  // Main Scale
   --rm-color-alerts-warning-plus-max:    var(--rm-color-black);
   --rm-color-alerts-warning-plus-eight:  var(--rm-color-alerts-warning-luminosity-4);
   --rm-color-alerts-warning-plus-seven:  var(--rm-color-alerts-warning-luminosity-8);
@@ -103,6 +108,7 @@
   --rm-color-alerts-warning-minus-eight: var(--rm-color-alerts-warning-luminosity-88);
   --rm-color-alerts-warning-minus-max:   var(--rm-color-white);
 
+  // On Scale
   --rm-color-alerts-warning-on-plus-max:    var(--rm-color-white);
   --rm-color-alerts-warning-on-plus-eight:  var(--rm-color-alerts-warning-luminosity-88);
   --rm-color-alerts-warning-on-plus-seven:  var(--rm-color-alerts-warning-luminosity-80);
@@ -125,6 +131,7 @@
 }
 
 @mixin alerts-danger-semantic-scale-dark {
+  // Main Scale
   --rm-color-alerts-danger-plus-max:    var(--rm-color-black);
   --rm-color-alerts-danger-plus-eight:  var(--rm-color-alerts-danger-luminosity-4);
   --rm-color-alerts-danger-plus-seven:  var(--rm-color-alerts-danger-luminosity-8);
@@ -145,6 +152,7 @@
   --rm-color-alerts-danger-minus-eight: var(--rm-color-alerts-danger-luminosity-88);
   --rm-color-alerts-danger-minus-max:   var(--rm-color-white);
 
+  // On Scale
   --rm-color-alerts-danger-on-plus-max:    var(--rm-color-white);
   --rm-color-alerts-danger-on-plus-eight:  var(--rm-color-alerts-danger-luminosity-88);
   --rm-color-alerts-danger-on-plus-seven:  var(--rm-color-alerts-danger-luminosity-80);
@@ -167,6 +175,7 @@
 }
 
 @mixin alerts-info-semantic-scale-dark {
+  // Main Scale
   --rm-color-alerts-info-plus-max:    var(--rm-color-black);
   --rm-color-alerts-info-plus-eight:  var(--rm-color-alerts-info-luminosity-4);
   --rm-color-alerts-info-plus-seven:  var(--rm-color-alerts-info-luminosity-8);
@@ -187,6 +196,7 @@
   --rm-color-alerts-info-minus-eight: var(--rm-color-alerts-info-luminosity-88);
   --rm-color-alerts-info-minus-max:   var(--rm-color-white);
 
+  // On Scale
   --rm-color-alerts-info-on-plus-max:    var(--rm-color-white);
   --rm-color-alerts-info-on-plus-eight:  var(--rm-color-alerts-info-luminosity-88);
   --rm-color-alerts-info-on-plus-seven:  var(--rm-color-alerts-info-luminosity-80);
@@ -209,6 +219,7 @@
 }
 
 @mixin alerts-notice-semantic-scale-dark {
+  // Main Scale
   --rm-color-alerts-notice-plus-max:    var(--rm-color-black);
   --rm-color-alerts-notice-plus-eight:  var(--rm-color-alerts-notice-luminosity-4);
   --rm-color-alerts-notice-plus-seven:  var(--rm-color-alerts-notice-luminosity-8);
@@ -229,6 +240,7 @@
   --rm-color-alerts-notice-minus-eight: var(--rm-color-alerts-notice-luminosity-88);
   --rm-color-alerts-notice-minus-max:   var(--rm-color-white);
 
+  // On Scale
   --rm-color-alerts-notice-on-plus-max:    var(--rm-color-white);
   --rm-color-alerts-notice-on-plus-eight:  var(--rm-color-alerts-notice-luminosity-88);
   --rm-color-alerts-notice-on-plus-seven:  var(--rm-color-alerts-notice-luminosity-80);
@@ -251,11 +263,11 @@
 }
 
 @mixin shadows-dark {
-  --rm-shadow-x-small: 0px 1px 3px hsla(0, 0%, 0%, 0.15), 0px 1px 2px hsla(0, 0%, 0%, 0.3);
-  --rm-shadow-small:   0px 2px 6px hsla(0, 0%, 0%, 0.15), 0px 1px 2px hsla(0, 0%, 0%, 0.3);
-  --rm-shadow-medium:  0px 4px 8px hsla(0, 0%, 0%, 0.15), 0px 1px 3px hsla(0, 0%, 0%, 0.3);
-  --rm-shadow-large:   0px 6px 10px hsla(0, 0%, 0%, 0.15), 0px 2px 3px hsla(0, 0%, 0%, 0.3);
-  --rm-shadow-x-large: 0px 8px 12px hsla(0, 0%, 0%, 0.15), 0px 4px 4px hsla(0, 0%, 0%, 0.3);
+  --rm-shadow-x-small: 0 1px 3px  hsl(0deg 0% 0% / 15%), 0 1px 2px hsl(0deg 0% 0% / 30%);
+  --rm-shadow-small:   0 2px 6px  hsl(0deg 0% 0% / 15%), 0 1px 2px hsl(0deg 0% 0% / 30%);
+  --rm-shadow-medium:  0 4px 8px  hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 30%);
+  --rm-shadow-large:   0 6px 10px hsl(0deg 0% 0% / 15%), 0 2px 3px hsl(0deg 0% 0% / 30%);
+  --rm-shadow-x-large: 0 8px 12px hsl(0deg 0% 0% / 15%), 0 4px 4px hsl(0deg 0% 0% / 30%);
 }
 
 @mixin modal-dark {

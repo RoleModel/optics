@@ -1,3 +1,6 @@
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+
 // Using Mixins allows us to include them at a component level
 // as needed and override them.
 
@@ -49,7 +52,6 @@
 
 @mixin font-scales {
   --rm-font-scale-unit: 1rem; // 10px;
-
   --rm-font-x-small:  calc(var(--rm-font-scale-unit) * 1.2); // 12px
   --rm-font-small:    calc(var(--rm-font-scale-unit) * 1.4); // 14px
   --rm-font-medium:   calc(var(--rm-font-scale-unit) * 1.6); // 16px
@@ -108,7 +110,6 @@
 
 @mixin spacing-scales {
   --rm-space-scale-unit: 1rem; // 10px;
-
   --rm-space-3x-small: calc(var(--rm-space-scale-unit) * 0.2); // 2px
   --rm-space-2x-small: calc(var(--rm-space-scale-unit) * 0.4); // 4px
   --rm-space-x-small:  calc(var(--rm-space-scale-unit) * 0.8); // 8px
@@ -122,11 +123,11 @@
 }
 
 @mixin shadows {
-  --rm-shadow-x-small: 0px 1px 2px hsla(0, 0%, 0%, 0.3), 0px 1px 3px hsla(0, 0%, 0%, 0.15);
-  --rm-shadow-small:   0px 1px 2px hsla(0, 0%, 0%, 0.3), 0px 2px 6px hsla(0, 0%, 0%, 0.15);
-  --rm-shadow-medium:  0px 4px 8px hsla(0, 0%, 0%, 0.15), 0px 1px 3px hsla(0, 0%, 0%, 0.3);
-  --rm-shadow-large:   0px 6px 10px hsla(0, 0%, 0%, 0.15), 0px 2px 3px hsla(0, 0%, 0%, 0.3);
-  --rm-shadow-x-large: 0px 8px 12px hsla(0, 0%, 0%, 0.15), 0px 4px 4px hsla(0, 0%, 0%, 0.3);
+  --rm-shadow-x-small: 0 1px 2px  hsl(0deg 0% 0% / 3%),  0 1px 3px hsl(0deg 0% 0% / 15%);
+  --rm-shadow-small:   0 1px 2px  hsl(0deg 0% 0% / 3%),  0 2px 6px hsl(0deg 0% 0% / 15%);
+  --rm-shadow-medium:  0 4px 8px  hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 3%);
+  --rm-shadow-large:   0 6px 10px hsl(0deg 0% 0% / 15%), 0 2px 3px hsl(0deg 0% 0% / 3%);
+  --rm-shadow-x-large: 0 8px 12px hsl(0deg 0% 0% / 15%), 0 4px 4px hsl(0deg 0% 0% / 3%);
 }
 
 @mixin z-indexes {
@@ -161,8 +162,6 @@ $breakpoint-medium: 1024px; // landscape ipad
 $breakpoint-large: 1280px; // small laptop
 $breakpoint-x-large: 1440px; // medium laptop
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
   // Color HSLs
   @include color-varieties;
@@ -202,7 +201,7 @@ $breakpoint-x-large: 1440px; // medium laptop
 }
 
 // Animations
-@keyframes rmSlideInOutFlash {
+@keyframes rm-slide-in-out-flash {
   // If an duration of 5s is set:
   // Start off the Screen
   0% {

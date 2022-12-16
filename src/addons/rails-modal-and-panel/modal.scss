@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   position: fixed;
   top: 0;
   right: 0;
@@ -14,12 +13,14 @@
   left: 0;
   z-index: var(--rm-z-index-dialog);
   overflow: hidden;
-  /*Prevent Chrome on Windows from adding a focus outline. For details, see*/
-  /*https://github.com/twbs/bootstrap/pull/10951.*/
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
   outline: 0;
-  /*We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
+
+  /* We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
   gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
-  See also https://github.com/twbs/bootstrap/issues/17695*/
+  See also https://github.com/twbs/bootstrap/issues/17695 */
 }
 
 .modal__backdrop {
@@ -41,7 +42,6 @@
   padding: var(--rm-space-large);
   background: var(--rm-color-background);
   color: var(--rm-color-on-background);
-
   border-radius: var(--rm-radius-large);
   z-index: var(--rm-z-index-dialog-content);
   transform: scale(0.7);
@@ -70,12 +70,13 @@
 }
 
 .modal__close {
+  /* stylelint-disable scss/at-extend-no-missing-placeholder */
   @extend .btn--icon;
   @extend .btn--no-border;
+  /* stylelint-enable scss/at-extend-no-missing-placeholder */
 
   float: right;
   cursor: pointer;
-
   color: var(--rm-color-neutral-minus-seven);
 
   &:hover:not(:disabled, .btn--disabled) {

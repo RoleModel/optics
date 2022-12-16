@@ -14,7 +14,7 @@
     "eslint": "eslint 'src/stories/**/*.js'",
     "prettier": "prettier -w .",
     "check_prettier": "prettier -c .",
-    "stylelint": "stylelint src/**/*.scss"
+    "stylelint": "stylelint 'src/**/*.scss'"
   },
   "repository": {
     "type": "git",

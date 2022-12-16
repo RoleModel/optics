@@ -8,7 +8,7 @@
   align-items: center;
   gap: var(--rm-space-small);
   display: inline-grid;
-  animation: rmSlideInOutFlash var(--rm-transition-flash) normal forwards;
+  animation: rm-slide-in-out-flash var(--rm-transition-flash) normal forwards;
   box-shadow: var(--rm-shadow-x-small);
   border-left-width: var(--rm-border-width-x-large);
   border-left-style: solid;
