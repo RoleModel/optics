@@ -101,6 +101,7 @@ Buttons have various states that are styled as well.
 
 Here are the variables and states used
 
+<!-- prettier-ignore-start -->
 ```css
 // Variable API
 --_rm-btn-height-small:
@@ -119,6 +120,7 @@ Here are the variables and states used
 .btn.btn--outline {} // Outline Modifier
 .btn.btn--outline:not(:disabled, .btn--disabled):hover {} // Hovered No Border Modifier
 ```
+<!-- prettier-ignore-end -->
 
 ## Overriding Button styles
 
@@ -133,6 +135,8 @@ This allows multiple button classes to share the same behavior. You can modify a
 ```
 
 If you want to override how the size modifier behaves, you can use API described above to change which height and font each size uses.
+
+<!-- prettier-ignore-start -->
 ```css
 %btn-global {
   --_rm-btn-height-small:  var(--rm-space-2x-large);
@@ -144,6 +148,7 @@ If you want to override how the size modifier behaves, you can use API described
   --_rm-font-large:  var(--rm-font-5x-large);
 }
 ```
+<!-- prettier-ignore-end -->
 
 If you need to override the color of a particular button style, you can open the respective class and change the `background-color`, `color`, and `box-shadow` properties to change the look.
 
