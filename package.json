@@ -13,7 +13,8 @@
     "build-storybook": "build-storybook -o docs-build",
     "eslint": "eslint 'src/stories/**/*.js'",
     "prettier": "prettier -w .",
-    "check_prettier": "prettier -c ."
+    "check_prettier": "prettier -c .",
+    "stylelint": "stylelint src/**/*.scss"
   },
   "repository": {
     "type": "git",
@@ -61,9 +62,15 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
+    "postcss-scss": "^4.0.6",
     "prettier": "^2.8.1",
     "sass": "^1.53.0",
     "sass-loader": "^10.1.1",
-    "style-loader": "^2.0.0"
+    "style-loader": "^2.0.0",
+    "stylelint": "^14.16.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.3.0"
   }
 }
