@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta } from '@storybook/addon-docs'
 
 <Meta title="Overview/Themes" />
 
@@ -8,12 +8,14 @@ RoleModel Design System defines a default theme along with it's dark mode.
 If you import the design system, it will be used automatically.
 
 ## Dark Mode
+
 By default, Dark mode will automatically apply when your system is set to dark mode.
 You can control the theme mode manually by setting a data attribute on the root html element to either `light` or `dark`.
 This will ignore the system preference and use specified theme mode (I.E. your application doesn't need a dark mode).
+
 ```html
 <!DOCTYPE html>
-<html data-theme-mode='light'>
+<html data-theme-mode="light">
   ...
 </html>
 ```
@@ -54,7 +56,7 @@ Your custom theme can change any tokens, including colors, radius, fonts, even r
   @include fonts;
 }
 
-@media(prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root:not([data-theme-mode='light']) {
     @include fonts-dark;
   }
@@ -63,7 +65,6 @@ Your custom theme can change any tokens, including colors, radius, fonts, even r
 :root[data-theme-mode='dark'] {
   @include fonts-dark;
 }
-
 ```
 
 ## Dynamic Themes
@@ -75,7 +76,7 @@ This theme would always be included in your application, but only activate when 
 
 ```html
 <!DOCTYPE html>
-<html data-theme='example'>
+<html data-theme="example">
   ...
 </html>
 ```
@@ -115,9 +116,10 @@ This theme would always be included in your application, but only activate when 
 ```
 
 Dynamic themes support both light and dark mode and can be manually controlled with data attributes.
+
 ```html
 <!DOCTYPE html>
-<html data-theme='example' data-theme-mode='light'>
+<html data-theme="example" data-theme-mode="light">
   ...
 </html>
 ```

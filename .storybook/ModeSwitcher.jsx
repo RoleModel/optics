@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Button } from '@storybook/components';
+import React, { useState } from 'react'
+import { Button } from '@storybook/components'
 
-import { useGlobals } from '@storybook/api';
+import { useGlobals } from '@storybook/api'
 
 // Destructuring like:
 // const [globals, setGlobals] = useGlobals()
@@ -10,17 +10,21 @@ import { useGlobals } from '@storybook/api';
 // is not working so I had to work around it.
 
 const ModeButton = ({ children, mode, currentThemeMode, updateThemeMode }) => {
-  const hoverState = useState(false);
-  const hover = hoverState[0];
-  const setHover = hoverState[1];
+  const hoverState = useState(false)
+  const hover = hoverState[0]
+  const setHover = hoverState[1]
 
   const backgroundColor = () => {
-    if (hover) { return 'rgba(30, 167, 253, 0.12)' }
+    if (hover) {
+      return 'rgba(30, 167, 253, 0.12)'
+    }
     return currentThemeMode === mode ? 'rgba(30,167,253,0.07)' : 'transparent'
   }
 
   const textColor = () => {
-    if (hover) { return '#1EA7FD' }
+    if (hover) {
+      return '#1EA7FD'
+    }
     return currentThemeMode === mode ? '#1EA7FD' : '#999'
   }
 
@@ -29,7 +33,7 @@ const ModeButton = ({ children, mode, currentThemeMode, updateThemeMode }) => {
       borderRadius: 0,
       padding: 8,
       color: textColor(),
-      backgroundColor: backgroundColor()
+      backgroundColor: backgroundColor(),
     }
   }
 
@@ -75,22 +79,18 @@ const ModeSwitcher = () => {
       border: '1px solid rgb(0 0 0 / 10%)',
       margin: 5,
       borderRadius: '3em',
-      overflow: 'hidden'
+      overflow: 'hidden',
     }
   }
 
   return (
     <div style={containerStyles()}>
-      <ModeButton
-        mode='light'
-        currentThemeMode={globals.themeMode}
-        updateThemeMode={updateThemeMode}
-      >Light</ModeButton>
-      <ModeButton
-        mode='dark'
-        currentThemeMode={globals.themeMode}
-        updateThemeMode={updateThemeMode}
-      >Dark</ModeButton>
+      <ModeButton mode="light" currentThemeMode={globals.themeMode} updateThemeMode={updateThemeMode}>
+        Light
+      </ModeButton>
+      <ModeButton mode="dark" currentThemeMode={globals.themeMode} updateThemeMode={updateThemeMode}>
+        Dark
+      </ModeButton>
     </div>
   )
 }

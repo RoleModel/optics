@@ -1,9 +1,6 @@
-import { createSidebar } from '../../Sidebar/Sidebar.js';
+import { createSidebar } from '../../Sidebar/Sidebar.js'
 
-export const createLayout = ({
-  style = 'basic',
-  rightSidebar = false,
-}) => {
+export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
   if (style === 'basic') {
     return `
 <div class='app__main' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
@@ -41,7 +38,9 @@ export const createLayout = ({
   <div class='app__main'>
     <div class='page__header background-primary-plus-seven'>Header</div>
     <div class='page__content'>
-      ${Array.from(Array(16)).map(_item => '<p>Some content</p>').join("\n") }
+      ${Array.from(Array(16))
+        .map((_item) => '<p>Some content</p>')
+        .join('\n')}
     </div>
     <div class='page__footer background-primary-plus-seven'>Footer</div>
   </div>
@@ -51,4 +50,4 @@ export const createLayout = ({
   }
 
   return `<div></div>`
-};
+}

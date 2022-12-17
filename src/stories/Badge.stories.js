@@ -1,5 +1,5 @@
-import { createBadge } from './Badge/Badge.js';
-import BadgeDocs from './Badge/Badge.mdx';
+import { createBadge } from './Badge/Badge.js'
+import BadgeDocs from './Badge/Badge.mdx'
 
 export default {
   title: 'Components/Badge',
@@ -20,59 +20,59 @@ export default {
       page: BadgeDocs,
     },
   },
-};
+}
 
 const Template = ({ label, ...args }) => {
-  return createBadge({ label, ...args });
-};
+  return createBadge({ label, ...args })
+}
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   label: 'Default',
   style: 'default',
-};
+}
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 Primary.args = {
   label: 'Primary',
   style: 'primary',
-};
+}
 
-export const Warning = Template.bind({});
+export const Warning = Template.bind({})
 Warning.args = {
   label: 'Warning',
   style: 'warning',
-};
+}
 
-export const Danger = Template.bind({});
+export const Danger = Template.bind({})
 Danger.args = {
   label: 'Danger',
   style: 'danger',
-};
+}
 
-export const Info = Template.bind({});
+export const Info = Template.bind({})
 Info.args = {
   label: 'Info',
   style: 'info',
-};
+}
 
-export const Notice = Template.bind({});
+export const Notice = Template.bind({})
 Notice.args = {
   label: 'Notice',
   style: 'notice',
-};
+}
 
-export const Pill = Template.bind({});
+export const Pill = Template.bind({})
 Pill.args = {
   label: 'Pill',
   style: 'default',
-  pill: true
-};
+  pill: true,
+}
 
-export const NotificationButton = Template.bind({});
+export const NotificationButton = Template.bind({})
 NotificationButton.args = {
   label: '5',
   style: 'danger',
   pill: true,
-  inButton: 'right'
-};
+  inButton: 'right',
+}

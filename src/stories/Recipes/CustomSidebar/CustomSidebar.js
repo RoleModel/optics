@@ -109,10 +109,7 @@ const fifteenFiveSidebar = (style) => {
 `
 }
 
-export const createCustomSidebar = ({
-  example = 'domains',
-  style = 'drawer',
-}) => {
+export const createCustomSidebar = ({ example = 'domains', style = 'drawer' }) => {
   const sidebar = () => {
     return example === 'domains' ? domainsSidebar(style) : fifteenFiveSidebar(style)
   }
@@ -123,10 +120,12 @@ export const createCustomSidebar = ({
   <div class='app__main'>
     <div class='page__header background-primary-plus-seven'>Header</div>
     <div class='page__content'>
-      ${Array.from(Array(16)).map(_item => '<p>Some content</p>').join("\n")}
+      ${Array.from(Array(16))
+        .map((_item) => '<p>Some content</p>')
+        .join('\n')}
     </div>
     <div class='page__footer background-primary-plus-seven'>Footer</div>
   </div>
 </div>
 `
-};
+}

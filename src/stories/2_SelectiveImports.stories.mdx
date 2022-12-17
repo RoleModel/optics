@@ -1,17 +1,19 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta } from '@storybook/addon-docs'
 
 <Meta title="Overview/Selective Imports" />
 
 # Selective Imports
 
 By default, when you import the design system, it will include the basics. CSS reset, All Tokens, Base styles, Utilities, and all Components.
+
 ```scss
 @import '@rolemodel/rolemodel-design-system';
 // or
-@import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system'
+@import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system';
 ```
 
 If your application doesn't need all styles provided, you can import only the files you need like this:
+
 ```scss
 @import 'modern-css-reset/dist/reset';
 
@@ -27,6 +29,7 @@ If your application doesn't need all styles provided, you can import only the fi
 ```
 
 Or this:
+
 ```scss
 @import 'modern-css-reset/dist/reset';
 

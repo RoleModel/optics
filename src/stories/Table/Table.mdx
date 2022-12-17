@@ -1,4 +1,4 @@
-import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
 
 # Table
 
@@ -9,7 +9,7 @@ Table classes provide simple styling for tables and their content.
 `.table` Provides a default style to a table element
 
 <Canvas withToolbar>
-  <Story id='components-table--default' />
+  <Story id="components-table--default" />
 </Canvas>
 
 ## Primary
@@ -17,7 +17,7 @@ Table classes provide simple styling for tables and their content.
 `.table-primary` Provides a table with a primary colored header.
 
 <Canvas withToolbar>
-  <Story id='components-table--primary' />
+  <Story id="components-table--primary" />
 </Canvas>
 
 ## Danger
@@ -25,7 +25,7 @@ Table classes provide simple styling for tables and their content.
 `.table-danger` Provides a table with a danger colored header.
 
 <Canvas withToolbar>
-  <Story id='components-table--danger' />
+  <Story id="components-table--danger" />
 </Canvas>
 
 ## Layout
@@ -33,7 +33,7 @@ Table classes provide simple styling for tables and their content.
 `.table--auto-layout`, `.table--fixed-layout` (with auto being the default) modify the table layout. Auto will adjust according to the contents, fixed will evenly divide based on the amount of columns.
 
 <Canvas withToolbar>
-  <Story id='components-table--fixed-layout' />
+  <Story id="components-table--fixed-layout" />
 </Canvas>
 
 ## Density
@@ -41,10 +41,10 @@ Table classes provide simple styling for tables and their content.
 `.table--default-density`, `.table--comfortable-density`, `table--compact-density` (with default being the default) modify the table cell padding to expand or contract how much space they use.
 
 <Canvas withToolbar>
-  <Story id='components-table--comfortable-density' />
+  <Story id="components-table--comfortable-density" />
 </Canvas>
 <Canvas withToolbar>
-  <Story id='components-table--compact-density' />
+  <Story id="components-table--compact-density" />
 </Canvas>
 
 ## Striping
@@ -52,11 +52,11 @@ Table classes provide simple styling for tables and their content.
 `.table--even-striped`, `.table--odd-striped` color every (odd or even) other row with a light color. The color matches the default, primary, or danger.
 
 <Canvas withToolbar>
-  <Story id='components-table--striped-even' />
+  <Story id="components-table--striped-even" />
 </Canvas>
 
 <Canvas withToolbar>
-  <Story id='components-table--striped-odd' />
+  <Story id="components-table--striped-odd" />
 </Canvas>
 
 ## Sticky Header/Footer
@@ -66,31 +66,32 @@ Table classes provide simple styling for tables and their content.
 These are best used in conjunction with a wrapping container fixed table height, though they will work outside of that being sticky to the browser window. Because the actual `table` HTML element is a bit finicky, you will need to wrap the `table` itself in a `.table-container` div to achieve correct overflow behavior. You will also need to set a fixed height. This will allow sticky header/footer with scrollable body rows.
 
 ```html
-<div class="table-container"> // Container div with class also needs to set the desired height. 20vh in these examples
-  <table class="table"> // Actual table element
-    ...
+<div class="table-container">
+  // Container div with class also needs to set the desired height. 20vh in these examples
+  <table class="table">
+    // Actual table element ...
   </table>
 </div>
 ```
 
 <Canvas withToolbar>
-  <Story id='components-table--sticky-header' />
+  <Story id="components-table--sticky-header" />
 </Canvas>
 
 <Canvas withToolbar>
-  <Story id='components-table--sticky-footer' />
+  <Story id="components-table--sticky-footer" />
 </Canvas>
 
 <Canvas withToolbar>
-  <Story id='components-table--sticky-both' />
+  <Story id="components-table--sticky-both" />
 </Canvas>
 
 ## Table API
 
 Padding table styles are built on css variables scoped to the table.
 
-
 Here are the variables used
+
 ```css
 // Variable API
 --_rm-table-cell-padding-default:
@@ -103,6 +104,7 @@ Here are the variables used
 The table classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
 
 This allows multiple table classes to share the same behavior. You can modify all tables behavior by overriding the `%table-global` placeholder selector and setting any proprerties:
+
 ```scss
 %table-global {
   font-size: var(--rm-font-x-large);
@@ -110,6 +112,7 @@ This allows multiple table classes to share the same behavior. You can modify al
 ```
 
 If you want to override how the density modifier behaves, you can use API described above to change which padding each density uses.
+
 ```css
 %table-global {
   --_rm-table-cell-padding-default: var(--rm-space-x-small) var(--rm-space-2x-small);
@@ -119,6 +122,7 @@ If you want to override how the density modifier behaves, you can use API descri
 ```
 
 If you need to override the color of a particular table style, you can open the respective class and set or change any properties:
+
 ```scss
 // This will only affect the primary table, but not default or danger
 .table-primary {
@@ -157,5 +161,5 @@ Your application may need a custom table. To add one, just follow this template:
 
 ## Playground
 
-<Primary/>
-<ArgsTable of='.' story='^'/>
+<Primary />
+<ArgsTable of="." story="^" />

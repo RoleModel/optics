@@ -1,10 +1,10 @@
-import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
 
-import imageFile from './flash.gif';
+import imageFile from './flash.gif'
 
 # Flash
 
-<img src={imageFile} alt='Flash' />
+<img src={imageFile} alt="Flash" />
 
 Flash classes provide notification style alert messages that "Flash" onto the screen (top right corner) with application information.
 
@@ -15,7 +15,7 @@ Flash classes provide notification style alert messages that "Flash" onto the sc
 `.flash--notice` Provides a success styled message using the alert green color with a circle checkmark icon.
 
 <Canvas withToolbar>
-  <Story id='components-flash--notice' />
+  <Story id="components-flash--notice" />
 </Canvas>
 
 ## Info
@@ -23,7 +23,7 @@ Flash classes provide notification style alert messages that "Flash" onto the sc
 `.flash--info` Provides an info styled message using the alert blue color with a circle info icon.
 
 <Canvas withToolbar>
-  <Story id='components-flash--info' />
+  <Story id="components-flash--info" />
 </Canvas>
 
 ## Alert
@@ -31,7 +31,7 @@ Flash classes provide notification style alert messages that "Flash" onto the sc
 `.flash--alert` Provides an alert styled message using the alert danger color with a circle cross icon.
 
 <Canvas withToolbar>
-  <Story id='components-flash--alert' />
+  <Story id="components-flash--alert" />
 </Canvas>
 
 ## Warning
@@ -39,7 +39,7 @@ Flash classes provide notification style alert messages that "Flash" onto the sc
 `.flash--warning` Provides an warning styled message using the alert warning color with a triangle exclamation icon.
 
 <Canvas withToolbar>
-  <Story id='components-flash--warning' />
+  <Story id="components-flash--warning" />
 </Canvas>
 
 ## Overriding flash styles
@@ -47,6 +47,7 @@ Flash classes provide notification style alert messages that "Flash" onto the sc
 The flash classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
 
 This allows multiple flash classes to share the same behavior. You can modify all flash behavior by overriding the `%flash-global` placeholder selector and setting any properties:
+
 ```css
 %flash-global {
   padding: var(--rm-space-medium) var(--rm-space-x-large);
@@ -56,6 +57,7 @@ This allows multiple flash classes to share the same behavior. You can modify al
 ## Custom Flash
 
 Your application may need a custom flash. To add one, just follow this template:
+
 ```css
 .flash-{name} {
   @extend %flash-global;
@@ -75,6 +77,7 @@ Your application may need a custom flash. To add one, just follow this template:
 ```
 
 You may need a new modifier of flash or other types of notifications. You can add one by overriding the `%flash-global` placeholder selector.
+
 ```css
 %flash-global {
   &.flash--{name} {
@@ -86,5 +89,5 @@ You may need a new modifier of flash or other types of notifications. You can ad
 
 ## Playground
 
-<Primary/>
-<ArgsTable of='.' story='^'/>
+<Primary />
+<ArgsTable of="." story="^" />

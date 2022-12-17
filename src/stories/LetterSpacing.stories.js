@@ -1,5 +1,5 @@
-import { createLetterSpacing } from './LetterSpacing/LetterSpacing.js';
-import LetterSpacingDocs from './LetterSpacing/LetterSpacing.mdx';
+import { createLetterSpacing } from './LetterSpacing/LetterSpacing.js'
+import LetterSpacingDocs from './LetterSpacing/LetterSpacing.mdx'
 
 export default {
   title: 'Tokens/Letter Spacing',
@@ -11,22 +11,21 @@ export default {
   },
   parameters: {
     docs: {
-      page: LetterSpacingDocs
+      page: LetterSpacingDocs,
     },
   },
-};
-
+}
 
 const Template = ({ spacing, ...args }) => {
-  return createLetterSpacing({ spacing, ...args });
-};
+  return createLetterSpacing({ spacing, ...args })
+}
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   spacing: 'label',
-};
+}
 
-export const Navigation = Template.bind({});
+export const Navigation = Template.bind({})
 Navigation.args = {
   spacing: 'navigation',
-};
+}

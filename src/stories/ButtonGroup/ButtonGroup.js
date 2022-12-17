@@ -11,7 +11,7 @@ export const createButtonGroup = (props) => {
   return group
 }
 
-export const createButtonGroupToolbar = (props) => {
+export const createButtonGroupToolbar = (_props) => {
   const group = document.createElement('div')
   group.className = 'btn-group-toolbar gap-xs'
 

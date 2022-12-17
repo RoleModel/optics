@@ -1,5 +1,5 @@
-import { createBorder } from './Border/Border.js';
-import BorderDocs from './Border/Border.mdx';
+import { createBorder } from './Border/Border.js'
+import BorderDocs from './Border/Border.mdx'
 
 export default {
   title: 'Tokens/Border',
@@ -12,42 +12,42 @@ export default {
   },
   parameters: {
     docs: {
-      page: BorderDocs
+      page: BorderDocs,
     },
   },
-};
+}
 
 const Template = ({ position, ...args }) => {
-  return createBorder({ position, ...args });
-};
+  return createBorder({ position, ...args })
+}
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   position: 'all',
-};
+}
 
-export const Left = Template.bind({});
+export const Left = Template.bind({})
 Left.args = {
   position: 'left',
-};
+}
 
-export const Bottom = Template.bind({});
+export const Bottom = Template.bind({})
 Bottom.args = {
   position: 'bottom',
-};
+}
 
-export const X = Template.bind({});
+export const X = Template.bind({})
 X.args = {
   position: 'x',
-};
+}
 
-export const Y = Template.bind({});
+export const Y = Template.bind({})
 Y.args = {
   position: 'y',
-};
+}
 
-export const InsetLeft = Template.bind({});
+export const InsetLeft = Template.bind({})
 InsetLeft.args = {
   position: 'left',
   inset: true,
-};
+}

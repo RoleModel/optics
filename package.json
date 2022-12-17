@@ -10,7 +10,13 @@
     "build:scss": "rsync -a src/ dist/scss --exclude stories",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build"
+    "build-storybook": "build-storybook -o docs-build",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint-fix": "npm run lint:js --fix && npm run lint:css --fix",
+    "lint:js": "eslint 'src/stories/**/*.js'",
+    "lint:css": "stylelint 'src/**/*.(scss|css)'",
+    "prettier": "prettier -w .",
+    "prettier-check": "prettier -c ."
   },
   "repository": {
     "type": "git",
@@ -52,8 +58,22 @@
     "@storybook/theming": "^6.5.9",
     "babel-loader": "^8.2.5",
     "css-loader": "^5.2.7",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "postcss-scss": "^4.0.6",
+    "prettier": "^2.8.1",
     "sass": "^1.53.0",
     "sass-loader": "^10.1.1",
-    "style-loader": "^2.0.0"
+    "style-loader": "^2.0.0",
+    "stylelint": "^14.16.0",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.3.0"
   }
 }

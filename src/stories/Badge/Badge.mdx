@@ -1,4 +1,4 @@
-import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
 
 # Badge
 
@@ -9,7 +9,7 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
 `.badge` Provides a default neutral colored badge.
 
 <Canvas withToolbar>
-  <Story id='components-badge--default' />
+  <Story id="components-badge--default" />
 </Canvas>
 
 ## Primary
@@ -17,7 +17,7 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
 `.badge-primary` Provides a primary badge. This uses the primary color defined in your theme.
 
 <Canvas withToolbar>
-  <Story id='components-badge--primary' />
+  <Story id="components-badge--primary" />
 </Canvas>
 
 ## Warning
@@ -25,7 +25,7 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
 `.badge-warning` Provides a Warning badge. This uses the warning alert color.
 
 <Canvas withToolbar>
-  <Story id='components-badge--warning' />
+  <Story id="components-badge--warning" />
 </Canvas>
 
 ## Danger
@@ -33,7 +33,7 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
 `.badge-danger` Provides a Danger badge. This uses the danger alert color.
 
 <Canvas withToolbar>
-  <Story id='components-badge--danger' />
+  <Story id="components-badge--danger" />
 </Canvas>
 
 ## Info
@@ -41,7 +41,7 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
 `.badge-info` Provides a Info badge. This uses the Info alert color.
 
 <Canvas withToolbar>
-  <Story id='components-badge--info' />
+  <Story id="components-badge--info" />
 </Canvas>
 
 ## Notice
@@ -49,7 +49,7 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
 `.badge-notice` Provides a Notice badge. This uses the Notice alert color.
 
 <Canvas withToolbar>
-  <Story id='components-badge--notice' />
+  <Story id="components-badge--notice" />
 </Canvas>
 
 ## Pill
@@ -57,7 +57,7 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
 `.badge--pill` Modifies the shape of any other badge by adding a radius to the left and right.
 
 <Canvas withToolbar>
-  <Story id='components-badge--pill' />
+  <Story id="components-badge--pill" />
 </Canvas>
 
 ## Notification Button
@@ -65,7 +65,7 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
 `.badge--notification-right` and `.badge--notification-left` can be used inside of a button with the `.btn--with-badge` class to achieve a button notification style.
 
 <Canvas withToolbar>
-  <Story id='components-badge--notification-button' />
+  <Story id="components-badge--notification-button" />
 </Canvas>
 
 ## Overriding badge styles
@@ -73,6 +73,7 @@ Badge classes provide simple styling for "badge/chip/notification/label" content
 The badge classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
 
 This allows multiple badge classes to share the same behavior. You can modify all badges behavior by overriding the `%badge-global` placeholder selector and setting any properties:
+
 ```css
 %badge-global {
   font-size: var(--rm-font-x-large);
@@ -80,6 +81,7 @@ This allows multiple badge classes to share the same behavior. You can modify al
 ```
 
 If you need to override the behavior of a particular badge style, you can open the respective class and set or change properties
+
 ```css
 // This will only affect the primary badge, but not default, secondary, notice, etc.
 .badge-primary {
@@ -91,6 +93,7 @@ If you need to override the behavior of a particular badge style, you can open t
 ## Custom Badge
 
 Your application may need a custom badge. To add one, just follow this template:
+
 ```css
 .badge-{name} {
   @extend %badge-global;
@@ -111,5 +114,5 @@ Your application may need a custom badge. To add one, just follow this template:
 
 ## Playground
 
-<Primary/>
-<ArgsTable of='.' story='^'/>
+<Primary />
+<ArgsTable of="." story="^" />

@@ -40,10 +40,9 @@
 
   .sidebar__brand {
     display: flex;
-    gap: var(--rm-space-small);
-
-    text-decoration: none;
     color: inherit;
+    gap: var(--rm-space-small);
+    text-decoration: none;
 
     svg {
       width: var(--rm-space-3x-large);
@@ -72,7 +71,7 @@
     &:hover,
     &.active {
       .sidebar__item-icon {
-        --mso-weight: var(--rm-font-weight-medium);
+        --rm-mso-weight: var(--rm-font-weight-medium);
       }
     }
   }
@@ -83,11 +82,11 @@
   }
 
   &.sidebar--drawer.sidebar--responsive {
-    @media(width > $breakpoint-medium) {
+    @media (width > $breakpoint-medium) {
       @include sidebar-16six-drawer-global;
     }
 
-    @media(width <=$breakpoint-medium) {
+    @media (width <= $breakpoint-medium) {
       @include sidebar-16six-rail-global;
     }
   }

@@ -12,13 +12,11 @@
   --__rm-table-cell-padding: var(--_rm-table-cell-padding-default);
 
   width: 100%;
-  border-collapse: collapse;
-  table-layout: auto;
-
-  box-shadow: var(--rm-border-all) var(--rm-border-color);
   border-radius: var(--rm-radius-medium);
-
+  border-collapse: collapse;
+  box-shadow: var(--rm-border-all) var(--rm-border-color);
   contain: paint;
+  table-layout: auto;
 
   thead {
     background-color: var(--rm-color-neutral-plus-four);
@@ -26,21 +24,21 @@
   }
 
   th {
+    font-weight: var(--rm-font-weight-normal);
     text-align: left;
     text-transform: uppercase;
-
-    font-weight: var(--rm-font-weight-normal);
   }
 
-  tbody, tfoot {
+  tbody,
+  tfoot {
     background-color: var(--rm-color-background);
     color: var(--rm-color-on-background);
   }
 
-  th, td {
-    font-size: var(--rm-font-small);
-
+  th,
+  td {
     padding: var(--__rm-table-cell-padding);
+    font-size: var(--rm-font-small);
   }
 
   tr:not(:last-child) {
@@ -52,8 +50,13 @@
   }
 
   // Layout Modifiers
-  &.table--auto-layout { table-layout: auto; }
-  &.table--fixed-layout { table-layout: fixed; }
+  &.table--auto-layout {
+    table-layout: auto;
+  }
+
+  &.table--fixed-layout {
+    table-layout: fixed;
+  }
 
   // Table Density Modifiers
   &.table--default-density {

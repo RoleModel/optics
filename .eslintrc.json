@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": ["standard", "prettier"],
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_", // Allow unused arguments starting with an underscore
+        "varsIgnorePattern": "^_", // Allow unused variables starting with an underscore
+        "ignoreRestSiblings": true
+      }
+    ]
+  }
+}

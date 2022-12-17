@@ -1,5 +1,5 @@
-import { createCard } from './Card/Card.js';
-import ShadowDocs from './Shadow/Shadow.mdx';
+import { createCard } from './Card/Card.js'
+import ShadowDocs from './Shadow/Shadow.mdx'
 
 export default {
   title: 'Tokens/Shadow',
@@ -11,41 +11,41 @@ export default {
   },
   parameters: {
     docs: {
-      page: ShadowDocs
+      page: ShadowDocs,
     },
   },
-};
+}
 
 const Template = ({ shadow, ...args }) => {
-  return createCard({ padded: true, shadow, ...args });
-};
+  return createCard({ padded: true, shadow, ...args })
+}
 
-export const XSmall = Template.bind({});
+export const XSmall = Template.bind({})
 XSmall.args = {
   shadow: 'x-small',
-  label: 'X Small'
-};
+  label: 'X Small',
+}
 
-export const Small = Template.bind({});
+export const Small = Template.bind({})
 Small.args = {
   shadow: 'small',
-  label: 'Small'
-};
+  label: 'Small',
+}
 
-export const Medium = Template.bind({});
+export const Medium = Template.bind({})
 Medium.args = {
   shadow: 'medium',
-  label: 'Medium'
-};
+  label: 'Medium',
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 Large.args = {
   shadow: 'large',
-  label: 'Large'
-};
+  label: 'Large',
+}
 
-export const XLarge = Template.bind({});
+export const XLarge = Template.bind({})
 XLarge.args = {
   shadow: 'x-large',
-  label: 'X Large'
-};
+  label: 'X Large',
+}

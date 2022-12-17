@@ -1,7 +1,4 @@
-export const createBorder = ({
-  position = 'all',
-  inset = false,
-}) => {
+export const createBorder = ({ position = 'all', inset = false }) => {
   const borderElement = document.createElement('div')
   borderElement.innerText = position
 
@@ -17,7 +14,7 @@ export const createBorder = ({
     shadowStyle += ' var(--rm-border-color)'
   }
 
-  borderElement.style.boxShadow = shadowStyle;
+  borderElement.style.boxShadow = shadowStyle
 
-  return borderElement;
-};
+  return borderElement
+}

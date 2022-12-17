@@ -2,7 +2,6 @@
 
 html {
   overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
-
   font-family: var(--rm-font-family);
   font-size: 62.5%; // 1rem = 10px
 }
@@ -10,10 +9,8 @@ html {
 body {
   overflow: auto;
   height: 100vh;
-
   background: var(--rm-color-background);
   color: var(--rm-color-on-background);
-
   font-size: var(--rm-font-medium);
 }
 
@@ -22,7 +19,8 @@ button {
   cursor: pointer;
 }
 
-button, input[type='submit'] {
+button,
+input[type='submit'] {
   border: 0;
 }
 
@@ -38,27 +36,57 @@ a {
   color: var(--rm-color-primary-original);
 }
 
-blockquote, dl, dd, h1, h2, h3, h4, h5, h6, figure, pre {
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+pre {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: var(--rm-space-small);
-
   font-weight: var(--rm-font-weight-normal);
 }
 
-h1 { font-size: var(--rm-font-2x-large); }
-h2 { font-size: var(--rm-font-x-large);  }
-h3 { font-size: var(--rm-font-large);    }
-h4 { font-size: var(--rm-font-medium);   }
-h5 { font-size: var(--rm-font-small);    }
-h6 { font-size: var(--rm-font-x-small);  }
+h1 {
+  font-size: var(--rm-font-2x-large);
+}
+
+h2 {
+  font-size: var(--rm-font-x-large);
+}
+
+h3 {
+  font-size: var(--rm-font-large);
+}
+
+h4 {
+  font-size: var(--rm-font-medium);
+}
+
+h5 {
+  font-size: var(--rm-font-small);
+}
+
+h6 {
+  font-size: var(--rm-font-x-small);
+}
 
 p {
   margin-bottom: var(--rm-space-small);
-
   font-size: var(--rm-font-medium);
 }
 

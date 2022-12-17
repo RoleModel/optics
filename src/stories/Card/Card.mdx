@@ -1,4 +1,4 @@
-import { Primary, ArgsTable, Canvas, Story } from "@storybook/addon-docs";
+import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
 
 # Card
 
@@ -12,7 +12,7 @@ Card classes can be used to denote bordered sections of an application. They pro
 `.card` Provides basic card styles.
 
 <Canvas withToolbar>
-  <Story id='components-card--plain' />
+  <Story id="components-card--plain" />
 </Canvas>
 
 ## Padded
@@ -20,7 +20,7 @@ Card classes can be used to denote bordered sections of an application. They pro
 `.card-padded` Provides a padded card.
 
 <Canvas withToolbar>
-  <Story id='components-card--padded' />
+  <Story id="components-card--padded" />
 </Canvas>
 
 ## Full
@@ -28,7 +28,7 @@ Card classes can be used to denote bordered sections of an application. They pro
 `.card__header`, `.card__body`, and `.card__footer` Provide padded sections of a card.
 
 <Canvas withToolbar>
-  <Story id='components-card--full' />
+  <Story id="components-card--full" />
 </Canvas>
 
 ## Condensed
@@ -36,7 +36,7 @@ Card classes can be used to denote bordered sections of an application. They pro
 `.card--condensed` Changes the padding scale for everything below it.
 
 <Canvas withToolbar>
-  <Story id='components-card--condensed' />
+  <Story id="components-card--condensed" />
 </Canvas>
 
 ## Shadow
@@ -44,15 +44,15 @@ Card classes can be used to denote bordered sections of an application. They pro
 `.card--shadow-x-small`, `.card--shadow-small`, `.card--shadow-medium`, `.card--shadow-large`, `.card--shadow-x-large` Add a shadow elevation effect to the card.
 
 <Canvas withToolbar>
-  <Story id='components-card--shadow' />
+  <Story id="components-card--shadow" />
 </Canvas>
-
 
 ## Overriding card styles
 
 The card classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
 
 This allows multiple card classes to share the same behavior. You can modify all cards behavior by overriding the `%card-global` placeholder selector and setting any properties:
+
 ```css
 %card-global {
   font-size: var(--rm-font-x-large);
@@ -60,6 +60,7 @@ This allows multiple card classes to share the same behavior. You can modify all
 ```
 
 If you need to override the behavior of a particular card style, you can open the respective class and set or change properties
+
 ```css
 // This will only affect the card, but not card-padded
 .card {
@@ -71,6 +72,7 @@ If you need to override the behavior of a particular card style, you can open th
 ## Custom Card
 
 Your application may need a custom card. To add one, just follow this template:
+
 ```css
 .card-{name} {
   @extend %card-global;
@@ -96,5 +98,5 @@ Your application may need a custom card. To add one, just follow this template:
 
 ## Playground
 
-<Primary/>
-<ArgsTable of='.' story='^'/>
+<Primary />
+<ArgsTable of="." story="^" />

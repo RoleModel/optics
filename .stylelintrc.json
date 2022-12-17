@@ -1,0 +1,15 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-idiomatic-order", "stylelint-config-prettier-scss"],
+  "plugins": ["stylelint-scss", "stylelint-prettier"],
+  "overrides": [
+    {
+      "files": ["**/*.scss"],
+      "customSyntax": "postcss-scss"
+    }
+  ],
+  "rules": {
+    "prettier/prettier": true,
+    "custom-property-pattern": ["(?<=rm-)", { "message": "CSS variables should be prefixed with rm-" }],
+    "selector-class-pattern": null
+  }
+}

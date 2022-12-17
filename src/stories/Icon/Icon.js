@@ -1,10 +1,4 @@
-export const createIcon = ({
-  name,
-  filled = false,
-  size = 'medium',
-  weight = 'normal',
-  emphasis = 'normal',
-}) => {
+export const createIcon = ({ name, filled = false, size = 'medium', weight = 'normal', emphasis = 'normal' }) => {
   const icon = document.createElement('span')
   icon.innerText = name
 
@@ -14,7 +8,9 @@ export const createIcon = ({
     `icon--${size}`,
     `icon--weight-${weight}`,
     `icon--${emphasis}-emphasis`,
-  ].filter(Boolean).join(' ');
+  ]
+    .filter(Boolean)
+    .join(' ')
 
-  return icon;
-};
+  return icon
+}

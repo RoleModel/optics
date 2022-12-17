@@ -1,17 +1,16 @@
 .panel {
   --rm-panel-width: 40%;
 
-  height: 100vh;
-  width: var(--rm-panel-width);
-  z-index: var(--rm-z-index-drawer);
   position: absolute;
+  z-index: var(--rm-z-index-drawer);
   right: calc(-1 * var(--rm-panel-width)); // this pushes the panel off the sceen to the right
+  width: var(--rm-panel-width);
+  height: 100vh;
+  padding-bottom: var(--rm-space-large);
   background: var(--rm-color-background);
   color: var(--rm-color-on-background);
-  transition: right var(--rm-transition-panel);
-
   overflow-y: scroll;
-  padding-bottom: var(--rm-space-large);
+  transition: right var(--rm-transition-panel);
 }
 
 .panel--active {
@@ -20,11 +19,11 @@
 }
 
 .panel__close {
-  float: right;
-  cursor: pointer;
   display: flex;
   padding: var(--rm-space-medium);
   border-radius: 100%;
+  cursor: pointer;
+  float: right;
 
   &:hover {
     background: var(--rm-color-neutral-plus-seven);

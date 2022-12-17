@@ -1,19 +1,23 @@
 :root {
-  --rm-color-white: hsl(0, 100%, 100%);
-  --rm-color-black: hsl(0, 0%, 0%);
+  --rm-color-white: hsl(0deg 100% 100%);
+  --rm-color-black: hsl(0deg 0% 0%);
 
+  // Green
   --rm-color-green-h: 130;
   --rm-color-green-s: 61%;
   --rm-color-green-l: 64%;
 
+  // Yellow
   --rm-color-yellow-h: 47;
   --rm-color-yellow-s: 100%;
   --rm-color-yellow-l: 61%;
 
+  // Red
   --rm-color-red-h: 0;
   --rm-color-red-s: 99%;
   --rm-color-red-l: 76%;
 
+  // Teal
   --rm-color-teal-h: 162;
   --rm-color-teal-s: 68%;
   --rm-color-teal-l: 53%;
@@ -23,10 +27,12 @@
   --rm-color-blue-s: 58%;
   --rm-color-blue-l: 48%;
 
+  // Violet
   --rm-color-violet-h: 256;
   --rm-color-violet-s: 93%;
   --rm-color-violet-l: 72%;
 
+  // Orange
   --rm-color-orange-h: 31;
   --rm-color-orange-s: 100%;
   --rm-color-orange-l: 65%;

@@ -1,5 +1,5 @@
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -8,5 +8,5 @@ export const parameters = {
   },
 }
 
-import '!style-loader!css-loader!sass-loader!../src/rolemodel-design-system.scss';
-import '!style-loader!css-loader!sass-loader!./documentation.scss';
+import '!style-loader!css-loader!sass-loader!../src/rolemodel-design-system.scss'
+import '!style-loader!css-loader!sass-loader!./documentation.scss'

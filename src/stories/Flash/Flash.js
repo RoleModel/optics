@@ -2,26 +2,19 @@ import { createIcon } from '../Icon/Icon.js'
 
 const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1)
 
-export const createFlash = ({
-  label,
-  style = 'notice',
-}) => {
-  const flash = document.createElement('div');
+export const createFlash = ({ label, style = 'notice' }) => {
+  const flash = document.createElement('div')
 
-  flash.className = [
-    'flash',
-    'flash--demo',
-    `flash--${style}`,
-  ].filter(Boolean).join(' ')
+  flash.className = ['flash', 'flash--demo', `flash--${style}`].filter(Boolean).join(' ')
 
   const iconMapping = {
-    'notice': 'check_circle',
-    'info': 'info',
-    'alert': 'cancel',
-    'warning': 'warning',
+    notice: 'check_circle',
+    info: 'info',
+    alert: 'cancel',
+    warning: 'warning',
   }
 
-  flash.innerHTML += "\n  "
+  flash.innerHTML += '\n  '
 
   flash.appendChild(createIcon({ name: iconMapping[style], size: 'large' }))
 

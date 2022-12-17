@@ -11,8 +11,8 @@
   }
 
   .sidebar__item {
-    border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
 
   .sidebar__section-divider {
@@ -45,11 +45,11 @@
   }
 
   &.sidebar--drawer.sidebar--responsive {
-    @media(width > $breakpoint-medium) {
+    @media (width > $breakpoint-medium) {
       @include sidebar-domains-drawer-global;
     }
 
-    @media(width <= $breakpoint-medium) {
+    @media (width <= $breakpoint-medium) {
       @include sidebar-domains-rail-global;
     }
   }

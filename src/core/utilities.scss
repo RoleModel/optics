@@ -1,10 +1,10 @@
 // Container Properties
 
 .container {
-  max-width: $breakpoint-medium;
-  margin: 0 auto;
-  padding: 0 var(--rm-space-large);
   width: 100%;
+  max-width: $breakpoint-medium;
+  padding: 0 var(--rm-space-large);
+  margin: 0 auto;
 }
 
 .container--sm {
@@ -25,57 +25,106 @@
 
 // Width Properties
 
-.full-width { width: 100%; }
-.half-width { width: 50%; }
+.full-width {
+  width: 100%;
+}
 
-.four-fifths-width { width: calc(100% * 4/5); }
-.three-fifths-width { width: calc(100% * 3/5); }
-.two-fifths-width { width: calc(100% * 2/5); }
-.one-fifth-width { width: calc(100% * 1/5); }
+.half-width {
+  width: 50%;
+}
 
-.three-quarters-width { width: calc(100% * 3/4); }
-.one-quarter-width { width: calc(100% * 1/4); }
+.four-fifths-width {
+  width: calc(100% * 4 / 5);
+}
 
-.two-thirds-width { width: calc(100% * 2/3); }
-.one-third-width { width: calc(100% * 1/3); }
+.three-fifths-width {
+  width: calc(100% * 3 / 5);
+}
+
+.two-fifths-width {
+  width: calc(100% * 2 / 5);
+}
+
+.one-fifth-width {
+  width: calc(100% * 1 / 5);
+}
+
+.three-quarters-width {
+  width: calc(100% * 3 / 4);
+}
+
+.one-quarter-width {
+  width: calc(100% * 1 / 4);
+}
+
+.two-thirds-width {
+  width: calc(100% * 2 / 3);
+}
+
+.one-third-width {
+  width: calc(100% * 1 / 3);
+}
 
 // Flex Properties
 
-.flex { display: flex; }
+.flex {
+  display: flex;
+}
 
-.flex-col { flex-direction: column; }
+.flex-col {
+  flex-direction: column;
+}
 
-.flex-row { flex-direction: row; }
+.flex-row {
+  flex-direction: row;
+}
 
-.flex-wrap { flex-wrap: wrap; }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 
-.flex-no-wrap { flex-wrap: nowrap; }
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
 
-.flex-grow-1 { flex-grow: 1; }
+.flex-grow-1 {
+  flex-grow: 1;
+}
 
 // Gap Properties
 .gap-xxs {
   gap: var(--rm-space-2x-small);
+
   --rm-gap: var(--rm-space-2x-small);
 }
+
 .gap-xs {
   gap: var(--rm-space-x-small);
+
   --rm-gap: var(--rm-space-x-small);
 }
+
 .gap-sm {
   gap: var(--rm-space-small);
+
   --rm-gap: var(--rm-space-small);
 }
+
 .gap-md {
   gap: var(--rm-space-medium);
+
   --rm-gap: var(--rm-space-medium);
 }
+
 .gap-lg {
   gap: var(--rm-space-large);
+
   --rm-gap: var(--rm-space-large);
 }
+
 .gap-xl {
   gap: var(--rm-space-x-large);
+
   --rm-gap: var(--rm-space-x-large);
 }
 
@@ -121,10 +170,6 @@
 
 .items-baseline {
   align-items: baseline;
-}
-
-.items-end {
-  align-items: flex-end;
 }
 
 // Align Self
@@ -407,7 +452,6 @@
   }
 }
 
-
 // Flexible Layout
 // This allows for creating a grid like area using one flex container with multiple lines
 // Percentage based widths can be used to define the areas of each row.
@@ -450,19 +494,45 @@
   & > * {
     flex: 1;
 
-    &.four-fifths-width { flex-basis: calc(calc(100% * 4/5) - var(--rm-gap)); }
-    &.three-fifths-width { flex-basis: calc(calc(100% * 3/5) - var(--rm-gap)); }
-    &.two-fifths-width { flex-basis: calc(calc(100% * 2/5) - var(--rm-gap)); }
-    &.one-fifth-width { flex-basis: calc(calc(100% * 1/5) - var(--rm-gap)); }
+    &.four-fifths-width {
+      flex-basis: calc(calc(100% * 4 / 5) - var(--rm-gap));
+    }
 
-    &.three-quarters-width { flex-basis: calc(calc(100% * 3/4) - var(--rm-gap)); }
-    &.one-quarter-width { flex-basis: calc(calc(100% * 1/4) - var(--rm-gap)); }
+    &.three-fifths-width {
+      flex-basis: calc(calc(100% * 3 / 5) - var(--rm-gap));
+    }
 
-    &.two-thirds-width { flex-basis: calc(calc(100% * 2/3) - var(--rm-gap)); }
-    &.one-third-width { flex-basis: calc(calc(100% * 1/3) - var(--rm-gap)); }
+    &.two-fifths-width {
+      flex-basis: calc(calc(100% * 2 / 5) - var(--rm-gap));
+    }
 
-    &.full-width { flex-basis: calc(100% - var(--rm-gap)); }
-    &.half-width { flex-basis: calc(50% - var(--rm-gap)); }
+    &.one-fifth-width {
+      flex-basis: calc(calc(100% * 1 / 5) - var(--rm-gap));
+    }
+
+    &.three-quarters-width {
+      flex-basis: calc(calc(100% * 3 / 4) - var(--rm-gap));
+    }
+
+    &.one-quarter-width {
+      flex-basis: calc(calc(100% * 1 / 4) - var(--rm-gap));
+    }
+
+    &.two-thirds-width {
+      flex-basis: calc(calc(100% * 2 / 3) - var(--rm-gap));
+    }
+
+    &.one-third-width {
+      flex-basis: calc(calc(100% * 1 / 3) - var(--rm-gap));
+    }
+
+    &.full-width {
+      flex-basis: calc(100% - var(--rm-gap));
+    }
+
+    &.half-width {
+      flex-basis: calc(50% - var(--rm-gap));
+    }
   }
 
   @media screen and (max-width: $breakpoint-small) {
@@ -470,8 +540,8 @@
       flex-direction: column;
 
       & > * {
-        flex-basis: 100%;
         width: 100%;
+        flex-basis: 100%;
       }
     }
   }
