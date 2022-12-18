@@ -171,6 +171,8 @@
   --rm-input-height-medium: 3.2rem; // 32px
   --rm-input-height-large: 4.4rem; // 44px
   --rm-input-height-x-large: 5.6rem; // 56px
+  --rm-input-focus: inset var(--rm-border-all) var(--rm-color-primary-minus-three),
+    0 0 0 var(--rm-space-2x-small) var(--rm-color-primary-plus-four);
 }
 
 // We use SCSS variables outside the root since support for custom properties / css variables
