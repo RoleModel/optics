@@ -1,7 +1,7 @@
 export const createLabel = ({ label, htmlFor = 'random' }) => {
   const labelElement = document.createElement('label')
   labelElement.innerText = label
-  labelElement.className = 'form__label'
+  labelElement.className = 'form-label'
   labelElement.htmlFor = htmlFor
 
   return labelElement
@@ -11,7 +11,7 @@ const createRadioInput = ({ readonly, id }) => {
   const input = document.createElement('input')
   input.type = 'radio'
   input.id = id
-  input.className = 'form__radio'
+  input.className = 'form-control'
 
   if (readonly) {
     input.disabled = true
@@ -24,7 +24,7 @@ const createCheckboxInput = ({ readonly, id, indeterminate }) => {
   const input = document.createElement('input')
   input.type = 'checkbox'
   input.id = id
-  input.className = 'form__checkbox'
+  input.className = 'form-control'
   input.indeterminate = indeterminate
 
   if (readonly) {
@@ -39,10 +39,10 @@ const createColorInput = ({ readonly, id }) => {
   const input = document.createElement(element)
   input.type = 'color'
   input.id = id
-  input.className = 'form__color'
+  input.className = 'form-control'
 
   if (readonly) {
-    input.className += ' form__color--read-only'
+    input.className += ' form-control--read-only'
   }
 
   return input
@@ -65,10 +65,10 @@ export const createInput = ({ type, readonly, id = 'random', indeterminate = fal
   input.placeholder = type
   input.id = id
 
-  input.className = 'form__input'
+  input.className = 'form-control'
 
   if (readonly) {
-    input.className += ' form__input--read-only'
+    input.className += ' form-control--read-only'
     input.innerHTML = type
   }
 
@@ -79,10 +79,10 @@ export const createTextarea = ({ readonly }) => {
   const element = readonly ? 'div' : 'textarea'
   const input = document.createElement(element)
   input.placeholder = 'Textarea'
-  input.className = 'form__textarea'
+  input.className = 'form-control'
 
   if (readonly) {
-    input.className += ' form__textarea--read-only'
+    input.className += ' form-control--read-only'
     input.innerHTML = 'Textarea'
   }
 
@@ -92,10 +92,10 @@ export const createTextarea = ({ readonly }) => {
 export const createSelect = ({ options, readonly }) => {
   const element = readonly ? 'div' : 'select'
   const input = document.createElement(element)
-  input.className = 'form__dropdown'
+  input.className = 'form-control'
 
   if (readonly) {
-    input.className += ' form__dropdown--read-only'
+    input.className += ' form-control--read-only'
     input.innerHTML = 'Option 1'
   } else {
     const optionStrings = Array.from(Array(options)).map((_, i) => {
@@ -112,7 +112,7 @@ export const createSelect = ({ options, readonly }) => {
 
 export const createErrorSummary = ({ label }) => {
   const element = document.createElement('div')
-  element.className = 'form__error-summary'
+  element.className = 'form-error-summary'
 
   element.innerHTML = `
   <h2>${label}</h2>
@@ -127,14 +127,14 @@ export const createErrorSummary = ({ label }) => {
 
 export const createFormGroup = ({ label, type, error, hint, readonly, indeterminate }) => {
   const element = document.createElement('div')
-  element.className = 'form__group'
+  element.className = 'form-group'
 
   if (error) {
-    element.className += ' form__input--error'
+    element.className += ' form-group--error'
   }
 
   const errorElement = document.createElement('span')
-  errorElement.className = 'form__error'
+  errorElement.className = 'form-error'
   errorElement.innerText = error
 
   if (type === 'checkbox' || type === 'radio') {
@@ -153,7 +153,7 @@ export const createFormGroup = ({ label, type, error, hint, readonly, indetermin
 
   if (hint) {
     const hintElement = document.createElement('div')
-    hintElement.className = 'form__hint'
+    hintElement.className = 'form-hint'
     hintElement.innerText = hint
     element.appendChild(hintElement)
   }
