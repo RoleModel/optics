@@ -1,3 +1,8 @@
+%btn-focus-state {
+  box-shadow: var(--rm-input-focus);
+  outline: none;
+}
+
 %btn-global {
   // Public API (allowed to be overridden)
   --_rm-btn-height-small: var(--rm-input-height-small);
@@ -71,6 +76,29 @@
   // Button with notification style badge
   &.btn--with-badge {
     position: relative;
+  }
+
+  // Focus State
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    @extend %btn-focus-state;
+  }
+
+  &.btn--no-border {
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      @extend %btn-focus-state;
+    }
+  }
+
+  &.btn--outline {
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      @extend %btn-focus-state;
+    }
   }
 
   // https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
