@@ -68,11 +68,6 @@
     opacity: 0.65;
   }
 
-  // No Border Modifier
-  &.btn--no-border {
-    font-weight: var(--rm-font-weight-bold);
-  }
-
   // Button with notification style badge
   &.btn--with-badge {
     position: relative;
