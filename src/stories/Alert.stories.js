@@ -15,6 +15,7 @@ export default {
     title: { control: 'text' },
     description: { control: 'text' },
     icon: { control: 'text' },
+    dismissible: { control: 'boolean' },
   },
   parameters: {
     docs: {
@@ -79,4 +80,29 @@ Outlined.args = {
   warningLevel: 'warning',
   style: 'outlined',
   icon: 'check_box_outline_blank',
+}
+
+export const NoIcon = Template.bind({})
+NoIcon.args = {
+  title: 'Warning',
+  description: 'This is a warning alert with no icon',
+  warningLevel: 'warning',
+  style: 'outlined',
+}
+
+export const NoTitle = Template.bind({})
+NoTitle.args = {
+  description: 'This is a warning alert with no title',
+  warningLevel: 'warning',
+  style: 'outlined',
+  icon: 'check_box_outline_blank',
+}
+
+export const Dismissible = Template.bind({})
+Dismissible.args = {
+  description: 'This is a warning alert with a close icon',
+  warningLevel: 'warning',
+  style: 'outlined',
+  icon: 'check_box_outline_blank',
+  dismissible: true,
 }

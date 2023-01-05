@@ -3,9 +3,10 @@ import { createIcon } from '../Icon/Icon.js'
 export const createAlert = ({
   warningLevel = 'warning',
   style = 'filled',
-  title = 'Warning',
+  title = '',
   description = 'This is a warning alert',
   icon = '',
+  dismissible = false,
 }) => {
   const element = document.createElement('div')
 
@@ -25,6 +26,12 @@ export const createAlert = ({
   `
 
   element.appendChild(messagesElement)
+
+  if (dismissible) {
+    const iconElement = createIcon({ name: 'close' })
+    iconElement.classList.add('alert__icon')
+    element.appendChild(iconElement)
+  }
 
   return element
 }

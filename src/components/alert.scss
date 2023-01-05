@@ -15,6 +15,7 @@
 
   .alert__messages {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: var(--rm-space-2x-small);
   }

@@ -53,12 +53,36 @@ These could be as banners for global application messages, or an error message w
   <Story id="components-alert--outlined" />
 </Canvas>
 
+## No Icon
+
+The icon is optional
+
+<Canvas withToolbar>
+  <Story id="components-alert--no-icon" />
+</Canvas>
+
+## No Title
+
+The title is optional
+
+<Canvas withToolbar>
+  <Story id="components-alert--no-title" />
+</Canvas>
+
+## Dismissible
+
+If your application needs to allow dismissing these alerts, you can add a second icon/button after the messages section and add functionality via JS
+
+<Canvas withToolbar>
+  <Story id="components-alert--dismissible" />
+</Canvas>
+
 ## Alert Structure
 
 All alerts use the following structure to construct the component.
 
 The muted or outlined classes would be added at the top level.
-The icon is optional as well.
+icon, title, and the final (dismissible close) icon are all optional.
 
 ```html
 <div class='alert-danger'>
@@ -68,6 +92,7 @@ The icon is optional as well.
     <div class='alert__description'>Your message</div>
     <div class='alert__description'>Another message if you need</div>
   </div>
+  <span class='alert__icon material-symbols-outlined'>close</div>
 </div>
 ```
 
