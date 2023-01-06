@@ -6,11 +6,12 @@
   gap: var(--rm-space-small);
 
   .alert__icon {
-    font-size: var(--rm-font-large);
-    line-height: var(--rm-line-height-dense);
+    /* stylelint-disable scss/at-extend-no-missing-placeholder */
+    @extend .icon--large;
+    @extend .icon--weight-bold;
+    /* stylelint-enable scss/at-extend-no-missing-placeholder */
 
-    --rm-mso-optical-sizing: 40;
-    --rm-mso-weight: var(--rm-font-weight-bold);
+    line-height: var(--rm-line-height-dense);
   }
 
   .alert__messages {
