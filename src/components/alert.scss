@@ -1,0 +1,158 @@
+%alert-global {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--rm-space-x-small) var(--rm-space-medium);
+  border-radius: var(--rm-radius-medium);
+  gap: var(--rm-space-small);
+
+  .alert__icon {
+    /* stylelint-disable scss/at-extend-no-missing-placeholder */
+    @extend .icon--large;
+    @extend .icon--weight-bold;
+    /* stylelint-enable scss/at-extend-no-missing-placeholder */
+
+    line-height: var(--rm-line-height-dense);
+  }
+
+  .alert__messages {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--rm-space-2x-small);
+  }
+
+  .alert__title {
+    font-size: var(--rm-font-medium);
+    font-weight: var(--rm-font-weight-medium);
+  }
+
+  .alert__description {
+    font-size: var(--rm-font-small);
+  }
+}
+
+.alert-warning {
+  @extend %alert-global;
+
+  background-color: var(--rm-color-alerts-warning-base);
+  color: var(--rm-color-alerts-warning-on-base);
+
+  .alert__title {
+    color: var(--rm-color-alerts-warning-on-plus-one);
+  }
+
+  &.alert--muted {
+    background-color: var(--rm-color-alerts-warning-plus-five);
+    color: var(--rm-color-alerts-warning-on-plus-five);
+
+    .alert__title {
+      color: var(--rm-color-alerts-warning-on-plus-six);
+    }
+  }
+
+  &.alert--outlined {
+    background-color: var(--rm-color-alerts-warning-plus-eight);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-warning-base);
+    color: var(--rm-color-alerts-warning-on-plus-five);
+
+    .alert__title {
+      color: var(--rm-color-alerts-warning-on-plus-four);
+    }
+  }
+}
+
+.alert-danger {
+  @extend %alert-global;
+
+  background-color: var(--rm-color-alerts-danger-base);
+  color: var(--rm-color-alerts-danger-on-base);
+
+  /* stylelint-disable no-descending-specificity */
+  .alert__title {
+    color: var(--rm-color-alerts-danger-on-plus-one);
+  }
+  /* stylelint-enable no-descending-specificity */
+
+  &.alert--muted {
+    background-color: var(--rm-color-alerts-danger-plus-five);
+    color: var(--rm-color-alerts-danger-on-plus-five);
+
+    .alert__title {
+      color: var(--rm-color-alerts-danger-on-plus-six);
+    }
+  }
+
+  &.alert--outlined {
+    background-color: var(--rm-color-alerts-danger-plus-eight);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-base);
+    color: var(--rm-color-alerts-danger-on-plus-five);
+
+    .alert__title {
+      color: var(--rm-color-alerts-danger-on-plus-four);
+    }
+  }
+}
+
+.alert-info {
+  @extend %alert-global;
+
+  background-color: var(--rm-color-alerts-info-base);
+  color: var(--rm-color-alerts-info-on-base);
+
+  /* stylelint-disable no-descending-specificity */
+  .alert__title {
+    color: var(--rm-color-alerts-info-on-plus-one);
+  }
+  /* stylelint-enable no-descending-specificity */
+
+  &.alert--muted {
+    background-color: var(--rm-color-alerts-info-plus-five);
+    color: var(--rm-color-alerts-info-on-plus-five);
+
+    .alert__title {
+      color: var(--rm-color-alerts-info-on-plus-six);
+    }
+  }
+
+  &.alert--outlined {
+    background-color: var(--rm-color-alerts-info-plus-eight);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-info-base);
+    color: var(--rm-color-alerts-info-on-plus-five);
+
+    .alert__title {
+      color: var(--rm-color-alerts-info-on-plus-four);
+    }
+  }
+}
+
+.alert-notice {
+  @extend %alert-global;
+
+  background-color: var(--rm-color-alerts-notice-base);
+  color: var(--rm-color-alerts-notice-on-base);
+
+  /* stylelint-disable no-descending-specificity */
+  .alert__title {
+    color: var(--rm-color-alerts-notice-on-plus-one);
+  }
+  /* stylelint-enable no-descending-specificity */
+
+  &.alert--muted {
+    background-color: var(--rm-color-alerts-notice-plus-five);
+    color: var(--rm-color-alerts-notice-on-plus-five);
+
+    .alert__title {
+      color: var(--rm-color-alerts-notice-on-plus-six);
+    }
+  }
+
+  &.alert--outlined {
+    background-color: var(--rm-color-alerts-notice-plus-eight);
+    box-shadow: var(--rm-border-all) var(--rm-color-alerts-notice-base);
+    color: var(--rm-color-alerts-notice-on-plus-five);
+
+    .alert__title {
+      color: var(--rm-color-alerts-notice-on-plus-four);
+    }
+  }
+}
