@@ -4,17 +4,41 @@
 // Using Mixins allows us to include them at a component level
 // as needed and override them.
 
-// A theme comprised of a pimary color and a neutral color with a hint of the primary color.
+// A theme comprised of a primary, neutral, warning, danger, info, and notice colors.
 @mixin color-varieties {
+  // Basic Colors
+  --rm-color-white: hsl(0deg 100% 100%);
+  --rm-color-black: hsl(0deg 0% 0%);
+
   // Primary HSL
-  --rm-color-primary-h: var(--rm-color-blue-h);
-  --rm-color-primary-s: var(--rm-color-blue-s);
-  --rm-color-primary-l: var(--rm-color-blue-l);
+  --rm-color-primary-h: 216;
+  --rm-color-primary-s: 58%;
+  --rm-color-primary-l: 48%;
 
   // Neutral HSL
   --rm-color-neutral-h: var(--rm-color-primary-h);
   --rm-color-neutral-s: 4%;
   --rm-color-neutral-l: var(--rm-color-primary-l);
+
+  // Alerts Warning HSL
+  --rm-color-alerts-warning-h: 47;
+  --rm-color-alerts-warning-s: 100%;
+  --rm-color-alerts-warning-l: 61%;
+
+  // Alerts Danger HSL
+  --rm-color-alerts-danger-h: 0;
+  --rm-color-alerts-danger-s: 99%;
+  --rm-color-alerts-danger-l: 76%;
+
+  // Alerts Info HSL
+  --rm-color-alerts-info-h: 216;
+  --rm-color-alerts-info-s: 58%;
+  --rm-color-alerts-info-l: 48%;
+
+  // Alerts Notice HSL
+  --rm-color-alerts-notice-h: 130;
+  --rm-color-alerts-notice-s: 61%;
+  --rm-color-alerts-notice-l: 64%;
 }
 
 @mixin border-radius {
