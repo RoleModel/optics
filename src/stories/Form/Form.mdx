@@ -11,7 +11,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Label
 
-`.form__label` Provides basic input label styles.
+`.form-label` Provides basic input label styles.
 
 <Canvas withToolbar>
   <Story id="components-form-label--default" />
@@ -19,7 +19,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Input
 
-`.form__input` Provides basic input styles. This can be used on `input` html elements. It works across a variety of types such as `text`, `number`, `password`, `email`, and `phone`
+`.form-control` Provides basic input styles. This can be used on `input` html elements. It works across a variety of types such as `text`, `number`, `password`, `email`, `phone`, `color`, `radio`, and, `checkbox`
 
 <Canvas withToolbar>
   <Story id="components-form-input--default" />
@@ -27,7 +27,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Form Group
 
-`.form__group` Composes an input and label together as a pair. It provides padding between input + label pairs in a form.
+`.form-group` Composes an input and label together as a pair. It provides padding between input + label pairs in a form.
 
 <Canvas withToolbar>
   <Story id="components-form-formgroup--default" />
@@ -35,7 +35,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Textarea
 
-`.form__textarea` Provides basic text area styles. This can be used on `textarea` html elements.
+`textarea.form-control` Provides basic text area styles. This can be used on `textarea` html elements.
 
 <Canvas withToolbar>
   <Story id="components-form-textarea--default" />
@@ -43,7 +43,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Dropdown
 
-`.form__dropdown` Provides basic `select` element styles.
+`select.form-control` Provides basic `select` element styles.
 
 <Canvas withToolbar>
   <Story id="components-form-select--default" />
@@ -51,7 +51,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Color
 
-`.form__color` Provides basic color input styles. This can be used on `input` html elements with a type of `color`.
+`<input type='color' class='form-control'>` Provides basic color input styles. This can be used on `input` html elements with a type of `color`.
 
 <Canvas withToolbar>
   <Story id="components-form-input--color" />
@@ -59,7 +59,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Radio
 
-`.form__radio` Provides basic input of type `radio` styles.
+`<input type='radio' class='form-control'>` Provides basic input of type `radio` styles.
 
 <Canvas withToolbar>
   <Story id="components-form-formgroup--radio" />
@@ -67,7 +67,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Checkbox
 
-`.form__checkbox` Provides basic input of type `radio` styles.
+`<input type='checkbox' class='form-control'>` Provides basic input of type `radio` styles.
 
 <Canvas withToolbar>
   <Story id="components-form-formgroup--checkbox" />
@@ -75,7 +75,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Error Summary
 
-`.form__error-summary` Is an error section, usually displayed above the form with a list of errors.
+`.form-error-summary` Is an error section, usually displayed above the form with a list of errors.
 
 <Canvas withToolbar>
   <Story id="components-form-errorsummary--default" />
@@ -83,7 +83,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Input Error
 
-`.form__input--error` and `.form__error` are typically used on combination when there is a validation error on an input. They highlight the input in error along with the message provided.
+`.form-group--error` and `.form-error` are typically used on combination when there is a validation error on an input. They highlight the input in error along with the message provided.
 
 <Canvas withToolbar>
   <Story id="components-form-formgroup--error" />
@@ -91,7 +91,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Input Hint
 
-`.form__hint` can be used inside of a `form__group` to provide help text for an input.
+`.form-hint` can be used inside of a `.form-group` to provide help text for an input.
 
 <Canvas withToolbar>
   <Story id="components-form-formgroup--hint" />
@@ -99,7 +99,7 @@ They provide consistent and composable styling that should address most applicat
 
 ## Read Only
 
-`.form__input--read-only`, `.form__dropdown--read-only`, `.form__color--read-only`, and `.form__textarea--read-only` can be used to display values in a form-like way.
+`.form-control--read-only` on any input with `.form-control` can be used to display values in a form-like way.
 
 <Canvas withToolbar>
   <Story id="components-form-formgroup--readonly" />
