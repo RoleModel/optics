@@ -1,11 +1,11 @@
 %standard-input {
   // Private API (don't touch these)
-  --__rm-input-min-height: calc(3 * var(--rm-space-medium));
+  --__rm-input-height: var(--rm-input-height-large);
 
   display: block;
   width: 100%;
-  min-width: var(--__rm-input-min-height);
-  height: var(--rm-input-height-large);
+  min-width: var(--__rm-input-height);
+  height: var(--__rm-input-height);
   padding: var(--rm-space-small) var(--rm-space-medium);
   border: none;
   border-radius: var(--rm-radius-large);
@@ -27,7 +27,7 @@
     cursor: unset;
 
     &[type='color'] {
-      height: var(--rm-input-height-large);
+      height: var(--__rm-input-height);
     }
   }
 }
@@ -106,9 +106,9 @@ select.form-control:not([type='radio'], [type='checkbox']) {
 textarea.form-control {
   @extend %standard-input;
 
-  min-width: var(--rm-input-height-large);
+  min-width: var(--__rm-input-height);
   max-width: 100%;
-  min-height: var(--rm-input-height-large);
+  min-height: var(--__rm-input-height);
 }
 
 .form-group--error {
