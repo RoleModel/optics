@@ -34,7 +34,7 @@ If you are using a different compiler such as Dart Sass, you may need to referen
 
 We use [Storybook](https://storybook.js.org/docs/html/get-started/introduction) as a way to provide informative and interactive documentation.
 
-It can be found here [Optics Design System Documentation](https://rolemodel.github.io/optics-design-system)
+It can be found here [Optics Design System Documentation](https://docs.optics.rolemodel.design/)
 
 ## Tokens
 
