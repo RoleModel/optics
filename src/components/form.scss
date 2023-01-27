@@ -99,8 +99,12 @@
   }
 }
 
-select.form-control:not([type='radio'], [type='checkbox']) {
+select.form-control:not([multiple], [type='radio'], [type='checkbox']) {
   @extend %dropdown-arrow;
+}
+
+select.form-control[multiple] {
+  min-height: calc(2 * var(--__rm-input-height));
 }
 
 textarea.form-control {
