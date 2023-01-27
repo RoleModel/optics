@@ -29,9 +29,10 @@
 }
 
 %dropdown-arrow {
+  padding-right: var(--rm-space-x-large);
   appearance: none;
   background: var(--rm-form-dropdown-arrow) center right no-repeat;
-  background-position-x: calc(100% - var(--rm-space-small));
+  background-position-x: calc(100% - ((var(--rm-space-x-large) / 2) - (var(--rm-form-dropdown-arrow-width) / 2)));
   cursor: pointer;
 }
 
@@ -98,8 +99,7 @@
   }
 }
 
-select.form-control {
-  @extend %standard-input;
+select.form-control:not([type='radio'], [type='checkbox']) {
   @extend %dropdown-arrow;
 }
 

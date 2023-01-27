@@ -123,7 +123,8 @@
 }
 
 @mixin encoded-images {
-  --rm-form-dropdown-arrow: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI5IDE0IiB3aWR0aD0iMjkiPjxwYXRoIGZpbGw9IiNkMWQxZDEiIGQ9Ik05LjM3NzI3IDMuNjI1bDUuMDgxNTQgNi45MzUyM0wxOS41NDAzNiAzLjYyNSIvPjwvc3ZnPgo=');
+  --rm-form-dropdown-arrow-width: 1rem; // No way to string interpolate
+  --rm-form-dropdown-arrow: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 7' version='1.1' xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cg transform='matrix(0.983953,0,0,1.00934,-9.22679,-3.65885)'%3E%3Cpath fill='%23d1d1d1' d='M9.37727 3.625l5.08154 6.93523L19.54036 3.625'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
 @mixin fonts {
