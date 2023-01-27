@@ -1,12 +1,12 @@
 {
-  "name": "@rolemodel/rolemodel-design-system",
-  "version": "0.1.3-beta",
+  "name": "@rolemodel/optics-design-system",
+  "version": "0.2.0",
   "description": "The design system RoleModel uses to kickstart projects with a consistent starting point",
-  "main": "dist/scss/rolemodel-design-system.scss",
+  "main": "dist/scss/optics-design-system.scss",
   "scripts": {
     "test": "exit 0",
     "build": "npm run build:css && npm run build:scss && npm run build:tokens",
-    "build:css": "sass src/rolemodel-design-system.scss dist/css/rolemodel-design-system.css --load-path=node_modules/",
+    "build:css": "sass src/optics-design-system.scss dist/css/optics-design-system.css --load-path=node_modules/",
     "build:scss": "rsync -a src/ dist/scss --exclude stories",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
     "storybook": "start-storybook -p 6006",
@@ -20,21 +20,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RoleModel/rolemodel-design-system.git"
+    "url": "git+https://github.com/RoleModel/optics-design-system.git"
   },
   "keywords": [
     "Design",
     "CSS",
     "System",
     "RoleModel",
-    "SCSS"
+    "SCSS",
+    "Optics"
   ],
   "author": "RoleModel Software",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RoleModel/rolemodel-design-system/issues"
+    "url": "https://github.com/RoleModel/optics-design-system/issues"
   },
-  "homepage": "https://github.com/RoleModel/rolemodel-design-system#readme",
+  "homepage": "https://github.com/RoleModel/optics-design-system#readme",
   "publishConfig": {
     "@RoleModel:registry": "https://npm.pkg.github.com"
   },

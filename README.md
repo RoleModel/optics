@@ -1,19 +1,19 @@
-# Rolemodel Design System
+# Optics Design System
 
-RoleModel Design System is a scss package that provides base styles and components that can be integrated and customized in a variety of projects.
+Optics Design System by RoleModel Software is a scss package that provides base styles and components that can be integrated and customized in a variety of projects.
 
 ## Installation
 
 ### NPM
 
 ```sh
-npm install @rolemodel/rolemodel-design-system
+npm install @rolemodel/optics-design-system
 ```
 
 ### Yarn
 
 ```sh
-yarn add @rolemodel/rolemodel-design-system
+yarn add @rolemodel/optics-design-system
 ```
 
 ### Import
@@ -21,20 +21,20 @@ yarn add @rolemodel/rolemodel-design-system
 If you are using webpack to compile, you can add this import to the top of your root level `scss` file.
 
 ```scss
-@import '@rolemodel/rolemodel-design-system';
+@import '@rolemodel/optics-design-system';
 ```
 
 If you are using a different compiler such as Dart Sass, you may need to reference the scss file directly.
 
 ```scss
-@import '@rolemodel/rolemodel-design-system/dist/scss/rolemodel-design-system';
+@import '@rolemodel/optics-design-system/dist/scss/optics-design-system';
 ```
 
 ## Documentation
 
 We use [Storybook](https://storybook.js.org/docs/html/get-started/introduction) as a way to provide informative and interactive documentation.
 
-It can be found here [RoleModel Design System Documentation](https://rolemodel.github.io/rolemodel-design-system)
+It can be found here [Optics Design System Documentation](https://rolemodel.github.io/optics-design-system)
 
 ## Tokens
 
