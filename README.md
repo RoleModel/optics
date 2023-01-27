@@ -1,19 +1,19 @@
-# Optics Design System
+# Optics, a RoleModel Design System
 
-Optics Design System by RoleModel Software is a scss package that provides base styles and components that can be integrated and customized in a variety of projects.
+Optics is an scss package that provides base styles and components that can be integrated and customized in a variety of projects.
 
 ## Installation
 
 ### NPM
 
 ```sh
-npm install @rolemodel/optics-design-system
+npm install @rolemodel/optics
 ```
 
 ### Yarn
 
 ```sh
-yarn add @rolemodel/optics-design-system
+yarn add @rolemodel/optics
 ```
 
 ### Import
@@ -21,20 +21,20 @@ yarn add @rolemodel/optics-design-system
 If you are using webpack to compile, you can add this import to the top of your root level `scss` file.
 
 ```scss
-@import '@rolemodel/optics-design-system';
+@import '@rolemodel/optics';
 ```
 
 If you are using a different compiler such as Dart Sass, you may need to reference the scss file directly.
 
 ```scss
-@import '@rolemodel/optics-design-system/dist/scss/optics-design-system';
+@import '@rolemodel/optics/dist/scss/optics';
 ```
 
 ## Documentation
 
 We use [Storybook](https://storybook.js.org/docs/html/get-started/introduction) as a way to provide informative and interactive documentation.
 
-It can be found here [Optics Design System Documentation](https://docs.optics.rolemodel.design/)
+It can be found here [Optics Documentation](https://docs.optics.rolemodel.design/)
 
 ## Tokens
 
