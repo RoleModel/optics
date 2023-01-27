@@ -1,7 +1,7 @@
 {
   "name": "@rolemodel/optics",
   "version": "0.2.0",
-  "description": "The design system RoleModel uses to kickstart projects with a consistent starting point",
+  "description": "Optics is an scss package that provides base styles and components that can be integrated and customized in a variety of projects.",
   "main": "dist/scss/optics.scss",
   "scripts": {
     "test": "exit 0",
