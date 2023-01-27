@@ -1,6 +1,10 @@
 %standard-input {
+  // Private API (don't touch these)
+  --__rm-input-min-height: calc(3 * var(--rm-space-medium));
+
   display: block;
   width: 100%;
+  min-width: var(--__rm-input-min-height);
   height: var(--rm-input-height-large);
   padding: var(--rm-space-small) var(--rm-space-medium);
   border: none;
@@ -60,10 +64,6 @@
 
   &[type='color'] {
     @extend %dropdown-arrow;
-
-    &::-webkit-color-swatch {
-      margin-right: var(--rm-space-2x-large);
-    }
   }
 
   &[type='radio'],
