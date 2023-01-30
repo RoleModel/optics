@@ -8,13 +8,13 @@
   --_rm-btn-height-small: var(--rm-input-height-small);
   --_rm-btn-height-medium: var(--rm-input-height-medium);
   --_rm-btn-height-large: var(--rm-input-height-large);
-  --_rm-font-small: var(--rm-font-x-small);
-  --_rm-font-medium: var(--rm-font-small);
-  --_rm-font-large: var(--rm-font-medium);
+  --_rm-btn-font-small: var(--rm-font-x-small);
+  --_rm-btn-font-medium: var(--rm-font-small);
+  --_rm-btn-font-large: var(--rm-font-medium);
 
   // Private API (don't touch these)
   --__rm-btn-height: var(--_rm-btn-height-medium);
-  --__rm-btn-font-size: var(--_rm-font-medium);
+  --__rm-btn-font-size: var(--_rm-btn-font-medium);
 
   display: inline-flex;
   height: var(--__rm-btn-height);
@@ -48,17 +48,17 @@
   // Size Modifiers
   &.btn--small {
     --__rm-btn-height: var(--_rm-btn-height-small);
-    --__rm-btn-font-size: var(--_rm-font-small);
+    --__rm-btn-font-size: var(--_rm-btn-font-small);
   }
 
   &.btn--medium {
     --__rm-btn-height: var(--_rm-btn-height-medium);
-    --__rm-btn-font-size: var(--_rm-font-medium);
+    --__rm-btn-font-size: var(--_rm-btn-font-medium);
   }
 
   &.btn--large {
     --__rm-btn-height: var(--_rm-btn-height-large);
-    --__rm-btn-font-size: var(--_rm-font-large);
+    --__rm-btn-font-size: var(--_rm-btn-font-large);
   }
 
   // Disabled Modifier
@@ -99,13 +99,13 @@
   // https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
   @media (max-width: $breakpoint-small) {
     --__rm-btn-height: var(--_rm-btn-height-large);
-    --__rm-btn-font-size: var(--_rm-font-large);
+    --__rm-btn-font-size: var(--_rm-btn-font-large);
 
     &.btn--small,
     &.btn--medium,
     &.btn--large {
       --__rm-btn-height: var(--_rm-btn-height-large);
-      --__rm-btn-font-size: var(--_rm-font-large);
+      --__rm-btn-font-size: var(--_rm-btn-font-large);
     }
   }
 }
