@@ -9,7 +9,7 @@
   ],
   "rules": {
     "prettier/prettier": true,
-    "custom-property-pattern": ["(?<=rm-)", { "message": "CSS variables should be prefixed with rm-" }],
+    "custom-property-pattern": ["(?<=op-)", { "message": "CSS variables should be prefixed with op-" }],
     "selector-class-pattern": null
   }
 }

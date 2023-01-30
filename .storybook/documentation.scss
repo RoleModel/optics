@@ -2,46 +2,46 @@
 
 @keyframes transitionDemo {
   from {
-    background-color: var(--rm-color-white);
-    color: var(--rm-color-black);
+    background-color: var(--op-color-white);
+    color: var(--op-color-black);
   }
 
   to {
-    background-color: var(--rm-color-primary-base);
-    color: var(--rm-color-primary-on-base);
+    background-color: var(--op-color-primary-base);
+    color: var(--op-color-primary-on-base);
   }
 }
 
 .transition-demo {
   display: inline-block;
 
-  background-color: var(--rm-color-primary-base);
-  color: var(--rm-color-primary-on-base);
+  background-color: var(--op-color-primary-base);
+  color: var(--op-color-primary-on-base);
 
-  padding: var(--rm-space-medium);
+  padding: var(--op-space-medium);
 
   animation-name: transitionDemo;
-  animation-duration: var(--rm-transition-input);
+  animation-duration: var(--op-transition-input);
   animation-iteration-count: 1;
 }
 
 .transition-demo--input {
-  animation-duration: var(--rm-transition-input);
+  animation-duration: var(--op-transition-input);
 }
 .transition-demo--navigation {
-  animation-duration: var(--rm-transition-navigation);
+  animation-duration: var(--op-transition-navigation);
 }
 .transition-demo--sidebar {
-  animation-duration: var(--rm-transition-sidebar);
+  animation-duration: var(--op-transition-sidebar);
 }
 .transition-demo--modal {
-  animation-duration: var(--rm-transition-modal);
+  animation-duration: var(--op-transition-modal);
 }
 .transition-demo--panel {
-  animation-duration: var(--rm-transition-panel);
+  animation-duration: var(--op-transition-panel);
 }
 .transition-demo--flash {
-  animation-duration: var(--rm-transition-flash);
+  animation-duration: var(--op-transition-flash);
 }
 
 .flash--demo {
@@ -55,11 +55,11 @@
 @import './src/recipes/16six-sidebar.scss';
 
 .background-primary-plus-four {
-  background-color: var(--rm-color-primary-plus-four);
-  color: var(--rm-color-primary-on-plus-four);
+  background-color: var(--op-color-primary-plus-four);
+  color: var(--op-color-primary-on-plus-four);
 }
 
 .background-primary-plus-seven {
-  background-color: var(--rm-color-primary-plus-seven);
-  color: var(--rm-color-primary-on-plus-seven);
+  background-color: var(--op-color-primary-plus-seven);
+  color: var(--op-color-primary-on-plus-seven);
 }

@@ -104,13 +104,13 @@ Here are the variables and states used
 <!-- prettier-ignore-start -->
 ```css
 // Variable API
---_rm-btn-height-small:
---_rm-btn-height-medium:
---_rm-btn-height-large:
+--_op-btn-height-small:
+--_op-btn-height-medium:
+--_op-btn-height-large:
 
---_rm-btn-font-small:
---_rm-btn-font-medium:
---_rm-btn-font-large:
+--_op-btn-font-small:
+--_op-btn-font-medium:
+--_op-btn-font-large:
 
 // Different states
 .btn {} // Default behavior
@@ -139,13 +139,13 @@ If you want to override how the size modifier behaves, you can use API described
 <!-- prettier-ignore-start -->
 ```css
 %btn-global {
-  --_rm-btn-height-small:  var(--rm-space-2x-large);
-  --_rm-btn-height-medium: var(--rm-space-3x-large);
-  --_rm-btn-height-large:  var(--rm-space-4x-large);
+  --_op-btn-height-small:  var(--op-space-2x-large);
+  --_op-btn-height-medium: var(--op-space-3x-large);
+  --_op-btn-height-large:  var(--op-space-4x-large);
 
-  --_rm-btn-font-small:  var(--rm-font-3x-large);
-  --_rm-btn-font-medium: var(--rm-font-4x-large);
-  --_rm-btn-font-large:  var(--rm-font-5x-large);
+  --_op-btn-font-small:  var(--op-font-3x-large);
+  --_op-btn-font-medium: var(--op-font-4x-large);
+  --_op-btn-font-large:  var(--op-font-5x-large);
 }
 ```
 <!-- prettier-ignore-end -->
@@ -209,37 +209,37 @@ Your application may need a custom button. To add one, just follow this template
 .btn-notice {
   @extend %btn-global;
 
-  background-color: var(--rm-color-alerts-notice-base);
-  color: var(--rm-color-alerts-notice-on-base);
-  box-shadow: var(--rm-border-all) var(--rm-color-alerts-notice-base);
+  background-color: var(--op-color-alerts-notice-base);
+  color: var(--op-color-alerts-notice-on-base);
+  box-shadow: var(--op-border-all) var(--op-color-alerts-notice-base);
 
   &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--rm-color-alerts-notice-plus-one);
-    color: var(--rm-color-alerts-notice-on-plus-one);
-    box-shadow: var(--rm-border-all) var(--rm-color-alerts-notice-plus-one);
+    background-color: var(--op-color-alerts-notice-plus-one);
+    color: var(--op-color-alerts-notice-on-plus-one);
+    box-shadow: var(--op-border-all) var(--op-color-alerts-notice-plus-one);
   }
 
   &.btn--no-border {
     background-color: transparent;
-    color: var(--rm-color-alerts-notice-base);
+    color: var(--op-color-alerts-notice-base);
     box-shadow: none;
 
     &:not(:disabled, .btn--disabled):hover {
       background-color: transparent;
-      color: var(--rm-color-alerts-notice-plus-one);
+      color: var(--op-color-alerts-notice-plus-one);
       box-shadow: none;
     }
   }
 
   &.btn--outline {
-    background-color: var(--rm-color-alerts-notice-plus-seven);
-    color: var(--rm-color-alerts-notice-on-plus-seven);
-    box-shadow: var(--rm-border-all) var(--rm-color-alerts-notice-on-plus-seven);
+    background-color: var(--op-color-alerts-notice-plus-seven);
+    color: var(--op-color-alerts-notice-on-plus-seven);
+    box-shadow: var(--op-border-all) var(--op-color-alerts-notice-on-plus-seven);
 
     &:not(:disabled, .btn--disabled):hover {
-      background-color: var(--rm-color-alerts-notice-plus-four);
-      color: var(--rm-color-alerts-notice-on-plus-four);
-      box-shadow: var(--rm-border-all) var(--rm-color-alerts-notice-on-plus-seven);
+      background-color: var(--op-color-alerts-notice-plus-four);
+      color: var(--op-color-alerts-notice-on-plus-four);
+      box-shadow: var(--op-border-all) var(--op-color-alerts-notice-on-plus-seven);
     }
   }
 }

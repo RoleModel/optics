@@ -1,64 +1,64 @@
 %btn-focus-state {
-  box-shadow: var(--rm-input-focus);
+  box-shadow: var(--op-input-focus);
   outline: none;
 }
 
 %btn-global {
   // Public API (allowed to be overridden)
-  --_rm-btn-height-small: var(--rm-input-height-small);
-  --_rm-btn-height-medium: var(--rm-input-height-medium);
-  --_rm-btn-height-large: var(--rm-input-height-large);
-  --_rm-btn-font-small: var(--rm-font-x-small);
-  --_rm-btn-font-medium: var(--rm-font-small);
-  --_rm-btn-font-large: var(--rm-font-medium);
+  --_op-btn-height-small: var(--op-input-height-small);
+  --_op-btn-height-medium: var(--op-input-height-medium);
+  --_op-btn-height-large: var(--op-input-height-large);
+  --_op-btn-font-small: var(--op-font-x-small);
+  --_op-btn-font-medium: var(--op-font-small);
+  --_op-btn-font-large: var(--op-font-medium);
 
   // Private API (don't touch these)
-  --__rm-btn-height: var(--_rm-btn-height-medium);
-  --__rm-btn-font-size: var(--_rm-btn-font-medium);
+  --__op-btn-height: var(--_op-btn-height-medium);
+  --__op-btn-font-size: var(--_op-btn-font-medium);
 
   display: inline-flex;
-  height: var(--__rm-btn-height);
+  height: var(--__op-btn-height);
   align-items: center;
   justify-content: center;
-  padding: 0 var(--rm-space-medium);
-  border-radius: var(--rm-radius-large);
+  padding: 0 var(--op-space-medium);
+  border-radius: var(--op-radius-large);
   appearance: none;
   cursor: pointer;
-  font-size: var(--__rm-btn-font-size);
-  font-weight: var(--rm-font-weight-medium);
-  gap: var(--rm-space-x-small);
+  font-size: var(--__op-btn-font-size);
+  font-weight: var(--op-font-weight-medium);
+  gap: var(--op-space-x-small);
   text-align: center;
   text-decoration: none;
-  transition: all var(--rm-transition-input);
+  transition: all var(--op-transition-input);
   white-space: nowrap;
 
   // Pill Modifier
   &.btn--pill {
-    border-radius: var(--rm-radius-pill);
+    border-radius: var(--op-radius-pill);
   }
 
   // Icon Modifier
   &.btn--icon {
-    width: var(--__rm-btn-height);
-    min-width: var(--__rm-btn-height);
+    width: var(--__op-btn-height);
+    min-width: var(--__op-btn-height);
     padding: 0;
-    border-radius: var(--rm-radius-circle);
+    border-radius: var(--op-radius-circle);
   }
 
   // Size Modifiers
   &.btn--small {
-    --__rm-btn-height: var(--_rm-btn-height-small);
-    --__rm-btn-font-size: var(--_rm-btn-font-small);
+    --__op-btn-height: var(--_op-btn-height-small);
+    --__op-btn-font-size: var(--_op-btn-font-small);
   }
 
   &.btn--medium {
-    --__rm-btn-height: var(--_rm-btn-height-medium);
-    --__rm-btn-font-size: var(--_rm-btn-font-medium);
+    --__op-btn-height: var(--_op-btn-height-medium);
+    --__op-btn-font-size: var(--_op-btn-font-medium);
   }
 
   &.btn--large {
-    --__rm-btn-height: var(--_rm-btn-height-large);
-    --__rm-btn-font-size: var(--_rm-btn-font-large);
+    --__op-btn-height: var(--_op-btn-height-large);
+    --__op-btn-font-size: var(--_op-btn-font-large);
   }
 
   // Disabled Modifier
@@ -98,14 +98,14 @@
 
   // https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
   @media (max-width: $breakpoint-small) {
-    --__rm-btn-height: var(--_rm-btn-height-large);
-    --__rm-btn-font-size: var(--_rm-btn-font-large);
+    --__op-btn-height: var(--_op-btn-height-large);
+    --__op-btn-font-size: var(--_op-btn-font-large);
 
     &.btn--small,
     &.btn--medium,
     &.btn--large {
-      --__rm-btn-height: var(--_rm-btn-height-large);
-      --__rm-btn-font-size: var(--_rm-btn-font-large);
+      --__op-btn-height: var(--_op-btn-height-large);
+      --__op-btn-font-size: var(--_op-btn-font-large);
     }
   }
 }
@@ -114,20 +114,20 @@
   @extend %btn-global;
 
   background-color: transparent;
-  box-shadow: var(--rm-border-all) var(--rm-border-color);
-  color: var(--rm-color-neutral-minus-max);
+  box-shadow: var(--op-border-all) var(--op-border-color);
+  color: var(--op-color-neutral-minus-max);
 
   &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--rm-color-neutral-plus-seven);
-    color: var(--rm-color-neutral-on-plus-seven);
+    background-color: var(--op-color-neutral-plus-seven);
+    color: var(--op-color-neutral-on-plus-seven);
   }
 
   &.btn--no-border {
-    box-shadow: var(--rm-border-all) transparent;
+    box-shadow: var(--op-border-all) transparent;
 
     &:not(:disabled, .btn--disabled):hover {
       background-color: transparent;
-      color: var(--rm-color-neutral-minus-three);
+      color: var(--op-color-neutral-minus-three);
     }
   }
 }
@@ -135,37 +135,37 @@
 .btn-primary {
   @extend %btn-global;
 
-  background-color: var(--rm-color-primary-base);
-  box-shadow: var(--rm-border-all) var(--rm-color-primary-base);
-  color: var(--rm-color-primary-on-base);
+  background-color: var(--op-color-primary-base);
+  box-shadow: var(--op-border-all) var(--op-color-primary-base);
+  color: var(--op-color-primary-on-base);
 
   &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--rm-color-primary-plus-one);
-    box-shadow: var(--rm-border-all) var(--rm-color-primary-plus-one);
-    color: var(--rm-color-primary-on-plus-one);
+    background-color: var(--op-color-primary-plus-one);
+    box-shadow: var(--op-border-all) var(--op-color-primary-plus-one);
+    color: var(--op-color-primary-on-plus-one);
   }
 
   &.btn--no-border {
     background-color: transparent;
     box-shadow: none;
-    color: var(--rm-color-primary-base);
+    color: var(--op-color-primary-base);
 
     &:not(:disabled, .btn--disabled):hover {
       background-color: transparent;
       box-shadow: none;
-      color: var(--rm-color-primary-plus-one);
+      color: var(--op-color-primary-plus-one);
     }
   }
 
   &.btn--outline {
-    background-color: var(--rm-color-primary-plus-seven);
-    box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-seven);
-    color: var(--rm-color-primary-on-plus-seven);
+    background-color: var(--op-color-primary-plus-seven);
+    box-shadow: var(--op-border-all) var(--op-color-primary-on-plus-seven);
+    color: var(--op-color-primary-on-plus-seven);
 
     &:not(:disabled, .btn--disabled):hover {
-      background-color: var(--rm-color-primary-plus-four);
-      box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-seven);
-      color: var(--rm-color-primary-on-plus-four);
+      background-color: var(--op-color-primary-plus-four);
+      box-shadow: var(--op-border-all) var(--op-color-primary-on-plus-seven);
+      color: var(--op-color-primary-on-plus-four);
     }
   }
 }
@@ -173,25 +173,25 @@
 .btn-secondary {
   @extend %btn-global;
 
-  background-color: var(--rm-color-primary-plus-seven);
-  box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-seven);
-  color: var(--rm-color-primary-on-plus-seven);
+  background-color: var(--op-color-primary-plus-seven);
+  box-shadow: var(--op-border-all) var(--op-color-primary-on-plus-seven);
+  color: var(--op-color-primary-on-plus-seven);
 
   &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--rm-color-primary-plus-four);
-    box-shadow: var(--rm-border-all) var(--rm-color-primary-on-plus-seven);
-    color: var(--rm-color-primary-on-plus-four);
+    background-color: var(--op-color-primary-plus-four);
+    box-shadow: var(--op-border-all) var(--op-color-primary-on-plus-seven);
+    color: var(--op-color-primary-on-plus-four);
   }
 
   &.btn--no-border {
     background-color: transparent;
     box-shadow: none;
-    color: var(--rm-color-primary-base);
+    color: var(--op-color-primary-base);
 
     &:not(:disabled, .btn--disabled):hover {
       background-color: transparent;
       box-shadow: none;
-      color: var(--rm-color-primary-plus-one);
+      color: var(--op-color-primary-plus-one);
     }
   }
 }
@@ -199,37 +199,37 @@
 .btn-delete {
   @extend %btn-global;
 
-  background-color: var(--rm-color-alerts-danger-base);
-  box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-base);
-  color: var(--rm-color-alerts-danger-on-base);
+  background-color: var(--op-color-alerts-danger-base);
+  box-shadow: var(--op-border-all) var(--op-color-alerts-danger-base);
+  color: var(--op-color-alerts-danger-on-base);
 
   &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--rm-color-alerts-danger-plus-one);
-    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-plus-one);
-    color: var(--rm-color-alerts-danger-on-plus-one);
+    background-color: var(--op-color-alerts-danger-plus-one);
+    box-shadow: var(--op-border-all) var(--op-color-alerts-danger-plus-one);
+    color: var(--op-color-alerts-danger-on-plus-one);
   }
 
   &.btn--no-border {
     background-color: transparent;
     box-shadow: none;
-    color: var(--rm-color-alerts-danger-base);
+    color: var(--op-color-alerts-danger-base);
 
     &:not(:disabled, .btn--disabled):hover {
       background-color: transparent;
       box-shadow: none;
-      color: var(--rm-color-alerts-danger-plus-one);
+      color: var(--op-color-alerts-danger-plus-one);
     }
   }
 
   &.btn--outline {
-    background-color: var(--rm-color-alerts-danger-plus-seven);
-    box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-on-plus-seven);
-    color: var(--rm-color-alerts-danger-on-plus-seven);
+    background-color: var(--op-color-alerts-danger-plus-seven);
+    box-shadow: var(--op-border-all) var(--op-color-alerts-danger-on-plus-seven);
+    color: var(--op-color-alerts-danger-on-plus-seven);
 
     &:not(:disabled, .btn--disabled):hover {
-      background-color: var(--rm-color-alerts-danger-plus-four);
-      box-shadow: var(--rm-border-all) var(--rm-color-alerts-danger-on-plus-seven);
-      color: var(--rm-color-alerts-danger-on-plus-four);
+      background-color: var(--op-color-alerts-danger-plus-four);
+      box-shadow: var(--op-border-all) var(--op-color-alerts-danger-on-plus-seven);
+      color: var(--op-color-alerts-danger-on-plus-four);
     }
   }
 }

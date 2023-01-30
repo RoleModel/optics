@@ -1,9 +1,9 @@
 .modal {
   // Modals
-  --rm-modal-width: 564px;
+  --op-modal-width: 564px;
 
   position: fixed;
-  z-index: var(--rm-z-index-dialog);
+  z-index: var(--op-z-index-dialog);
   top: 0;
   right: 0;
   bottom: 0;
@@ -25,29 +25,29 @@
 
 .modal__backdrop {
   position: fixed;
-  z-index: var(--rm-z-index-dialog-backdrop);
+  z-index: var(--op-z-index-dialog-backdrop);
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background: black;
   opacity: 0;
-  transition: all var(--rm-transition-modal);
+  transition: all var(--op-transition-modal);
   visibility: hidden;
 }
 
 .modal__content {
-  z-index: var(--rm-z-index-dialog-content);
-  width: var(--rm-modal-width);
+  z-index: var(--op-z-index-dialog-content);
+  width: var(--op-modal-width);
   max-height: 500px;
-  padding: var(--rm-space-large);
-  border-radius: var(--rm-radius-large);
-  background: var(--rm-color-background);
-  color: var(--rm-color-on-background);
+  padding: var(--op-space-large);
+  border-radius: var(--op-radius-large);
+  background: var(--op-color-background);
+  color: var(--op-color-on-background);
   opacity: 0;
   overflow-y: auto;
   transform: scale(0.7);
-  transition: all var(--rm-transition-modal);
+  transition: all var(--op-transition-modal);
 }
 
 .modal--active {
@@ -74,13 +74,13 @@
   @extend .btn--icon;
   @extend .btn--no-border;
 
-  color: var(--rm-color-neutral-minus-seven);
+  color: var(--op-color-neutral-minus-seven);
   cursor: pointer;
   /* stylelint-enable scss/at-extend-no-missing-placeholder */
 
   float: right;
 
   &:hover:not(:disabled, .btn--disabled) {
-    color: var(--rm-color-neutral-minus-seven);
+    color: var(--op-color-neutral-minus-seven);
   }
 }
