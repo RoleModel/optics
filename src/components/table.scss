@@ -3,50 +3,50 @@
 %table-global {
   // Public API
   // Cells (for padding, the appropriate variable is used when using the density modifiers)
-  --_rm-table-cell-padding-default: var(--rm-space-small) var(--rm-space-x-small);
-  --_rm-table-cell-padding-comfortable: var(--rm-space-medium) var(--rm-space-small);
-  --_rm-table-cell-padding-compact: var(--rm-space-x-small) var(--rm-space-2x-small);
+  --_op-table-cell-padding-default: var(--op-space-small) var(--op-space-x-small);
+  --_op-table-cell-padding-comfortable: var(--op-space-medium) var(--op-space-small);
+  --_op-table-cell-padding-compact: var(--op-space-x-small) var(--op-space-2x-small);
 
   // Private API
   // These allow for overriding specific padding versions easier.
-  --__rm-table-cell-padding: var(--_rm-table-cell-padding-default);
+  --__op-table-cell-padding: var(--_op-table-cell-padding-default);
 
   width: 100%;
-  border-radius: var(--rm-radius-medium);
+  border-radius: var(--op-radius-medium);
   border-collapse: collapse;
-  box-shadow: var(--rm-border-all) var(--rm-border-color);
+  box-shadow: var(--op-border-all) var(--op-border-color);
   contain: paint;
   table-layout: auto;
 
   thead {
-    background-color: var(--rm-color-neutral-plus-four);
-    color: var(--rm-color-neutral-on-plus-four);
+    background-color: var(--op-color-neutral-plus-four);
+    color: var(--op-color-neutral-on-plus-four);
   }
 
   th {
-    font-weight: var(--rm-font-weight-normal);
+    font-weight: var(--op-font-weight-normal);
     text-align: left;
     text-transform: uppercase;
   }
 
   tbody,
   tfoot {
-    background-color: var(--rm-color-background);
-    color: var(--rm-color-on-background);
+    background-color: var(--op-color-background);
+    color: var(--op-color-on-background);
   }
 
   th,
   td {
-    padding: var(--__rm-table-cell-padding);
-    font-size: var(--rm-font-small);
+    padding: var(--__op-table-cell-padding);
+    font-size: var(--op-font-small);
   }
 
   tr:not(:last-child) {
-    box-shadow: inset var(--rm-border-top) var(--rm-border-color);
+    box-shadow: inset var(--op-border-top) var(--op-border-color);
   }
 
   tfoot tr {
-    box-shadow: var(--rm-border-top) var(--rm-border-color);
+    box-shadow: var(--op-border-top) var(--op-border-color);
   }
 
   // Layout Modifiers
@@ -60,29 +60,29 @@
 
   // Table Density Modifiers
   &.table--default-density {
-    --__rm-table-cell-padding: var(--_rm-table-cell-padding-default);
+    --__op-table-cell-padding: var(--_op-table-cell-padding-default);
   }
 
   &.table--comfortable-density {
-    --__rm-table-cell-padding: var(--_rm-table-cell-padding-comfortable);
+    --__op-table-cell-padding: var(--_op-table-cell-padding-comfortable);
   }
 
   &.table--compact-density {
-    --__rm-table-cell-padding: var(--_rm-table-cell-padding-compact);
+    --__op-table-cell-padding: var(--_op-table-cell-padding-compact);
   }
 
   // Striped Modifiers
   &.table--even-striped {
     tbody tr:nth-child(even) {
-      background-color: var(--rm-color-neutral-plus-seven);
-      color: var(--rm-color-neutral-on-plus-seven);
+      background-color: var(--op-color-neutral-plus-seven);
+      color: var(--op-color-neutral-on-plus-seven);
     }
   }
 
   &.table--odd-striped {
     tbody tr:nth-child(odd) {
-      background-color: var(--rm-color-neutral-plus-seven);
-      color: var(--rm-color-neutral-on-plus-seven);
+      background-color: var(--op-color-neutral-plus-seven);
+      color: var(--op-color-neutral-on-plus-seven);
     }
   }
 
@@ -109,8 +109,8 @@
   @extend %table-global;
 
   thead {
-    background-color: var(--rm-color-primary-plus-seven);
-    color: var(--rm-color-primary-on-plus-seven);
+    background-color: var(--op-color-primary-plus-seven);
+    color: var(--op-color-primary-on-plus-seven);
   }
 }
 
@@ -119,8 +119,8 @@
   @extend %table-global;
 
   thead {
-    background-color: var(--rm-color-alerts-danger-plus-seven);
-    color: var(--rm-color-alerts-danger-on-plus-seven);
+    background-color: var(--op-color-alerts-danger-plus-seven);
+    color: var(--op-color-alerts-danger-on-plus-seven);
   }
 }
 

@@ -5,46 +5,46 @@
   */
 
   // Main Scale
-  --rm-color-primary-plus-max: var(--rm-color-black);
-  --rm-color-primary-plus-eight: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 4%);
-  --rm-color-primary-plus-seven: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 8%);
-  --rm-color-primary-plus-six: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 12%);
-  --rm-color-primary-plus-five: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 14%);
-  --rm-color-primary-plus-four: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 16%);
-  --rm-color-primary-plus-three: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 20%);
-  --rm-color-primary-plus-two: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 24%);
-  --rm-color-primary-plus-one: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 28%);
-  --rm-color-primary-base: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 32%);
-  --rm-color-primary-minus-one: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 36%);
-  --rm-color-primary-minus-two: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 40%);
-  --rm-color-primary-minus-three: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 48%);
-  --rm-color-primary-minus-four: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 52%);
-  --rm-color-primary-minus-five: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 64%);
-  --rm-color-primary-minus-six: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 72%);
-  --rm-color-primary-minus-seven: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 80%);
-  --rm-color-primary-minus-eight: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 88%);
-  --rm-color-primary-minus-max: var(--rm-color-white);
+  --op-color-primary-plus-max: var(--op-color-black);
+  --op-color-primary-plus-eight: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 4%);
+  --op-color-primary-plus-seven: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 8%);
+  --op-color-primary-plus-six: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 12%);
+  --op-color-primary-plus-five: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 14%);
+  --op-color-primary-plus-four: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 16%);
+  --op-color-primary-plus-three: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 20%);
+  --op-color-primary-plus-two: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 24%);
+  --op-color-primary-plus-one: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 28%);
+  --op-color-primary-base: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 32%);
+  --op-color-primary-minus-one: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 36%);
+  --op-color-primary-minus-two: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 40%);
+  --op-color-primary-minus-three: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 48%);
+  --op-color-primary-minus-four: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 52%);
+  --op-color-primary-minus-five: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 64%);
+  --op-color-primary-minus-six: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 72%);
+  --op-color-primary-minus-seven: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 80%);
+  --op-color-primary-minus-eight: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 88%);
+  --op-color-primary-minus-max: var(--op-color-white);
 
   // On Scale
-  --rm-color-primary-on-plus-max: var(--rm-color-white);
-  --rm-color-primary-on-plus-eight: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 88%);
-  --rm-color-primary-on-plus-seven: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 80%);
-  --rm-color-primary-on-plus-six: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 72%);
-  --rm-color-primary-on-plus-five: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 72%);
-  --rm-color-primary-on-plus-four: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 80%);
-  --rm-color-primary-on-plus-three: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 88%);
-  --rm-color-primary-on-plus-two: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 88%);
-  --rm-color-primary-on-plus-one: var(--rm-color-white);
-  --rm-color-primary-on-base: var(--rm-color-white);
-  --rm-color-primary-on-minus-one: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 90%);
-  --rm-color-primary-on-minus-two: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 90%);
-  --rm-color-primary-on-minus-three: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 86%);
-  --rm-color-primary-on-minus-four: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 84%);
-  --rm-color-primary-on-minus-five: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 20%);
-  --rm-color-primary-on-minus-six: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 16%);
-  --rm-color-primary-on-minus-seven: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 8%);
-  --rm-color-primary-on-minus-eight: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 4%);
-  --rm-color-primary-on-minus-max: var(--rm-color-black);
+  --op-color-primary-on-plus-max: var(--op-color-white);
+  --op-color-primary-on-plus-eight: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 88%);
+  --op-color-primary-on-plus-seven: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 80%);
+  --op-color-primary-on-plus-six: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 72%);
+  --op-color-primary-on-plus-five: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 72%);
+  --op-color-primary-on-plus-four: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 80%);
+  --op-color-primary-on-plus-three: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 88%);
+  --op-color-primary-on-plus-two: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 88%);
+  --op-color-primary-on-plus-one: var(--op-color-white);
+  --op-color-primary-on-base: var(--op-color-white);
+  --op-color-primary-on-minus-one: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 90%);
+  --op-color-primary-on-minus-two: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 90%);
+  --op-color-primary-on-minus-three: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 86%);
+  --op-color-primary-on-minus-four: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 84%);
+  --op-color-primary-on-minus-five: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 20%);
+  --op-color-primary-on-minus-six: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 16%);
+  --op-color-primary-on-minus-seven: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 8%);
+  --op-color-primary-on-minus-eight: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 4%);
+  --op-color-primary-on-minus-max: var(--op-color-black);
 }
 
 @mixin neutral-semantic-scale-dark {
@@ -54,46 +54,46 @@
   */
 
   // Main Scale
-  --rm-color-neutral-plus-max: var(--rm-color-black);
-  --rm-color-neutral-plus-eight: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 4%);
-  --rm-color-neutral-plus-seven: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 8%);
-  --rm-color-neutral-plus-six: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 12%);
-  --rm-color-neutral-plus-five: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 14%);
-  --rm-color-neutral-plus-four: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 16%);
-  --rm-color-neutral-plus-three: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 20%);
-  --rm-color-neutral-plus-two: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 24%);
-  --rm-color-neutral-plus-one: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 28%);
-  --rm-color-neutral-base: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 32%);
-  --rm-color-neutral-minus-one: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 36%);
-  --rm-color-neutral-minus-two: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 40%);
-  --rm-color-neutral-minus-three: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 48%);
-  --rm-color-neutral-minus-four: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 52%);
-  --rm-color-neutral-minus-five: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 64%);
-  --rm-color-neutral-minus-six: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 72%);
-  --rm-color-neutral-minus-seven: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 80%);
-  --rm-color-neutral-minus-eight: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 88%);
-  --rm-color-neutral-minus-max: var(--rm-color-white);
+  --op-color-neutral-plus-max: var(--op-color-black);
+  --op-color-neutral-plus-eight: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 4%);
+  --op-color-neutral-plus-seven: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 8%);
+  --op-color-neutral-plus-six: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 12%);
+  --op-color-neutral-plus-five: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 14%);
+  --op-color-neutral-plus-four: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 16%);
+  --op-color-neutral-plus-three: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 20%);
+  --op-color-neutral-plus-two: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 24%);
+  --op-color-neutral-plus-one: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 28%);
+  --op-color-neutral-base: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 32%);
+  --op-color-neutral-minus-one: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 36%);
+  --op-color-neutral-minus-two: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 40%);
+  --op-color-neutral-minus-three: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 48%);
+  --op-color-neutral-minus-four: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 52%);
+  --op-color-neutral-minus-five: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 64%);
+  --op-color-neutral-minus-six: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 72%);
+  --op-color-neutral-minus-seven: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 80%);
+  --op-color-neutral-minus-eight: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 88%);
+  --op-color-neutral-minus-max: var(--op-color-white);
 
   // On Scale
-  --rm-color-neutral-on-plus-max: var(--rm-color-white);
-  --rm-color-neutral-on-plus-eight: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 88%);
-  --rm-color-neutral-on-plus-seven: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 80%);
-  --rm-color-neutral-on-plus-six: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 72%);
-  --rm-color-neutral-on-plus-five: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 72%);
-  --rm-color-neutral-on-plus-four: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 80%);
-  --rm-color-neutral-on-plus-three: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 88%);
-  --rm-color-neutral-on-plus-two: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 88%);
-  --rm-color-neutral-on-plus-one: var(--rm-color-white);
-  --rm-color-neutral-on-base: var(--rm-color-white);
-  --rm-color-neutral-on-minus-one: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 90%);
-  --rm-color-neutral-on-minus-two: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 90%);
-  --rm-color-neutral-on-minus-three: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 86%);
-  --rm-color-neutral-on-minus-four: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 84%);
-  --rm-color-neutral-on-minus-five: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 20%);
-  --rm-color-neutral-on-minus-six: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 16%);
-  --rm-color-neutral-on-minus-seven: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 8%);
-  --rm-color-neutral-on-minus-eight: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 4%);
-  --rm-color-neutral-on-minus-max: var(--rm-color-black);
+  --op-color-neutral-on-plus-max: var(--op-color-white);
+  --op-color-neutral-on-plus-eight: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 88%);
+  --op-color-neutral-on-plus-seven: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 80%);
+  --op-color-neutral-on-plus-six: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 72%);
+  --op-color-neutral-on-plus-five: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 72%);
+  --op-color-neutral-on-plus-four: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 80%);
+  --op-color-neutral-on-plus-three: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 88%);
+  --op-color-neutral-on-plus-two: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 88%);
+  --op-color-neutral-on-plus-one: var(--op-color-white);
+  --op-color-neutral-on-base: var(--op-color-white);
+  --op-color-neutral-on-minus-one: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 90%);
+  --op-color-neutral-on-minus-two: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 90%);
+  --op-color-neutral-on-minus-three: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 86%);
+  --op-color-neutral-on-minus-four: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 84%);
+  --op-color-neutral-on-minus-five: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 20%);
+  --op-color-neutral-on-minus-six: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 16%);
+  --op-color-neutral-on-minus-seven: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 8%);
+  --op-color-neutral-on-minus-eight: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 4%);
+  --op-color-neutral-on-minus-max: var(--op-color-black);
 }
 
 @mixin alerts-warning-semantic-scale-dark {
@@ -103,46 +103,46 @@
   */
 
   // Main Scale
-  --rm-color-alerts-warning-plus-max: var(--rm-color-black);
-  --rm-color-alerts-warning-plus-eight: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 4%);
-  --rm-color-alerts-warning-plus-seven: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 8%);
-  --rm-color-alerts-warning-plus-six: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 12%);
-  --rm-color-alerts-warning-plus-five: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 14%);
-  --rm-color-alerts-warning-plus-four: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 16%);
-  --rm-color-alerts-warning-plus-three: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 20%);
-  --rm-color-alerts-warning-plus-two: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 24%);
-  --rm-color-alerts-warning-plus-one: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 28%);
-  --rm-color-alerts-warning-base: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 32%);
-  --rm-color-alerts-warning-minus-one: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 36%);
-  --rm-color-alerts-warning-minus-two: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 40%);
-  --rm-color-alerts-warning-minus-three: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 48%);
-  --rm-color-alerts-warning-minus-four: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 52%);
-  --rm-color-alerts-warning-minus-five: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 64%);
-  --rm-color-alerts-warning-minus-six: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 72%);
-  --rm-color-alerts-warning-minus-seven: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 80%);
-  --rm-color-alerts-warning-minus-eight: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 88%);
-  --rm-color-alerts-warning-minus-max: var(--rm-color-white);
+  --op-color-alerts-warning-plus-max: var(--op-color-black);
+  --op-color-alerts-warning-plus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 4%);
+  --op-color-alerts-warning-plus-seven: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 8%);
+  --op-color-alerts-warning-plus-six: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 12%);
+  --op-color-alerts-warning-plus-five: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 14%);
+  --op-color-alerts-warning-plus-four: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 16%);
+  --op-color-alerts-warning-plus-three: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
+  --op-color-alerts-warning-plus-two: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 24%);
+  --op-color-alerts-warning-plus-one: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 28%);
+  --op-color-alerts-warning-base: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 32%);
+  --op-color-alerts-warning-minus-one: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 36%);
+  --op-color-alerts-warning-minus-two: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 40%);
+  --op-color-alerts-warning-minus-three: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 48%);
+  --op-color-alerts-warning-minus-four: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 52%);
+  --op-color-alerts-warning-minus-five: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 64%);
+  --op-color-alerts-warning-minus-six: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 72%);
+  --op-color-alerts-warning-minus-seven: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 80%);
+  --op-color-alerts-warning-minus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
+  --op-color-alerts-warning-minus-max: var(--op-color-white);
 
   // On Scale
-  --rm-color-alerts-warning-on-plus-max: var(--rm-color-white);
-  --rm-color-alerts-warning-on-plus-eight: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 88%);
-  --rm-color-alerts-warning-on-plus-seven: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 80%);
-  --rm-color-alerts-warning-on-plus-six: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 72%);
-  --rm-color-alerts-warning-on-plus-five: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 72%);
-  --rm-color-alerts-warning-on-plus-four: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 80%);
-  --rm-color-alerts-warning-on-plus-three: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 88%);
-  --rm-color-alerts-warning-on-plus-two: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 88%);
-  --rm-color-alerts-warning-on-plus-one: var(--rm-color-white);
-  --rm-color-alerts-warning-on-base: var(--rm-color-white);
-  --rm-color-alerts-warning-on-minus-one: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 90%);
-  --rm-color-alerts-warning-on-minus-two: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 90%);
-  --rm-color-alerts-warning-on-minus-three: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 86%);
-  --rm-color-alerts-warning-on-minus-four: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 84%);
-  --rm-color-alerts-warning-on-minus-five: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 20%);
-  --rm-color-alerts-warning-on-minus-six: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 16%);
-  --rm-color-alerts-warning-on-minus-seven: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 8%);
-  --rm-color-alerts-warning-on-minus-eight: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 4%);
-  --rm-color-alerts-warning-on-minus-max: var(--rm-color-black);
+  --op-color-alerts-warning-on-plus-max: var(--op-color-white);
+  --op-color-alerts-warning-on-plus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
+  --op-color-alerts-warning-on-plus-seven: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 80%);
+  --op-color-alerts-warning-on-plus-six: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 72%);
+  --op-color-alerts-warning-on-plus-five: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 72%);
+  --op-color-alerts-warning-on-plus-four: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 80%);
+  --op-color-alerts-warning-on-plus-three: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
+  --op-color-alerts-warning-on-plus-two: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
+  --op-color-alerts-warning-on-plus-one: var(--op-color-white);
+  --op-color-alerts-warning-on-base: var(--op-color-white);
+  --op-color-alerts-warning-on-minus-one: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 90%);
+  --op-color-alerts-warning-on-minus-two: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 90%);
+  --op-color-alerts-warning-on-minus-three: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 86%);
+  --op-color-alerts-warning-on-minus-four: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 84%);
+  --op-color-alerts-warning-on-minus-five: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
+  --op-color-alerts-warning-on-minus-six: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 16%);
+  --op-color-alerts-warning-on-minus-seven: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 8%);
+  --op-color-alerts-warning-on-minus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 4%);
+  --op-color-alerts-warning-on-minus-max: var(--op-color-black);
 }
 
 @mixin alerts-danger-semantic-scale-dark {
@@ -152,46 +152,46 @@
   */
 
   // Main Scale
-  --rm-color-alerts-danger-plus-max: var(--rm-color-black);
-  --rm-color-alerts-danger-plus-eight: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 4%);
-  --rm-color-alerts-danger-plus-seven: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 8%);
-  --rm-color-alerts-danger-plus-six: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 12%);
-  --rm-color-alerts-danger-plus-five: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 14%);
-  --rm-color-alerts-danger-plus-four: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 16%);
-  --rm-color-alerts-danger-plus-three: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 20%);
-  --rm-color-alerts-danger-plus-two: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 24%);
-  --rm-color-alerts-danger-plus-one: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 28%);
-  --rm-color-alerts-danger-base: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 32%);
-  --rm-color-alerts-danger-minus-one: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 36%);
-  --rm-color-alerts-danger-minus-two: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 40%);
-  --rm-color-alerts-danger-minus-three: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 48%);
-  --rm-color-alerts-danger-minus-four: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 52%);
-  --rm-color-alerts-danger-minus-five: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 64%);
-  --rm-color-alerts-danger-minus-six: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 72%);
-  --rm-color-alerts-danger-minus-seven: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 80%);
-  --rm-color-alerts-danger-minus-eight: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 88%);
-  --rm-color-alerts-danger-minus-max: var(--rm-color-white);
+  --op-color-alerts-danger-plus-max: var(--op-color-black);
+  --op-color-alerts-danger-plus-eight: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 4%);
+  --op-color-alerts-danger-plus-seven: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 8%);
+  --op-color-alerts-danger-plus-six: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 12%);
+  --op-color-alerts-danger-plus-five: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 14%);
+  --op-color-alerts-danger-plus-four: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 16%);
+  --op-color-alerts-danger-plus-three: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 20%);
+  --op-color-alerts-danger-plus-two: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 24%);
+  --op-color-alerts-danger-plus-one: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 28%);
+  --op-color-alerts-danger-base: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 32%);
+  --op-color-alerts-danger-minus-one: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 36%);
+  --op-color-alerts-danger-minus-two: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 40%);
+  --op-color-alerts-danger-minus-three: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 48%);
+  --op-color-alerts-danger-minus-four: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 52%);
+  --op-color-alerts-danger-minus-five: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 64%);
+  --op-color-alerts-danger-minus-six: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 72%);
+  --op-color-alerts-danger-minus-seven: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 80%);
+  --op-color-alerts-danger-minus-eight: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 88%);
+  --op-color-alerts-danger-minus-max: var(--op-color-white);
 
   // On Scale
-  --rm-color-alerts-danger-on-plus-max: var(--rm-color-white);
-  --rm-color-alerts-danger-on-plus-eight: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 88%);
-  --rm-color-alerts-danger-on-plus-seven: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 80%);
-  --rm-color-alerts-danger-on-plus-six: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 72%);
-  --rm-color-alerts-danger-on-plus-five: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 72%);
-  --rm-color-alerts-danger-on-plus-four: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 80%);
-  --rm-color-alerts-danger-on-plus-three: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 88%);
-  --rm-color-alerts-danger-on-plus-two: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 88%);
-  --rm-color-alerts-danger-on-plus-one: var(--rm-color-white);
-  --rm-color-alerts-danger-on-base: var(--rm-color-white);
-  --rm-color-alerts-danger-on-minus-one: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 90%);
-  --rm-color-alerts-danger-on-minus-two: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 90%);
-  --rm-color-alerts-danger-on-minus-three: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 86%);
-  --rm-color-alerts-danger-on-minus-four: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 84%);
-  --rm-color-alerts-danger-on-minus-five: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 20%);
-  --rm-color-alerts-danger-on-minus-six: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 16%);
-  --rm-color-alerts-danger-on-minus-seven: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 8%);
-  --rm-color-alerts-danger-on-minus-eight: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 4%);
-  --rm-color-alerts-danger-on-minus-max: var(--rm-color-black);
+  --op-color-alerts-danger-on-plus-max: var(--op-color-white);
+  --op-color-alerts-danger-on-plus-eight: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 88%);
+  --op-color-alerts-danger-on-plus-seven: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 80%);
+  --op-color-alerts-danger-on-plus-six: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 72%);
+  --op-color-alerts-danger-on-plus-five: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 72%);
+  --op-color-alerts-danger-on-plus-four: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 80%);
+  --op-color-alerts-danger-on-plus-three: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 88%);
+  --op-color-alerts-danger-on-plus-two: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 88%);
+  --op-color-alerts-danger-on-plus-one: var(--op-color-white);
+  --op-color-alerts-danger-on-base: var(--op-color-white);
+  --op-color-alerts-danger-on-minus-one: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 90%);
+  --op-color-alerts-danger-on-minus-two: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 90%);
+  --op-color-alerts-danger-on-minus-three: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 86%);
+  --op-color-alerts-danger-on-minus-four: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 84%);
+  --op-color-alerts-danger-on-minus-five: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 20%);
+  --op-color-alerts-danger-on-minus-six: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 16%);
+  --op-color-alerts-danger-on-minus-seven: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 8%);
+  --op-color-alerts-danger-on-minus-eight: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 4%);
+  --op-color-alerts-danger-on-minus-max: var(--op-color-black);
 }
 
 @mixin alerts-info-semantic-scale-dark {
@@ -201,46 +201,46 @@
   */
 
   // Main Scale
-  --rm-color-alerts-info-plus-max: var(--rm-color-black);
-  --rm-color-alerts-info-plus-eight: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 4%);
-  --rm-color-alerts-info-plus-seven: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 8%);
-  --rm-color-alerts-info-plus-six: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 12%);
-  --rm-color-alerts-info-plus-five: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 14%);
-  --rm-color-alerts-info-plus-four: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 16%);
-  --rm-color-alerts-info-plus-three: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 20%);
-  --rm-color-alerts-info-plus-two: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 24%);
-  --rm-color-alerts-info-plus-one: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 28%);
-  --rm-color-alerts-info-base: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 32%);
-  --rm-color-alerts-info-minus-one: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 36%);
-  --rm-color-alerts-info-minus-two: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 40%);
-  --rm-color-alerts-info-minus-three: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 48%);
-  --rm-color-alerts-info-minus-four: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 52%);
-  --rm-color-alerts-info-minus-five: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 64%);
-  --rm-color-alerts-info-minus-six: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 72%);
-  --rm-color-alerts-info-minus-seven: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 80%);
-  --rm-color-alerts-info-minus-eight: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 88%);
-  --rm-color-alerts-info-minus-max: var(--rm-color-white);
+  --op-color-alerts-info-plus-max: var(--op-color-black);
+  --op-color-alerts-info-plus-eight: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 4%);
+  --op-color-alerts-info-plus-seven: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 8%);
+  --op-color-alerts-info-plus-six: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 12%);
+  --op-color-alerts-info-plus-five: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 14%);
+  --op-color-alerts-info-plus-four: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 16%);
+  --op-color-alerts-info-plus-three: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 20%);
+  --op-color-alerts-info-plus-two: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 24%);
+  --op-color-alerts-info-plus-one: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 28%);
+  --op-color-alerts-info-base: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 32%);
+  --op-color-alerts-info-minus-one: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 36%);
+  --op-color-alerts-info-minus-two: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 40%);
+  --op-color-alerts-info-minus-three: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 48%);
+  --op-color-alerts-info-minus-four: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 52%);
+  --op-color-alerts-info-minus-five: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 64%);
+  --op-color-alerts-info-minus-six: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 72%);
+  --op-color-alerts-info-minus-seven: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 80%);
+  --op-color-alerts-info-minus-eight: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 88%);
+  --op-color-alerts-info-minus-max: var(--op-color-white);
 
   // On Scale
-  --rm-color-alerts-info-on-plus-max: var(--rm-color-white);
-  --rm-color-alerts-info-on-plus-eight: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 88%);
-  --rm-color-alerts-info-on-plus-seven: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 80%);
-  --rm-color-alerts-info-on-plus-six: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 72%);
-  --rm-color-alerts-info-on-plus-five: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 72%);
-  --rm-color-alerts-info-on-plus-four: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 80%);
-  --rm-color-alerts-info-on-plus-three: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 88%);
-  --rm-color-alerts-info-on-plus-two: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 88%);
-  --rm-color-alerts-info-on-plus-one: var(--rm-color-white);
-  --rm-color-alerts-info-on-base: var(--rm-color-white);
-  --rm-color-alerts-info-on-minus-one: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 90%);
-  --rm-color-alerts-info-on-minus-two: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 90%);
-  --rm-color-alerts-info-on-minus-three: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 86%);
-  --rm-color-alerts-info-on-minus-four: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 84%);
-  --rm-color-alerts-info-on-minus-five: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 20%);
-  --rm-color-alerts-info-on-minus-six: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 16%);
-  --rm-color-alerts-info-on-minus-seven: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 8%);
-  --rm-color-alerts-info-on-minus-eight: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 4%);
-  --rm-color-alerts-info-on-minus-max: var(--rm-color-black);
+  --op-color-alerts-info-on-plus-max: var(--op-color-white);
+  --op-color-alerts-info-on-plus-eight: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 88%);
+  --op-color-alerts-info-on-plus-seven: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 80%);
+  --op-color-alerts-info-on-plus-six: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 72%);
+  --op-color-alerts-info-on-plus-five: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 72%);
+  --op-color-alerts-info-on-plus-four: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 80%);
+  --op-color-alerts-info-on-plus-three: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 88%);
+  --op-color-alerts-info-on-plus-two: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 88%);
+  --op-color-alerts-info-on-plus-one: var(--op-color-white);
+  --op-color-alerts-info-on-base: var(--op-color-white);
+  --op-color-alerts-info-on-minus-one: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 90%);
+  --op-color-alerts-info-on-minus-two: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 90%);
+  --op-color-alerts-info-on-minus-three: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 86%);
+  --op-color-alerts-info-on-minus-four: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 84%);
+  --op-color-alerts-info-on-minus-five: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 20%);
+  --op-color-alerts-info-on-minus-six: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 16%);
+  --op-color-alerts-info-on-minus-seven: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 8%);
+  --op-color-alerts-info-on-minus-eight: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 4%);
+  --op-color-alerts-info-on-minus-max: var(--op-color-black);
 }
 
 @mixin alerts-notice-semantic-scale-dark {
@@ -250,46 +250,46 @@
   */
 
   // Main Scale
-  --rm-color-alerts-notice-plus-max: var(--rm-color-black);
-  --rm-color-alerts-notice-plus-eight: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 4%);
-  --rm-color-alerts-notice-plus-seven: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 8%);
-  --rm-color-alerts-notice-plus-six: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 12%);
-  --rm-color-alerts-notice-plus-five: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 14%);
-  --rm-color-alerts-notice-plus-four: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 16%);
-  --rm-color-alerts-notice-plus-three: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 20%);
-  --rm-color-alerts-notice-plus-two: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 24%);
-  --rm-color-alerts-notice-plus-one: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 28%);
-  --rm-color-alerts-notice-base: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 32%);
-  --rm-color-alerts-notice-minus-one: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 36%);
-  --rm-color-alerts-notice-minus-two: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 40%);
-  --rm-color-alerts-notice-minus-three: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 48%);
-  --rm-color-alerts-notice-minus-four: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 52%);
-  --rm-color-alerts-notice-minus-five: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 64%);
-  --rm-color-alerts-notice-minus-six: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 72%);
-  --rm-color-alerts-notice-minus-seven: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 80%);
-  --rm-color-alerts-notice-minus-eight: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 88%);
-  --rm-color-alerts-notice-minus-max: var(--rm-color-white);
+  --op-color-alerts-notice-plus-max: var(--op-color-black);
+  --op-color-alerts-notice-plus-eight: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 4%);
+  --op-color-alerts-notice-plus-seven: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 8%);
+  --op-color-alerts-notice-plus-six: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 12%);
+  --op-color-alerts-notice-plus-five: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 14%);
+  --op-color-alerts-notice-plus-four: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 16%);
+  --op-color-alerts-notice-plus-three: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 20%);
+  --op-color-alerts-notice-plus-two: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 24%);
+  --op-color-alerts-notice-plus-one: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 28%);
+  --op-color-alerts-notice-base: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 32%);
+  --op-color-alerts-notice-minus-one: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 36%);
+  --op-color-alerts-notice-minus-two: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 40%);
+  --op-color-alerts-notice-minus-three: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 48%);
+  --op-color-alerts-notice-minus-four: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 52%);
+  --op-color-alerts-notice-minus-five: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 64%);
+  --op-color-alerts-notice-minus-six: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 72%);
+  --op-color-alerts-notice-minus-seven: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 80%);
+  --op-color-alerts-notice-minus-eight: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 88%);
+  --op-color-alerts-notice-minus-max: var(--op-color-white);
 
   // On Scale
-  --rm-color-alerts-notice-on-plus-max: var(--rm-color-white);
-  --rm-color-alerts-notice-on-plus-eight: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 88%);
-  --rm-color-alerts-notice-on-plus-seven: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 80%);
-  --rm-color-alerts-notice-on-plus-six: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 72%);
-  --rm-color-alerts-notice-on-plus-five: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 72%);
-  --rm-color-alerts-notice-on-plus-four: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 80%);
-  --rm-color-alerts-notice-on-plus-three: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 88%);
-  --rm-color-alerts-notice-on-plus-two: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 88%);
-  --rm-color-alerts-notice-on-plus-one: var(--rm-color-white);
-  --rm-color-alerts-notice-on-base: var(--rm-color-white);
-  --rm-color-alerts-notice-on-minus-one: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 90%);
-  --rm-color-alerts-notice-on-minus-two: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 90%);
-  --rm-color-alerts-notice-on-minus-three: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 86%);
-  --rm-color-alerts-notice-on-minus-four: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 84%);
-  --rm-color-alerts-notice-on-minus-five: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 20%);
-  --rm-color-alerts-notice-on-minus-six: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 16%);
-  --rm-color-alerts-notice-on-minus-seven: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 8%);
-  --rm-color-alerts-notice-on-minus-eight: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 4%);
-  --rm-color-alerts-notice-on-minus-max: var(--rm-color-black);
+  --op-color-alerts-notice-on-plus-max: var(--op-color-white);
+  --op-color-alerts-notice-on-plus-eight: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 88%);
+  --op-color-alerts-notice-on-plus-seven: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 80%);
+  --op-color-alerts-notice-on-plus-six: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 72%);
+  --op-color-alerts-notice-on-plus-five: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 72%);
+  --op-color-alerts-notice-on-plus-four: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 80%);
+  --op-color-alerts-notice-on-plus-three: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 88%);
+  --op-color-alerts-notice-on-plus-two: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 88%);
+  --op-color-alerts-notice-on-plus-one: var(--op-color-white);
+  --op-color-alerts-notice-on-base: var(--op-color-white);
+  --op-color-alerts-notice-on-minus-one: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 90%);
+  --op-color-alerts-notice-on-minus-two: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 90%);
+  --op-color-alerts-notice-on-minus-three: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 86%);
+  --op-color-alerts-notice-on-minus-four: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 84%);
+  --op-color-alerts-notice-on-minus-five: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 20%);
+  --op-color-alerts-notice-on-minus-six: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 16%);
+  --op-color-alerts-notice-on-minus-seven: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 8%);
+  --op-color-alerts-notice-on-minus-eight: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 4%);
+  --op-color-alerts-notice-on-minus-max: var(--op-color-black);
 }
 
 @mixin shadows-dark {
@@ -297,35 +297,35 @@
   * @tokens Dark Shadows
   * @presenter Shadow
   */
-  --rm-shadow-x-small: 0 1px 3px hsl(0deg 0% 0% / 15%), 0 1px 2px hsl(0deg 0% 0% / 30%);
-  --rm-shadow-small: 0 2px 6px hsl(0deg 0% 0% / 15%), 0 1px 2px hsl(0deg 0% 0% / 30%);
-  --rm-shadow-medium: 0 4px 8px hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 30%);
-  --rm-shadow-large: 0 6px 10px hsl(0deg 0% 0% / 15%), 0 2px 3px hsl(0deg 0% 0% / 30%);
-  --rm-shadow-x-large: 0 8px 12px hsl(0deg 0% 0% / 15%), 0 4px 4px hsl(0deg 0% 0% / 30%);
+  --op-shadow-x-small: 0 1px 3px hsl(0deg 0% 0% / 15%), 0 1px 2px hsl(0deg 0% 0% / 30%);
+  --op-shadow-small: 0 2px 6px hsl(0deg 0% 0% / 15%), 0 1px 2px hsl(0deg 0% 0% / 30%);
+  --op-shadow-medium: 0 4px 8px hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 30%);
+  --op-shadow-large: 0 6px 10px hsl(0deg 0% 0% / 15%), 0 2px 3px hsl(0deg 0% 0% / 30%);
+  --op-shadow-x-large: 0 8px 12px hsl(0deg 0% 0% / 15%), 0 4px 4px hsl(0deg 0% 0% / 30%);
 }
 
 @mixin modal-dark {
   .modal__content {
-    background: var(--rm-color-neutral-plus-seven);
-    color: var(--rm-color-neutral-on-plus-seven);
+    background: var(--op-color-neutral-plus-seven);
+    color: var(--op-color-neutral-on-plus-seven);
   }
 
   .modal__close {
     &:hover {
-      background: var(--rm-color-background);
+      background: var(--op-color-background);
     }
   }
 }
 
 @mixin panel-dark {
   .panel {
-    background: var(--rm-color-neutral-plus-seven);
-    color: var(--rm-color-neutral-on-plus-seven);
+    background: var(--op-color-neutral-plus-seven);
+    color: var(--op-color-neutral-on-plus-seven);
   }
 
   .panel__close {
     &:hover {
-      background: var(--rm-color-background);
+      background: var(--op-color-background);
     }
   }
 }

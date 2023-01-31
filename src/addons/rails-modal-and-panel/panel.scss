@@ -1,36 +1,36 @@
 .panel {
-  --rm-panel-width: 40%;
+  --op-panel-width: 40%;
 
   position: absolute;
-  z-index: var(--rm-z-index-drawer);
-  right: calc(-1 * var(--rm-panel-width)); // this pushes the panel off the sceen to the right
-  width: var(--rm-panel-width);
+  z-index: var(--op-z-index-drawer);
+  right: calc(-1 * var(--op-panel-width)); // this pushes the panel off the sceen to the right
+  width: var(--op-panel-width);
   height: 100vh;
-  padding-bottom: var(--rm-space-large);
-  background: var(--rm-color-background);
-  color: var(--rm-color-on-background);
+  padding-bottom: var(--op-space-large);
+  background: var(--op-color-background);
+  color: var(--op-color-on-background);
   overflow-y: scroll;
-  transition: right var(--rm-transition-panel);
+  transition: right var(--op-transition-panel);
 }
 
 .panel--active {
   right: 0;
-  box-shadow: var(--rm-shadow-x-large);
+  box-shadow: var(--op-shadow-x-large);
 }
 
 .panel__close {
   display: flex;
-  padding: var(--rm-space-medium);
+  padding: var(--op-space-medium);
   border-radius: 100%;
   cursor: pointer;
   float: right;
 
   &:hover {
-    background: var(--rm-color-neutral-plus-seven);
+    background: var(--op-color-neutral-plus-seven);
   }
 }
 
 #panel-content {
-  padding-top: var(--rm-space-large);
-  padding-bottom: var(--rm-space-large);
+  padding-top: var(--op-space-large);
+  padding-bottom: var(--op-space-large);
 }
