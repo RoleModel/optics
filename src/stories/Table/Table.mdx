@@ -94,9 +94,9 @@ Here are the variables used
 
 ```css
 // Variable API
---_rm-table-cell-padding-default:
---_rm-table-cell-padding-comfortable:
---_rm-table-cell-padding-compact:
+--_op-table-cell-padding-default:
+--_op-table-cell-padding-comfortable:
+--_op-table-cell-padding-compact:
 ```
 
 ## Overriding table styles
@@ -107,7 +107,7 @@ This allows multiple table classes to share the same behavior. You can modify al
 
 ```scss
 %table-global {
-  font-size: var(--rm-font-x-large);
+  font-size: var(--op-font-x-large);
 }
 ```
 
@@ -115,9 +115,9 @@ If you want to override how the density modifier behaves, you can use API descri
 
 ```css
 %table-global {
-  --_rm-table-cell-padding-default: var(--rm-space-x-small) var(--rm-space-2x-small);
-  --_rm-table-cell-padding-comfortable: var(--rm-space-large) var(--rm-space-medium);
-  --_rm-table-cell-padding-compact: var(--rm-space-2x-small) var(--rm-space-3x-small);
+  --_op-table-cell-padding-default: var(--op-space-x-small) var(--op-space-2x-small);
+  --_op-table-cell-padding-comfortable: var(--op-space-large) var(--op-space-medium);
+  --_op-table-cell-padding-compact: var(--op-space-2x-small) var(--op-space-3x-small);
 }
 ```
 

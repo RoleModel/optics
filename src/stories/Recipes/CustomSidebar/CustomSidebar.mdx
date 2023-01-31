@@ -10,7 +10,7 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 // Domains Sidebar Example
 @mixin sidebar-domains-rail-global {
   .sidebar__brand {
-    padding: 0 var(--_rm-sidebar-spacing);
+    padding: 0 var(--_op-sidebar-spacing);
   }
 }
 
@@ -25,7 +25,7 @@ Your app may want to customize the sidebar to change the look and feel. Here are
   }
 
   .sidebar__section-divider {
-    margin: var(--rm-space-small) 0;
+    margin: var(--op-space-small) 0;
   }
 }
 
@@ -33,19 +33,19 @@ Your app may want to customize the sidebar to change the look and feel. Here are
   @extend %sidebar-global;
 
   // Normal
-  --_rm-sidebar-background-color: var(--rm-color-background);
-  --_rm-sidebar-text-color: var(--rm-color-on-background);
+  --_op-sidebar-background-color: var(--op-color-background);
+  --_op-sidebar-text-color: var(--op-color-on-background);
 
   // Active
-  --_rm-sidebar-icon-background-active-color: var(--rm-color-primary-plus-seven);
-  --_rm-sidebar-icon-text-active-color: var(--rm-color-primary-on-plus-seven);
+  --_op-sidebar-icon-background-active-color: var(--op-color-primary-plus-seven);
+  --_op-sidebar-icon-text-active-color: var(--op-color-primary-on-plus-seven);
 
   // Hover
-  --_rm-sidebar-icon-background-hover-color: var(--rm-color-neutral-plus-seven);
-  --_rm-sidebar-icon-text-hover-color: var(--rm-color-neutral-on-plus-seven);
+  --_op-sidebar-icon-background-hover-color: var(--op-color-neutral-plus-seven);
+  --_op-sidebar-icon-text-hover-color: var(--op-color-neutral-on-plus-seven);
 
   .sidebar__brand {
-    padding: 0 var(--rm-space-4x-large);
+    padding: 0 var(--op-space-4x-large);
   }
 
   // Modifiers
@@ -81,7 +81,7 @@ Your app may want to customize the sidebar to change the look and feel. Here are
   .sidebar__brand {
     svg {
       width: 100%;
-      padding: 0 var(--rm-space-small);
+      padding: 0 var(--op-space-small);
     }
 
     .sidebar__brand-label {
@@ -92,55 +92,55 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 
 @mixin sidebar-16six-drawer-global {
   .sidebar__item {
-    border-radius: var(--rm-radius-large);
-    font-size: var(--rm-font-small);
+    border-radius: var(--op-radius-large);
+    font-size: var(--op-font-small);
   }
 }
 
 .sidebar-16six {
   @extend %sidebar-global;
 
-  --_rm-sidebar-spacing: var(--rm-space-x-small);
+  --_op-sidebar-spacing: var(--op-space-x-small);
 
   // Normal
-  --_rm-sidebar-background-color: var(--rm-color-primary-minus-five);
-  --_rm-sidebar-text-color: var(--rm-color-primary-on-minus-five);
+  --_op-sidebar-background-color: var(--op-color-primary-minus-five);
+  --_op-sidebar-text-color: var(--op-color-primary-on-minus-five);
 
   // Active
-  --_rm-sidebar-icon-background-active-color: var(--rm-color-primary-minus-three);
-  --_rm-sidebar-icon-text-active-color: var(--rm-color-primary-on-minus-three);
+  --_op-sidebar-icon-background-active-color: var(--op-color-primary-minus-three);
+  --_op-sidebar-icon-text-active-color: var(--op-color-primary-on-minus-three);
 
   // Hover
-  --_rm-sidebar-icon-background-hover-color: var(--rm-color-primary-minus-three);
-  --_rm-sidebar-icon-text-hover-color: var(--rm-color-primary-on-minus-three);
+  --_op-sidebar-icon-background-hover-color: var(--op-color-primary-minus-three);
+  --_op-sidebar-icon-text-hover-color: var(--op-color-primary-on-minus-three);
 
-  gap: var(--rm-space-x-large);
+  gap: var(--op-space-x-large);
 
   .sidebar__brand {
     display: flex;
-    gap: var(--rm-space-small);
+    gap: var(--op-space-small);
 
     text-decoration: none;
     color: inherit;
 
     svg {
-      width: var(--rm-space-3x-large);
+      width: var(--op-space-3x-large);
     }
 
     .sidebar__brand-label {
       display: flex;
       flex-direction: column;
-      gap: var(--rm-space-4x-small);
+      gap: var(--op-space-4x-small);
     }
   }
 
   .sidebar__content {
-    gap: var(--rm-space-x-small);
+    gap: var(--op-space-x-small);
   }
 
   .sidebar__item {
     .sidebar__item-icon {
-      border-radius: var(--rm-radius-large);
+      border-radius: var(--op-radius-large);
 
       &.sidebar__item-icon--rotated {
         rotate: 90deg;
@@ -150,7 +150,7 @@ Your app may want to customize the sidebar to change the look and feel. Here are
     &:hover,
     &.active {
       .sidebar__item-icon {
-        --rm-mso-weight: var(--rm-font-weight-medium);
+        --op-mso-weight: var(--op-font-weight-medium);
       }
     }
   }

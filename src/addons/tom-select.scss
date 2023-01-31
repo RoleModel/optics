@@ -7,16 +7,16 @@
 .#{$select-ns}-wrapper {
   // Control
   .#{$select-ns}-control {
-    min-height: var(--rm-input-height-large);
+    min-height: var(--op-input-height-large);
     align-items: center;
     border: none;
-    border-radius: var(--rm-radius-large);
-    background-color: var(--rm-color-neutral-plus-max);
-    box-shadow: var(--rm-border-all) var(--rm-border-color);
-    color: var(--rm-color-neutral-on-plus-max);
-    font-size: var(--rm-font-x-small);
-    font-weight: var(--rm-font-weight-light);
-    line-height: var(--rm-line-height-base);
+    border-radius: var(--op-radius-large);
+    background-color: var(--op-color-neutral-plus-max);
+    box-shadow: var(--op-border-all) var(--op-border-color);
+    color: var(--op-color-neutral-on-plus-max);
+    font-size: var(--op-font-x-small);
+    font-weight: var(--op-font-weight-light);
+    line-height: var(--op-line-height-base);
   }
 
   // Active control
@@ -31,16 +31,16 @@
   .#{$select-ns}-dropdown {
     border: none;
     margin: 0;
-    border-bottom-left-radius: var(--rm-radius-large);
-    border-bottom-right-radius: var(--rm-radius-large);
-    box-shadow: var(--rm-border-all) var(--rm-border-color);
+    border-bottom-left-radius: var(--op-radius-large);
+    border-bottom-right-radius: var(--op-radius-large);
+    box-shadow: var(--op-border-all) var(--op-border-color);
     contain: paint;
 
     .option,
     .create {
       &.active {
-        background-color: var(--rm-color-primary-plus-seven);
-        color: var(--rm-color-primary-on-plus-seven);
+        background-color: var(--op-color-primary-plus-seven);
+        color: var(--op-color-primary-on-plus-seven);
       }
     }
   }
@@ -48,15 +48,15 @@
   // Item
   &.multi {
     .#{$select-ns}-control > div {
-      padding: var(--rm-space-3x-small) var(--rm-space-x-small);
-      border-radius: var(--rm-radius-medium);
-      margin: 0 var(--rm-space-3x-small) var(--rm-space-3x-small) 0;
-      background-color: var(--rm-color-primary-base);
-      color: var(--rm-color-primary-on-base);
+      padding: var(--op-space-3x-small) var(--op-space-x-small);
+      border-radius: var(--op-radius-medium);
+      margin: 0 var(--op-space-3x-small) var(--op-space-3x-small) 0;
+      background-color: var(--op-color-primary-base);
+      color: var(--op-color-primary-on-base);
 
       &.active {
-        background-color: var(--rm-color-primary-plus-two);
-        color: var(--rm-color-primary-on-plus-two);
+        background-color: var(--op-color-primary-plus-two);
+        color: var(--op-color-primary-on-plus-two);
       }
     }
   }
@@ -68,8 +68,8 @@
   &.multi.input-active {
     .#{$select-ns}-control {
       // Highly specific SVG data image for the dropdown arrow.
-      background-image: var(--rm-form-dropdown-arrow);
-      background-position-x: calc(100% - var(--rm-space-small));
+      background-image: var(--op-form-dropdown-arrow);
+      background-position-x: calc(100% - var(--op-space-small));
       background-position-y: center;
       background-repeat: no-repeat;
     }

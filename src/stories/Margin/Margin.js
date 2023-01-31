@@ -9,13 +9,13 @@ export const createMargin = ({
 }) => {
   const wrapper = document.createElement('div')
   wrapper.style.display = 'flex'
-  wrapper.style.backgroundColor = 'var(--rm-color-alerts-warning-base)'
+  wrapper.style.backgroundColor = 'var(--op-color-alerts-warning-base)'
 
   const container = document.createElement('div')
-  container.style.backgroundColor = 'var(--rm-color-primary-base)'
-  container.style.color = 'var(--rm-color-primary-on-base)'
-  container.style.width = 'var(--rm-space-x-large)'
-  container.style.minHeight = 'var(--rm-space-x-large)'
+  container.style.backgroundColor = 'var(--op-color-primary-base)'
+  container.style.color = 'var(--op-color-primary-on-base)'
+  container.style.width = 'var(--op-space-x-large)'
+  container.style.minHeight = 'var(--op-space-x-large)'
 
   container.className = [
     margin ? `margin-${margin}` : '',

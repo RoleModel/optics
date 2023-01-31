@@ -8,21 +8,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--rm-space-2x-small) var(--rm-space-x-small);
-  border-radius: var(--rm-radius-medium);
-  background-color: var(--rm-color-neutral-base);
-  color: var(--rm-color-neutral-on-base);
+  padding: var(--op-space-2x-small) var(--op-space-x-small);
+  border-radius: var(--op-radius-medium);
+  background-color: var(--op-color-neutral-base);
+  color: var(--op-color-neutral-on-base);
   cursor: inherit;
-  font-size: var(--rm-font-x-small);
-  font-weight: var(--rm-font-weight-semi-bold);
-  gap: var(--rm-space-3x-small);
-  letter-spacing: var(--rm-letter-spacing-label);
-  line-height: var(--rm-line-height-densest);
+  font-size: var(--op-font-x-small);
+  font-weight: var(--op-font-weight-semi-bold);
+  gap: var(--op-space-3x-small);
+  letter-spacing: var(--op-letter-spacing-label);
+  line-height: var(--op-line-height-densest);
   user-select: none;
   white-space: nowrap;
 
   &.badge--pill {
-    border-radius: var(--rm-radius-pill);
+    border-radius: var(--op-radius-pill);
   }
 
   &.badge--notification-right {
@@ -47,34 +47,34 @@
 .badge-primary {
   @extend %badge-global;
 
-  background-color: var(--rm-color-primary-base);
-  color: var(--rm-color-primary-on-base);
+  background-color: var(--op-color-primary-base);
+  color: var(--op-color-primary-on-base);
 }
 
 .badge-warning {
   @extend %badge-global;
 
-  background-color: var(--rm-color-alerts-warning-base);
-  color: var(--rm-color-alerts-warning-on-base);
+  background-color: var(--op-color-alerts-warning-base);
+  color: var(--op-color-alerts-warning-on-base);
 }
 
 .badge-danger {
   @extend %badge-global;
 
-  background-color: var(--rm-color-alerts-danger-base);
-  color: var(--rm-color-alerts-danger-on-base);
+  background-color: var(--op-color-alerts-danger-base);
+  color: var(--op-color-alerts-danger-on-base);
 }
 
 .badge-info {
   @extend %badge-global;
 
-  background-color: var(--rm-color-alerts-info-base);
-  color: var(--rm-color-alerts-info-on-base);
+  background-color: var(--op-color-alerts-info-base);
+  color: var(--op-color-alerts-info-on-base);
 }
 
 .badge-notice {
   @extend %badge-global;
 
-  background-color: var(--rm-color-alerts-notice-base);
-  color: var(--rm-color-alerts-notice-on-base);
+  background-color: var(--op-color-alerts-notice-base);
+  color: var(--op-color-alerts-notice-on-base);
 }

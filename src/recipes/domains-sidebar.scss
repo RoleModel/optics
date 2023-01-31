@@ -1,7 +1,7 @@
 // Domains Sidebar Example
 @mixin sidebar-domains-rail-global {
   .sidebar__brand {
-    padding: 0 var(--_rm-sidebar-spacing);
+    padding: 0 var(--_op-sidebar-spacing);
   }
 }
 
@@ -16,7 +16,7 @@
   }
 
   .sidebar__section-divider {
-    margin: var(--rm-space-small) 0;
+    margin: var(--op-space-small) 0;
   }
 }
 
@@ -24,19 +24,19 @@
   @extend %sidebar-global;
 
   // Normal
-  --_rm-sidebar-background-color: var(--rm-color-background);
-  --_rm-sidebar-text-color: var(--rm-color-on-background);
+  --_op-sidebar-background-color: var(--op-color-background);
+  --_op-sidebar-text-color: var(--op-color-on-background);
 
   // Active
-  --_rm-sidebar-icon-background-active-color: var(--rm-color-primary-plus-seven);
-  --_rm-sidebar-icon-text-active-color: var(--rm-color-primary-on-plus-seven);
+  --_op-sidebar-icon-background-active-color: var(--op-color-primary-plus-seven);
+  --_op-sidebar-icon-text-active-color: var(--op-color-primary-on-plus-seven);
 
   // Hover
-  --_rm-sidebar-icon-background-hover-color: var(--rm-color-neutral-plus-seven);
-  --_rm-sidebar-icon-text-hover-color: var(--rm-color-neutral-on-plus-seven);
+  --_op-sidebar-icon-background-hover-color: var(--op-color-neutral-plus-seven);
+  --_op-sidebar-icon-text-hover-color: var(--op-color-neutral-on-plus-seven);
 
   .sidebar__brand {
-    padding: 0 var(--rm-space-4x-large);
+    padding: 0 var(--op-space-4x-large);
   }
 
   // Modifiers
