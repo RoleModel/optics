@@ -13,7 +13,7 @@
 
 .page__header {
   position: sticky;
-  z-index: var(--rm-z-index-header);
+  z-index: var(--op-z-index-header);
   top: 0;
   flex-grow: 0;
   flex-shrink: 0;
@@ -23,13 +23,13 @@
   width: 100%;
   max-width: $breakpoint-medium;
   flex-grow: 1;
-  padding: 0 var(--rm-space-large);
+  padding: 0 var(--op-space-large);
   margin: 0 auto;
 }
 
 .page__footer {
   position: sticky;
-  z-index: var(--rm-z-index-footer);
+  z-index: var(--op-z-index-footer);
   bottom: 0;
   flex-grow: 0;
   flex-shrink: 0;

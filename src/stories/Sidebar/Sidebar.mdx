@@ -112,24 +112,24 @@ Here are the variables used
 
 ```css
 // Normal
---_rm-sidebar-background-color:
---_rm-sidebar-text-color:
+--_op-sidebar-background-color:
+--_op-sidebar-text-color:
 
 // Active
---_rm-sidebar-icon-background-active-color:
---_rm-sidebar-icon-text-active-color:
+--_op-sidebar-icon-background-active-color:
+--_op-sidebar-icon-text-active-color:
 
 // Hover
---_rm-sidebar-icon-background-hover-color:
---_rm-sidebar-icon-text-hover-color:
+--_op-sidebar-icon-background-hover-color:
+--_op-sidebar-icon-text-hover-color:
 
---_rm-sidebar-rail-width:
---_rm-sidebar-drawer-width:
+--_op-sidebar-rail-width:
+--_op-sidebar-drawer-width:
 
---_rm-sidebar-spacing:
---_rm-sidebar-link-spacing:
+--_op-sidebar-spacing:
+--_op-sidebar-link-spacing:
 
---_rm-sidebar-transition:
+--_op-sidebar-transition:
 ```
 
 ## Overriding Sidebar styles
@@ -140,8 +140,8 @@ This allows multiple sidebar classes to share the same behavior. You can modify 
 
 ```css
 %sidebar-global {
-  --_rm-sidebar-rail-width: 10rem;
-  --_rm-sidebar-drawer-width: 30rem;
+  --_op-sidebar-rail-width: 10rem;
+  --_op-sidebar-drawer-width: 30rem;
 }
 ```
 
@@ -157,7 +157,7 @@ There are also mixins for the rail and drawer specific styles. They can be overr
 
 @mixin sidebar-drawer-global {
   .sidebar__section-title {
-    font-weight: var(--rm-font-weight-black);
+    font-weight: var(--op-font-weight-black);
   }
 }
 ```
@@ -167,8 +167,8 @@ If you need to override the color of a particular sidebar style, you can open th
 ```css
 // This will only affect the primary sidebar, but not default or subtle primary
 .sidebar-primary {
-  --_rm-sidebar-background-color: pruple;
-  --_rm-sidebar-text-color: pruple;
+  --_op-sidebar-background-color: pruple;
+  --_op-sidebar-text-color: pruple;
 }
 ```
 
@@ -181,16 +181,16 @@ Your application may need a custom Sidebar. To add one, just follow this templat
   @extend %sidebar-global;
 
   // Normal
-  --_rm-sidebar-background-color:
-  --_rm-sidebar-text-color:
+  --_op-sidebar-background-color:
+  --_op-sidebar-text-color:
 
   // Active
-  --_rm-sidebar-icon-background-active-color:
-  --_rm-sidebar-icon-text-active-color:
+  --_op-sidebar-icon-background-active-color:
+  --_op-sidebar-icon-text-active-color:
 
   // Hover
-  --_rm-sidebar-icon-background-hover-color:
-  --_rm-sidebar-icon-text-hover-color:
+  --_op-sidebar-icon-background-hover-color:
+  --_op-sidebar-icon-text-hover-color:
 }
 ```
 

@@ -2,16 +2,16 @@
 
 html {
   overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
-  font-family: var(--rm-font-family);
+  font-family: var(--op-font-family);
   font-size: 62.5%; // 1rem = 10px
 }
 
 body {
   overflow: auto;
   height: 100vh;
-  background: var(--rm-color-background);
-  color: var(--rm-color-on-background);
-  font-size: var(--rm-font-medium);
+  background: var(--op-color-background);
+  color: var(--op-color-on-background);
+  font-size: var(--op-font-medium);
 }
 
 button {
@@ -33,7 +33,7 @@ label {
 }
 
 a {
-  color: var(--rm-color-primary-original);
+  color: var(--op-color-primary-original);
 }
 
 blockquote,
@@ -57,39 +57,39 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: var(--rm-space-small);
-  font-weight: var(--rm-font-weight-normal);
+  margin-bottom: var(--op-space-small);
+  font-weight: var(--op-font-weight-normal);
 }
 
 h1 {
-  font-size: var(--rm-font-2x-large);
+  font-size: var(--op-font-2x-large);
 }
 
 h2 {
-  font-size: var(--rm-font-x-large);
+  font-size: var(--op-font-x-large);
 }
 
 h3 {
-  font-size: var(--rm-font-large);
+  font-size: var(--op-font-large);
 }
 
 h4 {
-  font-size: var(--rm-font-medium);
+  font-size: var(--op-font-medium);
 }
 
 h5 {
-  font-size: var(--rm-font-small);
+  font-size: var(--op-font-small);
 }
 
 h6 {
-  font-size: var(--rm-font-x-small);
+  font-size: var(--op-font-x-small);
 }
 
 p {
-  margin-bottom: var(--rm-space-small);
-  font-size: var(--rm-font-medium);
+  margin-bottom: var(--op-space-small);
+  font-size: var(--op-font-medium);
 }
 
 small {
-  font-size: var(--rm-font-small);
+  font-size: var(--op-font-small);
 }

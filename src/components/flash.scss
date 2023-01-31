@@ -1,55 +1,55 @@
 %flash-global {
   position: fixed;
-  z-index: var(--rm-z-index-alert-group);
-  top: var(--rm-space-large);
-  right: var(--rm-space-large);
+  z-index: var(--op-z-index-alert-group);
+  top: var(--op-space-large);
+  right: var(--op-space-large);
   display: inline-grid;
   width: auto;
   align-items: center;
   justify-content: center;
-  padding: var(--rm-space-x-small) var(--rm-space-medium);
-  border-color: var(--rm-color-on-background);
-  border-radius: var(--rm-radius-small);
-  border-left-width: var(--rm-border-width-x-large);
+  padding: var(--op-space-x-small) var(--op-space-medium);
+  border-color: var(--op-color-on-background);
+  border-radius: var(--op-radius-small);
+  border-left-width: var(--op-border-width-x-large);
   border-left-style: solid;
-  animation: rm-slide-in-out-flash var(--rm-transition-flash) normal forwards;
-  background: var(--rm-color-background);
-  box-shadow: var(--rm-shadow-x-small);
-  color: var(--rm-color-on-background);
-  font-size: var(--rm-font-small);
-  gap: var(--rm-space-small);
+  animation: rm-slide-in-out-flash var(--op-transition-flash) normal forwards;
+  background: var(--op-color-background);
+  box-shadow: var(--op-shadow-x-small);
+  color: var(--op-color-on-background);
+  font-size: var(--op-font-small);
+  gap: var(--op-space-small);
   grid-auto-flow: column;
 
   // Modifiers
   &.flash--notice {
-    border-color: var(--rm-color-alerts-notice-base);
-    color: var(--rm-color-alerts-notice-base);
+    border-color: var(--op-color-alerts-notice-base);
+    color: var(--op-color-alerts-notice-base);
   }
 
   &.flash--info {
-    border-color: var(--rm-color-alerts-info-base);
-    color: var(--rm-color-alerts-info-base);
+    border-color: var(--op-color-alerts-info-base);
+    color: var(--op-color-alerts-info-base);
   }
 
   &.flash--alert {
-    border-color: var(--rm-color-alerts-danger-base);
-    color: var(--rm-color-alerts-danger-base);
+    border-color: var(--op-color-alerts-danger-base);
+    color: var(--op-color-alerts-danger-base);
   }
 
   &.flash--warning {
-    border-color: var(--rm-color-alerts-warning-base);
-    color: var(--rm-color-alerts-warning-base);
+    border-color: var(--op-color-alerts-warning-base);
+    color: var(--op-color-alerts-warning-base);
   }
 
   // Elements
   .flash__message-type {
-    color: var(--rm-color-on-background);
+    color: var(--op-color-on-background);
     font-weight: bold;
   }
 
   .flash__message {
-    color: var(--rm-color-on-background);
-    font-size: var(--rm-font-x-small);
+    color: var(--op-color-on-background);
+    font-size: var(--op-font-x-small);
   }
 }
 
