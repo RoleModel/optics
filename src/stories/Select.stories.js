@@ -14,6 +14,9 @@ export default {
     readonly: {
       control: { type: 'boolean' },
     },
+    multiple: {
+      control: { type: 'boolean' },
+    },
   },
   parameters: {
     docs: {
@@ -29,4 +32,5 @@ const Template = ({ options, ...args }) => {
 export const Default = Template.bind({})
 Default.args = {
   options: 1,
+  multiple: false,
 }

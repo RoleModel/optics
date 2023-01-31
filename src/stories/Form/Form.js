@@ -89,10 +89,14 @@ export const createTextarea = ({ readonly }) => {
   return input
 }
 
-export const createSelect = ({ options, readonly }) => {
+export const createSelect = ({ options, readonly, multiple }) => {
   const element = readonly ? 'div' : 'select'
   const input = document.createElement(element)
   input.className = 'form-control'
+
+  if (multiple) {
+    input.setAttribute('multiple', true)
+  }
 
   if (readonly) {
     input.className += ' form-control--read-only'

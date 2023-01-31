@@ -1,7 +1,11 @@
 %standard-input {
+  // Private API (don't touch these)
+  --__rm-input-height: var(--rm-input-height-large);
+
   display: block;
   width: 100%;
-  height: var(--rm-input-height-large);
+  min-width: var(--__rm-input-height);
+  height: var(--__rm-input-height);
   padding: var(--rm-space-small) var(--rm-space-medium);
   border: none;
   border-radius: var(--rm-radius-large);
@@ -23,15 +27,16 @@
     cursor: unset;
 
     &[type='color'] {
-      height: var(--rm-input-height-large);
+      height: var(--__rm-input-height);
     }
   }
 }
 
 %dropdown-arrow {
+  padding-right: var(--rm-space-3x-large);
   appearance: none;
   background: var(--rm-form-dropdown-arrow) center right no-repeat;
-  background-position-x: calc(100% - var(--rm-space-small));
+  background-position-x: calc(100% - ((var(--rm-space-3x-large) / 2) - (var(--rm-form-dropdown-arrow-width) / 2)));
   cursor: pointer;
 }
 
@@ -59,10 +64,6 @@
 
   &[type='color'] {
     @extend %dropdown-arrow;
-
-    &::-webkit-color-swatch {
-      margin-right: var(--rm-space-2x-large);
-    }
   }
 
   &[type='radio'],
@@ -98,17 +99,20 @@
   }
 }
 
-select.form-control {
-  @extend %standard-input;
+select.form-control:not([multiple], [type='radio'], [type='checkbox']) {
   @extend %dropdown-arrow;
+}
+
+select.form-control[multiple] {
+  min-height: calc(2 * var(--__rm-input-height));
 }
 
 textarea.form-control {
   @extend %standard-input;
 
-  min-width: var(--rm-input-height-large);
+  min-width: var(--__rm-input-height);
   max-width: 100%;
-  min-height: var(--rm-input-height-large);
+  min-height: var(--__rm-input-height);
 }
 
 .form-group--error {
