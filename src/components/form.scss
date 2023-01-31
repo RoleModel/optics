@@ -33,10 +33,10 @@
 }
 
 %dropdown-arrow {
-  padding-right: var(--rm-space-x-large);
+  padding-right: var(--rm-space-3x-large);
   appearance: none;
   background: var(--rm-form-dropdown-arrow) center right no-repeat;
-  background-position-x: calc(100% - ((var(--rm-space-x-large) / 2) - (var(--rm-form-dropdown-arrow-width) / 2)));
+  background-position-x: calc(100% - ((var(--rm-space-3x-large) / 2) - (var(--rm-form-dropdown-arrow-width) / 2)));
   cursor: pointer;
 }
 
