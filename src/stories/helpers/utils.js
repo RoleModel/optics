@@ -7,3 +7,7 @@ export const createChildren = (element, count) => {
     element.appendChild(box)
   })
 }
+
+export const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1)
+
+export const parameterize = (string) => string.replace(' ', '-')
