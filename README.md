@@ -1,5 +1,7 @@
 # Optics, a RoleModel Design System
 
+[![Linting CI](https://github.com/RoleModel/optics/actions/workflows/linting.yml/badge.svg)](https://github.com/RoleModel/optics/actions/workflows/linting.yml)
+
 Optics is an scss package that provides base styles and components that can be integrated and customized in a variety of projects.
 
 ## Installation
