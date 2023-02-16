@@ -178,8 +178,10 @@ textarea.form-control {
 
   /* create a new positioning context for absolutly positioned children */
   transform: translateY(0);
+
   .form-error {
     position: absolute;
+
     /* the bottom of it's positioning context + 50% of it's own height */
     bottom: 0;
     transform: translateY(50%);
