@@ -64,11 +64,6 @@
     margin: 0;
     accent-color: var(--rm-color-primary-base);
     cursor: pointer;
-
-    & + .form__label {
-      grid-column: 2 / 3;
-      grid-row: 1;
-    }
   }
 
   &:disabled {
@@ -176,5 +171,9 @@ textarea.form-control {
   .form-control[type='checkbox'] {
     grid-column: 1 / 1;
 
+    & + .form-label {
+      grid-column: 2 / 3;
+      grid-row: 1;
+    }
   }
 }
