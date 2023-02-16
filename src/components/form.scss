@@ -160,6 +160,7 @@ textarea.form-control {
   gap: var(--rm-space-x-small);
   grid-auto-rows: auto;
   grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(3, min-content);
 
   // Group Alignment
   /* stylelint-disable no-descending-specificity */
@@ -172,18 +173,8 @@ textarea.form-control {
   /* stylelint-enable no-descending-specificity */
 
   .form-control[type='radio'],
-  .form-contorl[type='checkbox'] {
+  .form-control[type='checkbox'] {
     grid-column: 1 / 1;
-  }
 
-  /* create a new positioning context for absolutly positioned children */
-  transform: translateY(0);
-
-  .form-error {
-    position: absolute;
-
-    /* the bottom of it's positioning context + 50% of it's own height */
-    bottom: 0;
-    transform: translateY(50%);
   }
 }
