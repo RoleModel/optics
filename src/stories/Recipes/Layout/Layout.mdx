@@ -14,19 +14,19 @@ The basic layout that this design system expects looks like the following:
     <title>Sample Layout</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
-  <body class="app__main">
+  <body class="app-body">
     <!-- Flash message here -->
     <!-- Confirm here -->
     <!-- Modal here -->
     <!-- Panel here -->
     <!--
       If your app has a top header, use
-      <div class='page__header'></div>
+      <div class='app__header'></div>
     -->
-    <div class="page__content"></div>
+    <div class="app__content"></div>
     <!--
       If your app has a bottom footer, use
-      <div class='page__footer'></div>
+      <div class='app__footer'></div>
     -->
   </body>
 </html>
@@ -36,7 +36,7 @@ The basic layout that this design system expects looks like the following:
   <Story id="recipes-layout--basic" />
 </Canvas>
 
-The header and footer are sticky and can be used with `page__header` and `page__footer`.
+The header and footer are sticky and can be used with `app__header` and `app__footer`.
 
 ## With Sidebar
 
@@ -51,21 +51,21 @@ A layout with a sidebar looks like the following:
     <title>Sample Layout</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
-  <body class="app-wrapper">
+  <body class="app-with-sidebar">
     <!-- Flash message here -->
     <!-- Confirm here -->
     <!-- Modal here -->
     <!-- Panel here -->
     <div class="sidebar sidebar--{rail or drawer}">...</div>
-    <div class="app__main">
+    <div class="app-body">
       <!--
         If your app has a top header, use
-        <div class='page__header'></div>
+        <div class='app__header'></div>
       -->
-      <div class="page__content"></div>
+      <div class="app__content"></div>
       <!--
         If your app has a bottom footer, use
-        <div class='page__footer'></div>
+        <div class='app__footer'></div>
       -->
     </div>
     <!-- You could put the sidebar or some other drawer here as well -->
