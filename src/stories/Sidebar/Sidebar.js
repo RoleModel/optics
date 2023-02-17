@@ -29,7 +29,7 @@ export const createSidebar = ({
 
   const body = document.createElement(element)
 
-  body.className = 'app-wrapper'
+  body.className = 'app-with-sidebar'
   body.style.height = '80rem'
 
   const brandSection = brand
