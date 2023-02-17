@@ -151,11 +151,11 @@ textarea.form-control {
 
 .form-group {
   display: grid;
+  align-content: baseline;
   padding: var(--rm-space-small) 0;
   gap: var(--rm-space-x-small);
   grid-auto-rows: auto;
   grid-template-columns: auto 1fr;
-  grid-template-rows: repeat(3, min-content);
 
   // Group Alignment
   /* stylelint-disable no-descending-specificity */
