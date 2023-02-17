@@ -64,11 +64,6 @@
     margin: 0;
     accent-color: var(--rm-color-primary-base);
     cursor: pointer;
-
-    & + .form__label {
-      grid-column: 2 / 3;
-      grid-row: 1;
-    }
   }
 
   &:disabled {
@@ -156,6 +151,7 @@ textarea.form-control {
 
 .form-group {
   display: grid;
+  align-content: baseline;
   padding: var(--rm-space-small) 0;
   gap: var(--rm-space-x-small);
   grid-auto-rows: auto;
@@ -172,7 +168,12 @@ textarea.form-control {
   /* stylelint-enable no-descending-specificity */
 
   .form-control[type='radio'],
-  .form-contorl[type='checkbox'] {
+  .form-control[type='checkbox'] {
     grid-column: 1 / 1;
+
+    & + .form-label {
+      grid-column: 2 / 3;
+      grid-row: 1;
+    }
   }
 }
