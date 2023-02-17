@@ -115,16 +115,16 @@ export const createCustomSidebar = ({ example = 'domains', style = 'drawer' }) =
   }
 
   return `
-<div class='app-wrapper' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
+<div class='app-with-sidebar' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
   ${sidebar()}
-  <div class='app__main'>
-    <div class='page__header background-primary-plus-seven'>Header</div>
-    <div class='page__content'>
+  <div class='app-body'>
+    <div class='app__header background-primary-plus-seven'>Header</div>
+    <div class='app__content'>
       ${Array.from(Array(16))
         .map((_item) => '<p>Some content</p>')
         .join('\n')}
     </div>
-    <div class='page__footer background-primary-plus-seven'>Footer</div>
+    <div class='app__footer background-primary-plus-seven'>Footer</div>
   </div>
 </div>
 `
