@@ -32,6 +32,9 @@ changelog:
     - title: Repository Changes
       labels:
         - Repository Change
+    - title: Documentation Changes
+      labels:
+        - documentation
     - title: Unlabeled Changes (please categorize these)
       labels:
         - '*'
@@ -47,3 +50,4 @@ changelog:
           - Breaking Change
           - dependencies
           - Repository Change
+          - documentation
