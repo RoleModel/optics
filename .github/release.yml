@@ -2,12 +2,48 @@
 
 changelog:
   categories:
-    - title: 🏕 Features
+    - title: Base Token Changes
+      labels:
+        - Base Tokens
+    - title: Theme Token Changes
+      labels:
+        - Theme Tokens
+    - title: Base Reset Changes
+      labels:
+        - Base Reset
+    - title: Layout Changes
+      labels:
+        - Layout
+    - title: Component Changes
+      labels:
+        - Components
+    - title: Utility Changes
+      labels:
+        - Utilities
+    - title: Addon Changes
+      labels:
+        - Addons
+    - title: Breaking Changes
+      labels:
+        - Breaking Change
+    - title: Dependencies
+      labels:
+        - dependencies
+    - title: Repository Changes
+      labels:
+        - Repository Change
+    - title: Unlabeled Changes (please categorize these)
       labels:
         - '*'
       exclude:
         labels:
+          - Base Tokens
+          - Theme Tokens
+          - Base Reset
+          - Layout
+          - Components
+          - Utilities
+          - Addons
+          - Breaking Change
           - dependencies
-    - title: 👒 Dependencies
-      labels:
-        - dependencies
+          - Repository Change
