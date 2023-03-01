@@ -1,0 +1,53 @@
+# .github/release.yml
+
+changelog:
+  categories:
+    - title: Breaking Changes
+      labels:
+        - Breaking Change
+    - title: Base Token Changes
+      labels:
+        - Base Tokens
+    - title: Theme Token Changes
+      labels:
+        - Theme Tokens
+    - title: Base Reset Changes
+      labels:
+        - Base Reset
+    - title: Layout Changes
+      labels:
+        - Layout
+    - title: Component Changes
+      labels:
+        - Components
+    - title: Utility Changes
+      labels:
+        - Utilities
+    - title: Addon Changes
+      labels:
+        - Addons
+    - title: Dependencies
+      labels:
+        - dependencies
+    - title: Repository Changes
+      labels:
+        - Repository Change
+    - title: Documentation Changes
+      labels:
+        - documentation
+    - title: Unlabeled Changes (please categorize these)
+      labels:
+        - '*'
+      exclude:
+        labels:
+          - Breaking Change
+          - Base Tokens
+          - Theme Tokens
+          - Base Reset
+          - Layout
+          - Components
+          - Utilities
+          - Addons
+          - dependencies
+          - Repository Change
+          - documentation
