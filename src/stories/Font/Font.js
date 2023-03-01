@@ -8,3 +8,11 @@ export const createFontFamily = ({ family = 'Noto Sans' }) => {
 
   return element
 }
+
+export const createFontWeight = ({ weight = 'normal' }) => {
+  const element = document.createElement('p')
+  const weightStyle = `var(--rm-font-weight-${weight})`
+  element.innerText = `Font Weight Demo using: ${weightStyle}`
+  element.style.fontWeight = weightStyle
+  return element
+}
