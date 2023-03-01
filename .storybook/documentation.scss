@@ -1,6 +1,9 @@
 @import './src/optics.scss';
 
-@keyframes transitionDemo {
+@import './src/recipes/domains-sidebar.scss';
+@import './src/recipes/16six-sidebar.scss';
+
+@keyframes transition-demo {
   from {
     background-color: var(--rm-color-white);
     color: var(--rm-color-black);
@@ -14,45 +17,44 @@
 
 .transition-demo {
   display: inline-block;
-
-  background-color: var(--rm-color-primary-base);
-  color: var(--rm-color-primary-on-base);
-
   padding: var(--rm-space-medium);
-
-  animation-name: transitionDemo;
   animation-duration: var(--rm-transition-input);
   animation-iteration-count: 1;
+  animation-name: transition-demo;
+  background-color: var(--rm-color-primary-base);
+  color: var(--rm-color-primary-on-base);
 }
 
 .transition-demo--input {
   animation-duration: var(--rm-transition-input);
 }
+
 .transition-demo--navigation {
   animation-duration: var(--rm-transition-navigation);
 }
+
 .transition-demo--sidebar {
   animation-duration: var(--rm-transition-sidebar);
 }
+
 .transition-demo--modal {
   animation-duration: var(--rm-transition-modal);
 }
+
 .transition-demo--panel {
   animation-duration: var(--rm-transition-panel);
 }
+
 .transition-demo--flash {
   animation-duration: var(--rm-transition-flash);
 }
 
 .flash--demo {
   position: relative;
-  animation: none;
   top: 0;
   right: 0;
+  animation: none;
 }
-
-@import './src/recipes/domains-sidebar.scss';
-@import './src/recipes/16six-sidebar.scss';
 
 .background-primary-plus-four {
   background-color: var(--rm-color-primary-plus-four);
