@@ -2,7 +2,7 @@ import { createLetterSpacing } from './LetterSpacing/LetterSpacing.js'
 import LetterSpacingDocs from './LetterSpacing/LetterSpacing.mdx'
 
 export default {
-  title: 'Tokens/Letter Spacing',
+  title: 'Tokens/Typography/Letter Spacing',
   argTypes: {
     spacing: {
       control: { type: 'select' },
