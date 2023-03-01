@@ -25,7 +25,7 @@ This will ignore the system preference and use specified theme mode (I.E. your a
 If you want to customize your application, you can provide your own theme files that serve as overrides to the existing tokens.
 An example implementation your main scss file would look like:
 
-```scss
+```css
 @import '@rolemodel/optics';
 
 @import 'stylesheets/theme/my_app_theme';
@@ -33,7 +33,7 @@ An example implementation your main scss file would look like:
 
 Your custom theme can change any tokens, including colors, radius, fonts, even redefine the luminosity and semantic scales. It generally will look like:
 
-```scss
+```css
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -81,7 +81,7 @@ This theme would always be included in your application, but only activate when 
 </html>
 ```
 
-```scss
+```css
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 

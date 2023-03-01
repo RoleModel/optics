@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+
+<Meta title="Overview/Tokens" />
+
+# Tokens
+
+Tokens are defined in `src/core/tokens`
+
+- All core tokens are defined in `src/core/tokens/base_tokens.scss`
+- Color scale tokens are defined in `src/core/tokens/scale_color_tokens.scss`
+- Dark mode tokens are defined in `src/core/tokens/dark_mode_tokens.scss`
+
+There are also a few component specific tokens that are defined in their respective component file, but those are not indented to be global or used outside of that file.
+
+There is a JSON file in `docs/token_structure.json` that lists all the current tokens in one place and shows how the names indicate organization.
+
+## Base Tokens
+
+- <LinkTo kind="tokens-border--default">Border</LinkTo>
+- <LinkTo kind="tokens-typography-font-family">Font Family</LinkTo>
+- <LinkTo kind="tokens-typography-font-size">Font Size</LinkTo>
+- <LinkTo kind="tokens-typography-font-weight">Font Weight</LinkTo>
+- <LinkTo kind="tokens-typography-letter-spacing">Letter Spacing</LinkTo>
+- <LinkTo kind="tokens-typography-line-height">Line Height</LinkTo>
+- <LinkTo kind="tokens-shadow--x-small">Shadow</LinkTo>
+- <LinkTo kind="tokens-transition--default">Transition</LinkTo>
