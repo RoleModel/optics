@@ -28,3 +28,11 @@ export const createLineHeight = ({ lineHeight = 'base' }) => {
   `
   return wrapper
 }
+
+export const createFontSize = ({ size = 'medium' }) => {
+  const element = document.createElement('p')
+  const sizeStyle = `var(--rm-font-${size})`
+  element.innerText = `Font Size Demo using: ${sizeStyle}`
+  element.style.fontSize = sizeStyle
+  return element
+}
