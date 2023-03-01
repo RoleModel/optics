@@ -2,6 +2,9 @@
 
 changelog:
   categories:
+    - title: Breaking Changes
+      labels:
+        - Breaking Change
     - title: Base Token Changes
       labels:
         - Base Tokens
@@ -23,9 +26,6 @@ changelog:
     - title: Addon Changes
       labels:
         - Addons
-    - title: Breaking Changes
-      labels:
-        - Breaking Change
     - title: Dependencies
       labels:
         - dependencies
@@ -40,6 +40,7 @@ changelog:
         - '*'
       exclude:
         labels:
+          - Breaking Change
           - Base Tokens
           - Theme Tokens
           - Base Reset
@@ -47,7 +48,6 @@ changelog:
           - Components
           - Utilities
           - Addons
-          - Breaking Change
           - dependencies
           - Repository Change
           - documentation
