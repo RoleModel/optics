@@ -16,3 +16,15 @@ export const createFontWeight = ({ weight = 'normal' }) => {
   element.style.fontWeight = weightStyle
   return element
 }
+
+export const createLineHeight = ({ lineHeight = 'base' }) => {
+  const wrapper = document.createElement('div')
+
+  const lineHeightStyle = `var(--rm-line-height-${lineHeight})`
+  wrapper.innerHTML = `
+    <p style='line-height: ${lineHeightStyle};'>First Line</p>
+    <p style='line-height: ${lineHeightStyle};'>Line Height Demo using: ${lineHeightStyle}</p>
+    <p style='line-height: ${lineHeightStyle};'>Second Line</p>
+  `
+  return wrapper
+}

@@ -1,0 +1,46 @@
+import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+
+# Line Height
+
+Line height tokens can be used to change the line height of text.
+
+{/* **Note** Not all fonts have the same baseline line height. This can cause alignment issues in your text that may require you to adjust the default line height tokens */}
+
+## Usage
+
+These tokens can be applied like:
+
+```css
+line-height: var(--rm-line-height-dense);
+```
+
+## Available tokens and their definitions
+
+```css
+--rm-line-height-none: 0;
+--rm-line-height-densest: 1;
+--rm-line-height-denser: 1.15;
+--rm-line-height-dense: 1.3;
+--rm-line-height-base: 1.5;
+--rm-line-height-loose: 1.6;
+--rm-line-height-looser: 1.7;
+--rm-line-height-loosest: 1.8;
+```
+
+## Custom Font
+
+**Note** When using a <LinkTo kind="tokens-typography-font-family--default#custom-font">custom font</LinkTo>.
+
+Not all fonts have the same baseline line height. This can cause alignment issues in your text that may require you to adjust the default line height tokens. You can do that by overriding these tokens
+
+```css
+:root {
+  --rm-line-height-looser: 3;
+}
+```
+
+## Playground
+
+<Primary />
+<ArgsTable of="." story="^" />

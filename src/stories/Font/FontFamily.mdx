@@ -1,4 +1,5 @@
 import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
 
 # Font Family
 
@@ -28,7 +29,7 @@ font-family: var(--rm-font-family);
 
 If you want to change the font used by default, you can add a new font import to your stylesheet and apply it using the font family token.
 
-**Note** Not all fonts have the same baseline line height. This can cause alignment issues in your text that may require you to adjust the default line height tokens TODO: Link to them here
+**Note** Not all fonts have the same baseline line height. This can cause alignment issues in your text that may require you to adjust the default line height tokens. See <LinkTo kind="tokens-typography-line-height--base#custom-font">Adjusting Line Heights</LinkTo>.
 
 ```css
 @import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
