@@ -446,32 +446,6 @@
   --op-shadow-x-large: 0 8px 12px hsl(0deg 0% 0% / 15%), 0 4px 4px hsl(0deg 0% 0% / 30%);
 }
 
-@mixin modal-dark {
-  .modal__content {
-    background: var(--op-color-neutral-plus-seven);
-    color: var(--op-color-neutral-on-plus-seven);
-  }
-
-  .modal__close {
-    &:hover {
-      background: var(--op-color-background);
-    }
-  }
-}
-
-@mixin panel-dark {
-  .panel {
-    background: var(--op-color-neutral-plus-seven);
-    color: var(--op-color-neutral-on-plus-seven);
-  }
-
-  .panel__close {
-    &:hover {
-      background: var(--op-color-background);
-    }
-  }
-}
-
 @mixin all-tokens-dark {
   @include primary-semantic-scale-dark;
   @include neutral-semantic-scale-dark;
@@ -482,9 +456,6 @@
   @include alerts-notice-semantic-scale-dark;
 
   @include shadows-dark;
-
-  @include modal-dark;
-  @include panel-dark;
 }
 
 // Follow system preference unless forced to light

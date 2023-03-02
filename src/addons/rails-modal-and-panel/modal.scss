@@ -84,3 +84,28 @@
     color: var(--op-color-neutral-minus-seven);
   }
 }
+
+@mixin modal-dark {
+  .modal__content {
+    background: var(--op-color-neutral-plus-seven);
+    color: var(--op-color-neutral-on-plus-seven);
+  }
+
+  .modal__close {
+    &:hover {
+      background: var(--op-color-background);
+    }
+  }
+}
+
+// Follow system preference unless forced to light
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme-mode='light']) {
+    @include modal-dark;
+  }
+}
+
+// Force design system to dark
+:root[data-theme-mode='dark'] {
+  @include modal-dark;
+}
