@@ -1,0 +1,46 @@
+import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+
+# Spacing Size
+
+Spacing Size tokens can be used for a wide variety of cases. The can be used for margin, padding, width, height, gap, and anything else that uses pixel values.
+
+## Usage
+
+These tokens can be applied like:
+
+```css
+margin-left: var(--rm-space-small);
+/* Or */
+padding-top: var(--rm-space-medium);
+/* Or */
+gap: var(--rm-space-large);
+/* Or */
+width: var(--rm-space-4x-large);
+```
+
+## Available tokens and their definitions
+
+```css
+--rm-space-3x-small: calc(var(--rm-space-scale-unit) * 0.2); // 2px
+--rm-space-2x-small: calc(var(--rm-space-scale-unit) * 0.4); // 4px
+--rm-space-x-small: calc(var(--rm-space-scale-unit) * 0.8); // 8px
+--rm-space-small: calc(var(--rm-space-scale-unit) * 1.2); // 12px
+--rm-space-medium: calc(var(--rm-space-scale-unit) * 1.6); // 16px
+--rm-space-large: calc(var(--rm-space-scale-unit) * 2); // 20px
+--rm-space-x-large: calc(var(--rm-space-scale-unit) * 2.4); // 24px
+--rm-space-2x-large: calc(var(--rm-space-scale-unit) * 2.8); // 28px
+--rm-space-3x-large: calc(var(--rm-space-scale-unit) * 4); // 40px
+--rm-space-4x-large: calc(var(--rm-space-scale-unit) * 8); // 80px
+```
+
+The scale unit is also defined and can be used for <LinkTo kind="overview-scale-overriding--page#unit-scale-overriding">scale overriding</LinkTo>
+
+```css
+--rm-space-scale-unit: 1rem; // 10px;
+```
+
+## Playground
+
+<Primary />
+<ArgsTable of="." story="^" />
