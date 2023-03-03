@@ -1,10 +1,6 @@
 import { capitalize, parameterize } from '../helpers/utils.js'
 
 export const createColorSwatch = ({ scale = 'primary', step = 'base' }) => {
-  if (scale !== 'primary' && scale !== 'neutral') {
-    scale = `alerts-${scale}`
-  }
-
   const element = document.createElement('div')
 
   const backgroundColor = `var(--op-color-${parameterize(scale)}-${parameterize(step)})`

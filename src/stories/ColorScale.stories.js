@@ -1,36 +1,17 @@
 import { createColorSwatch } from './ColorScale/ColorScale.js'
 import ColorScaleDocs from './ColorScale/ColorScale.mdx'
+import { steps, scales } from './helpers/utils.js'
 
 export default {
   title: 'Tokens/Color Scale',
   argTypes: {
     scale: {
       control: { type: 'select' },
-      options: ['primary', 'neutral', 'warning', 'danger', 'info', 'notice'],
+      options: scales,
     },
     step: {
       control: { type: 'select' },
-      options: [
-        'plus max',
-        'plus eight',
-        'plus seven',
-        'plus six',
-        'plus five',
-        'plus four',
-        'plus three',
-        'plus two',
-        'plus one',
-        'base',
-        'minus one',
-        'minus two',
-        'minus three',
-        'minus four',
-        'minus five',
-        'minus six',
-        'minus seven',
-        'minus eight',
-        'minus max',
-      ],
+      options: steps,
     },
   },
   parameters: {
