@@ -254,6 +254,11 @@
   --rm-input-height-medium: 3.2rem; // 32px
   --rm-input-height-large: 4.4rem; // 44px
   --rm-input-height-x-large: 5.6rem; // 56px
+
+  /**
+  * @tokens Input Focus
+  * @presenter Shadow
+  */
   --rm-input-outer-focus: 0 0 0 var(--rm-border-width-large) var(--rm-color-primary-plus-four);
   --rm-input-inner-focus: inset var(--rm-border-all) var(--rm-color-primary-minus-three);
   --rm-input-focus: var(--rm-input-inner-focus), var(--rm-input-outer-focus);
