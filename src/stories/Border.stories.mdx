@@ -1,5 +1,8 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta } from '@storybook/addon-docs'
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
 import LinkTo from '@storybook/addon-links/react'
+
+<Meta title="Tokens/Border" />
 
 # Border
 
@@ -34,20 +37,4 @@ Insetting the x and y borders is currently **not supported**. You can achieve th
 
 ## Available tokens and their definitions
 
-<!-- prettier-ignore-start -->
-```css
---rm-border-none:   0 0 0 0;
---rm-border-all:    0 0 0 var(--rm-border-width);
---rm-border-top:    0 calc(-1 * var(--rm-border-width)) 0 0;
---rm-border-right:  var(--rm-border-width) 0 0 0;
---rm-border-bottom: 0 var(--rm-border-width) 0 0;
---rm-border-left:   calc(-1 * var(--rm-border-width)) 0 0 0;
---rm-border-y:      var(--rm-border-top) var(--rm-border-color), var(--rm-border-bottom) var(--rm-border-color);
---rm-border-x:      var(--rm-border-left) var(--rm-border-color), var(--rm-border-right) var(--rm-border-color);
-```
-<!-- prettier-ignore-end -->
-
-## Playground
-
-<Primary />
-<ArgsTable story="^" />
+<DesignTokenDocBlock categoryName="Border Shadow" viewType="card" />
