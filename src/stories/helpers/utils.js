@@ -36,3 +36,8 @@ export const steps = [
 
 export const scales = ['primary', 'neutral', 'alerts-warning', 'alerts-danger', 'alerts-info', 'alerts-notice']
 
+export const getHSLFromVar = (variable) => {
+  const style = window.getComputedStyle(document.documentElement)
+  const value = style.getPropertyValue(variable)
+  return value.trim()
+}
