@@ -69,6 +69,7 @@
     "prettier": "^2.8.1",
     "sass": "^1.53.0",
     "sass-loader": "^10.1.1",
+    "storybook-design-token": "^2.9.0",
     "style-loader": "^2.0.0",
     "stylelint": "^14.16.0",
     "stylelint-config-idiomatic-order": "^9.0.0",
