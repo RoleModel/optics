@@ -1,6 +1,6 @@
 @mixin primary-semantic-scale {
   /**
-  * @tokens Colors
+  * @tokens Primary Colors
   * @presenter Color
   */
   --rm-color-primary-original: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) var(--rm-color-primary-l));
@@ -50,7 +50,7 @@
 
 @mixin neutral-semantic-scale {
   /**
-  * @tokens Colors
+  * @tokens Neutral Colors
   * @presenter Color
   */
   --rm-color-neutral-original: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) var(--rm-color-neutral-l));
@@ -100,7 +100,7 @@
 
 @mixin alerts-warning-semantic-scale {
   /**
-  * @tokens Colors
+  * @tokens Alerts Warning Colors
   * @presenter Color
   */
   --rm-color-alerts-warning-original: hsl(
@@ -152,7 +152,7 @@
 
 @mixin alerts-danger-semantic-scale {
   /**
-  * @tokens Colors
+  * @tokens Alerts Danger Colors
   * @presenter Color
   */
   --rm-color-alerts-danger-original: hsl(
@@ -204,7 +204,7 @@
 
 @mixin alerts-info-semantic-scale {
   /**
-  * @tokens Colors
+  * @tokens Alerts Info Colors
   * @presenter Color
   */
   --rm-color-alerts-info-original: hsl(
@@ -256,7 +256,7 @@
 
 @mixin alerts-notice-semantic-scale {
   /**
-  * @tokens Colors
+  * @tokens Alerts Notice Colors
   * @presenter Color
   */
   --rm-color-alerts-notice-original: hsl(
