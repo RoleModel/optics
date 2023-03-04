@@ -5,7 +5,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/preset-scss',
-    'storybook-design-token',
+    { name: 'storybook-design-token', options: { preserveCSSVars: true } },
   ],
   framework: '@storybook/html',
 }
