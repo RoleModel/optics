@@ -7,6 +7,7 @@ export const createFlex = ({
   flexGrowOne = false,
   justifyContent = '',
   alignItems = '',
+  alignSelf = '',
 }) => {
   const wrapper = document.createElement('div')
   wrapper.style.height = '10rem'
@@ -31,6 +32,10 @@ export const createFlex = ({
 
   if (flexGrowOne) {
     wrapper.children[0].className = 'flex-grow-1'
+  }
+
+  if (alignSelf) {
+    wrapper.children[0].className = `self-${alignSelf}`
   }
 
   return wrapper

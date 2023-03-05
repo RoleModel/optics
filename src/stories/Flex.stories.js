@@ -22,6 +22,10 @@ export default {
       control: { type: 'select' },
       options: ['stretch', 'start', 'center', 'end', 'baseline'],
     },
+    alignSelf: {
+      control: { type: 'select' },
+      options: ['auto', 'stretch', 'start', 'center', 'end', 'baseline'],
+    },
   },
   parameters: {
     docs: {
@@ -117,4 +121,35 @@ AlignEnd.args = {
 export const AlignBaseline = Template.bind({})
 AlignBaseline.args = {
   alignItems: 'baseline',
+}
+
+export const AlignSelfAuto = Template.bind({})
+AlignSelfAuto.args = {
+  alignSelf: 'auto',
+}
+
+export const AlignSelfStretch = Template.bind({})
+AlignSelfStretch.args = {
+  alignItems: 'center',
+  alignSelf: 'stretch',
+}
+
+export const AlignSelfStart = Template.bind({})
+AlignSelfStart.args = {
+  alignSelf: 'start',
+}
+
+export const AlignSelfCenter = Template.bind({})
+AlignSelfCenter.args = {
+  alignSelf: 'center',
+}
+
+export const AlignSelfEnd = Template.bind({})
+AlignSelfEnd.args = {
+  alignSelf: 'end',
+}
+
+export const AlignSelfBaseline = Template.bind({})
+AlignSelfBaseline.args = {
+  alignSelf: 'baseline',
 }
