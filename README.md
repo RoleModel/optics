@@ -52,6 +52,21 @@ There are also a few component specific tokens that are defined in their respect
 
 There is a JSON file in `docs/token_structure.json` that lists all the current tokens in one place and shows how the names indicate organization.
 
+### Token Documentation
+
+We use the Storybook Design Token for showing design tokens in the documentation. This allows us to tag groups of tokens with a category and a presenter.
+
+[Available Presenters](https://github.com/UX-and-I/storybook-design-token#available-presenters)
+
+Add the following above a group to categorize the tokens.
+
+```css
+/**
+* @tokens Basic Colors
+* @presenter Color
+*/
+```
+
 ## License
 
 [MIT](LICENSE)
