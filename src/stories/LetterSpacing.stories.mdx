@@ -1,4 +1,7 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta } from '@storybook/addon-docs'
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
+
+<Meta title="Tokens/Typography/Letter Spacing" />
 
 # Letter Spacing
 
@@ -14,12 +17,4 @@ letter-spacing: var(--rm-letter-spacing-label);
 
 ## Available tokens and their definitions
 
-```css
---rm-letter-spacing-navigation: 0.01rem;
---rm-letter-spacing-label: 0.04rem;
-```
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
+<DesignTokenDocBlock categoryName="Letter Spacing" viewType="card" />

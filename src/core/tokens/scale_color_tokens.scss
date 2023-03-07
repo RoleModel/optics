@@ -1,4 +1,8 @@
 @mixin primary-semantic-scale {
+  /**
+  * @tokens Primary Colors
+  * @presenter Color
+  */
   --rm-color-primary-original: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) var(--rm-color-primary-l));
 
   // Main Scale
@@ -45,6 +49,10 @@
 }
 
 @mixin neutral-semantic-scale {
+  /**
+  * @tokens Neutral Colors
+  * @presenter Color
+  */
   --rm-color-neutral-original: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) var(--rm-color-neutral-l));
 
   // Main Scale
@@ -91,6 +99,10 @@
 }
 
 @mixin alerts-warning-semantic-scale {
+  /**
+  * @tokens Alerts Warning Colors
+  * @presenter Color
+  */
   --rm-color-alerts-warning-original: hsl(
     var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) var(--rm-color-alerts-warning-l)
   );
@@ -139,6 +151,10 @@
 }
 
 @mixin alerts-danger-semantic-scale {
+  /**
+  * @tokens Alerts Danger Colors
+  * @presenter Color
+  */
   --rm-color-alerts-danger-original: hsl(
     var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) var(--rm-color-alerts-danger-l)
   );
@@ -187,6 +203,10 @@
 }
 
 @mixin alerts-info-semantic-scale {
+  /**
+  * @tokens Alerts Info Colors
+  * @presenter Color
+  */
   --rm-color-alerts-info-original: hsl(
     var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) var(--rm-color-alerts-info-l)
   );
@@ -235,6 +255,10 @@
 }
 
 @mixin alerts-notice-semantic-scale {
+  /**
+  * @tokens Alerts Notice Colors
+  * @presenter Color
+  */
   --rm-color-alerts-notice-original: hsl(
     var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) var(--rm-color-alerts-notice-l)
   );
@@ -283,6 +307,10 @@
 }
 
 @mixin background {
+  /**
+  * @tokens Basic Colors
+  * @presenter Color
+  */
   --rm-color-background: var(--rm-color-neutral-plus-eight);
   --rm-color-on-background: var(--rm-color-neutral-on-plus-eight);
 }

@@ -70,5 +70,27 @@
 
 .font-family-demo--alternative {
   --rm-font-family: 'Tilt Neon', sans-serif;
+
   font-family: var(--rm-font-family);
+}
+
+.design-token-container {
+  .design-token-card {
+    table {
+      td:nth-of-type(1),
+      th:nth-of-type(1) {
+        flex-basis: 40%;
+      }
+
+      td:nth-of-type(2),
+      th:nth-of-type(2) {
+        flex-basis: 35%;
+      }
+
+      td:nth-of-type(3),
+      th:nth-of-type(3) {
+        flex-basis: 25%;
+      }
+    }
+  }
 }

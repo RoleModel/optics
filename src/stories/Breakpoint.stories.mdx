@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs'
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
+
+<Meta title="Tokens/Breakpoint" />
+
+# Breakpoint
+
+Breakpoint tokens are used to define common device sizes for use within media queries.
+
+We use SCSS variables to define these breakpoints.
+Custom properties (css variables) currently cannot be used in a media query since they get defined in an element scope (`:root` in our case).
+Media queries exist at the document level and therefore cannot access custom properties.
+
+[CSS ENV Variables](https://drafts.csswg.org/css-env-1/) aims at addressing this by allowing variables at the global document level.
+
+[SCSS Workaround](https://bholmes.dev/blog/alternative-to-css-variable-media-queries/) is the pattern we follow to achieve this.
+
+## Usage
+
+These tokens can be applied in a media query to create responsive behavior.
+
+```css
+@media (width > $breakpoint-medium) {
+  background-color: var(--rm-color-primary-base);
+  color: var(--rm-color-primary-on-base);
+}
+```
+
+## Available tokens and their definitions
+
+<DesignTokenDocBlock categoryName="Breakpoints" viewType="card" />

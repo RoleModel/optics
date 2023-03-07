@@ -1,0 +1,52 @@
+import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+
+# Container
+
+Container utility classes are used to create a centered content area for your application.
+
+You may need to zoom the demos out depending on your screen size to see the full effect.
+
+## Default
+
+`.container` Create a container area set to be the size of `$breakpoint-medium` with a padding of `--rm-space-large`
+
+<Canvas withToolbar>
+  <Story id="utilities-container--default" />
+</Canvas>
+
+## Small Size
+
+`.container--sm` Change the container size to `$breakpoint-small`
+
+<Canvas withToolbar>
+  <Story id="utilities-container--size-small" />
+</Canvas>
+
+## Extra Small Size
+
+`.container--xs` Change the container size to `$breakpoint-x-small`
+
+<Canvas withToolbar>
+  <Story id="utilities-container--size-extra-small" />
+</Canvas>
+
+## Small Padding
+
+`.container--sm-padding` Change the padding of the container to use the `--rm-space-small` token
+
+<Canvas withToolbar>
+  <Story id="utilities-container--padding-small" />
+</Canvas>
+
+## Medium Padding
+
+`.container--md-padding` Change the padding of the container to use the `--rm-space-medium` token
+
+<Canvas withToolbar>
+  <Story id="utilities-container--padding-medium" />
+</Canvas>
+
+## Playground
+
+<Primary />
+<ArgsTable of="." story="^" />

@@ -1,4 +1,9 @@
 @mixin primary-semantic-scale-dark {
+  /**
+  * @tokens Primary Dark Colors
+  * @presenter Color
+  */
+
   // Main Scale
   --rm-color-primary-plus-max: var(--rm-color-black);
   --rm-color-primary-plus-eight: hsl(var(--rm-color-primary-h) var(--rm-color-primary-s) 4%);
@@ -43,6 +48,11 @@
 }
 
 @mixin neutral-semantic-scale-dark {
+  /**
+  * @tokens Neutral Dark Colors
+  * @presenter Color
+  */
+
   // Main Scale
   --rm-color-neutral-plus-max: var(--rm-color-black);
   --rm-color-neutral-plus-eight: hsl(var(--rm-color-neutral-h) var(--rm-color-neutral-s) 4%);
@@ -87,6 +97,11 @@
 }
 
 @mixin alerts-warning-semantic-scale-dark {
+  /**
+  * @tokens Alerts Warning Dark Colors
+  * @presenter Color
+  */
+
   // Main Scale
   --rm-color-alerts-warning-plus-max: var(--rm-color-black);
   --rm-color-alerts-warning-plus-eight: hsl(var(--rm-color-alerts-warning-h) var(--rm-color-alerts-warning-s) 4%);
@@ -131,6 +146,11 @@
 }
 
 @mixin alerts-danger-semantic-scale-dark {
+  /**
+  * @tokens Alerts Danger Dark Colors
+  * @presenter Color
+  */
+
   // Main Scale
   --rm-color-alerts-danger-plus-max: var(--rm-color-black);
   --rm-color-alerts-danger-plus-eight: hsl(var(--rm-color-alerts-danger-h) var(--rm-color-alerts-danger-s) 4%);
@@ -175,6 +195,11 @@
 }
 
 @mixin alerts-info-semantic-scale-dark {
+  /**
+  * @tokens Alerts Info Dark Colors
+  * @presenter Color
+  */
+
   // Main Scale
   --rm-color-alerts-info-plus-max: var(--rm-color-black);
   --rm-color-alerts-info-plus-eight: hsl(var(--rm-color-alerts-info-h) var(--rm-color-alerts-info-s) 4%);
@@ -219,6 +244,11 @@
 }
 
 @mixin alerts-notice-semantic-scale-dark {
+  /**
+  * @tokens Alerts Notice Dark Colors
+  * @presenter Color
+  */
+
   // Main Scale
   --rm-color-alerts-notice-plus-max: var(--rm-color-black);
   --rm-color-alerts-notice-plus-eight: hsl(var(--rm-color-alerts-notice-h) var(--rm-color-alerts-notice-s) 4%);
@@ -263,6 +293,10 @@
 }
 
 @mixin shadows-dark {
+  /**
+  * @tokens Dark Shadows
+  * @presenter Shadow
+  */
   --rm-shadow-x-small: 0 1px 3px hsl(0deg 0% 0% / 15%), 0 1px 2px hsl(0deg 0% 0% / 30%);
   --rm-shadow-small: 0 2px 6px hsl(0deg 0% 0% / 15%), 0 1px 2px hsl(0deg 0% 0% / 30%);
   --rm-shadow-medium: 0 4px 8px hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 30%);

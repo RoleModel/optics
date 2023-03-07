@@ -1,5 +1,8 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta } from '@storybook/addon-docs'
+import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
 import LinkTo from '@storybook/addon-links/react'
+
+<Meta title="Tokens/Typography/Line Height" />
 
 # Line Height
 
@@ -15,16 +18,7 @@ line-height: var(--rm-line-height-dense);
 
 ## Available tokens and their definitions
 
-```css
---rm-line-height-none: 0;
---rm-line-height-densest: 1;
---rm-line-height-denser: 1.15;
---rm-line-height-dense: 1.3;
---rm-line-height-base: 1.5;
---rm-line-height-loose: 1.6;
---rm-line-height-looser: 1.7;
---rm-line-height-loosest: 1.8;
-```
+<DesignTokenDocBlock categoryName="Line Height" viewType="card" />
 
 ## Custom Font
 
@@ -37,8 +31,3 @@ Not all fonts have the same baseline line height. This can cause alignment issue
   --rm-line-height-looser: 3;
 }
 ```
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />

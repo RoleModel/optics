@@ -7,41 +7,68 @@
 // A theme comprised of a primary, neutral, warning, danger, info, and notice colors.
 @mixin color-varieties {
   // Basic Colors
+
+  /**
+  * @tokens Basic Colors
+  * @presenter Color
+  */
   --rm-color-white: hsl(0deg 100% 100%);
   --rm-color-black: hsl(0deg 0% 0%);
 
-  // Primary HSL
+  /**
+  * @tokens Primary Colors
+  * @presenter Color
+  */
   --rm-color-primary-h: 216;
   --rm-color-primary-s: 58%;
   --rm-color-primary-l: 48%;
 
-  // Neutral HSL
+  /**
+  * @tokens Neutral Colors
+  * @presenter Color
+  */
   --rm-color-neutral-h: var(--rm-color-primary-h);
   --rm-color-neutral-s: 4%;
   --rm-color-neutral-l: var(--rm-color-primary-l);
 
-  // Alerts Warning HSL
+  /**
+  * @tokens Alerts Warning Colors
+  * @presenter Color
+  */
   --rm-color-alerts-warning-h: 47;
   --rm-color-alerts-warning-s: 100%;
   --rm-color-alerts-warning-l: 61%;
 
-  // Alerts Danger HSL
+  /**
+  * @tokens Alerts Danger Colors
+  * @presenter Color
+  */
   --rm-color-alerts-danger-h: 0;
   --rm-color-alerts-danger-s: 99%;
   --rm-color-alerts-danger-l: 76%;
 
-  // Alerts Info HSL
+  /**
+  * @tokens Alerts Info Colors
+  * @presenter Color
+  */
   --rm-color-alerts-info-h: 216;
   --rm-color-alerts-info-s: 58%;
   --rm-color-alerts-info-l: 48%;
 
-  // Alerts Notice HSL
+  /**
+  * @tokens Alerts Notice Colors
+  * @presenter Color
+  */
   --rm-color-alerts-notice-h: 130;
   --rm-color-alerts-notice-s: 61%;
   --rm-color-alerts-notice-l: 64%;
 }
 
 @mixin border-radius {
+  /**
+  * @tokens Border Radius
+  * @presenter BorderRadius
+  */
   --rm-radius-small: 2px;
   --rm-radius-medium: 4px;
   --rm-radius-large: 8px;
@@ -51,17 +78,30 @@
 }
 
 @mixin border-widths {
+  /**
+  * @tokens Border Width
+  * @presenter Spacing
+  */
   --rm-border-width: 1px;
   --rm-border-width-large: 2px;
   --rm-border-width-x-large: 4px;
 }
 
 @mixin border-colors {
+  /**
+  * @tokens Border Color
+  * @presenter Color
+  */
   --rm-border-color: var(--rm-color-neutral-plus-three);
 }
 
 @mixin box-shadows {
   // E.G. box-shadow: var(--rm-border-top) var(--rm-border-color);
+
+  /**
+  * @tokens Border Shadow
+  * @presenter Shadow
+  */
   --rm-border-none: 0 0 0 0;
   --rm-border-all: 0 0 0 var(--rm-border-width);
   --rm-border-top: 0 calc(-1 * var(--rm-border-width)) 0 0;
@@ -73,6 +113,10 @@
 }
 
 @mixin font-scales {
+  /**
+  * @tokens Font Scale
+  * @presenter FontSize
+  */
   --rm-font-scale-unit: 1rem; // 10px;
   --rm-font-x-small: calc(var(--rm-font-scale-unit) * 1.2); // 12px
   --rm-font-small: calc(var(--rm-font-scale-unit) * 1.4); // 14px
@@ -86,6 +130,10 @@
 }
 
 @mixin font-weights {
+  /**
+  * @tokens Font Weight
+  * @presenter FontWeight
+  */
   --rm-font-weight-thin: 100;
   --rm-font-weight-extra-light: 200;
   --rm-font-weight-light: 300;
@@ -98,6 +146,10 @@
 }
 
 @mixin line-heights {
+  /**
+  * @tokens Line Height
+  * @presenter LineHeight
+  */
   --rm-line-height-none: 0;
   --rm-line-height-densest: 1;
   --rm-line-height-denser: 1.15;
@@ -109,11 +161,18 @@
 }
 
 @mixin letter-spacing {
+  /**
+  * @tokens Letter Spacing
+  * @presenter LetterSpacing
+  */
   --rm-letter-spacing-navigation: 0.01rem;
   --rm-letter-spacing-label: 0.04rem;
 }
 
 @mixin transitions {
+  /**
+  * @tokens Transition
+  */
   --rm-transition-input: 120ms;
   --rm-transition-navigation: 200ms;
   --rm-transition-sidebar: 300ms;
@@ -123,15 +182,26 @@
 }
 
 @mixin encoded-images {
+  /**
+  * @tokens Encoded Images
+  */
   --rm-form-dropdown-arrow-width: 1rem; // No way to string interpolate
   --rm-form-dropdown-arrow: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 7' version='1.1' xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cg transform='matrix(0.983953,0,0,1.00934,-9.22679,-3.65885)'%3E%3Cpath fill='%23d1d1d1' d='M9.37727 3.625l5.08154 6.93523L19.54036 3.625'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
 @mixin fonts {
+  /**
+  * @tokens Font Family
+  * @presenter FontFamily
+  */
   --rm-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
 }
 
 @mixin spacing-scales {
+  /**
+  * @tokens Space Scale
+  * @presenter Spacing
+  */
   --rm-space-scale-unit: 1rem; // 10px;
   --rm-space-3x-small: calc(var(--rm-space-scale-unit) * 0.2); // 2px
   --rm-space-2x-small: calc(var(--rm-space-scale-unit) * 0.4); // 4px
@@ -146,6 +216,10 @@
 }
 
 @mixin shadows {
+  /**
+  * @tokens Shadows
+  * @presenter Shadow
+  */
   --rm-shadow-x-small: 0 1px 2px hsl(0deg 0% 0% / 3%), 0 1px 3px hsl(0deg 0% 0% / 15%);
   --rm-shadow-small: 0 1px 2px hsl(0deg 0% 0% / 3%), 0 2px 6px hsl(0deg 0% 0% / 15%);
   --rm-shadow-medium: 0 4px 8px hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 3%);
@@ -154,6 +228,9 @@
 }
 
 @mixin z-indexes {
+  /**
+  * @tokens Z-Index
+  */
   --rm-z-index-header: 500;
   --rm-z-index-footer: 500;
   --rm-z-index-drawer: 700;
@@ -168,10 +245,20 @@
 @mixin inputs {
   // This should follow multiples of 4
   // https: //uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec See example 8
+
+  /**
+  * @tokens Input Heights
+  * @presenter Spacing
+  */
   --rm-input-height-small: 2.4rem; // 24px
   --rm-input-height-medium: 3.2rem; // 32px
   --rm-input-height-large: 4.4rem; // 44px
   --rm-input-height-x-large: 5.6rem; // 56px
+
+  /**
+  * @tokens Input Focus
+  * @presenter Shadow
+  */
   --rm-input-outer-focus: 0 0 0 var(--rm-border-width-large) var(--rm-color-primary-plus-four);
   --rm-input-inner-focus: inset var(--rm-border-all) var(--rm-color-primary-minus-three);
   --rm-input-focus: var(--rm-input-inner-focus), var(--rm-input-outer-focus);
@@ -182,6 +269,9 @@
 // https://drafts.csswg.org/css-env-1/
 // https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 
+/**
+* @tokens Breakpoints
+*/
 $breakpoint-x-small: 512px; // vertical phone
 $breakpoint-small: 768px; // vertical ipad
 $breakpoint-medium: 1024px; // landscape ipad
