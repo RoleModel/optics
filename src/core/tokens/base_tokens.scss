@@ -119,6 +119,7 @@
   * @presenter FontSize
   */
   --op-font-scale-unit: 1rem; // 10px;
+  --op-font-2x-small: calc(var(--op-font-scale-unit) * 1); // 10px
   --op-font-x-small: calc(var(--op-font-scale-unit) * 1.2); // 12px
   --op-font-small: calc(var(--op-font-scale-unit) * 1.4); // 14px
   --op-font-medium: calc(var(--op-font-scale-unit) * 1.6); // 16px
