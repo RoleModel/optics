@@ -3,7 +3,7 @@ import ColorScaleDocs from './ColorScale/ColorScale.mdx'
 import { steps, scales } from './helpers/utils.js'
 
 export default {
-  title: 'Tokens/Color Scale',
+  title: 'Tokens/Color/Color Scale',
   argTypes: {
     scale: {
       control: { type: 'select' },
