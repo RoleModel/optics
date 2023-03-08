@@ -1,30 +1,23 @@
-import { createTransition } from './Transition/Transition.js'
-import TransitionDocs from './Transition/Transition.mdx'
+import { createAnimation } from './Animation/Animation.js'
+import AnimationDocs from './Animation/Animation.mdx'
 
 export default {
-  title: 'Tokens/Transition',
+  title: 'Tokens/Animation',
   argTypes: {
     speed: {
       control: { type: 'select' },
-      options: [
-        'input (120ms)',
-        'navigation (200ms)',
-        'sidebar (300ms)',
-        'modal (300ms)',
-        'panel (400ms)',
-        'flash (5s)',
-      ],
+      options: ['input (120ms)', 'sidebar (200ms)', 'modal (300ms)', 'panel (400ms)'],
     },
   },
   parameters: {
     docs: {
-      page: TransitionDocs,
+      page: AnimationDocs,
     },
   },
 }
 
 const Template = ({ speed, ...args }) => {
-  return createTransition({ speed, ...args })
+  return createAnimation({ speed, ...args })
 }
 
 export const Default = Template.bind({})

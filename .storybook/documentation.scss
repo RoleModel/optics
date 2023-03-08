@@ -5,50 +5,34 @@
 
 @import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
 
-@keyframes transition-demo {
-  from {
-    background-color: var(--op-color-white);
-    color: var(--op-color-black);
-  }
-
-  to {
-    background-color: var(--op-color-primary-base);
-    color: var(--op-color-primary-on-base);
-  }
-}
-
 .transition-demo {
   display: inline-block;
   padding: var(--op-space-medium);
-  animation-duration: var(--op-transition-input);
-  animation-iteration-count: 1;
-  animation-name: transition-demo;
   background-color: var(--op-color-primary-base);
   color: var(--op-color-primary-on-base);
+  transition: var(--op-transition-input);
+
+  &:hover {
+    background-color: var(--op-color-neutral-base);
+    color: var(--op-color-neutral-on-base);
+  }
 }
 
 .transition-demo--input {
-  animation-duration: var(--op-transition-input);
-}
-
-.transition-demo--navigation {
-  animation-duration: var(--op-transition-navigation);
+  transition: var(--op-transition-input);
 }
 
 .transition-demo--sidebar {
-  animation-duration: var(--op-transition-sidebar);
+  transition: var(--op-transition-sidebar);
 }
 
 .transition-demo--modal {
-  animation-duration: var(--op-transition-modal);
+  transition: var(--op-transition-modal);
 }
 
 .transition-demo--panel {
-  animation-duration: var(--op-transition-panel);
-}
-
-.transition-demo--flash {
-  animation-duration: var(--op-transition-flash);
+  transition: var(--op-transition-panel);
+  transition-property: all;
 }
 
 .flash--demo {
@@ -90,6 +74,19 @@
       td:nth-of-type(3),
       th:nth-of-type(3) {
         flex-basis: 25%;
+      }
+    }
+  }
+}
+
+.input-height-tokens {
+  .design-token-container {
+    div:nth-child(2) {
+      div {
+        div:last-child {
+          margin: var(--op-space-x-large);
+          transform: rotate(90deg);
+        }
       }
     }
   }

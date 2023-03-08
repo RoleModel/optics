@@ -1,23 +1,25 @@
 import { Primary, ArgsTable } from '@storybook/addon-docs'
 import { DesignTokenDocBlock } from 'storybook-design-token/dist/doc-blocks'
 
-# Transition
+# Animation
 
-Transition tokens can be used for transition or keyframe animation durations.
+Animation and Transition tokens can be used for element transitions or animations.
 
 ## Usage
 
-These tokens can be applied as a transition duration.
+These tokens can be applied as a transition.
 
 ```css
-transition: all var(--op-transition-input);
+transition: var(--op-transition-input);
 // or
-animation-duration: var(--op-transition-input);
+animation: var(--op-animation-flash);
 ```
 
 ## Available tokens and their definitions
 
 <DesignTokenDocBlock categoryName="Transition" viewType="card" />
+
+<DesignTokenDocBlock categoryName="Animation" viewType="card" />
 
 ## Playground
 
