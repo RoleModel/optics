@@ -78,3 +78,16 @@
     }
   }
 }
+
+.input-height-tokens {
+  .design-token-container {
+    div:nth-child(2) {
+      div {
+        div:last-child {
+          margin: var(--op-space-x-large);
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
