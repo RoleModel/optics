@@ -124,11 +124,12 @@
   --op-font-small: calc(var(--op-font-scale-unit) * 1.4); // 14px
   --op-font-medium: calc(var(--op-font-scale-unit) * 1.6); // 16px
   --op-font-large: calc(var(--op-font-scale-unit) * 1.8); // 18px
-  --op-font-x-large: calc(var(--op-font-scale-unit) * 2.4); // 24px
-  --op-font-2x-large: calc(var(--op-font-scale-unit) * 2.8); // 28px
-  --op-font-3x-large: calc(var(--op-font-scale-unit) * 3.2); // 32px
-  --op-font-4x-large: calc(var(--op-font-scale-unit) * 3.6); // 36px
-  --op-font-5x-large: calc(var(--op-font-scale-unit) * 4.8); // 48px
+  --op-font-x-large: calc(var(--op-font-scale-unit) * 2); // 20px
+  --op-font-2x-large: calc(var(--op-font-scale-unit) * 2.4); // 24px
+  --op-font-3x-large: calc(var(--op-font-scale-unit) * 2.8); // 28px
+  --op-font-4x-large: calc(var(--op-font-scale-unit) * 3.2); // 32px
+  --op-font-5x-large: calc(var(--op-font-scale-unit) * 3.6); // 36px
+  --op-font-6x-large: calc(var(--op-font-scale-unit) * 4.8); // 48px
 }
 
 @mixin font-weights {

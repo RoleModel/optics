@@ -72,15 +72,15 @@
 }
 
 .icon--x-large {
-  font-size: var(--op-font-x-large);
+  font-size: var(--op-font-2x-large);
 
   --op-mso-optical-sizing: 48;
 }
 
 .custom-icons {
   display: inline-block;
-  width: var(--op-font-x-large);
-  height: var(--op-font-x-large);
+  width: var(--op-font-2x-large);
+  height: var(--op-font-2x-large);
 
   &.icon--medium {
     font-size: var(--op-font-small);
@@ -94,8 +94,8 @@
   }
 
   &.icon--x-large {
-    width: var(--op-font-2x-large);
-    height: var(--op-font-2x-large);
+    width: var(--op-font-3x-large);
+    height: var(--op-font-3x-large);
   }
 }
 
