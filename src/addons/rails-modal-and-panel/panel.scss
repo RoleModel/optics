@@ -10,7 +10,7 @@
   background: var(--op-color-background);
   color: var(--op-color-on-background);
   overflow-y: scroll;
-  transition: right var(--op-transition-panel);
+  transition: var(--op-transition-panel);
 }
 
 .panel--active {

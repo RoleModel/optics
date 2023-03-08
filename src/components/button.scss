@@ -29,7 +29,7 @@
   gap: var(--op-space-x-small);
   text-align: center;
   text-decoration: none;
-  transition: all var(--op-transition-input);
+  transition: var(--op-transition-input);
   white-space: nowrap;
 
   // Pill Modifier
