@@ -110,7 +110,7 @@
   --_op-sidebar-link-spacing: var(--op-space-large);
 
   // Animation
-  --_op-sidebar-transition: all var(--op-transition-navigation) ease-in-out;
+  --_op-sidebar-transition: var(--op-transition-sidebar);
 
   // Private API
   --__op-sidebar-width: var(--_op-sidebar-drawer-width);

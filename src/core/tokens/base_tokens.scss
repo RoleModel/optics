@@ -173,12 +173,18 @@
   /**
   * @tokens Transition
   */
-  --op-transition-input: 120ms;
-  --op-transition-navigation: 200ms;
-  --op-transition-sidebar: 300ms;
-  --op-transition-modal: 300ms;
-  --op-transition-panel: 400ms;
-  --op-transition-flash: 5s;
+  --op-transition-input: all 120ms ease-in;
+  --op-transition-sidebar: all 200ms ease-in-out;
+  --op-transition-modal: all 300ms ease-in;
+  --op-transition-panel: right 400ms ease-in;
+}
+
+@mixin animations {
+  /**
+  * @tokens Animation
+  * @presenter Animation
+  */
+  --op-animation-flash: rm-slide-in-out-flash 5s normal forwards;
 }
 
 @mixin encoded-images {
@@ -297,8 +303,9 @@ $breakpoint-x-large: 1440px; // medium laptop
   @include line-heights;
   @include letter-spacing;
 
-  // Transitions
+  // Transitions and Animations
   @include transitions;
+  @include animations;
 
   // Encoded Images
   @include encoded-images;

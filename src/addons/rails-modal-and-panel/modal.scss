@@ -32,7 +32,7 @@
   left: 0;
   background: black;
   opacity: 0;
-  transition: all var(--op-transition-modal);
+  transition: var(--op-transition-modal);
   visibility: hidden;
 }
 
@@ -47,7 +47,7 @@
   opacity: 0;
   overflow-y: auto;
   transform: scale(0.7);
-  transition: all var(--op-transition-modal);
+  transition: var(--op-transition-modal);
 }
 
 .modal--active {
