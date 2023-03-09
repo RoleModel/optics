@@ -1,0 +1,167 @@
+import { Primary, ArgsTable, Canvas, Story, ColorPalette, ColorItem } from '@storybook/addon-docs'
+import LinkTo from '@storybook/addon-links/react'
+import { capitalize, scales, steps, getHSLFromVar } from '../helpers/utils.js'
+
+# Color Scales
+
+Optics has five main color scales that provide all the color your application may need. These Consist of the `Primary` scale, the `Neutral` scale, and four Alert Color Scales, `Warning`, `Danger`, `Info`, and `Notice`.
+
+Each scale is a set of semantically named variables that use the same hue and saturation, but change the luminosity.
+
+We borrow from the photography concept of [Aperture f-stops](https://www.adobe.com/creativecloud/photography/discover/f-stop.html).
+
+`Plus` indicates the addition of luminosity or getting brighter. `Minus` indicates the removal of luminosity or getting darker.
+
+We start with a base color and include a plus one through eight and max (full luminosity a.k.a white), as well as minus one through eight and max (zero luminosity a.k.a black).
+
+Along with this set of 19 (base, plus 1-8, plus max, minus 1-8, minus max) semantic `stops`, there are corresponding `on` colors for each.
+These `on` colors are aimed to provide contrast respecting text colors for text on a background of that color. There are also `alt` colors to provide an additional text color option to add variety and more color options.
+
+Here is an example of what these variables look like:
+
+```css
+--op-color-primary-plus-four: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 84%);
+--op-color-primary-on-plus-four: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 24%);
+--op-color-primary-on-plus-four-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 4%);
+```
+
+An element using the `var(--op-color-primary-plus-four)` for the background color could use `var(--op-color-primary-on-plus-four)` or `var(--op-color-primary-on-plus-four-alt)` for the text color.
+
+`var(--op-color-primary-original)` is included for occasions when you need to stay true to your brand color.
+
+## Dark Mode
+
+Each scale has overrides allowing your application to support <LinkTo kind='overview-themes--page#dark-mode'>Dark Mode</LinkTo>.
+
+## Reference
+
+You can use the Light / Dark toggle control in the top left corner to show these colors in each mode.
+
+### Base Colors
+
+<ColorPalette>
+  {scales.map((scale, index) => {
+    return (
+      <ColorItem
+        key={index}
+        title={`--op-color-${scale}-original`}
+        subtitle={`${capitalize(scale)} Color`}
+        colors={{
+          [`--op-color-${scale}-original`]: getHSLFromVar(`--op-color-${scale}-original`),
+        }}
+      />
+    )
+  })}
+</ColorPalette>
+
+### Scales
+
+<ColorPalette>
+  {scales.map((scale) => {
+    return steps.map((step, index) => {
+      return (
+        <ColorItem
+          key={index}
+          title={`--op-color-${scale}-${step}`}
+          subtitle={`${capitalize(scale)} Color`}
+          colors={{
+            [`--op-color-${scale}-${step}`]: getHSLFromVar(`--op-color-${scale}-${step}`),
+            [`--op-color-${scale}-on-${step}`]: getHSLFromVar(`--op-color-${scale}-on-${step}`),
+            [`--op-color-${scale}-on-${step}-alt`]: getHSLFromVar(`--op-color-${scale}-on-${step}-alt`),
+          }}
+        />
+      )
+    })
+  })}
+</ColorPalette>
+
+## Overriding Color Scales
+
+See <LinkTo kind="overview-scale-overriding--page#color-scale-overriding">Color Scale Overriding</LinkTo> for guidance on overriding each color scale.
+
+## Custom Scale
+
+Your application may need a new scale. To add one, use the following template. Keep in mind, you will also need to add dark mode values for each variable as well. See <LinkTo kind="overview-themes--page#theming">Theming</LinkTo>
+
+```css
+@mixin {name}-color {
+  --op-color-{name}-h: new-value-h;
+  --op-color-{name}-s: new-value-s;
+  --op-color-{name}-l: new-value-l;
+}
+
+@mixin {name}-semantic-scale {
+  --op-color-{name}-original: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) var(--op-color-{name}-l));
+
+  // Main Scale
+  --op-color-{name}-plus-max: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%);
+  --op-color-{name}-plus-eight: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 98%);
+  --op-color-{name}-plus-seven: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 96%);
+  --op-color-{name}-plus-six: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%);
+  --op-color-{name}-plus-five: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 90%);
+  --op-color-{name}-plus-four: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%);
+  --op-color-{name}-plus-three: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 70%);
+  --op-color-{name}-plus-two: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 64%);
+  --op-color-{name}-plus-one: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 45%);
+  --op-color-{name}-base: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 40%);
+  --op-color-{name}-minus-one: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 36%);
+  --op-color-{name}-minus-two: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 32%);
+  --op-color-{name}-minus-three: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 28%);
+  --op-color-{name}-minus-four: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 24%);
+  --op-color-{name}-minus-five: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%);
+  --op-color-{name}-minus-six: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%);
+  --op-color-{name}-minus-seven: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%);
+  --op-color-{name}-minus-eight: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%);
+  --op-color-{name}-minus-max: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 0%);
+
+  // On Scale
+  --op-color-{name}-on-plus-max: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 0%);
+  --op-color-{name}-on-plus-max-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%);
+  --op-color-{name}-on-plus-eight: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%);
+  --op-color-{name}-on-plus-eight-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 24%);
+  --op-color-{name}-on-plus-seven: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%);
+  --op-color-{name}-on-plus-seven-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 28%);
+  --op-color-{name}-on-plus-six: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%);
+  --op-color-{name}-on-plus-six-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 26%);
+  --op-color-{name}-on-plus-five: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%);
+  --op-color-{name}-on-plus-five-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 40%);
+  --op-color-{name}-on-plus-four: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 24%);
+  --op-color-{name}-on-plus-four-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%);
+  --op-color-{name}-on-plus-three: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%);
+  --op-color-{name}-on-plus-three-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%);
+  --op-color-{name}-on-plus-two: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%);
+  --op-color-{name}-on-plus-two-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 6%);
+  --op-color-{name}-on-plus-one: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%);
+  --op-color-{name}-on-plus-one-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 95%);
+  --op-color-{name}-on-base: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%);
+  --op-color-{name}-on-base-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%);
+  --op-color-{name}-on-minus-one: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%);
+  --op-color-{name}-on-minus-one-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 82%);
+  --op-color-{name}-on-minus-two: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 90%);
+  --op-color-{name}-on-minus-two-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 78%);
+  --op-color-{name}-on-minus-three: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 86%);
+  --op-color-{name}-on-minus-three-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 74%);
+  --op-color-{name}-on-minus-four: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%);
+  --op-color-{name}-on-minus-four-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 72%);
+  --op-color-{name}-on-minus-five: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%);
+  --op-color-{name}-on-minus-five-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 78%);
+  --op-color-{name}-on-minus-six: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%);
+  --op-color-{name}-on-minus-six-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 82%);
+  --op-color-{name}-on-minus-seven: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 96%);
+  --op-color-{name}-on-minus-seven-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%);
+  --op-color-{name}-on-minus-eight: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 98%);
+  --op-color-{name}-on-minus-eight-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 86%);
+  --op-color-{name}-on-minus-max: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%);
+  --op-color-{name}-on-minus-max-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%);
+}
+
+:root {
+  @include {name}-color;
+  @include {name}-semantic-scale;
+}
+```
+
+## Playground
+
+<Primary />
+<ArgsTable of="." story="^" />

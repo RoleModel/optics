@@ -1,6 +1,5 @@
 import { createIcon } from '../Icon/Icon.js'
-
-const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1)
+import { capitalize } from '../helpers/utils.js'
 
 export const createFlash = ({ label, style = 'notice' }) => {
   const flash = document.createElement('div')

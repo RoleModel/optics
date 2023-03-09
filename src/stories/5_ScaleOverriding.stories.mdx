@@ -44,17 +44,13 @@ Regardless of the reason, you can customize and override each scale like the fol
   --op-color-primary-plus-one: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 43%);
   // On Scale
   --op-color-primary-on-plus-two: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 15%);
+  --op-color-primary-on-plus-two-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 5%);
   --op-color-primary-on-plus-one: var(--op-color-white);
+  --op-color-primary-on-plus-one-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 92%);
 }
 :root {
   @include primary-semantic-scale-overrides;
 }
 ```
-
-<!---
-  Add These in the Color Support Task #140
---op-color-primary-on-plus-two-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 5%);
---op-color-primary-on-plus-one-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 92%);
--->
 
 You can override as many or as few variables or scales as your application needs.

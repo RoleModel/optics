@@ -34,3 +34,28 @@
   padding-top: var(--op-space-large);
   padding-bottom: var(--op-space-large);
 }
+
+@mixin panel-dark {
+  .panel {
+    background: var(--op-color-neutral-plus-seven);
+    color: var(--op-color-neutral-on-plus-seven);
+  }
+
+  .panel__close {
+    &:hover {
+      background: var(--op-color-background);
+    }
+  }
+}
+
+// Follow system preference unless forced to light
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme-mode='light']) {
+    @include panel-dark;
+  }
+}
+
+// Force design system to dark
+:root[data-theme-mode='dark'] {
+  @include panel-dark;
+}
