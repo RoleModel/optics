@@ -14,6 +14,10 @@ export default {
       control: { type: 'select' },
       options: ['no', 'right', 'left'],
     },
+    showIcons: {
+      control: 'boolean',
+      description: 'This is not a class. It just provides an example of using icons within a badge',
+    },
   },
   parameters: {
     docs: {
