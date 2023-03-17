@@ -1,10 +1,17 @@
-export const createBadge = ({ label, style = 'default', pill = false, inButton = 'no' }) => {
+import { createIcon } from '../Icon/Icon.js'
+
+export const createBadge = ({ label, style = 'default', pill = false, inButton = 'no', showIcons = false }) => {
   const badge = document.createElement('div')
   badge.innerText = label
 
   badge.className = [style === 'default' ? 'badge' : `badge-${style}`, pill ? 'badge--pill' : '']
     .filter(Boolean)
     .join(' ')
+
+  if (showIcons) {
+    badge.prepend(createIcon({ name: 'open_in_new' }))
+    badge.appendChild(createIcon({ name: 'add' }))
+  }
 
   if (inButton !== 'no') {
     const button = document.createElement('button')
