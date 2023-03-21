@@ -21,9 +21,9 @@
   thead {
     background-color: var(--op-color-neutral-plus-eight);
     box-shadow: inset var(--op-border-top) var(--op-border-color);
-    color: var(--op-color-neutral-on-plus-eight); // TODO: Verify color with Scott. The Figma shows on plus max
+    color: var(--op-color-neutral-on-plus-eight);
 
-    // TODO: do we want this?
+    // This Currently does not work in Firefox since it does not support :has yet, but fails gracefully.
     &:has(th input[type='checkbox']:checked) {
       background-color: var(--op-color-primary-plus-seven);
       color: var(--op-color-neutral-on-primary-seven);
@@ -44,7 +44,7 @@
   th,
   td {
     height: var(--__op-table-cell-height);
-    padding: 0 var(--op-space-small);
+    padding: var(--op-space-2x-small) var(--op-space-small);
     font-size: var(--op-font-small);
   }
 
