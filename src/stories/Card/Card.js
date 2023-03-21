@@ -9,12 +9,6 @@ export const createCard = ({
 }) => {
   const card = document.createElement('div')
 
-  const headerHtml = `
-  <div class='card__header background-primary-plus-four'>
-    ${header}
-  </div>
-`
-
   const coreClass = padded ? 'card-padded' : 'card'
   const condensedClass = condensed ? 'card--condensed' : ''
   const shadowClass = shadow === 'none' ? '' : `card--shadow-${shadow}`
@@ -22,7 +16,17 @@ export const createCard = ({
 
   card.className = classes
 
-  card.innerHTML = header ? headerHtml : label
+  if (!header && !body && !footer) {
+    card.innerHTML = label
+  }
+
+  if (header) {
+    card.innerHTML += `
+  <div class='card__header'>
+    ${header}
+  </div>
+`
+  }
 
   if (body) {
     card.innerHTML += `
@@ -34,7 +38,7 @@ export const createCard = ({
 
   if (footer) {
     card.innerHTML += `
-  <div class='card__footer background-primary-plus-seven'>
+  <div class='card__footer'>
     ${footer}
   </div>
 `
