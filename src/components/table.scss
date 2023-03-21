@@ -3,9 +3,9 @@
 %table-global {
   // Public API
   // Cells (for height, the appropriate variable is used when using the density modifiers)
-  --_op-table-cell-height-default: 4.4rem;
-  --_op-table-cell-height-comfortable: 6.4rem;
-  --_op-table-cell-height-compact: 3.4rem;
+  --_op-table-cell-height-default: calc(var(--op-space-scale-unit) * 4.4);
+  --_op-table-cell-height-comfortable: calc(var(--op-space-scale-unit) * 6.4);
+  --_op-table-cell-height-compact: calc(var(--op-space-scale-unit) * 3.4);
 
   // Private API
   // These allow for overriding specific padding versions easier.
