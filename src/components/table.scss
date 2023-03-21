@@ -2,14 +2,14 @@
 
 %table-global {
   // Public API
-  // Cells (for padding, the appropriate variable is used when using the density modifiers)
-  --_op-table-cell-padding-default: var(--op-space-small) var(--op-space-x-small);
-  --_op-table-cell-padding-comfortable: var(--op-space-medium) var(--op-space-small);
-  --_op-table-cell-padding-compact: var(--op-space-x-small) var(--op-space-2x-small);
+  // Cells (for height, the appropriate variable is used when using the density modifiers)
+  --_op-table-cell-height-default: 4.4rem;
+  --_op-table-cell-height-comfortable: 6.4rem;
+  --_op-table-cell-height-compact: 3.4rem;
 
   // Private API
   // These allow for overriding specific padding versions easier.
-  --__op-table-cell-padding: var(--_op-table-cell-padding-default);
+  --__op-table-cell-height: var(--_op-table-cell-height-default);
 
   width: 100%;
   border-radius: var(--op-radius-medium);
@@ -19,25 +19,32 @@
   table-layout: auto;
 
   thead {
-    background-color: var(--op-color-neutral-plus-four);
-    color: var(--op-color-neutral-on-plus-four);
+    background-color: var(--op-color-neutral-plus-eight);
+    box-shadow: inset var(--op-border-top) var(--op-border-color);
+    color: var(--op-color-neutral-on-plus-eight); // TODO: Verify color with Scott. The Figma shows on plus max
+
+    // TODO: do we want this?
+    &:has(th input[type='checkbox']:checked) {
+      background-color: var(--op-color-primary-plus-seven);
+      color: var(--op-color-neutral-on-primary-seven);
+    }
   }
 
   th {
-    font-weight: var(--op-font-weight-normal);
+    font-weight: var(--op-font-weight-semi-bold);
     text-align: left;
-    text-transform: uppercase;
   }
 
   tbody,
   tfoot {
-    background-color: var(--op-color-background);
-    color: var(--op-color-on-background);
+    background-color: var(--op-color-neutral-plus-max);
+    color: var(--op-color-neutral-on-plus-max);
   }
 
   th,
   td {
-    padding: var(--__op-table-cell-padding);
+    height: var(--__op-table-cell-height);
+    padding: 0 var(--op-space-small);
     font-size: var(--op-font-small);
   }
 
@@ -60,15 +67,15 @@
 
   // Table Density Modifiers
   &.table--default-density {
-    --__op-table-cell-padding: var(--_op-table-cell-padding-default);
+    --__op-table-cell-height: var(--_op-table-cell-height-default);
   }
 
   &.table--comfortable-density {
-    --__op-table-cell-padding: var(--_op-table-cell-padding-comfortable);
+    --__op-table-cell-height: var(--_op-table-cell-height-comfortable);
   }
 
   &.table--compact-density {
-    --__op-table-cell-padding: var(--_op-table-cell-padding-compact);
+    --__op-table-cell-height: var(--_op-table-cell-height-compact);
   }
 
   // Striped Modifiers

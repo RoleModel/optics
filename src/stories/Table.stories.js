@@ -24,6 +24,9 @@ export default {
       control: { type: 'select' },
       options: ['off', 'header', 'footer', 'both'],
     },
+    checkbox: {
+      control: 'boolean',
+    },
     height: {
       control: 'boolean',
       description: 'This is not a class. It just provides a fixed height to demonstrate the sticky classes',
