@@ -9,10 +9,11 @@ export default {
     label: { control: 'text' },
     priority: {
       control: { type: 'select' },
-      options: ['default', 'primary', 'secondary', 'delete'],
+      options: ['primary', 'secondary', 'delete', 'warning'],
     },
     noBorder: { control: 'boolean' },
-    outlined: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    active: { control: 'boolean' },
     pill: { control: 'boolean' },
     icon: { control: 'boolean' },
     size: {
@@ -34,12 +35,12 @@ const Template = ({ label, ...args }) => {
   return createButton({ label, ...args })
 }
 
-export const Default = Template.bind({})
+// export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-Default.args = {
-  label: 'Default',
-  priority: 'default',
-}
+// Default.args = {
+//   label: 'Default',
+//   priority: 'default',
+// }
 
 export const Primary = Template.bind({})
 Primary.args = {

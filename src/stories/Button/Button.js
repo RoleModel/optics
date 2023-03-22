@@ -1,11 +1,11 @@
 export const createButton = ({
   label,
-  priority = 'default',
+  priority = 'primary',
   noBorder = false,
-  outlined = false,
+  active = false,
   pill = false,
   icon = false,
-  size = 'medium',
+  size = 'large',
   disabled = false,
 }) => {
   const element = disabled ? 'a' : 'button'
@@ -15,10 +15,10 @@ export const createButton = ({
   btn.className = [
     priority === 'default' ? 'btn' : `btn-${priority}`,
     noBorder ? 'btn--no-border' : '',
-    outlined ? 'btn--outline' : '',
+    active ? 'btn--active' : '',
     pill ? 'btn--pill' : '',
     icon ? 'btn--icon' : '',
-    size === 'medium' ? '' : `btn--${size}`,
+    size === 'large' ? '' : `btn--${size}`,
     disabled ? 'btn--disabled' : '',
   ]
     .filter(Boolean)
