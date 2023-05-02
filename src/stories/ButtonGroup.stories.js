@@ -17,7 +17,8 @@ export default {
     },
     segmentedPreview: {
       control: 'boolean',
-      description: 'This is not a class. It just provides an example of creating a segmented control showing the currently active piece.',
+      description:
+        'This is not a class. It just provides an example of creating a segmented control showing the currently active piece.',
     },
   },
   parameters: {
