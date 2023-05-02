@@ -81,3 +81,11 @@
     }
   }
 }
+
+.confirm-dialog-wrapper--demo {
+  position: unset;
+
+  .confirm-dialog-wrapper__backdrop {
+    position: unset;
+  }
+}
