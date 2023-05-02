@@ -98,7 +98,7 @@ Buttons have various states that are styled as well.
 
 Here are the variables and states used
 
-```scss
+```css
 // Variable API
 --_op-btn-height-small:
 --_op-btn-height-medium:
@@ -131,7 +131,7 @@ This allows multiple button classes to share the same behavior. You can modify a
 
 If you want to override how the size modifier behaves, you can use API described above to change which height and font each size uses.
 
-```scss
+```css
 %btn-global {
   --_op-btn-height-small: var(--op-space-2x-large);
   --_op-btn-height-medium: var(--op-space-3x-large);
@@ -145,7 +145,7 @@ If you want to override how the size modifier behaves, you can use API described
 
 If you need to override the color of a particular button style, you can open the respective class and change the `background-color`, `color`, and `box-shadow` properties to change the look.
 
-```scss
+```css
 // This will only affect the default button, but not primary, secondary, etc.
 .btn {
   background-color: red;
@@ -158,7 +158,7 @@ If you need to override the color of a particular button style, you can open the
 
 Your application may need a custom button. To add one, just follow this template:
 
-```scss
+```css
 .btn-{name} {
   @extend %btn-global;
 
