@@ -69,8 +69,6 @@
   // Disabled Modifier
   &.btn--disabled,
   &:disabled {
-    // TODO: Sacrifice cursor not allowed for simpler selectors of focus and hover state?
-    // cursor: not-allowed;
     opacity: 0.44;
     pointer-events: none;
     -webkit-user-select: none; /* stylelint-disable property-no-vendor-prefix */
@@ -103,7 +101,69 @@
   }
 }
 
-// TODO: Should there be a `.btn`? synonymous with `.btn-primary`?
+.btn {
+  @extend %btn-global;
+
+  --__op-btn-inner-focus-color: var(--op-color-primary-plus-two);
+  --__op-btn-outer-focus-color: var(--op-color-primary-plus-five);
+
+  background-color: var(--op-color-neutral-plus-eight);
+  box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-four);
+  color: var(--op-color-neutral-on-plus-eight);
+
+  // Active State
+  &.btn--active {
+    background-color: var(--op-color-primary-plus-five);
+    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+    color: var(--op-color-primary-on-plus-five);
+  }
+
+  // Hover State
+  &:hover {
+    background-color: var(--op-color-primary-plus-eight);
+    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+    color: var(--op-color-primary-on-plus-eight);
+  }
+
+  // Focus State
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
+      var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+  }
+
+  // Borderless State
+  &.btn--no-border {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--op-color-primary-on-plus-max);
+
+    // Borderless + Active State.
+    &.btn--active {
+      background-color: var(--op-color-primary-plus-five);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+      color: var(--op-color-primary-on-plus-five);
+    }
+
+    // Borderless + Hover State
+    &:hover {
+      background-color: var(--op-color-primary-plus-eight);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-five);
+      color: var(--op-color-primary-on-plus-eight);
+    }
+
+    // Borderless + Focus State
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      background-color: var(--op-color-primary-plus-eight);
+      box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
+        var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+      color: var(--op-color-primary-on-plus-eight);
+    }
+  }
+}
 
 .btn-primary {
   @extend %btn-global;
@@ -156,71 +216,6 @@
 
     // Borderless + Focus State
     &:focus,
-    &:focus-within,
-    &:focus-visible {
-      background-color: var(--op-color-primary-plus-eight);
-      box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
-        var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
-      color: var(--op-color-primary-on-plus-eight);
-    }
-  }
-}
-
-.btn-secondary {
-  @extend %btn-global;
-
-  --__op-btn-inner-focus-color: var(--op-color-primary-plus-two);
-  --__op-btn-outer-focus-color: var(--op-color-primary-plus-five);
-
-  background-color: var(--op-color-neutral-plus-eight);
-  box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-four);
-  color: var(--op-color-neutral-on-plus-eight);
-
-  // Active State
-  &.btn--active {
-    background-color: var(--op-color-primary-plus-five);
-    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
-    color: var(--op-color-primary-on-plus-five);
-  }
-
-  // Hover State
-  &:hover {
-    background-color: var(--op-color-primary-plus-eight);
-    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
-    color: var(--op-color-primary-on-plus-eight);
-  }
-
-  // Focus State
-  &:focus,
-  &:focus-within,
-  &:focus-visible {
-    box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
-      var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
-  }
-
-  // Borderless State
-  &.btn--no-border {
-    background-color: transparent;
-    box-shadow: none;
-    color: var(--op-color-primary-on-plus-max);
-
-    // Borderless + Active State. TODO: Same as primary no border active
-    &.btn--active {
-      background-color: var(--op-color-primary-plus-five);
-      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
-      color: var(--op-color-primary-on-plus-five);
-    }
-
-    // Borderless + Hover State
-    &:hover {
-      // TODO: Same as primary no border hover
-      background-color: var(--op-color-primary-plus-eight);
-      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-five);
-      color: var(--op-color-primary-on-plus-eight);
-    }
-
-    // Borderless + Focus State
-    &:focus, // TODO: Same as primary no border focus
     &:focus-within,
     &:focus-visible {
       background-color: var(--op-color-primary-plus-eight);
