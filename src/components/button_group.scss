@@ -4,13 +4,21 @@
 
   .btn,
   .btn-primary,
-  .btn-secondary,
-  .btn-delete {
+  .btn-delete,
+  .btn-warning {
     + .btn,
     + .btn-primary,
-    + .btn-secondary,
-    + .btn-delete {
-      margin-left: 1px;
+    + .btn-delete,
+    + .btn-warning {
+      margin-left: -1px;
+    }
+
+    &:focus,
+    &:focus-within,
+    &:focus-visible,
+    &:hover,
+    &.btn--active {
+      z-index: 1;
     }
 
     &:not(:first-child, :last-child) {
@@ -25,6 +33,15 @@
     &:last-child:not(:first-child) {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
+    }
+
+    // Handle the case of all are active and one is focused
+    &.btn--active {
+      &:focus,
+      &:focus-within,
+      &:focus-visible {
+        z-index: 2;
+      }
     }
   }
 }
