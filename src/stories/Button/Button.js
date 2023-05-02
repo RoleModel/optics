@@ -1,3 +1,5 @@
+import { createIcon } from '../Icon/Icon.js'
+
 export const createButton = ({
   label,
   priority = 'primary',
@@ -5,6 +7,7 @@ export const createButton = ({
   active = false,
   pill = false,
   icon = false,
+  iconWithLabel = false,
   size = 'large',
   disabled = false,
 }) => {
@@ -12,12 +15,22 @@ export const createButton = ({
   const btn = document.createElement(element)
   btn.innerText = label
 
+  if (icon) {
+    btn.innerText = ''
+    btn.prepend(createIcon({ name: 'add' }))
+  }
+
+  if (iconWithLabel) {
+    btn.prepend(createIcon({ name: 'add', size: 'large' }))
+  }
+
   btn.className = [
     priority === 'default' ? 'btn' : `btn-${priority}`,
     noBorder ? 'btn--no-border' : '',
     active ? 'btn--active' : '',
     pill ? 'btn--pill' : '',
     icon ? 'btn--icon' : '',
+    iconWithLabel ? 'btn--icon-with-label' : '',
     size === 'large' ? '' : `btn--${size}`,
     disabled ? 'btn--disabled' : '',
   ]

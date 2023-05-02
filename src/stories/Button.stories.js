@@ -9,13 +9,14 @@ export default {
     label: { control: 'text' },
     priority: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'delete', 'warning'],
+      options: ['default', 'primary', 'delete', 'warning'],
     },
     noBorder: { control: 'boolean' },
     disabled: { control: 'boolean' },
     active: { control: 'boolean' },
     pill: { control: 'boolean' },
     icon: { control: 'boolean' },
+    iconWithLabel: { control: 'boolean' },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
@@ -35,23 +36,17 @@ const Template = ({ label, ...args }) => {
   return createButton({ label, ...args })
 }
 
-// export const Default = Template.bind({})
+export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
-// Default.args = {
-//   label: 'Default',
-//   priority: 'default',
-// }
+Default.args = {
+  label: 'Default',
+  priority: 'default',
+}
 
 export const Primary = Template.bind({})
 Primary.args = {
   label: 'Primary',
   priority: 'primary',
-}
-
-export const Secondary = Template.bind({})
-Secondary.args = {
-  label: 'Secondary',
-  priority: 'secondary',
 }
 
 export const Delete = Template.bind({})
@@ -60,11 +55,17 @@ Delete.args = {
   priority: 'delete',
 }
 
-export const Outline = Template.bind({})
-Outline.args = {
-  label: 'Outline',
-  priority: 'delete',
-  outlined: true,
+export const Warning = Template.bind({})
+Warning.args = {
+  label: 'Warning',
+  priority: 'warning',
+}
+
+export const Active = Template.bind({})
+Active.args = {
+  label: 'Active',
+  priority: 'primary',
+  active: true,
 }
 
 export const NoBorder = Template.bind({})
@@ -93,6 +94,13 @@ Icon.args = {
   label: '👍',
   priority: 'primary',
   icon: true,
+}
+
+export const IconWithLabel = Template.bind({})
+IconWithLabel.args = {
+  label: 'Label',
+  priority: 'primary',
+  iconWithLabel: true,
 }
 
 export const Size = Template.bind({})

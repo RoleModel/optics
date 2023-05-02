@@ -4,12 +4,9 @@ import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
 
 Button classes can be used on `button` or `a` html elements. They provide consistent and composable styling that should address most applications basic needs.
 
-<!-- Either use <Stories /> to automatically render each story -->
-<!-- Or manually render them with custom descriptions -->
-
 ## Default
 
-`.btn` Provides a default outlined black text button. This would be commonly used as a cancel button in a form.
+`.btn` Provides a default outlined button. This would be commonly used as a cancel button in a form or a secondary action on a page.
 
 <Canvas withToolbar>
   <Story id="components-button--default" />
@@ -23,14 +20,6 @@ Button classes can be used on `button` or `a` html elements. They provide consis
   <Story id="components-button--primary" />
 </Canvas>
 
-## Secondary
-
-`.btn-secondary` Provides an outlined button using the primary color in your theme. This should be used as a secondary action on a screen such as the create account button on a login screen.
-
-<Canvas withToolbar>
-  <Story id="components-button--secondary" />
-</Canvas>
-
 ## Delete
 
 `.btn-delete` Provides a filled button using the red danger color. This should be used as a destructive action such as delete.
@@ -39,17 +28,17 @@ Button classes can be used on `button` or `a` html elements. They provide consis
   <Story id="components-button--delete" />
 </Canvas>
 
-## Outline
+## Active
 
-`.btn--outline` This is a modifier which can be used with all button classes. It provides an outlined button that adapts it's color to all the btn variations.
+`.btn--active` This is a modifier which can be used with all button classes. It provides an active state that adapts it's color to all the btn variations.
 
 <Canvas withToolbar>
-  <Story id="components-button--outline" />
+  <Story id="components-button--active" />
 </Canvas>
 
 ## No Border
 
-`.btn--no-border` This is a modifier which can be used with all button classes. It provides a button with no border, but the same sizing and adapts it's color to all the btn variations.
+`.btn--no-border` This is a modifier which can be used with all button classes except delete. It provides a button with no border, but the same sizing and adapts it's color to all the btn variations.
 
 <Canvas withToolbar>
   <Story id="components-button--no-border" />
@@ -57,7 +46,7 @@ Button classes can be used on `button` or `a` html elements. They provide consis
 
 ## Disabled
 
-`.btn--disabled` Should be used on `a` elements that need to be disabled. `button` elements can use the `disabled` attribute as well as this class. This makes the button opaque and changes the cursor to the `not allowed` icon.
+`.btn--disabled` Should be used on `a` elements that need to be disabled. `button` elements can use the `disabled` attribute as well as this class. This makes the button opaque and prevents any onClick events from being triggered.
 
 <Canvas withToolbar>
   <Story id="components-button--disabled" />
@@ -73,15 +62,23 @@ Button classes can be used on `button` or `a` html elements. They provide consis
 
 ## Icon
 
-`.btn--icon` Modifies the shape of any other button class by adding a full radius to the button. This should only be used with an icon as the button text. You can also combine it with `.btn--no-border` for a borderless icon button.
+`.btn--icon` Modifies the shape of any other button class by setting the width and height be be the same. This should only be used with an icon as the button text. You can also combine it with `.btn--no-border` for a borderless icon button, or `.btn--pill` for a round icon button.
 
 <Canvas withToolbar>
   <Story id="components-button--icon" />
 </Canvas>
 
+## Icon With label
+
+`.btn--icon-with-label` Modifies the shape of any other button class by ensuring an icon used within the button will be stacked on top of the label.
+
+<Canvas withToolbar>
+  <Story id="components-button--icon-with-label" />
+</Canvas>
+
 ## Size
 
-`.btn--small`, `.btn--medium`, `.btn--large` (with medium being the default) modify the size of any other button class by changing the font and height to be smaller or larger.
+`.btn--small`, `.btn--medium`, `.btn--large` (with large being the default) modify the size of any other button class by changing the font and height to be smaller or larger.
 
 <Canvas withToolbar>
   <Story id="components-button--size" />
@@ -101,8 +98,7 @@ Buttons have various states that are styled as well.
 
 Here are the variables and states used
 
-<!-- prettier-ignore-start -->
-```css
+```scss
 // Variable API
 --_op-btn-height-small:
 --_op-btn-height-medium:
@@ -117,10 +113,9 @@ Here are the variables and states used
 .btn:not(:disabled, .btn--disabled):hover {} // Hover behavior
 .btn.btn--no-border {} // No Border Modifier
 .btn.btn--no-border:not(:disabled, .btn--disabled):hover {} // Hovered No Border Modifier
-.btn.btn--outline {} // Outline Modifier
-.btn.btn--outline:not(:disabled, .btn--disabled):hover {} // Hovered No Border Modifier
+.btn.btn--active {} // Active Modifier
+.btn.btn--active:not(:disabled, .btn--disabled):hover {} // Hovered No Border Modifier
 ```
-<!-- prettier-ignore-end -->
 
 ## Overriding Button styles
 
@@ -136,8 +131,7 @@ This allows multiple button classes to share the same behavior. You can modify a
 
 If you want to override how the size modifier behaves, you can use API described above to change which height and font each size uses.
 
-<!-- prettier-ignore-start -->
-```css
+```scss
 %btn-global {
   --_op-btn-height-small:  var(--op-space-2x-large);
   --_op-btn-height-medium: var(--op-space-3x-large);
@@ -148,11 +142,10 @@ If you want to override how the size modifier behaves, you can use API described
   --_op-btn-font-large:  var(--op-font-6x-large);
 }
 ```
-<!-- prettier-ignore-end -->
 
 If you need to override the color of a particular button style, you can open the respective class and change the `background-color`, `color`, and `box-shadow` properties to change the look.
 
-```css
+```scss
 // This will only affect the default button, but not primary, secondary, etc.
 .btn {
   background-color: red;
@@ -165,81 +158,65 @@ If you need to override the color of a particular button style, you can open the
 
 Your application may need a custom button. To add one, just follow this template:
 
-```css
+```scss
 .btn-{name} {
   @extend %btn-global;
 
+  --__op-btn-inner-focus-color:
+  --__op-btn-outer-focus-color:
+
   background-color:
-  color:
   box-shadow:
+  color:
 
-  &:not(:disabled, .btn--disabled):hover {
+  // Active State
+  &.btn--active {
     background-color:
+    box-shadow:
     color:
+  }
+
+  // Hover State
+  &:hover {
+    background-color:
+    box-shadow:
+    color:
+  }
+
+  // Focus State
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
     box-shadow:
   }
 
+  // Borderless State
   &.btn--no-border {
     background-color:
-    color:
     box-shadow:
-
-    &:not(:disabled, .btn--disabled):hover {
-      background-color:
-      color:
-      box-shadow:
-    }
-  }
-
-  &.btn--outline {
-    background-color:
     color:
-    box-shadow:
 
-    &:not(:disabled, .btn--disabled):hover {
+    // Borderless + Active State.
+    &.btn--active {
       background-color:
-      color:
       box-shadow:
+      color:
     }
-  }
-}
-```
 
-```css
-.btn-notice {
-  @extend %btn-global;
-
-  background-color: var(--op-color-alerts-notice-base);
-  color: var(--op-color-alerts-notice-on-base);
-  box-shadow: var(--op-border-all) var(--op-color-alerts-notice-base);
-
-  &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--op-color-alerts-notice-plus-one);
-    color: var(--op-color-alerts-notice-on-plus-one);
-    box-shadow: var(--op-border-all) var(--op-color-alerts-notice-plus-one);
-  }
-
-  &.btn--no-border {
-    background-color: transparent;
-    color: var(--op-color-alerts-notice-base);
-    box-shadow: none;
-
-    &:not(:disabled, .btn--disabled):hover {
-      background-color: transparent;
-      color: var(--op-color-alerts-notice-plus-one);
-      box-shadow: none;
+    // Borderless + Hover State
+    &:hover {
+      background-color:
+      box-shadow:
+      color:
     }
-  }
 
-  &.btn--outline {
-    background-color: var(--op-color-alerts-notice-plus-seven);
-    color: var(--op-color-alerts-notice-on-plus-seven);
-    box-shadow: var(--op-border-all) var(--op-color-alerts-notice-on-plus-seven);
-
-    &:not(:disabled, .btn--disabled):hover {
-      background-color: var(--op-color-alerts-notice-plus-four);
-      color: var(--op-color-alerts-notice-on-plus-four);
-      box-shadow: var(--op-border-all) var(--op-color-alerts-notice-on-plus-seven);
+    // Borderless + Focus State
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      background-color:
+      box-shadow:
+      color:
     }
   }
 }
