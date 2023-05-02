@@ -1,8 +1,4 @@
-export const createConfirmDialog = ({
-  title,
-  message,
-  inlineDemo = false
-}) => {
+export const createConfirmDialog = ({ title, message, inlineDemo = false }) => {
   const element = document.createElement('div')
 
   element.innerHTML = `
