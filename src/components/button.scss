@@ -1,8 +1,3 @@
-%btn-focus-state {
-  box-shadow: var(--op-input-focus);
-  outline: none;
-}
-
 %btn-global {
   // Public API (allowed to be overridden)
   --_op-btn-height-small: var(--op-input-height-small);
@@ -10,22 +5,26 @@
   --_op-btn-height-large: var(--op-input-height-large);
   --_op-btn-font-small: var(--op-font-x-small);
   --_op-btn-font-medium: var(--op-font-small);
-  --_op-btn-font-large: var(--op-font-medium);
+  --_op-btn-font-large: var(--op-font-small);
 
   // Private API (don't touch these)
-  --__op-btn-height: var(--_op-btn-height-medium);
-  --__op-btn-font-size: var(--_op-btn-font-medium);
+  --__op-btn-height: var(--_op-btn-height-large);
+  --__op-btn-font-size: var(--_op-btn-font-large);
+  --__op-btn-inner-focus: inset 0 0 0 var(--op-border-width-large);
+  --__op-btn-outer-focus: 0 0 0 var(--op-border-width-x-large);
+  --__op-btn-inner-focus-color: var(--op-color-primary-plus-two);
+  --__op-btn-outer-focus-color: var(--op-color-primary-plus-five);
 
   display: inline-flex;
-  height: var(--__op-btn-height);
+  min-height: var(--__op-btn-height);
   align-items: center;
   justify-content: center;
-  padding: 0 var(--op-space-medium);
-  border-radius: var(--op-radius-large);
+  padding: 0 var(--op-space-small);
+  border-radius: var(--op-radius-medium);
   appearance: none;
   cursor: pointer;
   font-size: var(--__op-btn-font-size);
-  font-weight: var(--op-font-weight-medium);
+  font-weight: var(--op-font-weight-normal);
   gap: var(--op-space-x-small);
   text-align: center;
   text-decoration: none;
@@ -42,7 +41,13 @@
     width: var(--__op-btn-height);
     min-width: var(--__op-btn-height);
     padding: 0;
-    border-radius: var(--op-radius-circle);
+  }
+
+  // Icon With Label Modifier
+  &.btn--icon-with-label {
+    flex-direction: column;
+    padding: var(--op-space-small);
+    gap: var(--op-space-3x-small);
   }
 
   // Size Modifiers
@@ -64,8 +69,10 @@
   // Disabled Modifier
   &.btn--disabled,
   &:disabled {
-    cursor: not-allowed;
-    opacity: 0.65;
+    opacity: 0.44;
+    pointer-events: none;
+    -webkit-user-select: none; /* stylelint-disable property-no-vendor-prefix */
+    user-select: none;
   }
 
   // Button with notification style badge
@@ -77,23 +84,7 @@
   &:focus,
   &:focus-within,
   &:focus-visible {
-    @extend %btn-focus-state;
-  }
-
-  &.btn--no-border {
-    &:focus,
-    &:focus-within,
-    &:focus-visible {
-      @extend %btn-focus-state;
-    }
-  }
-
-  &.btn--outline {
-    &:focus,
-    &:focus-within,
-    &:focus-visible {
-      @extend %btn-focus-state;
-    }
+    outline: none;
   }
 
   // https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
@@ -113,21 +104,65 @@
 .btn {
   @extend %btn-global;
 
-  background-color: transparent;
-  box-shadow: var(--op-border-all) var(--op-border-color);
-  color: var(--op-color-neutral-minus-max);
+  --__op-btn-inner-focus-color: var(--op-color-primary-plus-two);
+  --__op-btn-outer-focus-color: var(--op-color-primary-plus-five);
 
-  &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--op-color-neutral-plus-seven);
-    color: var(--op-color-neutral-on-plus-seven);
+  background-color: var(--op-color-neutral-plus-eight);
+  box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-four);
+  color: var(--op-color-neutral-on-plus-eight);
+
+  // Active State
+  &.btn--active {
+    background-color: var(--op-color-primary-plus-five);
+    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+    color: var(--op-color-primary-on-plus-five);
   }
 
-  &.btn--no-border {
-    box-shadow: var(--op-border-all) transparent;
+  // Hover State
+  &:hover {
+    background-color: var(--op-color-primary-plus-eight);
+    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+    color: var(--op-color-primary-on-plus-eight);
+  }
 
-    &:not(:disabled, .btn--disabled):hover {
-      background-color: transparent;
-      color: var(--op-color-neutral-minus-three);
+  // Focus State
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    background-color: var(--op-color-neutral-plus-eight);
+    box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
+      var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+    color: var(--op-color-neutral-on-plus-eight);
+  }
+
+  // Borderless State
+  &.btn--no-border {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--op-color-primary-on-plus-max);
+
+    // Borderless + Active State.
+    &.btn--active {
+      background-color: var(--op-color-primary-plus-five);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+      color: var(--op-color-primary-on-plus-five);
+    }
+
+    // Borderless + Hover State
+    &:hover {
+      background-color: var(--op-color-primary-plus-eight);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-five);
+      color: var(--op-color-primary-on-plus-eight);
+    }
+
+    // Borderless + Focus State
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      background-color: var(--op-color-primary-plus-eight);
+      box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
+        var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+      color: var(--op-color-primary-on-plus-eight);
     }
   }
 }
@@ -136,62 +171,61 @@
   @extend %btn-global;
 
   background-color: var(--op-color-primary-base);
-  box-shadow: var(--op-border-all) var(--op-color-primary-base);
+  box-shadow: inset var(--op-border-all) var(--op-color-primary-base);
   color: var(--op-color-primary-on-base);
 
-  &:not(:disabled, .btn--disabled):hover {
+  // Active State
+  &.btn--active {
+    background-color: var(--op-color-primary-minus-five);
+    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-two);
+    color: var(--op-color-primary-on-minus-five);
+  }
+
+  // Hover State
+  &:hover {
     background-color: var(--op-color-primary-plus-one);
-    box-shadow: var(--op-border-all) var(--op-color-primary-plus-one);
+    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-one);
     color: var(--op-color-primary-on-plus-one);
   }
 
+  // Focus State
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    background-color: var(--op-color-primary-base);
+    box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
+      var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+    color: var(--op-color-primary-on-base);
+  }
+
+  // Borderless State
   &.btn--no-border {
     background-color: transparent;
     box-shadow: none;
     color: var(--op-color-primary-base);
 
-    &:not(:disabled, .btn--disabled):hover {
-      background-color: transparent;
-      box-shadow: none;
-      color: var(--op-color-primary-plus-one);
+    // Borderless + Active State
+    &.btn--active {
+      background-color: var(--op-color-primary-plus-five);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+      color: var(--op-color-primary-on-plus-five);
     }
-  }
 
-  &.btn--outline {
-    background-color: var(--op-color-primary-plus-seven);
-    box-shadow: var(--op-border-all) var(--op-color-primary-on-plus-seven);
-    color: var(--op-color-primary-on-plus-seven);
-
-    &:not(:disabled, .btn--disabled):hover {
-      background-color: var(--op-color-primary-plus-four);
-      box-shadow: var(--op-border-all) var(--op-color-primary-on-plus-seven);
-      color: var(--op-color-primary-on-plus-four);
+    // Borderless + Hover State
+    &:hover {
+      background-color: var(--op-color-primary-plus-eight);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-five);
+      color: var(--op-color-primary-on-plus-eight);
     }
-  }
-}
 
-.btn-secondary {
-  @extend %btn-global;
-
-  background-color: var(--op-color-primary-plus-seven);
-  box-shadow: var(--op-border-all) var(--op-color-primary-on-plus-seven);
-  color: var(--op-color-primary-on-plus-seven);
-
-  &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--op-color-primary-plus-four);
-    box-shadow: var(--op-border-all) var(--op-color-primary-on-plus-seven);
-    color: var(--op-color-primary-on-plus-four);
-  }
-
-  &.btn--no-border {
-    background-color: transparent;
-    box-shadow: none;
-    color: var(--op-color-primary-base);
-
-    &:not(:disabled, .btn--disabled):hover {
-      background-color: transparent;
-      box-shadow: none;
-      color: var(--op-color-primary-plus-one);
+    // Borderless + Focus State
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      background-color: var(--op-color-primary-plus-eight);
+      box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
+        var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+      color: var(--op-color-primary-on-plus-eight);
     }
   }
 }
@@ -200,36 +234,93 @@
   @extend %btn-global;
 
   background-color: var(--op-color-alerts-danger-base);
-  box-shadow: var(--op-border-all) var(--op-color-alerts-danger-base);
+  box-shadow: inset var(--op-border-all) var(--op-color-alerts-danger-base);
   color: var(--op-color-alerts-danger-on-base);
 
-  &:not(:disabled, .btn--disabled):hover {
-    background-color: var(--op-color-alerts-danger-plus-one);
-    box-shadow: var(--op-border-all) var(--op-color-alerts-danger-plus-one);
-    color: var(--op-color-alerts-danger-on-plus-one);
+  // Active State
+  &.btn--active {
+    background-color: var(--op-color-alerts-danger-plus-five);
+    box-shadow: inset var(--op-border-all) var(--op-color-alerts-danger-plus-three);
+    color: var(--op-color-alerts-danger-on-plus-five);
   }
 
+  // Hover State
+  &:hover {
+    background-color: var(--op-color-alerts-danger-minus-two);
+    box-shadow: inset var(--op-border-all) var(--op-color-alerts-danger-minus-two);
+    color: var(--op-color-alerts-danger-on-minus-two);
+  }
+
+  // Focus State
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    background-color: var(--op-color-alerts-danger-base);
+    box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-danger-plus-two),
+      var(--__op-btn-outer-focus) var(--op-color-alerts-danger-plus-five);
+    color: var(--op-color-alerts-danger-on-base);
+  }
+}
+
+.btn-warning {
+  @extend %btn-global;
+
+  background-color: var(--op-color-alerts-warning-base);
+  box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-base);
+  color: var(--op-color-alerts-warning-on-base);
+
+  // Active State
+  &.btn--active {
+    background-color: var(--op-color-alerts-warning-plus-five);
+    box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-plus-three);
+    color: var(--op-color-alerts-warning-on-plus-five);
+  }
+
+  // Hover State
+  &:hover {
+    background-color: var(--op-color-alerts-warning-minus-two);
+    box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-minus-two);
+    color: var(--op-color-alerts-warning-on-minus-two);
+  }
+
+  // Focus State
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    background-color: var(--op-color-alerts-warning-base);
+    box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-warning-plus-two),
+      var(--__op-btn-outer-focus) var(--op-color-alerts-warning-plus-five);
+    color: var(--op-color-alerts-warning-on-base);
+  }
+
+  // Borderless State
   &.btn--no-border {
     background-color: transparent;
     box-shadow: none;
-    color: var(--op-color-alerts-danger-base);
+    color: var(--op-color-alerts-warning-on-plus-max);
 
-    &:not(:disabled, .btn--disabled):hover {
-      background-color: transparent;
-      box-shadow: none;
-      color: var(--op-color-alerts-danger-plus-one);
+    // Borderless + Active State
+    &.btn--active {
+      background-color: var(--op-color-alerts-warning-plus-five);
+      box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-plus-three);
+      color: var(--op-color-alerts-warning-on-plus-five);
     }
-  }
 
-  &.btn--outline {
-    background-color: var(--op-color-alerts-danger-plus-seven);
-    box-shadow: var(--op-border-all) var(--op-color-alerts-danger-on-plus-seven);
-    color: var(--op-color-alerts-danger-on-plus-seven);
+    // Borderless + Hover State
+    &:hover {
+      background-color: var(--op-color-alerts-warning-plus-eight);
+      box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-plus-five);
+      color: var(--op-color-alerts-warning-on-plus-eight);
+    }
 
-    &:not(:disabled, .btn--disabled):hover {
-      background-color: var(--op-color-alerts-danger-plus-four);
-      box-shadow: var(--op-border-all) var(--op-color-alerts-danger-on-plus-seven);
-      color: var(--op-color-alerts-danger-on-plus-four);
+    // Borderless + Focus State
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      background-color: var(--op-color-alerts-warning-plus-eight);
+      box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-warning-plus-two),
+        var(--__op-btn-outer-focus) var(--op-color-alerts-warning-plus-five);
+      color: var(--op-color-alerts-warning-on-plus-eight);
     }
   }
 }

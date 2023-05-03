@@ -4,8 +4,10 @@ export const createButtonGroup = (props) => {
   const group = document.createElement('div')
   group.className = 'btn-group'
 
+  const active = props.segmentedPreview ? true : props.active
+
   group.appendChild(createButton({ ...props, label: 'Left' }))
-  group.appendChild(createButton({ ...props, label: 'Middle' }))
+  group.appendChild(createButton({ ...props, label: 'Middle', active }))
   group.appendChild(createButton({ ...props, label: 'Right' }))
 
   return group

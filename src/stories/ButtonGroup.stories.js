@@ -6,14 +6,19 @@ export default {
   argTypes: {
     priority: {
       control: { type: 'select' },
-      options: ['default', 'primary', 'secondary', 'delete'],
+      options: ['default', 'primary', 'delete', 'warning'],
     },
     noBorder: { control: 'boolean' },
-    outlined: { control: 'boolean' },
+    active: { control: 'boolean' },
     pill: { control: 'boolean' },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
+    },
+    segmentedPreview: {
+      control: 'boolean',
+      description:
+        'This is not a class. It just provides an example of creating a segmented control showing the currently active piece.',
     },
   },
   parameters: {
@@ -41,20 +46,20 @@ Primary.args = {
   priority: 'primary',
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  priority: 'secondary',
-}
-
 export const Delete = Template.bind({})
 Delete.args = {
   priority: 'delete',
 }
 
-export const Outline = Template.bind({})
-Outline.args = {
+export const Warning = Template.bind({})
+Warning.args = {
+  priority: 'warning',
+}
+
+export const Active = Template.bind({})
+Active.args = {
   priority: 'delete',
-  outlined: true,
+  active: true,
 }
 
 export const NoBorder = Template.bind({})

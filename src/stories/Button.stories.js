@@ -9,12 +9,14 @@ export default {
     label: { control: 'text' },
     priority: {
       control: { type: 'select' },
-      options: ['default', 'primary', 'secondary', 'delete'],
+      options: ['default', 'primary', 'delete', 'warning'],
     },
     noBorder: { control: 'boolean' },
-    outlined: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    active: { control: 'boolean' },
     pill: { control: 'boolean' },
     icon: { control: 'boolean' },
+    iconWithLabel: { control: 'boolean' },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
@@ -47,23 +49,23 @@ Primary.args = {
   priority: 'primary',
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  label: 'Secondary',
-  priority: 'secondary',
-}
-
 export const Delete = Template.bind({})
 Delete.args = {
   label: 'Delete',
   priority: 'delete',
 }
 
-export const Outline = Template.bind({})
-Outline.args = {
-  label: 'Outline',
-  priority: 'delete',
-  outlined: true,
+export const Warning = Template.bind({})
+Warning.args = {
+  label: 'Warning',
+  priority: 'warning',
+}
+
+export const Active = Template.bind({})
+Active.args = {
+  label: 'Active',
+  priority: 'primary',
+  active: true,
 }
 
 export const NoBorder = Template.bind({})
@@ -92,6 +94,13 @@ Icon.args = {
   label: '👍',
   priority: 'primary',
   icon: true,
+}
+
+export const IconWithLabel = Template.bind({})
+IconWithLabel.args = {
+  label: 'Label',
+  priority: 'primary',
+  iconWithLabel: true,
 }
 
 export const Size = Template.bind({})
