@@ -13,12 +13,18 @@
       margin-left: -1px;
     }
 
+    &:hover {
+      z-index: 1;
+    }
+
+    &.btn--active {
+      z-index: 2;
+    }
+
     &:focus,
     &:focus-within,
-    &:focus-visible,
-    &:hover,
-    &.btn--active {
-      z-index: 1;
+    &:focus-visible {
+      z-index: 3;
     }
 
     &:not(:first-child, :last-child) {
@@ -33,15 +39,6 @@
     &:last-child:not(:first-child) {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
-    }
-
-    // Handle the case of all are active and one is focused
-    &.btn--active {
-      &:focus,
-      &:focus-within,
-      &:focus-visible {
-        z-index: 2;
-      }
     }
   }
 }
