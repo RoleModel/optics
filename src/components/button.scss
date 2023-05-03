@@ -129,8 +129,10 @@
   &:focus,
   &:focus-within,
   &:focus-visible {
+    background-color: var(--op-color-neutral-plus-eight);
     box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
       var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+    color: var(--op-color-neutral-on-plus-eight);
   }
 
   // Borderless State
@@ -190,8 +192,10 @@
   &:focus,
   &:focus-within,
   &:focus-visible {
+    background-color: var(--op-color-primary-base);
     box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
       var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+    color: var(--op-color-primary-on-base);
   }
 
   // Borderless State
@@ -251,8 +255,10 @@
   &:focus,
   &:focus-within,
   &:focus-visible {
+    background-color: var(--op-color-alerts-danger-base);
     box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-danger-plus-two),
       var(--__op-btn-outer-focus) var(--op-color-alerts-danger-plus-five);
+    color: var(--op-color-alerts-danger-on-base);
   }
 }
 
@@ -281,8 +287,10 @@
   &:focus,
   &:focus-within,
   &:focus-visible {
+    background-color: var(--op-color-alerts-warning-base);
     box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-warning-plus-two),
       var(--__op-btn-outer-focus) var(--op-color-alerts-warning-plus-five);
+    color: var(--op-color-alerts-warning-on-base);
   }
 
   // Borderless State
