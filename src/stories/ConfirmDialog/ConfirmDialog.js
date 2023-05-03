@@ -1,7 +1,9 @@
 export const createConfirmDialog = ({ title, message, inlineDemo = false }) => {
   const element = document.createElement('div')
 
-  element.classList = `confirm-dialog-wrapper confirm-dialog-wrapper--active ${inlineDemo ? 'confirm-dialog-wrapper--demo' : ''}`
+  element.classList = `confirm-dialog-wrapper confirm-dialog-wrapper--active ${
+    inlineDemo ? 'confirm-dialog-wrapper--demo' : ''
+  }`
 
   element.innerHTML = `
   <div class="confirm-dialog-wrapper__backdrop"></div>
