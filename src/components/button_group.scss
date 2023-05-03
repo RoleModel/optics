@@ -1,4 +1,9 @@
 .btn-group {
+  --op-btn-group-hover-z-index: 1;
+  --op-btn-group-active-z-index: 2;
+  --op-btn-group-focus-z-index: 3;
+
+
   display: inline-flex;
   align-items: center;
 
@@ -14,17 +19,17 @@
     }
 
     &:hover {
-      z-index: 1;
+      z-index: var(--op-btn-group-hover-z-index);
     }
 
     &.btn--active {
-      z-index: 2;
+      z-index: var(--op-btn-group-active-z-index);
     }
 
     &:focus,
     &:focus-within,
     &:focus-visible {
-      z-index: 3;
+      z-index: var(--op-btn-group-focus-z-index);
     }
 
     &:not(:first-child, :last-child) {
