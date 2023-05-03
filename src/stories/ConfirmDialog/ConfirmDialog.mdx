@@ -1,0 +1,82 @@
+import { ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+
+# Confirm Dialog
+
+The Confirm Dialog classes can be used for styling a custom alert or confirm dialog. This can be used alongside [Turbo Confirm](https://github.com/RoleModel/turbo-confirm) to achieve custom Confirm Dialogs using Turbo
+
+## Default
+
+`.confirm-dialog-wrapper` Wraps the entire dialog.
+
+`.confirm-dialog-wrapper--active` Allows the dialog to live on your page always, but only show if the class is present.
+
+`.confirm-dialog-wrapper__backdrop` Provides the dark background to help focus on the dialog.
+
+`.confirm-dialog` Provides the actual Dialog styling which is constructed similar to the card component.
+
+- `.confirm-dialog__header`
+- `.confirm-dialog__body`
+- `.confirm-dialog__footer`
+
+<Canvas withToolbar>
+  <Story id="components-confirm-dialog--inline" />
+</Canvas>
+
+## Overriding Confirm Dialog styles
+
+The classes are built on sass placeholder selectors https://sass-lang.com/documentation/style-rules/placeholder-selectors
+
+This allows classes to share the same behavior. You can modify all dialogs behavior by overriding the `%confirm-dialog-wrapper-global` and `%confirm-dialog-global` placeholder selectors and setting any properties:
+
+```css
+%confirm-dialog-wrapper-global {
+  z-index: 200;
+}
+
+%confirm-dialog-global {
+  background-color: red;
+}
+```
+
+## Custom Confirm Dialog
+
+Your application may need a custom dialog. To add one, just follow this template:
+
+```css
+.confirm-dialog-wrapper {
+  @extend %confirm-dialog-wrapper-global;
+
+  .confirm-dialog-wrapper__backdrop {
+
+  }
+
+  &.confirm-dialog-wrapper--active {
+    .confirm-dialog-wrapper__backdrop {
+    }
+  }
+}
+
+.confirm-dialog-{name} {
+  @extend %confirm-dialog-global;
+
+  .confirm-dialog__header,
+  .confirm-dialog__body,
+  .confirm-dialog__footer {
+    padding:
+  }
+
+  .confirm-dialog__header {
+    font-size:
+    font-weight:
+  }
+
+  .confirm-dialog__body {
+    box-shadow:
+  }
+
+  .confirm-dialog__footer {
+    display:
+    justify-content:
+  }
+}
+```
