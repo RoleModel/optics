@@ -29,6 +29,14 @@
   .alert__description {
     font-size: var(--op-font-small);
   }
+
+  &.alert--flash {
+    position: fixed;
+    z-index: var(--op-z-index-alert-group);
+    top: var(--op-space-large);
+    right: var(--op-space-large);
+    animation: var(--op-animation-flash);
+  }
 }
 
 .alert-warning {

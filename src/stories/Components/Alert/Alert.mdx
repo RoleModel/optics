@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as AlertStories from './Alert.stories'
+import imageFile from './flash.gif'
 
 <Meta of={AlertStories} />
 
@@ -67,11 +68,17 @@ If your application needs to allow dismissing these alerts, you can add a second
 
 <Canvas of={AlertStories.Dismissible} />
 
+## As a Flash or Toast Message
+
+The alert component can also be used as an animated notification message by adding `.alert--flash` to the top level. This supports all the alert variations and styles.
+
+<img src={imageFile} alt="Flash" />
+
 ## Alert Structure
 
 All alerts use the following structure to construct the component.
 
-The muted or outlined classes would be added at the top level.
+The muted or filled classes would be added at the top level.
 icon, title, and the final (dismissible close) icon are all optional.
 
 ```html
