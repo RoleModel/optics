@@ -16,6 +16,8 @@ export const createAlert = ({
   if (icon) {
     const iconElement = createIcon({ name: icon })
     iconElement.classList.add('alert__icon')
+
+    element.innerHTML += "\n  " // Formatting Hack
     element.appendChild(iconElement)
   }
 
@@ -26,7 +28,9 @@ export const createAlert = ({
     <div class='alert__description'>${description}</div>
   `
 
+  element.innerHTML += "\n  " // Formatting Hack
   element.appendChild(messagesElement)
+  element.innerHTML += "    \n" // Formatting Hack
 
   if (dismissible) {
     const iconButton = createButton({ priority: 'default', icon: 'close', pill: true, noBorder: true })
