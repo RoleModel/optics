@@ -1,8 +1,9 @@
+import { createButton } from '../Button/Button.js'
 import { createIcon } from '../Icon/Icon.js'
 
 export const createAlert = ({
   warningLevel = 'warning',
-  style = 'filled',
+  style = 'outlined',
   title = '',
   description = 'This is a warning alert',
   icon = '',
@@ -28,9 +29,9 @@ export const createAlert = ({
   element.appendChild(messagesElement)
 
   if (dismissible) {
-    const iconElement = createIcon({ name: 'close' })
-    iconElement.classList.add('alert__icon')
-    element.appendChild(iconElement)
+    const iconButton = createButton({ priority: 'default', icon: 'close', pill: true, noBorder: true })
+    iconButton.classList.add('alert__icon')
+    element.appendChild(iconButton)
   }
 
   return element

@@ -12,7 +12,7 @@ export default {
     },
     style: {
       control: { type: 'select' },
-      options: ['filled', 'muted', 'outlined'],
+      options: ['outlined', 'muted', 'filled'],
     },
     title: { control: 'text' },
     description: { control: 'text' },
@@ -26,7 +26,6 @@ export const Warning = {
     title: 'Warning',
     description: 'This is a warning alert',
     warningLevel: 'warning',
-    style: 'filled',
     icon: 'warning',
   },
 }
@@ -36,7 +35,6 @@ export const Danger = {
     title: 'Danger',
     description: 'This is a danger alert',
     warningLevel: 'danger',
-    style: 'filled',
     icon: 'error',
   },
 }
@@ -45,7 +43,6 @@ export const Info = {
     title: 'Info',
     description: 'This is an info alert',
     warningLevel: 'info',
-    style: 'filled',
     icon: 'error',
   },
 }
@@ -55,7 +52,6 @@ export const Notice = {
     title: 'Notice',
     description: 'This is a notice alert',
     warningLevel: 'notice',
-    style: 'filled',
     icon: 'task_alt',
   },
 }
@@ -70,12 +66,12 @@ export const Muted = {
   },
 }
 
-export const Outlined = {
+export const Filled = {
   args: {
     title: 'Warning',
-    description: 'This is an outlined warning alert',
+    description: 'This is a filled warning alert',
     warningLevel: 'warning',
-    style: 'outlined',
+    style: 'filled',
     icon: 'check_box_outline_blank',
   },
 }
@@ -85,7 +81,6 @@ export const NoIcon = {
     title: 'Warning',
     description: 'This is a warning alert with no icon',
     warningLevel: 'warning',
-    style: 'outlined',
   },
 }
 
@@ -93,7 +88,6 @@ export const NoTitle = {
   args: {
     description: 'This is a warning alert with no title',
     warningLevel: 'warning',
-    style: 'outlined',
     icon: 'check_box_outline_blank',
   },
 }
@@ -102,7 +96,6 @@ export const Dismissible = {
   args: {
     description: 'This is a warning alert with a close icon',
     warningLevel: 'warning',
-    style: 'outlined',
     icon: 'check_box_outline_blank',
     dismissible: true,
   },

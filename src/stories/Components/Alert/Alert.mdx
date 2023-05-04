@@ -43,11 +43,11 @@ These could be as banners for global application messages, or an error message w
 
 <Canvas of={AlertStories.Muted} />
 
-## Outlined
+## Filled
 
-`.alert--outlined` can be applied to any of the above alerts to change the coloring to an outlined version of that color.
+`.alert--filled` can be applied to any of the above alerts to change the coloring to a filled version of that color.
 
-<Canvas of={AlertStories.Outlined} />
+<Canvas of={AlertStories.Filled} />
 
 ## No Icon
 
@@ -117,6 +117,7 @@ Your application may need a custom alert. To add one, just follow this template:
   @extend %alert-global;
 
   background-color:
+  box-shadow:
   color:
 
   .alert__title {
@@ -125,6 +126,7 @@ Your application may need a custom alert. To add one, just follow this template:
 
   &.alert--muted {
     background-color:
+    box-shadow:
     color:
 
     .alert__title {
@@ -132,7 +134,7 @@ Your application may need a custom alert. To add one, just follow this template:
     }
   }
 
-  &.alert--outlined {
+  &.alert--filled {
     background-color:
     box-shadow:
     color:
@@ -148,8 +150,9 @@ Your application may need a custom alert. To add one, just follow this template:
 .alert-purple {
   @extend %alert-global;
 
-  background-color: purple;
-  color: white;
+  background-color: verylightpurple;
+  box-shadow: var(--op-border-all) purple;
+  color: purple;
 
   .alert__title {
     color: darkpurple;
@@ -157,6 +160,7 @@ Your application may need a custom alert. To add one, just follow this template:
 
   &.alert--muted {
     background-color: lightpurple;
+    box-shadow: none;
     color: white;
 
     .alert__title {
@@ -164,10 +168,10 @@ Your application may need a custom alert. To add one, just follow this template:
     }
   }
 
-  &.alert--outlined {
-    background-color: verylightpurple;
-    box-shadow: var(--op-border-all) purple;
-    color: purple;
+  &.alert--filled {
+    background-color: purple;
+    box-shadow: none;
+    color: white;
 
     .alert__title {
       color: darkpurple;
