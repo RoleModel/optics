@@ -1,11 +1,12 @@
 export const createModal = ({ header, body, footer = '', inlineDemo = false }) => {
   const element = document.createElement('div')
 
-  element.classList = `modal-wrapper modal-wrapper--active ${
-    inlineDemo ? 'modal-wrapper--demo' : ''
-  }`
+  element.classList = `modal-wrapper modal-wrapper--active ${inlineDemo ? 'modal-wrapper--demo' : ''}`
 
-  const footerContents = footer !== '' ? footer : `
+  const footerContents =
+    footer !== ''
+      ? footer
+      : `
       <button class="btn">Cancel</button>
       <button class='btn-primary'>Save</button>
   `

@@ -28,7 +28,7 @@ Default.args = {
 export const LotsOfContent = Template.bind({})
 LotsOfContent.args = {
   header: 'Modal Title',
-  body: "This a lot of content in the modal!".repeat(50),
+  body: 'This a lot of content in the modal!'.repeat(50),
   footer: 'This a different footer',
 }
 
