@@ -1,0 +1,82 @@
+import { ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+
+# Modal
+
+The Modal classes can be used for styling a custom modal. This can be used alongside the rails configuration and javascript implemented by [RoleModel Rails Modal](https://github.com/RoleModel/rolemodel_rails/tree/master/lib/generators/rolemodel/modals)
+
+## Default
+
+`.modal-wrapper` Wraps the entire dialog.
+
+`.modal-wrapper--active` Allows the dialog to live on your page always, but only show if the class is present.
+
+`.modal-wrapper__backdrop` Provides the dark background to help focus on the dialog.
+
+`.modal` Provides the actual Dialog styling which is constructed similar to the card component.
+
+- `.modal__header`
+- `.modal__body`
+- `.modal__footer`
+
+<Canvas withToolbar>
+  <Story id="components-modal--inline" />
+</Canvas>
+
+## Overriding Modal styles
+
+The classes are built on sass placeholder selectors https://sass-lang.com/documentation/style-rules/placeholder-selectors
+
+This allows classes to share the same behavior. You can modify all dialogs behavior by overriding the `%modal-wrapper-global` and `%confirm-dialog-global` placeholder selectors and setting any properties:
+
+```css
+%modal-wrapper-global {
+  z-index: 200;
+}
+
+%modal-global {
+  background-color: red;
+}
+```
+
+## Custom Modal
+
+Your application may need a modal. To add one, just follow this template:
+
+```css
+.modal-wrapper {
+  @extend %modal-wrapper-global;
+
+  .modal-wrapper__backdrop {
+
+  }
+
+  &.modal-wrapper--active {
+    .modal-wrapper__backdrop {
+    }
+  }
+}
+
+.modal-{name} {
+  @extend %modal-global;
+
+  .modal__header,
+  .modal__body,
+  .modal__footer {
+    padding:
+  }
+
+  .modal__header {
+    font-size:
+    font-weight:
+  }
+
+  .modal__body {
+    box-shadow:
+  }
+
+  .modal__footer {
+    display:
+    justify-content:
+  }
+}
+```

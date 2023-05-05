@@ -87,3 +87,11 @@
     position: unset;
   }
 }
+
+.modal-wrapper--demo {
+  position: unset;
+
+  .modal-wrapper__backdrop {
+    position: unset;
+  }
+}
