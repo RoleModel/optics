@@ -1,81 +1,71 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as AlertStories from './Alert.stories'
+
+<Meta of={AlertStories} />
 
 # Alert
 
 Alert classes can be used to create a highlighted message or callout in your application.
 These could be as banners for global application messages, or an error message within a section of your app.
 
+## Playground
+
+<Canvas of={AlertStories.Warning} />
+<Controls of={AlertStories.Warning} />
+
 ## Warning
 
 `.alert-warning` Provides a warning styled message
 
-<Canvas withToolbar>
-  <Story id="components-alert--warning" />
-</Canvas>
+<Canvas of={AlertStories.Warning} />
 
 ## Danger
 
 `.alert-danger` Provides a danger styled message
 
-<Canvas withToolbar>
-  <Story id="components-alert--danger" />
-</Canvas>
+<Canvas of={AlertStories.Danger} />
 
 ## Info
 
 `.alert-info` Provides an info styled message
 
-<Canvas withToolbar>
-  <Story id="components-alert--info" />
-</Canvas>
+<Canvas of={AlertStories.Info} />
 
 ## Notice
 
 `.alert-notice` Provides a notice styled message
 
-<Canvas withToolbar>
-  <Story id="components-alert--notice" />
-</Canvas>
+<Canvas of={AlertStories.Notice} />
 
 ## Muted
 
 `.alert--muted` can be applied to any of the above alerts to change the coloring to a muted version of that color.
 
-<Canvas withToolbar>
-  <Story id="components-alert--muted" />
-</Canvas>
+<Canvas of={AlertStories.Muted} />
 
 ## Outlined
 
 `.alert--outlined` can be applied to any of the above alerts to change the coloring to an outlined version of that color.
 
-<Canvas withToolbar>
-  <Story id="components-alert--outlined" />
-</Canvas>
+<Canvas of={AlertStories.Outlined} />
 
 ## No Icon
 
 The icon is optional
 
-<Canvas withToolbar>
-  <Story id="components-alert--no-icon" />
-</Canvas>
+<Canvas of={AlertStories.NoIcon} />
 
 ## No Title
 
 The title is optional
 
-<Canvas withToolbar>
-  <Story id="components-alert--no-title" />
-</Canvas>
+<Canvas of={AlertStories.NoTitle} />
 
 ## Dismissible
 
 If your application needs to allow dismissing these alerts, you can add a second icon/button after the messages section and add functionality via JS
 
-<Canvas withToolbar>
-  <Story id="components-alert--dismissible" />
-</Canvas>
+<Canvas of={AlertStories.Dismissible} />
 
 ## Alert Structure
 
@@ -98,7 +88,7 @@ icon, title, and the final (dismissible close) icon are all optional.
 
 ## Overriding alert styles
 
-The alert classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
+The alert classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple alert classes to share the same behavior. You can modify all alerts behavior by overriding the `%alert-global` placeholder selector and setting any properties:
 
@@ -185,8 +175,3 @@ Your application may need a custom alert. To add one, just follow this template:
   }
 }
 ```
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
