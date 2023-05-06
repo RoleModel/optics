@@ -1,5 +1,5 @@
 import { createIcon } from '../Icon/Icon.js'
-import { capitalize } from '../helpers/utils.js'
+import { capitalize } from '../../helpers/utils.js'
 
 export const createFlash = ({ label, style = 'notice' }) => {
   const flash = document.createElement('div')

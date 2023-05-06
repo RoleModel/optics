@@ -1,6 +1,8 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
-
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import imageFile from './flash.gif'
+import * as FlashStories from './Flash.stories'
+
+<Meta of={FlashStories} />
 
 # Flash
 
@@ -10,41 +12,38 @@ Flash classes provide notification style alert messages that "Flash" onto the sc
 
 **Note:** The `flash--demo` class that each example here uses is documentation only and not available in a real application. It is only used here to allow for showing the flash messages in a static way.
 
+## Playground
+
+<Canvas of={FlashStories.Notice} />
+<Controls of={FlashStories.Notice} />
+
 ## Notice
 
 `.flash--notice` Provides a success styled message using the alert green color with a circle checkmark icon.
 
-<Canvas withToolbar>
-  <Story id="components-flash--notice" />
-</Canvas>
+<Canvas of={FlashStories.Notice} />
 
 ## Info
 
 `.flash--info` Provides an info styled message using the alert blue color with a circle info icon.
 
-<Canvas withToolbar>
-  <Story id="components-flash--info" />
-</Canvas>
+<Canvas of={FlashStories.Info} />
 
 ## Alert
 
 `.flash--alert` Provides an alert styled message using the alert danger color with a circle cross icon.
 
-<Canvas withToolbar>
-  <Story id="components-flash--alert" />
-</Canvas>
+<Canvas of={FlashStories.Alert} />
 
 ## Warning
 
 `.flash--warning` Provides an warning styled message using the alert warning color with a triangle exclamation icon.
 
-<Canvas withToolbar>
-  <Story id="components-flash--warning" />
-</Canvas>
+<Canvas of={FlashStories.Warning} />
 
 ## Overriding flash styles
 
-The flash classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
+The flash classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple flash classes to share the same behavior. You can modify all flash behavior by overriding the `%flash-global` placeholder selector and setting any properties:
 
@@ -86,8 +85,3 @@ You may need a new modifier of flash or other types of notifications. You can ad
   }
 }
 ```
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
