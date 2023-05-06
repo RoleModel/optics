@@ -1,4 +1,7 @@
-import { ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as ConfirmDialogStories from './ConfirmDialog.stories'
+
+<Meta of={ConfirmDialogStories} />
 
 # Confirm Dialog
 
@@ -18,13 +21,11 @@ The Confirm Dialog classes can be used for styling a custom alert or confirm dia
 - `.confirm-dialog__body`
 - `.confirm-dialog__footer`
 
-<Canvas withToolbar>
-  <Story id="components-confirm-dialog--inline" />
-</Canvas>
+<Canvas of={ConfirmDialogStories.Inline} />
 
 ## Overriding Confirm Dialog styles
 
-The classes are built on sass placeholder selectors https://sass-lang.com/documentation/style-rules/placeholder-selectors
+The classes are built on [sass placeholder selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows classes to share the same behavior. You can modify all dialogs behavior by overriding the `%confirm-dialog-wrapper-global` and `%confirm-dialog-global` placeholder selectors and setting any properties:
 
