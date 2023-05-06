@@ -1,55 +1,50 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as CardStories from './Card.stories'
+
+<Meta of={CardStories} />
 
 # Card
 
 Card classes can be used to denote bordered sections of an application. They provide simple styles to create sections or "cards" for your interface. They can also be used as a starting point for "row" or list styles.
 
-<!-- Either use <Stories /> to automatically render each story -->
-<!-- Or manually render them with custom descriptions -->
+## Playground
+
+<Canvas of={CardStories.Plain} />
+<Controls of={CardStories.Plain} />
 
 ## Plain
 
 `.card` Provides basic card styles.
 
-<Canvas withToolbar>
-  <Story id="components-card--plain" />
-</Canvas>
+<Canvas of={CardStories.Plain} />
 
 ## Padded
 
 `.card-padded` Provides a padded card.
 
-<Canvas withToolbar>
-  <Story id="components-card--padded" />
-</Canvas>
+<Canvas of={CardStories.Padded} />
 
 ## Full
 
 `.card__header`, `.card__body`, and `.card__footer` Provide padded sections of a card.
 
-<Canvas withToolbar>
-  <Story id="components-card--full" />
-</Canvas>
+<Canvas of={CardStories.Full} />
 
 ## Condensed
 
 `.card--condensed` Changes the padding scale for everything below it.
 
-<Canvas withToolbar>
-  <Story id="components-card--condensed" />
-</Canvas>
+<Canvas of={CardStories.Condensed} />
 
 ## Shadow
 
 `.card--shadow-x-small`, `.card--shadow-small`, `.card--shadow-medium`, `.card--shadow-large`, `.card--shadow-x-large` Add a shadow elevation effect to the card.
 
-<Canvas withToolbar>
-  <Story id="components-card--shadow" />
-</Canvas>
+<Canvas of={CardStories.Shadow} />
 
 ## Overriding card styles
 
-The card classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
+The card classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple card classes to share the same behavior. You can modify all cards behavior by overriding the `%card-global` placeholder selector and setting any properties:
 
@@ -95,8 +90,3 @@ Your application may need a custom card. To add one, just follow this template:
   }
 }
 ```
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
