@@ -1,76 +1,68 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as BadgeStories from './Badge.stories'
+
+<Meta of={BadgeStories} />
 
 # Badge
 
 Badge classes provide simple styling for "badge/chip/notification/label" content.
 
+## Playground
+
+<Canvas of={BadgeStories.Default} />
+<Controls of={BadgeStories.Default} />
+
 ## Default
 
 `.badge` Provides a default neutral colored badge.
 
-<Canvas withToolbar>
-  <Story id="components-badge--default" />
-</Canvas>
+<Canvas of={BadgeStories.Default} />
 
 ## Primary
 
 `.badge-primary` Provides a primary badge. This uses the primary color defined in your theme.
 
-<Canvas withToolbar>
-  <Story id="components-badge--primary" />
-</Canvas>
+<Canvas of={BadgeStories.Primary} />
 
 ## Warning
 
 `.badge-warning` Provides a Warning badge. This uses the warning alert color.
 
-<Canvas withToolbar>
-  <Story id="components-badge--warning" />
-</Canvas>
+<Canvas of={BadgeStories.Warning} />
 
 ## Danger
 
 `.badge-danger` Provides a Danger badge. This uses the danger alert color.
 
-<Canvas withToolbar>
-  <Story id="components-badge--danger" />
-</Canvas>
+<Canvas of={BadgeStories.Danger} />
 
 ## Info
 
 `.badge-info` Provides a Info badge. This uses the Info alert color.
 
-<Canvas withToolbar>
-  <Story id="components-badge--info" />
-</Canvas>
+<Canvas of={BadgeStories.Info} />
 
 ## Notice
 
 `.badge-notice` Provides a Notice badge. This uses the Notice alert color.
 
-<Canvas withToolbar>
-  <Story id="components-badge--notice" />
-</Canvas>
+<Canvas of={BadgeStories.Notice} />
 
 ## Pill
 
 `.badge--pill` Modifies the shape of any other badge by adding a radius to the left and right.
 
-<Canvas withToolbar>
-  <Story id="components-badge--pill" />
-</Canvas>
+<Canvas of={BadgeStories.Pill} />
 
 ## Notification Button
 
 `.badge--notification-right` and `.badge--notification-left` can be used inside of a button with the `.btn--with-badge` class to achieve a button notification style.
 
-<Canvas withToolbar>
-  <Story id="components-badge--notification-button" />
-</Canvas>
+<Canvas of={BadgeStories.NotificationButton} />
 
 ## Overriding badge styles
 
-The badge classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
+The badge classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple badge classes to share the same behavior. You can modify all badges behavior by overriding the `%badge-global` placeholder selector and setting any properties:
 
@@ -111,8 +103,3 @@ Your application may need a custom badge. To add one, just follow this template:
   color: white;
 }
 ```
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
