@@ -10,13 +10,16 @@ export const createButton = ({
   iconWithLabel = false,
   size = 'large',
   disabled = false,
+  inlineIconWithLabel = false,
 }) => {
   const element = disabled ? 'a' : 'button'
   const btn = document.createElement(element)
   btn.innerText = label
 
   if (icon) {
-    btn.innerText = ''
+    if (!inlineIconWithLabel) {
+      btn.innerText = ''
+    }
     const name = icon === true ? 'add' : icon
     btn.prepend(createIcon({ name }))
   }
@@ -30,7 +33,7 @@ export const createButton = ({
     noBorder ? 'btn--no-border' : '',
     active ? 'btn--active' : '',
     pill ? 'btn--pill' : '',
-    icon ? 'btn--icon' : '',
+    icon && !inlineIconWithLabel ? 'btn--icon' : '',
     iconWithLabel ? 'btn--icon-with-label' : '',
     size === 'large' ? '' : `btn--${size}`,
     disabled ? 'btn--disabled' : '',

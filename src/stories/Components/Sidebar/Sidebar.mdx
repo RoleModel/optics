@@ -5,19 +5,25 @@ import * as SidebarStories from './Sidebar.stories'
 
 # Sidebar
 
-Sidebar classes provide simple styling for a navigation sidebar drawer or rail.
+Sidebar classes provide simple styling for a navigation sidebar drawer, compact, or rail.
 
 For instructions on how to integrate a sidebar into your applications layout, see [Layout With Sidebar](?path=/docs/recipes-layout--sidebar)
 
 `.sidebar` is the main component that everything is contained within.
 
-`.sidebar--drawer` and `.sidebar--rail` are used to denote which style of sidebar you would like to use.
+`.sidebar--drawer`, `.sidebar--compact`, and `.sidebar--rail` are used to denote which style of sidebar you would like to use.
 
-`.sidebar--responsive` can be added to a drawer to allow for a responsive sidebar. e.g.
+`.sidebar--responsive` can be added to a drawer to allow for a sidebar that responsively changes from the larger state (compact or drawer) to the rail when the screen is smaller. e.g.
 
 ```html
 <div class="sidebar sidebar--drawer sidebar--responsive">...</div>
 ```
+
+Any [Button](?path=/docs/components-button--docs#default) style can be used for the links.
+
+- Drawer will use the normal button style, but left aligned
+- Compact will use the `.icon-with-label` style
+- Rail will use the `.btn--icon` style and hide the label
 
 ## Playground
 
@@ -30,6 +36,7 @@ For instructions on how to integrate a sidebar into your applications layout, se
 
 <div class="flex layout-row gap-sm">
   <Canvas of={SidebarStories.DefaultDrawer} />
+  <Canvas of={SidebarStories.DefaultCompact} />
   <Canvas of={SidebarStories.DefaultRail} />
 </div>
 
@@ -39,46 +46,53 @@ For instructions on how to integrate a sidebar into your applications layout, se
 
 <div class="flex layout-row gap-sm">
   <Canvas of={SidebarStories.PrimaryDrawer} />
+  <Canvas of={SidebarStories.PrimaryCompact} />
   <Canvas of={SidebarStories.PrimaryRail} />
 </div>
 
-## Subtle Primary
+## Padded
 
-`.sidebar-subtle-primary` Provides a more subtle version of the primary colored sidebar
+`.sidebar--padded` Adds a top and bottom padding to the sidebar.
 
 <div class="flex layout-row gap-sm">
-  <Canvas of={SidebarStories.SubtlePrimaryDrawer} />
-  <Canvas of={SidebarStories.SubtlePrimaryRail} />
+  <Canvas of={SidebarStories.PaddedDrawer} />
+  <Canvas of={SidebarStories.PaddedCompact} />
+  <Canvas of={SidebarStories.PaddedRail} />
 </div>
 
 ## Brand
 
 `.sidebar__brand` can be used with an image tag inside. This can be used to display your applications branding or logo.
 
-The brand is not required and the rail will adjust itself accordingly.
+The brand is not required and the sidebar content will adjust itself accordingly.
 
 <div class="flex layout-row gap-sm">
   <Canvas of={SidebarStories.NoBrandDrawer} />
+  <Canvas of={SidebarStories.NoBrandCompact} />
   <Canvas of={SidebarStories.NoBrandRail} />
 </div>
 
 ## Content
 
-`.sidebar__content` defines the container that `.sidebar__item` should be placed in. It can be positioned by using modifier classes.
+`.sidebar__content` defines the container that the buttons should be placed in. It can be positioned by using modifier classes.
+
 `.sidebar__content--start`, `.sidebar__content--center`, `.sidebar__content--end` with start being the default.
 
 <div class="flex layout-row gap-sm">
   <Canvas of={SidebarStories.CenteredDrawer} />
+  <Canvas of={SidebarStories.CenteredCompact} />
   <Canvas of={SidebarStories.CenteredRail} />
 </div>
 
 <div class="flex layout-row gap-sm">
   <Canvas of={SidebarStories.EndDrawer} />
+  <Canvas of={SidebarStories.EndCompact} />
   <Canvas of={SidebarStories.EndRail} />
 </div>
 
 <div class="flex layout-row gap-sm">
   <Canvas of={SidebarStories.LogoutDrawer} />
+  <Canvas of={SidebarStories.LogoutCompact} />
   <Canvas of={SidebarStories.LogoutRail} />
 </div>
 
@@ -89,24 +103,27 @@ Color and hover styles are built on css variables scoped to the sidebar.
 Here are the variables used
 
 ```css
+// Public API
 // Normal
 --_op-sidebar-background-color:
 --_op-sidebar-text-color:
+--_op-sidebar-border-color:
 
-// Active
---_op-sidebar-icon-background-active-color:
---_op-sidebar-icon-text-active-color:
-
-// Hover
---_op-sidebar-icon-background-hover-color:
---_op-sidebar-icon-text-hover-color:
-
+// Width
 --_op-sidebar-rail-width:
+--_op-sidebar-compact-width:
 --_op-sidebar-drawer-width:
+--_op-sidebar-rail-brand-width:
+--_op-sidebar-compact-brand-width:
+--_op-sidebar-drawer-brand-width:
 
+// Spacing
 --_op-sidebar-spacing:
---_op-sidebar-link-spacing:
+--_op-sidebar-brand-spacing:
+--_op-sidebar-content-spacing:
+--_op-sidebar-content-item-spacing:
 
+// Animation
 --_op-sidebar-transition:
 ```
 
@@ -119,6 +136,7 @@ This allows multiple sidebar classes to share the same behavior. You can modify 
 ```css
 %sidebar-global {
   --_op-sidebar-rail-width: 10rem;
+  --_op-sidebar-compact-width: 20rem;
   --_op-sidebar-drawer-width: 30rem;
 }
 ```
@@ -127,15 +145,16 @@ There are also mixins for the rail and drawer specific styles. They can be overr
 
 ```css
 @mixin sidebar-rail-global {
-  .sidebar__section-title,
-  .sidebar__section-divider {
-    display: block;
+  .sidebar__content {
+    align-items: flex-end;
   }
 }
 
 @mixin sidebar-drawer-global {
-  .sidebar__section-title {
-    font-weight: var(--op-font-weight-black);
+  .sidebar__content {
+    > * {
+      font-weight: var(--op-font-weight-black);
+    }
   }
 }
 ```
@@ -143,10 +162,10 @@ There are also mixins for the rail and drawer specific styles. They can be overr
 If you need to override the color of a particular sidebar style, you can open the respective class and change the variables documented above
 
 ```css
-// This will only affect the primary sidebar, but not default or subtle primary
+// This will only affect the primary sidebar, but not default
 .sidebar-primary {
-  --_op-sidebar-background-color: pruple;
-  --_op-sidebar-text-color: pruple;
+  --_op-sidebar-background-color: purple;
+  --_op-sidebar-text-color: purple;
 }
 ```
 
@@ -157,17 +176,5 @@ Your application may need a custom Sidebar. To add one, just follow this templat
 ```css
 .sidebar-{name} {
   @extend %sidebar-global;
-
-  // Normal
-  --_op-sidebar-background-color:
-  --_op-sidebar-text-color:
-
-  // Active
-  --_op-sidebar-icon-background-active-color:
-  --_op-sidebar-icon-text-active-color:
-
-  // Hover
-  --_op-sidebar-icon-background-hover-color:
-  --_op-sidebar-icon-text-hover-color:
 }
 ```

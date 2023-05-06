@@ -1,3 +1,5 @@
+import { createButton } from '../Button/Button.js'
+
 const createSidebarItem = ({ type, icon, label }, activeLink) => {
   if (type === 'title') {
     return `<div class='sidebar__section-title'>${label}</div>`
@@ -7,12 +9,14 @@ const createSidebarItem = ({ type, icon, label }, activeLink) => {
     return "<div class='sidebar__section-divider'></div>"
   }
 
-  return `
-<a class="sidebar__item ${activeLink === label ? 'active' : ''}" href="/">
-  <span class="material-symbols-outlined sidebar__item-icon" title="${icon}">${icon}</span>
-  ${label ? `<div class='sidebar__item-label'>${label}</div>` : ''}
-</a>
-`
+  return createButton({
+    label,
+    priority: 'default',
+    noBorder: true,
+    active: activeLink === label,
+    icon,
+    inlineIconWithLabel: true,
+  }).outerHTML
 }
 
 export const createSidebar = ({
@@ -20,6 +24,7 @@ export const createSidebar = ({
   responsive = false,
   style = 'default',
   brand = true,
+  padded = false,
   position = 'start',
   activeLink = 'Inbox',
   logout = false,
@@ -41,38 +46,45 @@ export const createSidebar = ({
     : ''
 
   const links = [
-    { type: 'title', label: 'Mail' },
     { type: 'link', icon: 'inbox', label: 'Inbox' },
     { type: 'link', icon: 'send', label: 'Outbox' },
     { type: 'link', icon: 'favorite', label: 'Favorite' },
     { type: 'link', icon: 'delete', label: 'Trash' },
-    { type: 'divider' },
-    { type: 'title', label: 'Labels' },
     { type: 'link', icon: 'circle', label: 'Circle' },
     { type: 'link', icon: 'change_history', label: 'Triangle' },
     { type: 'link', icon: 'square', label: 'Square' },
-    { type: 'divider' },
-    { type: 'title', label: 'A really long section title that will overlap' },
-    { type: 'link', icon: 'blur_on', label: 'A really long label that will overlap' },
+    { type: 'link', icon: 'blur_on', label: 'Something' },
   ]
 
+  const sidebarClasses = [
+    style === 'default' ? 'sidebar' : `sidebar-${style}`,
+    `sidebar--${size}`,
+    responsive ? 'sidebar--responsive' : '',
+    padded ? 'sidebar--padded' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
   body.innerHTML += `
-  <div class="${style === 'default' ? 'sidebar' : `sidebar-${style}`} sidebar--${size} ${
-    responsive ? 'sidebar--responsive' : ''
-  }">
+  <div class="${sidebarClasses}">
     ${brandSection}
     <div class="sidebar__content sidebar__content--${position}">
-      ${links.map((item) => createSidebarItem(item, activeLink)).join('')}
+      ${links.map((item) => createSidebarItem(item, activeLink)).join('\n      ')}
     </div>
 
     ${
       logout
         ? `
       <div class="sidebar__content sidebar__content--end">
-        <a class="sidebar__item" href="/">
-          <span class="material-symbols-outlined sidebar__item-icon" title="logout">logout</span>
-          <div class='sidebar__item-label'>Logout</div>
-        </a>
+        ${
+          createButton({
+            label: 'Logout',
+            priority: 'default',
+            noBorder: true,
+            icon: 'logout',
+            inlineIconWithLabel: true,
+          }).outerHTML
+        }
       </div>
     `
         : ''
