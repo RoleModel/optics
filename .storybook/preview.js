@@ -8,6 +8,18 @@ const preview = {
         date: /Date$/,
       },
     },
+    options: {
+      storySort: {
+        order: [
+          'Overview',
+          ['Introduction', 'Selective Imports', 'Tokens', 'Themes', 'Scale Overriding', 'Addons'],
+          'Tokens',
+          'Utilities',
+          'Components',
+          'Recipes',
+        ],
+      },
+    },
   },
 }
 
