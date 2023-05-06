@@ -12,3 +12,6 @@ const preview = {
 }
 
 export default preview
+
+import '!style-loader!css-loader!sass-loader!../src/optics.scss'
+import '!style-loader!css-loader!sass-loader!./documentation.scss'
