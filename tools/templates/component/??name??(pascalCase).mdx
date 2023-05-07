@@ -1,0 +1,53 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as ??name??(pascalCase)Stories from './??name??(pascalCase).stories'
+
+<Meta of={??name??(pascalCase)Stories} />
+
+# ??name??(pascalCase)
+
+Brief overview description of how to use ??name??(pascalCase) classes
+
+## Playground
+
+<Canvas of={??name??(pascalCase)Stories.Default} />
+<Controls of={??name??(pascalCase)Stories.Default} />
+
+## Default
+
+Description of the default example
+
+<Canvas of={??name??(pascalCase)Stories.Default} />
+
+## Alternate
+
+Description of alternate example
+
+<Canvas of={??name??(pascalCase)Stories.Alternate} />
+
+## Overriding styles
+
+The ??name??(lowerCase) classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior. You can modify all ??name??(lowerCase) behavior by overriding the `%??name??(lowerCase)-global` placeholder selector and setting any properties:
+
+```css
+%??name??(lowerCase)-global {
+}
+```
+
+If you need to override the behavior of a particular ??name??(lowerCase) style, you can open the respective class and set or change properties
+
+```css
+.??name??(lowerCase)-alternate {
+}
+```
+
+## Custom ??name??(pascalCase)
+
+Your application may need a custom ??name??(lowerCase). To add one, just follow this template:
+
+```css
+.??name??(lowerCase)-{name} {
+  @extend %??name??(lowerCase)-global;
+}
+```

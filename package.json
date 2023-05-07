@@ -17,7 +17,8 @@
     "lint:css": "stylelint 'src/**/*.(scss|css)'",
     "prettier": "prettier -w .",
     "prettier-check": "prettier -c .",
-    "sanity-check": "npm run lint && npm run prettier && npm run build && npm run build-storybook && rm -rf ./dist && rm -rf ./docs-build"
+    "sanity-check": "npm run lint && npm run prettier && npm run build && npm run build-storybook && rm -rf ./dist && rm -rf ./docs-build",
+    "generate": "node ./tools/generate.js"
   },
   "repository": {
     "type": "git",
@@ -59,6 +60,7 @@
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-storybook": "^0.6.12",
+    "generate-template-files": "^3.2.1",
     "postcss-scss": "^4.0.6",
     "prettier": "^2.8.1",
     "react": "^18.2.0",

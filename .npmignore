@@ -21,3 +21,9 @@ node_modules/
 !dist
 src/
 docs/
+
+# Documentation
+.storybook
+
+# Tools
+tools/
