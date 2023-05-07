@@ -1,4 +1,4 @@
-import { createChildren } from '../helpers/utils'
+import { createChildren } from '../../helpers/utils'
 
 export const createFlex = ({
   flex = true,
