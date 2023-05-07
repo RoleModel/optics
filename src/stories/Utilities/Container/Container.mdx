@@ -1,4 +1,7 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as ContainerStories from './Container.stories'
+
+<Meta of={ContainerStories} />
 
 # Container
 
@@ -6,47 +9,37 @@ Container utility classes are used to create a centered content area for your ap
 
 You may need to zoom the demos out depending on your screen size to see the full effect.
 
+## Playground
+
+<Canvas of={ContainerStories.Default} />
+<Controls of={ContainerStories.Default} />
+
 ## Default
 
 `.container` Create a container area set to be the size of `$breakpoint-medium` with a padding of `--op-space-large`
 
-<Canvas withToolbar>
-  <Story id="utilities-container--default" />
-</Canvas>
+<Canvas of={ContainerStories.Default} />
 
 ## Small Size
 
 `.container--sm` Change the container size to `$breakpoint-small`
 
-<Canvas withToolbar>
-  <Story id="utilities-container--size-small" />
-</Canvas>
+<Canvas of={ContainerStories.SizeSmall} />
 
 ## Extra Small Size
 
 `.container--xs` Change the container size to `$breakpoint-x-small`
 
-<Canvas withToolbar>
-  <Story id="utilities-container--size-extra-small" />
-</Canvas>
+<Canvas of={ContainerStories.SizeExtraSmall} />
 
 ## Small Padding
 
 `.container--sm-padding` Change the padding of the container to use the `--op-space-small` token
 
-<Canvas withToolbar>
-  <Story id="utilities-container--padding-small" />
-</Canvas>
+<Canvas of={ContainerStories.PaddingSmall} />
 
 ## Medium Padding
 
 `.container--md-padding` Change the padding of the container to use the `--op-space-medium` token
 
-<Canvas withToolbar>
-  <Story id="utilities-container--padding-medium" />
-</Canvas>
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
+<Canvas of={ContainerStories.PaddingMedium} />
