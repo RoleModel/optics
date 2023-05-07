@@ -1,8 +1,10 @@
-import { createInput } from './Form/Form.js'
-import FormDocs from './Form/Form.mdx'
+import { createInput } from './Form.js'
 
 export default {
   title: 'Components/Form/Input',
+  render: ({ type, ...args }) => {
+    return createInput({ type, ...args })
+  },
   argTypes: {
     type: {
       control: { type: 'select' },
@@ -16,23 +18,16 @@ export default {
       if: { arg: 'type', eq: 'checkbox' },
     },
   },
-  parameters: {
-    docs: {
-      page: FormDocs,
-    },
+}
+
+export const Default = {
+  args: {
+    type: 'text',
   },
 }
 
-const Template = ({ type, ...args }) => {
-  return createInput({ type, ...args })
-}
-
-export const Default = Template.bind({})
-Default.args = {
-  type: 'text',
-}
-
-export const Color = Template.bind({})
-Color.args = {
-  type: 'color',
+export const Color = {
+  args: {
+    type: 'color',
+  },
 }
