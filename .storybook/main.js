@@ -9,6 +9,7 @@ const config = {
         actions: false,
       },
     },
+    { name: 'storybook-design-token', options: { preserveCSSVars: true } },
   ],
   framework: {
     name: '@storybook/html-webpack5',
