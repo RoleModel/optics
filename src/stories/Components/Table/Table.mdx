@@ -1,63 +1,56 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as TableStories from './Table.stories'
+
+<Meta of={TableStories} />
 
 # Table
 
 Table classes provide simple styling for tables and their content.
 
+## Playground
+
+<Canvas of={TableStories.Default} />
+<Controls of={TableStories.Default} />
+
 ## Default
 
 `.table` Provides a default style to a table element
 
-<Canvas withToolbar>
-  <Story id="components-table--default" />
-</Canvas>
+<Canvas of={TableStories.Default} />
 
 ## Primary
 
 `.table-primary` Provides a table with a primary colored header.
 
-<Canvas withToolbar>
-  <Story id="components-table--primary" />
-</Canvas>
+<Canvas of={TableStories.Primary} />
 
 ## Danger
 
 `.table-danger` Provides a table with a danger colored header.
 
-<Canvas withToolbar>
-  <Story id="components-table--danger" />
-</Canvas>
+<Canvas of={TableStories.Danger} />
 
 ## Layout
 
 `.table--auto-layout`, `.table--fixed-layout` (with auto being the default) modify the table layout. Auto will adjust according to the contents, fixed will evenly divide based on the amount of columns.
 
-<Canvas withToolbar>
-  <Story id="components-table--fixed-layout" />
-</Canvas>
+<Canvas of={TableStories.FixedLayout} />
 
 ## Density
 
 `.table--default-density`, `.table--comfortable-density`, `table--compact-density` (with default being the default) modify the table cell padding to expand or contract how much space they use.
 
-<Canvas withToolbar>
-  <Story id="components-table--comfortable-density" />
-</Canvas>
-<Canvas withToolbar>
-  <Story id="components-table--compact-density" />
-</Canvas>
+<Canvas of={TableStories.ComfortableDensity} />
+
+<Canvas of={TableStories.CompactDensity} />
 
 ## Striping
 
 `.table--even-striped`, `.table--odd-striped` color every (odd or even) other row with a light color. The color matches the default, primary, or danger.
 
-<Canvas withToolbar>
-  <Story id="components-table--striped-even" />
-</Canvas>
+<Canvas of={TableStories.StripedEven} />
 
-<Canvas withToolbar>
-  <Story id="components-table--striped-odd" />
-</Canvas>
+<Canvas of={TableStories.StripedOdd} />
 
 ## Sticky Header/Footer
 
@@ -74,17 +67,11 @@ These are best used in conjunction with a wrapping container fixed table height,
 </div>
 ```
 
-<Canvas withToolbar>
-  <Story id="components-table--sticky-header" />
-</Canvas>
+<Canvas of={TableStories.StickyHeader} />
 
-<Canvas withToolbar>
-  <Story id="components-table--sticky-footer" />
-</Canvas>
+<Canvas of={TableStories.StickyFooter} />
 
-<Canvas withToolbar>
-  <Story id="components-table--sticky-both" />
-</Canvas>
+<Canvas of={TableStories.StickyBoth} />
 
 ## Table API
 
@@ -101,7 +88,7 @@ Here are the variables used
 
 ## Overriding table styles
 
-The table classes are built on a sass placeholder selector https://sass-lang.com/documentation/style-rules/placeholder-selectors
+The table classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple table classes to share the same behavior. You can modify all tables behavior by overriding the `%table-global` placeholder selector and setting any proprerties:
 
@@ -123,7 +110,7 @@ If you want to override how the density modifier behaves, you can use API descri
 
 If you need to override the color of a particular table style, you can open the respective class and set or change any properties:
 
-```scss
+```css
 // This will only affect the primary table, but not default or danger
 .table-primary {
   thead {
@@ -158,8 +145,3 @@ Your application may need a custom table. To add one, just follow this template:
   }
 }
 ```
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
