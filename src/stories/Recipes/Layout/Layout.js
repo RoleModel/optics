@@ -1,4 +1,4 @@
-import { createSidebar } from '../../Sidebar/Sidebar.js'
+import { createSidebar } from '../../Components/Sidebar/Sidebar.js'
 
 export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
   if (style === 'basic') {
