@@ -1,6 +1,8 @@
-import { Primary, ArgsTable, Canvas, Story, ColorPalette, ColorItem } from '@storybook/addon-docs'
-import LinkTo from '@storybook/addon-links/react'
-import { capitalize, scales, steps, getHSLFromVar } from '../helpers/utils.js'
+import { Meta, Story, Canvas, Controls, ColorPalette, ColorItem } from '@storybook/blocks'
+import * as ColorScaleStories from './ColorScale.stories'
+import { capitalize, scales, steps, getHSLFromVar } from '../../helpers/utils.js'
+
+<Meta of={ColorScaleStories} />
 
 # Color Scales
 
@@ -29,9 +31,14 @@ An element using the `var(--op-color-primary-plus-four)` for the background colo
 
 `var(--op-color-primary-original)` is included for occasions when you need to stay true to your brand color.
 
+## Playground
+
+<Canvas of={ColorScaleStories.Primary} />
+<Controls of={ColorScaleStories.Primary} />
+
 ## Dark Mode
 
-Each scale has overrides allowing your application to support <LinkTo kind='overview-themes--page#dark-mode'>Dark Mode</LinkTo>.
+Each scale has overrides allowing your application to support [Dark Mode](?path=/docs/overview-themes--docs#dark-mode)
 
 ## Reference
 
@@ -77,11 +84,11 @@ You can use the Light / Dark toggle control in the top left corner to show these
 
 ## Overriding Color Scales
 
-See <LinkTo kind="overview-scale-overriding--page#color-scale-overriding">Color Scale Overriding</LinkTo> for guidance on overriding each color scale.
+See [Color Scale Overriding](?path=/docs/overview-scale-overriding--docs#color-scale-overriding) for guidance on overriding each color scale.
 
 ## Custom Scale
 
-Your application may need a new scale. To add one, use the following template. Keep in mind, you will also need to add dark mode values for each variable as well. See <LinkTo kind="overview-themes--page#theming">Theming</LinkTo>
+Your application may need a new scale. To add one, use the following template. Keep in mind, you will also need to add dark mode values for each variable as well. See [Theming](?path=/docs/overview-themes--docs#theming)
 
 ```css
 @mixin {name}-color {
@@ -160,8 +167,3 @@ Your application may need a new scale. To add one, use the following template. K
   @include {name}-semantic-scale;
 }
 ```
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />

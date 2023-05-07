@@ -1,4 +1,4 @@
-import { capitalize, parameterize } from '../helpers/utils.js'
+import { capitalize, parameterize } from '../../helpers/utils.js'
 
 export const createColorSwatch = ({ scale = 'primary', step = 'base' }) => {
   const element = document.createElement('div')
