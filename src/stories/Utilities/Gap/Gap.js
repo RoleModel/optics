@@ -1,4 +1,4 @@
-import { createChildren } from '../helpers/utils'
+import { createChildren } from '../../helpers/utils'
 
 export const createGap = ({ size = 'md' }) => {
   const wrapper = document.createElement('div')

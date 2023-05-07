@@ -1,8 +1,16 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as GapStories from './Gap.stories'
+
+<Meta of={GapStories} />
 
 # Gap
 
 Gap utility classes can be used to set the spacing between items within a flex or grid container.
+
+## Playground
+
+<Canvas of={GapStories.Medium} />
+<Controls of={GapStories.Medium} />
 
 ## Cascade
 
@@ -32,51 +40,34 @@ When using a gap utility, `--op-gap` will be set to the same spacing value as ga
 
 `.gap-xxs` This will use `--op-space-2x-small` for the item spacing.
 
-<Canvas withToolbar>
-  <Story id="utilities-gap--extra-extra-small" />
-</Canvas>
+<Canvas of={GapStories.ExtraExtraSmall} />
 
 ## Extra Small
 
 `.gap-xs` This will use `--op-space-x-small` for the item spacing.
 
-<Canvas withToolbar>
-  <Story id="utilities-gap--extra-small" />
-</Canvas>
+<Canvas of={GapStories.ExtraSmall} />
 
 ## Small
 
 `.gap-sm` This will use `--op-space-small` for the item spacing.
 
-<Canvas withToolbar>
-  <Story id="utilities-gap--small" />
-</Canvas>
+<Canvas of={GapStories.Small} />
 
 ## Medium
 
 `.gap-md` This will use `--op-space-medium` for the item spacing.
 
-<Canvas withToolbar>
-  <Story id="utilities-gap--medium" />
-</Canvas>
+<Canvas of={GapStories.Medium} />
 
 ## Large
 
 `.gap-lg` This will use `--op-space-large` for the item spacing.
 
-<Canvas withToolbar>
-  <Story id="utilities-gap--large" />
-</Canvas>
+<Canvas of={GapStories.Large} />
 
 ## Extra Large
 
 `.gap-xl` This will use `--op-space-xl` for the item spacing.
 
-<Canvas withToolbar>
-  <Story id="utilities-gap--extra-large" />
-</Canvas>
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
+<Canvas of={GapStories.ExtraLarge} />
