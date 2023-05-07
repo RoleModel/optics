@@ -1,354 +1,271 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as MarginStories from './Margin.stories'
+
+<Meta of={MarginStories} />
 
 # Margin
 
 Margin utility classes are used to add margin to an element.
 
+## Playground
+
+<Canvas of={MarginStories.MarginAuto} />
+<Controls of={MarginStories.MarginAuto} />
+
 ## Margin None
 
 `.margin-none` Set margin to 0
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-none" />
-</Canvas>
+<Canvas of={MarginStories.MarginNone} />
 
 ## Margin Auto
 
 `.margin-auto` Set margin to auto
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-auto" />
-</Canvas>
+<Canvas of={MarginStories.MarginAuto} />
 
 ## Margin Extra Small
 
 `.margin-xs` Set margin to use the `--op-space-xs` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-extra-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginExtraSmall} />
 
 ## Margin Small
 
 `.margin-sm` Set margin to use the `--op-space-sm` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginSmall} />
 
 ## Margin Medium
 
 `.margin-md` Set margin to use the `--op-space-md` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-medium" />
-</Canvas>
+<Canvas of={MarginStories.MarginMedium} />
 
 ## Margin Large
 
 `.margin-lg` Set margin to use the `--op-space-lg` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginLarge} />
 
 ## Margin Extra Large
 
 `.margin-xl` Set margin to use the `--op-space-xl` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-extra-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginExtraLarge} />
 
 ## Margin Y None
 
 `.margin-y-none` Set top and bottom margin to 0
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-y-none" />
-</Canvas>
+<Canvas of={MarginStories.MarginYNone} />
 
 ## Margin Y Extra Small
 
 `.margin-y-xs` Set top and bottom margin to use the `--op-space-xs` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-y-extra-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginYExtraSmall} />
 
 ## Margin Y Small
 
 `.margin-y-sm` Set top and bottom margin to use the `--op-space-sm` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-y-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginYSmall} />
 
 ## Margin Y Medium
 
 `.margin-y-md` Set top and bottom margin to use the `--op-space-md` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-y-medium" />
-</Canvas>
+<Canvas of={MarginStories.MarginYMedium} />
 
 ## Margin Y Large
 
 `.margin-y-lg` Set top and bottom margin to use the `--op-space-lg` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-y-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginYLarge} />
 
 ## Margin Y Extra Large
 
 `.margin-y-xl` Set top and bottom margin to use the `--op-space-xl` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-y-extra-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginYExtraLarge} />
 
 ## Margin X None
 
 `.margin-x-none` Set left and right margin to 0
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-x-none" />
-</Canvas>
+<Canvas of={MarginStories.MarginXNone} />
 
 ## Margin X Extra Small
 
 `.margin-x-xs` Set left and right margin to use the `--op-space-xs` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-x-extra-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginXExtraSmall} />
 
 ## Margin X Small
 
 `.margin-x-sm` Set left and right margin to use the `--op-space-sm` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-x-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginXSmall} />
 
 ## Margin X Medium
 
 `.margin-x-md` Set left and right margin to use the `--op-space-md` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-x-medium" />
-</Canvas>
+<Canvas of={MarginStories.MarginXMedium} />
 
 ## Margin X Large
 
 `.margin-x-lg` Set left and right margin to use the `--op-space-lg` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-x-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginXLarge} />
 
 ## Margin X Extra Large
 
 `.margin-x-xl` Set left and right margin to use the `--op-space-xl` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-x-extra-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginXExtraLarge} />
 
 ## Margin Top None
 
 `.margin-top-none` Set top margin to 0
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-top-none" />
-</Canvas>
+<Canvas of={MarginStories.MarginTopNone} />
 
 ## Margin Top Extra Small
 
 `.margin-top-xs` Set top margin to use the `--op-space-xs` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-top-extra-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginTopExtraSmall} />
 
 ## Margin Top Small
 
 `.margin-top-sm` Set top margin to use the `--op-space-sm` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-top-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginTopSmall} />
 
 ## Margin Top Medium
 
 `.margin-top-md` Set top margin to use the `--op-space-md` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-top-medium" />
-</Canvas>
+<Canvas of={MarginStories.MarginTopMedium} />
 
 ## Margin Top Large
 
 `.margin-top-lg` Set top margin to use the `--op-space-lg` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-top-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginTopLarge} />
 
 ## Margin Top Extra Large
 
 `.margin-top-xl` Set top margin to use the `--op-space-xl` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-top-extra-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginTopExtraLarge} />
 
 ## Margin Bottom None
 
 `.margin-bottom-none` Set bottom margin to 0
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-bottom-none" />
-</Canvas>
+<Canvas of={MarginStories.MarginBottomNone} />
 
 ## Margin Bottom Extra Small
 
 `.margin-bottom-xs` Set bottom margin to use the `--op-space-xs` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-bottom-extra-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginBottomExtraSmall} />
 
 ## Margin Bottom Small
 
 `.margin-bottom-sm` Set bottom margin to use the `--op-space-sm` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-bottom-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginBottomSmall} />
 
 ## Margin Bottom Medium
 
 `.margin-bottom-md` Set bottom margin to use the `--op-space-md` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-bottom-medium" />
-</Canvas>
+<Canvas of={MarginStories.MarginBottomMedium} />
 
 ## Margin Bottom Large
 
 `.margin-bottom-lg` Set bottom margin to use the `--op-space-lg` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-bottom-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginBottomLarge} />
 
 ## Margin Bottom Extra Large
 
 `.margin-bottom-xl` Set bottom margin to use the `--op-space-xl` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-bottom-extra-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginBottomExtraLarge} />
 
 ## Margin Left None
 
 `.margin-left-none` Set left margin to 0
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-left-none" />
-</Canvas>
+<Canvas of={MarginStories.MarginLeftNone} />
 
 ## Margin Left Extra Small
 
 `.margin-left-xs` Set left margin to use the `--op-space-xs` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-left-extra-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginLeftExtraSmall} />
 
 ## Margin Left Small
 
 `.margin-left-sm` Set left margin to use the `--op-space-sm` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-left-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginLeftSmall} />
 
 ## Margin Left Medium
 
 `.margin-left-md` Set left margin to use the `--op-space-md` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-left-medium" />
-</Canvas>
+<Canvas of={MarginStories.MarginLeftMedium} />
 
 ## Margin Left Large
 
 `.margin-left-lg` Set left margin to use the `--op-space-lg` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-left-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginLeftLarge} />
 
 ## Margin Left Extra Large
 
 `.margin-left-xl` Set left margin to use the `--op-space-xl` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-left-extra-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginLeftExtraLarge} />
 
 ## Margin Right None
 
 `.margin-right-none` Set right margin to 0
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-right-none" />
-</Canvas>
+<Canvas of={MarginStories.MarginRightNone} />
 
 ## Margin Right Extra Small
 
 `.margin-right-xs` Set right margin to use the `--op-space-xs` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-right-extra-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginRightExtraSmall} />
 
 ## Margin Right Small
 
 `.margin-right-sm` Set right margin to use the `--op-space-sm` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-right-small" />
-</Canvas>
+<Canvas of={MarginStories.MarginRightSmall} />
 
 ## Margin Right Medium
 
 `.margin-right-md` Set right margin to use the `--op-space-md` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-right-medium" />
-</Canvas>
+<Canvas of={MarginStories.MarginRightMedium} />
 
 ## Margin Right Large
 
 `.margin-right-lg` Set right margin to use the `--op-space-lg` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-right-large" />
-</Canvas>
+<Canvas of={MarginStories.MarginRightLarge} />
 
 ## Margin Right Extra Large
 
 `.margin-right-xl` Set right margin to use the `--op-space-xl` token
 
-<Canvas withToolbar>
-  <Story id="utilities-margin--margin-right-extra-large" />
-</Canvas>
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
+<Canvas of={MarginStories.MarginRightExtraLarge} />
