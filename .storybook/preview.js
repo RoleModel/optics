@@ -1,13 +1,8 @@
 /** @type { import('@storybook/html').Preview } */
+import { useTheme } from './useTheme'
 
 const preview = {
-  decorators: [
-    (Story, context) =>
-      `<div>
-        <script>document.documentElement.dataset.themeMode = '${context.globals.themeMode}'</script>
-        ${Story().outerHTML || Story()}
-      </div>`,
-  ],
+  decorators: [useTheme],
   parameters: {
     layout: 'centered',
     controls: {
@@ -48,5 +43,4 @@ export const globalTypes = {
   },
 }
 
-import '!style-loader!css-loader!sass-loader!../src/optics.scss'
-import '!style-loader!css-loader!sass-loader!./documentation.scss'
+import './documentation.scss'
