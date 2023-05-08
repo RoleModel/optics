@@ -17,7 +17,7 @@
     "lint:css": "stylelint 'src/**/*.(scss|css)'",
     "prettier": "prettier -w .",
     "prettier-check": "prettier -c .",
-    "sanity-check": "npm run lint && npm run prettier && npm run build && npm run build-storybook && rm -rf ./dist && rm -rf ./docs-build",
+    "sanity-check": "npm run lint && npm run prettier && npm run build && npm run build-storybook && rm -rf ./dist && rm -rf ./storybook-static",
     "generate": "node ./tools/generate.js"
   },
   "repository": {
