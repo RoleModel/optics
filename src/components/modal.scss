@@ -1,4 +1,7 @@
 %modal-wrapper-global {
+  // Public API (allowed to be overridden)
+  --_op-modal-backdrop-active-opacity: 0.5;
+
   position: fixed;
   z-index: var(--op-z-index-dialog);
   top: 0;
@@ -34,7 +37,7 @@
     }
 
     .modal-wrapper__backdrop {
-      opacity: 0.5;
+      opacity: var(--_op-modal-backdrop-active-opacity);
       visibility: visible;
     }
   }

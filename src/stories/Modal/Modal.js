@@ -16,7 +16,7 @@ export const createModal = ({ header, body, footer = '', inlineDemo = false }) =
   <div class="modal">
     <div class='modal__header'>
       ${header}
-      <button class='btn btn--icon btn--pill'>
+      <button class='btn btn--no-border btn--icon btn--pill'>
         <span class='material-symbols-outlined icon--x-large'>close</span>
       </button>
     </div>
