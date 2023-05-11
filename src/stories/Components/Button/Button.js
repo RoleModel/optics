@@ -17,7 +17,8 @@ export const createButton = ({
 
   if (icon) {
     btn.innerText = ''
-    btn.prepend(createIcon({ name: 'add' }))
+    const name = icon === true ? 'add' : icon
+    btn.prepend(createIcon({ name }))
   }
 
   if (iconWithLabel) {

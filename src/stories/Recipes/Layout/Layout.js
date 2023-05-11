@@ -4,7 +4,7 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
   if (style === 'basic') {
     return `
 <div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
-  <!-- Flash message here -->
+  <!-- Alert Flash message here -->
   <!-- Confirm here -->
   <!-- Modal here -->
   <!-- Panel here -->
@@ -30,7 +30,7 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
 
     return `
 <div class='app-with-sidebar' style="height: 40rem;"> <!-- This class should be on body. Height is for demo purposed -->
-  <!-- Flash message here -->
+  <!-- Alert Flash message here -->
   <!-- Confirm here -->
   <!-- Modal here -->
   <!-- Panel here -->
