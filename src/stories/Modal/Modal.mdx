@@ -1,4 +1,7 @@
-import { ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as ModalStories from './Modal.stories'
+
+<Meta of={ModalStories} />
 
 # Modal
 
@@ -18,13 +21,11 @@ The Modal classes can be used for styling a custom modal. This can be used along
 - `.modal__body`
 - `.modal__footer`
 
-<Canvas withToolbar>
-  <Story id="components-modal--inline" />
-</Canvas>
+<Canvas of={ModalStories.Inline} />
 
 ## Overriding Modal styles
 
-The classes are built on sass placeholder selectors https://sass-lang.com/documentation/style-rules/placeholder-selectors
+The classes are built on [sass placeholder selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows classes to share the same behavior. You can modify all dialogs behavior by overriding the `%modal-wrapper-global` and `%confirm-dialog-global` placeholder selectors and setting any properties:
 
