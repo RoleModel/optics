@@ -8,12 +8,13 @@ export default {
   argTypes: {
     size: {
       control: { type: 'select' },
-      options: ['drawer', 'rail'],
+      options: ['drawer', 'compact', 'rail'],
     },
     responsive: { control: 'boolean' },
+    padded: { control: 'boolean' },
     style: {
       control: { type: 'select' },
-      options: ['default', 'primary', 'subtle-primary'],
+      options: ['default', 'primary'],
     },
     brand: { control: 'boolean' },
     position: {
@@ -22,17 +23,11 @@ export default {
     },
     activeLink: {
       control: { type: 'select' },
-      options: [
-        'Inbox',
-        'Outbox',
-        'Favorite',
-        'Trash',
-        'Circle',
-        'Triangle',
-        'Square',
-        'A really long label that will overlap',
-      ],
+      options: ['Inbox', 'Outbox', 'Favorite', 'Trash', 'Circle', 'Triangle', 'Square', 'Different'],
     },
+  },
+  parameters: {
+    layout: 'fullscreen',
   },
 }
 
@@ -43,17 +38,18 @@ export const DefaultDrawer = {
   },
 }
 
+export const PaddedDrawer = {
+  args: {
+    size: 'drawer',
+    padded: true,
+    style: 'default',
+  },
+}
+
 export const PrimaryDrawer = {
   args: {
     size: 'drawer',
     style: 'primary',
-  },
-}
-
-export const SubtlePrimaryDrawer = {
-  args: {
-    size: 'drawer',
-    style: 'subtle-primary',
   },
 }
 
@@ -97,9 +93,79 @@ export const AlternateActiveDrawer = {
   },
 }
 
+export const DefaultCompact = {
+  args: {
+    size: 'compact',
+    style: 'default',
+  },
+}
+
+export const PaddedCompact = {
+  args: {
+    size: 'compact',
+    padded: true,
+    style: 'default',
+  },
+}
+
+export const PrimaryCompact = {
+  args: {
+    size: 'compact',
+    style: 'primary',
+  },
+}
+
+export const NoBrandCompact = {
+  args: {
+    size: 'compact',
+    style: 'default',
+    brand: false,
+  },
+}
+
+export const CenteredCompact = {
+  args: {
+    size: 'compact',
+    style: 'default',
+    position: 'center',
+  },
+}
+
+export const EndCompact = {
+  args: {
+    size: 'compact',
+    style: 'default',
+    position: 'end',
+  },
+}
+
+export const LogoutCompact = {
+  args: {
+    size: 'compact',
+    style: 'default',
+    logout: true,
+  },
+}
+
+export const AlternateActiveCompact = {
+  args: {
+    size: 'compact',
+    style: 'default',
+    activeLink: 'Components',
+  },
+}
+
 export const DefaultRail = {
   args: {
     size: 'rail',
+    style: 'default',
+  },
+}
+
+export const PaddedRail = {
+  args: {
+    size: 'rail',
+    padded: true,
     style: 'default',
   },
 }
@@ -108,13 +174,6 @@ export const PrimaryRail = {
   args: {
     size: 'rail',
     style: 'primary',
-  },
-}
-
-export const SubtlePrimaryRail = {
-  args: {
-    size: 'rail',
-    style: 'subtle-primary',
   },
 }
 
