@@ -23,6 +23,91 @@ The Modal classes can be used for styling a custom modal. This can be used along
 
 <Canvas of={ModalStories.Inline} />
 
+## HTML Dialog
+
+[\<dialog\> The Dialog Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
+
+The modal styles will still work using the HTML dialog element. Simply add the `modal` class to the dialog element. No need for the wrapper classes or the active class.
+
+```html
+<dialog id="my-dialog" class="modal">
+  <div class="modal__header">
+    <span>Favorite animal:</span>
+    <button id="dialog-close" class="btn btn--icon btn--pill">
+      <span class="material-symbols-outlined icon--x-large">close</span>
+    </button>
+  </div>
+  <div class="modal__body">
+    <p>Red panda</p>
+  </div>
+  <div class="modal__footer">
+    <button id="dialog-cancel" class="btn">Cancel</button>
+    <button id="dialog-confirm" class="btn-primary">Submit</button>
+  </div>
+</dialog>
+```
+
+You can then use javascript to open the dialog:
+
+```javascript
+const dialog = document.getElementById('my-dialog')
+const showButton = document.getElementById('show-dialog')
+const closeButton = document.getElementById('dialog-close')
+const cancelButton = document.getElementById('dialog-cancel')
+
+// This handles the escape key as well as other events
+// This is a bit of a gotcha to get the dialog to close and animate correctly
+// Normally you would just call dialog.close() but this will not fade the backdrop correctly.
+dialog.addEventListener('cancel', (event) => {
+  event.preventDefault()
+
+  dialog.classList.add('modal--closing') // run animation here
+
+  dialog.addEventListener(
+    'animationend',
+    () => {
+      dialog.classList.remove('modal--closing')
+      dialog.close() // then run the default close method
+    },
+    { once: true }
+  ) // add this to prevent bugs when reopening the modal
+})
+
+// This handles clicking outside the dialog
+dialog.addEventListener('click', (event) => {
+  //This prevents issues with forms
+  if (event.target.tagName !== 'DIALOG') {
+    return
+  }
+
+  const rect = event.target.getBoundingClientRect()
+
+  const clickedInDialog =
+    rect.top <= event.clientY &&
+    event.clientY <= rect.top + rect.height &&
+    rect.left <= event.clientX &&
+    event.clientX <= rect.left + rect.width
+
+  console.log(clickedInDialog)
+
+  if (clickedInDialog === false) {
+    event.target.dispatchEvent(new Event('cancel'))
+  }
+})
+
+showButton.addEventListener('click', () => {
+  dialog.showModal()
+})
+
+closeButton.addEventListener('click', () => {
+  dialog.dispatchEvent(new Event('cancel'))
+})
+
+cancelButton.addEventListener('click', () => {
+  dialog.dispatchEvent(new Event('cancel'))
+})
+```
+
 ## Overriding Modal styles
 
 The classes are built on [sass placeholder selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)

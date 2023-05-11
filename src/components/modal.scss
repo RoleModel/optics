@@ -96,3 +96,61 @@
 .modal {
   @extend %modal-global;
 }
+
+// Using the Dialog element
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+@keyframes show-backdrop {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: var(--_op-modal-backdrop-active-opacity);
+  }
+}
+
+@keyframes hide-backdrop {
+  from {
+    opacity: var(--_op-modal-backdrop-active-opacity);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+dialog.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding: 0;
+  border: none;
+
+  &::backdrop {
+    // The Dialog backdrop does not inheret from :root so these need to be duplicated here.
+    --op-color-black: hsl(0deg 0% 0%);
+    --_op-modal-backdrop-active-opacity: 0.5;
+
+    animation: show-backdrop 300ms ease-in;
+    background: var(--op-color-black);
+    opacity: var(--_op-modal-backdrop-active-opacity);
+  }
+
+  &[open] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &.modal--closing {
+    opacity: 0;
+    transform: scale(0.7);
+
+    &::backdrop {
+      animation: hide-backdrop 300ms ease-in;
+      opacity: 0;
+    }
+  }
+}
