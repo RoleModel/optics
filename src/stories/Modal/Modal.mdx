@@ -1,0 +1,168 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as ModalStories from './Modal.stories'
+
+<Meta of={ModalStories} />
+
+# Modal
+
+The Modal classes can be used for styling a custom modal. This can be used alongside the rails configuration and javascript implemented by [RoleModel Rails Modal](https://github.com/RoleModel/rolemodel_rails/tree/master/lib/generators/rolemodel/modals)
+
+## Default
+
+`.modal-wrapper` Wraps the entire dialog.
+
+`.modal-wrapper--active` Allows the dialog to live on your page always, but only show if the class is present.
+
+`.modal-wrapper__backdrop` Provides the dark background to help focus on the dialog.
+
+`.modal` Provides the actual Dialog styling which is constructed similar to the card component.
+
+- `.modal__header`
+- `.modal__body`
+- `.modal__footer`
+
+<Canvas of={ModalStories.Inline} />
+
+## HTML Dialog
+
+[\<dialog\> The Dialog Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
+
+The modal styles will still work using the HTML dialog element. Simply add the `modal` class to the dialog element. No need for the wrapper classes or the active class.
+
+```html
+<dialog id="my-dialog" class="modal">
+  <div class="modal__header">
+    <span>Favorite animal:</span>
+    <button id="dialog-close" class="btn btn--icon btn--pill">
+      <span class="material-symbols-outlined icon--x-large">close</span>
+    </button>
+  </div>
+  <div class="modal__body">
+    <p>Red panda</p>
+  </div>
+  <div class="modal__footer">
+    <button id="dialog-cancel" class="btn">Cancel</button>
+    <button id="dialog-confirm" class="btn-primary">Submit</button>
+  </div>
+</dialog>
+```
+
+You can then use javascript to open the dialog:
+
+```javascript
+const dialog = document.getElementById('my-dialog')
+const showButton = document.getElementById('show-dialog')
+const closeButton = document.getElementById('dialog-close')
+const cancelButton = document.getElementById('dialog-cancel')
+
+// This handles the escape key as well as other events
+// This is a bit of a gotcha to get the dialog to close and animate correctly
+// Normally you would just call dialog.close() but this will not fade the backdrop correctly.
+dialog.addEventListener('cancel', (event) => {
+  event.preventDefault()
+
+  dialog.classList.add('modal--closing') // run animation here
+
+  dialog.addEventListener(
+    'animationend',
+    () => {
+      dialog.classList.remove('modal--closing')
+      dialog.close() // then run the default close method
+    },
+    { once: true }
+  ) // add this to prevent bugs when reopening the modal
+})
+
+// This handles clicking outside the dialog
+dialog.addEventListener('click', (event) => {
+  //This prevents issues with forms
+  if (event.target.tagName !== 'DIALOG') {
+    return
+  }
+
+  const rect = event.target.getBoundingClientRect()
+
+  const clickedInDialog =
+    rect.top <= event.clientY &&
+    event.clientY <= rect.top + rect.height &&
+    rect.left <= event.clientX &&
+    event.clientX <= rect.left + rect.width
+
+  console.log(clickedInDialog)
+
+  if (clickedInDialog === false) {
+    event.target.dispatchEvent(new Event('cancel'))
+  }
+})
+
+showButton.addEventListener('click', () => {
+  dialog.showModal()
+})
+
+closeButton.addEventListener('click', () => {
+  dialog.dispatchEvent(new Event('cancel'))
+})
+
+cancelButton.addEventListener('click', () => {
+  dialog.dispatchEvent(new Event('cancel'))
+})
+```
+
+## Overriding Modal styles
+
+The classes are built on [sass placeholder selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows classes to share the same behavior. You can modify all dialogs behavior by overriding the `%modal-wrapper-global` and `%confirm-dialog-global` placeholder selectors and setting any properties:
+
+```css
+%modal-wrapper-global {
+  z-index: 200;
+}
+
+%modal-global {
+  background-color: red;
+}
+```
+
+## Custom Modal
+
+Your application may need a modal. To add one, just follow this template:
+
+```css
+.modal-wrapper {
+  @extend %modal-wrapper-global;
+
+  .modal-wrapper__backdrop {
+
+  }
+
+  &.modal-wrapper--active {
+    .modal-wrapper__backdrop {
+    }
+  }
+}
+
+.modal-{name} {
+  @extend %modal-global;
+
+  .modal__header,
+  .modal__body,
+  .modal__footer {
+    padding:
+  }
+
+  .modal__header {
+    font-size:
+    font-weight:
+  }
+
+  .modal__body {
+    box-shadow:
+  }
+
+  .modal__footer {
+    display:
+    justify-content:
+  }
+}
+```

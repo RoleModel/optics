@@ -82,8 +82,18 @@
 
 .confirm-dialog-wrapper--demo {
   position: unset;
+  padding: var(--op-space-small);
 
   .confirm-dialog-wrapper__backdrop {
+    position: unset;
+  }
+}
+
+.modal-wrapper--demo {
+  position: unset;
+  padding: var(--op-space-small);
+
+  .modal-wrapper__backdrop {
     position: unset;
   }
 }
