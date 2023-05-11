@@ -1,7 +1,14 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
-import LinkTo from '@storybook/addon-links/react'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as LayoutStories from './Layout.stories'
+
+<Meta of={LayoutStories} />
 
 # Layout
+
+## Playground
+
+<Canvas of={LayoutStories.Basic} />
+<Controls of={LayoutStories.Basic} />
 
 ## Basic
 
@@ -32,15 +39,13 @@ The basic layout that this design system expects looks like the following:
 </html>
 ```
 
-<Canvas withToolbar>
-  <Story id="recipes-layout--basic" />
-</Canvas>
+<Canvas of={LayoutStories.Basic} />
 
 The header and footer are sticky and can be used with `app__header` and `app__footer`.
 
 ## With Sidebar
 
-For instructions on the sidebar itself, see <LinkTo kind="components-sidebar--default-drawer">Sidebar Component</LinkTo>.
+For instructions on the sidebar itself, see [Sidebar Component](?path=/docs/components-sidebar--default-drawer)
 
 A layout with a sidebar looks like the following:
 
@@ -73,11 +78,4 @@ A layout with a sidebar looks like the following:
 </html>
 ```
 
-<Canvas withToolbar>
-  <Story id="recipes-layout--sidebar" />
-</Canvas>
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
+<Canvas of={LayoutStories.Sidebar} />

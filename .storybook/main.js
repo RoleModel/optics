@@ -1,11 +1,34 @@
-module.exports = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+/** @type { import('@storybook/html-webpack5').StorybookConfig } */
+const config = {
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/preset-scss',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false,
+      },
+    },
     { name: 'storybook-design-token', options: { preserveCSSVars: true } },
+    {
+      name: '@storybook/addon-styling',
+      options: {
+        sass: {
+          // Require your Sass preprocessor here
+          implementation: require('sass'),
+        },
+      },
+    },
   ],
-  framework: '@storybook/html',
+  framework: {
+    name: '@storybook/html-webpack5',
+    options: {},
+  },
+  docs: {
+    autodocs: 'tag',
+  },
+  core: {
+    disableTelemetry: true, // 👈 Disables telemetry
+  },
 }
+export default config

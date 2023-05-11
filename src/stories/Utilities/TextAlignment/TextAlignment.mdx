@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as TextAlignmentStories from './TextAlignment.stories'
+
+<Meta of={TextAlignmentStories} />
+
+# Text Alignment
+
+Text Alignment utility classes can be used to align text in an element.
+
+## Playground
+
+<Canvas of={TextAlignmentStories.Left} />
+<Controls of={TextAlignmentStories.Left} />
+
+## Left
+
+`.text-left` The inline contents are aligned to the left edge of the line box. Left is the default for most text so this is primarily for overriding alternate behavior.
+
+<Canvas of={TextAlignmentStories.Left} />
+
+## Center
+
+`.text-center` The inline contents are centered within the line box.
+
+<Canvas of={TextAlignmentStories.Center} />
+
+## Right
+
+`.text-right` The inline contents are aligned to the right edge of the line box.
+
+<Canvas of={TextAlignmentStories.Right} />
+
+## Justify
+
+`.text-justify` The inline contents are justified. Text should be spaced to line up its left and right edges to the left and right edges of the line box, except for the last line.
+
+<Canvas of={TextAlignmentStories.Justify} />

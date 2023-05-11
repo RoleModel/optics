@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as IconStories from './Icon.stories'
+
+<Meta of={IconStories} />
+
+# Icon
+
+Icon classes are built on top of [Google's Material Symbols Icon Font](https://fonts.google.com/icons). They provide a way to integrate iconography into your application in a flexible and customizable way.
+
+## Playground
+
+<Canvas of={IconStories.Default} />
+<Controls of={IconStories.Default} />
+
+## Default
+
+To use an icon, put an element (usually a `span`) with the class of `.material-symbols-outlined` and inner text of whatever icon you which to use I.E. `settings` onto the page.
+
+```html
+<span class="material-symbols-outlined">settings</span>
+```
+
+<Canvas of={IconStories.Default} />
+
+## Filled
+
+`.icon--filled`, `.icon--outlined` (with outlined being the default) Provide a filled or outlined icon.
+
+<Canvas of={IconStories.Filled} />
+
+## Size
+
+`.icon--medium`, `.icon--large`, `.icon--x-large` (with medium being the default) modify the size of any icon.
+
+<Canvas of={IconStories.Large} />
+
+## Weight
+
+`.icon--weight-light`, `.icon--weight-normal`, `.icon--weight-semi-bold`, `.icon--weight-bold` (with normal being the default) modify the font weight of any icon.
+
+<Canvas of={IconStories.Bold} />
+
+## Emphasis
+
+Emphasis acts similarly to weight, but changes the thickness of the icon strokes in subtle ways.
+
+`.icon--low-emphasis`, `.icon--normal-emphasis`, `.icon--high-emphasis` (with normal being the default) modify the emphasis of any icon.
+
+<Canvas of={IconStories.Emphasis} />

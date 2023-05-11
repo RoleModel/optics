@@ -5,6 +5,11 @@
 
 @import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
 
+.sbdocs-preview .docs-story {
+  background-color: var(--op-color-background);
+  color: var(--op-color-on-background);
+}
+
 .transition-demo {
   display: inline-block;
   padding: var(--op-space-medium);

@@ -1,8 +1,16 @@
-import { Primary, ArgsTable, Canvas, Story } from '@storybook/addon-docs'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as CustomSidebarStories from './CustomSidebar.stories'
+
+<Meta of={CustomSidebarStories} />
 
 # Custom Sidebar
 
 Your app may want to customize the sidebar to change the look and feel. Here are a few examples to help you get started
+
+## Playground
+
+<Canvas of={CustomSidebarStories.SixteenSix} />
+<Controls of={CustomSidebarStories.SixteenSix} />
 
 ## Domain Registrar Example
 
@@ -69,9 +77,7 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 }
 ```
 
-<Canvas withToolbar>
-  <Story id="recipes-custom-sidebar--domains" />
-</Canvas>
+<Canvas of={CustomSidebarStories.Domains} />
 
 ## Performance Management Software Example
 
@@ -176,11 +182,4 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 }
 ```
 
-<Canvas withToolbar>
-  <Story id="recipes-custom-sidebar--sixteen-six" />
-</Canvas>
-
-## Playground
-
-<Primary />
-<ArgsTable of="." story="^" />
+<Canvas of={CustomSidebarStories.SixteenSix} />

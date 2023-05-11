@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/addon-docs'
+import { version } from '../../../package.json'
+
+<Meta title="Overview/Introduction" />
+
+# Welcome to Optics, a RoleModel Design System
+
+<h2>V{version}</h2>
+
+[Optics](https://github.com/RoleModel/optics) is an scss package that provides base styles and components that can be integrated and customized in a variety of projects.
+
+## Installation
+
+### NPM
+
+```sh
+npm install @rolemodel/optics
+```
+
+### Yarn
+
+```sh
+yarn add @rolemodel/optics
+```
+
+## Getting Started
+
+### Import
+
+If you are using webpack to compile, you can add this import to the top of your root level `scss` file.
+
+```css
+@import '@rolemodel/optics'; # Using webpack to compile
+// Or
+@import '@rolemodel/optics/dist/scss/optics'; # Using a different compiler such as Dart Sass
+```
+
+### Note on Compilers
+
+If you are using a different compiler such as Dart Sass, you will need to reference the scss file directly as shown above.
+
+Optics does not support using the [SassC::Rails](https://github.com/sass/sassc-rails) compiler. SassC::Rails is built on top of [LibSass](https://sass-lang.com/libsass) which is now deprecated in favor of Dart Sass

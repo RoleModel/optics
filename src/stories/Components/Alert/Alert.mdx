@@ -1,0 +1,177 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as AlertStories from './Alert.stories'
+
+<Meta of={AlertStories} />
+
+# Alert
+
+Alert classes can be used to create a highlighted message or callout in your application.
+These could be as banners for global application messages, or an error message within a section of your app.
+
+## Playground
+
+<Canvas of={AlertStories.Warning} />
+<Controls of={AlertStories.Warning} />
+
+## Warning
+
+`.alert-warning` Provides a warning styled message
+
+<Canvas of={AlertStories.Warning} />
+
+## Danger
+
+`.alert-danger` Provides a danger styled message
+
+<Canvas of={AlertStories.Danger} />
+
+## Info
+
+`.alert-info` Provides an info styled message
+
+<Canvas of={AlertStories.Info} />
+
+## Notice
+
+`.alert-notice` Provides a notice styled message
+
+<Canvas of={AlertStories.Notice} />
+
+## Muted
+
+`.alert--muted` can be applied to any of the above alerts to change the coloring to a muted version of that color.
+
+<Canvas of={AlertStories.Muted} />
+
+## Outlined
+
+`.alert--outlined` can be applied to any of the above alerts to change the coloring to an outlined version of that color.
+
+<Canvas of={AlertStories.Outlined} />
+
+## No Icon
+
+The icon is optional
+
+<Canvas of={AlertStories.NoIcon} />
+
+## No Title
+
+The title is optional
+
+<Canvas of={AlertStories.NoTitle} />
+
+## Dismissible
+
+If your application needs to allow dismissing these alerts, you can add a second icon/button after the messages section and add functionality via JS
+
+<Canvas of={AlertStories.Dismissible} />
+
+## Alert Structure
+
+All alerts use the following structure to construct the component.
+
+The muted or outlined classes would be added at the top level.
+icon, title, and the final (dismissible close) icon are all optional.
+
+```html
+<div class='alert-danger'>
+  <span class='alert__icon material-symbols-outlined'>error</div>
+  <div class='alert__messages'>
+    <div class='alert__title'>Error</div>
+    <div class='alert__description'>Your message</div>
+    <div class='alert__description'>Another message if you need</div>
+  </div>
+  <span class='alert__icon material-symbols-outlined'>close</div>
+</div>
+```
+
+## Overriding alert styles
+
+The alert classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple alert classes to share the same behavior. You can modify all alerts behavior by overriding the `%alert-global` placeholder selector and setting any properties:
+
+```css
+%alert-global {
+  border-radius: var(--op-radius-large);
+}
+```
+
+If you need to override the behavior of a particular alert style, you can open the respective class and set or change properties
+
+```css
+// This will only affect the warning alert, but not danger, info, or notice.
+.alert-warning {
+  background-color: red;
+  color: white;
+}
+```
+
+## Custom Alert
+
+Your application may need a custom alert. To add one, just follow this template:
+
+```css
+.alert-{name} {
+  @extend %alert-global;
+
+  background-color:
+  color:
+
+  .alert__title {
+    color:
+  }
+
+  &.alert--muted {
+    background-color:
+    color:
+
+    .alert__title {
+      color:
+    }
+  }
+
+  &.alert--outlined {
+    background-color:
+    box-shadow:
+    color:
+
+    .alert__title {
+      color:
+    }
+  }
+}
+```
+
+```css
+.alert-purple {
+  @extend %alert-global;
+
+  background-color: purple;
+  color: white;
+
+  .alert__title {
+    color: darkpurple;
+  }
+
+  &.alert--muted {
+    background-color: lightpurple;
+    color: white;
+
+    .alert__title {
+      color: purple;
+    }
+  }
+
+  &.alert--outlined {
+    background-color: verylightpurple;
+    box-shadow: var(--op-border-all) purple;
+    color: purple;
+
+    .alert__title {
+      color: darkpurple;
+    }
+  }
+}
+```

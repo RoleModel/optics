@@ -1,0 +1,25 @@
+import { Canvas, Meta } from '@storybook/addon-docs'
+import * as SelectStories from '../Components/Form/Select.stories'
+import { DesignTokenDocBlock } from 'storybook-design-token'
+
+<Meta title="Tokens/Encoded Image" />
+
+# Encoded Image
+
+Encoded Image tokens are primarily used to create the dropdown arrow on `<select>` elements using the `.form-control` class.
+
+It is a data-encoded URI SVG which can be set as a background image and then positioned as needed.
+
+<Canvas of={SelectStories.Default} />
+
+## Usage
+
+These tokens can be applied as a background image and the width for position.
+
+```css
+background: var(--op-form-dropdown-arrow) center right no-repeat;
+```
+
+## Available tokens and their definitions
+
+<DesignTokenDocBlock categoryName="Encoded Images" viewType="card" />
