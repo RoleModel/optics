@@ -126,8 +126,6 @@
   }
 
   // Focus State
-  &:focus,
-  &:focus-within,
   &:focus-visible {
     background-color: var(--op-color-neutral-plus-eight);
     box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
@@ -156,8 +154,6 @@
     }
 
     // Borderless + Focus State
-    &:focus,
-    &:focus-within,
     &:focus-visible {
       background-color: var(--op-color-primary-plus-eight);
       box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
@@ -189,8 +185,6 @@
   }
 
   // Focus State
-  &:focus,
-  &:focus-within,
   &:focus-visible {
     background-color: var(--op-color-primary-base);
     box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
@@ -219,8 +213,6 @@
     }
 
     // Borderless + Focus State
-    &:focus,
-    &:focus-within,
     &:focus-visible {
       background-color: var(--op-color-primary-plus-eight);
       box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
@@ -252,8 +244,6 @@
   }
 
   // Focus State
-  &:focus,
-  &:focus-within,
   &:focus-visible {
     background-color: var(--op-color-alerts-danger-base);
     box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-danger-plus-two),
@@ -284,8 +274,6 @@
   }
 
   // Focus State
-  &:focus,
-  &:focus-within,
   &:focus-visible {
     background-color: var(--op-color-alerts-warning-base);
     box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-warning-plus-two),
@@ -314,8 +302,6 @@
     }
 
     // Borderless + Focus State
-    &:focus,
-    &:focus-within,
     &:focus-visible {
       background-color: var(--op-color-alerts-warning-plus-eight);
       box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-warning-plus-two),
