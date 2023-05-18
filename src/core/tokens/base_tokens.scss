@@ -268,9 +268,14 @@
   * @tokens Input Focus
   * @presenter Shadow
   */
-  --op-input-outer-focus: 0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-four);
-  --op-input-inner-focus: inset var(--op-border-all) var(--op-color-primary-minus-three);
-  --op-input-focus: var(--op-input-inner-focus), var(--op-input-outer-focus);
+  --op-input-inner-focus: inset 0 0 0 var(--op-border-width-large);
+  --op-input-outer-focus: 0 0 0 var(--op-border-width-x-large);
+  --op-input-focus-primary: var(--op-input-inner-focus) var(--op-color-primary-plus-two),
+    var(--op-input-outer-focus) var(--op-color-primary-plus-five);
+  --op-input-focus-danger: var(--op-input-inner-focus) var(--op-color-alerts-danger-plus-two),
+    var(--op-input-outer-focus) var(--op-color-alerts-danger-plus-five);
+  --op-input-focus-warning: var(--op-input-inner-focus) var(--op-color-alerts-warning-plus-two),
+    var(--op-input-outer-focus) var(--op-color-alerts-warning-plus-five);
 }
 
 // We use SCSS variables outside the root since support for custom properties / css variables

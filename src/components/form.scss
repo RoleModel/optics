@@ -74,11 +74,11 @@
   &:focus-within,
   &:focus-visible,
   &:active {
-    box-shadow: 0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-four), var(--op-input-focus);
+    box-shadow: var(--op-input-focus-primary);
     outline: none;
 
     &:hover:not(:disabled) {
-      box-shadow: 0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-four), var(--op-input-focus);
+      box-shadow: var(--op-input-focus-primary);
     }
   }
 }
