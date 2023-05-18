@@ -194,7 +194,7 @@
   /**
   * @tokens Encoded Images
   */
-  --op-form-dropdown-arrow-width: 1rem; // No way to string interpolate
+  --op-form-dropdown-arrow-width: var(--op-space-scale-unit); // No way to string interpolate
   --op-form-dropdown-arrow: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 7' version='1.1' xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cg transform='matrix(0.983953,0,0,1.00934,-9.22679,-3.65885)'%3E%3Cpath fill='%23d1d1d1' d='M9.37727 3.625l5.08154 6.93523L19.54036 3.625'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
