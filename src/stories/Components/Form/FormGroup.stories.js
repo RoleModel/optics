@@ -36,7 +36,7 @@ export const Radio = {
   args: {
     ...LabelStories.Default.args,
     ...InputStories.Default.args,
-    type: 'radio',
+    type: 'Radio',
   },
 }
 
@@ -44,7 +44,7 @@ export const Checkbox = {
   args: {
     ...LabelStories.Default.args,
     ...InputStories.Default.args,
-    type: 'checkbox',
+    type: 'Checkbox',
   },
 }
 
@@ -52,7 +52,7 @@ export const IndeterminateCheckbox = {
   args: {
     ...LabelStories.Default.args,
     ...InputStories.Default.args,
-    type: 'checkbox',
+    type: 'Checkbox',
     indeterminate: true,
   },
 }

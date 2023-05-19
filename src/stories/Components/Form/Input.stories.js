@@ -8,21 +8,31 @@ export default {
   argTypes: {
     type: {
       control: { type: 'select' },
-      options: ['text', 'number', 'email', 'password', 'tel', 'checkbox', 'radio', 'color', 'date'],
+      options: ['Text', 'Number', 'Email', 'Password', 'Tel', 'Checkbox', 'Radio', 'Color', 'Date'],
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large'],
+    },
+    noBorder: {
+      control: { type: 'boolean' },
     },
     readonly: {
       control: { type: 'boolean' },
     },
+    disabled: {
+      control: { type: 'boolean' },
+    },
     indeterminate: {
       control: { type: 'boolean' },
-      if: { arg: 'type', eq: 'checkbox' },
+      if: { arg: 'type', eq: 'Checkbox' },
     },
   },
 }
 
 export const Default = {
   args: {
-    type: 'text',
+    type: 'Text',
   },
 }
 

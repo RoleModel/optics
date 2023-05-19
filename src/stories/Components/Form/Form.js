@@ -7,109 +7,120 @@ export const createLabel = ({ label, htmlFor = 'random' }) => {
   return labelElement
 }
 
-const createRadioInput = ({ readonly, id }) => {
+const createRadioInput = ({ readonly, size, id, disabled = false }) => {
   const input = document.createElement('input')
   input.type = 'radio'
   input.id = id
   input.className = 'form-control'
-
+  input.className += ` form-control--${size}`
+  input.disabled = disabled
   if (readonly) {
-    input.disabled = true
+    input.setAttribute('readonly', readonly)
   }
 
   return input
 }
 
-const createCheckboxInput = ({ readonly, id, indeterminate }) => {
+const createCheckboxInput = ({ readonly, size, id, indeterminate, disabled = false }) => {
   const input = document.createElement('input')
   input.type = 'checkbox'
   input.id = id
   input.className = 'form-control'
+  input.className += ` form-control--${size}`
   input.indeterminate = indeterminate
-
+  input.disabled = disabled
   if (readonly) {
-    input.disabled = true
+    input.setAttribute('readonly', readonly)
   }
 
   return input
 }
 
-const createColorInput = ({ readonly, id }) => {
-  const element = readonly ? 'div' : 'input'
-  const input = document.createElement(element)
+const createColorInput = ({ readonly, size, id, disabled = false }) => {
+  const input = document.createElement('input')
   input.type = 'color'
   input.id = id
   input.className = 'form-control'
-
+  input.className += ` form-control--${size}`
+  input.disabled = disabled
   if (readonly) {
-    input.className += ' form-control--read-only'
+    input.setAttribute('readonly', readonly)
   }
 
   return input
 }
 
-export const createInput = ({ type, readonly, id = 'random', indeterminate = false }) => {
-  if (type === 'radio') {
-    return createRadioInput({ readonly, id })
+export const createInput = ({
+  type,
+  size,
+  noBorder,
+  readonly,
+  id = 'random',
+  indeterminate = false,
+  disabled = false,
+}) => {
+  if (type === 'Radio') {
+    return createRadioInput({ readonly, size, id, disabled })
   }
-  if (type === 'checkbox') {
-    return createCheckboxInput({ readonly, id, indeterminate })
+  if (type === 'Checkbox') {
+    return createCheckboxInput({ readonly, size, id, indeterminate, disabled })
   }
-  if (type === 'color') {
-    return createColorInput({ readonly, id })
+  if (type === 'Color') {
+    return createColorInput({ readonly, id, disabled })
   }
 
-  const element = readonly ? 'div' : 'input'
-  const input = document.createElement(element)
+  const input = document.createElement('input')
   input.type = type
   input.placeholder = type
   input.id = id
+  input.disabled = disabled
+  if (readonly) {
+    input.setAttribute('readonly', readonly)
+  }
 
   input.className = 'form-control'
+  input.className += ` form-control--${size}`
 
-  if (readonly) {
-    input.className += ' form-control--read-only'
-    input.innerHTML = type
+  if (noBorder) {
+    input.className += ' form-control--no-border'
   }
 
   return input
 }
 
-export const createTextarea = ({ readonly }) => {
-  const element = readonly ? 'div' : 'textarea'
-  const input = document.createElement(element)
+export const createTextarea = ({ readonly, size, disabled = false }) => {
+  const input = document.createElement('textarea')
   input.placeholder = 'Textarea'
   input.className = 'form-control'
-
+  input.className += ` form-control--${size}`
+  input.disabled = disabled
   if (readonly) {
-    input.className += ' form-control--read-only'
-    input.innerHTML = 'Textarea'
+    input.setAttribute('readonly', readonly)
   }
 
   return input
 }
 
-export const createSelect = ({ options, readonly, multiple }) => {
-  const element = readonly ? 'div' : 'select'
-  const input = document.createElement(element)
+export const createSelect = ({ options, size = 'large', readonly, multiple, disabled = false }) => {
+  const input = document.createElement('select')
   input.className = 'form-control'
+  input.className += ` form-control--${size}`
+  input.disabled = disabled
+  if (readonly) {
+    input.setAttribute('readonly', readonly)
+  }
 
   if (multiple) {
     input.setAttribute('multiple', true)
   }
 
-  if (readonly) {
-    input.className += ' form-control--read-only'
-    input.innerHTML = 'Option 1'
-  } else {
-    const optionStrings = Array.from(Array(options)).map((_, i) => {
-      return `<option>Option ${i + 1}</option>`
-    })
+  const optionStrings = Array.from(Array(options)).map((_, i) => {
+    return `<option>Option ${i + 1}</option>`
+  })
 
-    input.innerHTML = `
-    ${optionStrings.join('\n  ')}
-  `
-  }
+  input.innerHTML = `
+  ${optionStrings.join('\n  ')}
+`
 
   return input
 }
@@ -129,7 +140,17 @@ export const createErrorSummary = ({ label }) => {
   return element
 }
 
-export const createFormGroup = ({ label, type, error, hint, readonly, indeterminate }) => {
+export const createFormGroup = ({
+  label,
+  type,
+  size = 'large',
+  error,
+  hint,
+  noBorder,
+  readonly,
+  indeterminate,
+  disabled,
+}) => {
   const element = document.createElement('div')
   element.className = 'form-group'
 
@@ -141,15 +162,15 @@ export const createFormGroup = ({ label, type, error, hint, readonly, indetermin
   errorElement.className = 'form-error'
   errorElement.innerText = error
 
-  if (type === 'checkbox' || type === 'radio') {
-    element.appendChild(createInput({ type, readonly, indeterminate }))
+  if (type === 'Checkbox' || type === 'Radio') {
+    element.appendChild(createInput({ type, size, readonly, indeterminate, noBorder, disabled }))
     element.appendChild(createLabel({ label }))
     if (error) {
       element.appendChild(errorElement)
     }
   } else {
     element.appendChild(createLabel({ label }))
-    element.appendChild(createInput({ type, readonly }))
+    element.appendChild(createInput({ type, size, readonly, noBorder, disabled }))
     if (error) {
       element.appendChild(errorElement)
     }
