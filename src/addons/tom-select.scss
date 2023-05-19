@@ -68,7 +68,7 @@
   &.multi.input-active {
     .#{$select-ns}-control {
       // Highly specific SVG data image for the dropdown arrow.
-      background-image: var(--op-form-dropdown-arrow);
+      background-image: var(--op-encoded-images-dropdown-arrow);
       background-position-x: calc(100% - var(--op-space-small));
       background-position-y: center;
       background-repeat: no-repeat;
