@@ -10,10 +10,6 @@
   // Private API (don't touch these)
   --__op-btn-height: var(--_op-btn-height-large);
   --__op-btn-font-size: var(--_op-btn-font-large);
-  --__op-btn-inner-focus: inset 0 0 0 var(--op-border-width-large);
-  --__op-btn-outer-focus: 0 0 0 var(--op-border-width-x-large);
-  --__op-btn-inner-focus-color: var(--op-color-primary-plus-two);
-  --__op-btn-outer-focus-color: var(--op-color-primary-plus-five);
 
   display: inline-flex;
   min-height: var(--__op-btn-height);
@@ -104,9 +100,6 @@
 .btn {
   @extend %btn-global;
 
-  --__op-btn-inner-focus-color: var(--op-color-primary-plus-two);
-  --__op-btn-outer-focus-color: var(--op-color-primary-plus-five);
-
   background-color: var(--op-color-neutral-plus-eight);
   box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-four);
   color: var(--op-color-neutral-on-plus-eight);
@@ -126,12 +119,9 @@
   }
 
   // Focus State
-  &:focus,
-  &:focus-within,
   &:focus-visible {
     background-color: var(--op-color-neutral-plus-eight);
-    box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
-      var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+    box-shadow: var(--op-input-focus-primary);
     color: var(--op-color-neutral-on-plus-eight);
   }
 
@@ -156,12 +146,9 @@
     }
 
     // Borderless + Focus State
-    &:focus,
-    &:focus-within,
     &:focus-visible {
       background-color: var(--op-color-primary-plus-eight);
-      box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
-        var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+      box-shadow: var(--op-input-focus-primary);
       color: var(--op-color-primary-on-plus-eight);
     }
   }
@@ -189,12 +176,9 @@
   }
 
   // Focus State
-  &:focus,
-  &:focus-within,
   &:focus-visible {
     background-color: var(--op-color-primary-base);
-    box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
-      var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+    box-shadow: var(--op-input-focus-primary);
     color: var(--op-color-primary-on-base);
   }
 
@@ -219,12 +203,9 @@
     }
 
     // Borderless + Focus State
-    &:focus,
-    &:focus-within,
     &:focus-visible {
       background-color: var(--op-color-primary-plus-eight);
-      box-shadow: var(--__op-btn-inner-focus) var(--op-color-primary-plus-two),
-        var(--__op-btn-outer-focus) var(--op-color-primary-plus-five);
+      box-shadow: var(--op-input-focus-primary);
       color: var(--op-color-primary-on-plus-eight);
     }
   }
@@ -252,12 +233,9 @@
   }
 
   // Focus State
-  &:focus,
-  &:focus-within,
   &:focus-visible {
     background-color: var(--op-color-alerts-danger-base);
-    box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-danger-plus-two),
-      var(--__op-btn-outer-focus) var(--op-color-alerts-danger-plus-five);
+    box-shadow: var(--op-input-focus-danger);
     color: var(--op-color-alerts-danger-on-base);
   }
 }
@@ -284,12 +262,9 @@
   }
 
   // Focus State
-  &:focus,
-  &:focus-within,
   &:focus-visible {
     background-color: var(--op-color-alerts-warning-base);
-    box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-warning-plus-two),
-      var(--__op-btn-outer-focus) var(--op-color-alerts-warning-plus-five);
+    box-shadow: var(--op-input-focus-warning);
     color: var(--op-color-alerts-warning-on-base);
   }
 
@@ -314,12 +289,9 @@
     }
 
     // Borderless + Focus State
-    &:focus,
-    &:focus-within,
     &:focus-visible {
       background-color: var(--op-color-alerts-warning-plus-eight);
-      box-shadow: var(--__op-btn-inner-focus) var(--op-color-alerts-warning-plus-two),
-        var(--__op-btn-outer-focus) var(--op-color-alerts-warning-plus-five);
+      box-shadow: var(--op-input-focus-warning);
       color: var(--op-color-alerts-warning-on-plus-eight);
     }
   }
