@@ -6,26 +6,13 @@
   --_op-form-control-font-small: var(--op-font-x-small);
   --_op-form-control-font-medium: var(--op-font-small);
   --_op-form-control-font-large: var(--op-font-small);
-  --_op-form-control-opacity-disabled: 0.44;
 
-  // Private API (don't touch these)z
+  // Private API (don't touch these)
   --__op-form-control-height: var(--_op-form-control-height-large);
   --__op-form-control-font-size: var(--_op-form-control-font-large);
-  --__op-form-control-border-color: var(--op-color-neutral-plus-four);
 
-  display: block;
-  width: 100%;
   min-width: var(--__op-form-control-height);
   height: var(--__op-form-control-height);
-  padding: var(--op-space-2x-small) var(--op-space-x-small) var(--op-space-2x-small) var(--op-space-small);
-  border: none;
-  border-radius: var(--op-radius-medium);
-  background-color: var(--op-color-neutral-plus-eight);
-  box-shadow: var(--op-border-all) var(--__op-form-control-border-color);
-  color: var(--op-color-neutral-on-plus-eight);
-  cursor: text;
-  font-size: var(--__op-form-control-font-size);
-  line-height: var(--op-line-height-base);
 
   // Size Modifiers
   &.form-control--small {
@@ -42,6 +29,28 @@
     --__op-form-control-height: var(--_op-form-control-height-large);
     --__op-form-control-font-size: var(--_op-form-control-font-large);
   }
+}
+
+%form-control-input-global {
+  // Public API (allowed to be overridden)
+  --_op-form-control-opacity-disabled: 0.44;
+
+  // Private API (don't touch these)
+  --__op-form-control-border-color: var(--op-color-neutral-plus-four);
+
+  display: block;
+  width: 100%;
+  min-width: var(--__op-form-control-height);
+  height: var(--__op-form-control-height);
+  padding: var(--op-space-2x-small) var(--op-space-x-small) var(--op-space-2x-small) var(--op-space-small);
+  border: none;
+  border-radius: var(--op-radius-medium);
+  background-color: var(--op-color-neutral-plus-eight);
+  box-shadow: var(--op-border-all) var(--__op-form-control-border-color);
+  color: var(--op-color-neutral-on-plus-eight);
+  cursor: text;
+  font-size: var(--__op-form-control-font-size);
+  line-height: var(--op-line-height-base);
 
   // Hover State
   &:hover:not(:disabled, [readonly]) {
@@ -60,28 +69,6 @@
     box-shadow: var(--op-input-focus-primary);
     color: var(--op-color-primary-on-plus-seven);
   }
-
-  // // Disabled State
-  // &:disabled {
-  //   cursor: not-allowed;
-  //   opacity: var(--_op-form-control-opacity-disabled);
-  // }
-
-  // // Readonly State
-  // &[readonly] {
-  //   padding: 0;
-  //   background: transparent;
-  //   box-shadow: none;
-  //   color: var(--op-color-on-background);
-  //   pointer-events: none;
-  //   user-select: none;
-
-  //   /* stylelint-disable selector-no-vendor-prefix */
-  //   &::-webkit-input-placeholder {
-  //     color: var(--op-color-on-background);
-  //   }
-  //   /* stylelint-enable selector-no-vendor-prefix */
-  // }
 
   // Borderless State
   &.form-control--no-border {
@@ -104,6 +91,24 @@
   }
 }
 
+%form-control-inline-global {
+  // Public API (allowed to be overridden)
+  --_op-form-control-height-small: var(--op-space-medium);
+  --_op-form-control-height-medium: var(--op-space-large);
+  --_op-form-control-height-large: var(--op-space-x-large);
+
+  width: var(--__op-form-control-height);
+  height: var(--__op-form-control-height);
+  align-self: center;
+  margin: 0;
+  accent-color: var(--op-color-primary-base);
+  cursor: pointer;
+
+  & + label {
+    align-self: center;
+  }
+}
+
 // %dropdown-arrow {
 //   padding-right: var(--op-space-3x-large);
 //   appearance: none;
@@ -114,15 +119,17 @@
 
 .form-label {
   color: var(--op-color-on-background);
-  font-size: var(--op-font-small);
+  font-size: var(--op-font-x-small);
   font-weight: var(--op-font-weight-normal);
   letter-spacing: var(--op-letter-spacing-label);
   line-height: var(--op-line-height-base);
 }
 
 .form-control {
+  @extend %form-control-global;
+
   &:not([type='radio'], [type='checkbox']) {
-    @extend %form-control-global;
+    @extend %form-control-input-global;
   }
 
   &[type='color'] {
@@ -140,12 +147,7 @@
 
   &[type='radio'],
   &[type='checkbox'] {
-    width: var(--op-space-large);
-    height: var(--op-space-large);
-    align-self: center;
-    margin: 0;
-    accent-color: var(--op-color-primary-base);
-    cursor: pointer;
+    @extend %form-control-inline-global;
   }
 
   // Disabled State
