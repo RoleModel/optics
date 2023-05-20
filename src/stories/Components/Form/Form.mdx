@@ -111,3 +111,24 @@ Checkboxes that use the indeterminate psuedo-class with be displayed with a `-` 
 See [MDN's documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate) for further information.
 
 <Canvas of={FormGroupStories.IndeterminateCheckbox} />
+
+## Overriding Form styles
+
+The form classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior.
+
+Form Controls use multiple placeholder selectors to style all types of controls.
+
+`%form-control-global` is the placeholder selector that is used to style all form controls.
+
+`%form-control-input-global` is the placeholder selector that is used to style form controls based on the input like color, date, text, number, etc.
+
+`%form-control-inline-global` is the placeholder selector that is used to style checkboxes and radio buttons.
+
+You can open them up like so to modify the styles:
+
+```css
+%form-control-global {
+}
+```
