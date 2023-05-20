@@ -15,7 +15,16 @@ const preview = {
       storySort: {
         order: [
           'Overview',
-          ['Introduction', 'Base Reset', 'Selective Imports', 'Tokens', 'Themes', 'Scale Overriding', 'Addons'],
+          [
+            'Introduction',
+            'Base Reset',
+            'Organization',
+            'Selective Imports',
+            'Tokens',
+            'Themes',
+            'Scale Overriding',
+            'Addons',
+          ],
           'Tokens',
           'Utilities',
           'Components',
