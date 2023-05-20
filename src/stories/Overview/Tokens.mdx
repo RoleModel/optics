@@ -14,3 +14,112 @@ Tokens are defined in `src/core/tokens`
 There are also a few component specific tokens that are defined in their respective component file, but those are not indented to be global or used outside of that file.
 
 There is a JSON file in `docs/token_structure.json` that lists all the current tokens in one place and shows how the names indicate organization.
+
+## Token Naming Structure
+
+All tokens follow a standard naming structure.
+This structure should be followed for any new tokens added to provide consistency.
+
+`--prefix-category-sub-category-variant-qualifier-variant: value`
+
+<p class="flex items-center gap-xxs">
+  <div>--</div>
+  <div class="badge-primary">prefix</div>
+  <div>-</div>
+  <div class="badge">category</div>
+  <div>-</div>
+  <div class="badge-warning">sub category (optional)</div>
+  <div>-</div>
+  <div class="badge-danger">variant qualifier (optional)</div>
+  <div>-</div>
+  <div class="badge-notice">variant</div>
+  <div>:</div>
+  <div>value</div>
+</p>
+
+### Examples
+
+<p class="flex flex-col gap-sm">
+  <div class="flex items-center gap-xxs">
+    <div>--</div>
+    <div class="badge-primary">op</div>
+    <div>-</div>
+    <div class="badge">color</div>
+    <div>-</div>
+    <div class="badge-warning">primary</div>
+    <div>-</div>
+    <div class="badge-danger">on</div>
+    <div>-</div>
+    <div class="badge-notice">plus-one</div>
+    <div>:</div>
+    <div>value</div>
+  </div>
+  <div class="flex items-center gap-xxs">
+    <div>--</div>
+    <div class="badge-primary">op</div>
+    <div>-</div>
+    <div class="badge">font-size</div>
+    <div>-</div>
+    <div class="badge-notice">large</div>
+    <div>:</div>
+    <div>value</div>
+  </div>
+  <div class="flex items-center gap-xxs">
+    <div>--</div>
+    <div class="badge-primary">op</div>
+    <div>-</div>
+    <div class="badge">shadow</div>
+    <div>-</div>
+    <div class="badge-danger">x</div>
+    <div>-</div>
+    <div class="badge-notice">small</div>
+    <div>:</div>
+    <div>value</div>
+  </div>
+  <div class="flex items-center gap-xxs">
+    <div>--</div>
+    <div class="badge-primary">op</div>
+    <div>-</div>
+    <div class="badge">border</div>
+    <div>-</div>
+    <div class="badge-notice">bottom</div>
+    <div>:</div>
+    <div>value</div>
+  </div>
+</p>
+
+### Explanation
+
+#### prefix - is a namespace prefix to indicate the source of the token.
+
+- `op` - All tokens in Optics are prefixed with `op`
+- `ya` - Your App. Any tokens that your app is adding can be prefixed to prevent collisions with Optics tokens or other Third Party tokens.
+
+#### category - indicates the category of the token
+
+- `color` - color token
+- `font` - font token
+- `space` - space token
+- `border` - border token
+- `shadow` - shadow token
+- etc.
+
+#### sub category - indicates a sub category of the token
+
+- `size` - indicates a token that is a size, in our case a sub category of font
+- `weight` - indicates a token that is a font weight, in our case a sub category of font
+- etc.
+
+#### variant qualifier - indicates a qualification of the variant
+
+- `3x` - three times extra
+- `2x` - two times extra
+- `x` - active
+- etc.
+
+#### variant - indicates a specific variant of the token
+
+- `small` - indicates a small variant of the token
+- `medium` - indicates a medium variant of the token
+- `large` - indicates a large variant of the token
+- etc.
