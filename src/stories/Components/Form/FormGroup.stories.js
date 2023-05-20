@@ -73,6 +73,22 @@ export const Hint = {
   },
 }
 
+export const Small = {
+  args: {
+    ...LabelStories.Default.args,
+    ...InputStories.Default.args,
+    size: 'small',
+  },
+}
+
+export const NoBorder = {
+  args: {
+    ...LabelStories.Default.args,
+    ...InputStories.Default.args,
+    noBorder: true,
+  },
+}
+
 export const Readonly = {
   args: {
     ...LabelStories.Default.args,

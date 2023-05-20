@@ -41,12 +41,14 @@ They provide consistent and composable styling that should address most applicat
 `textarea.form-control` Provides basic text area styles. This can be used on `textarea` html elements.
 
 <Canvas of={TextareaStories.Default} />
+<Controls of={TextareaStories.Default} />
 
 ## Dropdown
 
 `select.form-control` Provides basic `select` element styles.
 
 <Canvas of={SelectStories.Default} />
+<Controls of={SelectStories.Default} />
 
 ## Color
 
@@ -71,6 +73,7 @@ They provide consistent and composable styling that should address most applicat
 `.form-error-summary` Is an error section, usually displayed above the form with a list of errors.
 
 <Canvas of={ErrorSummaryStories.Default} />
+<Controls of={ErrorSummaryStories.Default} />
 
 ## Input Error
 
@@ -84,9 +87,21 @@ They provide consistent and composable styling that should address most applicat
 
 <Canvas of={FormGroupStories.Hint} />
 
+## No Border
+
+`.form-control--no-border` can be used to create a borderless input or select. When used in a form group with `.form-group--error`, the input will get a red bottom border and highlight.
+
+<Canvas of={FormGroupStories.NoBorder} />
+
+## Size
+
+`.form-control--small`, `.form-control--medium`, `.form-control--large` (with large being the default) modify the size of any element by changing the font and height to be smaller or larger.
+
+<Canvas of={FormGroupStories.Small} />
+
 ## Read Only
 
-`.form-control--read-only` on any input with `.form-control` can be used to display values in a form-like way.
+The `read-only` data attribute on any input with `.form-control` can be used to display values in a form-like way.
 
 <Canvas of={FormGroupStories.Readonly} />
 

@@ -109,13 +109,15 @@
   }
 }
 
-// %dropdown-arrow {
-//   padding-right: var(--op-space-3x-large);
-//   appearance: none;
-//   background: var(--op-encoded-images-dropdown-arrow) center right no-repeat;
-//   background-position-x: calc(100% - ((var(--op-space-3x-large) / 2) - (var(--op-encoded-images-dropdown-arrow-width) / 2)));
-//   cursor: pointer;
-// }
+%dropdown-arrow {
+  padding-right: var(--op-space-3x-large);
+  appearance: none;
+  background: var(--op-encoded-images-dropdown-arrow) center right no-repeat;
+  background-position-x: calc(
+    100% - ((var(--op-space-3x-large) / 2) - (var(--op-encoded-images-dropdown-arrow-width) / 2))
+  );
+  cursor: pointer;
+}
 
 .form-label {
   color: var(--op-color-on-background);
@@ -171,27 +173,15 @@
     }
     /* stylelint-enable selector-no-vendor-prefix */
   }
-
-  // &:focus,
-  // &:focus-within,
-  // &:focus-visible,
-  // &:active {
-  //   box-shadow: var(--op-input-focus-primary);
-  //   outline: none;
-
-  //   &:hover:not(:disabled, [readonly]) {
-  //     box-shadow: var(--op-input-focus-primary);
-  //   }
-  // }
 }
 
-// select.form-control:not([multiple], [type='radio'], [type='checkbox']) {
-//   @extend %dropdown-arrow;
-// }
+select.form-control:not([multiple], [type='radio'], [type='checkbox']) {
+  @extend %dropdown-arrow;
+}
 
-// select.form-control[multiple] {
-//   min-height: calc(2 * var(--__op-input-height));
-// }
+select.form-control[multiple] {
+  min-height: calc(2 * var(--__op-form-control-height));
+}
 
 textarea.form-control:not([type='radio'], [type='checkbox']) {
   max-width: 100%;
