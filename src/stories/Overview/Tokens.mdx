@@ -123,3 +123,33 @@ This structure should be followed for any new tokens added to provide consistenc
 - `medium` - indicates a medium variant of the token
 - `large` - indicates a large variant of the token
 - etc.
+
+### Component Specific Token Naming Structure
+
+Sometimes a component will have a token that is specific to that component. In these cases, a slightly different pattern is used.
+The Component name becomes the category and in some cases, the sub category.
+
+`--prefix-component-name-sub-name-variant-qualifier-variant: value`
+
+<p class="flex items-center gap-xxs">
+  <div>--</div>
+  <div class="badge-primary">prefix</div>
+  <div>-</div>
+  <div class="badge">component name</div>
+  <div>-</div>
+  <div class="badge-warning">sub name (optional)</div>
+  <div>-</div>
+  <div class="badge-danger">variant qualifier (optional)</div>
+  <div>-</div>
+  <div class="badge-notice">variant</div>
+  <div>:</div>
+  <div>value</div>
+</p>
+
+Additionally, components may implement a "public" and "private" API of tokens. These are internal to the component and intented to provide an easy to use interface for customizing the component.
+
+The "Private" API is not meant to be set by the user, but rather is used internally by the component.
+These tokens follow a structure like `--__prefix-component-name-sub-name-variant-qualifier-variant: value`
+
+The "Public" API is meant to be set as a way to customize the component.
+These tokens follow a structure like `--_prefix-component-name-sub-name-variant-qualifier-variant: value`
