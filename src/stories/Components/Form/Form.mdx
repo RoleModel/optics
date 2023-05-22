@@ -41,12 +41,14 @@ They provide consistent and composable styling that should address most applicat
 `textarea.form-control` Provides basic text area styles. This can be used on `textarea` html elements.
 
 <Canvas of={TextareaStories.Default} />
+<Controls of={TextareaStories.Default} />
 
 ## Dropdown
 
 `select.form-control` Provides basic `select` element styles.
 
 <Canvas of={SelectStories.Default} />
+<Controls of={SelectStories.Default} />
 
 ## Color
 
@@ -71,6 +73,7 @@ They provide consistent and composable styling that should address most applicat
 `.form-error-summary` Is an error section, usually displayed above the form with a list of errors.
 
 <Canvas of={ErrorSummaryStories.Default} />
+<Controls of={ErrorSummaryStories.Default} />
 
 ## Input Error
 
@@ -84,9 +87,21 @@ They provide consistent and composable styling that should address most applicat
 
 <Canvas of={FormGroupStories.Hint} />
 
+## No Border
+
+`.form-control--no-border` can be used to create a borderless input or select. When used in a form group with `.form-group--error`, the input will get a red bottom border and highlight.
+
+<Canvas of={FormGroupStories.NoBorder} />
+
+## Size
+
+`.form-control--small`, `.form-control--medium`, `.form-control--large` (with large being the default) modify the size of any element by changing the font and height to be smaller or larger.
+
+<Canvas of={FormGroupStories.Small} />
+
 ## Read Only
 
-`.form-control--read-only` on any input with `.form-control` can be used to display values in a form-like way.
+The `read-only` data attribute on any input with `.form-control` can be used to display values in a form-like way.
 
 <Canvas of={FormGroupStories.Readonly} />
 
@@ -96,3 +111,24 @@ Checkboxes that use the indeterminate psuedo-class with be displayed with a `-` 
 See [MDN's documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate) for further information.
 
 <Canvas of={FormGroupStories.IndeterminateCheckbox} />
+
+## Overriding Form styles
+
+The form classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior.
+
+Form Controls use multiple placeholder selectors to style all types of controls.
+
+`%form-control-global` is the placeholder selector that is used to style all form controls.
+
+`%form-control-input-global` is the placeholder selector that is used to style form controls based on the input like color, date, text, number, etc.
+
+`%form-control-inline-global` is the placeholder selector that is used to style checkboxes and radio buttons.
+
+You can open them up like so to modify the styles:
+
+```css
+%form-control-global {
+}
+```

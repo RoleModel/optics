@@ -36,7 +36,7 @@ export const Radio = {
   args: {
     ...LabelStories.Default.args,
     ...InputStories.Default.args,
-    type: 'radio',
+    type: 'Radio',
   },
 }
 
@@ -44,7 +44,7 @@ export const Checkbox = {
   args: {
     ...LabelStories.Default.args,
     ...InputStories.Default.args,
-    type: 'checkbox',
+    type: 'Checkbox',
   },
 }
 
@@ -52,7 +52,7 @@ export const IndeterminateCheckbox = {
   args: {
     ...LabelStories.Default.args,
     ...InputStories.Default.args,
-    type: 'checkbox',
+    type: 'Checkbox',
     indeterminate: true,
   },
 }
@@ -70,6 +70,22 @@ export const Hint = {
     ...LabelStories.Default.args,
     ...InputStories.Default.args,
     hint: 'Very helpful hint',
+  },
+}
+
+export const Small = {
+  args: {
+    ...LabelStories.Default.args,
+    ...InputStories.Default.args,
+    size: 'small',
+  },
+}
+
+export const NoBorder = {
+  args: {
+    ...LabelStories.Default.args,
+    ...InputStories.Default.args,
+    noBorder: true,
   },
 }
 
