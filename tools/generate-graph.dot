@@ -1,0 +1,28 @@
+digraph dependencies {
+  fontname = "Helvetica,Arial,sans-serif";
+  node [fontname = "Helvetica,Arial,sans-serif";];
+  edge [fontname = "Helvetica,Arial,sans-serif";];
+  node [shape = box;];
+  "Tokens & Base";
+  "Alert" -> "Tokens & Base";
+  "Alert" -> "Icon";
+  
+  "Badge" -> "Tokens & Base";
+  "Badge" -> "Icon";
+  
+  "Button" -> "Tokens & Base";
+  "Button" -> "Icon";
+  
+  "Button Group" -> "Tokens & Base";
+  "Button Group" -> "Button";
+  
+  "Sidebar" -> "Tokens & Base";
+  "Sidebar" -> "Button";
+  
+  "Card" -> "Tokens & Base";
+  "Confirm Dialog" -> "Tokens & Base";
+  "Form" -> "Tokens & Base";
+  "Icon" -> "Tokens & Base";
+  "Modal" -> "Tokens & Base";
+  "Table" -> "Tokens & Base";
+}
