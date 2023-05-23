@@ -12,31 +12,46 @@ Card classes can be used to denote bordered sections of an application. They pro
 <Canvas of={CardStories.Plain} />
 <Controls of={CardStories.Plain} />
 
-## Plain
+### Selective Imports
+
+Card can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/card';
+```
+
+## Variations
+
+### Plain
 
 `.card` Provides basic card styles.
 
 <Canvas of={CardStories.Plain} />
 
-## Padded
+### Padded
 
 `.card-padded` Provides a padded card.
 
 <Canvas of={CardStories.Padded} />
 
-## Full
+### Full
 
 `.card__header`, `.card__body`, and `.card__footer` Provide padded sections of a card.
 
 <Canvas of={CardStories.Full} />
 
-## Condensed
+### Condensed
 
 `.card--condensed` Changes the padding scale for everything below it.
 
 <Canvas of={CardStories.Condensed} />
 
-## Shadow
+### Shadow
 
 `.card--shadow-x-small`, `.card--shadow-small`, `.card--shadow-medium`, `.card--shadow-large`, `.card--shadow-x-large` Add a shadow elevation effect to the card.
 
