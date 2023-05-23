@@ -14,61 +14,77 @@ These could be as banners for global application messages, or an error message w
 <Canvas of={AlertStories.Warning} />
 <Controls of={AlertStories.Warning} />
 
-## Warning
+### Selective Imports
+
+Alert can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+@import '@rolemodel/optics/dist/scss/components/icon';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/alert';
+```
+
+## Variations
+
+### Warning
 
 `.alert-warning` Provides a warning styled message
 
 <Canvas of={AlertStories.Warning} />
 
-## Danger
+### Danger
 
 `.alert-danger` Provides a danger styled message
 
 <Canvas of={AlertStories.Danger} />
 
-## Info
+### Info
 
 `.alert-info` Provides an info styled message
 
 <Canvas of={AlertStories.Info} />
 
-## Notice
+### Notice
 
 `.alert-notice` Provides a notice styled message
 
 <Canvas of={AlertStories.Notice} />
 
-## Muted
+### Muted
 
 `.alert--muted` can be applied to any of the above alerts to change the coloring to a muted version of that color.
 
 <Canvas of={AlertStories.Muted} />
 
-## Filled
+### Filled
 
 `.alert--filled` can be applied to any of the above alerts to change the coloring to a filled version of that color.
 
 <Canvas of={AlertStories.Filled} />
 
-## No Icon
+### No Icon
 
 The icon is optional
 
 <Canvas of={AlertStories.NoIcon} />
 
-## No Title
+### No Title
 
 The title is optional
 
 <Canvas of={AlertStories.NoTitle} />
 
-## Dismissible
+### Dismissible
 
 If your application needs to allow dismissing these alerts, you can add a second icon/button after the messages section and add functionality via JS
 
 <Canvas of={AlertStories.Dismissible} />
 
-## As a Flash or Toast Message
+### As a Flash or Toast Message
 
 The alert component can also be used as an animated notification message by adding `.alert--flash` to the top level. This supports all the alert variations and styles.
 
