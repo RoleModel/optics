@@ -25,4 +25,5 @@ digraph dependencies {
   "Icon" -> "Tokens & Base";
   "Modal" -> "Tokens & Base";
   "Table" -> "Tokens & Base";
+  "Tooltip" -> "Tokens & Base";
 }

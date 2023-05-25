@@ -1,0 +1,111 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as TooltipStories from './Tooltip.stories'
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+Tooltips are build using data attributes on any element. Setting these will show text on hover.
+
+`data-tooltip-text` can be set to any string and will be displayed as the contents of the tooltip.
+`data-tooltip-position` can be set to `top`, `bottom`, `left`, or `right`(with top being used if nothing is set) and will position the tooltip relative to the element.
+
+## Note on Implementation
+
+This is a simple CSS only implementation of tooltips. As such, they will not automatically handle overflow clipping or container edge detection. You will need to handle that yourself or use a package.
+Here are some commonly used JavaScript packages that can address those issues:
+
+- [PopperJS](https://popper.js.org/)
+- [Shoelace Tooltip](https://shoelace.style/components/tooltip)
+- [TippyJS](https://atomiks.github.io/tippyjs/)
+
+## Playground
+
+<Canvas of={TooltipStories.Default} />
+<Controls of={TooltipStories.Default} />
+
+### Selective Imports
+
+Tooltip can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/tooltip';
+```
+
+## Variations
+
+### Default
+
+<Canvas of={TooltipStories.Default} />
+
+### Top
+
+<Canvas of={TooltipStories.Top} />
+
+### Right
+
+<Canvas of={TooltipStories.Right} />
+
+### Bottom
+
+<Canvas of={TooltipStories.Bottom} />
+
+### Left
+
+<Canvas of={TooltipStories.Left} />
+
+### Button
+
+Tooltips can be place on any element. Here is an example of a tooltip on a button.
+
+<Canvas of={TooltipStories.Button} />
+
+### Icon
+
+Here is an example of a tooltip on an information icon.
+
+<Canvas of={TooltipStories.Icon} />
+
+### Lots of Text
+
+Tooltips have a maximum width and will wrap text if it is too long.
+
+<Canvas of={TooltipStories.LotsOfText} />
+
+## Overriding styles
+
+The tooltip classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+Tooltips has an API for Customizing the styles of all tooltips easily.
+
+This allows multiple classes to share the same behavior. You can modify all tooltip behavior by overriding the `%tooltip-global` placeholder selector and setting any properties:
+
+```css
+%tooltip-global {
+  --_op-tooltip-max-width
+  --_op-tooltip-padding:
+  --_op-tooltip-background-color:
+  --_op-tooltip-text-color:
+  --_op-tooltip-arrow-size:
+  --_op-tooltip-tooltip-offset:
+  --_op-tooltip-tooltip-radius:
+  --_op-tooltip-tooltip-font-size:
+}
+```
+
+## Custom Tooltip
+
+Your application may need a custom tooltip. To add one, just follow this template:
+
+```css
+[data-special-tooltip-text] {
+  @extend %tooltip-global;
+
+  // Add your custom styles here
+}
+```
