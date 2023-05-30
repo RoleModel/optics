@@ -1,0 +1,75 @@
+%avatar-global {
+  // Public API (allowed to be overridden)
+  --_op-avatar-border-radius: var(--op-radius-circle);
+  --_op-avatar-inner-border-color: var(--op-color-neutral-minus-max);
+  --_op-avatar-outer-border-color: var(--op-color-neutral-base);
+  --_op-avatar-inner-border-width: var(--op-border-width);
+  --_op-avatar-outer-border-width: 0.3rem;
+  --_op-avatar-disabled-opacity: 0.4;
+  --_op-avatar-size-small: 3.2rem;
+  --_op-avatar-size-medium: 4rem;
+  --_op-avatar-size-large: 5.6rem;
+
+  // Private API (don't touch these)
+  --__op-avatar-size: var(--_op-avatar-size-large);
+
+  display: block;
+  overflow: hidden;
+  width: var(--__op-avatar-size);
+  height: var(--__op-avatar-size);
+  border-radius: var(--_op-avatar-border-radius);
+  box-shadow: 0 0 0 var(--_op-avatar-inner-border-width) var(--_op-avatar-inner-border-color),
+    0 0 0 var(--_op-avatar-outer-border-width) var(--_op-avatar-outer-border-color);
+  object-fit: cover;
+
+  // For if using the avatar on an "a" tag
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // Disabled State
+  &.avatar--disabled {
+    opacity: var(--_op-avatar-disabled-opacity);
+    pointer-events: none;
+  }
+
+  // Hover State
+  &:hover:not(img, .avatar--disabled) {
+    --_op-avatar-inner-border-color: var(--op-color-primary-base);
+    --_op-avatar-outer-border-color: var(--op-color-primary-plus-one);
+
+    cursor: pointer;
+  }
+
+  // Focus State
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: none;
+  }
+
+  &:focus-visible:not(.avatar--disabled) {
+    --_op-avatar-outer-border-color: var(--op-color-primary-base);
+
+    cursor: pointer;
+  }
+
+  // Size Modifiers
+  &.avatar--small {
+    --__op-avatar-size: var(--_op-avatar-size-small);
+  }
+
+  &.avatar--medium {
+    --__op-avatar-size: var(--_op-avatar-size-medium);
+  }
+
+  &.avatar--large {
+    --__op-avatar-size: var(--_op-avatar-size-large);
+  }
+}
+
+.avatar {
+  @extend %avatar-global;
+}
