@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "prettier.configPath": ".prettierrc.json",
+    "stylelint.configFile": ".stylelintrc.json",
+    "stylelint.validate": ["css", "scss"]
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "stylelint.vscode-stylelint",
+      "tintinweb.graphviz-interactive-preview"
+    ]
+  }
+}

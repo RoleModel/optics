@@ -27,3 +27,6 @@ docs/
 
 # Tools
 tools/
+
+# Workspaces
+*.code-workspace

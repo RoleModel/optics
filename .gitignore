@@ -19,6 +19,3 @@ node_modules/
 
 # Distribution files
 dist
-
-# Workspaces
-*.code-workspace

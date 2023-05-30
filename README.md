@@ -61,6 +61,8 @@ Additional stories can be added using the following command, or copying an exist
 npm run generate
 ```
 
+The visual graphic found on the Selective Imports page in the documentation is generated from the `tools/generate-graph.dot` file. You can preview and export a newer svg version of the graphic by using the `tintinweb.graphviz-interactive-preview` VSCode extension.
+
 ## License
 
 [MIT](LICENSE)
