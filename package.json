@@ -1,6 +1,6 @@
 {
   "name": "@rolemodel/optics",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Optics is an scss package that provides base styles and components that can be integrated and customized in a variety of projects.",
   "main": "dist/scss/optics.scss",
   "scripts": {
