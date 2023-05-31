@@ -1,0 +1,59 @@
+%divider-global {
+  // Public API (allowed to be overridden)
+  --_op-divider-vertical-min-height: 2rem;
+  --_op-divider-height-small: var(--op-border-width);
+  --_op-divider-height-medium: var(--op-border-width-large);
+  --_op-divider-height-large: var(--op-border-width-x-large);
+  --_op-divider-padding-small: var(--op-space-2x-small);
+  --_op-divider-padding-medium: var(--op-space-x-small);
+  --_op-divider-padding-large: var(--op-space-medium);
+
+  // Private API (don't touch these)
+  --__op-divider-height: var(--_op-divider-height-small);
+  --__op-divider-padding: 0;
+
+  background-color: var(--op-border-color);
+
+  // Size Modifiers
+  &.divider--small {
+    --__op-divider-height: var(--_op-divider-height-small);
+  }
+
+  &.divider--medium {
+    --__op-divider-height: var(--_op-divider-height-medium);
+  }
+
+  &.divider--large {
+    --__op-divider-height: var(--_op-divider-height-large);
+  }
+
+  // Spacing Modifiers
+  &.divider--spacing-small {
+    --__op-divider-padding: var(--_op-divider-padding-small);
+  }
+
+  &.divider--spacing-medium {
+    --__op-divider-padding: var(--_op-divider-padding-medium);
+  }
+
+  &.divider--spacing-large {
+    --__op-divider-padding: var(--_op-divider-padding-large);
+  }
+}
+
+.divider {
+  @extend %divider-global;
+
+  width: 100%;
+  height: var(--__op-divider-height);
+  margin: var(--__op-divider-padding) 0;
+}
+
+.divider-vertical {
+  @extend %divider-global;
+
+  width: var(--__op-divider-height);
+  height: 100%;
+  min-height: var(--_op-divider-vertical-min-height);
+  margin: 0 var(--__op-divider-padding);
+}

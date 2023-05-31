@@ -22,6 +22,7 @@ digraph dependencies {
   "Avatar" -> "Tokens & Base";
   "Card" -> "Tokens & Base";
   "Confirm Dialog" -> "Tokens & Base";
+  "Divider" -> "Tokens & Base";
   "Form" -> "Tokens & Base";
   "Icon" -> "Tokens & Base";
   "Modal" -> "Tokens & Base";
