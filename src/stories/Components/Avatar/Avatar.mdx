@@ -15,13 +15,28 @@ When using on an `img` element, the source and classes are set directly on it.
 <Canvas of={AvatarStories.Default} />
 <Controls of={AvatarStories.Default} />
 
-## Default
+### Selective Imports
+
+Avatar can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/avatar';
+```
+
+## Variations
+
+### Default
 
 `.avatar` is the default avatar class.
 
 <Canvas of={AvatarStories.Default} />
 
-## Disabled
+### Disabled
 
 `.avatar--disabled` will disable the avatar and give it an opacity.
 
