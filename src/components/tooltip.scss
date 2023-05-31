@@ -1,6 +1,6 @@
 %tooltip-global {
   // Public API
-  --_op-tooltip-max-width: 20rem;
+  --_op-tooltip-max-width: calc(5 * var(--op-space-3x-large));
   --_op-tooltip-padding: var(--op-space-x-small) var(--op-space-medium);
   --_op-tooltip-background-color: var(--op-color-neutral-minus-max);
   --_op-tooltip-text-color: var(--op-color-neutral-on-minus-max);
