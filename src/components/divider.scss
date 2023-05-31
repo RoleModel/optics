@@ -1,6 +1,6 @@
 %divider-global {
   // Public API (allowed to be overridden)
-  --_op-divider-vertical-min-height: 2rem;
+  --_op-divider-vertical-min-height: var(--op-space-large);
   --_op-divider-height-small: var(--op-border-width);
   --_op-divider-height-medium: var(--op-border-width-large);
   --_op-divider-height-large: var(--op-border-width-x-large);
