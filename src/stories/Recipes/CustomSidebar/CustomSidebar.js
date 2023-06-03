@@ -1,49 +1,49 @@
 const domainsSidebar = (style) => {
   return `
-<div class="sidebar-domains sidebar--${style}">
+<div class="sidebar-domains sidebar--padded sidebar--${style}">
   <a class="sidebar__brand" href="/">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/2048px-Globe_icon.svg.png">
   </a>
-  <div class="sidebar__content">
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="search">search</span>
-      <div class='sidebar__item-label'>Get a new domain</div>
+  <div class="sidebar__content sidebar__content--start">
+    <a class="btn btn--no-border btn--pill-right btn--active" href="/">
+      <span class="material-symbols-outlined">search</span>
+      Get a new Domain
     </a>
-    <a class="sidebar__item active" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="list">list</span>
-      <div class='sidebar__item-label'>My domains</div>
+    <a class="btn btn--no-border btn--pill-right" href="/">
+      <span class="material-symbols-outlined">list</span>
+      My domains
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="swap_horizontal_circle">swap_horizontal_circle</span>
-      <div class='sidebar__item-label'>Transfer</div>
+    <a class="btn btn--no-border btn--pill-right" href="/">
+      <span class="material-symbols-outlined">swap_horizontal_circle</span>
+      Transfer
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="credit_card">credit_card</span>
-      <div class='sidebar__item-label'>Billing</div>
+    <a class="btn btn--no-border btn--pill-right" href="/">
+      <span class="material-symbols-outlined">credit_card</span>
+      Billing
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="perm_identity">perm_identity</span>
-      <div class='sidebar__item-label'>Account</div>
+    <a class="btn btn--no-border btn--pill-right" href="/">
+      <span class="material-symbols-outlined">perm_identity</span>
+      Account
     </a>
 
-    <div class="sidebar__section-divider"></div>
+    <div class='divider divider--spacing-medium'></div>
 
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="feedback">feedback</span>
-      <div class='sidebar__item-label'>Send feedback</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">feedback</span>
+      Send Feedback
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="help">help</span>
-      <div class='sidebar__item-label'>Help and support</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">help</span>
+      Help and Support
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="flag">flag</span>
-      <div class='sidebar__item-label'>United States (US $)</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">flag</span>
+      United States (US $)
     </a>
   </div>
 
   <div class="sidebar__content sidebar__content--end">
-    <div class="flex justify-around items-center flex-wrap">
+    <div class="sidebar__footer">
       <a href="/">Privacy</a>
       <a href="/">Terms</a>
     </div>
@@ -54,7 +54,7 @@ const domainsSidebar = (style) => {
 
 const fifteenFiveSidebar = (style) => {
   return `
-<div class="sidebar-16six sidebar--${style}">
+<div class="sidebar-16six sidebar--padded sidebar--${style}">
   <a class="sidebar__brand" href="/">
     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
       <rect width="40" height="40" rx="8" fill="#FFFFFF"/></rect>
@@ -64,45 +64,49 @@ const fifteenFiveSidebar = (style) => {
       <span>RoleModel Software</span>
     </div>
   </a>
-  <div class="sidebar__content">
-    <a class="sidebar__item active" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="home">home</span>
-      <div class='sidebar__item-label'>Home</div>
+  <div class="sidebar__content sidebar__content--start">
+    <a class="btn btn--no-border btn--active" href="/">
+      <span class="material-symbols-outlined">home</span>
+      Home
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="edit_document">edit_document</span>
-      <div class='sidebar__item-label'>Check-ins</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">edit_document</span>
+      Check-ins
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="chat">chat</span>
-      <div class='sidebar__item-label'>1-on-1s</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">chat</span>
+      1-on-1s
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="hand_gesture">hand_gesture</span>
-      <div class='sidebar__item-label'>High Fives</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">hand_gesture</span>
+      High Fives
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="track_changes">track_changes</span>
-      <div class='sidebar__item-label'>Objectives</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">track_changes</span>
+      Objectives
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="explore">explore</span>
-      <div class='sidebar__item-label'>Career Hub</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">explore</span>
+      Career Hub
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="summarize">summarize</span>
-      <div class='sidebar__item-label'>Mentoring Reviews</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">summarize</span>
+      Mentoring Reviews
     </a>
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon" title="insert_chart">insert_chart</span>
-      <div class='sidebar__item-label'>Reporting</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined icon--rotated-135">join</span>
+      Engagement
+    </a>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined">insert_chart</span>
+      Reporting
     </a>
   </div>
 
   <div class="sidebar__content sidebar__content--end">
-    <a class="sidebar__item" href="/">
-      <span class="material-symbols-outlined sidebar__item-icon sidebar__item-icon--rotated" title="expand_circle_down">expand_circle_down</span>
-      <div class='sidebar__item-label'>Collapse</div>
+    <a class="btn btn--no-border" href="/">
+      <span class="material-symbols-outlined icon--rotated-90">expand_circle_down</span>
+      Collapse
     </a>
   </div>
 </div>

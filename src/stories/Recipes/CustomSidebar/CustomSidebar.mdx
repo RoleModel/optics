@@ -16,63 +16,43 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 
 ```css
 // Domains Sidebar Example
-@mixin sidebar-domains-rail-global {
-  .sidebar__brand {
-    padding: 0 var(--_op-sidebar-spacing);
-  }
-}
-
-@mixin sidebar-domains-drawer-global {
-  .sidebar__content {
-    padding: 0;
-  }
-
-  .sidebar__item {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  .sidebar__section-divider {
-    margin: var(--op-space-small) 0;
+%btn-global {
+  &.btn--pill-right {
+    border-radius: 0 var(--op-radius-pill) var(--op-radius-pill) 0;
   }
 }
 
 .sidebar-domains {
   @extend %sidebar-global;
 
-  // Normal
-  --_op-sidebar-background-color: var(--op-color-background);
-  --_op-sidebar-text-color: var(--op-color-on-background);
+  --_op-sidebar-drawer-width: 28rem;
+  --_op-sidebar-content-spacing: 0;
+  --_op-sidebar-content-item-spacing: 0;
 
-  // Active
-  --_op-sidebar-icon-background-active-color: var(--op-color-primary-plus-seven);
-  --_op-sidebar-icon-text-active-color: var(--op-color-primary-on-plus-seven);
+  box-shadow: none;
 
-  // Hover
-  --_op-sidebar-icon-background-hover-color: var(--op-color-neutral-plus-seven);
-  --_op-sidebar-icon-text-hover-color: var(--op-color-neutral-on-plus-seven);
+  .btn {
+    &.btn--no-border {
+      box-shadow: none;
 
-  .sidebar__brand {
-    padding: 0 var(--op-space-4x-large);
-  }
+      &.btn--active {
+        background-color: var(--op-color-primary-plus-five);
+        color: var(--op-color-primary-on-plus-five);
+      }
 
-  // Modifiers
-  &.sidebar--drawer:not(.sidebar--responsive) {
-    @include sidebar-domains-drawer-global;
-  }
-
-  &.sidebar--drawer.sidebar--responsive {
-    @media (width > $breakpoint-medium) {
-      @include sidebar-domains-drawer-global;
-    }
-
-    @media (width <= $breakpoint-medium) {
-      @include sidebar-domains-rail-global;
+      &:hover:not(.btn--active) {
+        background-color: var(--op-color-neutral-plus-six);
+        box-shadow: none;
+        color: var(--op-color-neutral-on-plus-six);
+      }
     }
   }
 
-  &.sidebar--rail {
-    @include sidebar-domains-rail-global;
+  .sidebar__footer {
+    display: flex;
+    align-items: center;
+    padding-left: var(--op-space-large);
+    gap: var(--op-space-small);
   }
 }
 ```
@@ -83,12 +63,28 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 
 ```css
 // 16Six Sidebar Example
-@mixin sidebar-16six-rail-global {
+:root {
+  --op-color-primary-h: 256;
+  --op-color-primary-s: 66%;
+  --op-color-primary-l: 15%;
+
+  // Custom
+  --op-color-sidebar: var(--op-color-primary-minus-six);
+  --op-color-on-sidebar: hsl(26deg 100% 95%);
+  --op-color-sidebar-button-active: hsl(256deg 23% 32%);
+}
+
+.icon--rotated-135 {
+  rotate: 135deg;
+}
+
+.icon--rotated-90 {
+  rotate: 90deg;
+}
+
+@mixin sidebar-rail-global {
   .sidebar__brand {
-    svg {
-      width: 100%;
-      padding: 0 var(--op-space-small);
-    }
+    justify-content: center;
 
     .sidebar__brand-label {
       display: none;
@@ -96,88 +92,53 @@ Your app may want to customize the sidebar to change the look and feel. Here are
   }
 }
 
-@mixin sidebar-16six-drawer-global {
-  .sidebar__item {
-    border-radius: var(--op-radius-large);
-    font-size: var(--op-font-small);
-  }
-}
-
 .sidebar-16six {
   @extend %sidebar-global;
 
-  --_op-sidebar-spacing: var(--op-space-x-small);
-
-  // Normal
-  --_op-sidebar-background-color: var(--op-color-primary-minus-five);
-  --_op-sidebar-text-color: var(--op-color-primary-on-minus-five);
-
-  // Active
-  --_op-sidebar-icon-background-active-color: var(--op-color-primary-minus-three);
-  --_op-sidebar-icon-text-active-color: var(--op-color-primary-on-minus-three);
-
-  // Hover
-  --_op-sidebar-icon-background-hover-color: var(--op-color-primary-minus-three);
-  --_op-sidebar-icon-text-hover-color: var(--op-color-primary-on-minus-three);
-
-  gap: var(--op-space-x-large);
+  --_op-sidebar-background-color: var(--op-color-sidebar);
+  --_op-sidebar-text-color: var(--op-color-on-sidebar);
+  --_op-sidebar-border-color: var(--op-color-on-sidebar);
+  --_op-sidebar-rail-width: 6.4rem;
+  --_op-sidebar-drawer-width: 22.4rem;
+  --_op-sidebar-drawer-brand-width: calc(var(--op-space-3x-large) + (2 * var(--op-space-medium)));
+  --_op-sidebar-brand-spacing: var(--op-space-medium) var(--op-space-x-small);
+  --_op-sidebar-content-item-spacing: var(--op-space-x-small);
+  --_op-sidebar-spacing: 0 0 var(--op-space-x-small);
 
   .sidebar__brand {
     display: flex;
-    gap: var(--op-space-small);
-
-    text-decoration: none;
+    margin: 0;
     color: inherit;
+    gap: var(--op-space-medium);
+    text-decoration: none;
 
     svg {
       width: var(--op-space-3x-large);
+      height: var(--op-space-3x-large);
     }
 
     .sidebar__brand-label {
       display: flex;
       flex-direction: column;
-      gap: var(--op-space-4x-small);
+      font-size: var(--op-font-small);
     }
   }
 
-  .sidebar__content {
-    gap: var(--op-space-x-small);
-  }
+  .btn {
+    &.btn--no-border {
+      background-color: transparent;
+      box-shadow: none;
+      color: var(--_op-sidebar-text-color);
 
-  .sidebar__item {
-    .sidebar__item-icon {
-      border-radius: var(--op-radius-large);
-
-      &.sidebar__item-icon--rotated {
-        rotate: 90deg;
+      &.btn--active,
+      &:hover {
+        background-color: var(--op-color-sidebar-button-active);
       }
-    }
-
-    &:hover,
-    &.active {
-      .sidebar__item-icon {
-        --op-mso-weight: var(--op-font-weight-medium);
-      }
-    }
-  }
-
-  // Modifiers
-  &.sidebar--drawer:not(.sidebar--responsive) {
-    @include sidebar-16six-drawer-global;
-  }
-
-  &.sidebar--drawer.sidebar--responsive {
-    @media (width > $breakpoint-medium) {
-      @include sidebar-16six-drawer-global;
-    }
-
-    @media (width <=$breakpoint-medium) {
-      @include sidebar-16six-rail-global;
     }
   }
 
   &.sidebar--rail {
-    @include sidebar-16six-rail-global;
+    @include sidebar-rail-global;
   }
 }
 ```

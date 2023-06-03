@@ -1,60 +1,40 @@
 // Domains Sidebar Example
-@mixin sidebar-domains-rail-global {
-  .sidebar__brand {
-    padding: 0 var(--_op-sidebar-spacing);
-  }
-}
-
-@mixin sidebar-domains-drawer-global {
-  .sidebar__content {
-    padding: 0;
-  }
-
-  .sidebar__item {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-  }
-
-  .sidebar__section-divider {
-    margin: var(--op-space-small) 0;
+%btn-global {
+  &.btn--pill-right {
+    border-radius: 0 var(--op-radius-pill) var(--op-radius-pill) 0;
   }
 }
 
 .sidebar-domains {
   @extend %sidebar-global;
 
-  // Normal
-  --_op-sidebar-background-color: var(--op-color-background);
-  --_op-sidebar-text-color: var(--op-color-on-background);
+  --_op-sidebar-drawer-width: 28rem;
+  --_op-sidebar-content-spacing: 0;
+  --_op-sidebar-content-item-spacing: 0;
 
-  // Active
-  --_op-sidebar-icon-background-active-color: var(--op-color-primary-plus-seven);
-  --_op-sidebar-icon-text-active-color: var(--op-color-primary-on-plus-seven);
+  box-shadow: none;
 
-  // Hover
-  --_op-sidebar-icon-background-hover-color: var(--op-color-neutral-plus-seven);
-  --_op-sidebar-icon-text-hover-color: var(--op-color-neutral-on-plus-seven);
+  .btn {
+    &.btn--no-border {
+      box-shadow: none;
 
-  .sidebar__brand {
-    padding: 0 var(--op-space-4x-large);
-  }
+      &.btn--active {
+        background-color: var(--op-color-primary-plus-five);
+        color: var(--op-color-primary-on-plus-five);
+      }
 
-  // Modifiers
-  &.sidebar--drawer:not(.sidebar--responsive) {
-    @include sidebar-domains-drawer-global;
-  }
-
-  &.sidebar--drawer.sidebar--responsive {
-    @media (width > $breakpoint-medium) {
-      @include sidebar-domains-drawer-global;
-    }
-
-    @media (width <= $breakpoint-medium) {
-      @include sidebar-domains-rail-global;
+      &:hover:not(.btn--active) {
+        background-color: var(--op-color-neutral-plus-six);
+        box-shadow: none;
+        color: var(--op-color-neutral-on-plus-six);
+      }
     }
   }
 
-  &.sidebar--rail {
-    @include sidebar-domains-rail-global;
+  .sidebar__footer {
+    display: flex;
+    align-items: center;
+    padding-left: var(--op-space-large);
+    gap: var(--op-space-small);
   }
 }
