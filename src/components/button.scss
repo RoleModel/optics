@@ -6,16 +6,20 @@
   --_op-btn-font-small: var(--op-font-x-small);
   --_op-btn-font-medium: var(--op-font-small);
   --_op-btn-font-large: var(--op-font-small);
+  --_op-btn-padding-small: 0 var(--op-space-x-small);
+  --_op-btn-padding-medium: 0 var(--op-space-small);
+  --_op-btn-padding-large: 0 var(--op-space-small);
 
   // Private API (don't touch these)
   --__op-btn-height: var(--_op-btn-height-large);
   --__op-btn-font-size: var(--_op-btn-font-large);
+  --__op-btn-padding: var(--_op-btn-padding-large);
 
   display: inline-flex;
   min-height: var(--__op-btn-height);
   align-items: center;
   justify-content: center;
-  padding: 0 var(--op-space-small);
+  padding: var(--__op-btn-padding);
   border-radius: var(--op-radius-medium);
   appearance: none;
   cursor: pointer;
@@ -50,16 +54,19 @@
   &.btn--small {
     --__op-btn-height: var(--_op-btn-height-small);
     --__op-btn-font-size: var(--_op-btn-font-small);
+    --__op-btn-padding: var(--_op-btn-padding-small);
   }
 
   &.btn--medium {
     --__op-btn-height: var(--_op-btn-height-medium);
     --__op-btn-font-size: var(--_op-btn-font-medium);
+    --__op-btn-padding: var(--_op-btn-padding-medium);
   }
 
   &.btn--large {
     --__op-btn-height: var(--_op-btn-height-large);
     --__op-btn-font-size: var(--_op-btn-font-large);
+    --__op-btn-padding: var(--_op-btn-padding-large);
   }
 
   // Disabled Modifier
@@ -93,6 +100,7 @@
     &.btn--large {
       --__op-btn-height: var(--_op-btn-height-large);
       --__op-btn-font-size: var(--_op-btn-font-large);
+      --__op-btn-padding: var(--_op-btn-padding-large);
     }
   }
 }
