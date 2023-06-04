@@ -1,15 +1,4 @@
 // 16Six Sidebar Example
-:root {
-  --op-color-primary-h: 256;
-  --op-color-primary-s: 66%;
-  --op-color-primary-l: 15%;
-
-  // Custom
-  --op-color-sidebar: var(--op-color-primary-minus-six);
-  --op-color-on-sidebar: hsl(26deg 100% 95%);
-  --op-color-sidebar-button-active: hsl(256deg 23% 32%);
-}
-
 .icon--rotated-135 {
   rotate: 135deg;
 }
@@ -31,9 +20,9 @@
 .sidebar-16six {
   @extend %sidebar-global;
 
-  --_op-sidebar-background-color: var(--op-color-sidebar);
-  --_op-sidebar-text-color: var(--op-color-on-sidebar);
-  --_op-sidebar-border-color: var(--op-color-on-sidebar);
+  --_op-sidebar-background-color: hsl(256deg 66% 15%);
+  --_op-sidebar-text-color: hsl(26deg 100% 95%);
+  --_op-sidebar-border-color: hsl(26deg 100% 95%);
   --_op-sidebar-rail-width: 6.4rem;
   --_op-sidebar-drawer-width: 22.4rem;
   --_op-sidebar-drawer-brand-width: calc(var(--op-space-3x-large) + (2 * var(--op-space-medium)));
@@ -68,7 +57,7 @@
 
       &.btn--active,
       &:hover {
-        background-color: var(--op-color-sidebar-button-active);
+        background-color: hsl(256deg 23% 32%);
       }
     }
   }
