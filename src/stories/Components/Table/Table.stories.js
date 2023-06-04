@@ -33,6 +33,10 @@ export default {
       control: 'boolean',
       description: 'This is not a class. It just provides a fixed height to demonstrate the sticky classes',
     },
+    paginationInFooter: {
+      control: 'boolean',
+      description: 'An example of using the pagination component in the footer of the table',
+    },
   },
 }
 
@@ -100,5 +104,13 @@ export const StickyBoth = {
   args: {
     sticky: 'both',
     height: true,
+  },
+}
+
+export const PaginationInFooter = {
+  args: {
+    sticky: 'footer',
+    height: true,
+    paginationInFooter: true,
   },
 }

@@ -1,3 +1,5 @@
+import { createPagination } from '../Pagination/Pagination.js'
+
 export const createTable = ({
   style = 'default',
   layout = 'auto',
@@ -6,6 +8,7 @@ export const createTable = ({
   sticky = 'off',
   height = false,
   checkbox = false,
+  paginationInFooter = false,
 }) => {
   const tableContainer = document.createElement('div')
   tableContainer.className = 'table-container'
@@ -29,6 +32,28 @@ export const createTable = ({
   ]
     .filter(Boolean)
     .join(' ')
+
+  const footer = () => {
+    if (paginationInFooter) {
+      return `
+      <tr>
+        <td colspan="3">
+          <div class='flex justify-end'>
+            ${createPagination({}).outerHTML}
+          </div>
+        </td>
+      </tr>
+      `
+    }
+
+    return `
+    <tr>
+      ${checkbox ? "<th><input type='checkbox' /></th>" : ''}
+      <td colspan="2">Total movies</td>
+      <td colspan="1">11</td>
+    </tr>
+    `
+  }
 
   table.innerHTML += `
   <thead>
@@ -112,11 +137,7 @@ export const createTable = ({
     </tr>
   </tbody>
   <tfoot>
-    <tr>
-      ${checkbox ? "<th><input type='checkbox' /></th>" : ''}
-      <td colspan="2">Total movies</td>
-      <td colspan="1">11</td>
-    </tr>
+    ${footer()}
   </tfoot>
   `
 
