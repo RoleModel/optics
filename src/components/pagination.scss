@@ -1,0 +1,27 @@
+%pagination-global {
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  // Showing Dropdown
+  .form-group {
+    align-items: center;
+
+    .form-label {
+      grid-column: 1;
+    }
+
+    .form-control {
+      grid-column: 2;
+    }
+  }
+
+  // ... Gap
+  .btn--pagination-divider {
+    pointer-events: none;
+  }
+}
+
+.pagination {
+  @extend %pagination-global;
+}
