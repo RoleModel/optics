@@ -1,0 +1,84 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as PaginationStories from './Pagination.stories'
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+Pagination is used to navigate through a series of pages, typically when dealing with tabular data.
+A few classes are used in combination with the button component to achieve this.
+
+An example of using this component with the Table component can be found in [Table With Pagination](?path=/docs/components-table--docs#with-pagination).
+
+## Note on Implementation
+
+This is just a styling pattern and does not implement the paging functionality. That is up to the projects needs.
+
+A commonly used tool for Ruby on Rails projects is [Kaminari](https://github.com/kaminari/kaminari). It allows you to copy its templates and customize them. To apply these patterns to those templates, just edit the files it generates and use the classes in these examples.
+
+[RoleModel Rails Kaminari Generator](https://github.com/RoleModel/rolemodel_rails/tree/master/lib/generators/rolemodel/kaminari) provides a generator to install and configure Kaminari with Optics classes applied.
+
+## Playground
+
+<Canvas of={PaginationStories.Default} />
+<Controls of={PaginationStories.Default} />
+
+### Selective Imports
+
+Pagination can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+@import '@rolemodel/optics/dist/scss/core/button';
+@import '@rolemodel/optics/dist/scss/core/form';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/pagination';
+```
+
+## Variations
+
+### Default
+
+`.pagination` Is the main class. It can be placed on a `nav` element and wraps a collection of [buttons](?path=/docs/components-button--docs) to create a pagination component.
+
+The buttons within can use any of the button classes, but form a default look, use the `.btn .btn--no-border .btn--small` classes.
+
+For the first and last page buttons, `.btn--icon` can be added for ensure a square button.
+
+For the currently active page, `.btn--active` can be used.
+
+`.pagination__divider` can be used on a div with contents of `...` to indicate a break in the pagination.
+This pattern is commonly used (and recommended to be used) when there are more that six pages of content. It prevents the pagination from becoming too long.
+
+<Canvas of={PaginationStories.Default} />
+
+### With Showing Select
+
+Another common pattern is to allow users to change how many items are shown per page. The visuals of this can be achieved by using a form group with a select component. The pagination styling will handle making the form label inline.
+
+<Canvas of={PaginationStories.WithShowing} />
+
+## Overriding styles
+
+The pagination classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior. You can modify all pagination behavior by overriding the `%pagination-global` placeholder selector
+and setting any properties:
+
+```css
+%pagination-global {
+}
+```
+
+## Custom Pagination
+
+Your application may need a custom pagination. To add one, just follow this template:
+
+```css
+.pagination-{name} {
+  @extend %pagination-global;
+}
+```

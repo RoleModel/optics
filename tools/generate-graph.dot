@@ -19,6 +19,10 @@ digraph dependencies {
   "Sidebar" -> "Tokens & Base";
   "Sidebar" -> "Button";
   
+  "Pagination" -> "Button";
+  "Pagination" -> "Form";
+  "Pagination" -> "Tokens & Base";
+  
   "Avatar" -> "Tokens & Base";
   "Card" -> "Tokens & Base";
   "Confirm Dialog" -> "Tokens & Base";

@@ -84,7 +84,7 @@ Button can be used as a standalone component, however, it does have a few depend
 
 ### Size
 
-`.btn--small`, `.btn--medium`, `.btn--large` (with large being the default) modify the size of any other button class by changing the font and height to be smaller or larger.
+`.btn--small`, `.btn--medium`, `.btn--large` (with large being the default) modify the size of any other button class by changing the font, padding, and height to be smaller or larger.
 
 <Canvas of={ButtonStories.Size} />
 
@@ -97,7 +97,7 @@ See https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
 
 ## Button API
 
-Size and Font button styles are built on css variables scoped to the button.
+Size (Height, Padding, and Font) button styles are built on css variables scoped to the button.
 Buttons have various states that are styled as well.
 
 Here are the variables and states used
@@ -112,6 +112,10 @@ Here are the variables and states used
 --_op-btn-font-small:
 --_op-btn-font-medium:
 --_op-btn-font-large:
+
+--_op-btn-padding-small:
+--_op-btn-padding-medium:
+--_op-btn-padding-large:
 
 // Different states
 .btn {} // Default behavior
@@ -146,6 +150,10 @@ If you want to override how the size modifier behaves, you can use API described
   --_op-btn-font-small: var(--op-font-4x-large);
   --_op-btn-font-medium: var(--op-font-5x-large);
   --_op-btn-font-large: var(--op-font-6x-large);
+
+  --_op-btn-padding-small: var(--op-space-large);
+  --_op-btn-padding-medium: var(--op-space-x-large);
+  --_op-btn-padding-large: var(--op-space-2x-large);
 }
 ```
 

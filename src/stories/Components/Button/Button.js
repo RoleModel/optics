@@ -11,10 +11,15 @@ export const createButton = ({
   size = 'large',
   disabled = false,
   inlineIconWithLabel = false,
+  useAsLink = false,
 }) => {
-  const element = disabled ? 'a' : 'button'
+  const element = useAsLink || disabled ? 'a' : 'button'
   const btn = document.createElement(element)
   btn.innerText = label
+
+  if (useAsLink) {
+    btn.href = '#'
+  }
 
   if (icon) {
     if (!inlineIconWithLabel) {
