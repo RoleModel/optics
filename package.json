@@ -42,8 +42,7 @@
     "@RoleModel:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "modern-css-reset": "^1.4.0",
-    "tom-select": "^2.0.0"
+    "modern-css-reset": "^1.4.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",
@@ -77,5 +76,13 @@
     "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-prettier": "^2.0.0",
     "stylelint-scss": "^4.3.0"
+  },
+  "peerDependencies": {
+    "tom-select": "^2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tom-select": {
+      "optional": true
+    }
   }
 }
