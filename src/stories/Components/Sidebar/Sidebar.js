@@ -66,7 +66,7 @@ export const createSidebar = ({
     .join(' ')
 
   body.innerHTML += `
-  <div class="${sidebarClasses}">
+  <nav class="${sidebarClasses}">
     ${brandSection}
     <div class="sidebar__content sidebar__content--${position}">
       ${links.map((item) => createSidebarItem(item, activeLink)).join('\n      ')}
@@ -89,7 +89,7 @@ export const createSidebar = ({
     `
         : ''
     }
-  </div>
+  </nav>
   ${trailingDiv ? '<div></div>' : ''}
 `
 
