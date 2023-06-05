@@ -11,7 +11,7 @@ export const createPagination = ({ activePage = '1', includeShowing = false }) =
   const createItem = (item) => {
     if (item === '...') {
       return `
-  <div class="btn btn--small btn--no-border btn--icon btn--pagination-divider">
+  <div class="pagination__divider">
     ...
   </div>
       `

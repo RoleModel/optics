@@ -17,8 +17,9 @@
   }
 
   // ... Gap
-  .btn--pagination-divider {
-    pointer-events: none;
+  .pagination__divider {
+    height: 100%;
+    padding: 0 var(--op-space-x-small);
   }
 }
 
