@@ -71,7 +71,9 @@
   }
 }
 
-.alert-danger {
+// alert-alert is an alias for alert-danger. See Alert.mdx for reasoning.
+.alert-danger,
+.alert-alert {
   @extend %alert-global;
 
   background-color: var(--op-color-alerts-danger-plus-eight);

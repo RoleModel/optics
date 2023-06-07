@@ -40,6 +40,8 @@ Alert can be used as a standalone component, however, it does have a few depende
 
 `.alert-danger` Provides a danger styled message
 
+`.alert-alert` is an alias for `.alert-danger`. Since RoleModel commonly uses [Rails](https://rubyonrails.org/) to develop projects, adding this alias allows this to be used for flash messages without having to change the default in rails. [Devise](https://github.com/heartcombo/devise) is also commonly used and cannot easily be configured away from this.
+
 <Canvas of={AlertStories.Danger} />
 
 ### Info
