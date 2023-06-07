@@ -71,7 +71,8 @@
   }
 }
 
-.alert-danger {
+.alert-danger,
+.alert-alert {
   @extend %alert-global;
 
   background-color: var(--op-color-alerts-danger-plus-eight);
