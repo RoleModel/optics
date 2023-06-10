@@ -4,6 +4,10 @@ digraph dependencies {
   edge [fontname = "Helvetica,Arial,sans-serif";];
   node [shape = box;];
   "Tokens & Base";
+  
+  "Accordion" -> "Tokens & Base";
+  "Accordion" -> "Icon";
+  
   "Alert" -> "Tokens & Base";
   "Alert" -> "Icon";
   

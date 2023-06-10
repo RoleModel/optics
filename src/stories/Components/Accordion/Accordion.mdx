@@ -1,0 +1,64 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as AccordionStories from './Accordion.stories'
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+Accordion classes are built on the `details` and `summary` html elements. They provide consistent and composable styling for disclosure widgets.
+
+## Playground
+
+<Canvas of={AccordionStories.Default} />
+<Controls of={AccordionStories.Default} />
+
+### Selective Imports
+
+Accordion can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+@import '@rolemodel/optics/dist/scss/components/icon';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/accordion';
+```
+
+## Variations
+
+### Default
+
+`.accordion` used on a `details` element with a `summary` element as the first child will create an accordion component.
+
+<Canvas of={AccordionStories.Default} />
+
+### Label Before Icon
+
+Positioning the arrow icon after the text inside of the summary will result on the icon being on the right side of the accordion.
+
+<Canvas of={AccordionStories.LabelBeforeIcon} />
+
+## Overriding styles
+
+The accordion classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior. You can modify all accordion behavior by overriding the `%accordion-global` placeholder selector and setting any properties:
+
+```css
+%accordion-global {
+}
+```
+
+## Custom Accordion
+
+Your application may need a custom accordion. To add one, just follow this template:
+
+```css
+.accordion-{name} {
+  @extend %accordion-global;
+
+  --_op-accordion-title-height: var(--op-font-small);
+}
+```

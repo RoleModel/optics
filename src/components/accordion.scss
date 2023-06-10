@@ -1,0 +1,35 @@
+%accordion-global {
+  // Public API (allowed to be overridden)
+  --_op-accordion-title-height: var(--op-font-4x-large);
+
+  summary {
+    display: grid;
+    height: var(--_op-accordion-title-height);
+    align-items: center;
+    color: var(--op-color-neutral-on-plus-max);
+    cursor: pointer;
+    font-size: var(--op-font-x-small);
+    font-weight: var(--op-font-weight-semi-bold);
+    gap: var(--op-space-2x-small);
+    grid-template-columns: auto 1fr;
+
+    .material-symbols-outlined {
+      --op-mso-optical-sizing: 48;
+
+      font-size: var(--op-font-x-large);
+      justify-self: flex-end;
+      transition: var(--op-transition-accordion);
+      user-select: none;
+    }
+  }
+
+  &[open] {
+    summary .material-symbols-outlined {
+      rotate: 0.25turn;
+    }
+  }
+}
+
+.accordion {
+  @extend %accordion-global;
+}
