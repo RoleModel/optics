@@ -8,7 +8,7 @@ export default {
   argTypes: {
     speed: {
       control: { type: 'select' },
-      options: ['input (120ms)', 'sidebar (200ms)', 'modal (300ms)', 'panel (400ms)'],
+      options: ['accordion (120ms)', 'input (120ms)', 'sidebar (200ms)', 'modal (300ms)', 'panel (400ms)'],
     },
   },
 }
@@ -40,5 +40,11 @@ export const Modal = {
 export const Panel = {
   args: {
     speed: 'panel (400ms)',
+  },
+}
+
+export const AccordionRotation = {
+  args: {
+    speed: 'accordion (120ms)',
   },
 }

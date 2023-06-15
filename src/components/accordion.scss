@@ -1,0 +1,38 @@
+%accordion-global {
+  // Public API (allowed to be overridden)
+  --_op-accordion-summary-min-height: calc(var(--op-space-2x-large) + var(--op-space-2x-small));
+
+  summary {
+    display: grid;
+    min-height: var(--_op-accordion-summary-min-height);
+    align-items: center;
+    cursor: pointer;
+    gap: var(--op-space-2x-small);
+    grid-template-columns: auto 1fr auto;
+
+    .accordion__label {
+      color: var(--op-color-neutral-on-plus-max);
+      font-size: var(--op-font-x-small);
+      font-weight: var(--op-font-weight-semi-bold);
+    }
+
+    .accordion__marker {
+      --op-mso-optical-sizing: 48;
+
+      font-size: var(--op-font-x-large);
+      justify-self: flex-end;
+      transition: var(--op-transition-accordion);
+      user-select: none;
+    }
+  }
+
+  &[open] {
+    summary .accordion__marker {
+      rotate: 0.25turn;
+    }
+  }
+}
+
+.accordion {
+  @extend %accordion-global;
+}

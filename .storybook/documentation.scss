@@ -23,6 +23,14 @@
   }
 }
 
+.transition-demo--accordion {
+  transition: var(--op-transition-accordion);
+
+  &:hover {
+    rotate: 0.25turn;
+  }
+}
+
 .transition-demo--input {
   transition: var(--op-transition-input);
 }
