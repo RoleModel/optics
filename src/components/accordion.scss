@@ -1,19 +1,22 @@
 %accordion-global {
   // Public API (allowed to be overridden)
-  --_op-accordion-title-height: var(--op-font-4x-large);
+  --_op-accordion-summary-min-height: var(--op-font-4x-large);
 
   summary {
     display: grid;
-    height: var(--_op-accordion-title-height);
+    min-height: var(--_op-accordion-summary-min-height);
     align-items: center;
-    color: var(--op-color-neutral-on-plus-max);
     cursor: pointer;
-    font-size: var(--op-font-x-small);
-    font-weight: var(--op-font-weight-semi-bold);
     gap: var(--op-space-2x-small);
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
 
-    .material-symbols-outlined {
+    .accordion__label {
+      color: var(--op-color-neutral-on-plus-max);
+      font-size: var(--op-font-x-small);
+      font-weight: var(--op-font-weight-semi-bold);
+    }
+
+    .accordion__marker {
       --op-mso-optical-sizing: 48;
 
       font-size: var(--op-font-x-large);
@@ -24,7 +27,7 @@
   }
 
   &[open] {
-    summary .material-symbols-outlined {
+    summary .accordion__marker {
       rotate: 0.25turn;
     }
   }

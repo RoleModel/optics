@@ -31,14 +31,23 @@ Accordion can be used as a standalone component, however, it does have a few dep
 ### Default
 
 `.accordion` used on a `details` element with a `summary` element as the first child will create an accordion component.
+Within the `summary`, a span with the class `accordion__label` will be used as the title of the accordion and `accordion__marker` will be used as the icon.
+
+Other content can be placed within the summary, but the `accordion__label` and `accordion__marker` classes must be used for the accordion to work properly.
 
 <Canvas of={AccordionStories.Default} />
 
-### Label Before Icon
+### Swapped Label and Marker
 
-Positioning the arrow icon after the text inside of the summary will result on the icon being on the right side of the accordion.
+Positioning the marker after the label inside of the summary will result in the marker being on the right side of the accordion.
 
-<Canvas of={AccordionStories.LabelBeforeIcon} />
+<Canvas of={AccordionStories.FlipHeaderAndMarker} />
+
+### Additional Header Content
+
+Additional content can be included within the `summary` element in any order. Anything not within the `.accordion__label` or `.accordion__marker` classes will be rendered wherever you place it in the `summary`. Note: Content placed between the label and the marker will fill the width between them. If placing a button there, you may want to wrap it in a div so the button doesn't stretch the whole space.
+
+<Canvas of={AccordionStories.AdditionalHeaderContent} />
 
 ## Overriding styles
 
@@ -59,6 +68,6 @@ Your application may need a custom accordion. To add one, just follow this templ
 .accordion-{name} {
   @extend %accordion-global;
 
-  --_op-accordion-title-height: var(--op-font-small);
+  --_op-accordion-summary-min-height: var(--op-font-small);
 }
 ```

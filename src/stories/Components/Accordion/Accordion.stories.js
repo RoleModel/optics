@@ -1,4 +1,5 @@
 import { createAccordion } from './Accordion.js'
+import { createButton } from '../Button/Button.js'
 
 export default {
   title: 'Components/Accordion',
@@ -6,9 +7,10 @@ export default {
     return createAccordion({ option1, ...args })
   },
   argTypes: {
-    icon: { control: 'text' },
     headerLabel: { control: 'text' },
-    labelBeforeIcon: { control: 'boolean' },
+    marker: { control: 'text' },
+    additionalHeaderContent: { control: 'text' },
+    flipHeaderAndMarker: { control: 'boolean' },
     content: { control: 'text' },
   },
   parameters: {
@@ -20,8 +22,14 @@ export const Default = {
   args: {},
 }
 
-export const LabelBeforeIcon = {
+export const FlipHeaderAndMarker = {
   args: {
-    labelBeforeIcon: true,
+    flipHeaderAndMarker: true,
+  },
+}
+
+export const AdditionalHeaderContent = {
+  args: {
+    additionalHeaderContent: createButton({ label: 'Button' }).outerHTML,
   },
 }

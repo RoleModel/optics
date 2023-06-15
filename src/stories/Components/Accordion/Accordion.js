@@ -1,9 +1,10 @@
 import { createIcon } from '../Icon/Icon'
 
 export const createAccordion = ({
-  icon = 'arrow_right',
   headerLabel = 'Header Label',
-  labelBeforeIcon = false,
+  marker = 'arrow_right',
+  additionalHeaderContent = '',
+  flipHeaderAndMarker = false,
   content = 'Something small enough to escape casual notice.',
 }) => {
   const element = document.createElement('details')
@@ -11,16 +12,25 @@ export const createAccordion = ({
 
   const summary = document.createElement('summary')
 
+  const label = document.createElement('span')
+  label.className = 'accordion__label'
+  label.innerHTML = headerLabel
+
+  const markerIcon = createIcon({ name: marker })
+  markerIcon.className += ' accordion__marker'
+
   summary.innerHTML = '\n    '
-  if (labelBeforeIcon) {
-    summary.innerHTML += headerLabel
+  if (flipHeaderAndMarker) {
+    summary.innerHTML += label.outerHTML
     summary.innerHTML += '\n    '
-    summary.innerHTML += createIcon({ name: icon }).outerHTML
+    summary.innerHTML += markerIcon.outerHTML
   } else {
-    summary.innerHTML += createIcon({ name: icon }).outerHTML
+    summary.innerHTML += markerIcon.outerHTML
     summary.innerHTML += '\n    '
-    summary.innerHTML += headerLabel
+    summary.innerHTML += label.outerHTML
   }
+  summary.innerHTML += '\n    '
+  summary.innerHTML += additionalHeaderContent
   summary.innerHTML += '\n  '
 
   element.innerHTML = '\n  '
