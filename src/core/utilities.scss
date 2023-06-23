@@ -2,13 +2,13 @@
 
 .container {
   width: 100%;
-  max-width: $breakpoint-medium;
+  max-width: var(--op-breakpoint-medium);
   padding: 0 var(--op-space-large);
   margin: 0 auto;
 }
 
 .container--sm {
-  max-width: $breakpoint-small;
+  max-width: var(--op-breakpoint-small);
 }
 
 .container--md-padding {
@@ -20,7 +20,7 @@
 }
 
 .container--xs {
-  max-width: $breakpoint-x-small;
+  max-width: var(--op-breakpoint-x-small);
 }
 
 // Width Properties

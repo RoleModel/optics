@@ -64,6 +64,29 @@
   --op-color-alerts-notice-l: 64%;
 }
 
+// Breakpoints are duplicated here for use as variables with calculations and for use in @media queries.
+// We use SCSS variables outside the root since support for custom properties / css variables
+// is not yet available
+// https://drafts.csswg.org/css-env-1/
+// https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+@mixin breakpoints {
+  /**
+  * @tokens Breakpoints
+  * @presenter Spacing
+  */
+  --op-breakpoint-x-small: 512px; // vertical phone
+  --op-breakpoint-small: 768px; // vertical ipad
+  --op-breakpoint-medium: 1024px; // landscape ipad
+  --op-breakpoint-large: 1280px; // small laptop
+  --op-breakpoint-x-large: 1440px; // medium laptop
+}
+
+$breakpoint-x-small: 512px; // vertical phone
+$breakpoint-small: 768px; // vertical ipad
+$breakpoint-medium: 1024px; // landscape ipad
+$breakpoint-large: 1280px; // small laptop
+$breakpoint-x-large: 1440px; // medium laptop
+
 @mixin border-radius {
   /**
   * @tokens Border Radius
@@ -279,23 +302,12 @@
     var(--op-input-outer-focus) var(--op-color-alerts-warning-plus-five);
 }
 
-// We use SCSS variables outside the root since support for custom properties / css variables
-// is not yet available
-// https://drafts.csswg.org/css-env-1/
-// https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
-
-/**
-* @tokens Breakpoints
-*/
-$breakpoint-x-small: 512px; // vertical phone
-$breakpoint-small: 768px; // vertical ipad
-$breakpoint-medium: 1024px; // landscape ipad
-$breakpoint-large: 1280px; // small laptop
-$breakpoint-x-large: 1440px; // medium laptop
-
 :root {
   // Color HSLs
   @include color-varieties;
+
+  // Breakpoints
+  @include breakpoints;
 
   // Border
   @include border-radius;

@@ -21,7 +21,7 @@
 
 .app__content {
   width: 100%;
-  max-width: $breakpoint-medium;
+  max-width: var(--op-breakpoint-medium);
   flex-grow: 1;
   padding: 0 var(--op-space-large);
   margin: 0 auto;
