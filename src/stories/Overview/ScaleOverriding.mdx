@@ -38,6 +38,7 @@ Regardless of the reason, you can customize and override each scale like the fol
   --op-color-primary-s: 100%;
   --op-color-primary-l: 50%;
 }
+
 @mixin primary-semantic-scale-overrides {
   // Main Scale
   --op-color-primary-plus-two: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 49%);
@@ -48,6 +49,7 @@ Regardless of the reason, you can customize and override each scale like the fol
   --op-color-primary-on-plus-one: var(--op-color-white);
   --op-color-primary-on-plus-one-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 92%);
 }
+
 :root {
   @include primary-semantic-scale-overrides;
 }
