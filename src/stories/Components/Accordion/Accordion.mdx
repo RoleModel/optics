@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as AccordionStories from './Accordion.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={AccordionStories} />
 
 # Accordion
@@ -49,7 +51,16 @@ Additional content can be included within the `summary` element in any order. An
 
 <Canvas of={AccordionStories.AdditionalHeaderContent} />
 
-## Overriding styles
+## Customizing Accordion styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the accordion for you project.',
+    }).outerHTML,
+  }}
+></div>
 
 The accordion classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -60,7 +71,16 @@ This allows multiple classes to share the same behavior. You can modify all acco
 }
 ```
 
-## Custom Accordion
+## New Accordion Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the accordion for you project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom accordion. To add one, just follow this template:
 

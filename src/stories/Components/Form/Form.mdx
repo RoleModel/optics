@@ -6,6 +6,8 @@ import * as LabelStories from './Label.stories'
 import * as SelectStories from './Select.stories'
 import * as TextareaStories from './Textarea.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta title="Components/Form" />
 
 # Form
@@ -127,7 +129,16 @@ See [MDN's documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/:inde
 
 <Canvas of={FormGroupStories.IndeterminateCheckbox} />
 
-## Overriding Form styles
+## Customizing Form styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the form for you project.',
+    }).outerHTML,
+  }}
+></div>
 
 The form classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 

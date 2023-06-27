@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as ConfirmDialogStories from './ConfirmDialog.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={ConfirmDialogStories} />
 
 # Confirm Dialog
@@ -38,7 +40,16 @@ Confirm Dialog can be used as a standalone component, however, it does have a fe
 
 <Canvas of={ConfirmDialogStories.Inline} />
 
-## Overriding Confirm Dialog styles
+## Customizing Confirm Dialog styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the confirm dialog for you project.',
+    }).outerHTML,
+  }}
+></div>
 
 The classes are built on [sass placeholder selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -54,7 +65,16 @@ This allows classes to share the same behavior. You can modify all dialogs behav
 }
 ```
 
-## Custom Confirm Dialog
+## New Confirm Dialog Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the confirm dialog for you project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom dialog. To add one, just follow this template:
 

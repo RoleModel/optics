@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as TableStories from './Table.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={TableStories} />
 
 # Table
@@ -109,7 +111,16 @@ Here are the variables used
 --_op-table-cell-padding-compact:
 ```
 
-## Overriding table styles
+## Customizing Table styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the table for you project.',
+    }).outerHTML,
+  }}
+></div>
 
 The table classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -143,7 +154,16 @@ If you need to override the color of a particular table style, you can open the 
 }
 ```
 
-## Custom Table
+## New Table Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the table for you project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom table. To add one, just follow this template:
 
