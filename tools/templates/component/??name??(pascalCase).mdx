@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as ??name??(pascalCase)Stories from './??name??(pascalCase).stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={??name??(pascalCase)Stories} />
 
 # ??name??(pascalCase)
@@ -39,7 +41,16 @@ Description of alternate example
 
 <Canvas of={??name??(pascalCase)Stories.Alternate} />
 
-## Overriding styles
+## Customizing ??name??(pascalCase) styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the ??name??(lowerCase) for you project.',
+    }).outerHTML,
+  }}
+></div>
 
 The ??name??(lowerCase) classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -57,7 +68,16 @@ If you need to override the behavior of a particular ??name??(lowerCase) style, 
 }
 ```
 
-## Custom ??name??(pascalCase)
+## New ??name??(pascalCase) Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the ??name??(pascalCase) for you project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom ??name??(lowerCase). To add one, just follow this template:
 
