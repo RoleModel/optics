@@ -150,12 +150,17 @@ export const createFormGroup = ({
   readonly,
   indeterminate,
   disabled,
+  inline = false,
 }) => {
   const element = document.createElement('div')
   element.className = 'form-group'
 
   if (error) {
     element.className += ' form-group--error'
+  }
+
+  if (inline) {
+    element.className += ' form-group--inline'
   }
 
   const errorElement = document.createElement('span')

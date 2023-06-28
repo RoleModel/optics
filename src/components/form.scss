@@ -310,3 +310,24 @@ textarea.form-control:not([type='radio'], [type='checkbox']) {
     }
   }
 }
+
+.form-group--inline {
+  align-items: center;
+
+  // Group Alignment
+  /* stylelint-disable no-descending-specificity */
+  .form-label {
+    grid-column: unset;
+  }
+
+  .form-error,
+  .form-hint {
+    grid-column: 1 / 3;
+  }
+
+  .form-control:not([type='radio'], [type='checkbox']),
+  .toggle {
+    grid-column: unset;
+  }
+  /* stylelint-enable no-descending-specificity */
+}
