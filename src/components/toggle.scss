@@ -1,0 +1,100 @@
+%toggle-global {
+  // Public API (allowed to be overridden)
+  --_op-toggle-height-small: var(--op-space-medium); // 1.6rem
+  --_op-toggle-height-large: var(--op-space-x-large); // 2.4rem
+  --_op-toggle-width-small: calc(var(--op-space-x-large) + var(--op-space-3x-small)); // 2.6rem
+  --_op-toggle-width-large: calc(var(--op-space-3x-large) + var(--op-space-3x-small)); // 4.2rem
+  --_op-toggle-opacity-disabled: 0.4;
+  --_op-toggle-switch-padding: var(--op-space-2x-small);
+
+  // Private API (don't touch these)
+  --__op-toggle-width: var(--_op-toggle-width-large);
+  --__op-toggle-height: var(--_op-toggle-height-large);
+  --__op-toggle-switch-size: calc(var(--__op-toggle-height) - var(--_op-toggle-switch-padding));
+  --__op-toggle-half-switch-padding: calc(var(--_op-toggle-switch-padding) / 2);
+
+  position: relative;
+  display: flex;
+
+  .toggle__input {
+    width: 0;
+    height: 0;
+    margin-right: calc(-1 * var(--op-space-2x-small));
+
+    &:disabled + .toggle__label {
+      cursor: not-allowed;
+      opacity: var(--_op-toggle-opacity-disabled);
+    }
+
+    &:checked + .toggle__label {
+      background-color: var(--op-color-primary-base);
+      box-shadow: none;
+
+      &::after {
+        left: calc(100% - var(--__op-toggle-half-switch-padding));
+        transform: translateX(-100%);
+      }
+    }
+
+    &:hover + .toggle__label {
+      &::after {
+        background-color: var(--op-color-primary-plus-five);
+      }
+    }
+
+    &:focus-visible + .toggle__label {
+      box-shadow: 0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-six),
+        inset var(--op-border-all) var(--op-color-primary-minus-three);
+
+      &::after {
+        background-color: var(--op-color-neutral-plus-five);
+        box-shadow: var(--op-border-all) var(--op-color-primary-minus-three);
+      }
+    }
+
+    &:focus-visible:checked + .toggle__label {
+      &::after {
+        background-color: var(--op-color-primary-plus-six);
+        box-shadow: var(--op-border-all) var(--op-color-primary-minus-two);
+      }
+    }
+  }
+
+  .toggle__label {
+    position: relative;
+    display: block;
+    width: var(--__op-toggle-width);
+    height: var(--__op-toggle-height);
+    border-radius: var(--op-radius-pill);
+    background: var(--op-color-neutral-base);
+    box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
+    text-indent: -9999px;
+
+    &::after {
+      position: absolute;
+      top: var(--__op-toggle-half-switch-padding);
+      left: var(--__op-toggle-half-switch-padding);
+      width: var(--__op-toggle-switch-size);
+      height: var(--__op-toggle-switch-size);
+      border-radius: var(--op-radius-circle);
+      background-color: var(--op-color-neutral-plus-eight);
+      content: '';
+      transition: var(--op-transition-input);
+    }
+  }
+
+  // Size Modifiers
+  &.toggle--small {
+    --__op-toggle-width: var(--_op-toggle-width-small);
+    --__op-toggle-height: var(--_op-toggle-height-small);
+  }
+
+  &.toggle--large {
+    --__op-toggle-width: var(--_op-toggle-width-large);
+    --__op-toggle-height: var(--_op-toggle-height-large);
+  }
+}
+
+.toggle {
+  @extend %toggle-global;
+}
