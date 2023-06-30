@@ -2,6 +2,8 @@ import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as AlertStories from './Alert.stories'
 import imageFile from './flash.gif'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={AlertStories} />
 
 # Alert
@@ -111,7 +113,16 @@ icon, title, and the final (dismissible close) icon are all optional.
 </div>
 ```
 
-## Overriding alert styles
+## Customizing alert styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the alert for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 The alert classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -133,7 +144,16 @@ If you need to override the behavior of a particular alert style, you can open t
 }
 ```
 
-## Custom Alert
+## New Alert Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the alert for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom alert. To add one, just follow this template:
 

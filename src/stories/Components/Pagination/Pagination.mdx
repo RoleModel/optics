@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as PaginationStories from './Pagination.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={PaginationStories} />
 
 # Pagination
@@ -61,7 +63,16 @@ Another common pattern is to allow users to change how many items are shown per 
 
 <Canvas of={PaginationStories.WithShowing} />
 
-## Overriding styles
+## Customizing Pagination styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the pagination for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 The pagination classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -73,12 +84,21 @@ and setting any properties:
 }
 ```
 
-## Custom Pagination
+## New Pagination Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the pagination for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom pagination. To add one, just follow this template:
 
 ```css
-.pagination-{name} {
   @extend %pagination-global;
+.pagination-{name} {
 }
 ```

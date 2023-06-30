@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as BadgeStories from './Badge.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={BadgeStories} />
 
 # Badge
@@ -76,7 +78,16 @@ Badge can be used as a standalone component, however, it does have a few depende
 
 <Canvas of={BadgeStories.NotificationButton} />
 
-## Overriding badge styles
+## Customizing badge styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the badge for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 The badge classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -98,7 +109,16 @@ If you need to override the behavior of a particular badge style, you can open t
 }
 ```
 
-## Custom Badge
+## New Badge Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the badge for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom badge. To add one, just follow this template:
 

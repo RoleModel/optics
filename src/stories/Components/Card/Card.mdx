@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as CardStories from './Card.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={CardStories} />
 
 # Card
@@ -57,7 +59,16 @@ Card can be used as a standalone component, however, it does have a few dependen
 
 <Canvas of={CardStories.Shadow} />
 
-## Overriding card styles
+## Customizing Card styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the card for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 The card classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -79,7 +90,16 @@ If you need to override the behavior of a particular card style, you can open th
 }
 ```
 
-## Custom Card
+## New Card Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the card for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom card. To add one, just follow this template:
 

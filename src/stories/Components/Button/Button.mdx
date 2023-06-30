@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as ButtonStories from './Button.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={ButtonStories} />
 
 # Button
@@ -127,7 +129,16 @@ Here are the variables and states used
 ```
 {/* prettier-ignore-end */}
 
-## Overriding Button styles
+## Customizing Button styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the button for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 The button classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -168,7 +179,16 @@ If you need to override the color of a particular button style, you can open the
 }
 ```
 
-## Custom Button
+## New Button Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the button for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom button. To add one, just follow this template:
 

@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as TooltipStories from './Tooltip.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={TooltipStories} />
 
 # Tooltip
@@ -77,7 +79,16 @@ Tooltips have a maximum width and will wrap text if it is too long.
 
 <Canvas of={TooltipStories.LotsOfText} />
 
-## Overriding styles
+## Customizing Tooltip styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the tooltip for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 The tooltip classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -98,7 +109,16 @@ This allows multiple classes to share the same behavior. You can modify all tool
 }
 ```
 
-## Custom Tooltip
+## New Tooltip Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the tooltip for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom tooltip. To add one, just follow this template:
 

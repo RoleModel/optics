@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as DividerStories from './Divider.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={DividerStories} />
 
 # Divider
@@ -69,7 +71,16 @@ Here are the variables that can be customized.
 ```
 {/* prettier-ignore-end */}
 
-## Overriding styles
+## Customizing Divider styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the divider for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 The divider classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -87,7 +98,16 @@ If you need to override the behavior of a particular divider style, you can open
 }
 ```
 
-## Custom Divider
+## New Divider Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the divider for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom divider. To add one, just follow this template:
 

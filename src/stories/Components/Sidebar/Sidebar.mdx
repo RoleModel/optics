@@ -1,6 +1,8 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as SidebarStories from './Sidebar.stories'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={SidebarStories} />
 
 # Sidebar
@@ -144,7 +146,16 @@ Here are the variables used
 --_op-sidebar-transition:
 ```
 
-## Overriding Sidebar styles
+## Customizing Sidebar styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the sidebar for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 The sidebar classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
@@ -186,7 +197,16 @@ If you need to override the color of a particular sidebar style, you can open th
 }
 ```
 
-## Custom Sidebar
+## New Sidebar Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the sidebar for your project.',
+    }).outerHTML,
+  }}
+></div>
 
 Your application may need a custom Sidebar. To add one, just follow this template:
 
