@@ -112,10 +112,12 @@
 %dropdown-arrow {
   padding-right: var(--op-space-3x-large);
   appearance: none;
-  background: var(--op-encoded-images-dropdown-arrow) center right no-repeat;
+  background-image: var(--op-encoded-images-dropdown-arrow);
+  background-position: center right;
   background-position-x: calc(
     100% - ((var(--op-space-3x-large) / 2) - (var(--op-encoded-images-dropdown-arrow-width) / 2))
   );
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 
