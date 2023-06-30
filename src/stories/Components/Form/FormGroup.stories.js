@@ -11,6 +11,9 @@ export default {
   argTypes: {
     ...LabelStories.default.argTypes,
     ...InputStories.default.argTypes,
+    inline: {
+      control: { type: 'boolean' },
+    },
     error: {
       control: { type: 'text' },
     },
@@ -94,5 +97,13 @@ export const Readonly = {
     ...LabelStories.Default.args,
     ...InputStories.Default.args,
     readonly: true,
+  },
+}
+
+export const Inline = {
+  args: {
+    ...LabelStories.Default.args,
+    ...InputStories.Default.args,
+    inline: true,
   },
 }
