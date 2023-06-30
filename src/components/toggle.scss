@@ -16,17 +16,17 @@
   position: relative;
   display: flex;
 
-  .toggle__input {
+  input {
     width: 0;
     height: 0;
     margin-right: calc(-1 * var(--op-space-2x-small));
 
-    &:disabled + .toggle__label {
+    &:disabled + label {
       cursor: not-allowed;
       opacity: var(--_op-toggle-opacity-disabled);
     }
 
-    &:checked + .toggle__label {
+    &:checked + label {
       background-color: var(--op-color-primary-base);
       box-shadow: none;
 
@@ -36,13 +36,13 @@
       }
     }
 
-    &:hover + .toggle__label {
+    &:hover + label {
       &::after {
         background-color: var(--op-color-primary-plus-five);
       }
     }
 
-    &:focus-visible + .toggle__label {
+    &:focus-visible + label {
       box-shadow: 0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-six),
         inset var(--op-border-all) var(--op-color-primary-minus-three);
 
@@ -52,7 +52,7 @@
       }
     }
 
-    &:focus-visible:checked + .toggle__label {
+    &:focus-visible:checked + label {
       &::after {
         background-color: var(--op-color-primary-plus-six);
         box-shadow: var(--op-border-all) var(--op-color-primary-minus-two);
@@ -60,7 +60,7 @@
     }
   }
 
-  .toggle__label {
+  label {
     position: relative;
     display: block;
     width: var(--__op-toggle-width);
