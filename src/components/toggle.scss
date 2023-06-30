@@ -68,7 +68,7 @@
     border-radius: var(--op-radius-pill);
     background: var(--op-color-neutral-base);
     box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
-    text-indent: -9999px;
+    text-indent: -9999px; // Normally text would not be put in the label, but this hides it in case you do put text in the label
 
     &::after {
       position: absolute;
