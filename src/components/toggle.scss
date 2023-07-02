@@ -93,6 +93,11 @@
     --__op-toggle-width: var(--_op-toggle-width-large);
     --__op-toggle-height: var(--_op-toggle-height-large);
   }
+
+  // Prevent labels after the toggle being full width
+  & + label {
+    width: fit-content;
+  }
 }
 
 .toggle {
