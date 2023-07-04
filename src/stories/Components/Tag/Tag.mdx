@@ -52,25 +52,7 @@ Tag can be used as a standalone component, however, it does have a few dependenc
 
 ### Notice
 
-<Canvas of={TagStories.Notice} />
 
-## Tag API
-
-Styles are built on css variables scoped to the tag.
-
-Here are the variables that can be customized.
-
-{/* prettier-ignore-start */}
-```css
-// Variable API
---_op-tag-background-color:
---_op-tag-color:
---_op-tag-background-color-hover:
---_op-tag-color-hover:
---_op-tag-icon-background-color-hover:
---_op-tag-icon-color-hover:
-```
-{/* prettier-ignore-end */}
 
 ## Customizing Tag styles
 
@@ -114,12 +96,6 @@ Your application may need a custom tag. To add one, just follow this template:
 
 ```css
 .tag-{name} {
-  --_op-tag-background-color: ;
-  --_op-tag-color: ;
-  --_op-tag-background-color-hover: ;
-  --_op-tag-color-hover: ;
-  --_op_tag-icon-background-color-hover: ;
-  --_op_tag-icon-color-hover: ;
   @extend %tag-global;
 }
 ```

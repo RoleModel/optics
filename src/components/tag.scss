@@ -1,87 +1,121 @@
 %tag-global {
   // Public API (allowed to be overridden)
-  --_op-tag-background-color: var(--op-color-primary-base);
-  --_op-tag-color: var(--op-color-primary-on-base);
-  --_op-tag-background-color-hover: var(--op-color-primary-minus-one);
-  --_op-tag-color-hover: var(--op-color-primary-on-minus-one);
-  --_op-tag-icon-background-color-hover: var(--op-color-primary-minus-three);
-  --_op-tag-icon-color-hover: var(--op-color-primary-on-minus-three);
-
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: var(--op-space-2x-small) var(--op-space-x-small);
   border-radius: var(--op-radius-pill);
-  background-color: var(--_op-tag-background-color);
-  color: var(--_op-tag-color);
+  background-color: var(--op-color-primary-base);
+  color: var(--op-color-primary-on-base);
+  cursor: inherit;
   font-size: var(--op-font-x-small);
   font-weight: var(--op-font-weight-bold);
   gap: var(--op-space-2x-small);
+  letter-spacing: var(--op-letter-spacing-label);
+  line-height: var(--op-line-height-dense);
+  white-space: nowrap;
 
   &:hover {
-    background-color: var(--_op-tag-background-color-hover);
+    background-color: var(--op-color-primary-minus-one);
+    color: var(--op-color-primary-on-minus-one);
   }
 
   .material-symbols-outlined {
     border-radius: var(--op-radius-pill);
 
     &:hover {
-      background-color: var(--_op-tag-icon-background-color-hover);
-      color: var(--_op-tag-icon-color-hover);
+      background-color: var(--op-color-primary-minus-three);
+      color: var(--op-color-primary-on-minus-three);
       cursor: pointer;
     }
   }
 }
 
-.tag--default {
+.tag {
   @extend %tag-global;
 }
 
-.tag--readonly {
-  --_op-tag-background-color: var(--op-color-neutral-plus-four);
-  --_op-tag-color: var(--op-color-neutral-on-plus-four);
-  --_op-tag-background-color-hover: var(--_op-tag-background-color);
-  --_op-tag-color-hover: var(--_op-tag-color);
-  --_op-tag-icon-background-color-hover: var(--_op-tag-background-color);
-  --_op-tag-icon-color-hover: var(--_op-tag-color);
+.tag-readonly {
   @extend %tag-global;
+
+  background-color: var(--op-color-neutral-plus-four);
+  color: var(--op-color-neutral-on-plus-four);
+
+  &:hover {
+    background-color: var(--op-color-neutral-plus-four);
+    color: var(--op-color-neutral-on-plus-four);
+  }
+
+  .material-symbols-outlined:hover {
+    background-color: var(--op-color-neutral-plus-four);
+    color: var(--op-color-neutral-on-plus-four);
+  }
 }
 
-.tag--danger {
-  --_op-tag-background-color: var(--op-color-alerts-danger-base);
-  --_op-tag-color: var(--op-color-alerts-danger-on-base);
-  --_op-tag-background-color-hover: var(--op-color-alerts-danger-minus-one);
-  --_op-tag-color-hover: var(--op-color-alerts-danger-on-minus-one);
-  --_op-tag-icon-background-color-hover: var(--op-color-alerts-danger-minus-three);
-  --_op-tag-icon-color-hover: var(--op-color-alerts-danger-on-minus-three);
+.tag-danger {
   @extend %tag-global;
+
+  background-color: var(--op-color-alerts-danger-base);
+  color: var(--op-color-alerts-danger-on-base);
+
+  &:hover {
+    background-color: var(--op-color-alerts-danger-minus-one);
+    color: var(--op-color-alerts-danger-on-minus-one);
+  }
+
+  .material-symbols-outlined:hover {
+    background-color: var(--op-color-alerts-danger-minus-three);
+    color: var(--op-color-alerts-danger-on-minus-three);
+  }
 }
 
-.tag--warning {
-  --_op-tag-background-color: var(--op-color-alerts-warning-plus-three);
-  --_op-tag-color: var(--op-color-alerts-warning-on-plus-three);
-  --_op-tag-background-color-hover: var(--op-color-alerts-warning-base);
-  --_op-tag-color-hover: var(--op-color-alerts-warning-on-base);
-  --_op-tag-icon-background-color-hover: var(--op-color-alerts-warning-minus-two);
-  --_op-tag-icon-color-hover: var(--op-color-alerts-warning-on-minus-two);
+.tag-warning {
   @extend %tag-global;
+
+  background-color: var(--op-color-alerts-warning-plus-three);
+  color: var(--op-color-alerts-warning-on-plus-three);
+
+  &:hover {
+    background-color: var(--op-color-alerts-warning-base);
+    color: var(--op-color-alerts-warning-on-base);
+  }
+
+  .material-symbols-outlined:hover {
+    background-color: var(--op-color-alerts-warning-minus-two);
+    color: var(--op-color-alerts-warning-on-minus-two);
+  }
 }
 
-.tag--info {
-  --_op-tag-background-color: var(--op-color-alerts-info-base);
-  --_op-tag-color: var(--op-color-alerts-info-on-base);
-  --_op-tag-background-color-hover: var(--op-color-alerts-info-minus-one);
-  --_op-tag-color-hover: var(--op-color-alerts-info-on-minus-one);
-  --_op-tag-icon-background-color-hover: var(--op-color-alerts-info-minus-three);
-  --_op-tag-icon-color-hover: var(--op-color-alerts-info-on-minus-three);
+.tag-info {
   @extend %tag-global;
+
+  background-color: var(--op-color-alerts-info-base);
+  color: var(--op-color-alerts-info-on-base);
+
+  &:hover {
+    background-color: var(--op-color-alerts-info-minus-one);
+    color: var(--op-color-alerts-info-on-minus-one);
+  }
+
+  .material-symbols-outlined:hover {
+    background-color: var(--op-color-alerts-info-minus-three);
+    color: var(--op-color-alerts-info-on-minus-three);
+  }
 }
 
-.tag--notice {
-  --_op-tag-background-color: var(--op-color-alerts-notice-minus-one);
-  --_op-tag-color: var(--op-color-alerts-notice-on-minus-one);
-  --_op-tag-background-color-hover: var(--op-color-alerts-notice-minus-two);
-  --_op-tag-color-hover: var(--op-color-alerts-notice-on-minus-two);
-  --_op-tag-icon-background-color-hover: var(--op-color-alerts-notice-minus-four);
-  --_op-tag-icon-color-hover: var(--op-color-alerts-notice-on-minus-four);
+.tag-notice {
   @extend %tag-global;
+
+  background-color: var(--op-color-alerts-notice-minus-one);
+  color: var(--op-color-alerts-notice-on-minus-one);
+
+  &:hover {
+    background-color: var(--op-color-alerts-notice-minus-two);
+    color: var(--op-color-alerts-notice-on-minus-two);
+  }
+
+  .material-symbols-outlined:hover {
+    background-color: var(--op-color-alerts-notice-minus-four);
+    color: var(--op-color-alerts-notice-on-minus-four);
+  }
 }
