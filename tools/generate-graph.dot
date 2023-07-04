@@ -17,6 +17,9 @@ digraph dependencies {
   "Button" -> "Tokens & Base";
   "Button" -> "Icon";
 
+  "Tag" -> "Tokens & Base";
+  "Tag" -> "Icon";
+
   "Button Group" -> "Tokens & Base";
   "Button Group" -> "Button";
 
@@ -29,7 +32,6 @@ digraph dependencies {
   "Pagination" -> "Button";
   "Pagination" -> "Form";
   "Pagination" -> "Tokens & Base";
-
   "Avatar" -> "Tokens & Base";
   "Card" -> "Tokens & Base";
   "Confirm Dialog" -> "Tokens & Base";
