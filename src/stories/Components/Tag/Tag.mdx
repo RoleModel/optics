@@ -1,0 +1,125 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as TagStories from './Tag.stories'
+
+import { createAlert } from '../Alert/Alert.js'
+
+<Meta of={TagStories} />
+
+# Tag
+
+Tags are for interaction and input.
+
+## Playground
+
+<Canvas of={TagStories.Default} />
+<Controls of={TagStories.Default} />
+
+### Selective Imports
+
+Tag can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+@import '@rolemodel/optics/dist/scss/components/icon';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/tag';
+```
+
+## Variations
+
+### Default
+
+<Canvas of={TagStories.Default} />
+
+### Readonly
+
+<Canvas of={TagStories.Readonly} />
+
+### Danger
+
+<Canvas of={TagStories.Danger} />
+
+### Warning
+
+<Canvas of={TagStories.Warning} />
+
+### Info
+
+<Canvas of={TagStories.Info} />
+
+### Notice
+
+<Canvas of={TagStories.Notice} />
+
+## Tag API
+
+Styles are built on css variables scoped to the tag.
+
+Here are the variables that can be customized.
+
+{/* prettier-ignore-start */}
+```css
+// Variable API
+--_op-tag-background-color:
+--_op-tag-color:
+--_op-tag-background-color-hover:
+--_op-tag-color-hover:
+--_op-tag-icon-background-color-hover:
+--_op-tag-icon-color-hover:
+```
+{/* prettier-ignore-end */}
+
+## Customizing Tag styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the tag for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+The tag classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior. You can modify all tag behavior by overriding the `%tag-global` placeholder selector and setting any properties:
+
+```css
+%tag-global {
+}
+```
+
+If you need to override the behavior of a particular tag style, you can open the respective class and set or change properties
+
+```css
+.tag-danger {
+}
+```
+
+## New Tag Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the Tag for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+Your application may need a custom tag. To add one, just follow this template:
+
+```css
+.tag-{name} {
+  --_op-tag-background-color: ;
+  --_op-tag-color: ;
+  --_op-tag-background-color-hover: ;
+  --_op-tag-color-hover: ;
+  --_op_tag-icon-background-color-hover: ;
+  --_op_tag-icon-color-hover: ;
+  @extend %tag-global;
+}
+```
