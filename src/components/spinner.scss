@@ -1,0 +1,44 @@
+%spinner-global {
+  --_op-spinner-color: var(--op-color-primary-base);
+  --_op-spinner-background-color: var(--op-color-neutral-plus-four);
+  --_op-spinner-stroke: var(--op-border-width-x-large);
+  --_op-spinner-diameter: var(--op-space-4x-large);
+  --_op-spinner-speed: 0.8s;
+
+  width: var(--_op-spinner-diameter);
+  height: var(--_op-spinner-diameter);
+  border: var(--_op-spinner-stroke) solid var(--_op-spinner-background-color);
+  border-radius: var(--_op-spinner-diameter);
+  border-top-color: var(--_op-spinner-color);
+  animation: spinner var(--_op-spinner-speed) ease-in-out infinite;
+
+  &.spinner--x-small {
+    --_op-spinner-diameter: var(--op-space-x-large);
+    --_op-spinner-stroke: var(--op-border-width);
+  }
+
+  &.spinner--small {
+    --_op-spinner-diameter: var(--op-space-3x-large);
+    --_op-spinner-stroke: var(--op-border-width-large);
+  }
+
+  &.spinner--medium {
+    --_op-spinner-diameter: calc(var(--op-space-3x-large) + var(--op-space-large));
+    --_op-spinner-stroke: calc(var(--op-border-width-large) + var(--op-border-width));
+  }
+
+  &.spinner--large {
+    --_op-spinner-diameter: var(--op-space-4x-large);
+    --_op-spinner-stroke: var(--op-border-width-x-large);
+  }
+}
+
+.spinner {
+  @extend %spinner-global;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
