@@ -15,7 +15,7 @@ export const createTag = ({ label, type = 'default', iconLeft = false, iconRight
     tag.append(createIcon({ name, size: 'large' }))
   }
 
-  tag.className = [type === 'default' ? 'tag--default' : `tag--${type}`].filter(Boolean).join(' ')
+  tag.className = [type === 'default' ? 'tag' : `tag-${type}`].filter(Boolean).join(' ')
 
   return tag
 }
