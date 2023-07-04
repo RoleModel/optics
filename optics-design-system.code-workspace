@@ -7,7 +7,10 @@
   "settings": {
     "prettier.configPath": ".prettierrc.json",
     "stylelint.configFile": ".stylelintrc.json",
-    "stylelint.validate": ["css", "scss"]
+    "stylelint.validate": ["css", "scss"],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
   },
   "extensions": {
     "recommendations": [
