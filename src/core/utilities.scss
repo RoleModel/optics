@@ -550,3 +550,15 @@
     }
   }
 }
+
+// Accessibility
+// Use the following class to hide accessibility text that is needed for screenreaders but needs to be hidden from regular users.
+// https: //snook.ca/archives/html_and_css/hiding-content-for-accessibility
+.assistive-invisible {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
