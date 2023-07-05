@@ -32,27 +32,39 @@ Tag can be used as a standalone component, however, it does have a few dependenc
 
 ### Default
 
+Use `.tag` to apply the default class.
+
 <Canvas of={TagStories.Default} />
 
 ### Readonly
+
+Use `.tag-readonly` to apply the readonly class.
 
 <Canvas of={TagStories.Readonly} />
 
 ### Danger
 
+Use `.tag-danger` to apply the danger class.
+
 <Canvas of={TagStories.Danger} />
 
 ### Warning
+
+Use `.tag-warning` to apply the warning class.
 
 <Canvas of={TagStories.Warning} />
 
 ### Info
 
+Use `.tag-info` to apply the info class.
+
 <Canvas of={TagStories.Info} />
 
 ### Notice
 
+Use `.tag-notice` to apply the notice class.
 
+<Canvas of={TagStories.Notice} />
 
 ## Customizing Tag styles
 
@@ -71,6 +83,7 @@ This allows multiple classes to share the same behavior. You can modify all tag 
 
 ```css
 %tag-global {
+  background-color: var(--op-color-alerts-danger-base);
 }
 ```
 
@@ -78,6 +91,7 @@ If you need to override the behavior of a particular tag style, you can open the
 
 ```css
 .tag-danger {
+  background-color: var(--op-color-alerts-danger-base);
 }
 ```
 
