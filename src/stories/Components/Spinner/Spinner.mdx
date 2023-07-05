@@ -7,7 +7,11 @@ import { createAlert } from '../Alert/Alert.js'
 
 # Spinner
 
-Brief overview description of how to use Spinner classes
+Spinners are CSS loading indicators that should be shown when retrieving data or performing slow computations.
+
+## Accessibility
+
+A spinner should have the Aria `role="status"` and contain assistive text that explains what is currently happening. Inserting a `span.assistive-invisible Loading` which then gets hidden is the preferred method for adding this accessibility feature.
 
 ## Playground
 
@@ -31,21 +35,31 @@ Spinner can be used as a standalone component, however, it does have a few depen
 
 ### Default
 
+Use `.spinner` to create the default spinner class which defaults to the `.spinner--large` size.
+
 <Canvas of={SpinnerStories.Default} />
 
 ### X-Small
+
+Use `.spinner.spinner--x-small` to create an x-small spinner.
 
 <Canvas of={SpinnerStories.XSmall} />
 
 ### Small
 
+Use `.spinner.spinner--small` to create a small spinner.
+
 <Canvas of={SpinnerStories.Small} />
 
 ### Medium
 
+Use `.spinner.spinner--medium` to create a medium spinner.
+
 <Canvas of={SpinnerStories.Medium} />
 
 ### Large
+
+Use `.spinner.spinner--large` to create a large spinner.
 
 <Canvas of={SpinnerStories.Large} />
 
@@ -89,6 +103,8 @@ If you need to override the behavior of a particular spinner style, you can open
 
 ```css
 .spinner-alternate {
+  @extend %spinner-global;
+  --_op-spinner-color: var(--op-color-primary-minus-three);
 }
 ```
 
