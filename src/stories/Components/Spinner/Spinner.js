@@ -5,7 +5,7 @@ export const createSpinner = ({
 
   element.className = `spinner spinner--${size}`
   element.role = `status`
-  element.innerHTML = `<span class="assistive-text">Loading</span>`
+  element.innerHTML = `<span class="assistive-invisible">Loading</span>`
 
   return element
 }
