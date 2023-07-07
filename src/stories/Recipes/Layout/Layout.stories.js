@@ -12,7 +12,7 @@ export default {
     },
     rightSidebar: {
       control: { type: 'boolean' },
-      if: {arg: 'style', eq: 'sidebar'},
+      if: { arg: 'style', eq: 'sidebar' },
     },
   },
   parameters: {

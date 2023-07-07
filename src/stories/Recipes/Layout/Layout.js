@@ -15,7 +15,7 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
 </div>
 `
   }
-  
+
   if (style === 'spinner') {
     const spinner = createSpinner({ size: 'large' }).outerHTML
     return `
