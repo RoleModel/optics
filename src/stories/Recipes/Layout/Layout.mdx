@@ -43,6 +43,27 @@ The basic layout that this design system expects looks like the following:
 
 The header and footer are sticky and can be used with `app__header` and `app__footer`.
 
+## Fullscreen Spinner
+
+If you need a fullscreen spinner, use a layout like this:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample Layout</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+  </head>
+  <body class="app-body items-center justify-center">
+    <div class="spinner spinner--large">
+      <span class="sr-only">Loading</span>
+    </div>
+  </body>
+</html>
+```
+
+<Canvas of={LayoutStories.FullScreenSpinner} />
+
 ## With Sidebar
 
 For instructions on the sidebar itself, see [Sidebar Component](?path=/docs/components-sidebar--default-drawer)
