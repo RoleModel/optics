@@ -44,7 +44,7 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
     </div>
     <div class='app__footer background-primary-plus-seven'>Footer</div>
   </div>
-  ${rightSidebar ? sidebar('subtle-primary', 'rail') : ''}
+  ${rightSidebar ? sidebar('primary', 'rail') : ''}
 </div>
 `
   }
