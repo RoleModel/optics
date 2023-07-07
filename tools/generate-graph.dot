@@ -34,6 +34,7 @@ digraph dependencies {
   "Form" -> "Tokens & Base";
   "Icon" -> "Tokens & Base";
   "Modal" -> "Tokens & Base";
+  "Spinner" -> "Tokens & Base";
   "Table" -> "Tokens & Base";
   "Toggle" -> "Tokens & Base";
   "Tooltip" -> "Tokens & Base";

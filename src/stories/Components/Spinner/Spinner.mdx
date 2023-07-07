@@ -1,0 +1,139 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as SpinnerStories from './Spinner.stories'
+
+import { createAlert } from '../Alert/Alert.js'
+
+<Meta of={SpinnerStories} />
+
+# Spinner
+
+Spinners are CSS loading indicators that should be shown when retrieving data or performing slow computations.
+
+## Accessibility
+
+A spinner should have the Aria `role="status"` and contain assistive text that explains what is currently happening. Inserting a `span.assistive-invisible Loading` which then gets hidden is the preferred method for adding this accessibility feature.
+
+## Playground
+
+<Canvas of={SpinnerStories.Default} />
+<Controls of={SpinnerStories.Default} />
+
+### Selective Imports
+
+Spinner can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/spinner';
+```
+
+## Variations
+
+### Default
+
+Use `.spinner` to create the default spinner class which defaults to the `.spinner--large` size.
+
+<Canvas of={SpinnerStories.Default} />
+
+### X-Small
+
+Use `.spinner.spinner--x-small` to create an x-small spinner.
+
+<Canvas of={SpinnerStories.XSmall} />
+
+### Small
+
+Use `.spinner.spinner--small` to create a small spinner.
+
+<Canvas of={SpinnerStories.Small} />
+
+### Medium
+
+Use `.spinner.spinner--medium` to create a medium spinner.
+
+<Canvas of={SpinnerStories.Medium} />
+
+### Large
+
+Use `.spinner.spinner--large` to create a large spinner.
+
+<Canvas of={SpinnerStories.Large} />
+
+## Spinner API
+
+Styles are built on css variables scoped to the spinner.
+
+Here are the variables that can be customized.
+
+{/* prettier-ignore-start */}
+```css
+  --_op-spinner-indicator-color:
+  --_op-spinner-track-color:
+  --_op-spinner-track-width-x-small:
+  --_op-spinner-track-width-small:
+  --_op-spinner-track-width-medium:
+  --_op-spinner-track-width-large:
+  --_op-spinner-diameter-x-small:
+  --_op-spinner-diameter-small:
+  --_op-spinner-diameter-medium:
+  --_op-spinner-diameter-large:
+  --_op-spinner-animation-duration:
+  --_op-spinner-animation-timing-function:
+```
+{/* prettier-ignore-end */}
+
+## Customizing Spinner styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the spinner for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+The spinner classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior. You can modify all spinner behavior by overriding the `%spinner-global` placeholder selector and setting any properties:
+
+```css
+%spinner-global {
+}
+```
+
+If you need to override the behavior of a particular spinner style, you can open the respective class and set or change properties
+
+```css
+.spinner {
+  @extend %spinner-global;
+
+  --_op-spinner-track-color: var(--op-color-primary-minus-three);
+}
+```
+
+## New Spinner Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the Spinner for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+Your application may need a custom spinner. To add one, just follow this template:
+
+```css
+.spinner-{name} {
+  @extend %spinner-global;
+
+  --_op-spinner-indicator-color: red;
+  --_op-spinner-track-color: purple;
+}
+```

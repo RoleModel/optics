@@ -8,10 +8,11 @@ export default {
   argTypes: {
     style: {
       control: { type: 'select' },
-      options: ['basic', 'sidebar'],
+      options: ['basic', 'sidebar', 'spinner'],
     },
     rightSidebar: {
       control: { type: 'boolean' },
+      if: { arg: 'style', eq: 'sidebar' },
     },
   },
   parameters: {
@@ -35,5 +36,11 @@ export const SidebarAndRight = {
   args: {
     style: 'sidebar',
     rightSidebar: true,
+  },
+}
+
+export const FullScreenSpinner = {
+  args: {
+    style: 'spinner',
   },
 }

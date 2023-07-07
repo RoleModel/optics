@@ -1,4 +1,5 @@
 import { createSidebar } from '../../Components/Sidebar/Sidebar.js'
+import { createSpinner } from '../../Components/Spinner/Spinner.js'
 
 export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
   if (style === 'basic') {
@@ -13,6 +14,15 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
   <div class='app__footer background-primary-plus-seven'>Footer</div>
 </div>
 `
+  }
+
+  if (style === 'spinner') {
+    const spinner = createSpinner({ size: 'large' }).outerHTML
+    return `
+<div class='app-body items-center justify-center' style="height: 80rem;"> <!-- These classes should be on body. Height is for demo purposed -->
+  ${spinner}
+</div>
+    `
   }
 
   if (style === 'sidebar') {
@@ -44,7 +54,7 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
     </div>
     <div class='app__footer background-primary-plus-seven'>Footer</div>
   </div>
-  ${rightSidebar ? sidebar('subtle-primary', 'rail') : ''}
+  ${rightSidebar ? sidebar('primary', 'rail') : ''}
 </div>
 `
   }
