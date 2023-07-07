@@ -444,11 +444,12 @@
 // | Item | | Item |
 // |      Item     |
 .layout-row {
-  & > * {
+  &>* {
     flex: 1;
   }
 
   @media screen and (max-width: $breakpoint-small) {
+
     // Use flex wrapping strategy instead of responsive wrapping at sm breakpoint.
     &:not(.flex-wrap) {
       flex-direction: column;
@@ -495,7 +496,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  & > * {
+  &>* {
     flex: 1;
 
     &.four-fifths-width {
@@ -543,7 +544,7 @@
     &:not(.flex-no-wrap) {
       flex-direction: column;
 
-      & > * {
+      &>* {
         width: 100%;
         flex-basis: 100%;
       }
@@ -554,7 +555,7 @@
 // Accessibility
 // Use the following class to hide accessibility text that is needed for screenreaders but needs to be hidden from regular users.
 // https: //snook.ca/archives/html_and_css/hiding-content-for-accessibility
-.assistive-invisible {
+.sr-only {
   position: absolute !important;
   overflow: hidden;
   width: 1px;

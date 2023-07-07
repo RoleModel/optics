@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as VisibilityStories from './Visibility.stories'
+
+<Meta of={VisibilityStories} />
+
+# Visibility
+
+Use the '.sr-only' class to hide accessibility text that is needed for screenreaders but needs to be hidden from regular users. [Read more here.](https://snook.ca/archives/html_and_css/hiding-content-for-accessibility)
+
+## Playground
+
+<Canvas of={VisibilityStories.Hidden} />
+<Controls of={VisibilityStories.Hidden} />
+
+## Visible
+
+If no class is used the text will appear as normal.
+
+<Canvas of={VisibilityStories.Visible} />
+
+## Hidden
+
+Using the `.sr-only` class will visually hide the text but leaves it available to screenreaders.
+
+<Canvas of={VisibilityStories.Hidden} />
