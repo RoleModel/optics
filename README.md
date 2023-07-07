@@ -1,6 +1,16 @@
 # Optics, a RoleModel Design System
 
-[![Linting CI](https://github.com/RoleModel/optics/actions/workflows/linting.yml/badge.svg)](https://github.com/RoleModel/optics/actions/workflows/linting.yml)
+<div style='display: flex; gap: 10px;'>
+
+  [![Code](https://img.shields.io/badge/GitHub-Code-232323.svg?logo=github&logoColor=white)](https://github.com/RoleModel/optics)
+
+  [![License](https://img.shields.io/badge/license-MIT-232323.svg)](https://github.com/RoleModel/optics/blob/main/LICENSE)
+
+  [![npm](https://img.shields.io/npm/dw/@rolemodel/optics?label=npm)](https://www.npmjs.com/package/@rolemodel/optics)
+
+  [![Linting CI](https://github.com/RoleModel/optics/actions/workflows/linting.yml/badge.svg)](https://github.com/RoleModel/optics/actions/workflows/linting.yml)
+
+</div>
 
 Optics is an scss package that provides base styles and components that can be integrated and customized in a variety of projects.
 
