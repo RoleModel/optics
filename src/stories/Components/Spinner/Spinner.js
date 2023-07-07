@@ -3,7 +3,7 @@ export const createSpinner = ({ size = 'large' }) => {
 
   element.className = `spinner spinner--${size}`
   element.role = `status`
-  element.innerHTML = `<span class="assistive-invisible">Loading</span>`
+  element.innerHTML = `<span class="sr-only">Loading</span>`
 
   return element
 }
