@@ -11,9 +11,9 @@ export default {
       options: ['default', 'primary'],
     },
     brand: { control: 'boolean' },
-    position: {
+    spacing: {
       control: { type: 'select' },
-      options: ['right', 'around', 'left'],
+      options: ['left', 'around', 'right'],
     },
     activeLink: {
       control: { type: 'select' },
@@ -37,3 +37,24 @@ export const PrimaryNavbar = {
   },
 }
 
+export const NoBrandNavbar = {
+  args: {
+    size: 'drawer',
+    style: 'default',
+    brand: false,
+  },
+}
+
+export const CenteredNavbar = {
+  args: {
+    style: 'default',
+    spacing: 'around',
+  },
+}
+
+export const SpacingLeftNavbar = {
+  args: {
+    style: 'default',
+    spacing: 'left',
+  },
+}

@@ -7,7 +7,13 @@ import { createAlert } from '../Alert/Alert.js'
 
 # Navbar
 
-Brief overview description of how to use Navbar classes
+Navbar classes provide simple styling for a navigation header.
+
+For instructions on how to integrate a navbar into your applications layout, see [Layout With Navbar](?path=/docs/recipes-layout--navbar)
+
+`.navbar` is the main component that everything is contained within.
+
+Any [Button](?path=/docs/components-button--docs#default) style can be used for the links.
 
 ## Playground
 
@@ -22,6 +28,8 @@ Navbar can be used as a standalone component, however, it does have a few depend
 // Depends on
 @import '@rolemodel/optics/dist/scss/core/tokens';
 @import '@rolemodel/optics/dist/scss/core/base';
+@import '@rolemodel/optics/dist/scss/components/icon';
+@import '@rolemodel/optics/dist/scss/components/button';
 
 // Component
 @import '@rolemodel/optics/dist/scss/components/navbar';
@@ -31,29 +39,54 @@ Navbar can be used as a standalone component, however, it does have a few depend
 
 ### Default
 
-Use `.navbar` class to create the default styled Navbar.
+`.navbar` Provides a neutral colored navbar. This uses the neutral color defined in your theme.
 
 <Canvas of={NavbarStories.DefaultNavbar} />
 
-### Primary Navbar
+### Primary
 
-Use `.navbar-primary` to create the primary styled Navbar.
+`.navbar-primary` Provides a primary colored navbar. This uses the primary color defined in your theme.
 
 <Canvas of={NavbarStories.PrimaryNavbar} />
 
+### Brand
+
+`.navbar__brand` can be used with an image tag inside. This can be used to display your applications branding or logo.
+
+The brand is not required and the navbar content will adjust itself accordingly.
+
+<Canvas of={NavbarStories.NoBrandNavbar} />
+
+### Content
+
+`.navbar__content` defines the container that the buttons should be placed in. It can be positioned by using modifier classes.
+
+`.navbar__content--space-right`, `.navbar__content--space-around`, `.navbar__content--space-left` with right being the default.
+
+<Canvas of={NavbarStories.CenteredNavbar} />
+
+<Canvas of={NavbarStories.SpacingLeftNavbar} />
+
 ## Navbar API
 
-Styles are built on css variables scoped to the navbar.
+Color and hover styles are built on css variables scoped to the navbar.
 
 Here are the variables that can be customized.
 
 {/* prettier-ignore-start */}
 ```css
+// Public API
+// Normal
 --_op-navbar-background-color:
 --_op-navbar-text-color:
 --_op-navbar-border-color:
+
+// Height
 --_op-navbar-brand-height:
+
+// Spacing
 --_op-navbar-horizontal-spacing:
+--_op-navbar-content-spacing:
 --_op-navbar-content-item-spacing:
 ```
 {/* prettier-ignore-end */}
@@ -83,7 +116,7 @@ This allows multiple classes to share the same behavior. You can modify all navb
 If you need to override the behavior of a particular navbar style, you can open the respective class and set or change properties
 
 ```css
-.navbar {
+.navbar-primary {
   --_op-navbar-brand-height: 5.4rem;
   --_op-navbar-horizontal-spacing: var(--op-space-small);
   --_op-navbar-content-item-spacing: var(--op-space-x-small);
