@@ -18,7 +18,7 @@ export const createNavbar = ({ style = 'default', brand = true, spacing = 'right
   const body = document.createElement(element)
 
   body.className = 'app-body'
-  body.style.height = '50rem'
+  body.style.height = '40rem'
 
   const brandSection = brand
     ? `
