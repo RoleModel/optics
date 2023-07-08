@@ -2,7 +2,6 @@ import { createButton } from '../Button/Button.js'
 import { createAvatar } from '../Avatar/Avatar.js'
 
 const createNavbarLink = ({ icon, label }, activeLink) => {
-
   return createButton({
     label,
     priority: 'default',
@@ -13,12 +12,7 @@ const createNavbarLink = ({ icon, label }, activeLink) => {
   }).outerHTML
 }
 
-export const createNavbar = ({
-  style = 'default',
-  brand = true,
-  spacing = 'right',
-  activeLink = 'Inbox',
-}) => {
+export const createNavbar = ({ style = 'default', brand = true, spacing = 'right', activeLink = 'Inbox' }) => {
   const element = 'div'
 
   const body = document.createElement(element)
@@ -41,9 +35,7 @@ export const createNavbar = ({
     { type: 'link', icon: 'blur_on', label: 'Something' },
   ]
 
-  const navbarClasses = [
-    style === 'default' ? 'navbar' : `navbar-${style}`,
-  ]
+  const navbarClasses = [style === 'default' ? 'navbar' : `navbar-${style}`]
 
   body.innerHTML += `
   <div class="app__header">
