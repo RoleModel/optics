@@ -2,13 +2,13 @@
 
 <div style='display: flex; gap: 10px;'>
 
-  [![Code](https://img.shields.io/badge/GitHub-Code-232323.svg?logo=github&logoColor=white)](https://github.com/RoleModel/optics)
+[![Code](https://img.shields.io/badge/GitHub-Code-232323.svg?logo=github&logoColor=white)](https://github.com/RoleModel/optics)
 
-  [![License](https://img.shields.io/badge/license-MIT-232323.svg)](https://github.com/RoleModel/optics/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-232323.svg)](https://github.com/RoleModel/optics/blob/main/LICENSE)
 
-  [![npm](https://img.shields.io/npm/dw/@rolemodel/optics?label=npm)](https://www.npmjs.com/package/@rolemodel/optics)
+[![npm](https://img.shields.io/npm/dw/@rolemodel/optics?label=npm)](https://www.npmjs.com/package/@rolemodel/optics)
 
-  [![Linting CI](https://github.com/RoleModel/optics/actions/workflows/linting.yml/badge.svg)](https://github.com/RoleModel/optics/actions/workflows/linting.yml)
+[![Linting CI](https://github.com/RoleModel/optics/actions/workflows/linting.yml/badge.svg)](https://github.com/RoleModel/optics/actions/workflows/linting.yml)
 
 </div>
 
