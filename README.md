@@ -65,6 +65,8 @@ Add the following above a group to categorize the tokens.
 
 ### Component Documentation
 
+For instructions on how to create a new component, see [Process for Creating New Components](./NEW_COMPONENT.MD)
+
 Additional stories can be added using the following command, or copying an existing story.
 
 ```sh
