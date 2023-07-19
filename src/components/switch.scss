@@ -93,6 +93,11 @@
     --__op-switch-width: var(--_op-switch-width-large);
     --__op-switch-height: var(--_op-switch-height-large);
   }
+
+  // Prevent labels after the toggle being full width
+  & + label {
+    width: fit-content;
+  }
 }
 
 .switch {
