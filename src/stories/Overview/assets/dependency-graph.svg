@@ -1,277 +1,277 @@
 <?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1166pt" height="260pt" viewBox="0.00 0.00 1166.16 260">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1165pt" height="260pt" viewBox="0.00 0.00 1165.16 260.00">
 <g id="graph0" class="graph" transform="translate(4,256) scale(1)" data-name="dependencies">
 
-<polygon fill="white" stroke="none" points="-4,4 -4,-256 1162.16,-256 1162.16,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-256 1161.16,-256 1161.16,4 -4,4" style=""/>
 <!-- Tokens &amp; Base -->
 <g id="node1" class="node" pointer-events="visible" data-name="Tokens &amp; Base">
 
-<polygon fill="none" stroke="black" points="511.86,-36 409.23,-36 409.23,0 511.86,0 511.86,-36"/>
-<text text-anchor="middle" x="460.54" y="-13.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Tokens &amp; Base</text>
+<polygon fill="none" stroke="black" points="511.86,-36 409.23,-36 409.23,0 511.86,0 511.86,-36" style=""/>
+<text text-anchor="middle" x="460.54" y="-13.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Tokens &amp; Base</text>
 </g>
 <!-- Accordion -->
 <g id="node2" class="node" pointer-events="visible" data-name="Accordion">
 
-<polygon fill="none" stroke="black" points="75.13,-180 -0.04,-180 -0.04,-144 75.13,-144 75.13,-180"/>
-<text text-anchor="middle" x="37.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Accordion</text>
+<polygon fill="none" stroke="black" points="75.13,-180 -0.04,-180 -0.04,-144 75.13,-144 75.13,-180" style=""/>
+<text text-anchor="middle" x="37.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Accordion</text>
 </g>
 <!-- Accordion&#45;&gt;Tokens &amp; Base -->
 <g id="edge1" class="edge" data-name="Accordion-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M46.71,-143.67C58.66,-122.93 81.62,-88.89 111.54,-72 159.3,-45.04 310.85,-29.87 397.73,-23.19"/>
-<polygon fill="black" stroke="black" points="397.81,-26.69 407.52,-22.45 397.28,-19.71 397.81,-26.69"/>
+<path fill="none" stroke="black" d="M46.71,-143.67C58.66,-122.93 81.62,-88.89 111.54,-72 159.3,-45.04 310.85,-29.87 397.73,-23.19" style=""/>
+<polygon fill="black" stroke="black" points="397.81,-26.69 407.52,-22.45 397.28,-19.71 397.81,-26.69" style=""/>
 </g>
 <!-- Icon -->
 <g id="node3" class="node" pointer-events="visible" data-name="Icon">
 
-<polygon fill="none" stroke="black" points="191.54,-108 137.54,-108 137.54,-72 191.54,-72 191.54,-108"/>
-<text text-anchor="middle" x="164.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Icon</text>
+<polygon fill="none" stroke="black" points="191.54,-108 137.54,-108 137.54,-72 191.54,-72 191.54,-108" style=""/>
+<text text-anchor="middle" x="164.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Icon</text>
 </g>
 <!-- Accordion&#45;&gt;Icon -->
 <g id="edge2" class="edge" data-name="Accordion-&gt;Icon">
 
-<path fill="none" stroke="black" d="M69.26,-143.52C86.79,-133.86 108.66,-121.8 127.03,-111.68"/>
-<polygon fill="black" stroke="black" points="128.71,-114.75 135.78,-106.86 125.33,-108.62 128.71,-114.75"/>
+<path fill="none" stroke="black" d="M69.26,-143.52C86.79,-133.86 108.66,-121.8 127.03,-111.68" style=""/>
+<polygon fill="black" stroke="black" points="128.71,-114.75 135.78,-106.86 125.33,-108.62 128.71,-114.75" style=""/>
 </g>
 <!-- Icon&#45;&gt;Tokens &amp; Base -->
 <g id="edge21" class="edge" data-name="Icon-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M191.63,-76.93C196.22,-75.13 200.98,-73.41 205.54,-72 269.96,-52.15 345.81,-37.44 397.95,-28.63"/>
-<polygon fill="black" stroke="black" points="398.25,-32.12 407.54,-27.03 397.1,-25.22 398.25,-32.12"/>
+<path fill="none" stroke="black" d="M191.63,-76.93C196.22,-75.13 200.98,-73.41 205.54,-72 269.96,-52.15 345.81,-37.44 397.95,-28.63" style=""/>
+<polygon fill="black" stroke="black" points="398.25,-32.12 407.54,-27.03 397.1,-25.22 398.25,-32.12" style=""/>
 </g>
 <!-- Alert -->
 <g id="node4" class="node" pointer-events="visible" data-name="Alert">
 
-<polygon fill="none" stroke="black" points="147.54,-180 93.54,-180 93.54,-144 147.54,-144 147.54,-180"/>
-<text text-anchor="middle" x="120.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Alert</text>
+<polygon fill="none" stroke="black" points="147.54,-180 93.54,-180 93.54,-144 147.54,-144 147.54,-180" style=""/>
+<text text-anchor="middle" x="120.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Alert</text>
 </g>
 <!-- Alert&#45;&gt;Tokens &amp; Base -->
 <g id="edge3" class="edge" data-name="Alert-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M116.49,-143.79C112.9,-123.81 110.65,-91.16 128.54,-72 164.1,-33.91 311.55,-23.17 397.52,-20.16"/>
-<polygon fill="black" stroke="black" points="397.58,-23.66 407.46,-19.84 397.35,-16.66 397.58,-23.66"/>
+<path fill="none" stroke="black" d="M116.49,-143.79C112.9,-123.81 110.65,-91.16 128.54,-72 164.1,-33.91 311.55,-23.17 397.52,-20.16" style=""/>
+<polygon fill="black" stroke="black" points="397.58,-23.66 407.46,-19.84 397.35,-16.66 397.58,-23.66" style=""/>
 </g>
 <!-- Alert&#45;&gt;Icon -->
 <g id="edge4" class="edge" data-name="Alert-&gt;Icon">
 
-<path fill="none" stroke="black" d="M131.42,-143.7C136.32,-135.9 142.23,-126.51 147.68,-117.83"/>
-<polygon fill="black" stroke="black" points="150.63,-119.71 152.99,-109.39 144.7,-115.99 150.63,-119.71"/>
+<path fill="none" stroke="black" d="M131.42,-143.7C136.32,-135.9 142.23,-126.51 147.68,-117.83" style=""/>
+<polygon fill="black" stroke="black" points="150.63,-119.71 152.99,-109.39 144.7,-115.99 150.63,-119.71" style=""/>
 </g>
 <!-- Badge -->
 <g id="node5" class="node" pointer-events="visible" data-name="Badge">
 
-<polygon fill="none" stroke="black" points="219.54,-180 165.54,-180 165.54,-144 219.54,-144 219.54,-180"/>
-<text text-anchor="middle" x="192.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Badge</text>
+<polygon fill="none" stroke="black" points="219.54,-180 165.54,-180 165.54,-144 219.54,-144 219.54,-180" style=""/>
+<text text-anchor="middle" x="192.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Badge</text>
 </g>
 <!-- Badge&#45;&gt;Tokens &amp; Base -->
 <g id="edge5" class="edge" data-name="Badge-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M197.75,-143.78C204.8,-123.48 219.35,-90.2 243.54,-72 288.06,-38.51 350.95,-25.91 397.57,-21.31"/>
-<polygon fill="black" stroke="black" points="397.59,-24.82 407.25,-20.46 396.98,-17.85 397.59,-24.82"/>
+<path fill="none" stroke="black" d="M197.75,-143.78C204.8,-123.48 219.35,-90.2 243.54,-72 288.06,-38.51 350.95,-25.91 397.57,-21.31" style=""/>
+<polygon fill="black" stroke="black" points="397.59,-24.82 407.25,-20.46 396.98,-17.85 397.59,-24.82" style=""/>
 </g>
 <!-- Badge&#45;&gt;Icon -->
 <g id="edge6" class="edge" data-name="Badge-&gt;Icon">
 
-<path fill="none" stroke="black" d="M185.62,-143.7C182.61,-136.15 178.99,-127.12 175.62,-118.68"/>
-<polygon fill="black" stroke="black" points="178.91,-117.49 171.95,-109.51 172.41,-120.09 178.91,-117.49"/>
+<path fill="none" stroke="black" d="M185.62,-143.7C182.61,-136.15 178.99,-127.12 175.62,-118.68" style=""/>
+<polygon fill="black" stroke="black" points="178.91,-117.49 171.95,-109.51 172.41,-120.09 178.91,-117.49" style=""/>
 </g>
 <!-- Button -->
 <g id="node6" class="node" pointer-events="visible" data-name="Button">
 
-<polygon fill="none" stroke="black" points="329.66,-180 275.43,-180 275.43,-144 329.66,-144 329.66,-180"/>
-<text text-anchor="middle" x="302.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Button</text>
+<polygon fill="none" stroke="black" points="329.66,-180 275.43,-180 275.43,-144 329.66,-144 329.66,-180" style=""/>
+<text text-anchor="middle" x="302.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Button</text>
 </g>
 <!-- Button&#45;&gt;Tokens &amp; Base -->
 <g id="edge7" class="edge" data-name="Button-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M306.56,-143.82C311.95,-124.18 323.27,-92.15 343.54,-72 358.69,-56.95 378.88,-45.74 398.22,-37.61"/>
-<polygon fill="black" stroke="black" points="399.42,-40.9 407.43,-33.96 396.84,-34.39 399.42,-40.9"/>
+<path fill="none" stroke="black" d="M306.56,-143.82C311.95,-124.18 323.27,-92.15 343.54,-72 358.69,-56.95 378.88,-45.74 398.22,-37.61" style=""/>
+<polygon fill="black" stroke="black" points="399.42,-40.9 407.43,-33.96 396.84,-34.39 399.42,-40.9" style=""/>
 </g>
 <!-- Button&#45;&gt;Icon -->
 <g id="edge8" class="edge" data-name="Button-&gt;Icon">
 
-<path fill="none" stroke="black" d="M274.95,-147C253.94,-136.35 224.81,-121.57 201.74,-109.87"/>
-<polygon fill="black" stroke="black" points="203.47,-106.82 192.97,-105.42 200.31,-113.06 203.47,-106.82"/>
+<path fill="none" stroke="black" d="M274.95,-147C253.94,-136.35 224.81,-121.57 201.74,-109.87" style=""/>
+<polygon fill="black" stroke="black" points="203.47,-106.82 192.97,-105.42 200.31,-113.06 203.47,-106.82" style=""/>
 </g>
 <!-- Button Group -->
 <g id="node7" class="node" pointer-events="visible" data-name="Button Group">
 
-<polygon fill="none" stroke="black" points="294.44,-252 200.65,-252 200.65,-216 294.44,-216 294.44,-252"/>
-<text text-anchor="middle" x="247.54" y="-229.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Button Group</text>
+<polygon fill="none" stroke="black" points="294.44,-252 200.65,-252 200.65,-216 294.44,-216 294.44,-252" style=""/>
+<text text-anchor="middle" x="247.54" y="-229.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Button Group</text>
 </g>
 <!-- Button Group&#45;&gt;Tokens &amp; Base -->
 <g id="edge9" class="edge" data-name="Button Group-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M249.19,-215.65C251.41,-197.25 256.31,-167.63 266.54,-144 282.03,-108.25 285.73,-95.83 316.54,-72 340.25,-53.67 370.93,-41.21 397.88,-33.01"/>
-<polygon fill="black" stroke="black" points="398.69,-36.42 407.32,-30.28 396.74,-29.69 398.69,-36.42"/>
+<path fill="none" stroke="black" d="M249.19,-215.65C251.41,-197.25 256.31,-167.63 266.54,-144 282.03,-108.25 285.73,-95.83 316.54,-72 340.25,-53.67 370.93,-41.21 397.88,-33.01" style=""/>
+<polygon fill="black" stroke="black" points="398.69,-36.42 407.32,-30.28 396.74,-29.69 398.69,-36.42" style=""/>
 </g>
 <!-- Button Group&#45;&gt;Button -->
 <g id="edge10" class="edge" data-name="Button Group-&gt;Button">
 
-<path fill="none" stroke="black" d="M261.14,-215.7C267.47,-207.64 275.13,-197.89 282.13,-188.98"/>
-<polygon fill="black" stroke="black" points="284.74,-191.32 288.17,-181.29 279.24,-187 284.74,-191.32"/>
+<path fill="none" stroke="black" d="M261.14,-215.7C267.47,-207.64 275.13,-197.89 282.13,-188.98" style=""/>
+<polygon fill="black" stroke="black" points="284.74,-191.32 288.17,-181.29 279.24,-187 284.74,-191.32" style=""/>
 </g>
 <!-- Sidebar -->
 <g id="node8" class="node" pointer-events="visible" data-name="Sidebar">
 
-<polygon fill="none" stroke="black" points="370.81,-252 312.28,-252 312.28,-216 370.81,-216 370.81,-252"/>
-<text text-anchor="middle" x="341.54" y="-229.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Sidebar</text>
+<polygon fill="none" stroke="black" points="370.81,-252 312.28,-252 312.28,-216 370.81,-216 370.81,-252" style=""/>
+<text text-anchor="middle" x="341.54" y="-229.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Sidebar</text>
 </g>
 <!-- Sidebar&#45;&gt;Tokens &amp; Base -->
 <g id="edge11" class="edge" data-name="Sidebar-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M348.82,-215.51C361.65,-185.32 389.88,-121.86 420.54,-72 426.16,-62.87 432.98,-53.38 439.38,-44.99"/>
-<polygon fill="black" stroke="black" points="442.01,-47.3 445.41,-37.27 436.5,-42.99 442.01,-47.3"/>
+<path fill="none" stroke="black" d="M348.82,-215.51C361.65,-185.32 389.88,-121.86 420.54,-72 426.16,-62.87 432.98,-53.38 439.38,-44.99" style=""/>
+<polygon fill="black" stroke="black" points="442.01,-47.3 445.41,-37.27 436.5,-42.99 442.01,-47.3" style=""/>
 </g>
 <!-- Sidebar&#45;&gt;Button -->
 <g id="edge12" class="edge" data-name="Sidebar-&gt;Button">
 
-<path fill="none" stroke="black" d="M331.9,-215.7C327.61,-207.98 322.44,-198.71 317.65,-190.11"/>
-<polygon fill="black" stroke="black" points="320.74,-188.46 312.81,-181.43 314.62,-191.87 320.74,-188.46"/>
+<path fill="none" stroke="black" d="M331.9,-215.7C327.61,-207.98 322.44,-198.71 317.65,-190.11" style=""/>
+<polygon fill="black" stroke="black" points="320.74,-188.46 312.81,-181.43 314.62,-191.87 320.74,-188.46" style=""/>
 </g>
 <!-- Pagination -->
 <g id="node9" class="node" pointer-events="visible" data-name="Pagination">
 
-<polygon fill="none" stroke="black" points="464.43,-252 388.66,-252 388.66,-216 464.43,-216 464.43,-252"/>
-<text text-anchor="middle" x="426.54" y="-229.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Pagination</text>
-</g><g id="node16" class="node" pointer-events="visible" data-name="Spinner" data-comment="Pagination">
-
-<polygon fill="none" stroke="black" points="937.1,-108 877.99,-108 877.99,-72 937.1,-72 937.1,-108"/>
-<text text-anchor="middle" x="907.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Spinner</text>
+<polygon fill="none" stroke="black" points="464.43,-252 388.66,-252 388.66,-216 464.43,-216 464.43,-252" style=""/>
+<text text-anchor="middle" x="426.54" y="-229.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Pagination</text>
 </g>
 <!-- Pagination&#45;&gt;Tokens &amp; Base -->
 <g id="edge15" class="edge" data-name="Pagination-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M421.55,-215.5C418.89,-205.25 415.89,-192 414.54,-180 412.77,-164.1 411.74,-159.75 414.54,-144 420.74,-109.25 435.89,-71.51 447.13,-46.69"/>
-<polygon fill="black" stroke="black" points="450.3,-48.17 451.33,-37.63 443.95,-45.23 450.3,-48.17"/>
-</g><g id="edge23" class="edge" data-name="Spinner-&gt;Tokens &amp; Base" data-comment="Pagination-&gt;Tokens &amp; Base">
-
-<path fill="none" stroke="black" d="M877.62,-74.96C874.59,-73.84 871.53,-72.83 868.54,-72 749.22,-38.96 604.42,-26.36 523.36,-21.67"/>
-<polygon fill="black" stroke="black" points="524.04,-18.21 513.86,-21.15 523.65,-25.2 524.04,-18.21"/>
+<path fill="none" stroke="black" d="M421.55,-215.5C418.89,-205.25 415.89,-192 414.54,-180 412.77,-164.1 411.74,-159.75 414.54,-144 420.74,-109.25 435.89,-71.51 447.13,-46.69" style=""/>
+<polygon fill="black" stroke="black" points="450.3,-48.17 451.33,-37.63 443.95,-45.23 450.3,-48.17" style=""/>
 </g>
 <!-- Pagination&#45;&gt;Button -->
 <g id="edge13" class="edge" data-name="Pagination-&gt;Button">
 
-<path fill="none" stroke="black" d="M395.57,-215.52C378.59,-205.93 357.41,-193.97 339.55,-183.89"/>
-<polygon fill="black" stroke="black" points="341.5,-180.97 331.07,-179.1 338.06,-187.07 341.5,-180.97"/>
+<path fill="none" stroke="black" d="M395.57,-215.52C378.59,-205.93 357.41,-193.97 339.55,-183.89" style=""/>
+<polygon fill="black" stroke="black" points="341.5,-180.97 331.07,-179.1 338.06,-187.07 341.5,-180.97" style=""/>
 </g>
 <!-- Form -->
 <g id="node10" class="node" pointer-events="visible" data-name="Form">
 
-<polygon fill="none" stroke="black" points="477.54,-180 423.54,-180 423.54,-144 477.54,-144 477.54,-180"/>
-<text text-anchor="middle" x="450.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Form</text>
+<polygon fill="none" stroke="black" points="477.54,-180 423.54,-180 423.54,-144 477.54,-144 477.54,-180" style=""/>
+<text text-anchor="middle" x="450.54" y="-157.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Form</text>
 </g>
 <!-- Pagination&#45;&gt;Form -->
 <g id="edge14" class="edge" data-name="Pagination-&gt;Form">
 
-<path fill="none" stroke="black" d="M432.48,-215.7C435.04,-208.24 438.09,-199.32 440.96,-190.97"/>
-<polygon fill="black" stroke="black" points="444.26,-192.13 444.19,-181.54 437.64,-189.86 444.26,-192.13"/>
+<path fill="none" stroke="black" d="M432.48,-215.7C435.04,-208.24 438.09,-199.32 440.96,-190.97" style=""/>
+<polygon fill="black" stroke="black" points="444.26,-192.13 444.19,-181.54 437.64,-189.86 444.26,-192.13" style=""/>
 </g>
 <!-- Form&#45;&gt;Tokens &amp; Base -->
 <g id="edge20" class="edge" data-name="Form-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M450.28,-143.57C450.17,-125.6 450.4,-96.79 452.54,-72 453.24,-64 454.37,-55.36 455.57,-47.44"/>
-<polygon fill="black" stroke="black" points="459.02,-48.04 457.15,-37.61 452.11,-46.93 459.02,-48.04"/>
+<path fill="none" stroke="black" d="M450.28,-143.57C450.17,-125.6 450.4,-96.79 452.54,-72 453.24,-64 454.37,-55.36 455.57,-47.44" style=""/>
+<polygon fill="black" stroke="black" points="459.02,-48.04 457.15,-37.61 452.11,-46.93 459.02,-48.04" style=""/>
 </g>
 <!-- Avatar -->
 <g id="node11" class="node" pointer-events="visible" data-name="Avatar">
 
-<polygon fill="none" stroke="black" points="515.63,-108 461.46,-108 461.46,-72 515.63,-72 515.63,-108"/>
-<text text-anchor="middle" x="488.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Avatar</text>
+<polygon fill="none" stroke="black" points="515.63,-108 461.46,-108 461.46,-72 515.63,-72 515.63,-108" style=""/>
+<text text-anchor="middle" x="488.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Avatar</text>
 </g>
 <!-- Avatar&#45;&gt;Tokens &amp; Base -->
 <g id="edge16" class="edge" data-name="Avatar-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M481.62,-71.7C478.61,-64.15 474.99,-55.12 471.62,-46.68"/>
-<polygon fill="black" stroke="black" points="474.91,-45.49 467.95,-37.51 468.41,-48.09 474.91,-45.49"/>
+<path fill="none" stroke="black" d="M481.62,-71.7C478.61,-64.15 474.99,-55.12 471.62,-46.68" style=""/>
+<polygon fill="black" stroke="black" points="474.91,-45.49 467.95,-37.51 468.41,-48.09 474.91,-45.49" style=""/>
 </g>
 <!-- Card -->
 <g id="node12" class="node" pointer-events="visible" data-name="Card">
 
-<polygon fill="none" stroke="black" points="587.54,-108 533.54,-108 533.54,-72 587.54,-72 587.54,-108"/>
-<text text-anchor="middle" x="560.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Card</text>
+<polygon fill="none" stroke="black" points="587.54,-108 533.54,-108 533.54,-72 587.54,-72 587.54,-108" style=""/>
+<text text-anchor="middle" x="560.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Card</text>
 </g>
 <!-- Card&#45;&gt;Tokens &amp; Base -->
 <g id="edge17" class="edge" data-name="Card-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M535.57,-71.52C523.19,-62.85 508.04,-52.25 494.62,-42.85"/>
-<polygon fill="black" stroke="black" points="496.64,-40 486.44,-37.13 492.63,-45.73 496.64,-40"/>
+<path fill="none" stroke="black" d="M535.57,-71.52C523.19,-62.85 508.04,-52.25 494.62,-42.85" style=""/>
+<polygon fill="black" stroke="black" points="496.64,-40 486.44,-37.13 492.63,-45.73 496.64,-40" style=""/>
 </g>
 <!-- Confirm Dialog -->
 <g id="node13" class="node" pointer-events="visible" data-name="Confirm Dialog">
 
-<polygon fill="none" stroke="black" points="711.09,-108 606,-108 606,-72 711.09,-72 711.09,-108"/>
-<text text-anchor="middle" x="658.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Confirm Dialog</text>
+<polygon fill="none" stroke="black" points="711.09,-108 606,-108 606,-72 711.09,-72 711.09,-108" style=""/>
+<text text-anchor="middle" x="658.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Confirm Dialog</text>
 </g>
 <!-- Confirm Dialog&#45;&gt;Tokens &amp; Base -->
 <g id="edge18" class="edge" data-name="Confirm Dialog-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M609.09,-71.52C582.18,-62 548.68,-50.16 520.31,-40.13"/>
-<polygon fill="black" stroke="black" points="521.73,-36.92 511.14,-36.89 519.4,-43.52 521.73,-36.92"/>
+<path fill="none" stroke="black" d="M609.09,-71.52C582.18,-62 548.68,-50.16 520.31,-40.13" style=""/>
+<polygon fill="black" stroke="black" points="521.73,-36.92 511.14,-36.89 519.4,-43.52 521.73,-36.92" style=""/>
 </g>
 <!-- Divider -->
 <g id="node14" class="node" pointer-events="visible" data-name="Divider">
 
-<polygon fill="none" stroke="black" points="787.81,-108 729.28,-108 729.28,-72 787.81,-72 787.81,-108"/>
-<text text-anchor="middle" x="758.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Divider</text>
+<polygon fill="none" stroke="black" points="787.81,-108 729.28,-108 729.28,-72 787.81,-72 787.81,-108" style=""/>
+<text text-anchor="middle" x="758.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Divider</text>
 </g>
 <!-- Divider&#45;&gt;Tokens &amp; Base -->
 <g id="edge19" class="edge" data-name="Divider-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M728.92,-75C726.12,-73.91 723.3,-72.88 720.54,-72 654.76,-50.86 576.81,-36.3 523.53,-27.86"/>
-<polygon fill="black" stroke="black" points="524.13,-24.42 513.71,-26.34 523.05,-31.33 524.13,-24.42"/>
+<path fill="none" stroke="black" d="M728.92,-75C726.12,-73.91 723.3,-72.88 720.54,-72 654.76,-50.86 576.81,-36.3 523.53,-27.86" style=""/>
+<polygon fill="black" stroke="black" points="524.13,-24.42 513.71,-26.34 523.05,-31.33 524.13,-24.42" style=""/>
 </g>
 <!-- Modal -->
 <g id="node15" class="node" pointer-events="visible" data-name="Modal">
 
-<polygon fill="none" stroke="black" points="859.54,-108 805.54,-108 805.54,-72 859.54,-72 859.54,-108"/>
-<text text-anchor="middle" x="832.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Modal</text>
+<polygon fill="none" stroke="black" points="859.54,-108 805.54,-108 805.54,-72 859.54,-72 859.54,-108" style=""/>
+<text text-anchor="middle" x="832.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Modal</text>
 </g>
 <!-- Modal&#45;&gt;Tokens &amp; Base -->
 <g id="edge22" class="edge" data-name="Modal-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M805.35,-75.18C802.42,-73.99 799.45,-72.9 796.54,-72 703.98,-43.49 592.11,-29.75 523.66,-23.57"/>
-<polygon fill="black" stroke="black" points="524.01,-20.08 513.74,-22.7 523.4,-27.06 524.01,-20.08"/>
+<path fill="none" stroke="black" d="M805.35,-75.18C802.42,-73.99 799.45,-72.9 796.54,-72 703.98,-43.49 592.11,-29.75 523.66,-23.57" style=""/>
+<polygon fill="black" stroke="black" points="524.01,-20.08 513.74,-22.7 523.4,-27.06 524.01,-20.08" style=""/>
+</g>
+<!-- Spinner -->
+<g id="node16" class="node" pointer-events="visible" data-name="Spinner">
+
+<polygon fill="none" stroke="black" points="937.1,-108 877.99,-108 877.99,-72 937.1,-72 937.1,-108" style=""/>
+<text text-anchor="middle" x="907.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Spinner</text>
+</g>
+<!-- Spinner&#45;&gt;Tokens &amp; Base -->
+<g id="edge23" class="edge" data-name="Spinner-&gt;Tokens &amp; Base">
+
+<path fill="none" stroke="black" d="M877.62,-74.96C874.59,-73.84 871.53,-72.83 868.54,-72 749.22,-38.96 604.42,-26.36 523.36,-21.67" style=""/>
+<polygon fill="black" stroke="black" points="524.04,-18.21 513.86,-21.15 523.65,-25.2 524.04,-18.21" style=""/>
 </g>
 <!-- Table -->
 <g id="node17" class="node" pointer-events="visible" data-name="Table">
 
-<polygon fill="none" stroke="black" points="1009.54,-108 955.54,-108 955.54,-72 1009.54,-72 1009.54,-108"/>
-<text text-anchor="middle" x="982.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Table</text>
+<polygon fill="none" stroke="black" points="1009.54,-108 955.54,-108 955.54,-72 1009.54,-72 1009.54,-108" style=""/>
+<text text-anchor="middle" x="982.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Table</text>
 </g>
 <!-- Table&#45;&gt;Tokens &amp; Base -->
 <g id="edge24" class="edge" data-name="Table-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M955.39,-75.03C952.46,-73.87 949.47,-72.83 946.54,-72 798.92,-30.36 617.54,-21.1 523.62,-19.25"/>
-<polygon fill="black" stroke="black" points="523.91,-15.76 513.85,-19.08 523.79,-22.76 523.91,-15.76"/>
+<path fill="none" stroke="black" d="M955.39,-75.03C952.46,-73.87 949.47,-72.83 946.54,-72 798.92,-30.36 617.54,-21.1 523.62,-19.25" style=""/>
+<polygon fill="black" stroke="black" points="523.91,-15.76 513.85,-19.08 523.79,-22.76 523.91,-15.76" style=""/>
 </g>
-<!-- Toggle -->
-<g id="node18" class="node" pointer-events="visible" data-name="Toggle">
+<!-- Switch -->
+<g id="node18" class="node" pointer-events="visible" data-name="Switch">
 
-<polygon fill="none" stroke="black" points="1083.2,-108 1027.89,-108 1027.89,-72 1083.2,-72 1083.2,-108"/>
-<text text-anchor="middle" x="1055.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Toggle</text>
+<polygon fill="none" stroke="black" points="1081.93,-108 1027.16,-108 1027.16,-72 1081.93,-72 1081.93,-108" style=""/>
+<text text-anchor="middle" x="1054.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Switch</text>
 </g>
-<!-- Toggle&#45;&gt;Tokens &amp; Base -->
-<g id="edge25" class="edge" data-name="Toggle-&gt;Tokens &amp; Base">
+<!-- Switch&#45;&gt;Tokens &amp; Base -->
+<g id="edge25" class="edge" data-name="Switch-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M1027.63,-75C1024.61,-73.84 1021.55,-72.81 1018.54,-72 843.73,-24.99 628.33,-18.32 523.64,-18.18"/>
-<polygon fill="black" stroke="black" points="523.85,-14.68 513.85,-18.19 523.86,-21.68 523.85,-14.68"/>
+<path fill="none" stroke="black" d="M1027,-74.83C1024.19,-73.74 1021.34,-72.77 1018.54,-72 926.75,-46.8 649.36,-29.16 523.67,-22.25" style=""/>
+<polygon fill="black" stroke="black" points="524.03,-18.76 513.86,-21.71 523.65,-25.75 524.03,-18.76" style=""/>
 </g>
 <!-- Tooltip -->
 <g id="node19" class="node" pointer-events="visible" data-name="Tooltip">
 
-<polygon fill="none" stroke="black" points="1158.27,-108 1100.82,-108 1100.82,-72 1158.27,-72 1158.27,-108"/>
-<text text-anchor="middle" x="1129.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00">Tooltip</text>
+<polygon fill="none" stroke="black" points="1157.27,-108 1099.82,-108 1099.82,-72 1157.27,-72 1157.27,-108" style=""/>
+<text text-anchor="middle" x="1128.54" y="-85.8" font-family="Helvetica,Arial,sans-serif" font-size="14.00" style="">Tooltip</text>
 </g>
-<!-- Tooltip&#45;&gt;Tokens &amp; Base -->
 <!-- Tooltip&#45;&gt;Tokens &amp; Base -->
 <g id="edge26" class="edge" data-name="Tooltip-&gt;Tokens &amp; Base">
 
-<path fill="none" stroke="black" d="M1100.4,-74.5C1097.78,-73.54 1095.14,-72.68 1092.54,-72 986.25,-44.04 661.39,-27.46 523.5,-21.51"/>
-<polygon fill="black" stroke="black" points="523.98,-18.03 513.84,-21.1 523.68,-25.02 523.98,-18.03"/>
+<path fill="none" stroke="black" d="M1099.44,-74.81C1096.48,-73.72 1093.48,-72.76 1090.54,-72 984.45,-44.65 660.7,-27.73 523.28,-21.6" style=""/>
+<polygon fill="black" stroke="black" points="523.8,-18.12 513.66,-21.17 523.49,-25.11 523.8,-18.12" style=""/>
 </g>
-<!-- Tooltip&#45;&gt;Tokens &amp; Base -->
-
-
 </g>
 </svg>

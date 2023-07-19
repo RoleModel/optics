@@ -1,17 +1,17 @@
-%toggle-global {
+%switch-global {
   // Public API (allowed to be overridden)
-  --_op-toggle-height-small: var(--op-space-medium); // 1.6rem
-  --_op-toggle-height-large: var(--op-space-x-large); // 2.4rem
-  --_op-toggle-width-small: calc(var(--op-space-x-large) + var(--op-space-3x-small)); // 2.6rem
-  --_op-toggle-width-large: calc(var(--op-space-3x-large) + var(--op-space-3x-small)); // 4.2rem
-  --_op-toggle-opacity-disabled: 0.4;
-  --_op-toggle-switch-padding: var(--op-space-2x-small);
+  --_op-switch-height-small: var(--op-space-medium); // 1.6rem
+  --_op-switch-height-large: var(--op-space-x-large); // 2.4rem
+  --_op-switch-width-small: calc(var(--op-space-x-large) + var(--op-space-3x-small)); // 2.6rem
+  --_op-switch-width-large: calc(var(--op-space-3x-large) + var(--op-space-3x-small)); // 4.2rem
+  --_op-switch-opacity-disabled: 0.4;
+  --_op-switch-switch-padding: var(--op-space-2x-small);
 
   // Private API (don't touch these)
-  --__op-toggle-width: var(--_op-toggle-width-large);
-  --__op-toggle-height: var(--_op-toggle-height-large);
-  --__op-toggle-switch-size: calc(var(--__op-toggle-height) - var(--_op-toggle-switch-padding));
-  --__op-toggle-half-switch-padding: calc(var(--_op-toggle-switch-padding) / 2);
+  --__op-switch-width: var(--_op-switch-width-large);
+  --__op-switch-height: var(--_op-switch-height-large);
+  --__op-switch-switch-size: calc(var(--__op-switch-height) - var(--_op-switch-switch-padding));
+  --__op-switch-half-switch-padding: calc(var(--_op-switch-switch-padding) / 2);
 
   position: relative;
   display: flex;
@@ -23,7 +23,7 @@
 
     &:disabled + label {
       cursor: not-allowed;
-      opacity: var(--_op-toggle-opacity-disabled);
+      opacity: var(--_op-switch-opacity-disabled);
     }
 
     &:checked + label {
@@ -31,7 +31,7 @@
       box-shadow: none;
 
       &::after {
-        left: calc(100% - var(--__op-toggle-half-switch-padding));
+        left: calc(100% - var(--__op-switch-half-switch-padding));
         transform: translateX(-100%);
       }
     }
@@ -63,8 +63,8 @@
   label {
     position: relative;
     display: block;
-    width: var(--__op-toggle-width);
-    height: var(--__op-toggle-height);
+    width: var(--__op-switch-width);
+    height: var(--__op-switch-height);
     border-radius: var(--op-radius-pill);
     background: var(--op-color-neutral-base);
     box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
@@ -72,10 +72,10 @@
 
     &::after {
       position: absolute;
-      top: var(--__op-toggle-half-switch-padding);
-      left: var(--__op-toggle-half-switch-padding);
-      width: var(--__op-toggle-switch-size);
-      height: var(--__op-toggle-switch-size);
+      top: var(--__op-switch-half-switch-padding);
+      left: var(--__op-switch-half-switch-padding);
+      width: var(--__op-switch-switch-size);
+      height: var(--__op-switch-switch-size);
       border-radius: var(--op-radius-circle);
       background-color: var(--op-color-neutral-plus-eight);
       content: '';
@@ -84,17 +84,17 @@
   }
 
   // Size Modifiers
-  &.toggle--small {
-    --__op-toggle-width: var(--_op-toggle-width-small);
-    --__op-toggle-height: var(--_op-toggle-height-small);
+  &.switch--small {
+    --__op-switch-width: var(--_op-switch-width-small);
+    --__op-switch-height: var(--_op-switch-height-small);
   }
 
-  &.toggle--large {
-    --__op-toggle-width: var(--_op-toggle-width-large);
-    --__op-toggle-height: var(--_op-toggle-height-large);
+  &.switch--large {
+    --__op-switch-width: var(--_op-switch-width-large);
+    --__op-switch-height: var(--_op-switch-height-large);
   }
 }
 
-.toggle {
-  @extend %toggle-global;
+.switch {
+  @extend %switch-global;
 }

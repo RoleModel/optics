@@ -4,29 +4,29 @@ digraph dependencies {
   edge [fontname = "Helvetica,Arial,sans-serif";];
   node [shape = box;];
   "Tokens & Base";
-  
+
   "Accordion" -> "Tokens & Base";
   "Accordion" -> "Icon";
-  
+
   "Alert" -> "Tokens & Base";
   "Alert" -> "Icon";
-  
+
   "Badge" -> "Tokens & Base";
   "Badge" -> "Icon";
-  
+
   "Button" -> "Tokens & Base";
   "Button" -> "Icon";
-  
+
   "Button Group" -> "Tokens & Base";
   "Button Group" -> "Button";
-  
+
   "Sidebar" -> "Tokens & Base";
   "Sidebar" -> "Button";
-  
+
   "Pagination" -> "Button";
   "Pagination" -> "Form";
   "Pagination" -> "Tokens & Base";
-  
+
   "Avatar" -> "Tokens & Base";
   "Card" -> "Tokens & Base";
   "Confirm Dialog" -> "Tokens & Base";
@@ -36,6 +36,6 @@ digraph dependencies {
   "Modal" -> "Tokens & Base";
   "Spinner" -> "Tokens & Base";
   "Table" -> "Tokens & Base";
-  "Toggle" -> "Tokens & Base";
+  "Switch" -> "Tokens & Base";
   "Tooltip" -> "Tokens & Base";
 }

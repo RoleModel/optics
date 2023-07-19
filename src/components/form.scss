@@ -326,7 +326,7 @@ textarea.form-control:not([type='radio'], [type='checkbox']) {
   }
 
   .form-control:not([type='radio'], [type='checkbox']),
-  .toggle {
+  .switch {
     grid-column: unset;
   }
   /* stylelint-enable no-descending-specificity */

@@ -1,0 +1,111 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as SwitchStories from './Switch.stories'
+
+import { createAlert } from '../Alert/Alert.js'
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+Switch classes can be used to create a stylized checkbox or boolean input.
+
+## Playground
+
+<Canvas of={SwitchStories.Default} />
+<Controls of={SwitchStories.Default} />
+
+### Selective Imports
+
+Switch can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/switch';
+```
+
+## Variations
+
+### Default
+
+`.switch` Provides basic styling for a checkbox or boolean input. It is intended to be used on an input element if type checkbox.
+
+<Canvas of={SwitchStories.Default} />
+
+### Size
+
+`.switch--large`, `.switch--small` (with large being the default) modify the size of the switch.
+
+<Canvas of={SwitchStories.Small} />
+
+### Disabled
+
+`disabled='disabled'` will disable the switch.
+
+<Canvas of={SwitchStories.Disabled} />
+
+## Switch API
+
+The size styles are built on css variables scoped to the switch.
+
+Here are the variables that can be customized.
+
+{/* prettier-ignore-start */}
+```css
+--_op-switch-height-small:
+--_op-switch-height-large:
+--_op-switch-width-small:
+--_op-switch-width-large:
+--_op-switch-opacity-disabled:
+--_op-switch-switch-padding:
+```
+{/* prettier-ignore-end */}
+
+## Customizing Switch styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the switch for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+The switch classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior. You can modify all switch behavior by overriding the `%switch-global` placeholder selector and setting any properties:
+
+```css
+%switch-global {
+}
+```
+
+If you need to override the behavior of a particular switch style, you can open the respective class and set or change properties
+
+```css
+.switch-alternate {
+}
+```
+
+## New Switch Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the switch for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+Your application may need a custom switch. To add one, just follow this template:
+
+```css
+.switch-{name} {
+  @extend %switch-global;
+}
+```
