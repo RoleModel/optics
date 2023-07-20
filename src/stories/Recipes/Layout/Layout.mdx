@@ -100,3 +100,32 @@ A layout with a sidebar looks like the following:
 ```
 
 <Canvas of={LayoutStories.Sidebar} />
+
+## With Navbar
+
+For instructions on the navbar itself, see [Navbar Component](?path=/docs/components-navbar--default-navbar)
+
+A layout with a navbar looks like the following:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample Layout</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+  </head>
+  <body class="app-body">
+    <!-- Alert Flash message here -->
+    <!-- Confirm here -->
+    <!-- Modal here -->
+    <!-- Panel here -->
+    <div class='app__header'>
+      <div class="navbar">...</div>
+    </div>
+    <div class="app__content"></div>
+    <div class='app__footer'></div>
+  </body>
+</html>
+```
+
+<Canvas of={LayoutStories.Navbar} />
