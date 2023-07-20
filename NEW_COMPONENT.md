@@ -1,12 +1,14 @@
 # Process for Creating New Code Components
 
 To create a new CSS component, follow these steps:
+
 1. Start by defining a Sass `%{component-name}-global` placeholder for the component. This placeholder will serve as the base style for the component and all its variants.
 2. Extend the default class and all variants of the component with the global placeholder you defined in the previous step. This ensures that the base style is applied consistently across all variations.
 3. When creating variants of the component, use the following syntax: `.{component-name}-{variant}`. Variants are top-level components that have distinct styles or functionalities.
 4. For stylistic tweaks that apply to all variants, use modifiers following the BEM (Block, Element, Modifier) syntax. The modifier class should be in the format: `.{component-name}--{modifier}`.
 
 <!-- TODO: This distintion should exist in the main docs as well, not just in the dev instructions. Understanding how to consume components in your app and know the distinctions here is a good idea. -->
+
 ## Variant vs. Modifier
 
 A variant is a top-level component that has distinct styles or functionalities. For example, a button component can have a primary variant that has a different color and hover state than the default button. A modifier is a class that modifies the style of a component. For example, a button component can have a disabled modifier that changes the color and cursor of the button. Modifiers apply to all Variants.

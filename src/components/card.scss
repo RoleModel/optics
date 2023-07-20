@@ -16,23 +16,33 @@
   }
 
   &.card--shadow-x-small {
-    box-shadow: var(--op-border-all) var(--op-border-color), var(--op-shadow-x-small);
+    box-shadow:
+      var(--op-border-all) var(--op-border-color),
+      var(--op-shadow-x-small);
   }
 
   &.card--shadow-small {
-    box-shadow: var(--op-border-all) var(--op-border-color), var(--op-shadow-small);
+    box-shadow:
+      var(--op-border-all) var(--op-border-color),
+      var(--op-shadow-small);
   }
 
   &.card--shadow-medium {
-    box-shadow: var(--op-border-all) var(--op-border-color), var(--op-shadow-medium);
+    box-shadow:
+      var(--op-border-all) var(--op-border-color),
+      var(--op-shadow-medium);
   }
 
   &.card--shadow-large {
-    box-shadow: var(--op-border-all) var(--op-border-color), var(--op-shadow-large);
+    box-shadow:
+      var(--op-border-all) var(--op-border-color),
+      var(--op-shadow-large);
   }
 
   &.card--shadow-x-large {
-    box-shadow: var(--op-border-all) var(--op-border-color), var(--op-shadow-x-large);
+    box-shadow:
+      var(--op-border-all) var(--op-border-color),
+      var(--op-shadow-x-large);
   }
 
   // Elements

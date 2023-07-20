@@ -43,7 +43,8 @@
     }
 
     &:focus-visible + label {
-      box-shadow: 0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-six),
+      box-shadow:
+        0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-six),
         inset var(--op-border-all) var(--op-color-primary-minus-three);
 
       &::after {
