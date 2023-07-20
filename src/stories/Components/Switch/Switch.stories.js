@@ -1,9 +1,9 @@
-import { createToggle } from './Toggle.js'
+import { createSwitch } from './Switch.js'
 
 export default {
-  title: 'Components/Toggle',
+  title: 'Components/Switch',
   render: ({ ...args }) => {
-    return createToggle({ ...args })
+    return createSwitch({ ...args })
   },
   argTypes: {
     label: { control: 'text' },
