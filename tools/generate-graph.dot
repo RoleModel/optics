@@ -23,6 +23,9 @@ digraph dependencies {
   "Sidebar" -> "Tokens & Base";
   "Sidebar" -> "Button";
 
+  "Navbar" -> "Tokens & Base";
+  "Navbar" -> "Button";
+
   "Pagination" -> "Button";
   "Pagination" -> "Form";
   "Pagination" -> "Tokens & Base";

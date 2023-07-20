@@ -1,0 +1,143 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as NavbarStories from './Navbar.stories'
+
+import { createAlert } from '../Alert/Alert.js'
+
+<Meta of={NavbarStories} />
+
+# Navbar
+
+Navbar classes provide simple styling for a navigation header.
+
+For instructions on how to integrate a navbar into your applications layout, see [Layout With Navbar](?path=/docs/recipes-layout--navbar)
+
+`.navbar` is the main component that everything is contained within.
+
+Any [Button](?path=/docs/components-button--docs#default) style can be used for the links.
+
+## Playground
+
+<Canvas of={NavbarStories.DefaultNavbar} />
+<Controls of={NavbarStories.DefaultNavbar} />
+
+### Selective Imports
+
+Navbar can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+@import '@rolemodel/optics/dist/scss/components/icon';
+@import '@rolemodel/optics/dist/scss/components/button';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/navbar';
+```
+
+## Variations
+
+### Default
+
+`.navbar` Provides a neutral colored navbar. This uses the neutral color defined in your theme.
+
+<Canvas of={NavbarStories.DefaultNavbar} />
+
+### Primary
+
+`.navbar-primary` Provides a primary colored navbar. This uses the primary color defined in your theme.
+
+<Canvas of={NavbarStories.PrimaryNavbar} />
+
+### Brand
+
+`.navbar__brand` can be used with an image tag inside. This can be used to display your applications branding or logo.
+
+The brand is not required and the navbar content will adjust itself accordingly.
+
+<Canvas of={NavbarStories.NoBrandNavbar} />
+
+### Content
+
+`.navbar__content` defines the container that the buttons should be placed in. If you are putting navigation links within a content section, you should use the `nav` element for that section. It can be justified by using modifier classes.
+
+`.navbar__content--justify-start`, `.navbar__content--justify-center`, `.navbar__content--justify-end` with start being the default.
+
+<Canvas of={NavbarStories.CenteredNavbar} />
+
+<Canvas of={NavbarStories.JustifyEndNavbar} />
+
+## Navbar API
+
+Color and hover styles are built on css variables scoped to the navbar.
+
+Here are the variables that can be customized.
+
+{/* prettier-ignore-start */}
+```css
+// Public API
+// Normal
+--_op-navbar-background-color:
+--_op-navbar-text-color:
+--_op-navbar-border-color:
+
+// Height
+--_op-navbar-brand-height:
+
+// Spacing
+--_op-navbar-horizontal-spacing:
+--_op-navbar-content-spacing:
+--_op-navbar-content-item-spacing:
+```
+{/* prettier-ignore-end */}
+
+## Customizing Navbar styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the navbar for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+The navbar classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior. You can modify all navbar behavior by overriding the `%navbar-global` placeholder selector and setting any properties:
+
+```css
+%navbar-global {
+  --_op-navbar-background-color: pink;
+  --_op-navbar-text-color: blue;
+}
+```
+
+If you need to override the behavior of a particular navbar style, you can open the respective class and set or change properties
+
+```css
+.navbar-primary {
+  --_op-navbar-brand-height: 5.4rem;
+  --_op-navbar-horizontal-spacing: var(--op-space-small);
+  --_op-navbar-content-item-spacing: var(--op-space-x-small);
+}
+```
+
+## New Navbar Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the Navbar for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+Your application may need a custom navbar. To add one, just follow this template:
+
+```css
+.navbar-{name} {
+  @extend %navbar-global;
+}
+```

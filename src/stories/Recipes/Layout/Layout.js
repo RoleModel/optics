@@ -1,4 +1,5 @@
 import { createSidebar } from '../../Components/Sidebar/Sidebar.js'
+import { createNavbar } from '../../Components/Navbar/Navbar.js'
 import { createSpinner } from '../../Components/Spinner/Spinner.js'
 
 export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
@@ -9,9 +10,9 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
   <!-- Confirm here -->
   <!-- Modal here -->
   <!-- Panel here -->
-  <div class='app__header background-primary-plus-seven'>Header</div>
+  <div class='app__header'>Header</div>
   <div class='app__content'>Content</div>
-  <div class='app__footer background-primary-plus-seven'>Footer</div>
+  <div class='app__footer'>Footer</div>
 </div>
 `
   }
@@ -46,15 +47,29 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
   <!-- Panel here -->
   ${sidebar('default', 'drawer')}
   <div class='app-body'>
-    <div class='app__header background-primary-plus-seven'>Header</div>
+    <div class='app__header'>Header</div>
     <div class='app__content'>
       ${Array.from(Array(16))
         .map((_item) => '<p>Some content</p>')
         .join('\n')}
     </div>
-    <div class='app__footer background-primary-plus-seven'>Footer</div>
+    <div class='app__footer'>Footer</div>
   </div>
   ${rightSidebar ? sidebar('primary', 'rail') : ''}
+</div>
+`
+  }
+
+  if (style === 'navbar') {
+    return `
+<div class='app-body' style="height: 40rem;"> <!-- This class should be on body. Height is for demo purposed -->
+  <!-- Alert Flash message here -->
+  <!-- Confirm here -->
+  <!-- Modal here -->
+  <!-- Panel here -->
+  ${createNavbar({ style: 'default' }).innerHTML}
+  <div class='app__content'>Content</div>
+  <div class='app__footer'>Footer</div>
 </div>
 `
   }

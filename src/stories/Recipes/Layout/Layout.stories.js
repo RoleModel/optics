@@ -8,7 +8,7 @@ export default {
   argTypes: {
     style: {
       control: { type: 'select' },
-      options: ['basic', 'sidebar', 'spinner'],
+      options: ['basic', 'sidebar', 'navbar', 'spinner'],
     },
     rightSidebar: {
       control: { type: 'boolean' },
@@ -29,6 +29,12 @@ export const Basic = {
 export const Sidebar = {
   args: {
     style: 'sidebar',
+  },
+}
+
+export const Navbar = {
+  args: {
+    style: 'navbar',
   },
 }
 
