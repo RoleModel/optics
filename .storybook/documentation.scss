@@ -5,6 +5,15 @@
 
 @import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
 
+// Fix Table of contents scrolling
+html {
+  overflow: unset; // Optics sets this to handle flash messages
+
+  &:focus-within {
+    scroll-behavior: initial; // Modern CSS reset sets this to smooth
+  }
+}
+
 .sbdocs-preview .docs-story {
   background-color: var(--op-color-background);
   color: var(--op-color-on-background);
