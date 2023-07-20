@@ -11,9 +11,9 @@ export default {
       options: ['default', 'primary'],
     },
     brand: { control: 'boolean' },
-    spacing: {
+    justify: {
       control: { type: 'select' },
-      options: ['left', 'around', 'right'],
+      options: ['start', 'center', 'end'],
     },
     activeLink: {
       control: { type: 'select' },
@@ -48,13 +48,13 @@ export const NoBrandNavbar = {
 export const CenteredNavbar = {
   args: {
     style: 'default',
-    spacing: 'around',
+    justify: 'center',
   },
 }
 
-export const SpacingLeftNavbar = {
+export const JustifyEndNavbar = {
   args: {
     style: 'default',
-    spacing: 'left',
+    justify: 'end',
   },
 }

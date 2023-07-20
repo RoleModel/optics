@@ -59,13 +59,13 @@ The brand is not required and the navbar content will adjust itself accordingly.
 
 ### Content
 
-`.navbar__content` defines the container that the buttons should be placed in. It can be positioned by using modifier classes.
+`.navbar__content` defines the container that the buttons should be placed in. If you are putting navigation links within a content section, you should use the `nav` element for that section. It can be justified by using modifier classes.
 
-`.navbar__content--space-right`, `.navbar__content--space-around`, `.navbar__content--space-left` with right being the default.
+`.navbar__content--justify-start`, `.navbar__content--justify-center`, `.navbar__content--justify-end` with start being the default.
 
 <Canvas of={NavbarStories.CenteredNavbar} />
 
-<Canvas of={NavbarStories.SpacingLeftNavbar} />
+<Canvas of={NavbarStories.JustifyEndNavbar} />
 
 ## Navbar API
 

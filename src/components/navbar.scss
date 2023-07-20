@@ -5,8 +5,8 @@
   --_op-navbar-text-color: var(--op-color-neutral-on-plus-eight);
   --_op-navbar-border-color: var(--op-color-neutral-plus-four);
 
-  // Height
-  --_op-navbar-brand-height: 4.8rem;
+  // Height (Will eventually make a size scale that is separate from the space scale)
+  --_op-navbar-brand-height: calc(var(--op-space-3x-large) + var(--op-space-x-small)); // 48px
 
   // Spacing
   --_op-navbar-horizontal-spacing: var(--op-space-x-large);
@@ -36,16 +36,16 @@
     align-items: center;
     gap: var(--_op-navbar-content-item-spacing);
 
-    &.navbar__content--space-right {
-      margin-right: auto;
+    &.navbar__content--justify-start {
+      margin-inline-end: auto;
     }
 
-    &.navbar__content--space-around {
+    &.navbar__content--justify-center {
       margin-inline: auto;
     }
 
-    &.navbar__content--space-left {
-      margin-left: auto;
+    &.navbar__content--justify-end {
+      margin-inline-start: auto;
     }
   }
 }

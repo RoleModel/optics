@@ -12,7 +12,7 @@ const createNavbarLink = ({ icon, label }, activeLink) => {
   }).outerHTML
 }
 
-export const createNavbar = ({ style = 'default', brand = true, spacing = 'right', activeLink = 'Inbox' }) => {
+export const createNavbar = ({ style = 'default', brand = true, justify = 'start', activeLink = 'Inbox' }) => {
   const element = 'div'
 
   const body = document.createElement(element)
@@ -39,15 +39,15 @@ export const createNavbar = ({ style = 'default', brand = true, spacing = 'right
 
   body.innerHTML += `
   <div class="app__header">
-    <nav class="${navbarClasses}">
+    <div class="${navbarClasses}">
       ${brandSection}
-      <div class="navbar__content navbar__content--space-${spacing}">
+      <nav class="navbar__content navbar__content--justify-${justify}">
         ${links.map((item) => createNavbarLink(item, activeLink)).join('\n        ')}
-      </div>
+      </nav>
       <div class="navbar__content">
         ${createAvatar({ size: 'medium' }).outerHTML}
       </div>
-    </nav>
+    </div>
   </div>
 `
   return body
