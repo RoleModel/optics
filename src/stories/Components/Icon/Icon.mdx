@@ -45,7 +45,7 @@ To use an icon, put an element (usually a `span`) with the class of `.material-s
 
 ### Size
 
-`.icon--medium`, `.icon--large`, `.icon--x-large` (with medium being the default) modify the size of any icon.
+`.icon--small`, `.icon--medium`, `.icon--large`, `.icon--x-large` (with medium being the default) modify the size of any icon.
 
 <Canvas of={IconStories.Large} />
 
@@ -62,3 +62,89 @@ Emphasis acts similarly to weight, but changes the thickness of the icon strokes
 `.icon--low-emphasis`, `.icon--normal-emphasis`, `.icon--high-emphasis` (with normal being the default) modify the emphasis of any icon.
 
 <Canvas of={IconStories.Emphasis} />
+
+## Icon API
+
+Each icon modifier works off of a scale for each variation. These can be overriden to change how icons scale in your application.
+
+{/* prettier-ignore-start */}
+```css
+// Public API (allowed to be overridden)
+// Weight
+--_op-icon-weight-light:
+--_op-icon-weight-normal:
+--_op-icon-weight-semi-bold:
+--_op-icon-weight-bold:
+
+// Fill
+--_op-icon-fill-outlined:
+--_op-icon-fill-filled:
+
+// Emphasis
+--_op-icon-emphasis-low:
+--_op-icon-emphasis-normal:
+--_op-icon-emphasis-high:
+
+// Size
+--_op-icon-font-size-small:
+--_op-icon-font-size-medium:
+--_op-icon-font-size-large:
+--_op-icon-font-size-x-large:
+--_op-icon-optical-size-small:
+--_op-icon-optical-size-medium:
+--_op-icon-optical-size-large:
+--_op-icon-optical-size-x-large:
+```
+{/* prettier-ignore-end */}
+
+## Overriding Styles
+
+The icon classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+Icon takes advantage of multiple selector placeholders to allow for easy overriding of styles. They can be overridden to change all icon styles:
+
+```css
+%icon-small-global {
+}
+
+%icon-medium-global {
+}
+
+%icon-large-global {
+}
+
+%icon-x-large-global {
+}
+
+%icon-weight-light-global {
+}
+
+%icon-weight-normal-global {
+}
+
+%icon-weight-semi-bold-global {
+}
+
+%icon-weight-bold-global {
+}
+
+%icon-global {
+}
+```
+
+Sometimes other components need to modify what icons look like within then. Rather than having to ensure the right size modifier class is used when using the parent component, the parent component can force the size using the size global modifiers. Examples from accordion and alert looks like:
+
+```css
+.accordion__marker {
+  @extend %icon-x-large-global;
+
+  /* ... */
+}
+
+.alert__icon {
+  @extend %icon-large-global;
+  @extend %icon-weight-bold-global;
+
+  /* ... */
+}
+```

@@ -17,9 +17,8 @@
     }
 
     .accordion__marker {
-      --op-mso-optical-sizing: 48;
+      @extend %icon-x-large-global;
 
-      font-size: var(--op-font-x-large);
       justify-self: flex-end;
       transition: var(--op-transition-accordion);
       user-select: none;

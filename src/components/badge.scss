@@ -23,7 +23,7 @@
   white-space: nowrap;
 
   .material-symbols-outlined {
-    font-size: var(--op-font-small);
+    @extend %icon-small-global;
   }
 
   &.badge--pill {

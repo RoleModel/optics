@@ -5,88 +5,150 @@
 
 @import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200';
 
-.material-symbols-outlined,
-.material-symbols {
-  --op-mso-fill: 0;
-  --op-mso-weight: var(--op-font-weight-normal);
-  --op-mso-grade: 0;
-  --op-mso-optical-sizing: 20;
+%icon-small-global {
+  --__op-icon-font-size: var(--_op-icon-font-size-small);
+  --__op-icon-optical-size: var(--_op-icon-optical-size-small);
+}
 
-  font-size: var(--op-font-medium);
-  font-variation-settings: 'FILL' var(--op-mso-fill), 'wght' var(--op-mso-weight), 'GRAD' var(--op-mso-grade),
-    'opsz' var(--op-mso-optical-sizing);
+%icon-medium-global {
+  --__op-icon-font-size: var(--_op-icon-font-size-medium);
+  --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
+}
+
+%icon-large-global {
+  --__op-icon-font-size: var(--_op-icon-font-size-large);
+  --__op-icon-optical-size: var(--_op-icon-optical-size-large);
+}
+
+%icon-x-large-global {
+  --__op-icon-font-size: var(--_op-icon-font-size-x-large);
+  --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
+}
+
+%icon-weight-light-global {
+  --__op-icon-weight: var(--_op-icon-weight-light);
+}
+
+%icon-weight-normal-global {
+  --__op-icon-weight: var(--_op-icon-weight-normal);
+}
+
+%icon-weight-semi-bold-global {
+  --__op-icon-weight: var(--_op-icon-weight-semi-bold);
+}
+
+%icon-weight-bold-global {
+  --__op-icon-weight: var(--_op-icon-weight-bold);
+}
+
+%icon-global {
+  // Public API (allowed to be overridden)
+  // Weight
+  --_op-icon-weight-light: var(--op-font-weight-light);
+  --_op-icon-weight-normal: var(--op-font-weight-normal);
+  --_op-icon-weight-semi-bold: var(--op-font-weight-semi-bold);
+  --_op-icon-weight-bold: var(--op-font-weight-bold);
+
+  // Fill
+  --_op-icon-fill-outlined: 0;
+  --_op-icon-fill-filled: 1;
+
+  // Emphasis
+  --_op-icon-emphasis-low: -20;
+  --_op-icon-emphasis-normal: 0;
+  --_op-icon-emphasis-high: 200;
+
+  // Size
+  --_op-icon-font-size-small: var(--op-font-small);
+  --_op-icon-font-size-medium: var(--op-font-medium);
+  --_op-icon-font-size-large: var(--op-font-large);
+  --_op-icon-font-size-x-large: var(--op-font-2x-large);
+  --_op-icon-optical-size-small: 20;
+  --_op-icon-optical-size-medium: 20;
+  --_op-icon-optical-size-large: 40;
+  --_op-icon-optical-size-x-large: 48;
+
+  // Private API (don't touch these)
+  --__op-icon-weight: var(--_op-icon-weight-normal);
+  --__op-icon-fill: var(--_op-icon-fill-outlined);
+  --__op-icon-emphasis: var(--_op-icon-emphasis-normal);
+  --__op-icon-font-size: var(--_op-icon-font-size-medium);
+  --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
+
+  font-size: var(--__op-icon-font-size);
+  font-variation-settings: 'FILL' var(--__op-icon-fill), 'wght' var(--__op-icon-weight),
+    'GRAD' var(--__op-icon-emphasis), 'opsz' var(--__op-icon-optical-size);
   line-height: var(--op-line-height-densest);
   vertical-align: middle;
+
+  // Fill Modifiers
+  &.icon--outlined {
+    --__op-icon-fill: var(--_op-icon-fill-outlined);
+  }
+
+  &.icon--filled {
+    --__op-icon-fill: var(--_op-icon-fill-filled);
+  }
+
+  // Weight Modifiers
+  &.icon--weight-light {
+    @extend %icon-weight-light-global;
+  }
+
+  &.icon--weight-normal {
+    @extend %icon-weight-normal-global;
+  }
+
+  &.icon--weight-semi-bold {
+    @extend %icon-weight-semi-bold-global;
+  }
+
+  &.icon--weight-bold {
+    @extend %icon-weight-bold-global;
+  }
+
+  // Emphasis
+  &.icon--low-emphasis {
+    --__op-icon-emphasis: var(--_op-icon-emphasis-low);
+  }
+
+  &.icon--normal-emphasis {
+    --__op-icon-emphasis: var(--_op-icon-emphasis-normal);
+  }
+
+  &.icon--high-emphasis {
+    --__op-icon-emphasis: var(--_op-icon-emphasis-high);
+  }
+
+  // Size Modifiers
+  &.icon--small {
+    @extend %icon-small-global;
+  }
+
+  &.icon--medium {
+    @extend %icon-medium-global;
+  }
+
+  &.icon--large {
+    @extend %icon-large-global;
+  }
+
+  &.icon--x-large {
+    @extend %icon-x-large-global;
+  }
 }
 
-// Fill
-.icon--outlined {
-  --op-mso-fill: 0;
-}
-
-.icon--filled {
-  --op-mso-fill: 1;
-}
-
-// Weight
-.icon--weight-light {
-  --op-mso-weight: var(--op-font-weight-light);
-}
-
-.icon--weight-normal {
-  --op-mso-weight: var(--op-font-weight-normal);
-}
-
-.icon--weight-semi-bold {
-  --op-mso-weight: var(--op-font-weight-semi-bold);
-}
-
-.icon--weight-bold {
-  --op-mso-weight: var(--op-font-weight-bold);
-}
-
-// Emphasis
-.icon--low-emphasis {
-  --op-mso-grade: -20;
-}
-
-.icon--normal-emphasis {
-  --op-mso-grade: 0;
-}
-
-.icon--high-emphasis {
-  --op-mso-grade: 200;
-}
-
-// Size
-.icon--medium {
-  font-size: var(--op-font-medium);
-
-  --op-mso-optical-sizing: 20;
-}
-
-.icon--large {
-  font-size: var(--op-font-large);
-
-  --op-mso-optical-sizing: 40;
-}
-
-.icon--x-large {
-  font-size: var(--op-font-2x-large);
-
-  --op-mso-optical-sizing: 48;
+.material-symbols-outlined,
+.material-symbols {
+  @extend %icon-global;
 }
 
 .custom-icons {
+  @extend %icon-global;
+
   display: inline-block;
   width: var(--op-font-2x-large);
   height: var(--op-font-2x-large);
-
-  &.icon--medium {
-    font-size: var(--op-font-small);
-
-    --op-mso-optical-sizing: 20;
-  }
 
   &.icon--large {
     width: var(--op-font-large);

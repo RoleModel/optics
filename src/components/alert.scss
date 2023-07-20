@@ -6,10 +6,8 @@
   gap: var(--op-space-small);
 
   .alert__icon {
-    /* stylelint-disable scss/at-extend-no-missing-placeholder */
-    @extend .icon--large;
-    @extend .icon--weight-bold;
-    /* stylelint-enable scss/at-extend-no-missing-placeholder */
+    @extend %icon-large-global;
+    @extend %icon-weight-bold-global;
 
     line-height: var(--op-line-height-dense);
   }

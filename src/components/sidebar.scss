@@ -101,10 +101,8 @@
       justify-content: flex-start;
 
       .material-symbols-outlined {
-        /* stylelint-disable scss/at-extend-no-missing-placeholder */
-        @extend .icon--large;
-        @extend .icon--weight-bold;
-        /* stylelint-enable scss/at-extend-no-missing-placeholder */
+        @extend %icon-large-global;
+        @extend %icon-weight-bold-global;
       }
     }
 

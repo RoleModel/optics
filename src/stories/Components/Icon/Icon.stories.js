@@ -10,7 +10,7 @@ export default {
     filled: { control: 'boolean' },
     size: {
       control: { type: 'select' },
-      options: ['normal', 'large', 'x-large'],
+      options: ['small', 'medium', 'large', 'x-large'],
     },
     weight: {
       control: { type: 'select' },
