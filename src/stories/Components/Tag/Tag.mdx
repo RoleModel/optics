@@ -1,0 +1,117 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as TagStories from './Tag.stories'
+
+import { createAlert } from '../Alert/Alert.js'
+
+<Meta of={TagStories} />
+
+# Tag
+
+The tag component can be applied to an element with a button within it. The Tag component is similar to the Badge component, however it has a different semantic purpose. Tag is intended to be used for interaction and input where Badge is intended to be used for Notification and Information. See [Badge](?path=/docs/components-badge--docs) for details on its usage.
+
+The tag will typically have a button within it. The button can be used to remove the tag from the UI. For Example, managing catgories or metadata tags on a data record.
+
+## Playground
+
+<Canvas of={TagStories.Readonly} />
+<Controls of={TagStories.Readonly} />
+
+### Selective Imports
+
+Tag can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+@import '@rolemodel/optics/dist/scss/components/icon';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/tag';
+```
+
+## Variations
+
+### Readonly
+
+`.tag-readonly` Provides a readonly tag. This is useful for displaying tags that cannot be removed.
+
+<Canvas of={TagStories.Readonly} />
+
+### Primary
+
+`.tag-primary` Provides a primary colored tag.
+
+<Canvas of={TagStories.Primary} />
+
+### Danger
+
+`.tag-danger` Provides a Danger tag. This uses the danger alert color.
+
+<Canvas of={TagStories.Danger} />
+
+### Warning
+
+`.tag-warning` Provides a Warning tag. This uses the warning alert color.
+
+<Canvas of={TagStories.Warning} />
+
+### Info
+
+`.tag-info` Provides a Info tag. This uses the info alert color.
+
+<Canvas of={TagStories.Info} />
+
+### Notice
+
+`.tag-notice` Provides a Notice tag. This uses the notice alert color.
+
+<Canvas of={TagStories.Notice} />
+
+## Customizing Tag styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the tag for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+The tag classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior. You can modify all tag behavior by overriding the `%tag-global` placeholder selector and setting any properties:
+
+```css
+%tag-global {
+  background-color: var(--op-color-alerts-danger-base);
+}
+```
+
+If you need to override the behavior of a particular tag style, you can open the respective class and set or change properties
+
+```css
+.tag-danger {
+  background-color: var(--op-color-alerts-danger-base);
+}
+```
+
+## New Tag Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the Tag for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+Your application may need a custom tag. To add one, just follow this template:
+
+```css
+.tag-{name} {
+  @extend %tag-global;
+}
+```

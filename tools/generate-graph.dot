@@ -17,6 +17,9 @@ digraph dependencies {
   "Button" -> "Tokens & Base";
   "Button" -> "Icon";
 
+  "Tag" -> "Tokens & Base";
+  "Tag" -> "Icon";
+
   "Button Group" -> "Tokens & Base";
   "Button Group" -> "Button";
 
