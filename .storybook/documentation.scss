@@ -119,3 +119,16 @@ html {
     position: unset;
   }
 }
+
+// Prevent our tag component from interfering with the docs
+.language-html {
+  .tag {
+    display: initial;
+    padding: initial;
+    background-color: initial;
+    font-size: 13px;
+    font-weight: initial;
+    letter-spacing: initial;
+    line-height: 19px;
+  }
+}
