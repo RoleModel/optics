@@ -1,21 +1,22 @@
-import { createIcon } from '../Icon/Icon.js'
+import { createButton } from '../Button/Button.js'
 
-export const createTag = ({ label, type = 'default', iconLeft = false, iconRight = false }) => {
+export const createTag = ({ label, type = 'readonly', iconLeft = false, iconRight = false }) => {
   const tag = document.createElement('div')
 
-  tag.innerText = label
+  const text = document.createElement('span')
+  text.innerText = label
+  text.className = 'tag__label'
+  tag.append(text)
 
   if (iconLeft) {
-    const name = iconLeft === true ? 'close' : iconLeft
-    tag.prepend(createIcon({ name, size: 'large' }))
+    tag.prepend(createButton({ priority: 'default', noBorder: true, icon: 'close', pill: true }))
   }
 
   if (iconRight) {
-    const name = iconRight === true ? 'close' : iconRight
-    tag.append(createIcon({ name, size: 'large' }))
+    tag.append(createButton({ priority: 'default', noBorder: true, icon: 'close', pill: true }))
   }
 
-  tag.className = [type === 'default' ? 'tag' : `tag-${type}`].filter(Boolean).join(' ')
+  tag.className = [`tag-${type}`].filter(Boolean).join(' ')
 
   return tag
 }

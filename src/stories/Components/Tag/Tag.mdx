@@ -7,12 +7,14 @@ import { createAlert } from '../Alert/Alert.js'
 
 # Tag
 
-The tag component can be applied to `div`, `button`, or `a` html elements. The Tag component is similar to the Badge component, however it has a different semantic purpose. Tag is intended to be used for interaction and input where Badge is intended to be used for Notification and Information. See [Badge](?path=/docs/components-badge--docs) for details on its usage.
+The tag component can be applied to an element with a button within it. The Tag component is similar to the Badge component, however it has a different semantic purpose. Tag is intended to be used for interaction and input where Badge is intended to be used for Notification and Information. See [Badge](?path=/docs/components-badge--docs) for details on its usage.
+
+The tag will typically have a button within it. The button can be used to remove the tag from the UI. For Example, managing catgories or metadata tags on a data record.
 
 ## Playground
 
-<Canvas of={TagStories.Default} />
-<Controls of={TagStories.Default} />
+<Canvas of={TagStories.Readonly} />
+<Controls of={TagStories.Readonly} />
 
 ### Selective Imports
 
@@ -30,39 +32,39 @@ Tag can be used as a standalone component, however, it does have a few dependenc
 
 ## Variations
 
-### Default
-
-Use `.tag` to apply the default class.
-
-<Canvas of={TagStories.Default} />
-
 ### Readonly
 
-Use `.tag-readonly` to apply the readonly class.
+`.tag-readonly` Provides a readonly tag. This is useful for displaying tags that cannot be removed.
 
 <Canvas of={TagStories.Readonly} />
 
+### Primary
+
+`.tag-primary` Provides a primary colored tag.
+
+<Canvas of={TagStories.Primary} />
+
 ### Danger
 
-Use `.tag-danger` to apply the danger class.
+`.tag-danger` Provides a Danger tag. This uses the danger alert color.
 
 <Canvas of={TagStories.Danger} />
 
 ### Warning
 
-Use `.tag-warning` to apply the warning class.
+`.tag-warning` Provides a Warning tag. This uses the warning alert color.
 
 <Canvas of={TagStories.Warning} />
 
 ### Info
 
-Use `.tag-info` to apply the info class.
+`.tag-info` Provides a Info tag. This uses the info alert color.
 
 <Canvas of={TagStories.Info} />
 
 ### Notice
 
-Use `.tag-notice` to apply the notice class.
+`.tag-notice` Provides a Notice tag. This uses the notice alert color.
 
 <Canvas of={TagStories.Notice} />
 

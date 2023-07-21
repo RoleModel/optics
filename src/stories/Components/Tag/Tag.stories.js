@@ -9,17 +9,10 @@ export default {
     label: { control: 'text' },
     type: {
       control: { type: 'select' },
-      options: ['default', 'readonly', 'danger', 'warning', 'info', 'notice'],
+      options: ['readonly', 'primary', 'danger', 'warning', 'info', 'notice'],
     },
     iconLeft: { control: 'boolean' },
     iconRight: { control: 'boolean' },
-  },
-}
-
-export const Default = {
-  args: {
-    label: 'Default',
-    type: 'default',
   },
 }
 
@@ -27,6 +20,13 @@ export const Readonly = {
   args: {
     label: 'Readonly',
     type: 'readonly',
+  },
+}
+
+export const Primary = {
+  args: {
+    label: 'Primary',
+    type: 'primary',
   },
 }
 
