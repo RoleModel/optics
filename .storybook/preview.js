@@ -11,6 +11,12 @@ const preview = {
         date: /Date$/,
       },
     },
+    docs: {
+      toc: {
+        headingSelector: 'h2, h3',
+        title: 'Table of Contents',
+      },
+    },
     options: {
       storySort: {
         order: [

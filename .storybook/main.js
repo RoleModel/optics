@@ -9,7 +9,12 @@ const config = {
         actions: false,
       },
     },
-    { name: 'storybook-design-token', options: { preserveCSSVars: true } },
+    {
+      name: 'storybook-design-token',
+      options: {
+        preserveCSSVars: true,
+      },
+    },
     {
       name: '@storybook/addon-styling',
       options: {
@@ -19,6 +24,7 @@ const config = {
         },
       },
     },
+    '@storybook/addon-mdx-gfm',
   ],
   framework: {
     name: '@storybook/html-webpack5',
@@ -31,4 +37,5 @@ const config = {
     disableTelemetry: true, // 👈 Disables telemetry
   },
 }
+
 export default config

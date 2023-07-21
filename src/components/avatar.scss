@@ -33,7 +33,8 @@
     position: absolute;
     z-index: 3;
     border-radius: var(--_op-avatar-border-radius);
-    box-shadow: inset 0 0 0 var(--_op-avatar-outer-border-width) var(--_op-avatar-outer-border-color),
+    box-shadow:
+      inset 0 0 0 var(--_op-avatar-outer-border-width) var(--_op-avatar-outer-border-color),
       inset 0 0 0 var(--_op-avatar-inner-border-width) var(--_op-avatar-inner-border-color);
     content: '';
     inset: 0;

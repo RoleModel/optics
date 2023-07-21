@@ -141,9 +141,8 @@
   * @tokens Alerts Warning Colors
   * @presenter Color
   */
-  --op-color-alerts-warning-original: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) var(--op-color-alerts-warning-l)
-  );
+  // prettier-ignore
+  --op-color-alerts-warning-original: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) var(--op-color-alerts-warning-l));
 
   // Main Scale
   --op-color-alerts-warning-plus-max: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 100%);
@@ -170,25 +169,25 @@
   --op-color-alerts-warning-on-plus-max: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 0%);
   --op-color-alerts-warning-on-plus-max-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
   --op-color-alerts-warning-on-plus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 4%);
-  --op-color-alerts-warning-on-plus-eight-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 24%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-plus-eight-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 24%);
   --op-color-alerts-warning-on-plus-seven: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 8%);
-  --op-color-alerts-warning-on-plus-seven-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 28%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-plus-seven-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 28%);
   --op-color-alerts-warning-on-plus-six: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 16%);
   --op-color-alerts-warning-on-plus-six-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 26%);
   --op-color-alerts-warning-on-plus-five: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
-  --op-color-alerts-warning-on-plus-five-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 25%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-plus-five-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 25%);
   --op-color-alerts-warning-on-plus-four: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
   --op-color-alerts-warning-on-plus-four-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 0%);
   --op-color-alerts-warning-on-plus-three: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
-  --op-color-alerts-warning-on-plus-three-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 10%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-plus-three-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 10%);
   --op-color-alerts-warning-on-plus-two: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 16%);
   --op-color-alerts-warning-on-plus-two-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 6%);
   --op-color-alerts-warning-on-plus-one: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
@@ -196,41 +195,41 @@
   --op-color-alerts-warning-on-base: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 12%);
   --op-color-alerts-warning-on-base-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 0%);
   --op-color-alerts-warning-on-minus-one: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 100%);
-  --op-color-alerts-warning-on-minus-one-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-minus-one-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
   --op-color-alerts-warning-on-minus-two: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 96%);
-  --op-color-alerts-warning-on-minus-two-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 84%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-minus-two-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 84%);
   --op-color-alerts-warning-on-minus-three: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 92%);
-  --op-color-alerts-warning-on-minus-three-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 80%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-minus-three-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 80%);
   --op-color-alerts-warning-on-minus-four: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
-  --op-color-alerts-warning-on-minus-four-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 76%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-minus-four-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 76%);
   --op-color-alerts-warning-on-minus-five: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
-  --op-color-alerts-warning-on-minus-five-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 76%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-minus-five-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 76%);
   --op-color-alerts-warning-on-minus-six: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 94%);
-  --op-color-alerts-warning-on-minus-six-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 82%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-minus-six-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 82%);
   --op-color-alerts-warning-on-minus-seven: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 96%);
-  --op-color-alerts-warning-on-minus-seven-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 84%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-minus-seven-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 84%);
   --op-color-alerts-warning-on-minus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 98%);
-  --op-color-alerts-warning-on-minus-eight-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 86%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-minus-eight-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 86%);
   --op-color-alerts-warning-on-minus-max: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 100%);
-  --op-color-alerts-warning-on-minus-max-alt: hsl(
-    var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%
-  );
+
+  // prettier-ignore
+  --op-color-alerts-warning-on-minus-max-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
 }
 
 @mixin alerts-danger-semantic-scale {
@@ -238,9 +237,8 @@
   * @tokens Alerts Danger Colors
   * @presenter Color
   */
-  --op-color-alerts-danger-original: hsl(
-    var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) var(--op-color-alerts-danger-l)
-  );
+  // prettier-ignore
+  --op-color-alerts-danger-original: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) var(--op-color-alerts-danger-l));
 
   // Main Scale
   --op-color-alerts-danger-plus-max: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 100%);
@@ -309,9 +307,8 @@
   * @tokens Alerts Info Colors
   * @presenter Color
   */
-  --op-color-alerts-info-original: hsl(
-    var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) var(--op-color-alerts-info-l)
-  );
+  // prettier-ignore
+  --op-color-alerts-info-original: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) var(--op-color-alerts-info-l));
 
   // Main Scale
   --op-color-alerts-info-plus-max: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 100%);
@@ -380,9 +377,8 @@
   * @tokens Alerts Notice Colors
   * @presenter Color
   */
-  --op-color-alerts-notice-original: hsl(
-    var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) var(--op-color-alerts-notice-l)
-  );
+  // prettier-ignore
+  --op-color-alerts-notice-original: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) var(--op-color-alerts-notice-l));
 
   // Main Scale
   --op-color-alerts-notice-plus-max: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 100%);
@@ -453,6 +449,7 @@
   */
   --op-color-background: var(--op-color-neutral-plus-eight);
   --op-color-on-background: var(--op-color-neutral-on-plus-eight);
+  --op-color-on-background-alt: var(--op-color-neutral-on-plus-eight-alt);
 }
 
 :root {

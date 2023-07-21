@@ -13,7 +13,10 @@
   --op-mso-optical-sizing: 20;
 
   font-size: var(--op-font-medium);
-  font-variation-settings: 'FILL' var(--op-mso-fill), 'wght' var(--op-mso-weight), 'GRAD' var(--op-mso-grade),
+  font-variation-settings:
+    'FILL' var(--op-mso-fill),
+    'wght' var(--op-mso-weight),
+    'GRAD' var(--op-mso-grade),
     'opsz' var(--op-mso-optical-sizing);
   line-height: var(--op-line-height-densest);
   vertical-align: middle;
