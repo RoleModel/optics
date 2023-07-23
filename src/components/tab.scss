@@ -1,0 +1,84 @@
+%tab-group-global {
+  display: flex;
+  align-items: center;
+}
+
+%tab-global {
+  // Public API
+  --_op-tab-font-small: var(--op-font-x-small);
+  --_op-tab-font-large: var(--op-font-small);
+  --_op-tab-padding-small: calc(var(--op-space-2x-small) + var(--op-space-3x-small)) var(--op-space-medium);
+  --_op-tab-padding-large: var(--op-space-x-small) var(--op-space-medium) var(--op-space-small) var(--op-space-medium);
+  --_op-tab-indicator-width-small: var(--op-border-width-large);
+  --_op-tab-indicator-width-large: var(--op-border-width-x-large);
+  --_op-tab-disabled-opacity: 0.4;
+
+  // Private API
+  --__op-tab-font-size: var(--_op-tab-font-large);
+  --__op-tab-padding: var(--_op-tab-padding-large);
+  --__op-tab-indicator-width: var(--_op-tab-indicator-width-large);
+  --__op-tab-indicator: inset 0 calc(-1 * var(--__op-tab-indicator-width)) 0 0;
+
+  padding: var(--__op-tab-padding);
+  background-color: var(--op-color-background);
+  color: var(--op-color-on-background);
+  font-size: var(--__op-tab-font-size);
+  text-decoration: none;
+
+  &.tab--active {
+    box-shadow: var(--__op-tab-indicator) var(--op-color-primary-plus-one);
+  }
+
+  // Focus State
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    outline: none;
+  }
+
+  // Focus State
+  &:focus-visible:not(.tab--disabled) {
+    z-index: 1;
+    box-shadow: var(--op-input-focus-primary) var(--op-color-primary-plus-one);
+
+    &.tab--active {
+      box-shadow:
+        var(--__op-tab-indicator) var(--op-color-primary-plus-one),
+        var(--op-input-focus-primary);
+    }
+  }
+
+  // Disabled State
+  &.tab--disabled {
+    opacity: var(--_op-tab-disabled-opacity);
+    pointer-events: none;
+  }
+
+  // Hover State
+  &:hover {
+    background-color: var(--op-color-primary-plus-seven);
+    box-shadow: var(--__op-tab-indicator) var(--op-color-primary-base);
+    color: var(--op-color-primary-on-plus-seven);
+  }
+
+  // Size Modifiers
+  &.tab--small {
+    --__op-tab-padding: var(--_op-tab-padding-small);
+    --__op-tab-font-size: var(--_op-tab-font-small);
+    --__op-tab-indicator-width: var(--_op-tab-indicator-width-small);
+  }
+
+  &.tab--large {
+    --__op-tab-padding: var(--_op-tab-padding-large);
+    --__op-tab-font-size: var(--_op-tab-font-large);
+    --__op-tab-indicator-width: var(--_op-tab-indicator-width-large);
+  }
+}
+
+.tab-group {
+  @extend %tab-group-global;
+}
+
+.tab {
+  @extend %tab-global;
+}
