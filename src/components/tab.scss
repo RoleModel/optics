@@ -39,7 +39,7 @@
   // Focus State
   &:focus-visible:not(.tab--disabled) {
     z-index: 1;
-    box-shadow: var(--op-input-focus-primary) var(--op-color-primary-plus-one);
+    box-shadow: var(--op-input-focus-primary);
 
     &.tab--active {
       box-shadow:
