@@ -10,8 +10,10 @@ export const createTab = ({ size = 'large', activeTab = 'USA', disabledTab = 'Ca
       'tab',
       size === 'small' ? 'tab--small' : '',
       activeTab === item ? ' tab--active' : '',
-      disabledTab === item ? ' tab--disabled' : ''
-    ].filter(Boolean).join(' ')
+      disabledTab === item ? ' tab--disabled' : '',
+    ]
+      .filter(Boolean)
+      .join(' ')
 
     link.innerText = item
 
