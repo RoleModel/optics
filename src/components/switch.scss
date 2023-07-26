@@ -4,7 +4,7 @@
   --_op-switch-height-large: var(--op-space-x-large); // 2.4rem
   --_op-switch-width-small: calc(var(--op-space-x-large) + var(--op-space-3x-small)); // 2.6rem
   --_op-switch-width-large: calc(var(--op-space-3x-large) + var(--op-space-3x-small)); // 4.2rem
-  --_op-switch-opacity-disabled: 0.4;
+  --_op-switch-opacity-disabled: var(--op-opacity-disabled);
   --_op-switch-switch-padding: var(--op-space-2x-small);
 
   // Private API (don't touch these)

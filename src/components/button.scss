@@ -72,7 +72,7 @@
   // Disabled Modifier
   &.btn--disabled,
   &:disabled {
-    opacity: 0.44;
+    opacity: var(--op-opacity-disabled);
     pointer-events: none;
     -webkit-user-select: none; /* stylelint-disable property-no-vendor-prefix */
     user-select: none;
