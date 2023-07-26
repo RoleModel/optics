@@ -7,9 +7,9 @@
   --_op-avatar-outer-border-width: var(--op-border-width-large);
   --_op-avatar-disabled-opacity: var(--op-opacity-disabled);
   --_op-avatar-hover-opacity: var(--op-opacity-overlay);
-  --_op-avatar-size-small: 3.2rem;
-  --_op-avatar-size-medium: 4rem;
-  --_op-avatar-size-large: 5.6rem;
+  --_op-avatar-size-small: calc(8 * var(--op-size-unit)); // 32px
+  --_op-avatar-size-medium: calc(10 * var(--op-size-unit)); // 40px
+  --_op-avatar-size-large: calc(14 * var(--op-size-unit)); // 56px
 
   // Private API (don't touch these)
   --__op-avatar-size: var(--_op-avatar-size-large);

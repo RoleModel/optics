@@ -39,8 +39,8 @@
 
 %modal-global {
   // Public API (allowed to be overridden)
-  --_op-modal-width: 56.4rem;
-  --_op-modal-max-height: 50rem;
+  --_op-modal-width: calc(141 * var(--op-size-unit)); // 564px
+  --_op-modal-max-height: calc(125 * var(--op-size-unit)); // 500px
 
   z-index: var(--op-z-index-dialog-content);
   width: var(--_op-modal-width);

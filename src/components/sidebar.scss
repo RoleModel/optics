@@ -49,12 +49,12 @@
   --_op-sidebar-border-color: var(--op-color-neutral-plus-four);
 
   // Width
-  --_op-sidebar-rail-width: 8.8rem;
-  --_op-sidebar-compact-width: 16.9rem;
-  --_op-sidebar-drawer-width: 21.6rem;
-  --_op-sidebar-rail-brand-width: 7.728rem;
-  --_op-sidebar-compact-brand-width: 9.8rem;
-  --_op-sidebar-drawer-brand-width: 9.8rem;
+  --_op-sidebar-rail-width: calc(22 * var(--op-size-unit)); // 88px
+  --_op-sidebar-compact-width: calc(42 * var(--op-size-unit)); // 168px
+  --_op-sidebar-drawer-width: calc(54 * var(--op-size-unit)); // 216px
+  --_op-sidebar-rail-brand-width: calc(19 * var(--op-size-unit)); // 76px
+  --_op-sidebar-compact-brand-width: calc(24 * var(--op-size-unit)); // 96px
+  --_op-sidebar-drawer-brand-width: calc(24 * var(--op-size-unit)); // 96px
 
   // Spacing
   --_op-sidebar-spacing: calc(var(--op-space-2x-large) + var(--op-space-2x-small));

@@ -36,7 +36,7 @@
 
 %confirm-dialog-global {
   // Public API (allowed to be overridden)
-  --_op-confirm-dialog-width: 40rem;
+  --_op-confirm-dialog-width: calc(100 * var(--op-size-unit)); // 400px
 
   z-index: var(--op-z-index-dialog-content);
   width: var(--_op-confirm-dialog-width);
