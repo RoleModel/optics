@@ -37,9 +37,12 @@ export const createSidePanel = ({
   sections = 1,
   sectionPadding = 'none',
   showDividers = false,
+  includeDemoWrapper = true,
 }) => {
   const wrapper = document.createElement('div')
-  wrapper.style.height = '40rem'
+  if (includeDemoWrapper) {
+    wrapper.style.height = '40rem'
+  }
 
   const element = document.createElement('div')
 
