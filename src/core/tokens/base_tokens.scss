@@ -218,8 +218,8 @@ $breakpoint-x-large: 1440px; // medium laptop
   /**
   * @tokens Encoded Images
   */
-  --op-encoded-images-dropdown-arrow-width: var(--op-space-scale-unit); // No way to string interpolate
-  --op-encoded-images-dropdown-arrow: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 7' version='1.1' xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cg transform='matrix(0.983953,0,0,1.00934,-9.22679,-3.65885)'%3E%3Cpath fill='%23d1d1d1' d='M9.37727 3.625l5.08154 6.93523L19.54036 3.625'/%3E%3C/g%3E%3C/svg%3E%0A");
+  --op-encoded-images-dropdown-arrow-width: calc(1.2 * var(--op-space-scale-unit)); // 12px No way to string interpolate
+  --op-encoded-images-dropdown-arrow: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02IDguMzc1MDFMMCAyLjM3NTAxTDEuNCAwLjk3NTAwNkw2IDUuNTc1MDFMMTAuNiAwLjk3NTAwNkwxMiAyLjM3NTAxTDYgOC4zNzUwMVoiIGZpbGw9IiMwQTBBMEIiLz4KPC9zdmc+Cg==');
 }
 
 @mixin fonts {
