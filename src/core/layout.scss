@@ -27,6 +27,13 @@
   margin: 0 auto;
 }
 
+.app__content-no-margin {
+  width: 100%;
+  flex-grow: 1;
+  padding: 0 var(--op-space-large);
+  overflow-y: auto;
+}
+
 .app__footer {
   position: sticky;
   z-index: var(--op-z-index-footer);

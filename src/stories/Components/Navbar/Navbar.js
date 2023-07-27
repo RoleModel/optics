@@ -12,7 +12,13 @@ const createNavbarLink = ({ icon, label }, activeLink) => {
   }).outerHTML
 }
 
-export const createNavbar = ({ style = 'default', brand = true, justify = 'start', activeLink = 'Inbox' }) => {
+export const createNavbar = ({
+  style = 'default',
+  brand = true,
+  justify = 'start',
+  activeLink = 'Inbox',
+  onlyBrand = false,
+}) => {
   const element = 'div'
 
   const body = document.createElement(element)
@@ -28,12 +34,23 @@ export const createNavbar = ({ style = 'default', brand = true, justify = 'start
   `
     : ''
 
-  const links = [
+  let links = [
     { type: 'link', icon: 'inbox', label: 'Inbox' },
     { type: 'link', icon: 'send', label: 'Outbox' },
     { type: 'link', icon: 'favorite', label: 'Favorite' },
     { type: 'link', icon: 'blur_on', label: 'Something' },
   ]
+
+  let avatarSection = `
+  <div class="navbar__content">
+    ${createAvatar({ size: 'medium' }).outerHTML}
+  </div>
+`
+
+  if (onlyBrand) {
+    links = []
+    avatarSection = ''
+  }
 
   const navbarClasses = [style === 'default' ? 'navbar' : `navbar-${style}`]
 
@@ -44,9 +61,7 @@ export const createNavbar = ({ style = 'default', brand = true, justify = 'start
       <nav class="navbar__content navbar__content--justify-${justify}">
         ${links.map((item) => createNavbarLink(item, activeLink)).join('\n        ')}
       </nav>
-      <div class="navbar__content">
-        ${createAvatar({ size: 'medium' }).outerHTML}
-      </div>
+      ${avatarSection}
     </div>
   </div>
 `

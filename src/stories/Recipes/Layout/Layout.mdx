@@ -10,6 +10,32 @@ import * as LayoutStories from './Layout.stories'
 <Canvas of={LayoutStories.Basic} />
 <Controls of={LayoutStories.Basic} />
 
+## Classes
+
+### `.app-with-sidebar`
+
+Is meant to be used on the body of your application when using a sidebar. See the examples below.
+
+### `.app-body`
+
+Is meant to be used on the body of your application when not using a sidebar, or as a `div` under the body when using a sidebar. See the examples below.
+
+### `.app__header`
+
+Is meant to be used within the `.app-body` to achieve a fixed header for your application. This can container a navbar component. See the examples below.
+
+### `.app__content`
+
+Is meant to be used within the `.app-body` to wrap your main page content. It would be a sibling element between `.app__header` and `.app-footer` if you are using those. See the examples below.
+
+### `.app__content-no-margin`
+
+Is an alternate to `.app__content` that does not constrain the width of the content within. This can be used if you need a side panel in your app. You can wrap your content in `.container` to still achieve the width constraint. See the examples below.
+
+### `.app__footer`
+
+Is meant to be used within the `.app-body` to achieve a fixed footer for your application. See the examples below.
+
 ## Basic
 
 The basic layout that this design system expects looks like the following:
@@ -129,3 +155,17 @@ A layout with a navbar looks like the following:
 ```
 
 <Canvas of={LayoutStories.Navbar} />
+
+## Sidebar with Navbar and Side Panel
+
+For instructions on the side panel itself, see [Side Panel Component](?path=/docs/components-sidepanel--docs)
+
+A layout with a side panel looks like the following:
+
+<Canvas of={LayoutStories.SidebarWithNavbarAndSidePanel} />
+
+## Login
+
+A layout for a login page could look like the following:
+
+<Canvas of={LayoutStories.Login} />

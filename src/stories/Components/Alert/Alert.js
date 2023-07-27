@@ -8,6 +8,7 @@ export const createAlert = ({
   description = 'This is a warning alert',
   icon = '',
   dismissible = false,
+  iconDocsClassFix = '',
 }) => {
   const element = document.createElement('div')
 
@@ -16,6 +17,10 @@ export const createAlert = ({
   if (icon) {
     const iconElement = createIcon({ name: icon })
     iconElement.classList.add('alert__icon')
+
+    if (iconDocsClassFix) {
+      iconElement.classList.add(iconDocsClassFix) // Prevent Storybook styles from interfering.
+    }
 
     element.innerHTML += '\n  ' // Formatting Hack
     element.appendChild(iconElement)

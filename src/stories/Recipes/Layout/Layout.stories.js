@@ -8,7 +8,7 @@ export default {
   argTypes: {
     style: {
       control: { type: 'select' },
-      options: ['basic', 'sidebar', 'navbar', 'spinner'],
+      options: ['basic', 'sidebar', 'navbar', 'spinner', 'sidepanel', 'login'],
     },
     rightSidebar: {
       control: { type: 'boolean' },
@@ -48,5 +48,17 @@ export const SidebarAndRight = {
 export const FullScreenSpinner = {
   args: {
     style: 'spinner',
+  },
+}
+
+export const SidebarWithNavbarAndSidePanel = {
+  args: {
+    style: 'sidepanel',
+  },
+}
+
+export const Login = {
+  args: {
+    style: 'login',
   },
 }

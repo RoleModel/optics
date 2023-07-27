@@ -1,0 +1,94 @@
+%side-panel-global {
+  // Public API (allowed to be overridden)
+  --_op-side-panel-width: calc(54 * var(--op-size-unit)); // 216px
+  --_op-side-panel-header-padding: var(--op-space-medium);
+  --_op-side-panel-body-padding: var(--op-space-medium);
+  --_op-side-panel-footer-padding: var(--op-space-medium);
+  --_op-side-panel-section-padding: var(--op-space-medium);
+
+  display: flex;
+  width: var(--_op-side-panel-width);
+  min-width: var(--_op-side-panel-width);
+  height: 100vh;
+  max-height: 100%;
+  flex-direction: column;
+  background-color: var(--op-color-background);
+  color: var(--op-color-on-background);
+
+  // Modifiers
+  &.side-panel--border-left {
+    box-shadow: var(--op-border-left) var(--op-border-color);
+  }
+
+  &.side-panel--border-right {
+    box-shadow: var(--op-border-right) var(--op-border-color);
+  }
+
+  &.side-panel--border-left.side-panel--border-right {
+    box-shadow: var(--op-border-x);
+  }
+
+  // Elements
+  .side-panel__header {
+    &.side-panel__header--padded {
+      padding: var(--_op-side-panel-header-padding);
+    }
+
+    &.side-panel__header--padded-x {
+      padding-inline: var(--_op-side-panel-header-padding);
+    }
+
+    &.side-panel__header--padded-y {
+      padding-block: var(--_op-side-panel-header-padding);
+    }
+  }
+
+  .side-panel__body {
+    flex: 1;
+    overflow-y: auto;
+
+    &.side-panel__body--padded {
+      padding: var(--_op-side-panel-body-padding);
+    }
+
+    &.side-panel__body--padded-x {
+      padding-inline: var(--_op-side-panel-body-padding);
+    }
+
+    &.side-panel__body--padded-y {
+      padding-block: var(--_op-side-panel-body-padding);
+    }
+  }
+
+  .side-panel__footer {
+    &.side-panel__footer--padded {
+      padding: var(--_op-side-panel-footer-padding);
+    }
+
+    &.side-panel__footer--padded-x {
+      padding-inline: var(--_op-side-panel-footer-padding);
+    }
+
+    &.side-panel__footer--padded-y {
+      padding-block: var(--_op-side-panel-footer-padding);
+    }
+  }
+
+  .side-panel__section {
+    &.side-panel__section--padded {
+      padding: var(--_op-side-panel-section-padding);
+    }
+
+    &.side-panel__section--padded-x {
+      padding-inline: var(--_op-side-panel-section-padding);
+    }
+
+    &.side-panel__section--padded-y {
+      padding-block: var(--_op-side-panel-section-padding);
+    }
+  }
+}
+
+.side-panel {
+  @extend %side-panel-global;
+}
