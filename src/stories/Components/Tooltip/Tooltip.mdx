@@ -79,6 +79,25 @@ Tooltips have a maximum width and will wrap text if it is too long.
 
 <Canvas of={TooltipStories.LotsOfText} />
 
+## Tooltip API
+
+Styles are built on css variables scoped to the tooltip.
+
+Here are the variables that can be customized.
+
+{/* prettier-ignore-start */}
+```css
+--_op-tooltip-max-width
+--_op-tooltip-padding
+--_op-tooltip-background-color
+--_op-tooltip-text-color
+--_op-tooltip-arrow-size
+--_op-tooltip-tooltip-offset
+--_op-tooltip-tooltip-radius
+--_op-tooltip-tooltip-font-size
+```
+{/* prettier-ignore-end */}
+
 ## Customizing Tooltip styles
 
 <div
@@ -92,20 +111,10 @@ Tooltips have a maximum width and will wrap text if it is too long.
 
 The tooltip classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
-Tooltips has an API for Customizing the styles of all tooltips easily.
-
-This allows multiple classes to share the same behavior. You can modify all tooltip behavior by overriding the `%tooltip-global` placeholder selector and setting any properties:
+This allows multiple classes to share the same behavior. You can modify all tooltip behavior by overriding the `%toltip-global` placeholder selector and setting any properties:
 
 ```css
 %tooltip-global {
-  --_op-tooltip-max-width
-  --_op-tooltip-padding:
-  --_op-tooltip-background-color:
-  --_op-tooltip-text-color:
-  --_op-tooltip-arrow-size:
-  --_op-tooltip-tooltip-offset:
-  --_op-tooltip-tooltip-radius:
-  --_op-tooltip-tooltip-font-size:
 }
 ```
 

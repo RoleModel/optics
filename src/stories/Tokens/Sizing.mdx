@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/addon-docs'
+import { DesignTokenDocBlock } from 'storybook-design-token'
+import LinkTo from '@storybook/addon-links/react'
+
+<Meta title="Tokens/Sizing" />
+
+# Size
+
+The Size token enables creating scalable widths and heights for your application. It is meant to be used in a `calc` expression with whole numbers. This ensures any sizes you create will be a multiple of 4px.
+
+## Usage
+
+These tokens can be applied like:
+
+```css
+height: calc(11 * var(--op-size-unit)); // 44px
+/* Or */
+width: calc(54 * var(--op-size-unit)); // 216px
+```
+
+## Available tokens and their definitions
+
+<DesignTokenDocBlock categoryName="Size Scale" viewType="card" />
+
+The size unit can be overridden if you want to change the scale or size basis. This can be done at a component level as well [scale overriding](?path=/docs/overview-scale-overriding--docs#unit-scale-overriding)

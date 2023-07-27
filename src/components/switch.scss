@@ -1,9 +1,9 @@
 %switch-global {
   // Public API (allowed to be overridden)
-  --_op-switch-height-small: var(--op-space-medium); // 1.6rem
-  --_op-switch-height-large: var(--op-space-x-large); // 2.4rem
-  --_op-switch-width-small: calc(var(--op-space-x-large) + var(--op-space-3x-small)); // 2.6rem
-  --_op-switch-width-large: calc(var(--op-space-3x-large) + var(--op-space-3x-small)); // 4.2rem
+  --_op-switch-height-small: calc(4 * var(--op-size-unit)); // 16px
+  --_op-switch-height-large: calc(6 * var(--op-size-unit)); // 24px
+  --_op-switch-width-small: calc(7 * var(--op-size-unit)); // 28px
+  --_op-switch-width-large: calc(11 * var(--op-size-unit)); // 44px
   --_op-switch-opacity-disabled: var(--op-opacity-disabled);
   --_op-switch-switch-padding: var(--op-space-2x-small);
 

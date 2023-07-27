@@ -1,6 +1,6 @@
 %accordion-global {
   // Public API (allowed to be overridden)
-  --_op-accordion-summary-min-height: calc(var(--op-space-2x-large) + var(--op-space-2x-small));
+  --_op-accordion-summary-min-height: calc(8 * var(--op-size-unit)); // 32px
 
   summary {
     display: grid;

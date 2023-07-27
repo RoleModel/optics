@@ -260,6 +260,14 @@ $breakpoint-x-large: 1440px; // medium laptop
   --op-space-4x-large: calc(var(--op-space-scale-unit) * 8); // 80px
 }
 
+@mixin sizing-scales {
+  /**
+  * @tokens Size Scale
+  * @presenter Spacing
+  */
+  --op-size-unit: 0.4rem; // 4px;
+}
+
 @mixin shadows {
   /**
   * @tokens Shadows
@@ -351,6 +359,7 @@ $breakpoint-x-large: 1440px; // medium laptop
   @include encoded-images;
 
   // Spacing
+  @include sizing-scales;
   @include spacing-scales;
 
   // Shadows

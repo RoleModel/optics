@@ -4,9 +4,7 @@
   --_op-navbar-background-color: var(--op-color-neutral-plus-eight);
   --_op-navbar-text-color: var(--op-color-neutral-on-plus-eight);
   --_op-navbar-border-color: var(--op-color-neutral-plus-four);
-
-  // Height (Will eventually make a size scale that is separate from the space scale)
-  --_op-navbar-brand-height: calc(var(--op-space-3x-large) + var(--op-space-x-small)); // 48px
+  --_op-navbar-brand-height: calc(12 * var(--op-size-unit)); // 48px
 
   // Spacing
   --_op-navbar-horizontal-spacing: var(--op-space-x-large);

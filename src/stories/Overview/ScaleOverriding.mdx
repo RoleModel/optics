@@ -26,6 +26,13 @@ If you want to change the font or spacing scale globally, or within the context 
 }
 ```
 
+```css
+.size--condensed {
+  @include size-scales;
+  --op-size-unit: 0.2rem;
+}
+```
+
 ## Color Scale Overriding
 
 There are multiple reasons your application may need to override the provided color scales. You may set a primary color that doesn't work well with the default semantic color scale provided. Your design may want to stray from the present plus or minus stops.

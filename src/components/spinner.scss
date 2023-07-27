@@ -5,10 +5,10 @@
   --_op-spinner-track-width-small: var(--op-border-width-large);
   --_op-spinner-track-width-medium: calc(var(--op-border-width-large) + var(--op-border-width));
   --_op-spinner-track-width-large: var(--op-border-width-x-large);
-  --_op-spinner-diameter-x-small: var(--op-space-x-large);
-  --_op-spinner-diameter-small: var(--op-space-3x-large);
-  --_op-spinner-diameter-medium: calc(var(--op-space-3x-large) + var(--op-space-large));
-  --_op-spinner-diameter-large: var(--op-space-4x-large);
+  --_op-spinner-diameter-x-small: calc(6 * var(--op-size-unit)); // 24px
+  --_op-spinner-diameter-small: calc(10 * var(--op-size-unit)); // 40px
+  --_op-spinner-diameter-medium: calc(15 * var(--op-size-unit)); // 60px
+  --_op-spinner-diameter-large: calc(20 * var(--op-size-unit)); // 80px
   --_op-spinner-animation-duration: 0.8s;
   --_op-spinner-animation-timing-function: linear;
 
