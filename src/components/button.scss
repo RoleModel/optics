@@ -275,32 +275,4 @@
     box-shadow: var(--op-input-focus-warning);
     color: var(--op-color-alerts-warning-on-base);
   }
-
-  // Borderless State
-  &.btn--no-border {
-    background-color: transparent;
-    box-shadow: none;
-    color: var(--op-color-alerts-warning-on-plus-max);
-
-    // Borderless + Active State
-    &.btn--active {
-      background-color: var(--op-color-alerts-warning-plus-five);
-      box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-plus-three);
-      color: var(--op-color-alerts-warning-on-plus-five);
-    }
-
-    // Borderless + Hover State
-    &:hover {
-      background-color: var(--op-color-alerts-warning-plus-eight);
-      box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-plus-five);
-      color: var(--op-color-alerts-warning-on-plus-eight);
-    }
-
-    // Borderless + Focus State
-    &:focus-visible {
-      background-color: var(--op-color-alerts-warning-plus-eight);
-      box-shadow: var(--op-input-focus-warning);
-      color: var(--op-color-alerts-warning-on-plus-eight);
-    }
-  }
 }
