@@ -13,7 +13,7 @@
 
   &::before,
   &::after {
-    opacity: 0;
+    opacity: var(--op-opacity-none);
     transition: var(--op-transition-tooltip);
     visibility: hidden;
   }
@@ -48,7 +48,7 @@
   &:hover {
     &::before,
     &::after {
-      opacity: 1;
+      opacity: var(--op-opacity-full);
       visibility: visible;
     }
   }

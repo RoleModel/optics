@@ -64,6 +64,18 @@
   --op-color-alerts-notice-l: 64%;
 }
 
+@mixin opacities {
+  /**
+  * @tokens Opacities
+  * @presenter Opacity
+  */
+  --op-opacity-none: 0;
+  --op-opacity-overlay: 0.2;
+  --op-opacity-disabled: 0.4;
+  --op-opacity-half: 0.5;
+  --op-opacity-full: 1;
+}
+
 // Breakpoints are duplicated here for use as variables with calculations and for use in @media queries.
 // We use SCSS variables outside the root since support for custom properties / css variables
 // is not yet available
@@ -311,6 +323,7 @@ $breakpoint-x-large: 1440px; // medium laptop
 :root {
   // Color HSLs
   @include color-varieties;
+  @include opacities;
 
   // Breakpoints
   @include breakpoints;

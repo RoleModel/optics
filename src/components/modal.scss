@@ -1,6 +1,6 @@
 %modal-wrapper-global {
   // Public API (allowed to be overridden)
-  --_op-modal-backdrop-active-opacity: 0.5;
+  --_op-modal-backdrop-active-opacity: var(--op-opacity-half);
 
   position: fixed;
   z-index: var(--op-z-index-dialog);
@@ -17,7 +17,7 @@
     z-index: var(--op-z-index-dialog-backdrop);
     background: var(--op-color-black);
     inset: 0;
-    opacity: 0;
+    opacity: var(--op-opacity-none);
     transition: var(--op-transition-modal);
     visibility: hidden;
   }
@@ -26,7 +26,7 @@
     visibility: visible;
 
     .modal {
-      opacity: 1;
+      opacity: var(--op-opacity-full);
       transform: scale(1);
     }
 
@@ -51,7 +51,7 @@
   contain: paint;
   font-size: var(--op-font-medium);
   line-height: var(--op-line-height-base);
-  opacity: 0;
+  opacity: var(--op-opacity-none);
   transform: scale(0.7);
   transition: var(--op-transition-modal);
 
@@ -95,7 +95,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 @keyframes show-backdrop {
   from {
-    opacity: 0;
+    opacity: var(--op-opacity-none);
   }
 
   to {
@@ -109,7 +109,7 @@
   }
 
   to {
-    opacity: 0;
+    opacity: var(--op-opacity-none);
   }
 }
 
@@ -124,6 +124,8 @@ dialog.modal {
     // The Dialog backdrop does not inheret from :root so these need to be duplicated here.
     --op-color-black: hsl(0deg 0% 0%);
     --_op-modal-backdrop-active-opacity: 0.5;
+    --op-opacity-none: 0;
+    --op-opacity-full: 1;
 
     animation: show-backdrop 300ms ease-in;
     background: var(--op-color-black);
@@ -131,17 +133,17 @@ dialog.modal {
   }
 
   &[open] {
-    opacity: 1;
+    opacity: var(--op-opacity-full);
     transform: scale(1);
   }
 
   &.modal--closing {
-    opacity: 0;
+    opacity: var(--op-opacity-none);
     transform: scale(0.7);
 
     &::backdrop {
       animation: hide-backdrop 300ms ease-in;
-      opacity: 0;
+      opacity: var(--op-opacity-none);
     }
   }
 }

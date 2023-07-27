@@ -14,7 +14,7 @@
     z-index: var(--op-z-index-dialog-backdrop);
     background: var(--op-color-black);
     inset: 0;
-    opacity: 0;
+    opacity: var(--op-opacity-none);
     transition: var(--op-transition-modal);
     visibility: hidden;
   }
@@ -23,12 +23,12 @@
     visibility: visible;
 
     .confirm-dialog {
-      opacity: 1;
+      opacity: var(--op-opacity-full);
       transform: scale(1);
     }
 
     .confirm-dialog-wrapper__backdrop {
-      opacity: 0.5;
+      opacity: var(--op-opacity-half);
       visibility: visible;
     }
   }
@@ -47,7 +47,7 @@
   contain: paint;
   font-size: var(--op-font-medium);
   line-height: var(--op-line-height-base);
-  opacity: 0;
+  opacity: var(--op-opacity-none);
   transform: scale(0.7);
   transition: var(--op-transition-modal);
 

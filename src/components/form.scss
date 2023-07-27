@@ -33,7 +33,7 @@
 
 %form-control-input-global {
   // Public API (allowed to be overridden)
-  --_op-form-control-opacity-disabled: 0.44;
+  --_op-form-control-opacity-disabled: var(--op-opacity-disabled);
 
   // Private API (don't touch these)
   --__op-form-control-border-color: var(--op-color-neutral-plus-four);

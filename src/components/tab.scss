@@ -11,7 +11,7 @@
   --_op-tab-padding-large: var(--op-space-x-small) var(--op-space-medium) var(--op-space-small) var(--op-space-medium);
   --_op-tab-indicator-width-small: var(--op-border-width-large);
   --_op-tab-indicator-width-large: var(--op-border-width-x-large);
-  --_op-tab-disabled-opacity: 0.4;
+  --_op-tab-disabled-opacity: var(--op-opacity-disabled);
 
   // Private API
   --__op-tab-font-size: var(--_op-tab-font-large);
