@@ -12,7 +12,13 @@ const createNavbarLink = ({ icon, label }, activeLink) => {
   }).outerHTML
 }
 
-export const createNavbar = ({ style = 'default', brand = true, justify = 'start', activeLink = 'Inbox', onlyBrand = false }) => {
+export const createNavbar = ({
+  style = 'default',
+  brand = true,
+  justify = 'start',
+  activeLink = 'Inbox',
+  onlyBrand = false,
+}) => {
   const element = 'div'
 
   const body = document.createElement(element)
