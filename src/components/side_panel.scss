@@ -1,6 +1,6 @@
 %side-panel-global {
   // Public API (allowed to be overridden)
-  --_op-side-panel-width: calc(9 * var(--op-space-x-large));
+  --_op-side-panel-width: calc(54 * var(--op-size-unit)); // 216px
   --_op-side-panel-header-padding: var(--op-space-medium);
   --_op-side-panel-body-padding: var(--op-space-medium);
   --_op-side-panel-footer-padding: var(--op-space-medium);

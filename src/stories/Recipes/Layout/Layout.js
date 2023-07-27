@@ -132,7 +132,7 @@ const createLoginLayout = () => {
     margin: calc(2 * var(--op-space-4x-large)) auto auto;
     padding-inline: var(--op-space-large);
     width: 100%;
-    max-width: 464px; /* TODO: replace me when size unit is available calc(116 * var(--op-size-unit)); */
+    max-width: calc(116 * var(--op-size-unit));
   }
 
   /* This could also be its own card variant */
@@ -143,7 +143,7 @@ const createLoginLayout = () => {
     }
 
     .card__header img {
-      width: 92px; /* TODO: replace me when size unit is available calc(23 * var(--op-size-unit)); */
+      width: calc(23 * var(--op-size-unit));
     }
 
     .card__body {
