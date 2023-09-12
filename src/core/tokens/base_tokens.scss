@@ -216,6 +216,7 @@ $breakpoint-x-large: 1440px; // medium laptop
   --op-transition-sidebar: all 200ms ease-in-out;
   --op-transition-modal: all 300ms ease-in;
   --op-transition-panel: right 400ms ease-in;
+  --op-transition-tooltip: all 300ms ease-in 300ms;
 }
 
 @mixin animations {
