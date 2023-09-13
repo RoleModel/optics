@@ -15,11 +15,12 @@
 
   position: relative;
   display: flex;
+  align-items: center;
 
   input {
     width: 0;
     height: 0;
-    margin-right: calc(-1 * var(--op-space-2x-small));
+    margin-right: calc(-1 * var(--op-space-x-small));
 
     &:disabled + label {
       cursor: not-allowed;
