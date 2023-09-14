@@ -1,0 +1,41 @@
+%breadcrumbs-global {
+  // Public API (allowed to be overridden)
+  --_op-breadcrumbs-font-size-small: var(--op-font-x-small);
+  --_op-breadcrumbs-font-size-large: var(--op-font-small);
+
+  // Private API (don't touch these)
+  --__op-breadcrumbs-font-size: var(--_op-breadcrumbs-font-size-small);
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--op-gap, var(--op-space-x-small));
+
+  // Elements
+  .breadcrumbs__link {
+    font-size: var(--__op-breadcrumbs-font-size);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .breadcrumbs__text {
+    font-size: var(--__op-breadcrumbs-font-size);
+    font-weight: var(--op-font-weight-bold);
+  }
+
+  // Modifiers
+  &.breadcrumbs--small {
+    --__op-breadcrumbs-font-size: var(--_op-breadcrumbs-font-size-small);
+  }
+
+  &.breadcrumbs--large {
+    --__op-breadcrumbs-font-size: var(--_op-breadcrumbs-font-size-large);
+  }
+}
+
+.breadcrumbs {
+  @extend %breadcrumbs-global;
+}
