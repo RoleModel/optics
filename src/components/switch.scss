@@ -22,6 +22,10 @@
     height: 0;
     margin-right: calc(-1 * var(--op-space-x-small));
 
+    &:disabled {
+      visibility: hidden;
+    }
+
     &:disabled + label {
       cursor: not-allowed;
       opacity: var(--_op-switch-opacity-disabled);
