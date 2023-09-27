@@ -8,7 +8,7 @@ export default {
   argTypes: {
     type: {
       control: { type: 'select' },
-      options: ['Text', 'Number', 'Email', 'Password', 'Tel', 'Checkbox', 'Radio', 'Color', 'Date'],
+      options: ['Text', 'Number', 'Email', 'Password', 'Tel', 'Checkbox', 'Radio', 'Color', 'Date', 'File'],
     },
     size: {
       control: { type: 'select' },
