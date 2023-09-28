@@ -1,0 +1,112 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as TextPairStories from './TextPair.stories'
+
+import { createAlert } from '../Alert/Alert.js'
+
+<Meta of={TextPairStories} />
+
+# Text Pair
+
+The text pair component is used to display a title and subtitle together. It can also be used to group other elements within it, though should generally be reserved for text.
+
+## Playground
+
+<Canvas of={TextPairStories.Default} />
+<Controls of={TextPairStories.Default} />
+
+### Selective Imports
+
+Text Pair can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+// Depends on
+@import '@rolemodel/optics/dist/scss/core/tokens';
+@import '@rolemodel/optics/dist/scss/core/base';
+
+// Component
+@import '@rolemodel/optics/dist/scss/components/text_pair';
+```
+
+## Variations
+
+### Default
+
+`.text-pair` should be used on a div. Within it, `.text-pair__title` and `.text-pair__subtitle` on spans can be used to display the title and subtitle.
+
+<Canvas of={TextPairStories.Default} />
+
+### Inline
+
+`.text-pair--inline` can be added to display the title and subtitle horizontally aligned. This is useful for displaying a key, value pair.
+
+<Canvas of={TextPairStories.Inline} />
+
+### Title Size
+
+`.text-pair__title--small`, `.text-pair__title--medium`, `.text-pair__title--large`, (with medium being the default) modify the font size of the title text.
+
+<Canvas of={TextPairStories.TitleSize} />
+
+### Subtitle Size
+
+`.text-pair__subtitle--small`, `.text-pair__subtitle--medium`, `.text-pair__subtitle--large`, (with small being the default) modify the font size of the subtitle text.
+
+Description of subtitle size example
+
+<Canvas of={TextPairStories.SubtitleSize} />
+
+## Text Pair API
+
+Styles are built on css variables scoped to the text pair.
+
+Here are the variables that can be customized.
+
+{/* prettier-ignore-start */}
+```css
+--_op-text-pair-font-size-small:
+--_op-text-pair-font-size-medium:
+--_op-text-pair-font-size-large:
+```
+{/* prettier-ignore-end */}
+
+## Customizing Text Pair styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the text pair for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+The text pair classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+
+This allows multiple classes to share the same behavior. You can modify all textpair behavior by overriding the `%text-pair-global` placeholder selector and setting any properties:
+
+```css
+%text-pair-global {
+  gap: var(--op-space-x-large);
+}
+```
+
+## New Text Pair Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the Text Pair for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+Your application may need a custom text pair. To add one, just follow this template:
+
+```css
+.text-pair-{name} {
+  @extend %text-pair-global;
+
+  gap:
+}
+```

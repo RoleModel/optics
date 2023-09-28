@@ -1,11 +1,9 @@
 import { createIcon } from '../Icon/Icon'
 
-export const createBreadcrumbs = ({ size = '', separator = 'arrow_right'}) => {
+export const createBreadcrumbs = ({ size = '', separator = 'arrow_right' }) => {
   const element = document.createElement('nav')
 
-  element.className = ['breadcrumbs', size === '' ? '' : `breadcrumbs--${size}`]
-    .filter(Boolean)
-    .join(' ')
+  element.className = ['breadcrumbs', size === '' ? '' : `breadcrumbs--${size}`].filter(Boolean).join(' ')
 
   const links = [
     { type: 'link', text: 'USA' },

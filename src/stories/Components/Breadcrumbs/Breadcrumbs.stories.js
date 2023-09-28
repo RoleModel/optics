@@ -10,7 +10,7 @@ export default {
       control: { type: 'select' },
       options: ['small', 'large'],
     },
-    separator: { control: 'text' }
+    separator: { control: 'text' },
   },
 }
 
