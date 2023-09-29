@@ -10,6 +10,12 @@
     gap: var(--op-space-2x-small);
     grid-template-columns: auto 1fr auto;
 
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+      content: '';
+    }
+
     .accordion__label {
       color: var(--op-color-neutral-on-plus-max);
       font-size: var(--op-font-x-small);
