@@ -11,10 +11,6 @@ export default {
       options: ['small', 'large'],
     },
     separator: { control: 'text' },
-    gap: {
-      control: { type: 'select' },
-      options: ['default', 'gap-xxs', 'gap-xl'],
-    },
   },
 }
 
@@ -37,11 +33,5 @@ export const Large = {
 export const SeparatorIcon = {
   args: {
     separator: 'folder',
-  },
-}
-
-export const Gap = {
-  args: {
-    gap: 'gap-xl',
   },
 }

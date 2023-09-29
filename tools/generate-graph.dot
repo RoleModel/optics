@@ -46,5 +46,6 @@ digraph dependencies {
   "Switch" -> "Tokens & Base";
   "Tab" -> "Tokens & Base";
   "Table" -> "Tokens & Base";
+  "Text Pair" -> "Tokens & Base";
   "Tooltip" -> "Tokens & Base";
 }
