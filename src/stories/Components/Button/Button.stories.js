@@ -17,6 +17,14 @@ export default {
     pill: { control: 'boolean' },
     icon: { control: 'boolean' },
     iconWithLabel: { control: 'boolean' },
+    showPrefixIcon: {
+      control: 'boolean',
+      description: 'This is not a class. It just provides an example of using icons within a button',
+    },
+    showSuffixIcon: {
+      control: 'boolean',
+      description: 'This is not a class. It just provides an example of using icons within a button',
+    },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
