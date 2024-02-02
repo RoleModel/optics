@@ -1,6 +1,13 @@
 import { createIcon } from '../Icon/Icon.js'
 
-export const createBadge = ({ label, style = 'default', pill = false, inButton = 'no', showPrefixIcon = false, showSuffixIcon = false }) => {
+export const createBadge = ({
+  label,
+  style = 'default',
+  pill = false,
+  inButton = 'no',
+  showPrefixIcon = false,
+  showSuffixIcon = false,
+}) => {
   const badge = document.createElement('div')
   badge.innerText = label
 
