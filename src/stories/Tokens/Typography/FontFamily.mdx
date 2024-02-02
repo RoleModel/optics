@@ -49,3 +49,19 @@ If you want to change the font used by default, you can add a new font import to
   --op-font-family: 'Tilt Neon', sans-serif;
 }
 ```
+
+## Alternate or Multiple Fonts
+
+Often an application will need multiple fonts. Your headers may use a different font than your body text. Optics provides a single font family token, but you can easily add your own font tokens by following the pattern.
+
+```css
+@import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
+
+:root {
+  --op-font-family: 'Tilt Neon', sans-serif;
+  --ya-font-family-alt: 'Roboto', serif; // Your App prefix. Could stick with --op if you want
+  // or
+  --ya-font-family-body: 'Roboto', serif;
+}
+```
