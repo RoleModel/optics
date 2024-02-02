@@ -19,7 +19,9 @@
   display: block;
   overflow: hidden;
   width: var(--__op-avatar-size);
+  min-width: var(--__op-avatar-size);
   height: var(--__op-avatar-size);
+  min-height: var(--__op-avatar-size);
   border-radius: var(--_op-avatar-border-radius);
 
   &::before {
