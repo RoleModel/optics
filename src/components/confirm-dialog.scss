@@ -42,7 +42,7 @@
   width: var(--_op-confirm-dialog-width);
   border-radius: var(--op-radius-medium);
   background-color: var(--op-color-background);
-  box-shadow: var(--op-border-all) var(--op-border-color);
+  box-shadow: var(--op-border-all) var(--op-color-border);
   color: var(--op-color-on-background);
   contain: paint;
   font-size: var(--op-font-medium);
@@ -63,7 +63,7 @@
   }
 
   .confirm-dialog__body {
-    box-shadow: var(--op-border-all) var(--op-border-color);
+    box-shadow: var(--op-border-all) var(--op-color-border);
   }
 
   .confirm-dialog__footer {

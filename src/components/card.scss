@@ -2,7 +2,7 @@
   position: relative;
   border-radius: var(--op-radius-medium);
   background-color: var(--op-color-background);
-  box-shadow: var(--op-border-all) var(--op-border-color);
+  box-shadow: var(--op-border-all) var(--op-color-border);
   color: var(--op-color-on-background);
   contain: paint;
   font-size: var(--op-font-medium);
@@ -17,31 +17,31 @@
 
   &.card--shadow-x-small {
     box-shadow:
-      var(--op-border-all) var(--op-border-color),
+      var(--op-border-all) var(--op-color-border),
       var(--op-shadow-x-small);
   }
 
   &.card--shadow-small {
     box-shadow:
-      var(--op-border-all) var(--op-border-color),
+      var(--op-border-all) var(--op-color-border),
       var(--op-shadow-small);
   }
 
   &.card--shadow-medium {
     box-shadow:
-      var(--op-border-all) var(--op-border-color),
+      var(--op-border-all) var(--op-color-border),
       var(--op-shadow-medium);
   }
 
   &.card--shadow-large {
     box-shadow:
-      var(--op-border-all) var(--op-border-color),
+      var(--op-border-all) var(--op-color-border),
       var(--op-shadow-large);
   }
 
   &.card--shadow-x-large {
     box-shadow:
-      var(--op-border-all) var(--op-border-color),
+      var(--op-border-all) var(--op-color-border),
       var(--op-shadow-x-large);
   }
 
