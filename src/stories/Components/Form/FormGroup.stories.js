@@ -4,7 +4,7 @@ import * as LabelStories from './Label.stories'
 import * as InputStories from './Input.stories'
 
 export default {
-  title: 'Components/Form/FormGroup',
+  title: 'Content Components/Form/FormGroup',
   render: ({ ...args }) => {
     return createFormGroup({ ...args })
   },

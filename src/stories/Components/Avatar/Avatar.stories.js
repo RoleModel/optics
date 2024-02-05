@@ -1,7 +1,7 @@
 import { createAvatar } from './Avatar.js'
 
 export default {
-  title: 'Components/Avatar',
+  title: 'Content Components/Avatar',
   render: ({ size, ...args }) => {
     return createAvatar({ size, ...args })
   },

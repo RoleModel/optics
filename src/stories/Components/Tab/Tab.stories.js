@@ -1,7 +1,7 @@
 import { createTab } from './Tab.js'
 
 export default {
-  title: 'Components/Tab',
+  title: 'Navigation Components/Tab',
   render: ({ option1, ...args }) => {
     return createTab({ option1, ...args })
   },

@@ -1,7 +1,7 @@
 import { createIcon } from './Icon.js'
 
 export default {
-  title: 'Components/Icon',
+  title: 'Visual Components/Icon',
   render: ({ name, ...args }) => {
     return createIcon({ name, ...args })
   },

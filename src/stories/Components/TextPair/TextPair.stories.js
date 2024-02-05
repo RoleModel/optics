@@ -1,7 +1,7 @@
 import { createTextPair } from './TextPair.js'
 
 export default {
-  title: 'Components/Text Pair',
+  title: 'Content Components/Text Pair',
   render: ({ direction, ...args }) => {
     return createTextPair({ direction, ...args })
   },

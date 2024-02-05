@@ -1,7 +1,7 @@
 import { createSidebar } from './Sidebar.js'
 
 export default {
-  title: 'Components/Sidebar',
+  title: 'Navigation Components/Sidebar',
   render: ({ ...args }) => {
     return createSidebar({ ...args })
   },

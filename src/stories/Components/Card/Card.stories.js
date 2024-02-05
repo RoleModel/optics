@@ -1,7 +1,7 @@
 import { createCard } from './Card.js'
 
 export default {
-  title: 'Components/Card',
+  title: 'Content Components/Card',
   render: ({ label, ...args }) => {
     return createCard({ label, ...args })
   },
