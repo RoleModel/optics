@@ -1,3 +1,5 @@
+// Inspired by https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/
+
 %tooltip-global {
   // Public API
   --_op-tooltip-max-width: calc(50 * var(--op-size-unit)); // 200px
