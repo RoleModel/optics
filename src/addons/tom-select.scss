@@ -9,7 +9,7 @@
     border: none;
     border-radius: var(--op-radius-large);
     background-color: var(--op-color-neutral-plus-max);
-    box-shadow: var(--op-border-all) var(--op-border-color);
+    box-shadow: var(--op-border-all) var(--op-color-border);
     color: var(--op-color-neutral-on-plus-max);
     font-size: var(--op-font-x-small);
     font-weight: var(--op-font-weight-light);
@@ -30,7 +30,7 @@
     margin: 0;
     border-bottom-left-radius: var(--op-radius-large);
     border-bottom-right-radius: var(--op-radius-large);
-    box-shadow: var(--op-border-all) var(--op-border-color);
+    box-shadow: var(--op-border-all) var(--op-color-border);
     contain: paint;
 
     .option,

@@ -17,11 +17,11 @@
 
   // Modifiers
   &.side-panel--border-left {
-    box-shadow: var(--op-border-left) var(--op-border-color);
+    box-shadow: var(--op-border-left) var(--op-color-border);
   }
 
   &.side-panel--border-right {
-    box-shadow: var(--op-border-right) var(--op-border-color);
+    box-shadow: var(--op-border-right) var(--op-color-border);
   }
 
   &.side-panel--border-left.side-panel--border-right {

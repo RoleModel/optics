@@ -128,11 +128,11 @@ $breakpoint-x-large: 1440px; // medium laptop
   * @tokens Border Color
   * @presenter Color
   */
-  --op-border-color: var(--op-color-neutral-plus-five);
+  --op-color-border: var(--op-color-neutral-plus-five);
 }
 
 @mixin box-shadows {
-  // E.G. box-shadow: var(--op-border-top) var(--op-border-color);
+  // E.G. box-shadow: var(--op-border-top) var(--op-color-border);
 
   /**
   * @tokens Border Shadow
@@ -144,8 +144,8 @@ $breakpoint-x-large: 1440px; // medium laptop
   --op-border-right: var(--op-border-width) 0 0 0;
   --op-border-bottom: 0 var(--op-border-width) 0 0;
   --op-border-left: calc(-1 * var(--op-border-width)) 0 0 0;
-  --op-border-y: var(--op-border-top) var(--op-border-color), var(--op-border-bottom) var(--op-border-color);
-  --op-border-x: var(--op-border-left) var(--op-border-color), var(--op-border-right) var(--op-border-color);
+  --op-border-y: var(--op-border-top) var(--op-color-border), var(--op-border-bottom) var(--op-color-border);
+  --op-border-x: var(--op-border-left) var(--op-color-border), var(--op-border-right) var(--op-color-border);
 }
 
 @mixin font-scales {

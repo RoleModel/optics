@@ -46,7 +46,7 @@
   width: var(--_op-modal-width);
   border-radius: var(--op-radius-medium);
   background-color: var(--op-color-background);
-  box-shadow: var(--op-border-all) var(--op-border-color);
+  box-shadow: var(--op-border-all) var(--op-color-border);
   color: var(--op-color-on-background);
   contain: paint;
   font-size: var(--op-font-medium);
@@ -71,7 +71,7 @@
 
   .modal__body {
     max-height: var(--_op-modal-max-height);
-    box-shadow: var(--op-border-all) var(--op-border-color);
+    box-shadow: var(--op-border-all) var(--op-color-border);
     overflow-y: auto;
   }
 

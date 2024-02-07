@@ -12,13 +12,13 @@
   width: 100%;
   border-radius: var(--op-radius-medium);
   border-collapse: collapse;
-  box-shadow: var(--op-border-all) var(--op-border-color);
+  box-shadow: var(--op-border-all) var(--op-color-border);
   contain: paint;
   table-layout: auto;
 
   thead {
     background-color: var(--op-color-neutral-plus-eight);
-    box-shadow: inset var(--op-border-top) var(--op-border-color);
+    box-shadow: inset var(--op-border-top) var(--op-color-border);
     color: var(--op-color-neutral-on-plus-eight);
 
     // This Currently does not work in Firefox since it does not support :has yet, but fails gracefully.
@@ -47,11 +47,11 @@
   }
 
   tr:not(:last-child) {
-    box-shadow: inset var(--op-border-top) var(--op-border-color);
+    box-shadow: inset var(--op-border-top) var(--op-color-border);
   }
 
   tfoot tr {
-    box-shadow: var(--op-border-top) var(--op-border-color);
+    box-shadow: var(--op-border-top) var(--op-color-border);
   }
 
   // Layout Modifiers
