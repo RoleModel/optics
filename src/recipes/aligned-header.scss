@@ -1,0 +1,20 @@
+%aligned-header {
+  // Public API (allowed to be overridden)
+  --_op-line-height: var(--op-line-height-base);
+  --_op-font-size: var(--op-font-4x-large);
+
+  font-size: var(--_op-font-size);
+  font-weight: var(--op-font-weight-semi-bold);
+  line-height: var(--_op-line-height);
+
+  .aligned-header__suffix {
+    display: inline-flex;
+    height: calc(var(--_op-line-height) * var(--_op-font-size));
+    align-items: center;
+    vertical-align: top;
+  }
+}
+
+.aligned-header {
+  @extend %aligned-header;
+}
