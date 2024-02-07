@@ -1,7 +1,7 @@
 import { createSelect } from './Form.js'
 
 export default {
-  title: 'Components/Form/Select',
+  title: 'Content Components/Form/Select',
   render: ({ options, ...args }) => {
     return createSelect({ options, ...args })
   },

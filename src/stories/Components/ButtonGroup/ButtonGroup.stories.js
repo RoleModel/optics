@@ -1,7 +1,7 @@
 import { createButtonGroup, createButtonGroupToolbar } from './ButtonGroup.js'
 
 export default {
-  title: 'Components/ButtonGroup',
+  title: 'Navigation Components/ButtonGroup',
   render: ({ toolbar = false, ...args }) => {
     if (toolbar) {
       return createButtonGroupToolbar({ ...args })

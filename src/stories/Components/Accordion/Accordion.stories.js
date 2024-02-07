@@ -2,7 +2,7 @@ import { createAccordion } from './Accordion.js'
 import { createButton } from '../Button/Button.js'
 
 export default {
-  title: 'Components/Accordion',
+  title: 'Content Components/Accordion',
   render: ({ option1, ...args }) => {
     return createAccordion({ option1, ...args })
   },

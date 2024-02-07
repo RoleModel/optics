@@ -1,7 +1,7 @@
 import { createButton } from './Button.js'
 
 export default {
-  title: 'Components/Button',
+  title: 'Navigation Components/Button',
   render: ({ label, ...args }) => {
     return createButton({ label, ...args })
   },

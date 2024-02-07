@@ -1,7 +1,7 @@
 import { createPagination } from './Pagination.js'
 
 export default {
-  title: 'Components/Pagination',
+  title: 'Navigation Components/Pagination',
   render: ({ option1, ...args }) => {
     return createPagination({ option1, ...args })
   },

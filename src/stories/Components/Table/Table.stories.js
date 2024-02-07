@@ -1,7 +1,7 @@
 import { createTable } from './Table.js'
 
 export default {
-  title: 'Components/Table',
+  title: 'Content Components/Table',
   render: ({ ...args }) => {
     return createTable({ ...args })
   },

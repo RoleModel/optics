@@ -1,7 +1,7 @@
 import { createDivider } from './Divider.js'
 
 export default {
-  title: 'Components/Divider',
+  title: 'Visual Components/Divider',
   render: ({ option1, ...args }) => {
     return createDivider({ option1, ...args })
   },

@@ -1,7 +1,7 @@
 import { createNavbar } from './Navbar.js'
 
 export default {
-  title: 'Components/Navbar',
+  title: 'Navigation Components/Navbar',
   render: ({ ...args }) => {
     return createNavbar({ ...args })
   },

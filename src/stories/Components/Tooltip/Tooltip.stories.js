@@ -1,7 +1,7 @@
 import { createTooltip } from './Tooltip.js'
 
 export default {
-  title: 'Components/Tooltip',
+  title: 'Popup Content Components/Tooltip',
   render: ({ option1, ...args }) => {
     return createTooltip({ option1, ...args })
   },

@@ -1,7 +1,7 @@
 import { createConfirmDialog } from './ConfirmDialog.js'
 
 export default {
-  title: 'Components/Confirm Dialog',
+  title: 'Popup Content Components/Confirm Dialog',
   render: ({ title, ...args }) => {
     return createConfirmDialog({ title, ...args })
   },
