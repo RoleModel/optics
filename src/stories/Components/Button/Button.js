@@ -12,6 +12,8 @@ export const createButton = ({
   disabled = false,
   inlineIconWithLabel = false,
   useAsLink = false,
+  showPrefixIcon = false,
+  showSuffixIcon = false,
 }) => {
   const element = useAsLink || disabled ? 'a' : 'button'
   const btn = document.createElement(element)
@@ -31,6 +33,14 @@ export const createButton = ({
 
   if (iconWithLabel) {
     btn.prepend(createIcon({ name: 'add', size: 'large' }))
+  }
+
+  if (showPrefixIcon) {
+    btn.prepend(createIcon({ name: 'open_in_new' }))
+  }
+
+  if (showSuffixIcon) {
+    btn.appendChild(createIcon({ name: 'add' }))
   }
 
   btn.className = [

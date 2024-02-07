@@ -1,6 +1,13 @@
 import { createIcon } from '../Icon/Icon.js'
 
-export const createBadge = ({ label, style = 'default', pill = false, inButton = 'no', showIcons = false }) => {
+export const createBadge = ({
+  label,
+  style = 'default',
+  pill = false,
+  inButton = 'no',
+  showPrefixIcon = false,
+  showSuffixIcon = false,
+}) => {
   const badge = document.createElement('div')
   badge.innerText = label
 
@@ -8,8 +15,11 @@ export const createBadge = ({ label, style = 'default', pill = false, inButton =
     .filter(Boolean)
     .join(' ')
 
-  if (showIcons) {
+  if (showPrefixIcon) {
     badge.prepend(createIcon({ name: 'open_in_new' }))
+  }
+
+  if (showSuffixIcon) {
     badge.appendChild(createIcon({ name: 'add' }))
   }
 
