@@ -1,22 +1,23 @@
 {
   "folders": [
     {
-      "path": "."
-    }
+      "path": ".",
+    },
   ],
   "settings": {
     "prettier.configPath": ".prettierrc.json",
     "stylelint.configFile": ".stylelintrc.json",
     "stylelint.validate": ["css", "scss"],
     "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true
-    }
+      "source.fixAll.stylelint": "always",
+    },
+    "editor.formatOnSave": true,
   },
   "extensions": {
     "recommendations": [
       "esbenp.prettier-vscode",
       "stylelint.vscode-stylelint",
-      "tintinweb.graphviz-interactive-preview"
-    ]
-  }
+      "tintinweb.graphviz-interactive-preview",
+    ],
+  },
 }
