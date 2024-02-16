@@ -19,6 +19,10 @@ html {
   color: var(--op-color-on-background);
 }
 
+.sbdocs .sb-button-fix button {
+  height: 0;
+}
+
 // Allow the "Show Code" button to appear above the footer in examples.
 .docs-story div:last-child {
   z-index: 1;
