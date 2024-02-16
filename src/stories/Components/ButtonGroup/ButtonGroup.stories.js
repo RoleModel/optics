@@ -12,7 +12,7 @@ export default {
   argTypes: {
     priority: {
       control: { type: 'select' },
-      options: ['default', 'primary', 'delete', 'warning'],
+      options: ['default', 'primary', 'destructive', 'warning'],
     },
     noBorder: { control: 'boolean' },
     active: { control: 'boolean' },
@@ -41,9 +41,9 @@ export const Primary = {
   },
 }
 
-export const Delete = {
+export const Destructive = {
   args: {
-    priority: 'delete',
+    priority: 'destructive',
   },
 }
 
@@ -55,7 +55,7 @@ export const Warning = {
 
 export const Active = {
   args: {
-    priority: 'delete',
+    priority: 'destructive',
     active: true,
   },
 }

@@ -9,7 +9,7 @@ export default {
     label: { control: 'text' },
     priority: {
       control: { type: 'select' },
-      options: ['default', 'primary', 'delete', 'warning'],
+      options: ['default', 'primary', 'destructive', 'warning'],
     },
     noBorder: { control: 'boolean' },
     disabled: { control: 'boolean' },
@@ -47,10 +47,10 @@ export const Primary = {
   },
 }
 
-export const Delete = {
+export const Destructive = {
   args: {
     label: 'Delete',
-    priority: 'delete',
+    priority: 'destructive',
   },
 }
 
