@@ -159,21 +159,33 @@
     padding-block: 0;
 
     &::file-selector-button {
-      @extend %btn-global;
+      --__op-btn-base-height: var(--op-input-height-small);
+      --__op-btn-height: var(--__op-btn-base-height);
 
-      --__op-btn-height: var(--_op-btn-height-small);
-      --__op-btn-font-size: var(--_op-btn-font-small);
-      --__op-btn-padding: var(--_op-btn-padding-small);
-
+      display: inline-flex;
+      min-height: var(--__op-btn-height);
+      align-items: center;
+      justify-content: center;
+      padding: 0 var(--op-space-x-small);
       border: none;
+      border-radius: var(--op-radius-medium);
+      appearance: none;
       background-color: var(--op-color-neutral-plus-eight);
       box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-four);
       color: var(--op-color-neutral-on-plus-eight);
+      cursor: pointer;
+      font-size: var(--op-font-x-small);
+      font-weight: var(--op-font-weight-normal);
+      gap: var(--op-space-x-small);
       margin-block: calc((var(--__op-form-control-height) / 2) - (var(--__op-btn-height) / 2));
+      text-align: center;
+      text-decoration: none;
+      transition: var(--op-transition-input);
+      white-space: nowrap;
     }
 
     &.form-control--small::file-selector-button {
-      --__op-btn-height: calc(var(--_op-btn-height-small) - var(--op-space-x-small));
+      --__op-btn-height: calc(var(--__op-btn-base-height) - var(--op-space-x-small));
     }
   }
 
