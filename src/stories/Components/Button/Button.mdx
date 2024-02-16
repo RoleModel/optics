@@ -42,11 +42,12 @@ Button can be used as a standalone component, however, it does have a few depend
 
 <Canvas of={ButtonStories.Primary} />
 
-### Delete
+### Destructive
 
-`.btn-delete` Provides a filled button using the red danger color. This should be used as a destructive action such as delete.
+`.btn-destructive` Provides a filled button using the red danger color. This should be used as a destructive action such as delete.
+Note: `.btn-delete` also works for backwards compatibility, but `.btn-destructive` is the preferred class name.
 
-<Canvas of={ButtonStories.Delete} />
+<Canvas of={ButtonStories.Destructive} />
 
 ### Active
 
@@ -56,9 +57,9 @@ Button can be used as a standalone component, however, it does have a few depend
 
 ### No Border
 
-`.btn--no-border` This is a modifier which can be used with all button classes except delete. It provides a button with no border, but the same sizing and adapts it's color to all the btn variations.
+`.btn--no-border` This is a modifier which can be used with all button classes except destructive. It provides a button with no border, but the same sizing and adapts it's color to all the btn variations.
 
-Note: `.btn-delete` and `.btn-warning` do not support the `.btn--no-border` modifier. Borderless warning or delete buttons is not considered a good pattern and can easily lead to confusion so it has been disabled.
+Note: `.btn-destructive` and `.btn-warning` do not support the `.btn--no-border` modifier. Borderless warning or destructive buttons is not considered a good pattern and can easily lead to confusion so it has been disabled.
 
 <Canvas of={ButtonStories.NoBorder} />
 
