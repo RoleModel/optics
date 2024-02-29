@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming/create'
-import logoUrl from './public/optics.svg'
+import logoUrl from './public/optics-logo.svg'
 
 export default create({
   base: 'light',
