@@ -4,7 +4,7 @@ export const createTab = ({ size = 'large', activeTab = 'USA', disabledTab = 'Ca
 
   const createTabItem = (item) => {
     const link = document.createElement('a')
-    link.href = '/?path=/docs/components-tab--docs'
+    link.href = '/?path=/docs/navigation-components-tab--docs'
 
     link.className = [
       'tab',
