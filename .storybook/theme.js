@@ -5,32 +5,23 @@ const theme = create({
   brandTitle: 'Optics, a RoleModel Design System',
   brandUrl: 'https://docs.optics.rolemodel.design/',
   brandImage: './public/optics-logo.svg',
-  brandTarget: '_self'
-})
+  brandTarget: '_self',
+  // UI
+  colorSecondary: 'hsl(216 48% 40%)', // --op-color-primary-base
+  appBg: 'hsl(216 48% 90%)', // --op-color-primary-plus-five
+  appContentBg: 'hsl(216 48% 90%)', // --op-color-primary-plus-five
+  appBorderColor: 'hsl(216 4% 90%)', // --op-color-border a.k.a --op-color-neutral-plus-five
 
-// colorSecondary: colors.purple["600"],
-// // UI
-// appBg: colors.purple["100"],
-// appContentBg: colors.white,
-// appBorderColor: colors.gray["300"],
-// appBorderRadius: 7,
-// // Typography
-// fontBase: '"Inter", "Noto Sans", Helvetica, Arial, sans-serif',
-// fontCode: "monospace",
-// // Text colors
-// textColor: colors.purple["800"],
-// textInverseColor: colors.white,
-// textMutedColor: "rgba(85, 75, 95)",
-// // Toolbar default and active colors
-// barTextColor: colors.gray["600"],
-// barSelectedColor: colors.purple["600"],
-// barBg: colors.white,
-// // Form colors
-// inputBg: colors.white,
-// inputBorder: colors.gray["500"],
-// inputTextColor: colors.gray["600"],
-// inputBorderRadius: 20,
-// brandTitle: "Kaizen Storybook",
-// brandImage: "./static/media/kaizen-badge.svg",
+  // Typography
+  fontBase: "'Noto Sans', 'Noto Serif', sans-serif",
+  fontCode: 'monospace',
+
+  // Text colors
+  textColor: 'hsl(216 48% 20%)', // --op-color-primary-on-plus-five
+
+  // Toolbar default and active colors
+  barBg: 'hsl(216 4% 98%)', // --op-color-neutral-plus-eight
+  barTextColor: 'hsl(216 4% 4%)', // --op-color-neutral-on-plus-eight
+})
 
 export default theme

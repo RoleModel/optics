@@ -28,7 +28,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@babel/preset-env", "virtual:66f8ad35874ebfaa11dbe48152df5ef433ef344c64e542cf3d112b040d2b0261cde8c0cfd7b2dd979035dab1019463d259c8802f1c9087af884b6cfded64a99c#npm:7.24.5"],\
-          ["@chromatic-com/storybook", "npm:1.4.0"],\
           ["@storybook/addon-essentials", "npm:8.1.2"],\
           ["@storybook/addon-interactions", "npm:8.1.2"],\
           ["@storybook/addon-links", "virtual:66f8ad35874ebfaa11dbe48152df5ef433ef344c64e542cf3d112b040d2b0261cde8c0cfd7b2dd979035dab1019463d259c8802f1c9087af884b6cfded64a99c#npm:8.1.2"],\
@@ -3859,20 +3858,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@chromatic-com/storybook", [\
-      ["npm:1.4.0", {\
-        "packageLocation": "../../../.yarn/berry/cache/@chromatic-com-storybook-npm-1.4.0-1dee826345-10c0.zip/node_modules/@chromatic-com/storybook/",\
-        "packageDependencies": [\
-          ["@chromatic-com/storybook", "npm:1.4.0"],\
-          ["chromatic", "virtual:1dee8263450e1beb5f5d5a2fcc5469e6bd455c0a96fe53fc7fc0e00c78b2e5597dea7fdb5f7ec0d3533aa674c93994c0f244ba41f2f1a9a8b9b3481ba0c753bb#npm:11.4.0"],\
-          ["filesize", "npm:10.1.2"],\
-          ["jsonfile", "npm:6.1.0"],\
-          ["react-confetti", "virtual:1dee8263450e1beb5f5d5a2fcc5469e6bd455c0a96fe53fc7fc0e00c78b2e5597dea7fdb5f7ec0d3533aa674c93994c0f244ba41f2f1a9a8b9b3481ba0c753bb#npm:6.1.0"],\
-          ["strip-ansi", "npm:7.1.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["@colors/colors", [\
       ["npm:1.5.0", {\
         "packageLocation": "../../../.yarn/berry/cache/@colors-colors-npm-1.5.0-875af3a8b4-10c0.zip/node_modules/@colors/colors/",\
@@ -5181,7 +5166,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@rolemodel/optics", "workspace:."],\
           ["@babel/preset-env", "virtual:66f8ad35874ebfaa11dbe48152df5ef433ef344c64e542cf3d112b040d2b0261cde8c0cfd7b2dd979035dab1019463d259c8802f1c9087af884b6cfded64a99c#npm:7.24.5"],\
-          ["@chromatic-com/storybook", "npm:1.4.0"],\
           ["@storybook/addon-essentials", "npm:8.1.2"],\
           ["@storybook/addon-interactions", "npm:8.1.2"],\
           ["@storybook/addon-links", "virtual:66f8ad35874ebfaa11dbe48152df5ef433ef344c64e542cf3d112b040d2b0261cde8c0cfd7b2dd979035dab1019463d259c8802f1c9087af884b6cfded64a99c#npm:8.1.2"],\
@@ -7942,32 +7926,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["chromatic", [\
-      ["npm:11.4.0", {\
-        "packageLocation": "../../../.yarn/berry/cache/chromatic-npm-11.4.0-c9c0a5fd77-10c0.zip/node_modules/chromatic/",\
-        "packageDependencies": [\
-          ["chromatic", "npm:11.4.0"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:1dee8263450e1beb5f5d5a2fcc5469e6bd455c0a96fe53fc7fc0e00c78b2e5597dea7fdb5f7ec0d3533aa674c93994c0f244ba41f2f1a9a8b9b3481ba0c753bb#npm:11.4.0", {\
-        "packageLocation": "./.yarn/__virtual__/chromatic-virtual-0c4aabf1e9/4/.yarn/berry/cache/chromatic-npm-11.4.0-c9c0a5fd77-10c0.zip/node_modules/chromatic/",\
-        "packageDependencies": [\
-          ["chromatic", "virtual:1dee8263450e1beb5f5d5a2fcc5469e6bd455c0a96fe53fc7fc0e00c78b2e5597dea7fdb5f7ec0d3533aa674c93994c0f244ba41f2f1a9a8b9b3481ba0c753bb#npm:11.4.0"],\
-          ["@chromatic-com/cypress", null],\
-          ["@chromatic-com/playwright", null],\
-          ["@types/chromatic-com__cypress", null],\
-          ["@types/chromatic-com__playwright", null]\
-        ],\
-        "packagePeers": [\
-          "@chromatic-com/cypress",\
-          "@chromatic-com/playwright",\
-          "@types/chromatic-com__cypress",\
-          "@types/chromatic-com__playwright"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["citty", [\
       ["npm:0.1.6", {\
         "packageLocation": "../../../.yarn/berry/cache/citty-npm-0.1.6-60b76c16d8-10c0.zip/node_modules/citty/",\
@@ -9727,15 +9685,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["filelist", "npm:1.0.4"],\
           ["minimatch", "npm:5.1.6"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["filesize", [\
-      ["npm:10.1.2", {\
-        "packageLocation": "../../../.yarn/berry/cache/filesize-npm-10.1.2-b3168eb329-10c0.zip/node_modules/filesize/",\
-        "packageDependencies": [\
-          ["filesize", "npm:10.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -13051,29 +13000,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["react-confetti", [\
-      ["npm:6.1.0", {\
-        "packageLocation": "../../../.yarn/berry/cache/react-confetti-npm-6.1.0-9b9e19a3c8-10c0.zip/node_modules/react-confetti/",\
-        "packageDependencies": [\
-          ["react-confetti", "npm:6.1.0"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:1dee8263450e1beb5f5d5a2fcc5469e6bd455c0a96fe53fc7fc0e00c78b2e5597dea7fdb5f7ec0d3533aa674c93994c0f244ba41f2f1a9a8b9b3481ba0c753bb#npm:6.1.0", {\
-        "packageLocation": "./.yarn/__virtual__/react-confetti-virtual-b9c9b31542/4/.yarn/berry/cache/react-confetti-npm-6.1.0-9b9e19a3c8-10c0.zip/node_modules/react-confetti/",\
-        "packageDependencies": [\
-          ["react-confetti", "virtual:1dee8263450e1beb5f5d5a2fcc5469e6bd455c0a96fe53fc7fc0e00c78b2e5597dea7fdb5f7ec0d3533aa674c93994c0f244ba41f2f1a9a8b9b3481ba0c753bb#npm:6.1.0"],\
-          ["@types/react", null],\
-          ["react", null],\
-          ["tween-functions", "npm:1.2.0"]\
-        ],\
-        "packagePeers": [\
-          "@types/react",\
-          "react"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["react-dom", [\
       ["npm:18.3.1", {\
         "packageLocation": "../../../.yarn/berry/cache/react-dom-npm-18.3.1-a805663f38-10c0.zip/node_modules/react-dom/",\
@@ -14826,15 +14752,6 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/typescript",\
           "typescript"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["tween-functions", [\
-      ["npm:1.2.0", {\
-        "packageLocation": "../../../.yarn/berry/cache/tween-functions-npm-1.2.0-4c24ac77a5-10c0.zip/node_modules/tween-functions/",\
-        "packageDependencies": [\
-          ["tween-functions", "npm:1.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\

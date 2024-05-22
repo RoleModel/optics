@@ -47,7 +47,6 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.9",
-    "@chromatic-com/storybook": "^1.4.0",
     "@storybook/addon-essentials": "^8.1.2",
     "@storybook/addon-interactions": "^8.1.2",
     "@storybook/addon-links": "^8.1.2",
