@@ -14,7 +14,7 @@ const preview = {
           'Overview',
           [
             'Base Reset',
-            'Organization',
+            'File Organization',
             'Selective Imports',
             'Tokens',
             'Themes',

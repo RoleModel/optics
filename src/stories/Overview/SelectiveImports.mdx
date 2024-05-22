@@ -1,0 +1,52 @@
+import { Meta } from '@storybook/blocks'
+import imageFile from '../assets/dependency-graph.svg'
+
+<Meta title="Overview/Selective Imports" />
+
+# Selective Imports
+
+By default, when you import the design system, it will include the basics. CSS reset, All Tokens, Base styles, Utilities, and all Components.
+
+```css
+@import '@rolemodel/optics';
+// or
+@import '@rolemodel/optics/dist/scss/optics';
+```
+
+If your application doesn't need all styles provided, you can import only the files you need like this:
+
+```css
+@import 'modern-css-reset/dist/reset';
+
+@import 'core/tokens';
+
+@import 'core/base';
+@import 'core/layout';
+@import 'core/utilities';
+
+// Just the button and card Components
+@import 'components/button';
+@import 'components/card';
+```
+
+Or this:
+
+```css
+@import 'modern-css-reset/dist/reset';
+
+@import 'base_tokens';
+@import 'scale_color_tokens';
+// No dark mode or alert tokens
+
+@import 'core/base';
+@import 'core/layout';
+@import 'core/utilities';
+
+@import 'components';
+```
+
+## Dependencies
+
+Some components rely on other components for their usage. Each document page describes these dependencies. Additionally, here is a visualization of all dependencies:
+
+<img src={imageFile} alt="Dependency Graph" />
