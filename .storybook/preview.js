@@ -10,9 +10,9 @@ const preview = {
     options: {
       storySort: {
         order: [
+          'Introduction',
           'Overview',
           [
-            'Introduction',
             'Base Reset',
             'Organization',
             'Selective Imports',

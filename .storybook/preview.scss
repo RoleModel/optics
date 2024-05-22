@@ -1,1 +1,34 @@
 @import './src/optics';
+
+// Company Card
+.card-company {
+  @extend %card-global;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--op-space-large);
+  gap: var(--op-space-large);
+
+  .card-company__info {
+    display: flex;
+    align-items: center;
+    gap: var(--op-space-x-large);
+
+    .card-company__info-logo {
+      width: calc(var(--op-size-unit) * 24); // 96px
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  @media (width <= $breakpoint-small) {
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
