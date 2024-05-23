@@ -19,5 +19,6 @@ node_modules/
 
 # Distribution files
 dist
+public/design-tokens.source.json
 
 *storybook.log
