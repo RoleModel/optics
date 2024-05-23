@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/blocks'
+import { DesignTokenDocBlock } from 'storybook-design-token'
+
+<Meta title='Tokens/Shadow' />
+
+# Shadow
+
+Shadow tokens can be used to create an elevation effect on any element. There are also [Card classes](?path=/docs/content-components-card--docs#shadow) to create an elevated card effect.
+
+## Usage
+
+These tokens can be applied as box shadows.
+
+```css
+box-shadow: var(--op-shadow-x-small);
+// or
+box-shadow: var(--op-shadow-x-large);
+```
+
+## Available tokens and their definitions
+
+### Light Mode
+
+<DesignTokenDocBlock categoryName="Shadows" viewType="card" />
+
+### Dark Mode
+
+<DesignTokenDocBlock categoryName="Dark Shadows" viewType="card" />
