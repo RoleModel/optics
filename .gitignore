@@ -5,6 +5,7 @@ node_modules/
 .npm
 
 # Yarn
+.pnp.*
 .yarn/*
 !.yarn/cache
 !.yarn/patches
