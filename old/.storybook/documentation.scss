@@ -29,43 +29,43 @@ html {
   z-index: 1;
 }
 
-.transition-demo {
-  display: inline-block;
-  padding: var(--op-space-medium);
-  background-color: var(--op-color-primary-base);
-  color: var(--op-color-primary-on-base);
-  transition: var(--op-transition-input);
+// .transition-demo {
+//   display: inline-block;
+//   padding: var(--op-space-medium);
+//   background-color: var(--op-color-primary-base);
+//   color: var(--op-color-primary-on-base);
+//   transition: var(--op-transition-input);
 
-  &:hover {
-    background-color: var(--op-color-neutral-base);
-    color: var(--op-color-neutral-on-base);
-  }
-}
+//   &:hover {
+//     background-color: var(--op-color-neutral-base);
+//     color: var(--op-color-neutral-on-base);
+//   }
+// }
 
-.transition-demo--accordion {
-  transition: var(--op-transition-accordion);
+// .transition-demo--accordion {
+//   transition: var(--op-transition-accordion);
 
-  &:hover {
-    rotate: 0.25turn;
-  }
-}
+//   &:hover {
+//     rotate: 0.25turn;
+//   }
+// }
 
-.transition-demo--input {
-  transition: var(--op-transition-input);
-}
+// .transition-demo--input {
+//   transition: var(--op-transition-input);
+// }
 
-.transition-demo--sidebar {
-  transition: var(--op-transition-sidebar);
-}
+// .transition-demo--sidebar {
+//   transition: var(--op-transition-sidebar);
+// }
 
-.transition-demo--modal {
-  transition: var(--op-transition-modal);
-}
+// .transition-demo--modal {
+//   transition: var(--op-transition-modal);
+// }
 
-.transition-demo--panel {
-  transition: var(--op-transition-panel);
-  transition-property: all;
-}
+// .transition-demo--panel {
+//   transition: var(--op-transition-panel);
+//   transition-property: all;
+// }
 
 .font-family-demo--alternative {
   --op-font-family: 'Tilt Neon', sans-serif;
@@ -139,34 +139,34 @@ html {
 }
 
 // Company Card
-.card-company {
-  @extend %card-global;
+// .card-company {
+//   @extend %card-global;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--op-space-large);
-  gap: var(--op-space-large);
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: var(--op-space-large);
+//   gap: var(--op-space-large);
 
-  .card-company__info {
-    display: flex;
-    align-items: center;
-    gap: var(--op-space-x-large);
+//   .card-company__info {
+//     display: flex;
+//     align-items: center;
+//     gap: var(--op-space-x-large);
 
-    .card-company__info-logo {
-      width: calc(var(--op-size-unit) * 24); // 96px
-    }
+//     .card-company__info-logo {
+//       width: calc(var(--op-size-unit) * 24); // 96px
+//     }
 
-    p {
-      margin: 0;
-    }
-  }
+//     p {
+//       margin: 0;
+//     }
+//   }
 
-  @media (width <= $breakpoint-small) {
-    flex-direction: column;
+//   @media (width <= $breakpoint-small) {
+//     flex-direction: column;
 
-    .btn {
-      width: 100%;
-    }
-  }
-}
+//     .btn {
+//       width: 100%;
+//     }
+//   }
+// }

@@ -1,0 +1,31 @@
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import * as AnimationStories from './Animation.stories'
+
+import { DesignTokenDocBlock } from 'storybook-design-token'
+
+<Meta title='Tokens/Animation' />
+
+# Animation
+
+Animation and Transition tokens can be used for element transitions or animations.
+
+## Playground
+
+<Canvas of={AnimationStories.Default} />
+<Controls of={AnimationStories.Default} />
+
+## Usage
+
+These tokens can be applied as a transition.
+
+```css
+transition: var(--op-transition-input);
+// or
+animation: var(--op-animation-flash);
+```
+
+## Available tokens and their definitions
+
+<DesignTokenDocBlock categoryName="Transition" viewType="card" />
+
+<DesignTokenDocBlock categoryName="Animation" viewType="card" />

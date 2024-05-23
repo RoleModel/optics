@@ -1,5 +1,44 @@
 @import './src/optics';
 
+// Transition Demos
+.transition-demo {
+  display: inline-block;
+  padding: var(--op-space-medium);
+  background-color: var(--op-color-primary-base);
+  color: var(--op-color-primary-on-base);
+  transition: var(--op-transition-input);
+
+  &:hover {
+    background-color: var(--op-color-neutral-base);
+    color: var(--op-color-neutral-on-base);
+  }
+}
+
+.transition-demo--accordion {
+  transition: var(--op-transition-accordion);
+
+  &:hover {
+    rotate: 0.25turn;
+  }
+}
+
+.transition-demo--input {
+  transition: var(--op-transition-input);
+}
+
+.transition-demo--sidebar {
+  transition: var(--op-transition-sidebar);
+}
+
+.transition-demo--modal {
+  transition: var(--op-transition-modal);
+}
+
+.transition-demo--panel {
+  transition: var(--op-transition-panel);
+  transition-property: all;
+}
+
 // Company Card
 .card-company {
   @extend %card-global;
