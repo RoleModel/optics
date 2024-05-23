@@ -1,6 +1,7 @@
 import { createAnimation } from './Animation.js'
 
 export default {
+  title: 'Tokens/Animation',
   render: ({ speed, ...args }) => {
     return createAnimation({ speed, ...args })
   },
