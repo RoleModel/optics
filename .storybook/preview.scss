@@ -1,5 +1,25 @@
 @import './src/optics';
 
+@import './src/recipes/domains-sidebar';
+@import './src/recipes/16six-sidebar';
+@import './src/recipes/aligned-header';
+
+@import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
+
+.sbdocs-preview .docs-story {
+  background-color: var(--op-color-background);
+  color: var(--op-color-on-background);
+}
+
+.sbdocs .sb-button-fix button {
+  height: 0;
+}
+
+// Allow the "Show Code" button to appear above the footer in examples.
+.docs-story div:last-child {
+  z-index: 1;
+}
+
 // Transition Demos
 .transition-demo {
   display: inline-block;
@@ -37,6 +57,77 @@
 .transition-demo--panel {
   transition: var(--op-transition-panel);
   transition-property: all;
+}
+
+.font-family-demo--alternative {
+  --op-font-family: 'Tilt Neon', sans-serif;
+
+  font-family: var(--op-font-family);
+}
+
+.design-token-container {
+  .design-token-card {
+    table {
+      td:nth-of-type(1),
+      th:nth-of-type(1) {
+        flex-basis: 40%;
+      }
+
+      td:nth-of-type(2),
+      th:nth-of-type(2) {
+        flex-basis: 35%;
+      }
+
+      td:nth-of-type(3),
+      th:nth-of-type(3) {
+        flex-basis: 25%;
+      }
+    }
+  }
+}
+
+.input-height-tokens {
+  .design-token-container {
+    div:nth-child(2) {
+      div {
+        div:last-child {
+          margin: var(--op-space-x-large);
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+.confirm-dialog-wrapper--demo {
+  position: unset;
+  padding: var(--op-space-small);
+
+  .confirm-dialog-wrapper__backdrop {
+    position: unset;
+  }
+}
+
+.modal-wrapper--demo {
+  position: unset;
+  padding: var(--op-space-small);
+
+  .modal-wrapper__backdrop {
+    position: unset;
+  }
+}
+
+// Prevent our tag component from interfering with the docs
+.language-html {
+  .tag {
+    display: initial;
+    padding: initial;
+    background-color: initial;
+    font-size: 13px;
+    font-weight: initial;
+    letter-spacing: initial;
+    line-height: 19px;
+  }
 }
 
 // Company Card
