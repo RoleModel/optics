@@ -9,7 +9,7 @@ const preview = {
         date: /Date$/i,
       },
     },
-     docs: {
+    docs: {
       toc: {
         headingSelector: 'h2, h3',
         title: 'On this page',
@@ -20,15 +20,7 @@ const preview = {
         order: [
           'Introduction',
           'Overview',
-          [
-            'Base Reset',
-            'File Organization',
-            'Selective Imports',
-            'Tokens',
-            'Themes',
-            'Scale Overriding',
-            'Addons',
-          ],
+          ['Base Reset', 'File Organization', 'Selective Imports', 'Tokens', 'Themes', 'Scale Overriding', 'Addons'],
           'Tokens',
           'Utilities',
           'Navigation Components',
@@ -38,8 +30,8 @@ const preview = {
           'Components',
           'Recipes',
         ],
-      }
-    }
+      },
+    },
   },
 }
 
@@ -56,9 +48,9 @@ export const globalTypes = {
       icon: 'circlehollow',
       items: ['light', 'dark'],
       showName: true,
-      dynamicTitle: true
-    }
-  }
+      dynamicTitle: true,
+    },
+  },
 }
 
 export const decorators = [useTheme]

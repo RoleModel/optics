@@ -9,4 +9,4 @@ export const useTheme = (StoryFn) => {
   }, [theme])
 
   return StoryFn()
-};
+}

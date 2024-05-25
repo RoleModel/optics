@@ -15,15 +15,15 @@ const config = {
     {
       name: 'storybook-design-token',
       options: {
-        preserveCSSVars: true
-      }
+        preserveCSSVars: true,
+      },
     },
     {
       name: '@storybook/addon-essentials',
       options: {
         backgrounds: false,
-      }
-    }
+      },
+    },
   ],
   staticDirs: [
     {
