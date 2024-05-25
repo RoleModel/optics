@@ -18,7 +18,12 @@ const config = {
         preserveCSSVars: true
       }
     },
-    getAbsolutePath('@storybook/addon-essentials')
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        backgrounds: false,
+      }
+    }
   ],
   staticDirs: [
     {

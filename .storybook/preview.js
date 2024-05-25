@@ -1,4 +1,5 @@
-/** @type { import('@storybook/html').Preview } */
+import { useTheme } from './useTheme'
+
 const preview = {
   parameters: {
     layout: 'centered',
@@ -45,3 +46,19 @@ const preview = {
 import './preview.scss'
 
 export default preview
+
+export const globalTypes = {
+  theme: {
+    name: 'Toggle theme mode',
+    description: 'Global theme mode for components',
+    defaultValue: 'light',
+    toolbar: {
+      icon: 'circlehollow',
+      items: ['light', 'dark'],
+      showName: true,
+      dynamicTitle: true
+    }
+  }
+}
+
+export const decorators = [useTheme]
