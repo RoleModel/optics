@@ -1,9 +1,16 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as ContainerStories from './Container.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 <Meta of={ContainerStories} />
 
 # Container
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/utilities.scss' }).outerHTML,
+  }}
+></div>
 
 Container utility classes are used to create a centered content area for your application.
 

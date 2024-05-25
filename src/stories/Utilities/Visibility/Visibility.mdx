@@ -1,9 +1,16 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as VisibilityStories from './Visibility.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 <Meta of={VisibilityStories} />
 
 # Visibility
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/utilities.scss' }).outerHTML,
+  }}
+></div>
 
 Use the '.sr-only' class to hide accessibility text that is needed for screenreaders but needs to be hidden from regular users. [Read more here.](https://snook.ca/archives/html_and_css/hiding-content-for-accessibility)
 
