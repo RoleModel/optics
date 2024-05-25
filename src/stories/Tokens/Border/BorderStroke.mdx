@@ -1,9 +1,16 @@
 import { Meta } from '@storybook/blocks'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { DesignTokenDocBlock } from 'storybook-design-token'
 
 <Meta title='Tokens/Border/Border Stroke' />
 
 # Border Stroke
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens/base_tokens.scss' }).outerHTML,
+  }}
+></div>
 
 Border tokens can be used as box shadows to add borders to various elements. Box Shadows are used in order to provide border styling without affecting the sizing of elements.
 These can be composed with other box shadows such as [Shadow](?path=/docs/tokens-shadow--page) to stack effects.

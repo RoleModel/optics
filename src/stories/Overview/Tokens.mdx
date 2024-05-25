@@ -1,8 +1,15 @@
 import { Meta } from '@storybook/blocks'
+import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 
 <Meta title="Overview/Tokens" />
 
 # Tokens
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens' }).outerHTML,
+  }}
+></div>
 
 Tokens are defined in `src/core/tokens`
 

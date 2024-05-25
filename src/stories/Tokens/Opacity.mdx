@@ -1,9 +1,16 @@
 import { Meta } from '@storybook/blocks'
 import { DesignTokenDocBlock } from 'storybook-design-token'
+import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 
 <Meta title='Tokens/Opacity' />
 
 # Opacity
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens/base_tokens.scss' }).outerHTML,
+  }}
+></div>
 
 Opacity tokens can be used to create a faded or disabled effect on any element.
 

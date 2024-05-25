@@ -1,9 +1,16 @@
 import { Meta } from '@storybook/blocks'
 import { DesignTokenDocBlock } from 'storybook-design-token'
+import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 
 <Meta title='Tokens/Shadow' />
 
 # Shadow
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens/base_tokens.scss' }).outerHTML,
+  }}
+></div>
 
 Shadow tokens can be used to create an elevation effect on any element. There are also [Card classes](?path=/docs/content-components-card--docs#shadow) to create an elevated card effect.
 

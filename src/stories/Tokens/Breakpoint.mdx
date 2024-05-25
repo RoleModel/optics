@@ -1,9 +1,16 @@
 import { Meta } from '@storybook/blocks'
+import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 import { DesignTokenDocBlock } from 'storybook-design-token'
 
 <Meta title='Tokens/Breakpoint' />
 
 # Breakpoint
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens/base_tokens.scss' }).outerHTML,
+  }}
+></div>
 
 Breakpoint tokens are used to define common device sizes for use within media queries or max widths.
 

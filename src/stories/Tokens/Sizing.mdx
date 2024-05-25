@@ -1,9 +1,16 @@
 import { Meta } from '@storybook/blocks'
 import { DesignTokenDocBlock } from 'storybook-design-token'
+import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 
 <Meta title='Tokens/Sizing' />
 
 # Size
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens/base_tokens.scss' }).outerHTML,
+  }}
+></div>
 
 The Size token enables creating scalable widths and heights for your application. It is meant to be used in a `calc` expression with whole numbers. This ensures any sizes you create will be a multiple of 4px.
 

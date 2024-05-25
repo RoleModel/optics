@@ -1,8 +1,15 @@
 import { Meta } from '@storybook/blocks'
+import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 
 <Meta title="Overview/Addons" />
 
 # Addons
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'addons' }).outerHTML,
+  }}
+></div>
 
 Optics provides a few addons for integrating Third-Party tools with your application.
 

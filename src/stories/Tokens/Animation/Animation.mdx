@@ -1,11 +1,17 @@
 import { Meta, Canvas, Controls } from '@storybook/blocks'
 import * as AnimationStories from './Animation.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { DesignTokenDocBlock } from 'storybook-design-token'
 
 <Meta of={AnimationStories} />
 
 # Animation
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens/base_tokens.scss' }).outerHTML,
+  }}
+></div>
 
 Animation and Transition tokens can be used for element transitions or animations.
 

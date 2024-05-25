@@ -1,10 +1,17 @@
 import { Canvas, Meta } from '@storybook/blocks'
 import * as SelectStories from '../Components/Form/Select.stories'
 import { DesignTokenDocBlock } from 'storybook-design-token'
+import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 
 <Meta title='Tokens/Encoded Image' />
 
 # Encoded Image
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens/base_tokens.scss' }).outerHTML,
+  }}
+></div>
 
 Encoded Image tokens are primarily used to create the dropdown arrow on `<select>` elements using the `.form-control` class.
 

@@ -1,9 +1,16 @@
 import { Meta } from '@storybook/blocks'
 import { DesignTokenDocBlock } from 'storybook-design-token'
+import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 
 <Meta title='Tokens/Spacing' />
 
 # Spacing Size
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens/base_tokens.scss' }).outerHTML,
+  }}
+></div>
 
 The Spacing Size tokens enable creating scalable spaces for your application. They can be used for margin, padding, gap, and anything else that is intended for spacing.
 
