@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as TableStories from './Table.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={TableStories} />
 
 # Table
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/table.scss' }).outerHTML,
+  }}
+></div>
 
 Table classes provide simple styling for tables and their content.
 

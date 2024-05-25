@@ -1,9 +1,16 @@
 import { Meta, Canvas, Controls } from '@storybook/blocks'
 import * as AlignedHeaderStories from './AlignedHeader.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 <Meta of={AlignedHeaderStories} />
 
 # Aligned Header
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'recipes/aligned-header.scss' }).outerHTML,
+  }}
+></div>
 
 There are cases when you want to vertically center something on a line of text that wraps. Like a badge or edit button at the end of a text header.
 Achieving this can be tricky as a simple flex or grid solution would result in the badge or button coming after the wrapped text in another block instead of inline with the wrapped text at the end of it.

@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as DividerStories from './Divider.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={DividerStories} />
 
 # Divider
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/divider.scss' }).outerHTML,
+  }}
+></div>
 
 Divider classes can be used to create horizontal or vertical visual divides between content.
 

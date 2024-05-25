@@ -1,12 +1,19 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as AlertStories from './Alert.stories'
 import imageFile from './flash.gif'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={AlertStories} />
 
 # Alert
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/alert.scss' }).outerHTML,
+  }}
+></div>
 
 Alert classes can be used to create a highlighted message or callout in your application.
 These could be as banners for global application messages, or an error message within a section of your app.

@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as PaginationStories from './Pagination.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={PaginationStories} />
 
 # Pagination
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/pagination.scss' }).outerHTML,
+  }}
+></div>
 
 Pagination is used to navigate through a series of pages, typically when dealing with tabular data.
 A few classes are used in combination with the button component to achieve this.

@@ -1,11 +1,18 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as AccordionStories from './Accordion.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={AccordionStories} />
 
 # Accordion
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/accordion.scss' }).outerHTML,
+  }}
+></div>
 
 Accordion classes are built on the `details` and `summary` html elements. They provide consistent and composable styling for disclosure widgets.
 

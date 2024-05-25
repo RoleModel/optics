@@ -1,9 +1,16 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as ButtonGroupStories from './ButtonGroup.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 <Meta of={ButtonGroupStories} />
 
 # Button Group
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/button_group.scss' }).outerHTML,
+  }}
+></div>
 
 `.btn-group` is a class that can be added on a container around a collection of buttons. It provides grouping styles for any button conbination and variation that exists in the [Button Component](?path=/docs/navigation-components-button--docs)
 

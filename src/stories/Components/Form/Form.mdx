@@ -5,12 +5,18 @@ import * as InputStories from './Input.stories'
 import * as LabelStories from './Label.stories'
 import * as SelectStories from './Select.stories'
 import * as TextareaStories from './Textarea.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta title="Content Components/Form" />
 
 # Form
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/form.scss' }).outerHTML,
+  }}
+></div>
 
 Form classes can be used on a variety of `inputs` or `select` html elements.
 They provide consistent and composable styling that should address most applications basic needs.

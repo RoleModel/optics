@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as SwitchStories from './Switch.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={SwitchStories} />
 
 # Switch
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/switch.scss' }).outerHTML,
+  }}
+></div>
 
 Switch classes can be used to create a stylized checkbox or boolean input.
 

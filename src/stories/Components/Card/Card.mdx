@@ -1,11 +1,18 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as CardStories from './Card.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={CardStories} />
 
 # Card
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/card.scss' }).outerHTML,
+  }}
+></div>
 
 Card classes can be used to denote bordered sections of an application. They provide simple styles to create sections or "cards" for your interface. They can also be used as a starting point for "row" or list styles.
 

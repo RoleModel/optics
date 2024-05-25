@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as SidePanelStories from './SidePanel.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={SidePanelStories} />
 
 # SidePanel
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/side_panel.scss' }).outerHTML,
+  }}
+></div>
 
 Side Panel classes provide simple styling for a panel of sections with a scrollable body.
 
