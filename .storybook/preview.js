@@ -8,6 +8,12 @@ const preview = {
         date: /Date$/i,
       },
     },
+     docs: {
+      toc: {
+        headingSelector: 'h2, h3',
+        title: 'On this page',
+      },
+    },
     options: {
       storySort: {
         order: [

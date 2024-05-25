@@ -6,6 +6,51 @@
 
 @import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
 
+.sbdocs.sbdocs-wrapper {
+  --toc-size: 20rem;
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr var(--toc-size);
+
+  .sbdocs.sbdocs-content + div {
+    width: 100%;
+    color: var(--op-color-neutral-base);
+
+    > div {
+      width: var(--toc-size);
+    }
+
+    .toc-wrapper {
+      .toc-list  {
+        border-left: none;
+
+        .toc-list-item {
+          margin-left: var(--op-space-small);
+
+          > a {
+            color: var(--op-color-primary-plus-one);
+            text-decoration: underline;
+          }
+
+          &.is-active-li > a {
+            color: var(--op-color-primary-minus-one);
+            font-weight: var(--op-font-weight-bold);
+          }
+
+          &::before {
+            content: '-';
+            transform: translateX(calc(-1* var(--op-space-small)));
+            border-left: none;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 .sbdocs-preview .docs-story {
   background-color: var(--op-color-background);
   color: var(--op-color-on-background);
