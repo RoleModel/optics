@@ -14,13 +14,6 @@ export default {
 }
 
 export const Default = {
-  parameters: {
-    docs: {
-      canvas: {
-        sourceState: 'shown', // Opens the source code by default
-      },
-    },
-  },
   args: {
     speed: 'input (120ms)',
   },
