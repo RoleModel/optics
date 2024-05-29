@@ -16,14 +16,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install 🔧
         run: | # Install npm packages
-          npm ci
+          yarn install --immutable
       - name: Build 🔧
         run: | # build the Storybook files
-          npm run build-storybook
+          yarn build-storybook
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:

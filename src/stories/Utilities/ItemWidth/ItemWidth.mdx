@@ -1,9 +1,16 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as ItemWidthStories from './ItemWidth.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 <Meta of={ItemWidthStories} />
 
 # Item Width
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/utilities.scss' }).outerHTML,
+  }}
+></div>
 
 Item Width utility classes can be used to set an element's width relative to its parent.
 

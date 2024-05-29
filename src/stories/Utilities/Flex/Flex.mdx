@@ -1,9 +1,16 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as FlexStories from './Flex.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 <Meta of={FlexStories} />
 
 # Flex
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/utilities.scss' }).outerHTML,
+  }}
+></div>
 
 Flex utility classes are used to quickly lay out a page using the flex engine.
 

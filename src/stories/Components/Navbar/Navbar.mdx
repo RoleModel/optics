@@ -2,10 +2,17 @@ import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as NavbarStories from './Navbar.stories'
 
 import { createAlert } from '../Alert/Alert.js'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 <Meta of={NavbarStories} />
 
 # Navbar
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/navbar.scss' }).outerHTML,
+  }}
+></div>
 
 Navbar classes provide simple styling for a navigation header.
 

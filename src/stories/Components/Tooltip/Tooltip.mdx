@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as TooltipStories from './Tooltip.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={TooltipStories} />
 
 # Tooltip
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/tooltip.scss' }).outerHTML,
+  }}
+></div>
 
 Tooltips are build using data attributes on any element. Setting these will show text on hover.
 

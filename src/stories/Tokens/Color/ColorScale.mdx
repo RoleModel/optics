@@ -1,10 +1,17 @@
 import { Meta, Story, Canvas, Controls, ColorPalette, ColorItem } from '@storybook/blocks'
 import * as ColorScaleStories from './ColorScale.stories'
 import { capitalize, scales, steps, getHSLFromVar } from '../../helpers/utils.js'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 <Meta of={ColorScaleStories} />
 
 # Color Scales
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/tokens/scale_color_tokens.scss' }).outerHTML,
+  }}
+></div>
 
 Optics has five main color scales that provide all the color your application may need. These Consist of the `Primary` scale, the `Neutral` scale, and four Alert Color Scales, `Warning`, `Danger`, `Info`, and `Notice`.
 

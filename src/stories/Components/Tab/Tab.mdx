@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as TabStories from './Tab.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={TabStories} />
 
 # Tab
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/tab.scss' }).outerHTML,
+  }}
+></div>
 
 Tab classes provide simple styling for a tab group navigation.
 

@@ -1,36 +1,26 @@
-/** @type { import('@storybook/html').Preview } */
 import { useTheme } from './useTheme'
 
 const preview = {
-  decorators: [useTheme],
   parameters: {
     layout: 'centered',
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/,
+        date: /Date$/i,
       },
     },
     docs: {
       toc: {
         headingSelector: 'h2, h3',
-        title: 'Table of Contents',
+        title: 'On this page',
       },
     },
     options: {
       storySort: {
         order: [
+          'Introduction',
           'Overview',
-          [
-            'Introduction',
-            'Base Reset',
-            'Organization',
-            'Selective Imports',
-            'Tokens',
-            'Themes',
-            'Scale Overriding',
-            'Addons',
-          ],
+          ['Base Reset', 'File Organization', 'Selective Imports', 'Tokens', 'Themes', 'Scale Overriding', 'Addons'],
           'Tokens',
           'Utilities',
           'Navigation Components',
@@ -45,21 +35,22 @@ const preview = {
   },
 }
 
+import './preview.scss'
+
 export default preview
 
 export const globalTypes = {
-  themeMode: {
-    description: 'Color Theme Mode',
+  theme: {
+    name: 'Toggle theme mode',
+    description: 'Global theme mode for components',
     defaultValue: 'light',
     toolbar: {
-      title: 'Theme Mode',
-      icon: 'mirror',
-      items: [
-        { value: 'light', title: 'Light' },
-        { value: 'dark', title: 'Dark' },
-      ],
+      icon: 'circlehollow',
+      items: ['light', 'dark'],
+      showName: true,
+      dynamicTitle: true,
     },
   },
 }
 
-import './documentation.scss'
+export const decorators = [useTheme]

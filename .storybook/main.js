@@ -1,14 +1,17 @@
-/** @type { import('@storybook/html-webpack5').StorybookConfig } */
+import { join, dirname } from 'path'
+
+/**
+ * This function is used to resolve the absolute path of a package.
+ * It is needed in projects that use Yarn PnP or are set up within a monorepo.
+ */
+function getAbsolutePath(value) {
+  return dirname(require.resolve(join(value, 'package.json')))
+}
+
+/** @type { import('@storybook/html-vite').StorybookConfig } */
 const config = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    '@storybook/addon-links',
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false,
-      },
-    },
     {
       name: 'storybook-design-token',
       options: {
@@ -16,27 +19,24 @@ const config = {
       },
     },
     {
-      name: '@storybook/addon-styling',
+      name: '@storybook/addon-essentials',
       options: {
-        sass: {
-          // Require your Sass preprocessor here
-          implementation: require('sass'),
-        },
+        backgrounds: false,
       },
     },
-    '@storybook/addon-mdx-gfm',
+  ],
+  staticDirs: [
+    {
+      from: './assets',
+      to: '/public',
+    },
   ],
   framework: {
-    name: '@storybook/html-webpack5',
+    name: getAbsolutePath('@storybook/html-vite'),
     options: {},
-  },
-  docs: {
-    autodocs: 'tag',
   },
   core: {
     disableTelemetry: true, // 👈 Disables telemetry
   },
-  staticDirs: ['./public'],
 }
-
 export default config

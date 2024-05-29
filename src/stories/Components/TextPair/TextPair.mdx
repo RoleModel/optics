@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as TextPairStories from './TextPair.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={TextPairStories} />
 
 # Text Pair
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/text_pair.scss' }).outerHTML,
+  }}
+></div>
 
 The text pair component is used to display a title and subtitle together. It can also be used to group other elements within it, though should generally be reserved for text.
 

@@ -18,21 +18,21 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '18.x'
           cache: 'npm'
       - name: Install
-        run: npm install
+        run: yarn install
       - name: Run ESLint
-        run: npm run lint:js
+        run: yarn lint:js
       - name: Run Stylelint
-        run: npm run lint:css
+        run: yarn lint:css
       - name: Run Prettier
-        run: npm run prettier-check
+        run: yarn prettier-check
       - name: Build CSS
-        run: npm run build:css
+        run: yarn build:css
       - name: Build SCSS
-        run: npm run build:scss
+        run: yarn build:scss
       - name: Build Tokens
-        run: npm run build:tokens
+        run: yarn build:tokens
       - name: Build Storybook
-        run: npm run build-storybook
+        run: yarn build-storybook

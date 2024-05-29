@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as ConfirmDialogStories from './ConfirmDialog.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={ConfirmDialogStories} />
 
 # Confirm Dialog
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/confirm-dialog.scss' }).outerHTML,
+  }}
+></div>
 
 The Confirm Dialog classes can be used for styling a custom alert or confirm dialog. This can be used alongside [Turbo Confirm](https://github.com/RoleModel/turbo-confirm) to achieve custom Confirm Dialogs using Turbo
 

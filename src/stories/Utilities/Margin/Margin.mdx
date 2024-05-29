@@ -1,9 +1,16 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as MarginStories from './Margin.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 <Meta of={MarginStories} />
 
 # Margin
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/utilities.scss' }).outerHTML,
+  }}
+></div>
 
 Margin utility classes are used to add margin to an element.
 

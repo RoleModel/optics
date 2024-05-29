@@ -1,11 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as ButtonStories from './Button.stories'
-
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={ButtonStories} />
 
 # Button
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/button.scss' }).outerHTML,
+  }}
+></div>
 
 Button classes can be used on `button` or `a` html elements. They provide consistent and composable styling that should address most applications basic needs.
 

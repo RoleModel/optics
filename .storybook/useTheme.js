@@ -1,13 +1,18 @@
-import { useEffect, useGlobals } from '@storybook/addons'
+import { makeDecorator } from '@storybook/preview-api'
 
-export const useTheme = (StoryFn) => {
-  const [{ themeMode }] = useGlobals()
-
-  useEffect(() => {
+export const useTheme = makeDecorator({
+  name: 'useTheme',
+  parameterName: 'theme',
+  wrapper: (getStory, context, { parameters }) => {
     //document.documentElement refers to html tag inside iframe#storybook-preview-iframe
-    document.documentElement.style = ''
-    document.documentElement.dataset.themeMode = themeMode
-  }, [themeMode])
+    const currentTheme = document.documentElement.getAttribute('data-theme-mode')
+    const newTheme = context.globals.theme
 
-  return StoryFn()
-}
+    if (currentTheme !== newTheme) {
+      console.log('should change ')
+      document.documentElement.setAttribute('data-theme-mode', newTheme)
+    }
+
+    return getStory(context)
+  },
+})
