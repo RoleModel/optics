@@ -69,6 +69,7 @@
   --__op-sidebar-width: var(--_op-sidebar-drawer-width);
   --__op-sidebar-brand-width: var(--_op-sidebar-drawer-brand-width);
 
+  z-index: var(--op-z-index-drawer);
   display: flex;
   width: var(--__op-sidebar-width);
   min-width: var(--__op-sidebar-width);
