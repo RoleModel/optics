@@ -8,11 +8,10 @@ import { DesignTokenDocBlock } from 'storybook-design-token'
 
 The Font Family token can be used to change the font used when displaying text
 
-The default font is set to Noto Sans which is loaded via the Google Fonts CDN
+Noto Sans and Noto Serif are both loaded via the Google Fonts CDN with Noto Sans as the default.
 
 ```css
-@import 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap';
-@import 'https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Noto+Serif:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap';
 ```
 
 ## Playground
@@ -41,7 +40,7 @@ If you want to change the font used by default, you can add a new font import to
 **Note** Not all fonts have the same baseline line height. This can cause alignment issues in your text that may require you to adjust the default line height tokens. See [Adjusting Line Heights](?path=/docs/tokens-typography-line-height--base#custom-font)
 
 ```css
-@import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap';
 
 :root {
   --op-font-family: 'Tilt Neon', sans-serif;
@@ -53,13 +52,12 @@ If you want to change the font used by default, you can add a new font import to
 Often an application will need multiple fonts. Your headers may use a different font than your body text. Optics provides a single font family token, but you can easily add your own font tokens by following the pattern.
 
 ```css
-@import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
-@import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC@8..144,-10..0,25..151,100..1000,-200..150,27..175,323..603,25..135,649..854,-305..-98,560..788,416..570,528..760&family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap';
 
 :root {
   --op-font-family: 'Tilt Neon', sans-serif;
-  --ya-font-family-alt: 'Roboto', serif; // Your App prefix. Could stick with --op if you want
-  // or
-  --ya-font-family-body: 'Roboto', serif;
+  --op-font-family-alt: 'Roboto Flex', serif;
+  // Could add others as needed
+  --ya-font-family-body: 'Roboto Flex', serif;  // Your App prefix. Could stick with --op if you want
 }
 ```

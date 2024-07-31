@@ -249,7 +249,8 @@ $breakpoint-x-large: 1440px; // medium laptop
   * @tokens Font Family
   * @presenter FontFamily
   */
-  --op-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
+  --op-font-family: 'Noto Sans', sans-serif;
+  --op-font-family-alt: 'Noto Serif', serif;
 }
 
 @mixin spacing-scales {

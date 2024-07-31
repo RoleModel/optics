@@ -10,8 +10,8 @@
   --toc-size: 20rem;
 
   display: grid;
-  justify-items: center;
   grid-template-columns: 1fr var(--toc-size);
+  justify-items: center;
 
   .sbdocs.sbdocs-content + div {
     width: 100%;
@@ -39,10 +39,10 @@
           }
 
           &::before {
-            content: '-';
-            transform: translateX(calc(-1 * var(--op-space-small)));
             border-left: none;
+            content: '-';
             opacity: 1;
+            transform: translateX(calc(-1 * var(--op-space-small)));
           }
         }
       }
@@ -104,6 +104,10 @@
 }
 
 .font-family-demo--alternative {
+  font-family: var(--op-font-family-alt);
+}
+
+.font-family-demo--optional {
   --op-font-family: 'Tilt Neon', sans-serif;
 
   font-family: var(--op-font-family);
