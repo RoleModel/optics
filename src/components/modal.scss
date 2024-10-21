@@ -137,6 +137,10 @@ dialog.modal {
     transform: scale(1);
   }
 
+  &:not([open]) {
+    display: none;
+  }
+
   &.modal--closing {
     opacity: var(--op-opacity-none);
     transform: scale(0.7);
