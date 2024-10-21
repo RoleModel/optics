@@ -137,7 +137,7 @@ dialog.modal {
     transform: scale(1);
   }
 
-  &not([open]) {
+  &:not([open]) {
     display: none;
   }
 
