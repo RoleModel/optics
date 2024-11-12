@@ -6,7 +6,7 @@ export const createAvatar = ({
 }) => {
   const element = document.createElement(useLink ? 'a' : 'div')
 
-  element.href = '/?path=/docs/components-avatar--docs'
+  element.href = '/?path=/docs/content-components-avatar--docs'
   element.className = `avatar avatar--${size}`
 
   const image = document.createElement('img')
