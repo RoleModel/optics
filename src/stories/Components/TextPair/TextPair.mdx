@@ -13,7 +13,7 @@ import { createAlert } from '../Alert/Alert.js'
   }}
 ></div>
 
-The text pair component is used to display a title and subtitle together. It can also be used to group other elements within it, though should generally be reserved for text.
+The Text Pair component is used to display a title and subtitle together. It can also be used to group other elements within it, though should generally be reserved for text.
 
 ## Playground
 
@@ -63,7 +63,7 @@ Description of subtitle size example
 
 ## Text Pair API
 
-Styles are built on css variables scoped to the text pair.
+Styles are built on CSS variables scoped to the Text Pair.
 
 Here are the variables that can be customized.
 
@@ -81,12 +81,12 @@ Here are the variables that can be customized.
   dangerouslySetInnerHTML={{
     __html: createAlert({
       title: 'Important!',
-      description: 'These patterns represent how to customize the style of the text pair for your project.',
+      description: 'These patterns represent how to customize the style of the Text Pair for your project.',
     }).outerHTML,
   }}
 ></div>
 
-The text pair classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The Text Pair classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple classes to share the same behavior. You can modify all textpair behavior by overriding the `%text-pair-global` placeholder selector and setting any properties:
 
@@ -107,7 +107,7 @@ This allows multiple classes to share the same behavior. You can modify all text
   }}
 ></div>
 
-Your application may need a custom text pair. To add one, just follow this template:
+Your application may need a custom Text Pair. To add one, just follow this template:
 
 ```css
 .text-pair-{name} {
