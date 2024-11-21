@@ -37,19 +37,19 @@ Table can be used as a standalone component, however, it does have a few depende
 
 ### Default
 
-`.table` Provides a default style to a table element
+`.table` Provides a default style to a table element.
 
 <Canvas of={TableStories.Default} />
 
 ### Primary
 
-`.table-primary` Provides a table with a primary colored header.
+`.table-primary` Provides a Primary table. This uses the primary color in the header.
 
 <Canvas of={TableStories.Primary} />
 
 ### Danger
 
-`.table-danger` Provides a table with a danger colored header.
+`.table-danger` Provides a Danger table. This uses the danger alert color in the header.
 
 <Canvas of={TableStories.Danger} />
 
@@ -69,7 +69,7 @@ Table can be used as a standalone component, however, it does have a few depende
 
 ### Striping
 
-`.table--even-striped`, `.table--odd-striped` color every (odd or even) other row with a light color. The color matches the default, primary, or danger.
+`.table--even-striped`, `.table--odd-striped` color every other (odd or even) row with a light color on the neutral scale.
 
 <Canvas of={TableStories.StripedEven} />
 
@@ -106,9 +106,9 @@ Here is an example of using it in the table footer.
 
 ## Table API
 
-Padding table styles are built on css variables scoped to the table.
+Padding table styles are built on CSS variables scoped to the table.
 
-Here are the variables used
+Here are the variables used:
 
 ```css
 // Variable API
@@ -128,7 +128,7 @@ Here are the variables used
   }}
 ></div>
 
-The table classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The table classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple table classes to share the same behavior. You can modify all tables behavior by overriding the `%table-global` placeholder selector and setting any proprerties:
 

@@ -40,13 +40,13 @@ Tag can be used as a standalone component, however, it does have a few dependenc
 
 ### Readonly
 
-`.tag-readonly` Provides a readonly tag. This is useful for displaying tags that cannot be removed.
+`.tag-readonly` Provides a Readonly tag. This is useful for displaying tags that cannot be removed.
 
 <Canvas of={TagStories.Readonly} />
 
 ### Primary
 
-`.tag-primary` Provides a primary colored tag.
+`.tag-primary` Provides a Primary tag. This uses the primary color.
 
 <Canvas of={TagStories.Primary} />
 
@@ -85,7 +85,7 @@ Tag can be used as a standalone component, however, it does have a few dependenc
   }}
 ></div>
 
-The tag classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The tag classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple classes to share the same behavior. You can modify all tag behavior by overriding the `%tag-global` placeholder selector and setting any properties:
 

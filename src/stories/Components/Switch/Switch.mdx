@@ -21,7 +21,7 @@ This is just a styling pattern and does not implement the form submission functi
 
 A commonly used tool for Ruby on Rails projects is [SimpleForm](https://github.com/heartcombo/simple_form). It allows you to build forms with premade inputs and allows you to make custom input types.
 
-[RoleModel Rails SimpleForm Generator](https://github.com/RoleModel/rolemodel_rails/tree/master/lib/generators/rolemodel/simple_form) provides a generator to install a custom switch input that can be used with simple form with Optics classes applied.
+[RoleModel Rails SimpleForm Generator](https://github.com/RoleModel/rolemodel_rails/tree/master/lib/generators/rolemodel/simple_form) provides a generator to install a custom switch input that can be used with SimpleForm with Optics classes applied.
 
 ## Playground
 
@@ -63,9 +63,9 @@ Switch can be used as a standalone component, however, it does have a few depend
 
 ## Switch API
 
-The size styles are built on css variables scoped to the switch.
+The size styles are built on CSS variables scoped to the switch.
 
-Here are the variables that can be customized.
+Here are the variables that can be customized:
 
 {/* prettier-ignore-start */}
 ```css
@@ -89,7 +89,7 @@ Here are the variables that can be customized.
   }}
 ></div>
 
-The switch classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The switch classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple classes to share the same behavior. You can modify all switch behavior by overriding the `%switch-global` placeholder selector and setting any properties:
 

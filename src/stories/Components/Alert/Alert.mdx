@@ -41,13 +41,13 @@ Alert can be used as a standalone component, however, it does have a few depende
 
 ### Warning
 
-`.alert-warning` Provides a warning styled message
+`.alert-warning` Provides a warning styled message.
 
 <Canvas of={AlertStories.Warning} />
 
 ### Danger
 
-`.alert-danger` Provides a danger styled message
+`.alert-danger` Provides a danger styled message.
 
 `.alert-alert` is an alias for `.alert-danger`. Since RoleModel commonly uses [Rails](https://rubyonrails.org/) to develop projects, adding this alias allows this to be used for flash messages without having to change the default in rails. [Devise](https://github.com/heartcombo/devise) is also commonly used and cannot easily be configured away from this.
 
@@ -55,13 +55,13 @@ Alert can be used as a standalone component, however, it does have a few depende
 
 ### Info
 
-`.alert-info` Provides an info styled message
+`.alert-info` Provides an info styled message.
 
 <Canvas of={AlertStories.Info} />
 
 ### Notice
 
-`.alert-notice` Provides a notice styled message
+`.alert-notice` Provides a notice styled message.
 
 <Canvas of={AlertStories.Notice} />
 
@@ -79,19 +79,19 @@ Alert can be used as a standalone component, however, it does have a few depende
 
 ### No Icon
 
-The icon is optional
+The icon is optional.
 
 <Canvas of={AlertStories.NoIcon} />
 
 ### No Title
 
-The title is optional
+The title is optional.
 
 <Canvas of={AlertStories.NoTitle} />
 
 ### Dismissible
 
-If your application needs to allow dismissing these alerts, you can add a second icon/button after the messages section and add functionality via JS
+If your application needs to allow dismissing these alerts, you can add a second icon/button after the messages section and add functionality via JS.
 
 <Canvas of={AlertStories.Dismissible} />
 
@@ -131,7 +131,7 @@ icon, title, and the final (dismissible close) icon are all optional.
   }}
 ></div>
 
-The alert classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The alert classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple alert classes to share the same behavior. You can modify all alerts behavior by overriding the `%alert-global` placeholder selector and setting any properties:
 
@@ -141,7 +141,7 @@ This allows multiple alert classes to share the same behavior. You can modify al
 }
 ```
 
-If you need to override the behavior of a particular alert style, you can open the respective class and set or change properties
+If you need to override the behavior of a particular alert style, you can open the respective class and set or change properties.
 
 ```css
 // This will only affect the warning alert, but not danger, info, or notice.

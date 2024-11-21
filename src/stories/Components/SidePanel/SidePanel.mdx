@@ -54,7 +54,7 @@ Side Panel can be used as a standalone component, however, it does have a few de
 
 `.side-panel` provides the basic shell for your sidebar.
 
-`.side-panel__header`, `.side-panel__body`, and `.side-panel__footer` are used to denote areas of the panel with body taking up as much heigh as available and adding a scrollbar for any content overflow.
+`.side-panel__header`, `.side-panel__body`, and `.side-panel__footer` are used to denote areas of the panel with body taking up as much height as available and adding a scrollbar for any content overflow.
 
 <Canvas of={SidePanelStories.Default} />
 
@@ -116,9 +116,9 @@ One of the benefits is that each section supports the padding classes so individ
 
 ## SidePanel API
 
-Styles are built on css variables scoped to the sidepanel.
+Styles are built on CSS variables scoped to the SidePanel.
 
-Here are the variables that can be customized.
+Here are the variables that can be customized:
 
 {/* prettier-ignore-start */}
 ```css
@@ -136,14 +136,14 @@ Here are the variables that can be customized.
   dangerouslySetInnerHTML={{
     __html: createAlert({
       title: 'Important!',
-      description: 'These patterns represent how to customize the style of the sidepanel for your project.',
+      description: 'These patterns represent how to customize the style of the SidePanel for your project.',
     }).outerHTML,
   }}
 ></div>
 
-The sidepanel classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The SidePanel classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
-This allows multiple classes to share the same behavior. You can modify all sidepanel behavior by overriding the `%side-panel-global` placeholder selector and setting any properties:
+This allows multiple classes to share the same behavior. You can modify all SidePanel behavior by overriding the `%side-panel-global` placeholder selector and setting any properties:
 
 ```css
 %side-panel-global {
@@ -163,7 +163,7 @@ This allows multiple classes to share the same behavior. You can modify all side
   }}
 ></div>
 
-Your application may need a custom sidepanel. To add one, just follow this template:
+Your application may need a custom SidePanel. To add one, just follow this template:
 
 ```css
 .sidepanel-{name} {
