@@ -8,7 +8,7 @@ export default {
   argTypes: {
     family: {
       control: { type: 'select' },
-      options: ['Noto Sans', 'Tilt Neon'],
+      options: ['Noto Sans', 'Noto Serif', 'Tilt Neon'],
     },
   },
 }
@@ -20,6 +20,12 @@ export const Default = {
 }
 
 export const Alternate = {
+  args: {
+    family: 'Noto Serif',
+  },
+}
+
+export const Optional = {
   args: {
     family: 'Tilt Neon',
   },
