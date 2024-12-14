@@ -139,6 +139,7 @@
 
   &[type='color'] {
     padding: var(--op-space-2x-small);
+    cursor: pointer;
 
     &::-webkit-color-swatch-wrapper {
       padding: 0;
