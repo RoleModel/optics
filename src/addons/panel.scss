@@ -2,7 +2,7 @@
   --op-panel-width: 40%;
 
   position: absolute;
-  z-index: var(--op-z-index-drawer);
+  z-index: var(--op-z-index-sidebar);
   right: calc(-1 * var(--op-panel-width)); // this pushes the panel off the sceen to the right
   width: var(--op-panel-width);
   height: 100vh;
