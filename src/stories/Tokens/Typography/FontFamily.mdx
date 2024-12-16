@@ -6,9 +6,11 @@ import { DesignTokenDocBlock } from 'storybook-design-token'
 
 # Font Family
 
-The Font Family token can be used to change the font used when displaying text
+Font Family tokens can be used to change the font used when displaying text.
 
-Noto Sans and Noto Serif are both loaded via the Google Fonts CDN with Noto Sans as the default.
+Optics loads fonts via the Google Fonts CDN. For instructions and further learning, see [Google Fonts](https://fonts.google.com/)
+
+The default font is set to Noto Sans with an alternate option set to Noto Serif.
 
 ```css
 @import 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Noto+Serif:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap';
@@ -26,6 +28,65 @@ This token can be applied like:
 ```css
 html {
   font-family: var(--op-font-family);
+}
+```
+
+## Variable Fonts
+
+Optics supports variable fonts. Variable fonts are a single font file that contains multiple variations of a font. This allows you to adjust various axes that the font makes available such as the weight, width, slant, and other properties.
+
+Optics uses Noto Sans as a default which has three axes of variations: weight, width, and italic. You can adjust these axes using the font-weight, font-stretch, and font-style tokens.
+
+```css
+.my-selector {
+  font-family: var(--op-font-family); // Defaults to "Noto Sans"
+  font-optical-sizing: {auto|none};
+  font-weight: {100 to 900}; // Any value will work, though it is recommended to use the existing weight tokens or define a component specific value.
+  // E.G. font-weight: var(--op-font-weight-bold);
+  font-style: {normal|italic};
+  font-variation-settings:
+    "wdth" {62.5 to 100};
+  // or
+  font-stretch: {62.5% to 100%};
+}
+```
+
+If you are using a custom font, you can adjust the axes of the font by using the font-variation-settings property. The values for the axes are specific to the font you are using. You can find the available axes and their values in the font's documentation.
+
+For example: [Roboto Flex](https://fonts.google.com/specimen/Roboto+Flex) has the following axes.
+
+```css
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 1000
+// <grade>: Use a value from -200 to 150
+// <slant>: Use a value from -10 to 0
+// <width>: Use a value from 25 to 151
+// <thick stroke>: Use a value from 27 to 175
+// <thin stroke>: Use a value from 25 to 135
+// <counter width>: Use a value from 323 to 603
+// <uppercase height>: Use a value from 528 to 760
+// <lowercase height>: Use a value from 416 to 570
+// <ascender height>: Use a value from 649 to 854
+// <descender depth>: Use a value from -305 to -98
+// <figure height>: Use a value from 560 to 788
+
+.roboto-flex-<uniquifier> {
+  font-family: 'Roboto Flex', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    'slnt' <slant>,
+    'wdth' <width>,
+    'GRAD' <grade>,
+    'XOPQ' <thick stroke>,
+    'XTRA' <counter width>,
+    'YOPQ' <thin stroke>,
+    'YTAS' <ascender height>,
+    'YTDE' <descender depth>,
+    'YTFI' <figure height>,
+    'YTLC' <lowercase height>,
+    'YTUC' <uppercase height>;
 }
 ```
 
