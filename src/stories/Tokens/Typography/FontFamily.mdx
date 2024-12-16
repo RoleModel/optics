@@ -41,7 +41,8 @@ Optics uses Noto Sans as a default which has three axes of variations: weight, w
 .my-selector {
   font-family: var(--op-font-family); // Defaults to "Noto Sans"
   font-optical-sizing: {auto|none};
-  font-weight: {100 to 900}; // Any value will work, though it is recommended to use the existing weight tokens
+  font-weight: {100 to 900}; // Any value will work, though it is recommended to use the existing weight tokens or define a component specific value.
+  // E.G. font-weight: var(--op-font-weight-bold);
   font-style: {normal|italic};
   font-variation-settings:
     "wdth" {62.5 to 100};
