@@ -1,5 +1,14 @@
-@import 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap';
-@import 'https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Noto+Serif:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap';
+
+// Noto Sans supports:
+// font-weight: {anything between 100 and 900}
+// font-stretch: {anything between 62.5% and 100%}
+// font-style: {normal or italic}
+
+// Noto Serif supports:
+// font-weight: {anything between 100 and 900}
+// font-stretch: {anything between 62.5% and 100%}
+// font-style: {normal or italic}
 
 // Using Mixins allows us to include them at a component level
 // as needed and override them.
@@ -240,7 +249,8 @@ $breakpoint-x-large: 1440px; // medium laptop
   * @tokens Font Family
   * @presenter FontFamily
   */
-  --op-font-family: 'Noto Sans', 'Noto Serif', sans-serif;
+  --op-font-family: 'Noto Sans', sans-serif;
+  --op-font-family-alt: 'Noto Serif', serif;
 }
 
 @mixin spacing-scales {
@@ -287,7 +297,7 @@ $breakpoint-x-large: 1440px; // medium laptop
   */
   --op-z-index-header: 500;
   --op-z-index-footer: 500;
-  --op-z-index-drawer: 700;
+  --op-z-index-sidebar: 700;
   --op-z-index-dialog: 800;
   --op-z-index-dialog-backdrop: 801;
   --op-z-index-dialog-content: 802;

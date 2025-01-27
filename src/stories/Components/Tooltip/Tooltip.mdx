@@ -23,7 +23,7 @@ Tooltips are build using data attributes on any element. Setting these will show
 This is a simple CSS only implementation of tooltips. As such, they will not automatically handle overflow clipping or container edge detection. You will need to handle that yourself or use a package.
 Here are some commonly used JavaScript packages that can address those issues:
 
-- [PopperJS](https://popper.js.org/)
+- [Floating UI](https://floating-ui.com)
 - [Shoelace Tooltip](https://shoelace.style/components/tooltip)
 - [TippyJS](https://atomiks.github.io/tippyjs/)
 
@@ -104,9 +104,9 @@ Tooltips have a maximum width and will wrap text if it is too long.
 
 ## Tooltip API
 
-Styles are built on css variables scoped to the tooltip.
+Styles are built on CSS variables scoped to the tooltip.
 
-Here are the variables that can be customized.
+Here are the variables that can be customized:
 
 {/* prettier-ignore-start */}
 ```css
@@ -132,7 +132,7 @@ Here are the variables that can be customized.
   }}
 ></div>
 
-The tooltip classes are built on a [sass placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The tooltip classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
 This allows multiple classes to share the same behavior. You can modify all tooltip behavior by overriding the `%toltip-global` placeholder selector and setting any properties:
 
