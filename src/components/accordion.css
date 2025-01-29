@@ -1,6 +1,6 @@
-%accordion-global {
-  // Public API (allowed to be overridden)
-  --_op-accordion-summary-min-height: calc(8 * var(--op-size-unit)); // 32px
+.accordion {
+  /* Public API (customizable component options) */
+  --_op-accordion-summary-min-height: calc(8 * var(--op-size-unit)); /* 32px */
 
   summary {
     display: grid;
@@ -37,8 +37,4 @@
       rotate: 0.25turn;
     }
   }
-}
-
-.accordion {
-  @extend %accordion-global;
 }
