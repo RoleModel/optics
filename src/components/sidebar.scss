@@ -133,11 +133,13 @@
   }
 
   &.sidebar--drawer.sidebar--responsive {
-    @media (width > $breakpoint-medium) {
+    // --op-breakpoint-medium
+    @media (width > 1024px) {
       @include sidebar-drawer-global;
     }
 
-    @media (width <= $breakpoint-medium) {
+    // --op-breakpoint-medium
+    @media (width <= 1024px) {
       @include sidebar-rail-global;
     }
   }
@@ -148,11 +150,13 @@
   }
 
   &.sidebar--compact.sidebar--responsive {
-    @media (width > $breakpoint-medium) {
+    // --op-breakpoint-medium
+    @media (width > 1024px) {
       @include sidebar-compact-global;
     }
 
-    @media (width <= $breakpoint-medium) {
+    // --op-breakpoint-medium
+    @media (width <= 1024px) {
       @include sidebar-rail-global;
     }
   }
