@@ -40,37 +40,37 @@ Tag can be used as a standalone component, however, it does have a few dependenc
 
 ### Readonly
 
-`.tag-readonly` Provides a Readonly tag. This is useful for displaying tags that cannot be removed.
+`.tag--readonly` Provides a Readonly tag. This is useful for displaying tags that cannot be removed.
 
 <Canvas of={TagStories.Readonly} />
 
 ### Primary
 
-`.tag-primary` Provides a Primary tag. This uses the primary color.
+`.tag--primary` Provides a Primary tag. This uses the primary color.
 
 <Canvas of={TagStories.Primary} />
 
 ### Danger
 
-`.tag-danger` Provides a Danger tag. This uses the danger alert color.
+`.tag--danger` Provides a Danger tag. This uses the danger alert color.
 
 <Canvas of={TagStories.Danger} />
 
 ### Warning
 
-`.tag-warning` Provides a Warning tag. This uses the warning alert color.
+`.tag--warning` Provides a Warning tag. This uses the warning alert color.
 
 <Canvas of={TagStories.Warning} />
 
 ### Info
 
-`.tag-info` Provides a Info tag. This uses the info alert color.
+`.tag--info` Provides a Info tag. This uses the info alert color.
 
 <Canvas of={TagStories.Info} />
 
 ### Notice
 
-`.tag-notice` Provides a Notice tag. This uses the notice alert color.
+`.tag--notice` Provides a Notice tag. This uses the notice alert color.
 
 <Canvas of={TagStories.Notice} />
 
@@ -85,12 +85,12 @@ Tag can be used as a standalone component, however, it does have a few dependenc
   }}
 ></div>
 
-The tag classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The tag classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple classes to share the same behavior. You can modify all tag behavior by overriding the `%tag-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all tag behavior by overriding the `.tag` placeholder selector and setting any properties:
 
 ```css
-%tag-global {
+.tag {
   background-color: var(--op-color-alerts-danger-base);
 }
 ```
@@ -98,7 +98,7 @@ This allows multiple classes to share the same behavior. You can modify all tag 
 If you need to override the behavior of a particular tag style, you can open the respective class and set or change properties
 
 ```css
-.tag-danger {
+.tag--danger {
   background-color: var(--op-color-alerts-danger-base);
 }
 ```
@@ -114,10 +114,11 @@ If you need to override the behavior of a particular tag style, you can open the
   }}
 ></div>
 
-Your application may need a custom tag. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.tag-{name} {
-  @extend %tag-global;
+.tag--{name} {
+  background-color:
+  color:
 }
 ```
