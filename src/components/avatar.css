@@ -54,6 +54,13 @@
     pointer-events: none;
   }
 
+  /* Focus State */
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: none;
+  }
+
   /* Hover State */
   &:hover:not(div, .avatar--disabled) {
     --_op-avatar-inner-border-color: var(--op-color-primary-base);
@@ -65,13 +72,6 @@
       background-color: var(--op-color-primary-base);
       opacity: var(--_op-avatar-hover-opacity);
     }
-  }
-
-  /* Focus State */
-  &:focus,
-  &:focus-visible,
-  &:focus-within {
-    outline: none;
   }
 
   &:focus-visible:not(.avatar--disabled) {
