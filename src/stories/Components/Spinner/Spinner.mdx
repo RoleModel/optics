@@ -103,21 +103,19 @@ Here are the variables that can be customized:
   }}
 ></div>
 
-The spinner classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The spinner classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple classes to share the same behavior. You can modify all spinner behavior by overriding the `%spinner-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all spinner behavior by overriding the `.spinner` placeholder selector and setting any properties:
 
 ```css
-%spinner-global {
+.spinner {
 }
 ```
 
 If you need to override the behavior of a particular spinner style, you can open the respective class and set or change properties:
 
 ```css
-.spinner {
-  @extend %spinner-global;
-
+.spinner--modifier {
   --_op-spinner-track-color: var(--op-color-primary-minus-three);
 }
 ```
@@ -133,12 +131,10 @@ If you need to override the behavior of a particular spinner style, you can open
   }}
 ></div>
 
-Your application may need a custom spinner. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.spinner-{name} {
-  @extend %spinner-global;
-
+.spinner--{name} {
   --_op-spinner-indicator-color: red;
   --_op-spinner-track-color: purple;
 }
