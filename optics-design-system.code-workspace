@@ -18,6 +18,7 @@
       "esbenp.prettier-vscode",
       "stylelint.vscode-stylelint",
       "tintinweb.graphviz-interactive-preview",
+      "unifiedjs.vscode-mdx",
     ],
   },
 }
