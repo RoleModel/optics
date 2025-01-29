@@ -12,7 +12,7 @@ export const createAlert = ({
 }) => {
   const element = document.createElement('div')
 
-  element.className = [`alert-${warningLevel}`, `alert--${style}`].join(' ')
+  element.className = ['alert', `alert--${warningLevel}`, `alert--${style}`].join(' ')
 
   if (icon) {
     const iconElement = createIcon({ name: icon })
