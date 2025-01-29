@@ -1,13 +1,13 @@
-%switch-global {
-  // Public API (allowed to be overridden)
-  --_op-switch-height-small: calc(4 * var(--op-size-unit)); // 16px
-  --_op-switch-height-large: calc(6 * var(--op-size-unit)); // 24px
-  --_op-switch-width-small: calc(7 * var(--op-size-unit)); // 28px
-  --_op-switch-width-large: calc(11 * var(--op-size-unit)); // 44px
+.switch {
+  /* Public API (allowed to be overridden) */
+  --_op-switch-height-small: calc(4 * var(--op-size-unit)); /* 16px */
+  --_op-switch-height-large: calc(6 * var(--op-size-unit)); /* 24px */
+  --_op-switch-width-small: calc(7 * var(--op-size-unit)); /* 28px */
+  --_op-switch-width-large: calc(11 * var(--op-size-unit)); /* 44px */
   --_op-switch-opacity-disabled: var(--op-opacity-disabled);
   --_op-switch-switch-padding: var(--op-space-2x-small);
 
-  // Private API (don't touch these)
+  /* Private API (don't touch these) */
   --__op-switch-width: var(--_op-switch-width-large);
   --__op-switch-height: var(--_op-switch-height-large);
   --__op-switch-switch-size: calc(var(--__op-switch-height) - var(--_op-switch-switch-padding));
@@ -16,6 +16,34 @@
   position: relative;
   display: flex;
   align-items: center;
+
+  label {
+    position: relative;
+    display: block;
+    width: var(--__op-switch-width);
+    height: var(--__op-switch-height);
+    border-radius: var(--op-radius-pill);
+    background: var(--op-color-neutral-base);
+    box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
+    text-indent: -9999px; /* Normally text would not be put in the label, but this hides it in case you do put text in the label */
+
+    &::after {
+      position: absolute;
+      top: var(--__op-switch-half-switch-padding);
+      left: var(--__op-switch-half-switch-padding);
+      width: var(--__op-switch-switch-size);
+      height: var(--__op-switch-switch-size);
+      border-radius: var(--op-radius-circle);
+      background-color: var(--op-color-neutral-plus-eight);
+      content: '';
+      transition: var(--op-transition-input);
+    }
+  }
+
+  /* Prevent labels after the toggle being full width */
+  & + label {
+    width: fit-content;
+  }
 
   input {
     width: 0;
@@ -66,30 +94,7 @@
     }
   }
 
-  label {
-    position: relative;
-    display: block;
-    width: var(--__op-switch-width);
-    height: var(--__op-switch-height);
-    border-radius: var(--op-radius-pill);
-    background: var(--op-color-neutral-base);
-    box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
-    text-indent: -9999px; // Normally text would not be put in the label, but this hides it in case you do put text in the label
-
-    &::after {
-      position: absolute;
-      top: var(--__op-switch-half-switch-padding);
-      left: var(--__op-switch-half-switch-padding);
-      width: var(--__op-switch-switch-size);
-      height: var(--__op-switch-switch-size);
-      border-radius: var(--op-radius-circle);
-      background-color: var(--op-color-neutral-plus-eight);
-      content: '';
-      transition: var(--op-transition-input);
-    }
-  }
-
-  // Size Modifiers
+  /* Size Modifiers */
   &.switch--small {
     --__op-switch-width: var(--_op-switch-width-small);
     --__op-switch-height: var(--_op-switch-height-small);
@@ -99,13 +104,4 @@
     --__op-switch-width: var(--_op-switch-width-large);
     --__op-switch-height: var(--_op-switch-height-large);
   }
-
-  // Prevent labels after the toggle being full width
-  & + label {
-    width: fit-content;
-  }
-}
-
-.switch {
-  @extend %switch-global;
 }
