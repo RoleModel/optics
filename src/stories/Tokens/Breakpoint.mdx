@@ -25,8 +25,7 @@ Media queries exist at the document level and therefore cannot access custom pro
 
 [CSS ENV Variables](https://drafts.csswg.org/css-env-1/) aims at addressing this by allowing variables at the global document level.
 
-The pattern we use for media queries is to define the variables in the `:root` as a comment block. When trying to apply the variable in a media
-query, we have to use the pixel values themselves with a comment above referring to the variable assigned to that value.
+For common breakpoints, define the variables in the `:root` as a comment block. When using them, use the pixel value, but include a comment above with the named breakpoint. This makes it searchable and provide a bit of intention to what the value means.
 
 ## Usage
 
