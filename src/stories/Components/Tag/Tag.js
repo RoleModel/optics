@@ -16,7 +16,7 @@ export const createTag = ({ label, type = 'readonly', iconLeft = false, iconRigh
     tag.append(createButton({ priority: 'default', noBorder: true, icon: 'close', pill: true }))
   }
 
-  tag.className = [`tag tag--${type}`].filter(Boolean).join(' ')
+  tag.className = ['tag', `tag--${type}`].filter(Boolean).join(' ')
 
   return tag
 }
