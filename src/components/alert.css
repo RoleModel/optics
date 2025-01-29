@@ -5,13 +5,13 @@
   border-radius: var(--op-radius-medium);
   gap: var(--op-space-small);
 
-  // Elements
+  /* Elements */
 
   .alert__icon {
-    --op-mso-optical-sizing: 40; // .icon--large styling
-    --op-mso-weight: var(--op-font-weight-bold); // .icon--weight-bold styling
+    --op-mso-optical-sizing: 40; /* .icon--large styling */
+    --op-mso-weight: var(--op-font-weight-bold); /* .icon--weight-bold styling */
 
-    font-size: var(--op-font-large); // .icon--large styling
+    font-size: var(--op-font-large); /* .icon--large styling */
     line-height: var(--op-line-height-dense);
   }
 
@@ -31,7 +31,7 @@
     font-size: var(--op-font-small);
   }
 
-  // Modifiers
+  /* Modifiers */
 
   &.alert--flash {
     position: fixed;
@@ -71,7 +71,7 @@
     }
   }
 
-  // alert--alert is an alias for alert--danger. See Alert.mdx for reasoning.
+  /* alert--alert is an alias for alert--danger. See Alert.mdx for reasoning. */
   &.alert--danger,
   &.alert--alert {
     background-color: var(--op-color-alerts-danger-plus-eight);
