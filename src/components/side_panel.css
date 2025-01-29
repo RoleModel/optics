@@ -1,6 +1,6 @@
-%side-panel-global {
-  // Public API (allowed to be overridden)
-  --_op-side-panel-width: calc(54 * var(--op-size-unit)); // 216px
+.side-panel {
+  /* Public API (customizable component options) */
+  --_op-side-panel-width: calc(54 * var(--op-size-unit)); /* 216px */
   --_op-side-panel-header-padding: var(--op-space-medium);
   --_op-side-panel-body-padding: var(--op-space-medium);
   --_op-side-panel-footer-padding: var(--op-space-medium);
@@ -15,7 +15,7 @@
   background-color: var(--op-color-background);
   color: var(--op-color-on-background);
 
-  // Modifiers
+  /* Modifiers */
   &.side-panel--border-left {
     box-shadow: var(--op-border-left) var(--op-color-border);
   }
@@ -28,7 +28,7 @@
     box-shadow: var(--op-border-x);
   }
 
-  // Elements
+  /* Elements */
   .side-panel__header {
     &.side-panel__header--padded {
       padding: var(--_op-side-panel-header-padding);
@@ -87,8 +87,4 @@
       padding-block: var(--_op-side-panel-section-padding);
     }
   }
-}
-
-.side-panel {
-  @extend %side-panel-global;
 }
