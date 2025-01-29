@@ -9,12 +9,14 @@ export const createCard = ({
 }) => {
   const card = document.createElement('div')
 
-  const coreClass = padded ? 'card-padded' : 'card'
-  const condensedClass = condensed ? 'card--condensed' : ''
-  const shadowClass = shadow === 'none' ? '' : `card--shadow-${shadow}`
-  const classes = [coreClass, condensedClass, shadowClass].filter(Boolean).join(' ')
-
-  card.className = classes
+  card.className = [
+    'card',
+    padded ? 'card--padded' : '',
+    condensed ? 'card--condensed' : '',
+    shadow === 'none' ? '' : `card--shadow-${shadow}`,
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   if (!header && !body && !footer) {
     card.innerHTML = label
