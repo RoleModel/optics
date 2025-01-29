@@ -1,8 +1,8 @@
-// Inspired by https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/
+/* Inspired by https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/ */
 
-%tooltip-global {
-  // Public API
-  --_op-tooltip-max-width: calc(50 * var(--op-size-unit)); // 200px
+[data-tooltip-text] {
+  /* Public API (customizable component options) */
+  --_op-tooltip-max-width: calc(50 * var(--op-size-unit)); /* 200px */
   --_op-tooltip-padding: var(--op-space-x-small) var(--op-space-medium);
   --_op-tooltip-background-color: var(--op-color-neutral-minus-max);
   --_op-tooltip-text-color: var(--op-color-neutral-on-minus-max);
@@ -31,7 +31,7 @@
     background-color: var(--_op-tooltip-background-color);
     color: var(--_op-tooltip-text-color);
     content: attr(data-tooltip-text);
-    font-family: var(--op-font-family); // Makes tooltips on icons work
+    font-family: var(--op-font-family); /* Makes tooltips on icons work */
     font-size: var(--_op-tooltip-tooltip-font-size);
     overflow-wrap: break-word;
     pointer-events: none;
@@ -131,8 +131,4 @@
       margin-left: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
     }
   }
-}
-
-[data-tooltip-text] {
-  @extend %tooltip-global;
 }
