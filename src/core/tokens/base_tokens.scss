@@ -102,11 +102,18 @@
   --op-breakpoint-x-large: 1440px; // medium laptop
 }
 
-$breakpoint-x-small: 512px; // vertical phone
-$breakpoint-small: 768px; // vertical ipad
-$breakpoint-medium: 1024px; // landscape ipad
-$breakpoint-large: 1280px; // small laptop
-$breakpoint-x-large: 1440px; // medium laptop
+/*
+  Breakpoints
+  Because CSS does not support any form of custom variables in @media() or @container() queries,
+  and because env() variables do not support custom values, we have to use raw values. We're
+  documenting the variables here to assist with updating the raw values as needed.
+
+  --op-breakpoint-x-small: 512px;
+  --op-breakpoint-small: 768px;
+  --op-breakpoint-medium: 1024px;
+  --op-breakpoint-large: 1280px;
+  --op-breakpoint-x-large: 1440px;
+*/
 
 @mixin border-radius {
   /**
