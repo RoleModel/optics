@@ -19,6 +19,6 @@
   /* ... Gap */
   .pagination__divider {
     height: 100%;
-    padding: 0 var(--op-space-x-small);
+    padding-inline: var(--op-space-x-small);
   }
 }

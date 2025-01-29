@@ -14,8 +14,9 @@
 
   width: 100%;
   height: var(--__op-divider-height);
-  margin: var(--__op-divider-padding) 0;
   background-color: var(--op-color-border);
+  margin-block: var(--__op-divider-padding);
+  margin-inline: 0;
 
   /* Size Modifiers */
   &.divider--small {
@@ -48,6 +49,7 @@
     width: var(--__op-divider-height);
     height: 100%;
     min-height: var(--_op-divider-vertical-min-height);
-    margin: 0 var(--__op-divider-padding);
+    margin-block: 0;
+    margin-inline: var(--__op-divider-padding);
   }
 }

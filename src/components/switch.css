@@ -29,13 +29,13 @@
 
     &::after {
       position: absolute;
-      top: var(--__op-switch-half-switch-padding);
-      left: var(--__op-switch-half-switch-padding);
       width: var(--__op-switch-switch-size);
       height: var(--__op-switch-switch-size);
       border-radius: var(--op-radius-circle);
       background-color: var(--op-color-neutral-plus-eight);
       content: '';
+      inset-block-start: var(--__op-switch-half-switch-padding);
+      inset-inline-start: var(--__op-switch-half-switch-padding);
       transition: var(--op-transition-input);
     }
   }
@@ -48,7 +48,7 @@
   input {
     width: 0;
     height: 0;
-    margin-right: calc(-1 * var(--op-space-x-small));
+    margin-inline-end: calc(-1 * var(--op-space-x-small));
 
     &:disabled {
       visibility: hidden;
