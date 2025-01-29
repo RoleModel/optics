@@ -41,27 +41,27 @@ Alert can be used as a standalone component, however, it does have a few depende
 
 ### Warning
 
-`.alert-warning` Provides a warning styled message.
+`.alert--warning` Provides a warning styled message.
 
 <Canvas of={AlertStories.Warning} />
 
 ### Danger
 
-`.alert-danger` Provides a danger styled message.
+`.alert--danger` Provides a danger styled message.
 
-`.alert-alert` is an alias for `.alert-danger`. Since RoleModel commonly uses [Rails](https://rubyonrails.org/) to develop projects, adding this alias allows this to be used for flash messages without having to change the default in rails. [Devise](https://github.com/heartcombo/devise) is also commonly used and cannot easily be configured away from this.
+`.alert--alert` is an alias for `.alert--danger`. Since RoleModel commonly uses [Rails](https://rubyonrails.org/) to develop projects, adding this alias allows this to be used for flash messages without having to change the default in rails. [Devise](https://github.com/heartcombo/devise) is also commonly used and cannot easily be configured away from this.
 
 <Canvas of={AlertStories.Danger} />
 
 ### Info
 
-`.alert-info` Provides an info styled message.
+`.alert--info` Provides an info styled message.
 
 <Canvas of={AlertStories.Info} />
 
 ### Notice
 
-`.alert-notice` Provides a notice styled message.
+`.alert--notice` Provides a notice styled message.
 
 <Canvas of={AlertStories.Notice} />
 
@@ -109,7 +109,7 @@ The muted or filled classes would be added at the top level.
 icon, title, and the final (dismissible close) icon are all optional.
 
 ```html
-<div class='alert-danger'>
+<div class='alert alert--danger'>
   <span class='alert__icon material-symbols-outlined'>error</div>
   <div class='alert__messages'>
     <div class='alert__title'>Error</div>
@@ -131,12 +131,12 @@ icon, title, and the final (dismissible close) icon are all optional.
   }}
 ></div>
 
-The alert classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The alert classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple alert classes to share the same behavior. You can modify all alerts behavior by overriding the `%alert-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all alert behavior by overriding the `.alert` placeholder selector and setting any properties:
 
 ```css
-%alert-global {
+.alert {
   border-radius: var(--op-radius-large);
 }
 ```
@@ -145,7 +145,7 @@ If you need to override the behavior of a particular alert style, you can open t
 
 ```css
 // This will only affect the warning alert, but not danger, info, or notice.
-.alert-warning {
+.alert--warning {
   background-color: red;
   color: white;
 }
@@ -162,12 +162,10 @@ If you need to override the behavior of a particular alert style, you can open t
   }}
 ></div>
 
-Your application may need a custom alert. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.alert-{name} {
-  @extend %alert-global;
-
+.alert--{name} {
   background-color:
   box-shadow:
   color:
@@ -199,9 +197,7 @@ Your application may need a custom alert. To add one, just follow this template:
 ```
 
 ```css
-.alert-purple {
-  @extend %alert-global;
-
+.alert--purple {
   background-color: verylightpurple;
   box-shadow: var(--op-border-all) purple;
   color: purple;
