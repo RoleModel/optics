@@ -1,9 +1,9 @@
-%breadcrumbs-global {
-  // Public API (allowed to be overridden)
+.breadcrumbs {
+  /* Public API (customizable component options) */
   --_op-breadcrumbs-font-size-small: var(--op-font-x-small);
   --_op-breadcrumbs-font-size-large: var(--op-font-small);
 
-  // Private API (don't touch these)
+  /* Private API (component option defaults) */
   --__op-breadcrumbs-font-size: var(--_op-breadcrumbs-font-size-small);
 
   display: flex;
@@ -11,7 +11,7 @@
   align-items: baseline;
   gap: var(--op-space-x-small);
 
-  // Elements
+  /* Elements */
   .breadcrumbs__link {
     font-size: var(--__op-breadcrumbs-font-size);
     text-decoration: none;
@@ -26,7 +26,7 @@
     font-weight: var(--op-font-weight-bold);
   }
 
-  // Modifiers
+  /* Modifiers */
   &.breadcrumbs--small {
     --__op-breadcrumbs-font-size: var(--_op-breadcrumbs-font-size-small);
   }
@@ -34,8 +34,4 @@
   &.breadcrumbs--large {
     --__op-breadcrumbs-font-size: var(--_op-breadcrumbs-font-size-large);
   }
-}
-
-.breadcrumbs {
-  @extend %breadcrumbs-global;
 }
