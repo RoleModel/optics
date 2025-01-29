@@ -18,19 +18,19 @@ They are implemented in two ways. First as CSS custom properties (css variables)
 
 The CSS variables can be used like any of the other tokens for things requiring calculations or max widths.
 
-The The guided pixel assignments can be used for media queries.
+The guided pixel assignments can be used for media queries.
 
 Custom properties (css variables) currently cannot be used in a media query since they get defined in an element scope (`:root` in our case).
 Media queries exist at the document level and therefore cannot access custom properties.
 
 [CSS ENV Variables](https://drafts.csswg.org/css-env-1/) aims at addressing this by allowing variables at the global document level.
 
-The pattern we use for media queries is to define the variables in the :root as a comment block. When trying to apply the variable in a media
+The pattern we use for media queries is to define the variables in the `:root` as a comment block. When trying to apply the variable in a media
 query, we have to use the pixel values themselves with a comment above referring to the variable assigned to that value.
 
 ## Usage
 
-These tokens can be applied in a media query to create responsive behavior.
+These token values can be applied in a media query to create responsive behavior.
 
 ```css
 .small-area {
