@@ -85,11 +85,20 @@
   --op-opacity-full: 1;
 }
 
-// Breakpoints are duplicated here for use as variables with calculations and for use in @media queries.
-// We use SCSS variables outside the root since support for custom properties / css variables
-// is not yet available
-// https://drafts.csswg.org/css-env-1/
-// https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+/*
+  Breakpoints
+  CSS does not support using variables within @media or @container queries. Environment variables are drafted but likely to not be implemented soon.
+  https://drafts.csswg.org/css-env-1/
+  https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+
+  Here is a list of breakpoints used throughout Optics
+
+  --op-breakpoint-x-small: 512px;
+  --op-breakpoint-small: 768px;
+  --op-breakpoint-medium: 1024px;
+  --op-breakpoint-large: 1280px;
+  --op-breakpoint-x-large: 1440px;
+*/
 @mixin breakpoints {
   /**
   * @tokens Breakpoints
@@ -101,19 +110,6 @@
   --op-breakpoint-large: 1280px; // small laptop
   --op-breakpoint-x-large: 1440px; // medium laptop
 }
-
-/*
-  Breakpoints
-  Because CSS does not support any form of custom variables in @media() or @container() queries,
-  and because env() variables do not support custom values, we have to use raw values. We're
-  documenting the variables here to assist with updating the raw values as needed.
-
-  --op-breakpoint-x-small: 512px;
-  --op-breakpoint-small: 768px;
-  --op-breakpoint-medium: 1024px;
-  --op-breakpoint-large: 1280px;
-  --op-breakpoint-x-large: 1440px;
-*/
 
 @mixin border-radius {
   /**
