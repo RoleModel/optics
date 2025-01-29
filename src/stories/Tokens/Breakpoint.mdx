@@ -14,18 +14,19 @@ import { DesignTokenDocBlock } from 'storybook-design-token'
 
 Breakpoint tokens are used to define common device sizes for use within media queries or max widths.
 
-They are implemented in two ways. First as CSS custom properties (css variables) and second as SCSS variables.
+They are implemented in two ways. First as CSS custom properties (css variables) and second as guided pixel assignments.
 
 The CSS variables can be used like any of the other tokens for things requiring calculations or max widths.
 
-The SCSS variables can be used for media queries.
+The The guided pixel assignments can be used for media queries.
 
 Custom properties (css variables) currently cannot be used in a media query since they get defined in an element scope (`:root` in our case).
 Media queries exist at the document level and therefore cannot access custom properties.
 
 [CSS ENV Variables](https://drafts.csswg.org/css-env-1/) aims at addressing this by allowing variables at the global document level.
 
-[SCSS Workaround](https://bholmes.dev/blog/alternative-to-css-variable-media-queries/) is the pattern we follow to achieve this.
+The pattern we use for media queries is to define the variables in the :root as a comment block. When trying to apply the variable in a media
+query, we have to use the pixel values themselves with a comment above referring to the variable assigned to that value.
 
 ## Usage
 
@@ -36,7 +37,19 @@ These tokens can be applied in a media query to create responsive behavior.
   max-width: var(--op-breakpoint-small);
 }
 
-@media (width > $breakpoint-medium) {
+:root {
+  /*
+  Breakpoints
+  These breakpoint values will be used as a guide for media queries.
+  Annotate the uses with a comment above referring to the variable being referenced.
+
+  --op-breakpoint-medium: 1024px;
+  ...
+  */
+}
+
+// --op-breakpoint-medium
+@media (width > 1024px) {
   background-color: var(--op-color-primary-base);
   color: var(--op-color-primary-on-base);
 }
