@@ -1,10 +1,10 @@
-%text-pair-global {
-  // Public API (allowed to be overridden)
+.text-pair {
+  /* Public API (customizable component options) */
   --_op-text-pair-font-size-small: var(--op-font-small);
   --_op-text-pair-font-size-medium: var(--op-font-medium);
   --_op-text-pair-font-size-large: var(--op-font-large);
 
-  // Private API (don't touch these)
+  /* Private API (component option defaults) */
   --__op-text-pair-title-font-size: var(--_op-text-pair-font-size-medium);
   --__op-text-pair-subtitle-font-size: var(--_op-text-pair-font-size-small);
 
@@ -52,8 +52,4 @@
       --__op-text-pair-subtitle-font-size: var(--_op-text-pair-font-size-large);
     }
   }
-}
-
-.text-pair {
-  @extend %text-pair-global;
 }
