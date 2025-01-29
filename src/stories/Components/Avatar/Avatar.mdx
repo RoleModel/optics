@@ -96,12 +96,12 @@ Here are the variables that can be customized:
   }}
 ></div>
 
-The avatar classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The avatar classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple classes to share the same behavior. You can modify all avatar behavior by overriding the `%avatar-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all avatar behavior by overriding the `.avatar` placeholder selector and setting any properties:
 
 ```css
-%avatar-global {
+.avatar {
 }
 ```
 
@@ -116,12 +116,10 @@ This allows multiple classes to share the same behavior. You can modify all avat
   }}
 ></div>
 
-Your application may need a custom avatar. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.avatar-{name} {
-  @extend %avatar-global;
-
+.avatar--{name} {
   --_op-avatar-border-radius: var(--op-radius-2x-large);
 }
 ```
