@@ -1,0 +1,168 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--op-space-2x-small);
+  border-radius: var(--op-radius-pill);
+  background-color: var(--op-color-neutral-plus-four);
+  color: var(--op-color-neutral-on-plus-four);
+  font-size: var(--op-font-x-small);
+  font-weight: var(--op-font-weight-bold);
+  letter-spacing: var(--op-letter-spacing-label);
+  line-height: var(--op-line-height-dense);
+  user-select: none;
+  white-space: nowrap;
+
+  /* Elements */
+
+  .tag__label {
+    padding-inline: var(--op-space-2x-small);
+  }
+
+  .btn--icon {
+    --__op-btn-height: var(--op-font-medium);
+
+    /* Hover State */
+    &:hover {
+      background-color: var(--op-color-neutral-minus-three);
+      box-shadow: none;
+      color: var(--op-color-neutral-on-minus-three);
+    }
+
+    /* Focus State */
+    &:focus-visible {
+      background-color: var(--op-color-neutral-base);
+      box-shadow: var(--op-input-focus-neutral);
+      color: var(--op-color-neutral-on-base);
+    }
+  }
+
+  /* Modifiers */
+
+  &.tag--read-only {
+    /* This is here for consistency */
+  }
+
+  &.tag--primary {
+    background-color: var(--op-color-primary-base);
+    color: var(--op-color-primary-on-base);
+
+    .btn--icon {
+      color: var(--op-color-primary-on-base);
+
+      /* Hover State */
+      &:hover {
+        background-color: var(--op-color-primary-minus-three);
+        box-shadow: none;
+        color: var(--op-color-primary-on-minus-three);
+      }
+
+      /* Focus State */
+      &:focus-visible {
+        background-color: var(--op-color-primary-base);
+        box-shadow: var(--op-input-focus-primary);
+        color: var(--op-color-primary-on-base);
+      }
+    }
+  }
+
+  &.tag--danger {
+    background-color: var(--op-color-alerts-danger-base);
+    color: var(--op-color-alerts-danger-on-base);
+
+    /* stylelint-disable no-descending-specificity */
+    .btn--icon {
+      color: var(--op-color-alerts-danger-on-base);
+
+      /* Hover State */
+      &:hover {
+        background-color: var(--op-color-alerts-danger-minus-three);
+        box-shadow: none;
+        color: var(--op-color-alerts-danger-on-minus-three);
+      }
+
+      /* Focus State */
+      &:focus-visible {
+        background-color: var(--op-color-alerts-danger-base);
+        box-shadow: var(--op-input-focus-danger);
+        color: var(--op-color-alerts-danger-on-base);
+      }
+    }
+    /* stylelint-enable no-descending-specificity */
+  }
+
+  &.tag--warning {
+    background-color: var(--op-color-alerts-warning-base);
+    color: var(--op-color-alerts-warning-on-base);
+
+    /* stylelint-disable no-descending-specificity */
+    .btn--icon {
+      color: var(--op-color-alerts-warning-on-base);
+
+      /* Hover State */
+      &:hover {
+        background-color: var(--op-color-alerts-warning-minus-three);
+        box-shadow: none;
+        color: var(--op-color-alerts-warning-on-minus-three);
+      }
+
+      /* Focus State */
+      &:focus-visible {
+        background-color: var(--op-color-alerts-warning-base);
+        box-shadow: var(--op-input-focus-warning);
+        color: var(--op-color-alerts-warning-on-base);
+      }
+    }
+    /* stylelint-enable no-descending-specificity */
+  }
+
+  &.tag--info {
+    background-color: var(--op-color-alerts-info-base);
+    color: var(--op-color-alerts-info-on-base);
+
+    /* stylelint-disable no-descending-specificity */
+    .btn--icon {
+      color: var(--op-color-alerts-info-on-base);
+
+      /* Hover State */
+      &:hover {
+        background-color: var(--op-color-alerts-info-minus-three);
+        box-shadow: none;
+        color: var(--op-color-alerts-info-on-minus-three);
+      }
+
+      /* Focus State */
+      &:focus-visible {
+        background-color: var(--op-color-alerts-info-base);
+        box-shadow: var(--op-input-focus-info);
+        color: var(--op-color-alerts-info-on-base);
+      }
+    }
+    /* stylelint-enable no-descending-specificity */
+  }
+
+  &.tag--notice {
+    background-color: var(--op-color-alerts-notice-base);
+    color: var(--op-color-alerts-notice-on-base);
+
+    /* stylelint-disable no-descending-specificity */
+    .btn--icon {
+      color: var(--op-color-alerts-notice-on-base);
+
+      /* Hover State */
+      &:hover {
+        background-color: var(--op-color-alerts-notice-minus-three);
+        box-shadow: none;
+        color: var(--op-color-alerts-notice-on-minus-three);
+      }
+
+      /* Focus State */
+      &:focus-visible {
+        background-color: var(--op-color-alerts-notice-base);
+        box-shadow: var(--op-input-focus-notice);
+        color: var(--op-color-alerts-notice-on-base);
+      }
+    }
+    /* stylelint-enable no-descending-specificity */
+  }
+}
