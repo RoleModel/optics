@@ -91,7 +91,8 @@
   }
 
   // https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
-  @media (max-width: $breakpoint-small) {
+  // --op-breakpoint-small
+  @media (width <= 768px) {
     --__op-btn-height: var(--_op-btn-height-large);
     --__op-btn-font-size: var(--_op-btn-font-large);
 

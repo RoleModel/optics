@@ -202,7 +202,8 @@
     }
   }
 
-  @media (width <= $breakpoint-small) {
+  // --op-breakpoint-small
+  @media (width <= 768px) {
     flex-direction: column;
 
     .btn {
