@@ -9,7 +9,6 @@ export const useTheme = makeDecorator({
     const newTheme = context.globals.theme
 
     if (currentTheme !== newTheme) {
-      console.log('should change ')
       document.documentElement.setAttribute('data-theme-mode', newTheme)
     }
 
