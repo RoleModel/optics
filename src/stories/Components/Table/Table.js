@@ -11,7 +11,7 @@ export const createTable = ({
   paginationInFooter = false,
 }) => {
   const tableContainer = document.createElement('div')
-  tableContainer.className = 'table-container'
+  tableContainer.className = 'table table--container'
 
   const table = document.createElement('table')
 
@@ -24,7 +24,8 @@ export const createTable = ({
   }
 
   table.className = [
-    style === 'default' ? 'table' : `table-${style}`,
+    'table',
+    style !== 'default' ? `table--${style}` : '',
     `table--${layout}-layout`,
     `table--${density}-density`,
     striped === 'off' ? '' : `table--${striped}-striped`,
