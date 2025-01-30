@@ -80,13 +80,12 @@ Another common pattern is to allow users to change how many items are shown per 
   }}
 ></div>
 
-The pagination classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The pagination classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple classes to share the same behavior. You can modify all pagination behavior by overriding the `%pagination-global` placeholder selector
-and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all pagination behavior by overriding the `%pagination-global` selector and setting any properties:
 
 ```css
-%pagination-global {
+.pagination {
 }
 ```
 
@@ -104,7 +103,6 @@ and setting any properties:
 Your application may need a custom pagination. To add one, just follow this template:
 
 ```css
-  @extend %pagination-global;
-.pagination-{name} {
+.pagination--{name} {
 }
 ```

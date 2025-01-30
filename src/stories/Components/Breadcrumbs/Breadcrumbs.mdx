@@ -79,20 +79,20 @@ Here are the variables that can be customized:
   }}
 ></div>
 
-The breadcrumbs classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The breadcrumbs classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple classes to share the same behavior. You can modify all breadcrumbs behavior by overriding the `%breadcrumbs-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all breadcrumbs behavior by overriding the `.breadcrumbs` selector and setting any properties:
 
 ```css
-%breadcrumbs-global {
+.breadcrumbs {
   align-items: start;
 }
 ```
 
-If you want to override how the size modifier behaves, you can use API described above to change which font size each size uses.
+If you want to override how the size modifier behaves, you can use the API described above to change which font size each size uses.
 
 ```css
-%btn-global {
+.breadcrumbs {
   --_op-breadcrumbs-font-size-small: var(--op-font-4x-large);
   --_op-breadcrumbs-font-size-large: var(--op-font-6x-large);
 }
@@ -109,12 +109,10 @@ If you want to override how the size modifier behaves, you can use API described
   }}
 ></div>
 
-Your application may need a custom breadcrumbs component. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.breadcrumbs-{name} {
-  @extend %breadcrumbs-global;
-
+.breadcrumbs--{name} {
   background-color:
   color:
 }

@@ -1,9 +1,9 @@
-%pagination-global {
+.pagination {
   display: flex;
   align-items: center;
   gap: 0;
 
-  // Showing Dropdown
+  /* Showing Dropdown */
   .form-group {
     align-items: center;
 
@@ -16,13 +16,9 @@
     }
   }
 
-  // ... Gap
+  /* ... Gap */
   .pagination__divider {
     height: 100%;
-    padding: 0 var(--op-space-x-small);
+    padding-inline: var(--op-space-x-small);
   }
-}
-
-.pagination {
-  @extend %pagination-global;
 }

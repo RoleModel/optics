@@ -1,6 +1,6 @@
 export const createDivider = ({ vertical = false, size = 'small', spacing = 'none' }) => {
   const element = document.createElement('div')
-  element.className = vertical ? 'divider-vertical' : 'divider'
+  element.className = vertical ? 'divider divider--vertical' : 'divider'
 
   if (size !== 'small') {
     element.classList.add(`divider--${size}`)

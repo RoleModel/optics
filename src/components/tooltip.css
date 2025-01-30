@@ -1,8 +1,8 @@
-// Inspired by https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/
+/* Inspired by https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/ */
 
-%tooltip-global {
-  // Public API
-  --_op-tooltip-max-width: calc(50 * var(--op-size-unit)); // 200px
+[data-tooltip-text] {
+  /* Public API (customizable component options) */
+  --_op-tooltip-max-width: calc(50 * var(--op-size-unit)); /* 200px */
   --_op-tooltip-padding: var(--op-space-x-small) var(--op-space-medium);
   --_op-tooltip-background-color: var(--op-color-neutral-minus-max);
   --_op-tooltip-text-color: var(--op-color-neutral-on-minus-max);
@@ -31,7 +31,7 @@
     background-color: var(--_op-tooltip-background-color);
     color: var(--_op-tooltip-text-color);
     content: attr(data-tooltip-text);
-    font-family: var(--op-font-family); // Makes tooltips on icons work
+    font-family: var(--op-font-family); /* Makes tooltips on icons work */
     font-size: var(--_op-tooltip-tooltip-font-size);
     overflow-wrap: break-word;
     pointer-events: none;
@@ -59,80 +59,76 @@
   &:not([data-tooltip-position]) {
     &::before,
     &::after {
-      left: 50%;
+      inset-inline-start: 50%;
       transform: translateX(-50%);
     }
 
     &::before {
-      bottom: 100%;
-      margin-bottom: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      inset-block-end: 100%;
+      margin-block-end: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
     }
 
     &::after {
-      bottom: 100%;
       border-color: var(--_op-tooltip-background-color) transparent transparent transparent;
-      margin-bottom: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      inset-block-end: 100%;
+      margin-block-end: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
     }
   }
 
   &[data-tooltip-position='left'] {
     &::before,
     &::after {
-      top: 50%;
+      inset-block-start: 50%;
       transform: translateY(-50%);
     }
 
     &::before {
-      right: 100%;
-      margin-right: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      inset-inline-end: 100%;
+      margin-inline-end: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
     }
 
     &::after {
-      right: 100%;
       border-color: transparent transparent transparent var(--_op-tooltip-background-color);
-      margin-right: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      inset-inline-end: 100%;
+      margin-inline-end: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
     }
   }
 
   &[data-tooltip-position='bottom'] {
     &::before,
     &::after {
-      left: 50%;
+      inset-inline-start: 50%;
       transform: translateX(-50%);
     }
 
     &::before {
-      top: 100%;
-      margin-top: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      inset-block-start: 100%;
+      margin-block-start: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
     }
 
     &::after {
-      top: 100%;
       border-color: transparent transparent var(--_op-tooltip-background-color) transparent;
-      margin-top: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      inset-block-start: 100%;
+      margin-block-start: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
     }
   }
 
   &[data-tooltip-position='right'] {
     &::before,
     &::after {
-      top: 50%;
+      inset-block-start: 50%;
       transform: translateY(-50%);
     }
 
     &::before {
-      left: 100%;
-      margin-left: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      inset-inline-start: 100%;
+      margin-inline-start: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
     }
 
     &::after {
-      left: 100%;
       border-color: transparent var(--_op-tooltip-background-color) transparent transparent;
-      margin-left: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      inset-inline-start: 100%;
+      margin-inline-start: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
     }
   }
-}
-
-[data-tooltip-text] {
-  @extend %tooltip-global;
 }

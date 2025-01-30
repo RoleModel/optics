@@ -43,7 +43,7 @@ Divider can be used as a standalone component, however, it does have a few depen
 
 ### Vertical
 
-`.divider-vertical` Provides a basic vertical divider.
+`.divider.divider--vertical` Provides a basic vertical divider.
 
 <Canvas of={DividerStories.Vertical} />
 
@@ -88,19 +88,19 @@ Here are the variables that can be customized:
   }}
 ></div>
 
-The divider classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The divider classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple classes to share the same behavior. You can modify all divider behavior by overriding the `%divider-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all divider behavior by overriding the `.divider` selector and setting any properties:
 
 ```css
-%divider-global {
+.divider {
 }
 ```
 
 If you need to override the behavior of a particular divider style, you can open the respective class and set or change properties
 
 ```css
-.divider-vertical {
+.divider--modifier {
 }
 ```
 
@@ -118,7 +118,6 @@ If you need to override the behavior of a particular divider style, you can open
 Your application may need a custom divider. To add one, just follow this template:
 
 ```css
-.divider-{name} {
-  @extend %divider-global;
+.divider--{name} {
 }
 ```

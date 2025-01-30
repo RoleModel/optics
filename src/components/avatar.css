@@ -1,5 +1,5 @@
-%avatar-global {
-  // Public API (allowed to be overridden)
+.avatar {
+  /* Public API (customizable component options) */
   --_op-avatar-border-radius: var(--op-radius-circle);
   --_op-avatar-inner-border-color: var(--op-color-neutral-minus-max);
   --_op-avatar-outer-border-color: var(--op-color-neutral-base);
@@ -7,11 +7,11 @@
   --_op-avatar-outer-border-width: var(--op-border-width-large);
   --_op-avatar-disabled-opacity: var(--op-opacity-disabled);
   --_op-avatar-hover-opacity: var(--op-opacity-overlay);
-  --_op-avatar-size-small: calc(8 * var(--op-size-unit)); // 32px
-  --_op-avatar-size-medium: calc(10 * var(--op-size-unit)); // 40px
-  --_op-avatar-size-large: calc(14 * var(--op-size-unit)); // 56px
+  --_op-avatar-size-small: calc(8 * var(--op-size-unit)); /* 32px */
+  --_op-avatar-size-medium: calc(10 * var(--op-size-unit)); /* 40px */
+  --_op-avatar-size-large: calc(14 * var(--op-size-unit)); /* 56px */
 
-  // Private API (don't touch these)
+  /* Private API (component option defaults) */
   --__op-avatar-size: var(--_op-avatar-size-large);
 
   position: relative;
@@ -48,13 +48,20 @@
     object-fit: cover;
   }
 
-  // Disabled State
+  /* Disabled State */
   &.avatar--disabled {
     opacity: var(--_op-avatar-disabled-opacity);
     pointer-events: none;
   }
 
-  // Hover State
+  /* Focus State */
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: none;
+  }
+
+  /* Hover State */
   &:hover:not(div, .avatar--disabled) {
     --_op-avatar-inner-border-color: var(--op-color-primary-base);
     --_op-avatar-outer-border-color: var(--op-color-primary-plus-one);
@@ -67,20 +74,13 @@
     }
   }
 
-  // Focus State
-  &:focus,
-  &:focus-visible,
-  &:focus-within {
-    outline: none;
-  }
-
   &:focus-visible:not(.avatar--disabled) {
     --_op-avatar-outer-border-color: var(--op-color-primary-base);
 
     cursor: pointer;
   }
 
-  // Size Modifiers
+  /* Size Modifiers */
   &.avatar--small {
     --__op-avatar-size: var(--_op-avatar-size-small);
   }
@@ -92,8 +92,4 @@
   &.avatar--large {
     --__op-avatar-size: var(--_op-avatar-size-large);
   }
-}
-
-.avatar {
-  @extend %avatar-global;
 }

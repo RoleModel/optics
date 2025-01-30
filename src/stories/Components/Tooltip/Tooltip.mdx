@@ -132,12 +132,12 @@ Here are the variables that can be customized:
   }}
 ></div>
 
-The tooltip classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The tooltip using a data-attribute, not a class.
 
-This allows multiple classes to share the same behavior. You can modify all tooltip behavior by overriding the `%toltip-global` placeholder selector and setting any properties:
+You can modify all tooltip behavior by overriding the `[data-tooltip-text]` selector and setting any properties:
 
 ```css
-%tooltip-global {
+[data-tooltip-text] {
 }
 ```
 
@@ -152,12 +152,10 @@ This allows multiple classes to share the same behavior. You can modify all tool
   }}
 ></div>
 
-Your application may need a custom tooltip. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
 [data-special-tooltip-text] {
-  @extend %tooltip-global;
-
   // Add your custom styles here
 }
 ```
