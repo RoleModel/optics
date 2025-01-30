@@ -69,16 +69,16 @@ Here are the variables that can be customized:
   }}
 ></div>
 
-The classes are built on [SASS placeholder selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows classes to share the same behavior. You can modify all dialogs behavior by overriding the `%confirm-dialog-wrapper-global` and `%confirm-dialog-global` placeholder selectors and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all dialogs behavior by overriding the `.confirm-dialog-wrapper` and `.confirm-dialog` selectors and setting any properties:
 
 ```css
-%confirm-dialog-wrapper-global {
+.confirm-dialog-wrapper {
   z-index: 200;
 }
 
-%confirm-dialog-global {
+.confirm-dialog {
   background-color: red;
 }
 ```
@@ -94,14 +94,11 @@ This allows classes to share the same behavior. You can modify all dialogs behav
   }}
 ></div>
 
-Your application may need a custom dialog. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.confirm-dialog-wrapper {
-  @extend %confirm-dialog-wrapper-global;
-
+.confirm-dialog-wrapper--{name} {
   .confirm-dialog-wrapper__backdrop {
-
   }
 
   &.confirm-dialog-wrapper--active {
@@ -110,9 +107,7 @@ Your application may need a custom dialog. To add one, just follow this template
   }
 }
 
-.confirm-dialog-{name} {
-  @extend %confirm-dialog-global;
-
+.confirm-dialog--{name} {
   .confirm-dialog__header,
   .confirm-dialog__body,
   .confirm-dialog__footer {

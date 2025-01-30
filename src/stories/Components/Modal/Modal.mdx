@@ -139,10 +139,10 @@ Here are the variables that can be customized:
 
 {/* prettier-ignore-start */}
 ```css
-// modal-wrapper-global
+// modal-wrapper
 --_op-modal-backdrop-active-opacity
 
-// modal-global
+// modal
 --_op-modal-width
 --_op-modal-max-height
 
@@ -163,16 +163,16 @@ Here are the variables that can be customized:
   }}
 ></div>
 
-The classes are built on [SASS placeholder selectors](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows classes to share the same behavior. You can modify all dialogs behavior by overriding the `%modal-wrapper-global` and `%confirm-dialog-global` placeholder selectors and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all dialogs behavior by overriding the `.modal-wrapper` and `.modal` selectors and setting any properties:
 
 ```css
-%modal-wrapper-global {
+.modal-wrapper {
   z-index: 200;
 }
 
-%modal-global {
+.modal {
   background-color: red;
 }
 ```
@@ -188,14 +188,11 @@ This allows classes to share the same behavior. You can modify all dialogs behav
   }}
 ></div>
 
-Your application may need a modal. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.modal-wrapper {
-  @extend %modal-wrapper-global;
-
+.modal-wrapper--{name} {
   .modal-wrapper__backdrop {
-
   }
 
   &.modal-wrapper--active {
@@ -204,9 +201,7 @@ Your application may need a modal. To add one, just follow this template:
   }
 }
 
-.modal-{name} {
-  @extend %modal-global;
-
+.modal--{name} {
   .modal__header,
   .modal__body,
   .modal__footer {
