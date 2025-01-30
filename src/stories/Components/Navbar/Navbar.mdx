@@ -52,7 +52,7 @@ Navbar can be used as a standalone component, however, it does have a few depend
 
 ### Primary
 
-`.navbar-primary` Provides a primary colored navbar. This uses the primary color defined in your theme.
+`.navbar.navbar--primary` Provides a primary colored navbar. This uses the primary color defined in your theme.
 
 <Canvas of={NavbarStories.PrimaryNavbar} />
 
@@ -109,12 +109,12 @@ Here are the variables that can be customized.
   }}
 ></div>
 
-The navbar classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The navbar classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple classes to share the same behavior. You can modify all navbar behavior by overriding the `%navbar-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all navbar behavior by overriding the `.navbar` selector and setting any properties:
 
 ```css
-%navbar-global {
+.navbar {
   --_op-navbar-background-color: pink;
   --_op-navbar-text-color: blue;
 }
@@ -123,7 +123,7 @@ This allows multiple classes to share the same behavior. You can modify all navb
 If you need to override the behavior of a particular navbar style, you can open the respective class and set or change properties
 
 ```css
-.navbar-primary {
+.navbar--modifier {
   --_op-navbar-brand-height: 5.4rem;
   --_op-navbar-horizontal-spacing: var(--op-space-small);
   --_op-navbar-content-item-spacing: var(--op-space-x-small);
@@ -144,7 +144,6 @@ If you need to override the behavior of a particular navbar style, you can open 
 Your application may need a custom navbar. To add one, just follow this template:
 
 ```css
-.navbar-{name} {
-  @extend %navbar-global;
+.navbar--{name} {
 }
 ```

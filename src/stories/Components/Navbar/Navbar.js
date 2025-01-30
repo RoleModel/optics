@@ -52,7 +52,7 @@ export const createNavbar = ({
     avatarSection = ''
   }
 
-  const navbarClasses = [style === 'default' ? 'navbar' : `navbar-${style}`]
+  const navbarClasses = ['navbar', style !== 'default' ? `navbar--${style}` : ''].filter(Boolean).join(' ')
 
   body.innerHTML += `
   <div class="app__header">
