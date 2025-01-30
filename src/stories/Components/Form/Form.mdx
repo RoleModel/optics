@@ -106,7 +106,7 @@ Form Controls can be used as standalone components, however, they do have a few 
 
 ### Input Error
 
-`.form-group--error` and `.form-error` are typically used on combination when there is a validation error on an input. They highlight the input in error along with the message provided.
+`.form-group.form-group--error` and `.form-error` are typically used on combination when there is a validation error on an input. They highlight the input in error along with the message provided.
 
 <Canvas of={FormGroupStories.Error} />
 
@@ -118,13 +118,13 @@ Form Controls can be used as standalone components, however, they do have a few 
 
 ### No Border
 
-`.form-control--no-border` can be used to create a borderless input or select. When used in a form group with `.form-group--error`, the input will get a red bottom border and highlight.
+`.form-control.form-control--no-border` can be used to create a borderless input or select. When used in a form group with `.form-control.form-group--error`, the input will get a red bottom border and highlight.
 
 <Canvas of={FormGroupStories.NoBorder} />
 
 ### Size
 
-`.form-control--small`, `.form-control--medium`, `.form-control--large` (with large being the default) modify the size of any element by changing the font and height to be smaller or larger.
+`.form.form-control--small`, `.form.form-control--medium`, `.form.form-control--large` (with large being the default) modify the size of any element by changing the font and height to be smaller or larger.
 
 <Canvas of={FormGroupStories.Small} />
 
@@ -186,7 +186,7 @@ Form Controls use multiple placeholder selectors to style all types of controls.
 
 `.form-control` is the placeholder selector that is used to style all form controls.
 
-`.form-control:not([type='radio'], [type='checkbox'])` is the placeholder selector that is used to style form controls based on the input like color, date, text, number, etc.
+`.form-control:not([type='radio'], [type='checkbox'])` is the selector that is used to style form controls based on the input like color, date, text, number, etc.
 
 `.form-control:is([type='radio'], [type='checkbox'])` is the selector that is used to style checkboxes and radio buttons.
 
