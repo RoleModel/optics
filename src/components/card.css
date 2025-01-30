@@ -47,7 +47,6 @@
   .card__body,
   .card__footer {
     padding: var(--_op-card-padding);
-    padding-left: var(--_op-card-padding);
   }
 
   .card__header {
