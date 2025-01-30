@@ -44,7 +44,7 @@ Card can be used as a standalone component, however, it does have a few dependen
 
 ### Padded
 
-`.card-padded` Provides a padded card.
+`.card--padded` Provides a padded card.
 
 <Canvas of={CardStories.Padded} />
 
@@ -56,7 +56,7 @@ Card can be used as a standalone component, however, it does have a few dependen
 
 ### Condensed
 
-`.card--condensed` Changes the padding scale for everything below it.
+`.card--condensed` Changes the padding for everything below it.
 
 <Canvas of={CardStories.Condensed} />
 
@@ -77,23 +77,20 @@ Card can be used as a standalone component, however, it does have a few dependen
   }}
 ></div>
 
-The card classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The card classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple card classes to share the same behavior. You can modify all cards behavior by overriding the `%card-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all card behavior by overriding the `.card` placeholder selector and setting any properties:
 
 ```css
-%card-global {
+.card {
   font-size: var(--op-font-2x-large);
 }
 ```
 
-If you need to override the behavior of a particular card style, you can open the respective class and set or change properties
+If you need to override the behavior of a particular card modifier, you can open the respective class and set or change properties
 
 ```css
-// This will only affect the card, but not card-padded
-.card {
-  background-color: red;
-  color: white;
+.card--modifier {
 }
 ```
 
@@ -108,21 +105,17 @@ If you need to override the behavior of a particular card style, you can open th
   }}
 ></div>
 
-Your application may need a custom card. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.card-{name} {
-  @extend %card-global;
-
+.card--{name} {
   background-color:
   color:
 }
 ```
 
 ```css
-.card-purple {
-  @extend %card-global
-
+.card--purple {
   border-radius: var(--op-radius-large);
   font-size: var(--op-font-2x-large);
 

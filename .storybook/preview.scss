@@ -179,21 +179,19 @@
 }
 
 // Company Card
-.card-company {
-  @extend %card-global;
-
+.card.card--company {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--op-space-large);
   gap: var(--op-space-large);
 
-  .card-company__info {
+  .card__info {
     display: flex;
     align-items: center;
     gap: var(--op-space-x-large);
 
-    .card-company__info-logo {
+    .card__info-logo {
       width: calc(var(--op-size-unit) * 24); // 96px
     }
 

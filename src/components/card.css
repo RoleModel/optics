@@ -1,0 +1,62 @@
+.card {
+  /* Public API (customizable component options) */
+  --_op-card-padding: var(--op-space-medium);
+  --_op-card-box-shadow: var(--op-border-all) var(--op-color-border);
+
+  position: relative;
+  border-radius: var(--op-radius-medium);
+  background-color: var(--op-color-background);
+  box-shadow: var(--_op-card-box-shadow);
+  color: var(--op-color-on-background);
+  contain: paint;
+  font-size: var(--op-font-medium);
+  line-height: var(--op-line-height-base);
+
+  /* Modifiers */
+
+  &.card--condensed {
+    --_op-card-padding: var(--op-space-x-small);
+  }
+
+  &.card--padded {
+    padding: var(--_op-card-padding);
+  }
+
+  &.card--shadow-x-small {
+    box-shadow: var(--_op-card-box-shadow), var(--op-shadow-x-small);
+  }
+
+  &.card--shadow-small {
+    box-shadow: var(--_op-card-box-shadow), var(--op-shadow-small);
+  }
+
+  &.card--shadow-medium {
+    box-shadow: var(--_op-card-box-shadow), var(--op-shadow-medium);
+  }
+
+  &.card--shadow-large {
+    box-shadow: var(--_op-card-box-shadow), var(--op-shadow-large);
+  }
+
+  &.card--shadow-x-large {
+    box-shadow: var(--_op-card-box-shadow), var(--op-shadow-x-large);
+  }
+
+  /* Elements */
+  .card__header,
+  .card__body,
+  .card__footer {
+    padding: var(--_op-card-padding);
+  }
+
+  .card__header {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+  }
+}
