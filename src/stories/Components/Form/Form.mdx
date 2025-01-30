@@ -149,7 +149,7 @@ Here are the variables that can be customized.
 
 {/* prettier-ignore-start */}
 ```css
-// form-control-global
+// form-control
 --_op-form-control-height-small
 --_op-form-control-height-medium
 --_op-form-control-height-large
@@ -157,13 +157,8 @@ Here are the variables that can be customized.
 --_op-form-control-font-medium
 --_op-form-control-font-large
 
-// form-control-input-global
+// form-control-input
 --_op-form-control-opacity-disabled
-
-// form-control-inline-global
---_op-form-control-height-small
---_op-form-control-height-medium
---_op-form-control-height-large
 ```
 {/* prettier-ignore-end */}
 
@@ -178,21 +173,19 @@ Here are the variables that can be customized.
   }}
 ></div>
 
-The form classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The form classes are structured using the [BEM methodology](https://getbem.com/naming).
 
 This allows multiple classes to share the same behavior.
 
 Form Controls use multiple placeholder selectors to style all types of controls.
 
-`%form-control-global` is the placeholder selector that is used to style all form controls.
+`.form-control` is the placeholder selector that is used to style all form controls.
 
-`%form-control-input-global` is the placeholder selector that is used to style form controls based on the input like color, date, text, number, etc.
-
-`%form-control-inline-global` is the placeholder selector that is used to style checkboxes and radio buttons.
+`form-control-input` is the placeholder selector that is used to style form controls based on the input like color, date, text, number, etc.
 
 You can open them up like so to modify the styles:
 
 ```css
-%form-control-global {
+.form-control {
 }
 ```
