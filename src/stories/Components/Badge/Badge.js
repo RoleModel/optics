@@ -11,7 +11,7 @@ export const createBadge = ({
   const badge = document.createElement('div')
   badge.innerText = label
 
-  badge.className = [style === 'default' ? 'badge' : `badge-${style}`, pill ? 'badge--pill' : '']
+  badge.className = ['badge', style !== 'default' ? `badge--${style}` : '', pill ? 'badge--pill' : '']
     .filter(Boolean)
     .join(' ')
 

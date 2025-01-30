@@ -44,31 +44,31 @@ Badge can be used as a standalone component, however, it does have a few depende
 
 ### Primary
 
-`.badge-primary` Provides a primary badge. This uses the primary color defined in your theme.
+`.badge--primary` Provides a primary badge. This uses the primary color defined in your theme.
 
 <Canvas of={BadgeStories.Primary} />
 
 ### Warning
 
-`.badge-warning` Provides a Warning badge. This uses the warning alert color.
+`.badge--warning` Provides a Warning badge. This uses the warning alert color.
 
 <Canvas of={BadgeStories.Warning} />
 
 ### Danger
 
-`.badge-danger` Provides a Danger badge. This uses the danger alert color.
+`.badge--danger` Provides a Danger badge. This uses the danger alert color.
 
 <Canvas of={BadgeStories.Danger} />
 
 ### Info
 
-`.badge-info` Provides a Info badge. This uses the Info alert color.
+`.badge--info` Provides a Info badge. This uses the Info alert color.
 
 <Canvas of={BadgeStories.Info} />
 
 ### Notice
 
-`.badge-notice` Provides a Notice badge. This uses the Notice alert color.
+`.badge--notice` Provides a Notice badge. This uses the Notice alert color.
 
 <Canvas of={BadgeStories.Notice} />
 
@@ -95,12 +95,12 @@ Badge can be used as a standalone component, however, it does have a few depende
   }}
 ></div>
 
-The badge classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The badge classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple badge classes to share the same behavior. You can modify all badges behavior by overriding the `%badge-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all badge behavior by overriding the `.badge` placeholder selector and setting any properties:
 
 ```css
-%badge-global {
+.badge {
   font-size: var(--op-font-2x-large);
 }
 ```
@@ -109,7 +109,7 @@ If you need to override the behavior of a particular badge style, you can open t
 
 ```css
 // This will only affect the primary badge, but not default, secondary, notice, etc.
-.badge-primary {
+.badge--primary {
   background-color: red;
   color: white;
 }
@@ -126,21 +126,17 @@ If you need to override the behavior of a particular badge style, you can open t
   }}
 ></div>
 
-Your application may need a custom badge. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.badge-{name} {
-  @extend %badge-global;
-
+.badge--{name} {
   background-color:
   color:
 }
 ```
 
 ```css
-.badge-purple {
-  @extend %badge-global;
-
+.badge--purple {
   background-color: purple;
   color: white;
 }
