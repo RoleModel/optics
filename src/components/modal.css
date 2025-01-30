@@ -24,52 +24,6 @@
     visibility: hidden;
   }
 
-  .modal {
-    /* Public API (customizable component options) */
-    --_op-modal-width: calc(141 * var(--op-size-unit)); /* 564px */
-    --_op-modal-max-height: calc(125 * var(--op-size-unit)); /* 500px */
-
-    z-index: var(--op-z-index-dialog-content);
-    width: var(--_op-modal-width);
-    border-radius: var(--op-radius-medium);
-    background-color: var(--op-color-background);
-    box-shadow: var(--op-border-all) var(--op-color-border);
-    color: var(--op-color-on-background);
-    contain: paint;
-    font-size: var(--op-font-medium);
-    line-height: var(--op-line-height-base);
-    opacity: var(--op-opacity-none);
-    transform: scale(0.7);
-    transition: var(--op-transition-modal);
-
-    .modal__header,
-    .modal__body,
-    .modal__footer {
-      padding: var(--op-space-medium);
-    }
-
-    .modal__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: var(--op-font-large);
-      font-weight: var(--op-font-weight-semi-bold);
-    }
-
-    .modal__body {
-      max-height: var(--_op-modal-max-height);
-      box-shadow: var(--op-border-all) var(--op-color-border);
-      overflow-y: auto;
-    }
-
-    .modal__footer {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: var(--op-space-small);
-    }
-  }
-
   /* Modifiers */
 
   &.modal-wrapper--active {
@@ -86,6 +40,54 @@
     }
   }
 }
+
+/* stylelint-disable no-descending-specificity */
+.modal {
+  /* Public API (customizable component options) */
+  --_op-modal-width: calc(141 * var(--op-size-unit)); /* 564px */
+  --_op-modal-max-height: calc(125 * var(--op-size-unit)); /* 500px */
+
+  z-index: var(--op-z-index-dialog-content);
+  width: var(--_op-modal-width);
+  border-radius: var(--op-radius-medium);
+  background-color: var(--op-color-background);
+  box-shadow: var(--op-border-all) var(--op-color-border);
+  color: var(--op-color-on-background);
+  contain: paint;
+  font-size: var(--op-font-medium);
+  line-height: var(--op-line-height-base);
+  opacity: var(--op-opacity-none);
+  transform: scale(0.7);
+  transition: var(--op-transition-modal);
+
+  .modal__header,
+  .modal__body,
+  .modal__footer {
+    padding: var(--op-space-medium);
+  }
+
+  .modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--op-font-large);
+    font-weight: var(--op-font-weight-semi-bold);
+  }
+
+  .modal__body {
+    max-height: var(--_op-modal-max-height);
+    box-shadow: var(--op-border-all) var(--op-color-border);
+    overflow-y: auto;
+  }
+
+  .modal__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--op-space-small);
+  }
+}
+/* stylelint-enable no-descending-specificity */
 
 dialog.modal {
   position: fixed;

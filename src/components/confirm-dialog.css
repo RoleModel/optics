@@ -21,45 +21,6 @@
     visibility: hidden;
   }
 
-  .confirm-dialog {
-    /* Public API (customizable component options) */
-    --_op-confirm-dialog-width: calc(100 * var(--op-size-unit)); /* 400px */
-
-    z-index: var(--op-z-index-dialog-content);
-    width: var(--_op-confirm-dialog-width);
-    border-radius: var(--op-radius-medium);
-    background-color: var(--op-color-background);
-    box-shadow: var(--op-border-all) var(--op-color-border);
-    color: var(--op-color-on-background);
-    contain: paint;
-    font-size: var(--op-font-medium);
-    line-height: var(--op-line-height-base);
-    opacity: var(--op-opacity-none);
-    transform: scale(0.7);
-    transition: var(--op-transition-modal);
-
-    .confirm-dialog__header,
-    .confirm-dialog__body,
-    .confirm-dialog__footer {
-      padding: var(--op-space-medium);
-    }
-
-    .confirm-dialog__header {
-      font-size: var(--op-font-large);
-      font-weight: var(--op-font-weight-semi-bold);
-    }
-
-    .confirm-dialog__body {
-      box-shadow: var(--op-border-all) var(--op-color-border);
-    }
-
-    .confirm-dialog__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-
   /* Modifiers */
 
   &.confirm-dialog-wrapper--active {
@@ -76,3 +37,44 @@
     }
   }
 }
+
+/* stylelint-disable no-descending-specificity */
+.confirm-dialog {
+  /* Public API (customizable component options) */
+  --_op-confirm-dialog-width: calc(100 * var(--op-size-unit)); /* 400px */
+
+  z-index: var(--op-z-index-dialog-content);
+  width: var(--_op-confirm-dialog-width);
+  border-radius: var(--op-radius-medium);
+  background-color: var(--op-color-background);
+  box-shadow: var(--op-border-all) var(--op-color-border);
+  color: var(--op-color-on-background);
+  contain: paint;
+  font-size: var(--op-font-medium);
+  line-height: var(--op-line-height-base);
+  opacity: var(--op-opacity-none);
+  transform: scale(0.7);
+  transition: var(--op-transition-modal);
+
+  .confirm-dialog__header,
+  .confirm-dialog__body,
+  .confirm-dialog__footer {
+    padding: var(--op-space-medium);
+  }
+
+  .confirm-dialog__header {
+    font-size: var(--op-font-large);
+    font-weight: var(--op-font-weight-semi-bold);
+  }
+
+  .confirm-dialog__body {
+    box-shadow: var(--op-border-all) var(--op-color-border);
+  }
+
+  .confirm-dialog__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+/* stylelint-enable no-descending-specificity */
