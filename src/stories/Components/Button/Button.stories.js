@@ -7,7 +7,7 @@ export default {
   },
   argTypes: {
     label: { control: 'text' },
-    priority: {
+    variant: {
       control: { type: 'select' },
       options: ['default', 'primary', 'destructive', 'warning'],
     },
@@ -36,35 +36,35 @@ export default {
 export const Default = {
   args: {
     label: 'Primary',
-    priority: 'default',
+    variant: 'default',
   },
 }
 
 export const Primary = {
   args: {
     label: 'Primary',
-    priority: 'primary',
+    variant: 'primary',
   },
 }
 
 export const Destructive = {
   args: {
     label: 'Delete',
-    priority: 'destructive',
+    variant: 'destructive',
   },
 }
 
 export const Warning = {
   args: {
     label: 'Warning',
-    priority: 'warning',
+    variant: 'warning',
   },
 }
 
 export const Active = {
   args: {
     label: 'Active',
-    priority: 'primary',
+    variant: 'primary',
     active: true,
   },
 }
@@ -72,7 +72,7 @@ export const Active = {
 export const NoBorder = {
   args: {
     label: 'No Border',
-    priority: 'primary',
+    variant: 'primary',
     noBorder: true,
   },
 }
@@ -80,7 +80,7 @@ export const NoBorder = {
 export const Disabled = {
   args: {
     label: 'Disabled',
-    priority: 'primary',
+    variant: 'primary',
     disabled: true,
   },
 }
@@ -88,7 +88,7 @@ export const Disabled = {
 export const Pill = {
   args: {
     label: 'Pill',
-    priority: 'default',
+    variant: 'default',
     pill: true,
   },
 }
@@ -96,7 +96,7 @@ export const Pill = {
 export const Icon = {
   args: {
     label: '👍',
-    priority: 'primary',
+    variant: 'primary',
     icon: true,
   },
 }
@@ -104,7 +104,7 @@ export const Icon = {
 export const IconWithLabel = {
   args: {
     label: 'Label',
-    priority: 'primary',
+    variant: 'primary',
     iconWithLabel: true,
   },
 }
@@ -112,7 +112,7 @@ export const IconWithLabel = {
 export const Size = {
   args: {
     label: 'Small',
-    priority: 'primary',
+    variant: 'primary',
     size: 'small',
   },
 }

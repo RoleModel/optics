@@ -1,0 +1,273 @@
+.btn {
+  /* Public API (customizable component options) */
+  --_op-btn-height-small: var(--op-input-height-small);
+  --_op-btn-height-medium: var(--op-input-height-medium);
+  --_op-btn-height-large: var(--op-input-height-large);
+  --_op-btn-font-small: var(--op-font-x-small);
+  --_op-btn-font-medium: var(--op-font-small);
+  --_op-btn-font-large: var(--op-font-small);
+  --_op-btn-padding-small: 0 var(--op-space-x-small);
+  --_op-btn-padding-medium: 0 var(--op-space-small);
+  --_op-btn-padding-large: 0 var(--op-space-small);
+
+  /* Private API (component option defaults) */
+  --__op-btn-height: var(--_op-btn-height-large);
+  --__op-btn-font-size: var(--_op-btn-font-large);
+  --__op-btn-padding: var(--_op-btn-padding-large);
+
+  display: inline-flex;
+  min-height: var(--__op-btn-height);
+  align-items: center;
+  justify-content: center;
+  padding: var(--__op-btn-padding);
+  border-radius: var(--op-radius-medium);
+  appearance: none;
+  background-color: var(--op-color-neutral-plus-eight);
+  box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-four);
+  color: var(--op-color-neutral-on-plus-eight);
+  cursor: pointer;
+  font-size: var(--__op-btn-font-size);
+  font-weight: var(--op-font-weight-normal);
+  gap: var(--op-space-x-small);
+  text-align: center;
+  text-decoration: none;
+  transition: var(--op-transition-input);
+  white-space: nowrap;
+
+  /* Modifiers */
+
+  /* Default Active State */
+  &.btn--active {
+    background-color: var(--op-color-primary-plus-five);
+    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+    color: var(--op-color-primary-on-plus-five);
+  }
+
+  /* Default Hover State */
+  &:hover {
+    background-color: var(--op-color-primary-plus-eight);
+    box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+    color: var(--op-color-primary-on-plus-eight);
+  }
+
+  /* Default Focus State */
+  &:focus-visible {
+    background-color: var(--op-color-neutral-plus-eight);
+    box-shadow: var(--op-input-focus-primary);
+    color: var(--op-color-neutral-on-plus-eight);
+  }
+
+  /* Default Borderless State */
+  &.btn--no-border {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--op-color-primary-on-plus-max);
+
+    /* Default Borderless + Active State. */
+    &.btn--active {
+      background-color: var(--op-color-primary-plus-five);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+      color: var(--op-color-primary-on-plus-five);
+    }
+
+    /* Default Borderless + Hover State */
+    &:hover {
+      background-color: var(--op-color-primary-plus-eight);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-five);
+      color: var(--op-color-primary-on-plus-eight);
+    }
+
+    /* Default Borderless + Focus State */
+    &:focus-visible {
+      background-color: var(--op-color-primary-plus-eight);
+      box-shadow: var(--op-input-focus-primary);
+      color: var(--op-color-primary-on-plus-eight);
+    }
+  }
+
+  /* Pill Modifier */
+  &.btn--pill {
+    border-radius: var(--op-radius-pill);
+  }
+
+  /* Icon Modifier */
+  &.btn--icon {
+    width: var(--__op-btn-height);
+    min-width: var(--__op-btn-height);
+    padding: 0;
+  }
+
+  /* Icon With Label Modifier */
+  &.btn--icon-with-label {
+    flex-direction: column;
+    padding: var(--op-space-small);
+    gap: var(--op-space-3x-small);
+  }
+
+  /* Size Modifiers */
+  &.btn--small {
+    --__op-btn-height: var(--_op-btn-height-small);
+    --__op-btn-font-size: var(--_op-btn-font-small);
+    --__op-btn-padding: var(--_op-btn-padding-small);
+  }
+
+  &.btn--medium {
+    --__op-btn-height: var(--_op-btn-height-medium);
+    --__op-btn-font-size: var(--_op-btn-font-medium);
+    --__op-btn-padding: var(--_op-btn-padding-medium);
+  }
+
+  &.btn--large {
+    --__op-btn-height: var(--_op-btn-height-large);
+    --__op-btn-font-size: var(--_op-btn-font-large);
+    --__op-btn-padding: var(--_op-btn-padding-large);
+  }
+
+  /* Disabled Modifier */
+  &.btn--disabled,
+  &:disabled {
+    opacity: var(--op-opacity-disabled);
+    pointer-events: none;
+    -webkit-user-select: none; /* stylelint-disable property-no-vendor-prefix */
+    user-select: none;
+  }
+
+  /* Button with notification style badge */
+  &.btn--with-badge {
+    position: relative;
+  }
+
+  /* Focus State */
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    outline: none;
+  }
+
+  /* https:/*uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/ */
+
+  /* --op-breakpoint-small */
+  @media (width <= 768px) {
+    --__op-btn-height: var(--_op-btn-height-large);
+    --__op-btn-font-size: var(--_op-btn-font-large);
+
+    &.btn--small,
+    &.btn--medium,
+    &.btn--large {
+      --__op-btn-height: var(--_op-btn-height-large);
+      --__op-btn-font-size: var(--_op-btn-font-large);
+      --__op-btn-padding: var(--_op-btn-padding-large);
+    }
+  }
+
+  /* Variant Modifiers */
+  &.btn--primary {
+    background-color: var(--op-color-primary-base);
+    box-shadow: inset var(--op-border-all) var(--op-color-primary-base);
+    color: var(--op-color-primary-on-base);
+
+    /* Active State */
+    &.btn--active {
+      background-color: var(--op-color-primary-minus-five);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-two);
+      color: var(--op-color-primary-on-minus-five);
+    }
+
+    /* Hover State */
+    &:hover {
+      background-color: var(--op-color-primary-plus-one);
+      box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-one);
+      color: var(--op-color-primary-on-plus-one);
+    }
+
+    /* Focus State */
+    &:focus-visible {
+      background-color: var(--op-color-primary-base);
+      box-shadow: var(--op-input-focus-primary);
+      color: var(--op-color-primary-on-base);
+    }
+
+    /* Borderless State */
+    &.btn--no-border {
+      background-color: transparent;
+      box-shadow: none;
+      color: var(--op-color-primary-base);
+
+      /* Borderless + Active State */
+      &.btn--active {
+        background-color: var(--op-color-primary-plus-five);
+        box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-three);
+        color: var(--op-color-primary-on-plus-five);
+      }
+
+      /* Borderless + Hover State */
+      &:hover {
+        background-color: var(--op-color-primary-plus-eight);
+        box-shadow: inset var(--op-border-all) var(--op-color-primary-plus-five);
+        color: var(--op-color-primary-on-plus-eight);
+      }
+
+      /* Borderless + Focus State */
+      &:focus-visible {
+        background-color: var(--op-color-primary-plus-eight);
+        box-shadow: var(--op-input-focus-primary);
+        color: var(--op-color-primary-on-plus-eight);
+      }
+    }
+  }
+
+  &.btn--destructive,
+  &.btn--delete {
+    background-color: var(--op-color-alerts-danger-base);
+    box-shadow: inset var(--op-border-all) var(--op-color-alerts-danger-base);
+    color: var(--op-color-alerts-danger-on-base);
+
+    /* Active State */
+    &.btn--active {
+      background-color: var(--op-color-alerts-danger-plus-five);
+      box-shadow: inset var(--op-border-all) var(--op-color-alerts-danger-plus-three);
+      color: var(--op-color-alerts-danger-on-plus-five);
+    }
+
+    /* Hover State */
+    &:hover {
+      background-color: var(--op-color-alerts-danger-minus-two);
+      box-shadow: inset var(--op-border-all) var(--op-color-alerts-danger-minus-two);
+      color: var(--op-color-alerts-danger-on-minus-two);
+    }
+
+    /* Focus State */
+    &:focus-visible {
+      background-color: var(--op-color-alerts-danger-base);
+      box-shadow: var(--op-input-focus-danger);
+      color: var(--op-color-alerts-danger-on-base);
+    }
+  }
+
+  &.btn--warning {
+    background-color: var(--op-color-alerts-warning-base);
+    box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-base);
+    color: var(--op-color-alerts-warning-on-base);
+
+    /* Active State */
+    &.btn--active {
+      background-color: var(--op-color-alerts-warning-plus-five);
+      box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-plus-three);
+      color: var(--op-color-alerts-warning-on-plus-five);
+    }
+
+    /* Hover State */
+    &:hover {
+      background-color: var(--op-color-alerts-warning-minus-two);
+      box-shadow: inset var(--op-border-all) var(--op-color-alerts-warning-minus-two);
+      color: var(--op-color-alerts-warning-on-minus-two);
+    }
+
+    /* Focus State */
+    &:focus-visible {
+      background-color: var(--op-color-alerts-warning-base);
+      box-shadow: var(--op-input-focus-warning);
+      color: var(--op-color-alerts-warning-on-base);
+    }
+  }
+}

@@ -44,14 +44,14 @@ Button can be used as a standalone component, however, it does have a few depend
 
 ### Primary
 
-`.btn-primary` Provides a filled button using the primary color in your theme. This should be used as the primary action on a screen such as the login button on an account screen or the submit button on a form.
+`.btn--primary` Provides a filled button using the primary color in your theme. This should be used as the primary action on a screen such as the login button on an account screen or the submit button on a form.
 
 <Canvas of={ButtonStories.Primary} />
 
 ### Destructive
 
-`.btn-destructive` Provides a filled button using the red danger color. This should be used as a destructive action such as delete.
-Note: `.btn-delete` also works for backwards compatibility, but `.btn-destructive` is the preferred class name.
+`.btn--destructive` Provides a filled button using the red danger color. This should be used as a destructive action such as delete.
+Note: `.btn--delete` also works for backwards compatibility, but `.btn--destructive` is the preferred class name.
 
 <Canvas of={ButtonStories.Destructive} />
 
@@ -65,7 +65,7 @@ Note: `.btn-delete` also works for backwards compatibility, but `.btn-destructiv
 
 `.btn--no-border` This is a modifier which can be used with all button classes except destructive and warning. It provides a button with no border, but the same sizing and adapts it's color to all the btn variations.
 
-Note: `.btn-destructive` and `.btn-warning` do not support the `.btn--no-border` modifier. Borderless warning or destructive buttons are not considered a good pattern and can easily lead to confusion so are not available.
+Note: `.btn--destructive` and `.btn--warning` do not support the `.btn--no-border` modifier. Borderless warning or destructive buttons are not considered a good pattern and can easily lead to confusion so are not available.
 
 <Canvas of={ButtonStories.NoBorder} />
 
@@ -151,10 +151,10 @@ Here are the variables and states used
 
 The button classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
 
-This allows multiple button classes to share the same behavior. You can modify all buttons behavior by overriding the `%btn-global` placeholder selector and setting any properties:
+This allows multiple button classes to share the same behavior. You can modify all buttons behavior by overriding the `%btn-global` selector and setting any properties:
 
 ```css
-%btn-global {
+.btn {
   border-radius: 0;
 }
 ```
@@ -162,7 +162,7 @@ This allows multiple button classes to share the same behavior. You can modify a
 If you want to override how the size modifier behaves, you can use API described above to change which height and font each size uses.
 
 ```css
-%btn-global {
+.btn {
   --_op-btn-height-small: var(--op-space-2x-large);
   --_op-btn-height-medium: var(--op-space-3x-large);
   --_op-btn-height-large: var(--op-space-4x-large);
@@ -199,58 +199,56 @@ If you need to override the color of a particular button style, you can open the
   }}
 ></div>
 
-Your application may need a custom button. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.btn-{name} {
-  @extend %btn-global;
-
+.btn--{name} {
   background-color:
   box-shadow:
   color:
 
-  // Active State
+  /* Active State */
   &.btn--active {
     background-color:
     box-shadow:
     color:
   }
 
-  // Hover State
+  /* Hover State */
   &:hover {
     background-color:
     box-shadow:
     color:
   }
 
-  // Focus State
+  /* Focus State */
   &:focus,
   &:focus-within,
   &:focus-visible {
     box-shadow:
   }
 
-  // Borderless State
+  /* Borderless State */
   &.btn--no-border {
     background-color:
     box-shadow:
     color:
 
-    // Borderless + Active State.
+    /* Borderless + Active State. */
     &.btn--active {
       background-color:
       box-shadow:
       color:
     }
 
-    // Borderless + Hover State
+    /* Borderless + Hover State */
     &:hover {
       background-color:
       box-shadow:
       color:
     }
 
-    // Borderless + Focus State
+    /* Borderless + Focus State */
     &:focus,
     &:focus-within,
     &:focus-visible {
