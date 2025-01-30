@@ -2,7 +2,7 @@ import { createIcon } from '../Icon/Icon.js'
 
 export const createButton = ({
   label,
-  priority = 'primary',
+  variant = 'primary',
   noBorder = false,
   active = false,
   pill = false,
@@ -44,7 +44,8 @@ export const createButton = ({
   }
 
   btn.className = [
-    priority === 'default' ? 'btn' : `btn-${priority}`,
+    'btn',
+    variant !== 'default' ? `btn--${variant}` : '',
     noBorder ? 'btn--no-border' : '',
     active ? 'btn--active' : '',
     pill ? 'btn--pill' : '',
