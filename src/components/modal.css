@@ -1,5 +1,5 @@
-%modal-wrapper-global {
-  // Public API (allowed to be overridden)
+.modal-wrapper {
+  /* Public API (customizable component options) */
   --_op-modal-backdrop-active-opacity: var(--op-opacity-half);
 
   position: fixed;
@@ -12,6 +12,8 @@
   outline: 0;
   visibility: hidden;
 
+  /* Elements */
+
   .modal-wrapper__backdrop {
     position: fixed;
     z-index: var(--op-z-index-dialog-backdrop);
@@ -21,6 +23,8 @@
     transition: var(--op-transition-modal);
     visibility: hidden;
   }
+
+  /* Modifiers */
 
   &.modal-wrapper--active {
     visibility: visible;
@@ -37,10 +41,11 @@
   }
 }
 
-%modal-global {
-  // Public API (allowed to be overridden)
-  --_op-modal-width: calc(141 * var(--op-size-unit)); // 564px
-  --_op-modal-max-height: calc(125 * var(--op-size-unit)); // 500px
+/* stylelint-disable no-descending-specificity */
+.modal {
+  /* Public API (customizable component options) */
+  --_op-modal-width: calc(141 * var(--op-size-unit)); /* 564px */
+  --_op-modal-max-height: calc(125 * var(--op-size-unit)); /* 500px */
 
   z-index: var(--op-z-index-dialog-content);
   width: var(--_op-modal-width);
@@ -82,36 +87,7 @@
     gap: var(--op-space-small);
   }
 }
-
-.modal-wrapper {
-  @extend %modal-wrapper-global;
-}
-
-.modal {
-  @extend %modal-global;
-}
-
-// Using the Dialog element
-// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
-@keyframes show-backdrop {
-  from {
-    opacity: var(--op-opacity-none);
-  }
-
-  to {
-    opacity: var(--_op-modal-backdrop-active-opacity);
-  }
-}
-
-@keyframes hide-backdrop {
-  from {
-    opacity: var(--_op-modal-backdrop-active-opacity);
-  }
-
-  to {
-    opacity: var(--op-opacity-none);
-  }
-}
+/* stylelint-enable no-descending-specificity */
 
 dialog.modal {
   position: fixed;
@@ -121,7 +97,7 @@ dialog.modal {
   inset: 0;
 
   &::backdrop {
-    // The Dialog backdrop does not inheret from :root so these need to be duplicated here.
+    /* The Dialog backdrop does not inheret from :root so these need to be duplicated here. */
     --op-color-black: hsl(0deg 0% 0%);
     --_op-modal-backdrop-active-opacity: 0.5;
     --op-opacity-none: 0;
@@ -145,5 +121,29 @@ dialog.modal {
       animation: hide-backdrop 300ms ease-in;
       opacity: var(--op-opacity-none);
     }
+  }
+}
+
+/* Using the Dialog element */
+
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog */
+
+@keyframes show-backdrop {
+  from {
+    opacity: var(--op-opacity-none);
+  }
+
+  to {
+    opacity: var(--_op-modal-backdrop-active-opacity);
+  }
+}
+
+@keyframes hide-backdrop {
+  from {
+    opacity: var(--_op-modal-backdrop-active-opacity);
+  }
+
+  to {
+    opacity: var(--op-opacity-none);
   }
 }
