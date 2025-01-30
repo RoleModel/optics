@@ -43,25 +43,25 @@ Table can be used as a standalone component, however, it does have a few depende
 
 ### Primary
 
-`.table-primary` Provides a Primary table. This uses the primary color in the header.
+`.table.table--primary` Provides a Primary table. This uses the primary color in the header.
 
 <Canvas of={TableStories.Primary} />
 
 ### Danger
 
-`.table-danger` Provides a Danger table. This uses the danger alert color in the header.
+`.table.table--danger` Provides a Danger table. This uses the danger alert color in the header.
 
 <Canvas of={TableStories.Danger} />
 
 ### Layout
 
-`.table--auto-layout`, `.table--fixed-layout` (with auto being the default) modify the table layout. Auto will adjust according to the contents, fixed will evenly divide based on the amount of columns.
+`.table.table--auto-layout`, `.table.table--fixed-layout` (with auto being the default) modify the table layout. Auto will adjust according to the contents, fixed will evenly divide based on the amount of columns.
 
 <Canvas of={TableStories.FixedLayout} />
 
 ### Density
 
-`.table--default-density`, `.table--comfortable-density`, `table--compact-density` (with default being the default) modify the table cell padding to expand or contract how much space they use.
+`.table.table--default-density`, `.table.table--comfortable-density`, `.table.table--compact-density` (with default being the default) modify the table cell padding to expand or contract how much space they use.
 
 <Canvas of={TableStories.ComfortableDensity} />
 
@@ -69,7 +69,7 @@ Table can be used as a standalone component, however, it does have a few depende
 
 ### Striping
 
-`.table--even-striped`, `.table--odd-striped` color every other (odd or even) row with a light color on the neutral scale.
+`.table.table--even-striped`, `.table.table--odd-striped` color every other (odd or even) row with a light color on the neutral scale.
 
 <Canvas of={TableStories.StripedEven} />
 
@@ -77,7 +77,7 @@ Table can be used as a standalone component, however, it does have a few depende
 
 ### Sticky Header/Footer
 
-`.table--sticky-header`, `.table--sticky-footer` will make either the table header or table footer sticky; the default is top/bottom of the viewport.
+`.table.table--sticky-header`, `.table.table--sticky-footer` will make either the table header or table footer sticky; the default is top/bottom of the viewport.
 
 These are best used in conjunction with a wrapping container fixed table height, though they will work outside of that being sticky to the browser window. Because the actual `table` HTML element is a bit finicky, you will need to wrap the `table` itself in a `.table-container` div to achieve correct overflow behavior. You will also need to set a fixed height. This will allow sticky header/footer with scrollable body rows.
 
@@ -128,12 +128,12 @@ Here are the variables used:
   }}
 ></div>
 
-The table classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The table classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple table classes to share the same behavior. You can modify all tables behavior by overriding the `%table-global` placeholder selector and setting any proprerties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all table behavior by overriding the `.table` selector and setting any properties:
 
 ```scss
-%table-global {
+.table {
   font-size: var(--op-font-2x-large);
 }
 ```
@@ -141,7 +141,7 @@ This allows multiple table classes to share the same behavior. You can modify al
 If you want to override how the density modifier behaves, you can use API described above to change which padding each density uses.
 
 ```css
-%table-global {
+.table {
   --_op-table-cell-padding-default: var(--op-space-x-small) var(--op-space-2x-small);
   --_op-table-cell-padding-comfortable: var(--op-space-large) var(--op-space-medium);
   --_op-table-cell-padding-compact: var(--op-space-2x-small) var(--op-space-3x-small);
@@ -152,7 +152,7 @@ If you need to override the color of a particular table style, you can open the 
 
 ```css
 // This will only affect the primary table, but not default or danger
-.table-primary {
+.table--primary {
   thead {
     background-color: purple;
     color: white;
@@ -171,12 +171,10 @@ If you need to override the color of a particular table style, you can open the 
   }}
 ></div>
 
-Your application may need a custom table. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.table-{name} {
-  @extend %table-global;
-
+.table--{name} {
   thead {
     background-color:
     color:
@@ -185,9 +183,7 @@ Your application may need a custom table. To add one, just follow this template:
 ```
 
 ```css
-.table-purple {
-  @extend %table-global;
-
+.table--purple {
   thead {
     background-color: purple;
     color: white;
