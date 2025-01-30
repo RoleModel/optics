@@ -22,7 +22,7 @@
   }
 
   .confirm-dialog {
-    /* Public API (allowed to be overridden) */
+    /* Public API (customizable component options) */
     --_op-confirm-dialog-width: calc(100 * var(--op-size-unit)); /* 400px */
 
     z-index: var(--op-z-index-dialog-content);
