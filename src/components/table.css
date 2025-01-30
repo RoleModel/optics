@@ -1,12 +1,14 @@
-%table-global {
-  // Public API
-  // Cells (for height, the appropriate variable is used when using the density modifiers)
-  --_op-table-cell-height-default: calc(11 * var(--op-size-unit)); // 44px
-  --_op-table-cell-height-comfortable: calc(16 * var(--op-size-unit)); // 64px
-  --_op-table-cell-height-compact: calc(8 * var(--op-size-unit)); // 32px
+.table {
+  /* Public API */
 
-  // Private API
-  // These allow for overriding specific padding versions easier.
+  /* Cells (for height, the appropriate variable is used when using the density modifiers) */
+  --_op-table-cell-height-default: calc(11 * var(--op-size-unit)); /* 44px */
+  --_op-table-cell-height-comfortable: calc(16 * var(--op-size-unit)); /* 64px */
+  --_op-table-cell-height-compact: calc(8 * var(--op-size-unit)); /* 32px */
+
+  /* Private API */
+
+  /* These allow for overriding specific padding versions easier. */
   --__op-table-cell-height: var(--_op-table-cell-height-default);
 
   width: 100%;
@@ -16,12 +18,14 @@
   contain: paint;
   table-layout: auto;
 
+  /* Elements */
+
   thead {
     background-color: var(--op-color-neutral-plus-eight);
     box-shadow: inset var(--op-border-top) var(--op-color-border);
     color: var(--op-color-neutral-on-plus-eight);
 
-    // This Currently does not work in Firefox since it does not support :has yet, but fails gracefully.
+    /* This Currently does not work in Firefox since it does not support :has yet, but fails gracefully. */
     &:has(th input[type='checkbox']:checked) {
       background-color: var(--op-color-primary-plus-seven);
       color: var(--op-color-primary-on-plus-seven);
@@ -42,19 +46,42 @@
   th,
   td {
     height: var(--__op-table-cell-height);
-    padding: var(--op-space-2x-small) var(--op-space-small);
     font-size: var(--op-font-small);
-  }
-
-  tr:not(:last-child) {
-    box-shadow: inset var(--op-border-top) var(--op-color-border);
+    padding-block: var(--op-space-2x-small);
+    padding-inline: var(--op-space-small);
   }
 
   tfoot tr {
     box-shadow: var(--op-border-top) var(--op-color-border);
   }
 
-  // Layout Modifiers
+  tr:not(:last-child) {
+    box-shadow: inset var(--op-border-top) var(--op-color-border);
+  }
+
+  /* Modifiers */
+
+  /* stylelint-disable no-descending-specificity */
+  &.table--primary {
+    thead {
+      background-color: var(--op-color-primary-plus-seven);
+      color: var(--op-color-primary-on-plus-seven);
+    }
+  }
+
+  &.table--danger {
+    thead {
+      background-color: var(--op-color-alerts-danger-plus-seven);
+      color: var(--op-color-alerts-danger-on-plus-seven);
+    }
+  }
+  /* stylelint-enable no-descending-specificity */
+
+  &.table--container {
+    overflow-y: auto;
+  }
+
+  /* Layout Modifiers */
   &.table--auto-layout {
     table-layout: auto;
   }
@@ -63,7 +90,7 @@
     table-layout: fixed;
   }
 
-  // Table Density Modifiers
+  /* Table Density Modifiers */
   &.table--default-density {
     --__op-table-cell-height: var(--_op-table-cell-height-default);
   }
@@ -76,7 +103,7 @@
     --__op-table-cell-height: var(--_op-table-cell-height-compact);
   }
 
-  // Striped Modifiers
+  /* Striped Modifiers */
   &.table--even-striped {
     tbody tr:nth-child(even) {
       background-color: var(--op-color-neutral-plus-seven);
@@ -91,47 +118,17 @@
     }
   }
 
-  // Sticky Header Row Modifier
+  /* Sticky Header Row Modifier */
+  /* stylelint-disable no-descending-specificity */
   &.table--sticky-header thead {
     position: sticky;
-    top: 0;
+    inset-block-start: 0;
   }
+  /* stylelint-enable no-descending-specificity */
 
-  // Sticky Footer Row Modifier
+  /* Sticky Footer Row Modifier */
   &.table--sticky-footer tfoot {
     position: sticky;
-    bottom: 0;
+    inset-block-end: 0;
   }
-}
-
-// Default Table
-.table {
-  @extend %table-global;
-}
-
-// Primary Table
-.table-primary {
-  @extend %table-global;
-
-  thead {
-    background-color: var(--op-color-primary-plus-seven);
-    color: var(--op-color-primary-on-plus-seven);
-  }
-}
-
-// Danger Table
-.table-danger {
-  @extend %table-global;
-
-  thead {
-    background-color: var(--op-color-alerts-danger-plus-seven);
-    color: var(--op-color-alerts-danger-on-plus-seven);
-  }
-}
-
-// Sticky Header / Footer Table Container
-.table-container {
-  @extend %table-global;
-
-  overflow-y: auto;
 }
