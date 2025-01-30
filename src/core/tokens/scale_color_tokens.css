@@ -1,11 +1,17 @@
-@mixin primary-semantic-scale {
+:root {
+  /*
+    Semantic Scales: plus adds luminosity, minus removes luminosity
+    This borrows from the photography concept of Aperture f-stops.
+    https://www.adobe.com/creativecloud/photography/discover/f-stop.html
+  */
+
   /**
   * @tokens Primary Colors
   * @presenter Color
   */
   --op-color-primary-original: hsl(var(--op-color-primary-h) var(--op-color-primary-s) var(--op-color-primary-l));
 
-  // Main Scale
+  /* Main Scale */
   --op-color-primary-plus-max: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 100%);
   --op-color-primary-plus-eight: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 98%);
   --op-color-primary-plus-seven: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 96%);
@@ -26,7 +32,7 @@
   --op-color-primary-minus-eight: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 4%);
   --op-color-primary-minus-max: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 0%);
 
-  // On Scale
+  /* On Scale */
   --op-color-primary-on-plus-max: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 0%);
   --op-color-primary-on-plus-max-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 20%);
   --op-color-primary-on-plus-eight: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 4%);
@@ -65,16 +71,14 @@
   --op-color-primary-on-minus-eight-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 86%);
   --op-color-primary-on-minus-max: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 100%);
   --op-color-primary-on-minus-max-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 88%);
-}
 
-@mixin neutral-semantic-scale {
   /**
   * @tokens Neutral Colors
   * @presenter Color
   */
   --op-color-neutral-original: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) var(--op-color-neutral-l));
 
-  // Main Scale
+  /* Main Scale */
   --op-color-neutral-plus-max: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 100%);
   --op-color-neutral-plus-eight: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 98%);
   --op-color-neutral-plus-seven: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 96%);
@@ -95,7 +99,7 @@
   --op-color-neutral-minus-eight: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 4%);
   --op-color-neutral-minus-max: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 0%);
 
-  // On Scale
+  /* On Scale */
   --op-color-neutral-on-plus-max: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 0%);
   --op-color-neutral-on-plus-max-alt: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 40%);
   --op-color-neutral-on-plus-eight: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 4%);
@@ -134,17 +138,16 @@
   --op-color-neutral-on-minus-eight-alt: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 86%);
   --op-color-neutral-on-minus-max: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 100%);
   --op-color-neutral-on-minus-max-alt: hsl(var(--op-color-neutral-h) var(--op-color-neutral-s) 88%);
-}
 
-@mixin alerts-warning-semantic-scale {
   /**
   * @tokens Alerts Warning Colors
   * @presenter Color
   */
-  // prettier-ignore
+
+  /* prettier-ignore */
   --op-color-alerts-warning-original: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) var(--op-color-alerts-warning-l));
 
-  // Main Scale
+  /* Main Scale */
   --op-color-alerts-warning-plus-max: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 100%);
   --op-color-alerts-warning-plus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 98%);
   --op-color-alerts-warning-plus-seven: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 96%);
@@ -165,28 +168,28 @@
   --op-color-alerts-warning-minus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 2%);
   --op-color-alerts-warning-minus-max: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 0%);
 
-  // On Scale
+  /* On Scale */
   --op-color-alerts-warning-on-plus-max: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 0%);
   --op-color-alerts-warning-on-plus-max-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
   --op-color-alerts-warning-on-plus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 4%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-plus-eight-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 24%);
   --op-color-alerts-warning-on-plus-seven: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 8%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-plus-seven-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 28%);
   --op-color-alerts-warning-on-plus-six: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 16%);
   --op-color-alerts-warning-on-plus-six-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 26%);
   --op-color-alerts-warning-on-plus-five: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-plus-five-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 25%);
   --op-color-alerts-warning-on-plus-four: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
   --op-color-alerts-warning-on-plus-four-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 0%);
   --op-color-alerts-warning-on-plus-three: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 20%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-plus-three-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 10%);
   --op-color-alerts-warning-on-plus-two: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 16%);
   --op-color-alerts-warning-on-plus-two-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 6%);
@@ -196,51 +199,50 @@
   --op-color-alerts-warning-on-base-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 0%);
   --op-color-alerts-warning-on-minus-one: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 100%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-minus-one-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
   --op-color-alerts-warning-on-minus-two: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 96%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-minus-two-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 84%);
   --op-color-alerts-warning-on-minus-three: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 92%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-minus-three-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 80%);
   --op-color-alerts-warning-on-minus-four: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-minus-four-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 76%);
   --op-color-alerts-warning-on-minus-five: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-minus-five-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 76%);
   --op-color-alerts-warning-on-minus-six: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 94%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-minus-six-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 82%);
   --op-color-alerts-warning-on-minus-seven: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 96%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-minus-seven-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 84%);
   --op-color-alerts-warning-on-minus-eight: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 98%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-minus-eight-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 86%);
   --op-color-alerts-warning-on-minus-max: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 100%);
 
-  // prettier-ignore
+  /* prettier-ignore */
   --op-color-alerts-warning-on-minus-max-alt: hsl(var(--op-color-alerts-warning-h) var(--op-color-alerts-warning-s) 88%);
-}
 
-@mixin alerts-danger-semantic-scale {
   /**
   * @tokens Alerts Danger Colors
   * @presenter Color
   */
-  // prettier-ignore
+
+  /* prettier-ignore */
   --op-color-alerts-danger-original: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) var(--op-color-alerts-danger-l));
 
-  // Main Scale
+  /* Main Scale */
   --op-color-alerts-danger-plus-max: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 100%);
   --op-color-alerts-danger-plus-eight: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 98%);
   --op-color-alerts-danger-plus-seven: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 96%);
@@ -261,7 +263,7 @@
   --op-color-alerts-danger-minus-eight: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 4%);
   --op-color-alerts-danger-minus-max: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 0%);
 
-  // On Scale
+  /* On Scale */
   --op-color-alerts-danger-on-plus-max: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 0%);
   --op-color-alerts-danger-on-plus-max-alt: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 20%);
   --op-color-alerts-danger-on-plus-eight: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 4%);
@@ -300,17 +302,16 @@
   --op-color-alerts-danger-on-minus-eight-alt: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 91%);
   --op-color-alerts-danger-on-minus-max: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 100%);
   --op-color-alerts-danger-on-minus-max-alt: hsl(var(--op-color-alerts-danger-h) var(--op-color-alerts-danger-s) 93%);
-}
 
-@mixin alerts-info-semantic-scale {
   /**
   * @tokens Alerts Info Colors
   * @presenter Color
   */
-  // prettier-ignore
+
+  /* prettier-ignore */
   --op-color-alerts-info-original: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) var(--op-color-alerts-info-l));
 
-  // Main Scale
+  /* Main Scale */
   --op-color-alerts-info-plus-max: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 100%);
   --op-color-alerts-info-plus-eight: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 98%);
   --op-color-alerts-info-plus-seven: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 96%);
@@ -331,7 +332,7 @@
   --op-color-alerts-info-minus-eight: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 4%);
   --op-color-alerts-info-minus-max: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 0%);
 
-  // On Scale
+  /* On Scale */
   --op-color-alerts-info-on-plus-max: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 0%);
   --op-color-alerts-info-on-plus-max-alt: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 20%);
   --op-color-alerts-info-on-plus-eight: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 4%);
@@ -370,17 +371,16 @@
   --op-color-alerts-info-on-minus-eight-alt: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 86%);
   --op-color-alerts-info-on-minus-max: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 100%);
   --op-color-alerts-info-on-minus-max-alt: hsl(var(--op-color-alerts-info-h) var(--op-color-alerts-info-s) 88%);
-}
 
-@mixin alerts-notice-semantic-scale {
   /**
   * @tokens Alerts Notice Colors
   * @presenter Color
   */
-  // prettier-ignore
+
+  /* prettier-ignore */
   --op-color-alerts-notice-original: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) var(--op-color-alerts-notice-l));
 
-  // Main Scale
+  /* Main Scale */
   --op-color-alerts-notice-plus-max: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 100%);
   --op-color-alerts-notice-plus-eight: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 98%);
   --op-color-alerts-notice-plus-seven: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 96%);
@@ -401,7 +401,7 @@
   --op-color-alerts-notice-minus-eight: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 4%);
   --op-color-alerts-notice-minus-max: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 0%);
 
-  // On Scale
+  /* On Scale */
   --op-color-alerts-notice-on-plus-max: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 0%);
   --op-color-alerts-notice-on-plus-max-alt: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 20%);
   --op-color-alerts-notice-on-plus-eight: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 4%);
@@ -440,9 +440,7 @@
   --op-color-alerts-notice-on-minus-eight-alt: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 86%);
   --op-color-alerts-notice-on-minus-max: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 100%);
   --op-color-alerts-notice-on-minus-max-alt: hsl(var(--op-color-alerts-notice-h) var(--op-color-alerts-notice-s) 88%);
-}
 
-@mixin background {
   /**
   * @tokens Basic Colors
   * @presenter Color
@@ -450,19 +448,4 @@
   --op-color-background: var(--op-color-neutral-plus-eight);
   --op-color-on-background: var(--op-color-neutral-on-plus-eight);
   --op-color-on-background-alt: var(--op-color-neutral-on-plus-eight-alt);
-}
-
-:root {
-  // Semantic Scales: plus adds luminosity, minus removes luminosity
-  // This borrows from the photography concept of Aperture f-stops.
-  // https://www.adobe.com/creativecloud/photography/discover/f-stop.html
-  @include primary-semantic-scale;
-  @include neutral-semantic-scale;
-
-  @include alerts-warning-semantic-scale;
-  @include alerts-danger-semantic-scale;
-  @include alerts-info-semantic-scale;
-  @include alerts-notice-semantic-scale;
-
-  @include background;
 }
