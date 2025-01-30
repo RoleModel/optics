@@ -25,7 +25,6 @@
     box-shadow: inset var(--op-border-top) var(--op-color-border);
     color: var(--op-color-neutral-on-plus-eight);
 
-    /* This Currently does not work in Firefox since it does not support :has yet, but fails gracefully. */
     &:has(th input[type='checkbox']:checked) {
       background-color: var(--op-color-primary-plus-seven);
       color: var(--op-color-primary-on-plus-seven);
