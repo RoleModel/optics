@@ -1,9 +1,9 @@
-// After a reset, introduce base element styles specific to this system
+/* After a reset, introduce base element styles specific to this system */
 
 html {
-  overflow: hidden; // Needed to prevent flash messages and panels from causing overflow
+  overflow: hidden; /* Needed to prevent flash messages and panels from causing overflow */
   font-family: var(--op-font-family);
-  font-size: 62.5%; // 1rem = 10px
+  font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
