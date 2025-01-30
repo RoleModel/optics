@@ -1,1 +1,0 @@
-const s=({vertical:a=!1,size:d="small",spacing:i="none"})=>{const e=document.createElement("div");return e.className=a?"divider-vertical":"divider",d!=="small"&&e.classList.add(`divider--${d}`),i!=="none"&&e.classList.add(`divider--spacing-${i}`),e};export{s as c};
