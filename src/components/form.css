@@ -94,9 +94,7 @@
   font-size: var(--__op-form-control-font-size);
   line-height: var(--op-line-height-base);
   padding-block: var(--op-space-2x-small);
-  padding-inline-end: var(--op-space-x-small);
-  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
-  padding-inline-start: var(--op-space-small);
+  padding-inline: var(--op-space-small) var(--op-space-x-small);
 
   /* Focus State */
   &:focus,
