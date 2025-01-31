@@ -27,46 +27,46 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 ## Domain Registrar Example
 
 ```css
-// Domains Sidebar Example
-%btn-global {
+/* Domains Sidebar Example */
+
+.sidebar {
   &.btn--pill-right {
     border-radius: 0 var(--op-radius-pill) var(--op-radius-pill) 0;
   }
-}
 
-.sidebar-domains {
-  @extend %sidebar-global;
+  &.sidebar--domains {
+    --_op-sidebar-drawer-width: 28rem;
+    --_op-sidebar-content-spacing: 0;
+    --_op-sidebar-content-item-spacing: 0;
 
-  --_op-sidebar-drawer-width: 28rem;
-  --_op-sidebar-content-spacing: 0;
-  --_op-sidebar-content-item-spacing: 0;
+    .btn {
+      border-radius: 0;
 
-  box-shadow: none;
-
-  .btn {
-    &.btn--no-border {
-      box-shadow: none;
-
-      &.btn--active {
-        background-color: var(--op-color-primary-plus-five);
-        color: var(--op-color-primary-on-plus-five);
-      }
-
-      &:hover:not(.btn--active) {
-        background-color: var(--op-color-neutral-plus-six);
+      &.btn--no-border {
         box-shadow: none;
-        color: var(--op-color-neutral-on-plus-six);
+
+        &.btn--active {
+          background-color: var(--op-color-primary-plus-five);
+          color: var(--op-color-primary-on-plus-five);
+        }
+
+        &:hover:not(.btn--active) {
+          background-color: var(--op-color-neutral-plus-six);
+          box-shadow: none;
+          color: var(--op-color-neutral-on-plus-six);
+        }
       }
     }
-  }
 
-  .sidebar__footer {
-    display: flex;
-    align-items: center;
-    padding-left: var(--op-space-large);
-    gap: var(--op-space-small);
+    .sidebar__footer {
+      display: flex;
+      align-items: center;
+      padding-left: var(--op-space-large);
+      gap: var(--op-space-small);
+    }
   }
 }
+
 ```
 
 <Canvas of={CustomSidebarStories.Domains} />
@@ -74,7 +74,8 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 ## Performance Management Software Example
 
 ```css
-// 16Six Sidebar Example
+/* 16Six Sidebar Example */
+
 .icon--rotated-135 {
   rotate: 135deg;
 }
@@ -83,7 +84,7 @@ Your app may want to customize the sidebar to change the look and feel. Here are
   rotate: 90deg;
 }
 
-@mixin sidebar-rail-global {
+.sidebar {
   .sidebar__brand {
     justify-content: center;
 
@@ -91,55 +92,49 @@ Your app may want to customize the sidebar to change the look and feel. Here are
       display: none;
     }
   }
-}
 
-.sidebar-16six {
-  @extend %sidebar-global;
+  &.sidebar--16six {
+    --_op-sidebar-background-color: hsl(256deg 66% 15%);
+    --_op-sidebar-text-color: hsl(26deg 100% 95%);
+    --_op-sidebar-border-color: hsl(26deg 100% 95%);
+    --_op-sidebar-rail-width: 6.4rem;
+    --_op-sidebar-drawer-width: 22.4rem;
+    --_op-sidebar-drawer-brand-width: calc(var(--op-space-3x-large) + (2 * var(--op-space-medium)));
+    --_op-sidebar-brand-spacing: var(--op-space-medium) var(--op-space-x-small);
+    --_op-sidebar-content-item-spacing: var(--op-space-x-small);
+    --_op-sidebar-spacing: 0 0 var(--op-space-x-small);
 
-  --_op-sidebar-background-color: hsl(256deg 66% 15%);
-  --_op-sidebar-text-color: hsl(26deg 100% 95%);
-  --_op-sidebar-border-color: hsl(26deg 100% 95%);
-  --_op-sidebar-rail-width: 6.4rem;
-  --_op-sidebar-drawer-width: 22.4rem;
-  --_op-sidebar-drawer-brand-width: calc(var(--op-space-3x-large) + (2 * var(--op-space-medium)));
-  --_op-sidebar-brand-spacing: var(--op-space-medium) var(--op-space-x-small);
-  --_op-sidebar-content-item-spacing: var(--op-space-x-small);
-  --_op-sidebar-spacing: 0 0 var(--op-space-x-small);
-
-  .sidebar__brand {
-    display: flex;
-    margin: 0;
-    color: inherit;
-    gap: var(--op-space-medium);
-    text-decoration: none;
-
-    svg {
-      width: var(--op-space-3x-large);
-      height: var(--op-space-3x-large);
-    }
-
-    .sidebar__brand-label {
+    .sidebar__brand {
       display: flex;
-      flex-direction: column;
-      font-size: var(--op-font-small);
-    }
-  }
+      margin: 0;
+      color: inherit;
+      gap: var(--op-space-medium);
+      text-decoration: none;
 
-  .btn {
-    &.btn--no-border {
-      background-color: transparent;
-      box-shadow: none;
-      color: var(--_op-sidebar-text-color);
+      svg {
+        width: var(--op-space-3x-large);
+        height: var(--op-space-3x-large);
+      }
 
-      &.btn--active,
-      &:hover {
-        background-color: hsl(256deg 23% 32%);
+      .sidebar__brand-label {
+        display: flex;
+        flex-direction: column;
+        font-size: var(--op-font-small);
       }
     }
-  }
 
-  &.sidebar--rail {
-    @include sidebar-rail-global;
+    .btn {
+      &.btn--no-border {
+        background-color: transparent;
+        box-shadow: none;
+        color: var(--_op-sidebar-text-color);
+
+        &.btn--active,
+        &:hover {
+          background-color: hsl(256deg 23% 32%);
+        }
+      }
+    }
   }
 }
 ```
