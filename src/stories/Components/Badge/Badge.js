@@ -26,7 +26,7 @@ export const createBadge = ({
   if (inButton !== 'no') {
     const button = document.createElement('button')
     button.innerText = 'Notifications'
-    button.className = 'btn-primary btn--with-badge'
+    button.className = 'btn btn--primary btn--with-badge'
 
     if (!pill) {
       badge.className += ' badge--pill'

@@ -8,7 +8,7 @@ export const createModal = ({ header, body, footer = '', inlineDemo = false }) =
       ? footer
       : `
       <button class="btn">Cancel</button>
-      <button class='btn-primary'>Save</button>
+      <button class='btn btn--primary'>Save</button>
   `
 
   element.innerHTML = `
