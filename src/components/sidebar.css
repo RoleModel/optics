@@ -131,7 +131,7 @@
   }
 
   /* Primary */
-  .sidebar--primary {
+  &.sidebar--primary {
     --_op-sidebar-background-color: var(--op-color-primary-plus-six);
     --_op-sidebar-text-color: var(--op-color-primary-on-plus-six);
     --_op-sidebar-border-color: var(--op-color-primary-plus-four);
