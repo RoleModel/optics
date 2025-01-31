@@ -4,7 +4,7 @@ import { createAvatar } from '../Avatar/Avatar.js'
 const createNavbarLink = ({ icon, label }, activeLink) => {
   return createButton({
     label,
-    priority: 'default',
+    variant: 'default',
     noBorder: true,
     active: activeLink === label,
     icon,

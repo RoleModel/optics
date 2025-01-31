@@ -9,11 +9,11 @@ export const createTag = ({ label, type = 'readonly', iconLeft = false, iconRigh
   tag.append(text)
 
   if (iconLeft) {
-    tag.prepend(createButton({ priority: 'default', noBorder: true, icon: 'close', pill: true }))
+    tag.prepend(createButton({ variant: 'default', noBorder: true, icon: 'close', pill: true }))
   }
 
   if (iconRight) {
-    tag.append(createButton({ priority: 'default', noBorder: true, icon: 'close', pill: true }))
+    tag.append(createButton({ variant: 'default', noBorder: true, icon: 'close', pill: true }))
   }
 
   tag.className = ['tag', `tag--${type}`].filter(Boolean).join(' ')

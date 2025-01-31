@@ -38,7 +38,7 @@ export const createAlert = ({
   element.innerHTML += '    \n' // Formatting Hack
 
   if (dismissible) {
-    const iconButton = createButton({ priority: 'default', icon: 'close', pill: true, noBorder: true })
+    const iconButton = createButton({ variant: 'default', icon: 'close', pill: true, noBorder: true })
     iconButton.classList.add('alert__icon')
     element.appendChild(iconButton)
   }
