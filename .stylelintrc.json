@@ -1,10 +1,6 @@
 {
-  "extends": [
-    "stylelint-config-idiomatic-order"
-  ],
-  "plugins": [
-    "stylelint-prettier"
-  ],
+  "extends": ["stylelint-config-idiomatic-order"],
+  "plugins": ["stylelint-prettier"],
   "overrides": [],
   "rules": {
     "prettier/prettier": true,
