@@ -27,7 +27,7 @@ This is not a common problem and your particular use-case may need to tweak the 
 
 ```css
 // Badge Example
-%aligned-header {
+.aligned-header {
   // Public API (allowed to be overridden)
   --_op-line-height: var(--op-line-height-base);
   --_op-font-size: var(--op-font-4x-large);
@@ -42,10 +42,6 @@ This is not a common problem and your particular use-case may need to tweak the 
     align-items: center;
     vertical-align: top;
   }
-}
-
-.aligned-header {
-  @extend %aligned-header;
 }
 ```
 
