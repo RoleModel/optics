@@ -1,9 +1,7 @@
-// By default $select-ns is "ts"
-
-// Design System Overrides
-.#{$select-ns}-wrapper {
-  // Control
-  .#{$select-ns}-control {
+/* Design System Overrides */
+.ts-wrapper {
+  /* Control */
+  .ts-control {
     min-height: var(--op-input-height-large);
     align-items: center;
     border: none;
@@ -16,16 +14,16 @@
     line-height: var(--op-line-height-base);
   }
 
-  // Active control
+  /* Active control */
   &.dropdown-active {
-    .#{$select-ns}-control {
+    .ts-control {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
   }
 
-  // Dropdown
-  .#{$select-ns}-dropdown {
+  /* Dropdown */
+  .ts-dropdown {
     border: none;
     margin: 0;
     border-bottom-left-radius: var(--op-radius-large);
@@ -42,9 +40,9 @@
     }
   }
 
-  // Item
+  /* Item */
   &.multi {
-    .#{$select-ns}-control > div {
+    .ts-control > div {
       padding: var(--op-space-3x-small) var(--op-space-x-small);
       border-radius: var(--op-radius-medium);
       margin: 0 var(--op-space-3x-small) var(--op-space-3x-small) 0;
@@ -58,13 +56,13 @@
     }
   }
 
-  // Dropdown Arrow
+  /* Dropdown Arrow */
   &.single,
   &.multi,
   &.single.input-active,
   &.multi.input-active {
-    .#{$select-ns}-control {
-      // Highly specific SVG data image for the dropdown arrow.
+    .ts-control {
+      /* Highly specific SVG data image for the dropdown arrow. */
       background-image: var(--op-encoded-images-dropdown-arrow);
       background-position-x: calc(100% - var(--op-space-small));
       background-position-y: center;

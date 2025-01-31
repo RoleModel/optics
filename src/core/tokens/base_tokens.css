@@ -1,21 +1,25 @@
 @import 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Noto+Serif:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap';
 
-// Noto Sans supports:
-// font-weight: {anything between 100 and 900}
-// font-stretch: {anything between 62.5% and 100%}
-// font-style: {normal or italic}
+/*
+Noto Sans supports:
+  font-weight: {anything between 100 and 900}
+  font-stretch: {anything between 62.5% and 100%}
+  font-style: {normal or italic}
+*/
 
-// Noto Serif supports:
-// font-weight: {anything between 100 and 900}
-// font-stretch: {anything between 62.5% and 100%}
-// font-style: {normal or italic}
+/*
+  Noto Serif supports:
+  font-weight: {anything between 100 and 900}
+  font-stretch: {anything between 62.5% and 100%}
+  font-style: {normal or italic}
+*/
 
-// Using Mixins allows us to include them at a component level
-// as needed and override them.
+:root {
+  /* Color HSLs
+    A theme comprised of a primary, neutral, warning, danger, info, and notice colors.
+  */
 
-// A theme comprised of a primary, neutral, warning, danger, info, and notice colors.
-@mixin color-varieties {
-  // Basic Colors
+  /* Basic Colors */
 
   /**
   * @tokens Basic Colors
@@ -71,9 +75,7 @@
   --op-color-alerts-notice-h: 130;
   --op-color-alerts-notice-s: 61%;
   --op-color-alerts-notice-l: 64%;
-}
 
-@mixin opacities {
   /**
   * @tokens Opacities
   * @presenter Opacity
@@ -83,35 +85,28 @@
   --op-opacity-disabled: 0.4;
   --op-opacity-half: 0.5;
   --op-opacity-full: 1;
-}
 
-/*
-  Breakpoints
-  CSS does not support using variables within @media or @container queries. Environment variables are drafted but likely to not be implemented soon.
-  https://drafts.csswg.org/css-env-1/
-  https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+  /*
+    Breakpoints
+    CSS does not support using variables within @media or @container queries. Environment variables are drafted but likely to not be implemented soon.
+    https://drafts.csswg.org/css-env-1/
+    https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 
-  Here is a list of breakpoints used throughout Optics
+    Here is a list of breakpoints used throughout Optics:
+  */
 
-  --op-breakpoint-x-small: 512px;
-  --op-breakpoint-small: 768px;
-  --op-breakpoint-medium: 1024px;
-  --op-breakpoint-large: 1280px;
-  --op-breakpoint-x-large: 1440px;
-*/
-@mixin breakpoints {
   /**
   * @tokens Breakpoints
   * @presenter Spacing
   */
-  --op-breakpoint-x-small: 512px; // vertical phone
-  --op-breakpoint-small: 768px; // vertical ipad
-  --op-breakpoint-medium: 1024px; // landscape ipad
-  --op-breakpoint-large: 1280px; // small laptop
-  --op-breakpoint-x-large: 1440px; // medium laptop
-}
+  --op-breakpoint-x-small: 512px; /* vertical phone */
+  --op-breakpoint-small: 768px; /* vertical ipad */
+  --op-breakpoint-medium: 1024px; /* landscape ipad */
+  --op-breakpoint-large: 1280px; /* small laptop */
+  --op-breakpoint-x-large: 1440px; /* medium laptop */
 
-@mixin border-radius {
+  /* Border */
+
   /**
   * @tokens Border Radius
   * @presenter BorderRadius
@@ -123,9 +118,7 @@
   --op-radius-2x-large: 16px;
   --op-radius-circle: 50%;
   --op-radius-pill: 9999px;
-}
 
-@mixin border-widths {
   /**
   * @tokens Border Width
   * @presenter Spacing
@@ -133,18 +126,14 @@
   --op-border-width: 1px;
   --op-border-width-large: 2px;
   --op-border-width-x-large: 4px;
-}
 
-@mixin border-colors {
   /**
   * @tokens Border Color
   * @presenter Color
   */
   --op-color-border: var(--op-color-neutral-plus-five);
-}
 
-@mixin box-shadows {
-  // E.G. box-shadow: var(--op-border-top) var(--op-color-border);
+  /* E.G. box-shadow: var(--op-border-top) var(--op-color-border); */
 
   /**
   * @tokens Border Shadow
@@ -158,28 +147,26 @@
   --op-border-left: calc(-1 * var(--op-border-width)) 0 0 0;
   --op-border-y: var(--op-border-top) var(--op-color-border), var(--op-border-bottom) var(--op-color-border);
   --op-border-x: var(--op-border-left) var(--op-color-border), var(--op-border-right) var(--op-color-border);
-}
 
-@mixin font-scales {
+  /* Font */
+
   /**
   * @tokens Font Scale
   * @presenter FontSize
   */
-  --op-font-scale-unit: 1rem; // 10px;
-  --op-font-2x-small: calc(var(--op-font-scale-unit) * 1); // 10px
-  --op-font-x-small: calc(var(--op-font-scale-unit) * 1.2); // 12px
-  --op-font-small: calc(var(--op-font-scale-unit) * 1.4); // 14px
-  --op-font-medium: calc(var(--op-font-scale-unit) * 1.6); // 16px
-  --op-font-large: calc(var(--op-font-scale-unit) * 1.8); // 18px
-  --op-font-x-large: calc(var(--op-font-scale-unit) * 2); // 20px
-  --op-font-2x-large: calc(var(--op-font-scale-unit) * 2.4); // 24px
-  --op-font-3x-large: calc(var(--op-font-scale-unit) * 2.8); // 28px
-  --op-font-4x-large: calc(var(--op-font-scale-unit) * 3.2); // 32px
-  --op-font-5x-large: calc(var(--op-font-scale-unit) * 3.6); // 36px
-  --op-font-6x-large: calc(var(--op-font-scale-unit) * 4.8); // 48px
-}
+  --op-font-scale-unit: 1rem; /* 10px; */
+  --op-font-2x-small: calc(var(--op-font-scale-unit) * 1); /* 10px */
+  --op-font-x-small: calc(var(--op-font-scale-unit) * 1.2); /* 12px */
+  --op-font-small: calc(var(--op-font-scale-unit) * 1.4); /* 14px */
+  --op-font-medium: calc(var(--op-font-scale-unit) * 1.6); /* 16px */
+  --op-font-large: calc(var(--op-font-scale-unit) * 1.8); /* 18px */
+  --op-font-x-large: calc(var(--op-font-scale-unit) * 2); /* 20px */
+  --op-font-2x-large: calc(var(--op-font-scale-unit) * 2.4); /* 24px */
+  --op-font-3x-large: calc(var(--op-font-scale-unit) * 2.8); /* 28px */
+  --op-font-4x-large: calc(var(--op-font-scale-unit) * 3.2); /* 32px */
+  --op-font-5x-large: calc(var(--op-font-scale-unit) * 3.6); /* 36px */
+  --op-font-6x-large: calc(var(--op-font-scale-unit) * 4.8); /* 48px */
 
-@mixin font-weights {
   /**
   * @tokens Font Weight
   * @presenter FontWeight
@@ -193,9 +180,16 @@
   --op-font-weight-bold: 700;
   --op-font-weight-extra-bold: 800;
   --op-font-weight-black: 900;
-}
 
-@mixin line-heights {
+  /**
+  * @tokens Font Family
+  * @presenter FontFamily
+  */
+  --op-font-family: 'Noto Sans', sans-serif;
+  --op-font-family-alt: 'Noto Serif', serif;
+
+  /* Text */
+
   /**
   * @tokens Line Height
   * @presenter LineHeight
@@ -208,18 +202,16 @@
   --op-line-height-loose: 1.6;
   --op-line-height-looser: 1.7;
   --op-line-height-loosest: 1.8;
-}
 
-@mixin letter-spacing {
   /**
   * @tokens Letter Spacing
   * @presenter LetterSpacing
   */
   --op-letter-spacing-navigation: 0.01rem;
   --op-letter-spacing-label: 0.04rem;
-}
 
-@mixin transitions {
+  /* Transitions and Animations */
+
   /**
   * @tokens Transition
   */
@@ -229,60 +221,50 @@
   --op-transition-modal: all 300ms ease-in;
   --op-transition-panel: right 400ms ease-in;
   --op-transition-tooltip: all 300ms ease-in 300ms;
-}
 
-@mixin animations {
   /**
   * @tokens Animation
   * @presenter Animation
   */
   --op-animation-flash: rm-slide-in-out-flash 5s normal forwards;
-}
 
-@mixin encoded-images {
+  /* Encoded Images */
+
   /**
   * @tokens Encoded Images
   */
-  --op-encoded-images-dropdown-arrow-width: calc(1.2 * var(--op-space-scale-unit)); // 12px No way to string interpolate
+  --op-encoded-images-dropdown-arrow-width: calc(
+    1.2 * var(--op-space-scale-unit)
+  ); /* 12px No way to string interpolate */
+
   --op-encoded-images-dropdown-arrow: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02IDguMzc1MDFMMCAyLjM3NTAxTDEuNCAwLjk3NTAwNkw2IDUuNTc1MDFMMTAuNiAwLjk3NTAwNkwxMiAyLjM3NTAxTDYgOC4zNzUwMVoiIGZpbGw9IiMwQTBBMEIiLz4KPC9zdmc+Cg==');
-}
 
-@mixin fonts {
-  /**
-  * @tokens Font Family
-  * @presenter FontFamily
-  */
-  --op-font-family: 'Noto Sans', sans-serif;
-  --op-font-family-alt: 'Noto Serif', serif;
-}
+  /* Spacing */
 
-@mixin spacing-scales {
-  /**
-  * @tokens Space Scale
-  * @presenter Spacing
-  */
-  --op-space-scale-unit: 1rem; // 10px;
-  --op-space-3x-small: calc(var(--op-space-scale-unit) * 0.2); // 2px
-  --op-space-2x-small: calc(var(--op-space-scale-unit) * 0.4); // 4px
-  --op-space-x-small: calc(var(--op-space-scale-unit) * 0.8); // 8px
-  --op-space-small: calc(var(--op-space-scale-unit) * 1.2); // 12px
-  --op-space-medium: calc(var(--op-space-scale-unit) * 1.6); // 16px
-  --op-space-large: calc(var(--op-space-scale-unit) * 2); // 20px
-  --op-space-x-large: calc(var(--op-space-scale-unit) * 2.4); // 24px
-  --op-space-2x-large: calc(var(--op-space-scale-unit) * 2.8); // 28px
-  --op-space-3x-large: calc(var(--op-space-scale-unit) * 4); // 40px
-  --op-space-4x-large: calc(var(--op-space-scale-unit) * 8); // 80px
-}
-
-@mixin sizing-scales {
   /**
   * @tokens Size Scale
   * @presenter Spacing
   */
-  --op-size-unit: 0.4rem; // 4px;
-}
+  --op-size-unit: 0.4rem; /* 4px */
 
-@mixin shadows {
+  /**
+  * @tokens Space Scale
+  * @presenter Spacing
+  */
+  --op-space-scale-unit: 1rem; /* 10px; */
+  --op-space-3x-small: calc(var(--op-space-scale-unit) * 0.2); /* 2px */
+  --op-space-2x-small: calc(var(--op-space-scale-unit) * 0.4); /* 4px */
+  --op-space-x-small: calc(var(--op-space-scale-unit) * 0.8); /* 8px */
+  --op-space-small: calc(var(--op-space-scale-unit) * 1.2); /* 12px */
+  --op-space-medium: calc(var(--op-space-scale-unit) * 1.6); /* 16px */
+  --op-space-large: calc(var(--op-space-scale-unit) * 2); /* 20px */
+  --op-space-x-large: calc(var(--op-space-scale-unit) * 2.4); /* 24px */
+  --op-space-2x-large: calc(var(--op-space-scale-unit) * 2.8); /* 28px */
+  --op-space-3x-large: calc(var(--op-space-scale-unit) * 4); /* 40px */
+  --op-space-4x-large: calc(var(--op-space-scale-unit) * 8); /* 80px */
+
+  /* Shadows */
+
   /**
   * @tokens Shadows
   * @presenter Shadow
@@ -292,9 +274,9 @@
   --op-shadow-medium: 0 4px 8px hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 3%);
   --op-shadow-large: 0 6px 10px hsl(0deg 0% 0% / 15%), 0 2px 3px hsl(0deg 0% 0% / 3%);
   --op-shadow-x-large: 0 8px 12px hsl(0deg 0% 0% / 15%), 0 4px 4px hsl(0deg 0% 0% / 3%);
-}
 
-@mixin z-indexes {
+  /* Z Index */
+
   /**
   * @tokens Z-Index
   */
@@ -307,20 +289,22 @@
   --op-z-index-dropdown: 900;
   --op-z-index-alert-group: 950;
   --op-z-index-tooltip: 1000;
-}
 
-@mixin inputs {
-  // This should follow multiples of 4
-  // https: //uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec See example 8
+  /* Inputs */
+
+  /*
+    This should follow multiples of 4
+    https: //uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec See example 8
+  */
 
   /**
   * @tokens Input Heights
   * @presenter Spacing
   */
-  --op-input-height-small: 2.8rem; // 28px
-  --op-input-height-medium: 3.6rem; // 36px
-  --op-input-height-large: 4rem; // 40px
-  --op-input-height-x-large: 8.4rem; // 84px
+  --op-input-height-small: 2.8rem; /* 28px */
+  --op-input-height-medium: 3.6rem; /* 36px */
+  --op-input-height-large: 4rem; /* 40px */
+  --op-input-height-x-large: 8.4rem; /* 84px */
 
   /**
   * @tokens Input Focus
@@ -342,69 +326,27 @@
     var(--op-input-outer-focus) var(--op-color-alerts-notice-plus-five);
 }
 
-:root {
-  // Color HSLs
-  @include color-varieties;
-  @include opacities;
-
-  // Breakpoints
-  @include breakpoints;
-
-  // Border
-  @include border-radius;
-  @include border-widths;
-  @include border-colors;
-  @include box-shadows;
-
-  // Font
-  @include font-scales;
-  @include font-weights;
-  @include fonts;
-
-  // Text
-  @include line-heights;
-  @include letter-spacing;
-
-  // Transitions and Animations
-  @include transitions;
-  @include animations;
-
-  // Encoded Images
-  @include encoded-images;
-
-  // Spacing
-  @include sizing-scales;
-  @include spacing-scales;
-
-  // Shadows
-  @include shadows;
-
-  // Z Index
-  @include z-indexes;
-
-  // Inputs
-  @include inputs;
-}
-
-// Animations
+/* Animations */
 @keyframes rm-slide-in-out-flash {
-  // If an duration of 5s is set:
-  // Start off the Screen
+  /*
+    If an duration of 5s is set:
+    Start off the Screen
+  */
   0% {
     right: -100%;
   }
 
-  // Animate onto the screen for 0.5s
+  /* Animate onto the screen for 0.5s */
   10% {
     right: var(--op-space-large);
   }
 
-  // Stay on the screen for 3s
+  /* Stay on the screen for 3s */
   70% {
     right: var(--op-space-large);
   }
 
-  // Animate off the screen for 1.5s
+  /* Animate off the screen for 1.5s */
   100% {
     right: -100%;
   }

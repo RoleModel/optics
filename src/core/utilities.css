@@ -1,4 +1,4 @@
-// Container Properties
+/* Container Properties */
 
 .container {
   width: 100%;
@@ -23,7 +23,7 @@
   max-width: var(--op-breakpoint-x-small);
 }
 
-// Width Properties
+/* Width Properties */
 
 .full-width {
   width: 100%;
@@ -65,7 +65,7 @@
   width: calc(100% * 1 / 3);
 }
 
-// Flex Properties
+/* Flex Properties */
 
 .flex {
   display: flex;
@@ -91,7 +91,7 @@
   flex-grow: 1;
 }
 
-// Gap Properties
+/* Gap Properties */
 .gap-xxs {
   gap: var(--op-space-2x-small);
 
@@ -128,7 +128,7 @@
   --op-gap: var(--op-space-x-large);
 }
 
-// Justify Content
+/* Justify Content */
 
 .justify-start {
   justify-content: flex-start;
@@ -150,7 +150,7 @@
   justify-content: space-around;
 }
 
-// Align Items
+/* Align Items */
 
 .items-stretch {
   align-items: stretch;
@@ -172,7 +172,7 @@
   align-items: baseline;
 }
 
-// Align Self
+/* Align Self */
 
 .self-auto {
   align-self: auto;
@@ -198,7 +198,7 @@
   align-self: baseline;
 }
 
-// Text Alignment
+/* Text Alignment */
 
 .text-left {
   text-align: left;
@@ -216,7 +216,7 @@
   text-align: justify;
 }
 
-// Box Margin
+/* Box Margin */
 
 .margin-xl {
   margin: var(--op-space-x-large);
@@ -246,7 +246,7 @@
   margin: auto;
 }
 
-// Vertical Margin
+/* Vertical Margin */
 
 .margin-y-xl {
   margin-top: var(--op-space-x-large);
@@ -278,7 +278,7 @@
   margin-bottom: 0;
 }
 
-// Horizontal Margin
+/* Horizontal Margin */
 
 .margin-x-xl {
   margin-right: var(--op-space-x-large);
@@ -310,7 +310,7 @@
   margin-left: 0;
 }
 
-// Top Margin
+/* Top Margin */
 
 .margin-top-xl {
   margin-top: var(--op-space-x-large);
@@ -336,7 +336,7 @@
   margin-top: 0;
 }
 
-// Bottom Margin
+/* Bottom Margin */
 
 .margin-bottom-xl {
   margin-bottom: var(--op-space-x-large);
@@ -362,7 +362,7 @@
   margin-bottom: 0;
 }
 
-// Right Margin
+/* Right Margin */
 
 .margin-right-xl {
   margin-right: var(--op-space-x-large);
@@ -388,7 +388,7 @@
   margin-left: 0;
 }
 
-// Left Margin
+/* Left Margin */
 
 .margin-left-xl {
   margin-left: var(--op-space-x-large);
@@ -414,9 +414,11 @@
   margin-left: 0;
 }
 
-// Accessibility
-// Use the following class to hide accessibility text that is needed for screenreaders but needs to be hidden from regular users.
-// https: //snook.ca/archives/html_and_css/hiding-content-for-accessibility
+/*
+  Accessibility
+  Use the following class to hide accessibility text that is needed for screen readers but needs to be hidden from regular users.
+  https: //snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*/
 .sr-only {
   position: absolute !important;
   overflow: hidden;

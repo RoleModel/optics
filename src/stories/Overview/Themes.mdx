@@ -20,6 +20,25 @@ This will ignore the system preference and use specified theme mode (I.E. your a
 </html>
 ```
 
+The theme mode can also be controlled within an individual component, rather than at the app level. This can be done by using the following attribute:
+
+```css
+.my-component {
+  color-scheme: only light;
+  /*
+    Options:
+    color-scheme: light dark;
+    color-scheme: only light;
+    color-scheme: only dark;
+  */
+
+  background-color: var(--op-color-primary-plus-one);
+  color: var(--op-color-primary-on-plus-one);
+}
+```
+
+See the [Color Scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme) and [light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark) for more information.
+
 ## Theming
 
 If you want to customize your application, you can provide your own theme files that serve as overrides to the existing tokens.
@@ -37,33 +56,30 @@ Your custom theme can change any tokens, including colors, radius, fonts, even r
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@mixin color-varieties {
+:root {
+  /* Colors */
   --op-color-primary-h: my-new-value;
   --op-color-primary-s: my-new-value;
   --op-color-primary-l: my-new-value;
-}
 
-@mixin fonts {
+  /* Color Scale */
+  --op-color-primary-plus-two: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 64%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 32%)
+  );
+
+  /* Fonts */
   --op-font-family: 'Coming Soon', sans-serif;
-}
-
-@mixin fonts-dark {
-  --op-font-family: 'Grandstander', sans-serif;
-}
-
-:root {
-  @include color-varieties;
-  @include fonts;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme-mode='light']) {
-    @include fonts-dark;
+    --op-font-family: 'Grandstander', sans-serif;
   }
 }
 
 :root[data-theme-mode='dark'] {
-  @include fonts-dark;
+  --op-font-family: 'Grandstander', sans-serif;
 }
 ```
 
@@ -85,37 +101,36 @@ This theme would always be included in your application, but only activate when 
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@mixin color-varieties {
+:root[data-theme='example'] {
+  /* Colors */
   --op-color-primary-h: my-new-value;
   --op-color-primary-s: my-new-value;
   --op-color-primary-l: my-new-value;
-}
 
-@mixin fonts {
+  /* Color Scale */
+  --op-color-primary-plus-two: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 64%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 32%)
+  );
+
+  /* Fonts */
   --op-font-family: 'Coming Soon', sans-serif;
-}
-
-@mixin fonts-dark {
-  --op-font-family: 'Grandstander', sans-serif;
-}
-
-:root[data-theme='example'] {
-  @include color-varieties;
-  @include fonts;
 }
 
 @media (prefers-color-scheme: dark) {
   :root[data-theme='example']:not([data-theme-mode='light']) {
-    @include fonts-dark;
+    /* Fonts */
+    --op-font-family: 'Grandstander', sans-serif;
   }
 }
 
 :root[data-theme='example'][data-theme-mode='dark'] {
-  @include fonts-dark;
+  /* Fonts */
+  --op-font-family: 'Grandstander', sans-serif;
 }
 ```
 
-Dynamic themes support both light and dark mode and can be manually controlled with data attributes.
+Dynamic themes also support both light and dark mode and can be manually controlled with data attributes.
 
 ```html
 <!doctype html>

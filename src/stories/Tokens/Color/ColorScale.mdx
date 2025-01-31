@@ -29,9 +29,18 @@ These `on` colors are aimed to provide contrast respecting text colors for text 
 Here is an example of what these variables look like:
 
 ```css
---op-color-primary-plus-four: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 84%);
---op-color-primary-on-plus-four: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 24%);
---op-color-primary-on-plus-four-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 4%);
+--op-color-primary-plus-four: light-dark(
+  hsl(var(--op-color-primary-h) var(--op-color-primary-s) 84%),
+  hsl(var(--op-color-primary-h) var(--op-color-primary-s) 24%)
+);
+--op-color-primary-on-plus-four: light-dark(
+  hsl(var(--op-color-primary-h) var(--op-color-primary-s) 24%),
+  hsl(var(--op-color-primary-h) var(--op-color-primary-s) 84%)
+);
+--op-color-primary-on-plus-four-alt: light-dark(
+  hsl(var(--op-color-primary-h) var(--op-color-primary-s) 4%),
+  hsl(var(--op-color-primary-h) var(--op-color-primary-s) 44%)
+);
 ```
 
 An element using the `var(--op-color-primary-plus-four)` for the background color could use `var(--op-color-primary-on-plus-four)` or `var(--op-color-primary-on-plus-four-alt)` for the text color.
@@ -45,7 +54,7 @@ An element using the `var(--op-color-primary-plus-four)` for the background colo
 
 ## Dark Mode
 
-Each scale has overrides allowing your application to support [Dark Mode](?path=/docs/overview-themes--docs#dark-mode)
+Each scale supports a [Dark Mode](?path=/docs/overview-themes--docs#dark-mode)
 
 ## Reference
 
@@ -98,79 +107,247 @@ See [Color Scale Overriding](?path=/docs/overview-scale-overriding--docs#color-s
 Your application may need a new scale. To add one, use the following template. Keep in mind, you will also need to add dark mode values for each variable as well. See [Theming](?path=/docs/overview-themes--docs#theming)
 
 ```css
-@mixin {name}-color {
+:root {
+  /* {name}-color */
+
   --op-color-{name}-h: new-value-h;
   --op-color-{name}-s: new-value-s;
   --op-color-{name}-l: new-value-l;
-}
 
-@mixin {name}-semantic-scale {
+  /* {name}-semantic-scale */
+
   --op-color-{name}-original: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) var(--op-color-{name}-l));
 
-  // Main Scale
-  --op-color-{name}-plus-max: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%);
-  --op-color-{name}-plus-eight: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 98%);
-  --op-color-{name}-plus-seven: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 96%);
-  --op-color-{name}-plus-six: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%);
-  --op-color-{name}-plus-five: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 90%);
-  --op-color-{name}-plus-four: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%);
-  --op-color-{name}-plus-three: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 70%);
-  --op-color-{name}-plus-two: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 64%);
-  --op-color-{name}-plus-one: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 45%);
-  --op-color-{name}-base: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 40%);
-  --op-color-{name}-minus-one: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 36%);
-  --op-color-{name}-minus-two: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 32%);
-  --op-color-{name}-minus-three: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 28%);
-  --op-color-{name}-minus-four: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 24%);
-  --op-color-{name}-minus-five: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%);
-  --op-color-{name}-minus-six: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%);
-  --op-color-{name}-minus-seven: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%);
-  --op-color-{name}-minus-eight: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%);
-  --op-color-{name}-minus-max: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 0%);
+  /* Main Scale */
+  --op-color-{name}-plus-max: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%)
+  );
+  --op-color-{name}-plus-eight: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 98%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 18%)
+  );
+  --op-color-{name}-plus-seven: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 96%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%)
+  );
+  --op-color-{name}-plus-six: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 14%)
+  );
+  --op-color-{name}-plus-five: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 90%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%)
+  );
+  --op-color-{name}-plus-four: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 14%)
+  );
+  --op-color-{name}-plus-three: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 70%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%)
+  );
+  --op-color-{name}-plus-two: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 64%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 14%)
+  );
+  --op-color-{name}-plus-one: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 45%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 15%)
+  );
+  --op-color-{name}-base: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 40%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%)
+  );
+  --op-color-{name}-minus-one: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 36%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%)
+  );
+  --op-color-{name}-minus-two: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 32%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 12%)
+  );
+  --op-color-{name}-minus-three: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 28%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%)
+  );
+  --op-color-{name}-minus-four: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 24%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%)
+  );
+  --op-color-{name}-minus-five: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 5%)
+  );
+  --op-color-{name}-minus-six: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 6%)
+  );
+  --op-color-{name}-minus-seven: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%)
+  );
+  --op-color-{name}-minus-eight: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%)
+  );
+  --op-color-{name}-minus-max: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 0%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 80%)
+  );
 
-  // On Scale
-  --op-color-{name}-on-plus-max: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 0%);
-  --op-color-{name}-on-plus-max-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%);
-  --op-color-{name}-on-plus-eight: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%);
-  --op-color-{name}-on-plus-eight-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 24%);
-  --op-color-{name}-on-plus-seven: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%);
-  --op-color-{name}-on-plus-seven-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 28%);
-  --op-color-{name}-on-plus-six: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%);
-  --op-color-{name}-on-plus-six-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 26%);
-  --op-color-{name}-on-plus-five: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%);
-  --op-color-{name}-on-plus-five-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 40%);
-  --op-color-{name}-on-plus-four: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 24%);
-  --op-color-{name}-on-plus-four-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%);
-  --op-color-{name}-on-plus-three: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%);
-  --op-color-{name}-on-plus-three-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%);
-  --op-color-{name}-on-plus-two: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%);
-  --op-color-{name}-on-plus-two-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 6%);
-  --op-color-{name}-on-plus-one: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%);
-  --op-color-{name}-on-plus-one-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 95%);
-  --op-color-{name}-on-base: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%);
-  --op-color-{name}-on-base-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%);
-  --op-color-{name}-on-minus-one: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%);
-  --op-color-{name}-on-minus-one-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 82%);
-  --op-color-{name}-on-minus-two: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 90%);
-  --op-color-{name}-on-minus-two-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 78%);
-  --op-color-{name}-on-minus-three: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 86%);
-  --op-color-{name}-on-minus-three-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 74%);
-  --op-color-{name}-on-minus-four: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%);
-  --op-color-{name}-on-minus-four-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 72%);
-  --op-color-{name}-on-minus-five: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%);
-  --op-color-{name}-on-minus-five-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 78%);
-  --op-color-{name}-on-minus-six: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%);
-  --op-color-{name}-on-minus-six-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 82%);
-  --op-color-{name}-on-minus-seven: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 96%);
-  --op-color-{name}-on-minus-seven-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%);
-  --op-color-{name}-on-minus-eight: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 98%);
-  --op-color-{name}-on-minus-eight-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 86%);
-  --op-color-{name}-on-minus-max: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%);
-  --op-color-{name}-on-minus-max-alt: hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%);
-}
-
-:root {
-  @include {name}-color;
-  @include {name}-semantic-scale;
+  /* On Scale */
+  --op-color-{name}-on-plus-max: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 0%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%)
+  );
+  --op-color-{name}-on-plus-max-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 80%)
+  );
+  --op-color-{name}-on-plus-eight: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 40%)
+  );
+  --op-color-{name}-on-plus-eight-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 24%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%)
+  );
+  --op-color-{name}-on-plus-seven: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%)
+  );
+  --op-color-{name}-on-plus-seven-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 28%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%)
+  );
+  --op-color-{name}-on-plus-six: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 76%)
+  );
+  --op-color-{name}-on-plus-six-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 26%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 96%)
+  );
+  --op-color-{name}-on-plus-five: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 60%)
+  );
+  --op-color-{name}-on-plus-five-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 40%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 90%)
+  );
+  --op-color-{name}-on-plus-four: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 24%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%)
+  );
+  --op-color-{name}-on-plus-four-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 74%)
+  );
+  --op-color-{name}-on-plus-three: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 20%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 70%)
+  );
+  --op-color-{name}-on-plus-three-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 90%)
+  );
+  --op-color-{name}-on-plus-two: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 16%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 46%)
+  );
+  --op-color-{name}-on-plus-two-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 6%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 76%)
+  );
+  --op-color-{name}-on-plus-one: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 0%)
+  );
+  --op-color-{name}-on-plus-one-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 95%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 5%)
+  );
+  --op-color-{name}-on-base: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%)
+  );
+  --op-color-{name}-on-base-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%)
+  );
+  --op-color-{name}-on-minus-one: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%)
+  );
+  --op-color-{name}-on-minus-one-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 82%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 2%)
+  );
+  --op-color-{name}-on-minus-two: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 90%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%)
+  );
+  --op-color-{name}-on-minus-two-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 78%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%)
+  );
+  --op-color-{name}-on-minus-three: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 86%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 6%)
+  );
+  --op-color-{name}-on-minus-three-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 74%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%)
+  );
+  --op-color-{name}-on-minus-four: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%)
+  );
+  --op-color-{name}-on-minus-four-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 72%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 2%)
+  );
+  --op-color-{name}-on-minus-five: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%)
+  );
+  --op-color-{name}-on-minus-five-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 78%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%)
+  );
+  --op-color-{name}-on-minus-six: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 94%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%)
+  );
+  --op-color-{name}-on-minus-six-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 82%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 2%)
+  );
+  --op-color-{name}-on-minus-seven: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 96%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 6%)
+  );
+  --op-color-{name}-on-minus-seven-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 84%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 4%)
+  );
+  --op-color-{name}-on-minus-eight: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 98%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%)
+  );
+  --op-color-{name}-on-minus-eight-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 86%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 6%)
+  );
+  --op-color-{name}-on-minus-max: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 100%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 10%)
+  );
+  --op-color-{name}-on-minus-max-alt: light-dark(
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%),
+    hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%)
+  );
 }
 ```

@@ -1,0 +1,65 @@
+.panel {
+  --op-panel-width: 40%;
+
+  position: absolute;
+  z-index: var(--op-z-index-sidebar);
+  width: var(--op-panel-width);
+  height: 100vh;
+  background-color: var(--op-color-background);
+  color: var(--op-color-on-background);
+  inset-inline-end: calc(-1 * var(--op-panel-width)); /* this pushes the panel off the screen to the right */
+  overflow-y: scroll;
+  padding-block-end: var(--op-space-large);
+  transition: var(--op-transition-panel);
+}
+
+.panel--active {
+  box-shadow: var(--op-shadow-x-large);
+  inset-inline-end: 0;
+}
+
+.panel__close {
+  display: flex;
+  padding: var(--op-space-medium);
+  border-radius: 100%;
+  cursor: pointer;
+  float: right;
+
+  &:hover {
+    background-color: var(--op-color-neutral-plus-seven);
+  }
+}
+
+#panel-content {
+  padding-block: var(--op-space-large);
+}
+
+/* Follow system preference unless forced to light */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme-mode='light']) {
+    .panel {
+      background-color: var(--op-color-neutral-plus-seven);
+      color: var(--op-color-neutral-on-plus-seven);
+    }
+
+    .panel__close {
+      &:hover {
+        background-color: var(--op-color-background);
+      }
+    }
+  }
+}
+
+/* Force design system to dark */
+:root[data-theme-mode='dark'] {
+  .panel {
+    background-color: var(--op-color-neutral-plus-seven);
+    color: var(--op-color-neutral-on-plus-seven);
+  }
+
+  .panel__close {
+    &:hover {
+      background-color: var(--op-color-background);
+    }
+  }
+}

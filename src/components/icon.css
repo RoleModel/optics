@@ -1,7 +1,9 @@
-// Look up icons at: https://fonts.google.com/icons?icon.set=Material+Symbols
-// Instead of hosting the font files locally which requires the compiler to handle them, we pull the icons
-// from Googles CDN like we do for our other fonts
-// https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts
+/*
+  Look up icons at: https://fonts.google.com/icons?icon.set=Material+Symbols
+  Instead of hosting the font files locally which requires the compiler to handle them, we pull the icons
+  from Googles CDN like we do for our other fonts
+  https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts
+*/
 
 @import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block';
 
@@ -22,7 +24,7 @@
   vertical-align: middle;
 }
 
-// Fill
+/* Fill */
 .icon--outlined {
   --op-mso-fill: 0;
 }
@@ -31,7 +33,7 @@
   --op-mso-fill: 1;
 }
 
-// Weight
+/* Weight */
 .icon--weight-light {
   --op-mso-weight: var(--op-font-weight-light);
 }
@@ -48,7 +50,7 @@
   --op-mso-weight: var(--op-font-weight-bold);
 }
 
-// Emphasis
+/* Emphasis */
 .icon--low-emphasis {
   --op-mso-grade: -20;
 }
@@ -61,7 +63,7 @@
   --op-mso-grade: 200;
 }
 
-// Size
+/* Size */
 .icon--medium {
   font-size: var(--op-font-medium);
 
