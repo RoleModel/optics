@@ -21,10 +21,8 @@ For instructions on how to integrate a sidebar into your applications layout, se
 
 `.sidebar--drawer`, `.sidebar--compact`, and `.sidebar--rail` are used to denote which style of sidebar you would like to use.
 
-`.sidebar--responsive` can be added to a drawer to allow for a sidebar that responsively changes from the larger state (compact or drawer) to the rail when the screen is smaller. e.g.
-
 ```html
-<div class="sidebar sidebar--drawer sidebar--responsive">...</div>
+<div class="sidebar sidebar--drawer">...</div>
 ```
 
 Any [Button](?path=/docs/navigation-components-button--docs#default) style can be used for the links.
@@ -32,6 +30,48 @@ Any [Button](?path=/docs/navigation-components-button--docs#default) style can b
 - Drawer will use the normal button style, but left aligned
 - Compact will use the `.icon-with-label` style
 - Rail will use the `.btn--icon` style and hide the label
+
+## Responsive Sidebar
+
+The sidebar can be made responsive with a little snippet of Javascript. This allows for the sidebar to change from the larger state (compact or drawer) to the rail when the screen is smaller. e.g.
+
+```js
+const sidebarStyleOptions = {
+  drawer: 'sidebar--drawer',
+  compact: 'sidebar--compact',
+  rail: 'sidebar--rail',
+}
+
+const getSidebarStyle = (width) => {
+  let newStyle = sidebarStyleOptions['drawer']
+
+  if (window.innerWidth <= 1024) {
+    newStyle = sidebarStyleOptions['compact']
+  }
+
+  if (window.innerWidth <= 768) {
+    newStyle = sidebarStyleOptions['rail']
+  }
+
+  return newStyle
+}
+
+const applySidebarStyle = (newStyle) => {
+  const sidebar = document.getElementById('sidebar')
+  sidebar.classList.remove(sidebarStyleOptions['drawer'])
+  sidebar.classList.remove(sidebarStyleOptions['compact'])
+  sidebar.classList.remove(sidebarStyleOptions['rail'])
+  sidebar.classList.add(newStyle)
+}
+
+// Initial Page Load
+applySidebarStyle(getSidebarStyle(window.innerWidth))
+
+// Window Resize
+window.addEventListener('resize', (event) => {
+  applySidebarStyle(getSidebarStyle(window.innerWidth))
+})
+```
 
 ## Playground
 

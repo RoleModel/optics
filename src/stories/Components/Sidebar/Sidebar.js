@@ -21,7 +21,6 @@ const createSidebarItem = ({ type, icon, label }, activeLink) => {
 
 export const createSidebar = ({
   size = 'drawer',
-  responsive = false,
   style = 'default',
   brand = true,
   padded = false,
@@ -60,7 +59,6 @@ export const createSidebar = ({
     'sidebar',
     style === 'default' ? '' : `sidebar--${style}`,
     `sidebar--${size}`,
-    responsive ? 'sidebar--responsive' : '',
     padded ? 'sidebar--padded' : '',
   ]
     .filter(Boolean)
