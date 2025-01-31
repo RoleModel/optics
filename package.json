@@ -6,9 +6,9 @@
   "main": "dist/css/optics.css",
   "scripts": {
     "test": "exit 0",
-    "build": "yarn build:css-min && yarn build:css && yarn build:tokens",
+    "build": "yarn build:css && yarn build:css-min && yarn build:tokens",
+    "build:css": "mkdir -p dist/css; rsync -a src/ dist/css --exclude stories",
     "build:css-min": "postcss src/optics.css -o dist/css/optics.min.css",
-    "build:css": "rsync -a src/ dist/css --exclude stories",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
     "storybook": "storybook dev -p 6006 --docs",
     "build-storybook": "storybook build --docs",
