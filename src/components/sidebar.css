@@ -42,7 +42,7 @@
   .sidebar__brand {
     height: var(--__op-sidebar-brand-width);
     padding: var(--_op-sidebar-brand-spacing);
-    margin: 0 auto;
+    margin-inline: auto;
 
     img {
       height: 100%;
@@ -53,8 +53,8 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: 0 var(--_op-sidebar-content-spacing);
     gap: var(--_op-sidebar-content-item-spacing);
+    padding-inline: var(--_op-sidebar-content-spacing);
 
     > * {
       justify-content: flex-start;
@@ -82,7 +82,7 @@
 
   /* Modifiers */
   &.sidebar--padded {
-    padding: var(--_op-sidebar-spacing) 0;
+    padding-block: var(--_op-sidebar-spacing);
   }
 
   /* Drawer Modifier */

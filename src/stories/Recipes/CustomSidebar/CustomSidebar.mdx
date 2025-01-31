@@ -28,16 +28,13 @@ Your app may want to customize the sidebar to change the look and feel. Here are
 
 ```css
 /* Domains Sidebar Example */
-
 .sidebar {
-  &.btn--pill-right {
-    border-radius: 0 var(--op-radius-pill) var(--op-radius-pill) 0;
-  }
-
   &.sidebar--domains {
     --_op-sidebar-drawer-width: 28rem;
     --_op-sidebar-content-spacing: 0;
     --_op-sidebar-content-item-spacing: 0;
+
+    box-shadow: none;
 
     .btn {
       border-radius: 0;
@@ -56,13 +53,17 @@ Your app may want to customize the sidebar to change the look and feel. Here are
           color: var(--op-color-neutral-on-plus-six);
         }
       }
+
+      &.btn--pill-right {
+        border-radius: 0 var(--op-radius-pill) var(--op-radius-pill) 0;
+      }
     }
 
     .sidebar__footer {
       display: flex;
       align-items: center;
-      padding-left: var(--op-space-large);
       gap: var(--op-space-small);
+      padding-inline-start: var(--op-space-large);
     }
   }
 }
