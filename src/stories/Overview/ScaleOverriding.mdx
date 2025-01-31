@@ -10,25 +10,22 @@ There are multiple scales in Optics. Unit Scales exist to allow adjusting font a
 
 A Unit Scale is defined for both font sizes and spacing variables. All values are multiplied by their respective units which default as `1rem` (equivalent to `10px`)
 
-If you want to change the font or spacing scale globally, or within the context of a specific component, you can't just set the `--op-space-scale-unit` because the CSS variables for the scale are already computed and won't be re-computed when you set the scale unit. You can force it to re-compute by redefining the scale. This is why each set of tokens is defined in a scss mixin. `card--condensed` is a great example of how to do this.
+If you want to change the font or spacing scale globally, or within the context of a specific component, you can set the `--op-space-scale-unit` in the `:root`.
 
 ```css
-.card--condensed {
-  @include spacing-scales;
+:root {
   --op-space-scale-unit: 0.5rem;
 }
 ```
 
 ```css
-.font--condensed {
-  @include font-scales;
+:root {
   --op-font-scale-unit: 0.5rem;
 }
 ```
 
 ```css
-.size--condensed {
-  @include size-scales;
+:root {
   --op-size-unit: 0.2rem;
 }
 ```
@@ -40,25 +37,38 @@ There are multiple reasons your application may need to override the provided co
 Regardless of the reason, you can customize and override each scale like the following example:
 
 ```css
-@mixin color-varieties {
+:root {
   --op-color-primary-h: 164;
   --op-color-primary-s: 100%;
   --op-color-primary-l: 50%;
-}
 
-@mixin primary-semantic-scale-overrides {
-  // Main Scale
-  --op-color-primary-plus-two: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 49%);
-  --op-color-primary-plus-one: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 43%);
-  // On Scale
-  --op-color-primary-on-plus-two: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 15%);
-  --op-color-primary-on-plus-two-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 5%);
-  --op-color-primary-on-plus-one: var(--op-color-white);
-  --op-color-primary-on-plus-one-alt: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 92%);
-}
+  /* Main Scale */
+  --op-color-primary-plus-two: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 64%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 32%)
+  );
+  --op-color-primary-plus-one: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 45%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 35%)
+  );
 
-:root {
-  @include primary-semantic-scale-overrides;
+  /* On Scale */
+  --op-color-primary-on-plus-two: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 16%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 80%)
+  );
+  --op-color-primary-on-plus-two-alt: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 6%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 92%)
+  );
+  --op-color-primary-on-plus-one: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 100%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 80%)
+  );
+  --op-color-primary-on-plus-one-alt: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 95%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 98%)
+  );
 }
 ```
 
