@@ -67,7 +67,7 @@ Sidebar can be used as a standalone component, however, it does have a few depen
 
 ### Primary
 
-`.sidebar-primary` Provides a primary colored sidebar. This uses the primary color defined in your theme.
+`.sidebar--primary` Provides a primary colored sidebar. This uses the primary color defined in your theme.
 
 <div class="flex gap-sm">
   <Canvas of={SidebarStories.PrimaryDrawer} />
@@ -163,28 +163,28 @@ Here are the variables used:
   }}
 ></div>
 
-The sidebar classes are built on a [SASS placeholder selector](https://sass-lang.com/documentation/style-rules/placeholder-selectors)
+The sidebar classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows multiple sidebar classes to share the same behavior. You can modify all sidebar behavior by overriding the `%sidebar-global` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all sidebar behavior by overriding the `.sidebar` selector and setting any properties:
 
 ```css
-%sidebar-global {
+.sidebar {
   --_op-sidebar-rail-width: 10rem;
   --_op-sidebar-compact-width: 20rem;
   --_op-sidebar-drawer-width: 30rem;
 }
 ```
 
-There are also mixins for the rail and drawer specific styles. They can be overridden like:
+There are also styles for the rail and drawer specific styles. They can be overridden like:
 
 ```css
-@mixin sidebar-rail-global {
+.sidebar {
   .sidebar__content {
     align-items: flex-end;
   }
 }
 
-@mixin sidebar-drawer-global {
+.sidebar {
   .sidebar__content {
     > * {
       font-weight: var(--op-font-weight-black);
@@ -197,7 +197,7 @@ If you need to override the color of a particular sidebar style, you can open th
 
 ```css
 // This will only affect the primary sidebar, but not default
-.sidebar-primary {
+.sidebar--primary {
   --_op-sidebar-background-color: purple;
   --_op-sidebar-text-color: purple;
 }
@@ -214,10 +214,9 @@ If you need to override the color of a particular sidebar style, you can open th
   }}
 ></div>
 
-Your application may need a custom Sidebar. To add one, just follow this template:
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.sidebar-{name} {
-  @extend %sidebar-global;
+.sidebar--{name} {
 }
 ```
