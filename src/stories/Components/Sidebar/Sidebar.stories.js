@@ -10,7 +10,6 @@ export default {
       control: { type: 'select' },
       options: ['drawer', 'compact', 'rail'],
     },
-    responsive: { control: 'boolean' },
     padded: { control: 'boolean' },
     style: {
       control: { type: 'select' },
