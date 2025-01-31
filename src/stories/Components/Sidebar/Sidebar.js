@@ -57,7 +57,8 @@ export const createSidebar = ({
   ]
 
   const sidebarClasses = [
-    style === 'default' ? 'sidebar' : `sidebar-${style}`,
+    'sidebar',
+    style === 'default' ? '' : `sidebar--${style}`,
     `sidebar--${size}`,
     responsive ? 'sidebar--responsive' : '',
     padded ? 'sidebar--padded' : '',

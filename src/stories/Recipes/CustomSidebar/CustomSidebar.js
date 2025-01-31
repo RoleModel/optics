@@ -1,6 +1,6 @@
 const domainsSidebar = (style) => {
   return `
-<nav class="sidebar-domains sidebar--padded sidebar--${style}">
+<nav class="sidebar sidebar--domains sidebar--padded sidebar--${style}">
   <a class="sidebar__brand" href="/">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/2048px-Globe_icon.svg.png">
   </a>
@@ -54,7 +54,7 @@ const domainsSidebar = (style) => {
 
 const fifteenFiveSidebar = (style) => {
   return `
-<nav class="sidebar-16six sidebar--padded sidebar--${style}">
+<nav class="sidebar sidebar--16six sidebar--padded sidebar--${style}">
   <a class="sidebar__brand" href="/">
     <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
       <rect width="40" height="40" rx="8" fill="#FFFFFF"/></rect>
