@@ -165,6 +165,10 @@
   }
 }
 
+.text-alignment-demo {
+  width: 400px;
+}
+
 /* Prevent our tag component from interfering with the docs */
 .language-html {
   .tag {
