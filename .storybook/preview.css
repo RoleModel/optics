@@ -1,8 +1,8 @@
-@import './src/optics';
+@import '../src/optics';
 
-@import './src/recipes/domains-sidebar';
-@import './src/recipes/16six-sidebar';
-@import './src/recipes/aligned-header';
+@import '../src/recipes/domains-sidebar';
+@import '../src/recipes/16six-sidebar';
+@import '../src/recipes/aligned-header';
 
 @import 'https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap';
 
@@ -59,12 +59,12 @@
   height: 0;
 }
 
-// Allow the "Show Code" button to appear above the footer in examples.
+/* Allow the "Show Code" button to appear above the footer in examples. */
 .docs-story div:last-child {
   z-index: 1;
 }
 
-// Transition Demos
+/* Transition Demos */
 .transition-demo {
   display: inline-block;
   padding: var(--op-space-medium);
@@ -165,7 +165,11 @@
   }
 }
 
-// Prevent our tag component from interfering with the docs
+.text-alignment-demo {
+  width: 400px;
+}
+
+/* Prevent our tag component from interfering with the docs */
 .language-html {
   .tag {
     display: initial;
@@ -178,7 +182,7 @@
   }
 }
 
-// Company Card
+/* Company Card */
 .card.card--company {
   display: flex;
   align-items: center;
@@ -192,7 +196,7 @@
     gap: var(--op-space-x-large);
 
     .card__info-logo {
-      width: calc(var(--op-size-unit) * 24); // 96px
+      width: calc(var(--op-size-unit) * 24); /* 96px */
     }
 
     p {
@@ -200,7 +204,7 @@
     }
   }
 
-  // --op-breakpoint-small
+  /* --op-breakpoint-small */
   @media (width <= 768px) {
     flex-direction: column;
 

@@ -12,7 +12,7 @@
 
 </div>
 
-Optics is an scss package that provides base styles and components that can be integrated and customized in a variety of projects.
+Optics is an css package that provides base styles and components that can be integrated and customized in a variety of projects.
 
 ## Installation
 
@@ -30,16 +30,14 @@ yarn add @rolemodel/optics
 
 ### Import
 
-If you are using webpack to compile, you can add this import to the top of your root level `scss` file.
+You can add this import to the top of your root level `css` file.
 
-```scss
-@import '@rolemodel/optics';
-```
-
-If you are using a different compiler such as Dart Sass, you may need to reference the scss file directly.
-
-```scss
-@import '@rolemodel/optics/dist/scss/optics';
+```css
+@import '@rolemodel/optics'; /* Using webpack to compile */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics'; /* Using a different compiler or no compiler */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics.min.css'; /* If you want a single file with all the styles in it. */
 ```
 
 ## Documentation
@@ -65,7 +63,7 @@ Add the following above a group to categorize the tokens.
 
 ### Component Documentation
 
-For instructions on how to create a new component, see [Process for Creating New Components](./NEW_COMPONENT.MD)
+For instructions on how to create a new component, see [Process for Creating New Components](./NEW_COMPONENT.md)
 
 Additional stories can be added using the following command, or copying an existing story.
 

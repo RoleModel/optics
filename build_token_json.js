@@ -128,12 +128,7 @@ try {
   fs.readdir(source, { withFileTypes: true }, (_errors, files) => {
     let variables = {}
     files
-      .filter(
-        (directoryEntry) =>
-          directoryEntry.isFile() &&
-          directoryEntry.name !== 'dark_mode_tokens.scss' &&
-          directoryEntry.name !== 'index.scss'
-      )
+      .filter((directoryEntry) => directoryEntry.isFile() && directoryEntry.name !== 'index.css')
       .forEach((directoryEntry) => {
         const fileContents = fs.readFileSync(`${source}/${directoryEntry.name}`)
         const matches = fileContents.toString().match(/^\s*--.*?(?=;)/gm)

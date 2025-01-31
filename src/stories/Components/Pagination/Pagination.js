@@ -20,7 +20,7 @@ export const createPagination = ({ activePage = '1', includeShowing = false }) =
     return createButton({
       useAsLink: true,
       label: item,
-      priority: 'default',
+      variant: 'default',
       noBorder: true,
       active: activePage === item,
       size: 'small',

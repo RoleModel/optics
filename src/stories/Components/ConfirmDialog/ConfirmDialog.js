@@ -14,7 +14,7 @@ export const createConfirmDialog = ({ title, message, inlineDemo = false }) => {
     </div>
     <div class='confirm-dialog__footer'>
       <button class="btn">Cancel</button>
-      <button class='btn-destructive'>Yes, I'm Sure</button>
+      <button class='btn btn--destructive'>Yes, I'm Sure</button>
     </div>
   </div>
 `

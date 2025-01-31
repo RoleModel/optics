@@ -1,13 +1,13 @@
-// Third party Vendors
+/* Third party Vendors */
 @import 'modern-css-reset/dist/reset';
 
-// Tokens
+/* Tokens */
 @import 'core/tokens';
 
-// Base styles and utilities
+/* Base styles and utilities */
 @import 'core/base';
 @import 'core/layout';
 @import 'core/utilities';
 
-// Components
+/* Components */
 @import 'components';

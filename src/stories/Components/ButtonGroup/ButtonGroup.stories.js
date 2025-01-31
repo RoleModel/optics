@@ -10,7 +10,7 @@ export default {
     return createButtonGroup({ ...args })
   },
   argTypes: {
-    priority: {
+    variant: {
       control: { type: 'select' },
       options: ['default', 'primary', 'destructive', 'warning'],
     },
@@ -31,59 +31,59 @@ export default {
 
 export const Default = {
   args: {
-    priority: 'default',
+    variant: 'default',
   },
 }
 
 export const Primary = {
   args: {
-    priority: 'primary',
+    variant: 'primary',
   },
 }
 
 export const Destructive = {
   args: {
-    priority: 'destructive',
+    variant: 'destructive',
   },
 }
 
 export const Warning = {
   args: {
-    priority: 'warning',
+    variant: 'warning',
   },
 }
 
 export const Active = {
   args: {
-    priority: 'destructive',
+    variant: 'destructive',
     active: true,
   },
 }
 
 export const NoBorder = {
   args: {
-    priority: 'primary',
+    variant: 'primary',
     noBorder: true,
   },
 }
 
 export const Disabled = {
   args: {
-    priority: 'primary',
+    variant: 'primary',
     disabled: true,
   },
 }
 
 export const Pill = {
   args: {
-    priority: 'default',
+    variant: 'default',
     pill: true,
   },
 }
 
 export const Size = {
   args: {
-    priority: 'primary',
+    variant: 'primary',
     size: 'small',
   },
 }

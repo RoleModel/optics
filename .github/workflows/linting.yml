@@ -30,8 +30,6 @@ jobs:
         run: yarn prettier-check
       - name: Build CSS
         run: yarn build:css
-      - name: Build SCSS
-        run: yarn build:scss
       - name: Build Tokens
         run: yarn build:tokens
       - name: Build Storybook

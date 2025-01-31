@@ -11,7 +11,7 @@ const createSidebarItem = ({ type, icon, label }, activeLink) => {
 
   return createButton({
     label,
-    priority: 'default',
+    variant: 'default',
     noBorder: true,
     active: activeLink === label,
     icon,
@@ -78,7 +78,7 @@ export const createSidebar = ({
         ${
           createButton({
             label: 'Logout',
-            priority: 'default',
+            variant: 'default',
             noBorder: true,
             icon: 'logout',
             inlineIconWithLabel: true,

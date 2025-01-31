@@ -180,8 +180,8 @@ const createLoginLayout = () => {
         </div>
       </div>
       <div class='card__footer'>
-        <a href='#' class='btn-primary btn--no-border'>Forgot Password?</a>
-        <button type='submit' class='btn-primary'>
+        <a href='#' class='btn btn--primary btn--no-border'>Forgot Password?</a>
+        <button type='submit' class='btn btn--primary'>
           <span class='material-symbols-outlined'>logout</span>
           Sign In
         </button>

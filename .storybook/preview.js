@@ -35,7 +35,7 @@ const preview = {
   },
 }
 
-import './preview.scss'
+import './preview.css'
 
 export default preview
 
