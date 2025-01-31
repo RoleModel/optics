@@ -1,15 +1,19 @@
 {
-  "extends": ["stylelint-config-standard-scss", "stylelint-config-idiomatic-order", "stylelint-config-prettier-scss"],
-  "plugins": ["stylelint-scss", "stylelint-prettier"],
-  "overrides": [
-    {
-      "files": ["**/*.scss"],
-      "customSyntax": "postcss-scss"
-    }
+  "extends": [
+    "stylelint-config-idiomatic-order"
   ],
+  "plugins": [
+    "stylelint-prettier"
+  ],
+  "overrides": [],
   "rules": {
     "prettier/prettier": true,
-    "custom-property-pattern": ["(?<=op-)", { "message": "CSS variables should be prefixed with op-" }],
+    "custom-property-pattern": [
+      "(?<=op-)",
+      {
+        "message": "CSS variables should be prefixed with op-"
+      }
+    ],
     "selector-class-pattern": null
   }
 }
