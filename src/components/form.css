@@ -251,7 +251,7 @@ textarea.form-control:not([type='radio'], [type='checkbox']) {
   gap: var(--op-space-x-small);
   grid-auto-rows: auto;
   grid-template-columns: auto 1fr;
-  padding-block: var(--op-space-small) 0;
+  padding-block: var(--op-space-small);
   padding-inline: 0;
 
   /* Group Alignment */
