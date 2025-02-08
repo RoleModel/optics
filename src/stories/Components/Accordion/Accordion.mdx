@@ -35,6 +35,20 @@ Accordion can be used as a standalone component, however, it does have a few dep
 @import '@rolemodel/optics/dist/css/components/accordion';
 ```
 
+## Features
+
+### Exclusive [open]
+
+Setting the `name` attribute on the `<details>` element will make the accordion exclusive. This attribute enables multiple `<details>` elements to be connected, with only one open at a time.
+
+See more about the `name` attribute on the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details#name).
+
+```html
+<details class="accordion" name="accordion-group">...</details>
+<details class="accordion" name="accordion-group">...</details>
+<details class="accordion" name="accordion-group">...</details>
+```
+
 ## Variations
 
 ### Default
