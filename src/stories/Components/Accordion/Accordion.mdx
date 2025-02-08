@@ -52,6 +52,12 @@ Positioning the marker after the label inside of the summary will result in the 
 
 <Canvas of={AccordionStories.FlipHeaderAndMarker} />
 
+### Disable Animation
+
+If you prefer the accordion to not animate, you can disable the transition on the icon and content by using this modifier `.accordion--disable-animation`.
+
+<Canvas of={AccordionStories.DisableAnimation} />
+
 ### Additional Header Content
 
 Additional content can be included within the `summary` element in any order. Anything not within the `.accordion__label` or `.accordion__marker` classes will be rendered wherever you place it in the `summary`. Note: Content placed between the label and the marker will fill the width between them. If placing a button there, you may want to wrap it in a div so the button doesn't stretch the whole space.

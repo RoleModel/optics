@@ -11,6 +11,7 @@ export default {
     marker: { control: 'text' },
     additionalHeaderContent: { control: 'text' },
     flipHeaderAndMarker: { control: 'boolean' },
+    disableAnimation: { control: 'boolean' },
     content: { control: 'text' },
   },
   parameters: {
@@ -25,6 +26,12 @@ export const Default = {
 export const FlipHeaderAndMarker = {
   args: {
     flipHeaderAndMarker: true,
+  },
+}
+
+export const DisableAnimation = {
+  args: {
+    disableAnimation: true,
   },
 }
 
