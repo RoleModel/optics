@@ -5,10 +5,15 @@ export const createAccordion = ({
   marker = 'arrow_right',
   additionalHeaderContent = '',
   flipHeaderAndMarker = false,
+  disableAnimation = false,
   content = 'Something small enough to escape casual notice.',
 }) => {
   const element = document.createElement('details')
   element.className = 'accordion'
+
+  if (disableAnimation) {
+    element.className += ' accordion--disable-animation'
+  }
 
   const summary = document.createElement('summary')
 

@@ -2,6 +2,11 @@
   /* Public API (customizable component options) */
   --_op-accordion-summary-min-height: calc(8 * var(--op-size-unit)); /* 32px */
 
+  overflow: hidden;
+  interpolate-size: allow-keywords;
+
+  /* Elements */
+
   summary {
     display: grid;
     min-height: var(--_op-accordion-summary-min-height);
@@ -32,9 +37,30 @@
     }
   }
 
+  &::details-content {
+    height: 0;
+    transition: var(--op-transition-accordion-content);
+  }
+
   &[open] {
     summary .accordion__marker {
       rotate: 0.25turn;
+    }
+
+    &::details-content {
+      height: auto;
+    }
+  }
+
+  /* Modifiers */
+
+  &.accordion--disable-animation {
+    summary .accordion__marker {
+      transition: none;
+    }
+
+    &::details-content {
+      transition: none;
     }
   }
 }

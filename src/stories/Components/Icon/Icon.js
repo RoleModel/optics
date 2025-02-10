@@ -4,10 +4,10 @@ export const createIcon = ({ name, filled = false, size = 'medium', weight = 'no
 
   icon.className = [
     'material-symbols-outlined',
-    filled ? 'icon--filled' : 'icon--outlined',
-    `icon--${size}`,
-    `icon--weight-${weight}`,
-    `icon--${emphasis}-emphasis`,
+    filled ? 'icon--filled' : '',
+    size === 'medium' ? '' : `icon--${size}`,
+    weight === 'normal' ? '' : `icon--weight-${weight}`,
+    emphasis === 'normal' ? '' : `icon--${emphasis}-emphasis`,
   ]
     .filter(Boolean)
     .join(' ')

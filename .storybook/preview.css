@@ -86,6 +86,15 @@
   }
 }
 
+.transition-demo--accordion_content {
+  interpolate-size: allow-keywords;
+  transition: var(--op-transition-accordion-content);
+
+  &:hover {
+    height: 15rem;
+  }
+}
+
 .transition-demo--input {
   transition: var(--op-transition-input);
 }
