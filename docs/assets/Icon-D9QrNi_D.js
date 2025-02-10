@@ -1,1 +1,0 @@
-const a=({name:n,filled:o=!1,size:i="medium",weight:c="normal",emphasis:t="normal"})=>{const e=document.createElement("span");return e.innerText=n,e.className=["material-symbols-outlined",o?"icon--filled":"icon--outlined",`icon--${i}`,`icon--weight-${c}`,`icon--${t}-emphasis`].filter(Boolean).join(" "),e};export{a as c};
