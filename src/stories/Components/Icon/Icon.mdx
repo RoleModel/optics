@@ -2,6 +2,8 @@ import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as IconStories from './Icon.stories'
 import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={IconStories} />
 
 # Icon
@@ -70,3 +72,81 @@ Emphasis acts similarly to weight, but changes the thickness of the icon strokes
 `.icon--low-emphasis`, `.icon--normal-emphasis`, `.icon--high-emphasis` (with normal being the default) modify the emphasis of any icon.
 
 <Canvas of={IconStories.Emphasis} />
+
+## Icon API
+
+Styles are built on CSS variables scoped to the icon.
+
+Here are the variables that can be customized:
+
+{/* prettier-ignore-start */}
+```css
+/* Weight */
+--_op-icon-weight-light
+--_op-icon-weight-normal
+--_op-icon-weight-semi-bold
+--_op-icon-weight-bold
+
+/* Fill */
+--_op-icon-fill-outlined
+--_op-icon-fill-filled
+
+/* Emphasis */
+--_op-icon-emphasis-low
+--_op-icon-emphasis-normal
+--_op-icon-emphasis-high
+
+/* Size */
+--_op-icon-font-size-small
+--_op-icon-font-size-medium
+--_op-icon-font-size-large
+--_op-icon-font-size-x-large
+--_op-icon-optical-size-small
+--_op-icon-optical-size-medium
+--_op-icon-optical-size-large
+--_op-icon-optical-size-x-large
+```
+{/* prettier-ignore-end */}
+
+## Customizing Icon styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the icon for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+The icon classes are structured using the [BEM methodology](https://getbem.com/naming).
+
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all icon behavior by overriding the `.material-symbols-outlined` and `.custom-icons` selectors and setting any properties:
+
+```css
+.material-symbols-outlined,
+.custom-icons {
+}
+```
+
+## New Icon Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the icon for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
+
+```css
+.material-symbols-outlined,
+.custom-icons {
+  &.icon--{name} {
+    --_op-icon-font-size-small: var(--op-font-small);
+  }
+}
+```
