@@ -1,6 +1,4 @@
-/* Class provided by the Google Fonts CDN */
-.material-symbols-outlined,
-.custom-icons {
+.icon {
   /* Public API (customizable component options) */
 
   /* Weight */
@@ -39,19 +37,9 @@
   width: var(--__op-icon-font-size);
   height: var(--__op-icon-font-size);
   font-size: var(--__op-icon-font-size);
-  font-variation-settings:
-    'FILL' var(--__op-icon-fill),
-    'wght' var(--__op-icon-weight),
-    'GRAD' var(--__op-icon-emphasis),
-    'opsz' var(--__op-icon-optical-size);
+  font-weight: var(--__op-icon-weight);
   line-height: var(--op-line-height-densest);
   vertical-align: middle;
-
-  /* Primarily for custom icons */
-  svg {
-    width: 100%;
-    height: 100%;
-  }
 
   /* Fill Modifiers */
   &.icon--outlined {
@@ -111,5 +99,23 @@
   &.icon--x-large {
     --__op-icon-font-size: var(--_op-icon-font-size-x-large);
     --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
+  }
+}
+
+/* Material Icons class provided by the Google Fonts CDN */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' var(--__op-icon-fill),
+    'wght' var(--__op-icon-weight),
+    'GRAD' var(--__op-icon-emphasis),
+    'opsz' var(--__op-icon-optical-size);
+  font-weight: unset;
+}
+
+/* Custom SVG Icons app specific */
+.custom-icons {
+  svg {
+    width: 100%;
+    height: 100%;
   }
 }

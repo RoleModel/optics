@@ -56,10 +56,10 @@ Icon can be used as a standalone component, however, it does have a few dependen
 
 ### Default
 
-To use an icon, put a `span` with the class of `.material-symbols-outlined` and inner text of whatever icon you wish to use I.E. `settings` onto the page.
+To use an icon, put a `span` with the class of `.icon.material-symbols-outlined` and inner text of whatever icon you wish to use I.E. `settings` onto the page.
 
 ```html
-<span class="material-symbols-outlined">settings</span>
+<span class="icon material-symbols-outlined">settings</span>
 ```
 
 <Canvas of={IconStories.Default} />
@@ -138,11 +138,10 @@ Here are the variables that can be customized:
 
 The icon classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all icon behavior by overriding the `.material-symbols-outlined` and `.custom-icons` selectors and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all icon behavior by overriding the `.icon` selector and setting any properties:
 
 ```css
-.material-symbols-outlined,
-.custom-icons {
+.icon {
 }
 ```
 
@@ -160,8 +159,7 @@ This allows us to define core styles on a main [block](https://getbem.com/naming
 Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.material-symbols-outlined,
-.custom-icons {
+.icon {
   &.icon--{name} {
     --_op-icon-font-size-small: var(--op-font-small);
   }
