@@ -35,6 +35,9 @@
   --__op-icon-font-size: var(--_op-icon-font-size-medium);
   --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
 
+  display: inline-block;
+  width: var(--__op-icon-font-size);
+  height: var(--__op-icon-font-size);
   font-size: var(--__op-icon-font-size);
   font-variation-settings:
     'FILL' var(--__op-icon-fill),
@@ -43,6 +46,12 @@
     'opsz' var(--__op-icon-optical-size);
   line-height: var(--op-line-height-densest);
   vertical-align: middle;
+
+  /* Primarily for custom icons */
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 
   /* Fill Modifiers */
   &.icon--outlined {
@@ -102,16 +111,5 @@
   &.icon--x-large {
     --__op-icon-font-size: var(--_op-icon-font-size-x-large);
     --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
-  }
-}
-
-.custom-icons {
-  display: inline-block;
-  width: var(--__op-icon-font-size);
-  height: var(--__op-icon-font-size);
-
-  svg {
-    width: 100%;
-    height: 100%;
   }
 }
