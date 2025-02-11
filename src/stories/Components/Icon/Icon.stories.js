@@ -6,6 +6,10 @@ export default {
     return createIcon({ name, ...args })
   },
   argTypes: {
+    iconPack: {
+      control: { type: 'select' },
+      options: ['Material Symbols Outlined', 'Phosphor'],
+    },
     name: { control: 'text' },
     filled: { control: 'boolean' },
     size: {
@@ -20,17 +24,23 @@ export default {
       control: { type: 'select' },
       options: ['low', 'normal', 'high'],
     },
+    duotone: {
+      control: 'boolean',
+      if: { arg: 'iconPack', eq: 'Phosphor' },
+    },
   },
 }
 
 export const Default = {
   args: {
+    iconPack: 'Material Symbols Outlined',
     name: 'settings',
   },
 }
 
 export const Filled = {
   args: {
+    iconPack: 'Material Symbols Outlined',
     name: 'settings',
     filled: true,
   },
@@ -38,6 +48,7 @@ export const Filled = {
 
 export const Large = {
   args: {
+    iconPack: 'Material Symbols Outlined',
     name: 'settings',
     size: 'large',
   },
@@ -45,6 +56,7 @@ export const Large = {
 
 export const Bold = {
   args: {
+    iconPack: 'Material Symbols Outlined',
     name: 'settings',
     weight: 'bold',
   },
@@ -52,6 +64,7 @@ export const Bold = {
 
 export const Emphasis = {
   args: {
+    iconPack: 'Material Symbols Outlined',
     name: 'settings',
     emphasis: 'high',
   },

@@ -15,6 +15,8 @@ Optics provides a few addons for integrating Third-Party tools with your applica
 
 ## Icon Fonts
 
+### Material Symbols Outlined
+
 Optics ships with a simplified version of [Material Symbols Outlined](https://fonts.google.com/icons?icon.style=Outlined). It only includes the font weight variable aspect of the icon library which means you won't be able to utilize the fill, or emphasis properties.
 This is a trade-off for a smaller file size which reduces page load "flash-in" where icons are blank until the font has loaded.
 This flash has been mitigated some by using the `font-display: block;` property on the font face to hide the underlying text until loaded as well as a fixed size to prevent layout shift.
@@ -26,6 +28,16 @@ This will increase the page load time but will allow you to use the full capabil
 @import '@rolemodel/optics';
 
 @import '@rolemodel/optics/dist/css/addons/fonts/material_symbols_outlined_variable';
+```
+
+### Phosphor Icons
+
+{/* Something about duotone and filled exclusive */}
+
+```css
+@import '@rolemodel/optics';
+
+@import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
 ```
 
 ## Tom Select
