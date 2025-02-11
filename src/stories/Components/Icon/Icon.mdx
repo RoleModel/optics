@@ -15,6 +15,23 @@ import { createAlert } from '../Alert/Alert.js'
 ></div>
 
 Icon classes are built on top of [Google's Material Symbols Icon Font](https://fonts.google.com/icons). They provide a way to integrate iconography into your application in a flexible and customizable way.
+Optics ships with a simplified version of [Material Symbols Outlined](https://fonts.google.com/icons?icon.style=Outlined). We only include the font weight variable aspect of the library.
+This means that adjusting the size and font weight are always available, but the emphasis and fill options below are not available by default. If your app would like to use these options, you can import the full library by using the [Icon Font Addon](?path=/docs/overview-addons--docs#icon-fonts).
+
+If you don't need the full library, but want a specific axis of the [Variable Font](?path=/docs/tokens-typography-font-family--docs#variable-fonts), You can use one of these imports alongside the Optics import.
+
+```css
+/* No fill, weight, or emphasis options, just allows for size modifiers */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block';
+
+/* Only fill option */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block';
+
+/* Only emphasis option */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,GRAD@20..48,-50..200&display=block';
+```
+
+A combination of these could be used as well based on your applications needs. See [Google Variable Fonts](https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts) for more details.
 
 ## Playground
 

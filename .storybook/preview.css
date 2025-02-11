@@ -1,4 +1,5 @@
 @import '../src/optics';
+@import '../src/addons/fonts/material_symbols_outlined_variable';
 
 @import '../src/recipes/domains-sidebar';
 @import '../src/recipes/16six-sidebar';
