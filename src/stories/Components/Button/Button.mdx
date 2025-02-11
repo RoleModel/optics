@@ -115,7 +115,7 @@ Here are the variables and states used
 
 {/* prettier-ignore-start */}
 ```css
-// Variable API
+/* Variable API */
 --_op-btn-height-small
 --_op-btn-height-medium
 --_op-btn-height-large
@@ -128,13 +128,13 @@ Here are the variables and states used
 --_op-btn-padding-medium
 --_op-btn-padding-large
 
-// Different states
-.btn {} // Default behavior
-.btn:not(:disabled, .btn--disabled):hover {} // Hover behavior
-.btn.btn--no-border {} // No Border Modifier
-.btn.btn--no-border:not(:disabled, .btn--disabled):hover {} // Hovered No Border Modifier
-.btn.btn--active {} // Active Modifier
-.btn.btn--active:not(:disabled, .btn--disabled):hover {} // Hovered No Border Modifier
+/* Different states */
+.btn {} /* Default behavior */
+.btn:not(:disabled, .btn--disabled):hover {} /* Hover behavior  */
+.btn.btn--no-border {} /* No Border Modifier  */
+.btn.btn--no-border:not(:disabled, .btn--disabled):hover {} /* Hovered No Border Modifier  */
+.btn.btn--active {} /* Active Modifier  */
+.btn.btn--active:not(:disabled, .btn--disabled):hover {} /* Hovered No Border Modifier  */
 ```
 {/* prettier-ignore-end */}
 
@@ -180,7 +180,7 @@ If you want to override how the size modifier behaves, you can use API described
 If you need to override the color of a particular button style, you can open the respective class and change the `background-color`, `color`, and `box-shadow` properties to change the look.
 
 ```css
-// This will only affect the default button, but not primary, secondary, etc.
+/* This will only affect the default button, but not primary, secondary, etc. */
 .btn {
   background-color: red;
   color: white;

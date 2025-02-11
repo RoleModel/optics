@@ -39,14 +39,14 @@ Optics uses Noto Sans as a default which has three axes of variations: weight, w
 
 ```css
 .my-selector {
-  font-family: var(--op-font-family); // Defaults to "Noto Sans"
+  font-family: var(--op-font-family); /* Defaults to "Noto Sans" */
   font-optical-sizing: {auto|none};
-  font-weight: {100 to 900}; // Any value will work, though it is recommended to use the existing weight tokens or define a component specific value.
-  // E.G. font-weight: var(--op-font-weight-bold);
+  font-weight: {100 to 900}; /* Any value will work, though it is recommended to use the existing weight tokens or define a component specific value. */
+  /* E.G. font-weight: var(--op-font-weight-bold); */
   font-style: {normal|italic};
   font-variation-settings:
     "wdth" {62.5 to 100};
-  // or
+  /* or */
   font-stretch: {62.5% to 100%};
 }
 ```
@@ -56,21 +56,23 @@ If you are using a custom font, you can adjust the axes of the font by using the
 For example: [Roboto Flex](https://fonts.google.com/specimen/Roboto+Flex) has the following axes.
 
 ```css
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 1000
-// <grade>: Use a value from -200 to 150
-// <slant>: Use a value from -10 to 0
-// <width>: Use a value from 25 to 151
-// <thick stroke>: Use a value from 27 to 175
-// <thin stroke>: Use a value from 25 to 135
-// <counter width>: Use a value from 323 to 603
-// <uppercase height>: Use a value from 528 to 760
-// <lowercase height>: Use a value from 416 to 570
-// <ascender height>: Use a value from 649 to 854
-// <descender depth>: Use a value from -305 to -98
-// <figure height>: Use a value from 560 to 788
+/*
+  <uniquifier>: Use a unique and descriptive class name
+  <weight>: Use a value from 100 to 1000
+  <grade>: Use a value from -200 to 150
+  <slant>: Use a value from -10 to 0
+  <width>: Use a value from 25 to 151
+  <thick stroke>: Use a value from 27 to 175
+  <thin stroke>: Use a value from 25 to 135
+  <counter width>: Use a value from 323 to 603
+  <uppercase height>: Use a value from 528 to 760
+  <lowercase height>: Use a value from 416 to 570
+  <ascender height>: Use a value from 649 to 854
+  <descender depth>: Use a value from -305 to -98
+  <figure height>: Use a value from 560 to 788
+*/
 
-.roboto-flex-<uniquifier> {
+.roboto-flex-<uniquifier > {
   font-family: 'Roboto Flex', sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;

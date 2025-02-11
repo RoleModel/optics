@@ -29,9 +29,11 @@ Since colors are based on a scale and provided as tokens, the alpha channel cann
 One option for adding alpha support is to define alpha tokens that can sit alongside the color scale steps. This allows for use across your system in a way that matches the system.
 
 ```css
-// Note the 40% luminoisty matches the --op-color-primary-base luminosity
-// Note the 100% luminoisty matches the --op-color-primary-on-base luminosity
-// Note the 88% luminoisty matches the --op-color-primary-on-base-alt luminosity
+/*
+  Note the 40% luminoisty matches the --op-color-primary-base luminosity
+  Note the 100% luminoisty matches the --op-color-primary-on-base luminosity
+  Note the 88% luminoisty matches the --op-color-primary-on-base-alt luminosity
+*/
 
 --op-color-primary-base-alpha-40: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 40% / 40%);
 --op-color-primary-on-base-alpha-40: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 100% / 40%);
@@ -61,11 +63,23 @@ Another option is to use the `color-mix` (see [color-mix()](https://developer.mo
 
 ```css
 %my-component-global {
-  --_op-my-component-opacity-disabled: calc(var(--op-opacity-disabled) * 100%); // converts 0.4 to 40%
+  --_op-my-component-opacity-disabled: calc(var(--op-opacity-disabled) * 100%); /* converts 0.4 to 40% */
 
-  --op-my-component-background-color: color-mix(in srgv, var(--op-color-primary-base) var(--_op-thing-opacity-disabled), var(--op-color-primary-plus-max));
-  --op-my-component-color: color-mix(in srgv, var(--op-color-primary-on-base) var(--_op-thing-opacity-disabled), var(--op-color-primary-plus-max));
-  --op-my-component-color-alt: color-mix(in srgv, var(--op-color-primary-on-base-alt) var(--_op-thing-opacity-disabled), var(--op-color-primary-plus-max));
+  --op-my-component-background-color: color-mix(
+    in srgv,
+    var(--op-color-primary-base) var(--_op-thing-opacity-disabled),
+    var(--op-color-primary-plus-max)
+  );
+  --op-my-component-color: color-mix(
+    in srgv,
+    var(--op-color-primary-on-base) var(--_op-thing-opacity-disabled),
+    var(--op-color-primary-plus-max)
+  );
+  --op-my-component-color-alt: color-mix(
+    in srgv,
+    var(--op-color-primary-on-base-alt) var(--_op-thing-opacity-disabled),
+    var(--op-color-primary-plus-max)
+  );
 
   background-color: var(--op-my-component-background-color);
   color: var(--op-my-component-color);
