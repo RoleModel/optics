@@ -39,14 +39,14 @@ Optics uses Noto Sans as a default which has three axes of variations: weight, w
 
 ```css
 .my-selector {
-  font-family: var(--op-font-family); // Defaults to "Noto Sans"
+  font-family: var(--op-font-family); /* Defaults to "Noto Sans" */
   font-optical-sizing: {auto|none};
-  font-weight: {100 to 900}; // Any value will work, though it is recommended to use the existing weight tokens or define a component specific value.
-  // E.G. font-weight: var(--op-font-weight-bold);
+  font-weight: {100 to 900}; /* Any value will work, though it is recommended to use the existing weight tokens or define a component specific value. */
+  /* E.G. font-weight: var(--op-font-weight-bold); */
   font-style: {normal|italic};
   font-variation-settings:
     "wdth" {62.5 to 100};
-  // or
+  /* or */
   font-stretch: {62.5% to 100%};
 }
 ```
@@ -56,37 +56,39 @@ If you are using a custom font, you can adjust the axes of the font by using the
 For example: [Roboto Flex](https://fonts.google.com/specimen/Roboto+Flex) has the following axes.
 
 ```css
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 1000
-// <grade>: Use a value from -200 to 150
-// <slant>: Use a value from -10 to 0
-// <width>: Use a value from 25 to 151
-// <thick stroke>: Use a value from 27 to 175
-// <thin stroke>: Use a value from 25 to 135
-// <counter width>: Use a value from 323 to 603
-// <uppercase height>: Use a value from 528 to 760
-// <lowercase height>: Use a value from 416 to 570
-// <ascender height>: Use a value from 649 to 854
-// <descender depth>: Use a value from -305 to -98
-// <figure height>: Use a value from 560 to 788
+/*
+  {uniquifier}: Use a unique and descriptive class name
+  {weight}: Use a value from 100 to 1000
+  {grade}: Use a value from -200 to 150
+  {slant}: Use a value from -10 to 0
+  {width}: Use a value from 25 to 151
+  {thick stroke}: Use a value from 27 to 175
+  {thin stroke}: Use a value from 25 to 135
+  {counter width}: Use a value from 323 to 603
+  {uppercase height}: Use a value from 528 to 760
+  {lowercase height}: Use a value from 416 to 570
+  {ascender height}: Use a value from 649 to 854
+  {descender depth}: Use a value from -305 to -98
+  {figure height}: Use a value from 560 to 788
+*/
 
-.roboto-flex-<uniquifier> {
+.roboto-flex-{uniquifier} {
   font-family: 'Roboto Flex', sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: {weight};
   font-style: normal;
   font-variation-settings:
-    'slnt' <slant>,
-    'wdth' <width>,
-    'GRAD' <grade>,
-    'XOPQ' <thick stroke>,
-    'XTRA' <counter width>,
-    'YOPQ' <thin stroke>,
-    'YTAS' <ascender height>,
-    'YTDE' <descender depth>,
-    'YTFI' <figure height>,
-    'YTLC' <lowercase height>,
-    'YTUC' <uppercase height>;
+    'slnt' {slant},
+    'wdth' {width},
+    'GRAD' {grade},
+    'XOPQ' {thick stroke},
+    'XTRA' {counter width},
+    'YOPQ' {thin stroke},
+    'YTAS' {ascender height},
+    'YTDE' {descender depth},
+    'YTFI' {figure height},
+    'YTLC' {lowercase height},
+    'YTUC' {uppercase height};
 }
 ```
 
@@ -110,7 +112,7 @@ If you want to change the font used by default, you can add a new font import to
 
 ## Alternate or Multiple Fonts
 
-Often an application will need multiple fonts. Your headers may use a different font than your body text. Optics provides a single font family token, but you can easily add your own font tokens by following the pattern.
+Often an application will need multiple fonts. Your headers may use a different font than your body text. Optics provides a main token `--op-font-family` and an alt token `--op-font-family-alt`, but you can easily add your own font tokens by following the pattern.
 
 ```css
 @import 'https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC@8..144,-10..0,25..151,100..1000,-200..150,27..175,323..603,25..135,649..854,-305..-98,560..788,416..570,528..760&family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap';
@@ -118,7 +120,8 @@ Often an application will need multiple fonts. Your headers may use a different 
 :root {
   --op-font-family: 'Tilt Neon', sans-serif;
   --op-font-family-alt: 'Roboto Flex', serif;
-  // Could add others as needed
-  --ya-font-family-body: 'Roboto Flex', serif;  // Your App prefix. Could stick with --op if you want
+
+  /* Could add others as needed */
+  --ya-font-family-body: 'Roboto Flex', serif; /* Your App prefix. Could stick with --op if you want */
 }
 ```

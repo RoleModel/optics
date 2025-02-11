@@ -84,6 +84,7 @@ Sidebar can be used as a standalone component, however, it does have a few depen
 
 ```css
 /* Depends on */
+@import '@rolemodel/optics/dist/css/core/fonts';
 @import '@rolemodel/optics/dist/css/core/tokens';
 @import '@rolemodel/optics/dist/css/core/base';
 @import '@rolemodel/optics/dist/css/components/icon';
@@ -168,13 +169,13 @@ Color and hover styles are built on CSS variables scoped to the sidebar.
 Here are the variables used:
 
 ```css
-// Public API
-// Normal
+/* Public API */
+/* Normal */
 --_op-sidebar-background-color
 --_op-sidebar-text-color
 --_op-sidebar-border-color
 
-// Width
+/* Width */
 --_op-sidebar-rail-width
 --_op-sidebar-compact-width
 --_op-sidebar-drawer-width
@@ -182,13 +183,13 @@ Here are the variables used:
 --_op-sidebar-compact-brand-width
 --_op-sidebar-drawer-brand-width
 
-// Spacing
+/* Spacing */
 --_op-sidebar-spacing
 --_op-sidebar-brand-spacing
 --_op-sidebar-content-spacing
 --_op-sidebar-content-item-spacing
 
-// Animation
+/* Animation */
 --_op-sidebar-transition
 ```
 
@@ -236,7 +237,7 @@ There are also styles for the rail and drawer specific styles. They can be overr
 If you need to override the color of a particular sidebar style, you can open the respective class and change the variables documented above
 
 ```css
-// This will only affect the primary sidebar, but not default
+/* This will only affect the primary sidebar, but not default */
 .sidebar--primary {
   --_op-sidebar-background-color: purple;
   --_op-sidebar-text-color: purple;

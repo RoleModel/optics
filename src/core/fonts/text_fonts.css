@@ -1,0 +1,16 @@
+/*
+Noto Sans supports:
+  font-weight: {anything between 100 and 900}
+  font-stretch: {anything between 62.5% and 100%}
+  font-style: {normal or italic}
+*/
+
+/*
+  Noto Serif supports:
+  font-weight: {anything between 100 and 900}
+  font-stretch: {anything between 62.5% and 100%}
+  font-style: {normal or italic}
+*/
+
+/* Noto Sans and Noto Serif */
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Noto+Serif:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap';

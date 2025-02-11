@@ -3,49 +3,49 @@ digraph dependencies {
   node [fontname = "Helvetica,Arial,sans-serif";];
   edge [fontname = "Helvetica,Arial,sans-serif";];
   node [shape = box;];
-  "Tokens & Base";
+  "Fonts, Tokens, Base";
 
-  "Accordion" -> "Tokens & Base";
+  "Accordion" -> "Fonts, Tokens, Base";
   "Accordion" -> "Icon";
 
-  "Alert" -> "Tokens & Base";
+  "Alert" -> "Fonts, Tokens, Base";
   "Alert" -> "Icon";
 
-  "Badge" -> "Tokens & Base";
+  "Badge" -> "Fonts, Tokens, Base";
   "Badge" -> "Icon";
 
-  "Button" -> "Tokens & Base";
+  "Button" -> "Fonts, Tokens, Base";
   "Button" -> "Icon";
 
-  "Tag" -> "Tokens & Base";
+  "Tag" -> "Fonts, Tokens, Base";
   "Tag" -> "Icon";
 
-  "Button Group" -> "Tokens & Base";
+  "Button Group" -> "Fonts, Tokens, Base";
   "Button Group" -> "Button";
 
-  "Sidebar" -> "Tokens & Base";
+  "Sidebar" -> "Fonts, Tokens, Base";
   "Sidebar" -> "Button";
 
-  "Navbar" -> "Tokens & Base";
+  "Navbar" -> "Fonts, Tokens, Base";
   "Navbar" -> "Button";
 
   "Pagination" -> "Button";
   "Pagination" -> "Form";
-  "Pagination" -> "Tokens & Base";
+  "Pagination" -> "Fonts, Tokens, Base";
 
-  "Avatar" -> "Tokens & Base";
-  "Breadcrumbs" -> "Tokens & Base";
-  "Card" -> "Tokens & Base";
-  "Confirm Dialog" -> "Tokens & Base";
-  "Divider" -> "Tokens & Base";
-  "Form" -> "Tokens & Base";
-  "Icon" -> "Tokens & Base";
-  "Modal" -> "Tokens & Base";
-  "Side Panel" -> "Tokens & Base";
-  "Spinner" -> "Tokens & Base";
-  "Switch" -> "Tokens & Base";
-  "Tab" -> "Tokens & Base";
-  "Table" -> "Tokens & Base";
-  "Text Pair" -> "Tokens & Base";
-  "Tooltip" -> "Tokens & Base";
+  "Avatar" -> "Fonts, Tokens, Base";
+  "Breadcrumbs" -> "Fonts, Tokens, Base";
+  "Card" -> "Fonts, Tokens, Base";
+  "Confirm Dialog" -> "Fonts, Tokens, Base";
+  "Divider" -> "Fonts, Tokens, Base";
+  "Form" -> "Fonts, Tokens, Base";
+  "Icon" -> "Fonts, Tokens, Base";
+  "Modal" -> "Fonts, Tokens, Base";
+  "Side Panel" -> "Fonts, Tokens, Base";
+  "Spinner" -> "Fonts, Tokens, Base";
+  "Switch" -> "Fonts, Tokens, Base";
+  "Tab" -> "Fonts, Tokens, Base";
+  "Table" -> "Fonts, Tokens, Base";
+  "Text Pair" -> "Fonts, Tokens, Base";
+  "Tooltip" -> "Fonts, Tokens, Base";
 }

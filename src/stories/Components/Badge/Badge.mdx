@@ -26,6 +26,7 @@ Badge can be used as a standalone component, however, it does have a few depende
 
 ```css
 /* Depends on */
+@import '@rolemodel/optics/dist/css/core/fonts';
 @import '@rolemodel/optics/dist/css/core/tokens';
 @import '@rolemodel/optics/dist/css/core/base';
 @import '@rolemodel/optics/dist/css/components/icon';
@@ -108,7 +109,7 @@ This allows us to define core styles on a main [block](https://getbem.com/naming
 If you need to override the behavior of a particular badge style, you can open the respective class and set or change properties
 
 ```css
-// This will only affect the primary badge, but not default, secondary, notice, etc.
+/* This will only affect the primary badge, but not default, secondary, notice, etc. */
 .badge--primary {
   background-color: red;
   color: white;
