@@ -18,7 +18,7 @@ export default {
     },
     weight: {
       control: { type: 'select' },
-      options: ['light', 'normal', 'semi-bold', 'bold'],
+      options: ['thin', 'light', 'normal', 'semi-bold', 'bold'],
     },
     emphasis: {
       control: { type: 'select' },

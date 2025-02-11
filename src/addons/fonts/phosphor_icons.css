@@ -9,7 +9,6 @@
 
 /* Phosphor Icons */
 .ph {
-  font-family: 'Phosphor-Light' !important;
   font-weight: unset;
 
   /* Fill Modifiers */
@@ -18,15 +17,15 @@
   }
 
   /* Weight Modifiers */
-  &.icon--weight-light {
+  &.icon--weight-thin {
     font-family: 'Phosphor-Thin' !important;
   }
 
-  &.icon--weight-normal {
+  &.icon--weight-light {
     font-family: 'Phosphor-Light' !important;
   }
 
-  &.icon--weight-semi-bold {
+  &.icon--weight-normal {
     font-family: 'Phosphor' !important;
   }
 
