@@ -8,10 +8,10 @@
   /* Elements */
 
   .alert__icon {
-    --op-mso-optical-sizing: 40; /* .icon--large styling */
-    --op-mso-weight: var(--op-font-weight-bold); /* .icon--weight-bold styling */
+    --__op-icon-font-size: var(--_op-icon-font-size-large);
+    --__op-icon-optical-size: var(--_op-icon-optical-size-large);
+    --__op-icon-weight: var(--_op-icon-weight-bold);
 
-    font-size: var(--op-font-large); /* .icon--large styling */
     line-height: var(--op-line-height-dense);
   }
 
