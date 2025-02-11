@@ -1,9 +1,6 @@
 /*
   Instead of hosting the font files locally which requires a compiler to handle them, we pull fonts
-  from Googles CDN. This does have downsides. For instance, the  font files are large so on first load,
-  there will be a flash of unstyled space where the text is. Changing the import to not use the variable
-  version of the font would fix this, but there is a tradeoff as we would lose the ability to choose fill,
-  weight, optical size, and ephasis. For more information on the variable font, see:
+  from Googles CDN. For more information on the variable font, see:
   https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts
 */
 
