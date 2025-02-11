@@ -1,6 +1,9 @@
 /* Third party Vendors */
 @import 'modern-css-reset/dist/reset';
 
+/* Fonts */
+@import 'core/fonts';
+
 /* Tokens */
 @import 'core/tokens';
 

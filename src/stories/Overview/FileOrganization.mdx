@@ -34,31 +34,35 @@ The recommended folder structure is to have a `main or application` file that is
 Using the above folder structure, the application file should import all of the other files. Comments can be used to describe the purpose of each section of files.
 
 ```css
-// Optics
+/* Optics */
 @import '@rolemodel/optics';
 
-// Vendors
+/* Vendors */
 @import 'something-from-node-modules/something';
 
-// Theme Customization
+/* Font Customization */
+@import 'core/fonts/text_fonts';
+@import 'core/fonts/icon_fonts';
+
+/* Theme Customization */
 @import 'core/theme/{name}-theme-core';
 @import 'core/theme/{name}-theme-light';
 @import 'core/theme/{name}-theme-dark';
 
-// Core Customization
+/* Core Customization */
 @import 'core/base';
 @import 'core/layout';
 @import 'core/utilities';
 
-// Vendor Customization
+/* Vendor Customization */
 @import 'vendors/{vendor-name}-overrides';
 
-// Optics Component Customization
+/* Optics Component Customization */
 @import 'components/optics-overrides/{component-name}';
 
 /* Component */
 @import 'components/{component-name}';
 
-// General Styles
+/* General Styles */
 @import 'general/{general-name}';
 ```

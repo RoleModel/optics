@@ -1,0 +1,11 @@
+/*
+  See all icons at: https://fonts.google.com/icons?icon.set=Material+Symbols
+  Material Symbols supports:
+  fill set through: font-variation-settings: 'FILL' {0|1}
+  font weight set through: font-variation-settings: 'wght' {100..900}
+  emphasis set through: font-variation-settings: 'GRAD' {-20|0|200}
+  optical sizing set through: font-variation-settings: 'opsz' {20|40|48}
+*/
+
+/* Material Symbols */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block';

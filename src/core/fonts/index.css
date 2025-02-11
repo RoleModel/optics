@@ -1,0 +1,8 @@
+/*
+  Instead of hosting the font files locally which requires a compiler to handle them, we pull fonts
+  from Googles CDN. This does introduce a slight performance hit, but it's a tradeoff for simplicity.
+  https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts
+*/
+
+@import 'text_fonts';
+@import 'icon_fonts';

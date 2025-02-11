@@ -110,7 +110,7 @@ If you want to change the font used by default, you can add a new font import to
 
 ## Alternate or Multiple Fonts
 
-Often an application will need multiple fonts. Your headers may use a different font than your body text. Optics provides a single font family token, but you can easily add your own font tokens by following the pattern.
+Often an application will need multiple fonts. Your headers may use a different font than your body text. Optics provides a main token `--op-font-family` and an alt token `--op-font-family-alt`, but you can easily add your own font tokens by following the pattern.
 
 ```css
 @import 'https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC@8..144,-10..0,25..151,100..1000,-200..150,27..175,323..603,25..135,649..854,-305..-98,560..788,416..570,528..760&family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap';
@@ -118,7 +118,8 @@ Often an application will need multiple fonts. Your headers may use a different 
 :root {
   --op-font-family: 'Tilt Neon', sans-serif;
   --op-font-family-alt: 'Roboto Flex', serif;
-  // Could add others as needed
-  --ya-font-family-body: 'Roboto Flex', serif;  // Your App prefix. Could stick with --op if you want
+
+  /* Could add others as needed */
+  --ya-font-family-body: 'Roboto Flex', serif; /* Your App prefix. Could stick with --op if you want */
 }
 ```
