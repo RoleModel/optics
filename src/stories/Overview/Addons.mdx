@@ -24,20 +24,23 @@ This flash has been mitigated some by using the `font-display: block;` property 
 If your app does want to use the full Material Symbols Outlined library, you can import the full library by using the following addon.
 This will increase the page load time but will allow you to use the full capabilities of the icon library.
 
+### Additional Icon packs
+
+Optics also allows for selective imports of additional icon packages. The currently supported packages are [Phosphor](https://phosphoricons.com/) and [Tabler](https://tabler.io/icons). These can be imported alongside the base design system to provide additional icon options.
+
+For more information on how to use these icons, see the [Icon Component](?path=/docs/visual-components-icon--docs).
+
 ```css
 @import '@rolemodel/optics';
 
+/* Full Material Symbols Outlined Package */
 @import '@rolemodel/optics/dist/css/addons/fonts/material_symbols_outlined_variable';
-```
 
-### Phosphor Icons
-
-{/* Something about duotone and filled exclusive */}
-
-```css
-@import '@rolemodel/optics';
-
+/* Phosphor Icons */
 @import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
+
+/* Tabler Icons */
+@import '@rolemodel/optics/dist/css/addons/fonts/tabler';
 ```
 
 ## Tom Select

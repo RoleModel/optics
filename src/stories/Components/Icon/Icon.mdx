@@ -52,6 +52,42 @@ Icon can be used as a standalone component, however, it does have a few dependen
 @import '@rolemodel/optics/dist/css/components/icon';
 ```
 
+## Additional Icon Usage
+
+Optics supports the use of [additional icon packages](?path=/docs/overview-addons--docs) that can be imported alongside the core icon package. However, due to the nature of these packages, not all of the same customization options may be available.
+
+### Phosphor Icons
+
+Phosphor Icons can be created with the `<i>` tag and the class of `icon ph ph-{icon-name}`.
+
+```html
+<i class="icon ph ph-smiley"></i>
+```
+
+`.icon--filled` can be added to created a filled icon.
+
+`.icon--small`, `.icon--medium`, `.icon--large`, `.icon--x-large` (with medium being the default) modify the size of any icon.
+
+`.icon--weight-thin`, `.icon--weight-light`, `.icon--weight-normal`, `.icon--weight-bold` (with normal being the default) modify the font weight of any icon.
+
+`.ph` can be replaced with `.ph-duotone` to create a duotone effect.
+
+Note: Phosphor Icons do not support the use of emphasis variations or the use of `.icon--filled` in combination with `.ph-duotone` or any weight variations.
+
+### Tabler Icons
+
+Tabler Icons can be created with the `<i>` tag and the class of `icon ti ti-{icon-name}`.
+
+```html
+<i class="icon ti ti-settings"></i>
+```
+
+`.ti-{icon-name}` can be replaced with `.ti-{icon-name}-filled` to created a filled icon.
+
+`.icon--small`, `.icon--medium`, `.icon--large`, `.icon--x-large` (with medium being the default) modify the size of any icon.
+
+Note: Tabler Icons do not support the use of weight or emphasis variations.
+
 ## Variations
 
 ### Default
