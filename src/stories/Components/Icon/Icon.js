@@ -8,6 +8,7 @@ class IconPackType {
     const typeMapping = {
       'Material Symbols Outlined': MaterialIconPack,
       Phosphor: PhosphorIconPack,
+      Tabler: TablerIconPack,
     }
 
     return new typeMapping[packName](packName, options)
@@ -66,6 +67,18 @@ class PhosphorIconPack extends IconPackType {
       this.options.filled ? 'icon--filled' : '',
       this.options.weight === 'normal' ? '' : `icon--weight-${this.options.weight}`,
     ].concat(super.iconClasses())
+  }
+}
+
+class TablerIconPack extends IconPackType {
+  iconElement() {
+    return 'i'
+  }
+
+  iconClasses() {
+    return ['ti', this.options.filled ? `ti-${this.options.iconName}-filled` : `ti-${this.options.iconName}`].concat(
+      super.iconClasses()
+    )
   }
 }
 
