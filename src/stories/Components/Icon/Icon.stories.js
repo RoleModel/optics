@@ -8,7 +8,7 @@ export default {
   argTypes: {
     iconPack: {
       control: { type: 'select' },
-      options: ['Material Symbols Outlined', 'Phosphor', 'Tabler', 'Feather'],
+      options: ['Material Symbols Outlined', 'Phosphor', 'Tabler', 'Feather', 'Lucide'],
     },
     name: { control: 'text' },
     filled: { control: 'boolean' },

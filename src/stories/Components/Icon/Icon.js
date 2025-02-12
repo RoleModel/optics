@@ -10,6 +10,7 @@ class IconPackType {
       Phosphor: PhosphorIconPack,
       Tabler: TablerIconPack,
       Feather: FeatherIconPack,
+      Lucide: LucideIconPack,
     }
 
     return new typeMapping[packName](packName, options)
@@ -90,6 +91,16 @@ class FeatherIconPack extends IconPackType {
 
   iconClasses() {
     return ['fi', `fi-${this.options.iconName}`].concat(super.iconClasses())
+  }
+}
+
+class LucideIconPack extends IconPackType {
+  iconElement() {
+    return 'i'
+  }
+
+  iconClasses() {
+    return ['li', `li-${this.options.iconName}`].concat(super.iconClasses())
   }
 }
 

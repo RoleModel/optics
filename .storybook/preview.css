@@ -3,6 +3,7 @@
 @import '../src/addons/fonts/phosphor_icons';
 @import '../src/addons/fonts/tabler_icons';
 @import '../src/addons/fonts/feather_icons';
+@import '../src/addons/fonts/lucide_icons';
 
 @import '../src/recipes/domains-sidebar';
 @import '../src/recipes/16six-sidebar';
