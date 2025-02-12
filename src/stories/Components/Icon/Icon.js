@@ -3,6 +3,7 @@ export const createIcon = ({ name, filled = false, size = 'medium', weight = 'no
   icon.innerText = name
 
   icon.className = [
+    'icon',
     'material-symbols-outlined',
     filled ? 'icon--filled' : '',
     size === 'medium' ? '' : `icon--${size}`,

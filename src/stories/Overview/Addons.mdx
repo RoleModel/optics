@@ -13,6 +13,21 @@ import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 
 Optics provides a few addons for integrating Third-Party tools with your application.
 
+## Icon Fonts
+
+Optics ships with a simplified version of [Material Symbols Outlined](https://fonts.google.com/icons?icon.style=Outlined). It only includes the font weight variable aspect of the icon library which means you won't be able to utilize the fill, or emphasis properties.
+This is a trade-off for a smaller file size which reduces page load "flash-in" where icons are blank until the font has loaded.
+This flash has been mitigated some by using the `font-display: block;` property on the font face to hide the underlying text until loaded as well as a fixed size to prevent layout shift.
+
+If your app does want to use the full Material Symbols Outlined library, you can import the full library by using the following addon.
+This will increase the page load time but will allow you to use the full capabilities of the icon library.
+
+```css
+@import '@rolemodel/optics';
+
+@import '@rolemodel/optics/dist/css/addons/fonts/material_symbols_outlined_variable';
+```
+
 ## Tom Select
 
 [Tom Select](https://tom-select.js.org/) is a dynamic, framework agnostic, and lightweight (~16kb gzipped) `<select>` UI control. With autocomplete and native-feeling keyboard navigation, it's useful for tagging, contact lists, country selectors, and so on.

@@ -1,6 +1,6 @@
 /*
   Instead of hosting the font files locally which requires a compiler to handle them, we pull fonts
-  from Googles CDN. This does introduce a slight performance hit, but it's a tradeoff for simplicity.
+  from Google's CDN. For more information on the variable font, see:
   https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts
 */
 

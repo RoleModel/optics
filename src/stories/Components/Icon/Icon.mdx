@@ -2,6 +2,8 @@ import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as IconStories from './Icon.stories'
 import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
+import { createAlert } from '../Alert/Alert.js'
+
 <Meta of={IconStories} />
 
 # Icon
@@ -13,6 +15,23 @@ import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 ></div>
 
 Icon classes are built on top of [Google's Material Symbols Icon Font](https://fonts.google.com/icons). They provide a way to integrate iconography into your application in a flexible and customizable way.
+Optics ships with a simplified version of [Material Symbols Outlined](https://fonts.google.com/icons?icon.style=Outlined). We only include the font weight variable aspect of the library.
+This means that adjusting the size and font weight are always available, but the emphasis and fill options below are not available by default. If your app would like to use these options, you can import the full library by using the [Icon Font Addon](?path=/docs/overview-addons--docs#icon-fonts).
+
+If you don't need the full library, but want a specific axis of the [Variable Font](?path=/docs/tokens-typography-font-family--docs#variable-fonts), You can use one of these imports alongside the Optics import.
+
+```css
+/* No fill, weight, or emphasis options, just allows for size modifiers */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block';
+
+/* Only fill option */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block';
+
+/* Only emphasis option */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,GRAD@20..48,-50..200&display=block';
+```
+
+A combination of these could be used as well based on your applications needs. See [Google Variable Fonts](https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts) for more details.
 
 ## Playground
 
@@ -37,10 +56,10 @@ Icon can be used as a standalone component, however, it does have a few dependen
 
 ### Default
 
-To use an icon, put an element (usually a `span`) with the class of `.material-symbols-outlined` and inner text of whatever icon you wish to use I.E. `settings` onto the page.
+To use an icon, put a `span` with the class of `.icon.material-symbols-outlined` and inner text of whatever icon you wish to use I.E. `settings` onto the page.
 
 ```html
-<span class="material-symbols-outlined">settings</span>
+<span class="icon material-symbols-outlined">settings</span>
 ```
 
 <Canvas of={IconStories.Default} />
@@ -53,7 +72,7 @@ To use an icon, put an element (usually a `span`) with the class of `.material-s
 
 ### Size
 
-`.icon--medium`, `.icon--large`, `.icon--x-large` (with medium being the default) modify the size of any icon.
+`.icon--small`, `.icon--medium`, `.icon--large`, `.icon--x-large` (with medium being the default) modify the size of any icon.
 
 <Canvas of={IconStories.Large} />
 
@@ -70,3 +89,79 @@ Emphasis acts similarly to weight, but changes the thickness of the icon strokes
 `.icon--low-emphasis`, `.icon--normal-emphasis`, `.icon--high-emphasis` (with normal being the default) modify the emphasis of any icon.
 
 <Canvas of={IconStories.Emphasis} />
+
+## Icon API
+
+Styles are built on CSS variables scoped to the icon.
+
+Here are the variables that can be customized:
+
+{/* prettier-ignore-start */}
+```css
+/* Weight */
+--_op-icon-weight-light
+--_op-icon-weight-normal
+--_op-icon-weight-semi-bold
+--_op-icon-weight-bold
+
+/* Fill */
+--_op-icon-fill-outlined
+--_op-icon-fill-filled
+
+/* Emphasis */
+--_op-icon-emphasis-low
+--_op-icon-emphasis-normal
+--_op-icon-emphasis-high
+
+/* Size */
+--_op-icon-font-size-small
+--_op-icon-font-size-medium
+--_op-icon-font-size-large
+--_op-icon-font-size-x-large
+--_op-icon-optical-size-small
+--_op-icon-optical-size-medium
+--_op-icon-optical-size-large
+--_op-icon-optical-size-x-large
+```
+{/* prettier-ignore-end */}
+
+## Customizing Icon styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the icon for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+The icon classes are structured using the [BEM methodology](https://getbem.com/naming).
+
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all icon behavior by overriding the `.icon` selector and setting any properties:
+
+```css
+.icon {
+}
+```
+
+## New Icon Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the icon for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
+
+```css
+.icon {
+  &.icon--{name} {
+    --_op-icon-font-size-small: var(--op-font-small);
+  }
+}
+```

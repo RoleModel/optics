@@ -1,105 +1,121 @@
-.material-symbols-outlined,
-.material-symbols {
-  --op-mso-fill: 0;
-  --op-mso-weight: var(--op-font-weight-normal);
-  --op-mso-grade: 0;
-  --op-mso-optical-sizing: 20;
+.icon {
+  /* Public API (customizable component options) */
 
-  font-size: var(--op-font-medium);
-  font-variation-settings:
-    'FILL' var(--op-mso-fill),
-    'wght' var(--op-mso-weight),
-    'GRAD' var(--op-mso-grade),
-    'opsz' var(--op-mso-optical-sizing);
+  /* Weight */
+  --_op-icon-weight-light: var(--op-font-weight-light);
+  --_op-icon-weight-normal: var(--op-font-weight-normal);
+  --_op-icon-weight-semi-bold: var(--op-font-weight-semi-bold);
+  --_op-icon-weight-bold: var(--op-font-weight-bold);
+
+  /* Fill */
+  --_op-icon-fill-outlined: 0;
+  --_op-icon-fill-filled: 1;
+
+  /* Emphasis */
+  --_op-icon-emphasis-low: -20;
+  --_op-icon-emphasis-normal: 0;
+  --_op-icon-emphasis-high: 200;
+
+  /* Size */
+  --_op-icon-font-size-small: var(--op-font-small);
+  --_op-icon-font-size-medium: var(--op-font-medium);
+  --_op-icon-font-size-large: var(--op-font-large);
+  --_op-icon-font-size-x-large: var(--op-font-2x-large);
+  --_op-icon-optical-size-small: 20;
+  --_op-icon-optical-size-medium: 20;
+  --_op-icon-optical-size-large: 40;
+  --_op-icon-optical-size-x-large: 48;
+
+  /* Private API (component option defaults) */
+  --__op-icon-weight: var(--_op-icon-weight-normal);
+  --__op-icon-fill: var(--_op-icon-fill-outlined);
+  --__op-icon-emphasis: var(--_op-icon-emphasis-normal);
+  --__op-icon-font-size: var(--_op-icon-font-size-medium);
+  --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
+
+  display: inline-block;
+  width: var(--__op-icon-font-size);
+  height: var(--__op-icon-font-size);
+  font-size: var(--__op-icon-font-size);
+  font-weight: var(--__op-icon-weight);
   line-height: var(--op-line-height-densest);
   vertical-align: middle;
-}
 
-/* Fill */
-.icon--outlined {
-  --op-mso-fill: 0;
-}
+  /* Fill Modifiers */
+  &.icon--outlined {
+    --__op-icon-fill: var(--_op-icon-fill-outlined);
+  }
 
-.icon--filled {
-  --op-mso-fill: 1;
-}
+  &.icon--filled {
+    --__op-icon-fill: var(--_op-icon-fill-filled);
+  }
 
-/* Weight */
-.icon--weight-light {
-  --op-mso-weight: var(--op-font-weight-light);
-}
+  /* Weight Modifiers */
+  &.icon--weight-light {
+    --__op-icon-weight: var(--_op-icon-weight-light);
+  }
 
-.icon--weight-normal {
-  --op-mso-weight: var(--op-font-weight-normal);
-}
+  &.icon--weight-normal {
+    --__op-icon-weight: var(--_op-icon-weight-normal);
+  }
 
-.icon--weight-semi-bold {
-  --op-mso-weight: var(--op-font-weight-semi-bold);
-}
+  &.icon--weight-semi-bold {
+    --__op-icon-weight: var(--_op-icon-weight-semi-bold);
+  }
 
-.icon--weight-bold {
-  --op-mso-weight: var(--op-font-weight-bold);
-}
+  &.icon--weight-bold {
+    --__op-icon-weight: var(--_op-icon-weight-bold);
+  }
 
-/* Emphasis */
-.icon--low-emphasis {
-  --op-mso-grade: -20;
-}
+  /* Emphasis */
+  &.icon--low-emphasis {
+    --__op-icon-emphasis: var(--_op-icon-emphasis-low);
+  }
 
-.icon--normal-emphasis {
-  --op-mso-grade: 0;
-}
+  &.icon--normal-emphasis {
+    --__op-icon-emphasis: var(--_op-icon-emphasis-normal);
+  }
 
-.icon--high-emphasis {
-  --op-mso-grade: 200;
-}
+  &.icon--high-emphasis {
+    --__op-icon-emphasis: var(--_op-icon-emphasis-high);
+  }
 
-/* Size */
-.icon--medium {
-  font-size: var(--op-font-medium);
-
-  --op-mso-optical-sizing: 20;
-}
-
-.icon--large {
-  font-size: var(--op-font-large);
-
-  --op-mso-optical-sizing: 40;
-}
-
-.icon--x-large {
-  font-size: var(--op-font-2x-large);
-
-  --op-mso-optical-sizing: 48;
-}
-
-.custom-icons {
-  display: inline-block;
-  width: var(--op-font-2x-large);
-  height: var(--op-font-2x-large);
+  /* Size Modifiers */
+  &.icon--small {
+    --__op-icon-font-size: var(--_op-icon-font-size-small);
+    --__op-icon-optical-size: var(--_op-icon-optical-size-small);
+  }
 
   &.icon--medium {
-    font-size: var(--op-font-small);
-
-    --op-mso-optical-sizing: 20;
+    --__op-icon-font-size: var(--_op-icon-font-size-medium);
+    --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
   }
 
   &.icon--large {
-    width: var(--op-font-large);
-    height: var(--op-font-large);
+    --__op-icon-font-size: var(--_op-icon-font-size-large);
+    --__op-icon-optical-size: var(--_op-icon-optical-size-large);
   }
 
   &.icon--x-large {
-    width: var(--op-font-3x-large);
-    height: var(--op-font-3x-large);
+    --__op-icon-font-size: var(--_op-icon-font-size-x-large);
+    --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
   }
 }
 
-.custom-icons svg {
-  width: 100%;
-  height: 100%;
+/* Material Icons class provided by the Google Fonts CDN */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' var(--__op-icon-fill),
+    'wght' var(--__op-icon-weight),
+    'GRAD' var(--__op-icon-emphasis),
+    'opsz' var(--__op-icon-optical-size);
+  font-weight: unset;
 }
 
-.icon-link {
-  line-height: 0;
+/* Custom SVG Icons app specific */
+.custom-icons {
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
