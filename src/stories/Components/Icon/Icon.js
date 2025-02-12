@@ -9,6 +9,7 @@ class IconPackType {
       'Material Symbols Outlined': MaterialIconPack,
       Phosphor: PhosphorIconPack,
       Tabler: TablerIconPack,
+      Feather: FeatherIconPack,
     }
 
     return new typeMapping[packName](packName, options)
@@ -79,6 +80,16 @@ class TablerIconPack extends IconPackType {
     return ['ti', this.options.filled ? `ti-${this.options.iconName}-filled` : `ti-${this.options.iconName}`].concat(
       super.iconClasses()
     )
+  }
+}
+
+class FeatherIconPack extends IconPackType {
+  iconElement() {
+    return 'i'
+  }
+
+  iconClasses() {
+    return ['feather', `icon-${this.options.iconName}`].concat(super.iconClasses())
   }
 }
 
