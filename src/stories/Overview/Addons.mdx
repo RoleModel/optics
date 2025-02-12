@@ -21,12 +21,19 @@ Optics ships with a simplified version of [Material Symbols Outlined](https://fo
 This is a trade-off for a smaller file size which reduces page load "flash-in" where icons are blank until the font has loaded.
 This flash has been mitigated some by using the `font-display: block;` property on the font face to hide the underlying text until loaded as well as a fixed size to prevent layout shift.
 
-If your app does want to use the full Material Symbols Outlined library, you can import the full library by using the following addon.
+If your app does want to use the full Material Symbols Outlined library, you can import the full library by using the addon shown below.
 This will increase the page load time but will allow you to use the full capabilities of the icon library.
 
-### Additional Icon packs
+### Additional Icon libraries
 
-Optics also allows for selective imports of additional icon packages. The currently supported packages are [Phosphor](https://phosphoricons.com/) and [Tabler](https://tabler.io/icons). These can be imported alongside the base design system to provide additional icon options.
+Optics supports alternative icon libraries. It currently supports
+
+- [Phosphor](https://phosphoricons.com/)
+- [Tabler](https://tabler.io/icons)
+- [Feather](https://feathericons.com/)
+- [Lucide](https://lucide.dev/icons/)
+
+These can be imported alongside the base design system to provide additional icon options.
 
 For more information on how to use these icons, see the [Icon Component](?path=/docs/visual-components-icon--docs).
 
@@ -41,6 +48,12 @@ For more information on how to use these icons, see the [Icon Component](?path=/
 
 /* Tabler Icons */
 @import '@rolemodel/optics/dist/css/addons/fonts/tabler';
+
+/* Feather Icons */
+@import '@rolemodel/optics/dist/css/addons/fonts/feather';
+
+/* Lucide Icons (a fork of feather with more icons) */
+@import '@rolemodel/optics/dist/css/addons/fonts/lucide';
 ```
 
 ## Tom Select
