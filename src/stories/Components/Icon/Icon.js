@@ -89,7 +89,7 @@ class FeatherIconPack extends IconPackType {
   }
 
   iconClasses() {
-    return ['feather', `icon-${this.options.iconName}`].concat(super.iconClasses())
+    return ['fi', `fi-${this.options.iconName}`].concat(super.iconClasses())
   }
 }
 
