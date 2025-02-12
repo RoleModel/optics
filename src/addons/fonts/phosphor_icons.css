@@ -10,6 +10,8 @@
 @import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css';
 @import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css';
 
+/* Note: the important tag is how Phosphor sets up the fonts which is why we replicate them here */
+
 /* Phosphor Icons */
 .ph {
   font-weight: unset;
