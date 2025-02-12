@@ -1,0 +1,11 @@
+/*
+  See all icons at: https://tabler.io/icons
+  Current version: 3.30.0
+*/
+
+@import 'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css';
+
+/* Tabler Icons */
+.ti {
+  font-weight: unset;
+}

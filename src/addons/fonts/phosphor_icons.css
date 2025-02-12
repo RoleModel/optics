@@ -1,0 +1,44 @@
+/*
+  See all icons at: https://phosphoricons.com/
+  Current version: 2.1.1
+*/
+
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css';
+
+/* Note: the important tag is how Phosphor sets up the fonts which is why we replicate them here */
+
+/* Phosphor Icons */
+.ph {
+  font-weight: unset;
+
+  /* Fill Modifiers */
+  &.icon--filled {
+    font-family: 'Phosphor-Fill' !important;
+  }
+
+  /* Weight Modifiers */
+  &.icon--weight-thin {
+    font-family: 'Phosphor-Thin' !important;
+  }
+
+  &.icon--weight-light {
+    font-family: 'Phosphor-Light' !important;
+  }
+
+  &.icon--weight-normal {
+    font-family: 'Phosphor' !important;
+  }
+
+  &.icon--weight-bold {
+    font-family: 'Phosphor-Bold' !important;
+  }
+}
+
+.ph-duotone {
+  font-weight: unset;
+}

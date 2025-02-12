@@ -52,6 +52,106 @@ Icon can be used as a standalone component, however, it does have a few dependen
 @import '@rolemodel/optics/dist/css/components/icon';
 ```
 
+### Additional Icon libraries
+
+Optics supports a variety of [Additional icon libraries](?path=/docs/overview-addons--docs) that can be imported. Due to the nature of these libraries, not all of the same icon class modifiers may be available.
+
+### Phosphor Icons
+
+[Phosphor Icons](https://phosphoricons.com/) can be created with the `<i>` tag and uses the `.ph` prefix with `.ph-{name}` to define a specific icon.
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
+```
+
+```html
+<i class="icon ph ph-smiley"></i>
+```
+
+The filled, size and weight modifiers can be used with Phosphor Icons.
+
+Phosphor adds `.icon--weight-thin` but does not support `.icon--weight-semi-bold`.
+It also adds a dual tone variation by replacing `.ph` with `.ph-duotone`.
+
+```html
+<i class="icon ph-duotone ph-smiley"></i>
+```
+
+Note: Phosphor Icons do not support the use of emphasis variations or the use of `.icon--filled` in combination with `.ph-duotone` or any weight variations.
+
+### Tabler Icons
+
+[Tabler Icons](https://tabler.io/icons) can be created with the `<i>` tag and uses the `.ti` prefix with `.ti-{name}` to define a specific icon.
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/tabler_icons';
+```
+
+```html
+<i class="icon ti ti-settings"></i>
+```
+
+The size modifiers can be used with Tabler Icons.
+
+```html
+<i class="icon ti ti-settings icon--x-large"></i>
+```
+
+It also supports a filled variant, however, rather than using the `.icon--filled` modifier, you can replace the `ti-{name}` class with `.ti-{name}-filled`.
+
+```html
+<i class="icon ti ti-settings-filled"></i>
+```
+
+Note: Tabler Icons do not support the use of weight or emphasis variations.
+
+### Feather Icons
+
+[Feather Icons](https://feathericons.com/) can be created with the `<i>` tag and uses the `.fi` prefix with `.fi-{name}` to define a specific icon.
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/feather_icons';
+```
+
+```html
+<i class="icon fi fi-feather"></i>
+```
+
+The size modifiers can be used with Feather Icons.
+
+```html
+<i class="icon fi fi-feather icon--x-large"></i>
+```
+
+Note: Feather Icons do not support the use of filled, weight, or emphasis variations.
+
+### Lucide Icons
+
+Lucide Icons are a fork of Feather Icons with more icons. If you don't need all the icons that Lucide provides,
+you can use the Feather Icons for a smaller icon pack instead.
+
+[Lucide Icons](https://lucide.dev/icons/) can be created with the `<i>` tag and uses the `.li` prefix with `.li-{name}` to define a specific icon.
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/lucide_icons';
+```
+
+```html
+<i class="icon li li-banana"></i>
+```
+
+The size modifiers can be used with Lucide Icons.
+
+```html
+<i class="icon li li-banana icon--x-large"></i>
+```
+
+Note: Lucide Icons do not support the use of filled, weight, or emphasis variations.
+
 ## Variations
 
 ### Default
