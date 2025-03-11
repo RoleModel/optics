@@ -6,10 +6,11 @@
   "main": "dist/css/optics.css",
   "scripts": {
     "test": "exit 0",
-    "build": "yarn build:css && yarn build:css-min && yarn build:tokens",
+    "build": "yarn build:css && yarn build:css-min && yarn build:tokens && yarn build:files",
     "build:css": "postcss src/optics.css -o dist/css/optics.css",
     "build:css-min": "postcss src/optics.css -o dist/css/optics.min.css --env=minify",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
+    "build:files": "mkdir -p dist/; cp LICENSE README.md package.json dist/",
     "storybook": "storybook dev -p 6006 --docs",
     "build-storybook": "storybook build --docs",
     "lint": "yarn lint:js && yarn lint:css",
