@@ -7,8 +7,8 @@
   "scripts": {
     "test": "exit 0",
     "build": "yarn build:css && yarn build:css-min && yarn build:tokens",
-    "build:css": "mkdir -p dist/css; rsync -a src/ dist/css --exclude stories",
-    "build:css-min": "postcss src/optics.css -o dist/css/optics.min.css",
+    "build:css": "postcss src/optics.css -o dist/css/optics.css",
+    "build:css-min": "postcss src/optics.css -o dist/css/optics.min.css --env=minify",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
     "storybook": "storybook dev -p 6006 --docs",
     "build-storybook": "storybook build --docs",
@@ -54,6 +54,7 @@
     "@storybook/preview-api": "^8.5.3",
     "@storybook/test": "^8.5.3",
     "@storybook/theming": "^8.5.3",
+    "cssnano": "^7.0.6",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",

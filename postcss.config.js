@@ -1,3 +1,6 @@
-module.exports = {
-  plugins: [require('postcss-import')],
-}
+module.exports = (context) => ({
+  plugins: {
+    'postcss-import': {},
+    cssnano: context.env === 'minify' ? {} : false,
+  },
+})
