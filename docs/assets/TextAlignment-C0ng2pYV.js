@@ -1,0 +1,19 @@
+import{j as e,M as l,C as i,a as h}from"./index-DyF4keL0.js";import{useMDXComponents as r}from"./index-CiOQkYpe.js";import{T as d,L as s,C as c,R as x,J as a}from"./TextAlignment.stories-4UJtT23Q.js";import{c as f}from"./sourceCodeLink-Chh3FteF.js";import"./iframe-CgDlpB7V.js";import"./index-BiL3ubqk.js";import"./index-DrFu-skq.js";function o(n){const t={code:"code",h1:"h1",h2:"h2",p:"p",...r(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(l,{of:d}),`
+`,e.jsx(t.h1,{id:"text-alignment",children:"Text Alignment"}),`
+`,e.jsx("div",{dangerouslySetInnerHTML:{__html:f({link:"core/utilities.css"}).outerHTML}}),`
+`,e.jsx(t.p,{children:"Text Alignment utility classes can be used to align text in an element."}),`
+`,e.jsx(t.h2,{id:"playground",children:"Playground"}),`
+`,e.jsx(i,{of:s}),`
+`,e.jsx(h,{of:s}),`
+`,e.jsx(t.h2,{id:"left",children:"Left"}),`
+`,e.jsxs(t.p,{children:[e.jsx(t.code,{children:".text-left"})," The inline contents are aligned to the left edge of the line box. Left is the default for most text so this is primarily for overriding alternate behavior."]}),`
+`,e.jsx(i,{of:s}),`
+`,e.jsx(t.h2,{id:"center",children:"Center"}),`
+`,e.jsxs(t.p,{children:[e.jsx(t.code,{children:".text-center"})," The inline contents are centered within the line box."]}),`
+`,e.jsx(i,{of:c}),`
+`,e.jsx(t.h2,{id:"right",children:"Right"}),`
+`,e.jsxs(t.p,{children:[e.jsx(t.code,{children:".text-right"})," The inline contents are aligned to the right edge of the line box."]}),`
+`,e.jsx(i,{of:x}),`
+`,e.jsx(t.h2,{id:"justify",children:"Justify"}),`
+`,e.jsxs(t.p,{children:[e.jsx(t.code,{children:".text-justify"})," The inline contents are justified. Text should be spaced to line up its left and right edges to the left and right edges of the line box, except for the last line."]}),`
+`,e.jsx(i,{of:a})]})}function C(n={}){const{wrapper:t}={...r(),...n.components};return t?e.jsx(t,{...n,children:e.jsx(o,{...n})}):o(n)}export{C as default};
