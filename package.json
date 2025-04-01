@@ -1,7 +1,7 @@
 {
   "name": "@rolemodel/optics",
-  "version": "2.1.2",
-  "packageManager": "yarn@4.2.2",
+  "version": "2.1.3",
+  "packageManager": "yarn@4.8.1",
   "description": "Optics is a css package that provides base styles and components that can be integrated and customized in a variety of projects.",
   "main": "dist/css/optics.css",
   "scripts": {
@@ -10,7 +10,7 @@
     "build:css": "postcss src/optics.css -o dist/css/optics.css",
     "build:css-min": "postcss src/optics.css -o dist/css/optics.min.css --env=minify",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
-    "build:files": "mkdir -p dist/css/addons; cp LICENSE README.md package.json dist/; cp -r src/addons dist/css",
+    "build:files": "mkdir -p dist/css/addons; cp LICENSE README.md package.json dist/; cp -rL src/addons src/core src/components dist/css",
     "storybook": "storybook dev -p 6006 --docs",
     "build-storybook": "storybook build --docs",
     "lint": "yarn lint:js && yarn lint:css",
