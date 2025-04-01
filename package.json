@@ -10,7 +10,7 @@
     "build:css": "postcss src/optics.css -o dist/css/optics.css",
     "build:css-min": "postcss src/optics.css -o dist/css/optics.min.css --env=minify",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
-    "build:files": "mkdir -p dist/css/addons; cp LICENSE README.md package.json dist/; cp -r src/addons dist/css; cp -r src/core dist/css; cp -r src/components dist/css",
+    "build:files": "mkdir -p dist/css/addons; cp LICENSE README.md package.json dist/; cp -rL src/addons src/core src/components dist/css",
     "storybook": "storybook dev -p 6006 --docs",
     "build-storybook": "storybook build --docs",
     "lint": "yarn lint:js && yarn lint:css",
