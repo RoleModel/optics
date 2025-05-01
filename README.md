@@ -12,7 +12,7 @@
 
 </div>
 
-Optics is an css package that provides base styles and components that can be integrated and customized in a variety of projects.
+Optics is a css package that provides base styles and components that can be integrated and customized in a variety of projects.
 
 ## Installation
 
