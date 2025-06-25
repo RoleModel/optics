@@ -2,13 +2,13 @@
   /* Public API (customizable component options) */
   --_op-card-padding: var(--op-space-medium);
   --_op-card-box-shadow: var(--op-border-all) var(--op-color-border);
+  --_op-card-radius: var(--op-radius-medium);
 
   position: relative;
-  border-radius: var(--op-radius-medium);
+  border-radius: var(--_op-card-radius);
   background-color: var(--op-color-background);
   box-shadow: var(--_op-card-box-shadow);
   color: var(--op-color-on-background);
-  contain: paint;
   font-size: var(--op-font-medium);
   line-height: var(--op-line-height-base);
 
@@ -50,6 +50,9 @@
   }
 
   .card__header {
+    border-top-left-radius: var(--_op-card-radius);
+    border-top-right-radius: var(--_op-card-radius);
+
     h1,
     h2,
     h3,
@@ -58,5 +61,10 @@
     h6 {
       margin: 0;
     }
+  }
+
+  .card__footer {
+    border-bottom-left-radius: var(--_op-card-radius);
+    border-bottom-right-radius: var(--_op-card-radius);
   }
 }
