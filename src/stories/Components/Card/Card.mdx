@@ -67,6 +67,16 @@ Card can be used as a standalone component, however, it does have a few dependen
 
 <Canvas of={CardStories.Shadow} />
 
+## Card API
+
+Padding, Box Shadow (border), and Radius styles are built on css variables scoped to the card. They can ben overridden to customize the card.
+
+```css
+--_op-card-padding
+--_op-card-box-shadow
+--_op-card-radius
+```
+
 ## Customizing Card styles
 
 <div
@@ -117,7 +127,8 @@ Your application may need a variation. To add one, just follow this template. No
 
 ```css
 .card--purple {
-  border-radius: var(--op-radius-large);
+  --_op-card-radius: var(--op-radius-large);
+
   font-size: var(--op-font-2x-large);
 
   .card__header {
