@@ -1,7 +1,7 @@
 export const createAvatar = ({
   size = 'large',
   disabled = false,
-  imageSource = 'https://picsum.photos/id/433/500',
+  imageSource = 'https://picsum.photos/id/1/400/400',
   useLink = true,
 }) => {
   const element = document.createElement(useLink ? 'a' : 'div')
