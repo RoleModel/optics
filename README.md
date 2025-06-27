@@ -46,12 +46,16 @@ To use Optics without compilation, use a CDN like [jsDelivr](https://www.jsdeliv
 Add a link in your HTML head or an `@import` to the top of your root level `css` file.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css"
+/>
 ```
 
 ```css
-@import "https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css"
+@import 'https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css';
 ```
+
 Note: You can use this method to use Optics with [CodePen](https://codepen.io/). In a CodePen project, go to `Settings > CSS`, find the section for adding external stylesheets, and add the CDN link as a resource.
 
 ## Documentation
