@@ -28,16 +28,29 @@ npm install @rolemodel/optics
 yarn add @rolemodel/optics
 ```
 
-### Import
+### Importing with a compiler
 
 You can add this import to the top of your root level `css` file.
 
 ```css
 @import '@rolemodel/optics'; /* Using webpack to compile */
 /* Or */
-@import '@rolemodel/optics/dist/css/optics'; /* Using a different compiler or no compiler */
+@import '@rolemodel/optics/dist/css/optics'; /* Using a different compiler */
 /* Or */
 @import '@rolemodel/optics/dist/css/optics.min.css'; /* If you want a single file with all the styles in it. */
+```
+
+### Importing without a compiler
+
+To use Optics without compilation, use a CDN like [jsDelivr](https://www.jsdelivr.com/) or [unpkg](https://unpkg.com/).
+Add a link in your HTML head or an `@import` to the top of your root level `css` file.
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css">
+```
+
+```css
+@import "https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css"
 ```
 
 ## Documentation
