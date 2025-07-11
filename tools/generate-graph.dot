@@ -36,6 +36,7 @@ digraph dependencies {
   "Avatar" -> "Fonts, Tokens, Base";
   "Breadcrumbs" -> "Fonts, Tokens, Base";
   "Card" -> "Fonts, Tokens, Base";
+  "Content-Header" -> "Fonts, Tokens, Base";
   "Confirm Dialog" -> "Fonts, Tokens, Base";
   "Divider" -> "Fonts, Tokens, Base";
   "Form" -> "Fonts, Tokens, Base";
