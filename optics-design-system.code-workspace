@@ -12,6 +12,7 @@
       "source.fixAll.stylelint": "always",
     },
     "editor.formatOnSave": true,
+    "cSpell.words": ["esbenp", "graphviz", "subline", "tintinweb", "unifiedjs"],
   },
   "extensions": {
     "recommendations": [
