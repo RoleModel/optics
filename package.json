@@ -3,6 +3,7 @@
   "version": "2.1.5",
   "packageManager": "yarn@4.8.1",
   "description": "Optics is a css package that provides base styles and components that can be integrated and customized in a variety of projects.",
+  "type": "module",
   "main": "dist/css/optics.css",
   "scripts": {
     "test": "exit 0",
@@ -20,7 +21,8 @@
     "prettier": "prettier -w .",
     "prettier-check": "prettier -c .",
     "sanity-check": "yarn lint && yarn prettier && yarn build && yarn build-storybook && rm -rf ./dist && rm -rf ./storybook-static",
-    "generate": "node ./tools/generate.js"
+    "generate": "node ./tools/generate.js",
+    "optics:install": "node ./tools/install.js"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.28.3",
+    "@clack/prompts": "^0.11.0",
     "@eslint/js": "^9.34.0",
     "@storybook/addon-docs": "^9.1.4",
     "@storybook/html-vite": "^9.1.4",
