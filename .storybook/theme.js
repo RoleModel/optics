@@ -1,5 +1,6 @@
 import { create } from 'storybook/theming'
 
+// https://storybook.js.org/docs/configure/user-interface/theming
 const theme = create({
   base: 'light',
   brandTitle: 'Optics, a RoleModel Design System',
