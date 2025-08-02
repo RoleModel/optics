@@ -11,6 +11,7 @@ function getAbsolutePath(value) {
 /** @type { import('@storybook/html-vite').StorybookConfig } */
 const config = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+
   addons: [
     {
       name: 'storybook-design-token',
@@ -18,25 +19,27 @@ const config = {
         preserveCSSVars: true,
       },
     },
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        backgrounds: false,
-      },
-    },
+    getAbsolutePath('@storybook/addon-docs'),
   ],
+
   staticDirs: [
     {
       from: './assets',
       to: '/public',
     },
   ],
+
   framework: {
     name: getAbsolutePath('@storybook/html-vite'),
     options: {},
   },
+
   core: {
     disableTelemetry: true, // 👈 Disables telemetry
+  },
+
+  features: {
+    backgrounds: false,
   },
 }
 export default config
