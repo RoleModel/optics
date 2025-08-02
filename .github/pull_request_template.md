@@ -30,6 +30,7 @@ Cross out all that don't apply with ~~ ~~ around it like ~~this~~
 - [ ] Did you add a component?
   - [ ] Have you added it to the dependency graph?
   - [ ] Have you added it to the docs?
+  - [ ] Have you added it to the install script?
 - [ ] Did you update a component?
   - [ ] Have you updated the dependency graph?
   - [ ] Have you updated the docs?
