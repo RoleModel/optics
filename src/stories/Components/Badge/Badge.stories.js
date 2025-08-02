@@ -1,7 +1,7 @@
 import { createBadge } from './Badge.js'
 
 export default {
-  title: 'Content Components/Badge',
+  title: 'Components/Badge',
   render: ({ label, ...args }) => {
     return createBadge({ label, ...args })
   },

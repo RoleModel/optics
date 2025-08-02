@@ -1,7 +1,7 @@
 import { createTag } from './Tag.js'
 
 export default {
-  title: 'Content Components/Tag',
+  title: 'Components/Tag',
   render: ({ label, ...args }) => {
     return createTag({ label, ...args })
   },

@@ -1,7 +1,7 @@
 import { createTextarea } from './Form.js'
 
 export default {
-  title: 'Content Components/Form/Textarea',
+  title: 'Components/Form/Textarea',
   render: ({ ...args }) => {
     return createTextarea({ ...args })
   },

@@ -1,7 +1,7 @@
 import { createModal } from './Modal.js'
 
 export default {
-  title: 'Popup Content Components/Modal',
+  title: 'Components/Modal',
   render: ({ header, ...args }) => {
     return createModal({ header, ...args })
   },

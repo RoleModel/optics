@@ -1,7 +1,7 @@
 import { createErrorSummary } from './Form.js'
 
 export default {
-  title: 'Content Components/Form/ErrorSummary',
+  title: 'Components/Form/ErrorSummary',
   render: ({ label, ...args }) => {
     return createErrorSummary({ label, ...args })
   },
