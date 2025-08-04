@@ -1,7 +1,7 @@
 import { createContentHeader } from './ContentHeader.js'
 
 export default {
-  title: 'Content Components/Content Header',
+  title: 'Components/Content Header',
   render: ({ title, ...args }) => {
     return createContentHeader({ title, ...args })
   },

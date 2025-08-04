@@ -1,7 +1,7 @@
 import { createLabel } from './Form.js'
 
 export default {
-  title: 'Content Components/Form/Label',
+  title: 'Components/Form/Label',
   render: ({ label, ...args }) => {
     return createLabel({ label, ...args })
   },

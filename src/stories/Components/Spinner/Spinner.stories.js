@@ -1,7 +1,7 @@
 import { createSpinner } from './Spinner.js'
 
 export default {
-  title: 'Visual Components/Spinner',
+  title: 'Components/Spinner',
   render: ({ size, ...args }) => {
     return createSpinner({ size, ...args })
   },

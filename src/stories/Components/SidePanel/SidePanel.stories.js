@@ -1,7 +1,7 @@
 import { createSidePanel } from './SidePanel.js'
 
 export default {
-  title: 'Content Components/SidePanel',
+  title: 'Components/SidePanel',
   render: ({ option1, ...args }) => {
     return createSidePanel({ option1, ...args })
   },

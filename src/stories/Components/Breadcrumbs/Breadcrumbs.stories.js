@@ -1,7 +1,7 @@
 import { createBreadcrumbs } from './Breadcrumbs.js'
 
 export default {
-  title: 'Navigation Components/Breadcrumbs',
+  title: 'Components/Breadcrumbs',
   render: ({ size, ...args }) => {
     return createBreadcrumbs({ size, ...args })
   },

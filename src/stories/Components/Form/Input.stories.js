@@ -1,7 +1,7 @@
 import { createInput } from './Form.js'
 
 export default {
-  title: 'Content Components/Form/Input',
+  title: 'Components/Form/Input',
   render: ({ type, ...args }) => {
     return createInput({ type, ...args })
   },

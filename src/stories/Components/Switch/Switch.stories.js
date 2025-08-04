@@ -1,7 +1,7 @@
 import { createSwitch } from './Switch.js'
 
 export default {
-  title: 'Content Components/Switch',
+  title: 'Components/Switch',
   render: ({ ...args }) => {
     return createSwitch({ ...args })
   },
