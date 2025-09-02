@@ -1,11 +1,18 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import * as ??name??(pascalCase)Stories from './??name??(pascalCase).stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 import { createAlert } from '../Alert/Alert.js'
 
 <Meta of={??name??(pascalCase)Stories} />
 
 # ??name??(pascalCase)
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/??name??(lowerCase).css' }).outerHTML,
+  }}
+></div>
 
 Brief overview description of how to use ??name??(pascalCase) classes
 
