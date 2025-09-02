@@ -21,6 +21,7 @@ digraph dependencies {
   "Fonts, Tokens, Base" -> "Modal";
   "Fonts, Tokens, Base" -> "Navbar";
   "Fonts, Tokens, Base" -> "Pagination";
+  "Fonts, Tokens, Base" -> "Segmented Control";
   "Fonts, Tokens, Base" -> "Sidebar";
   "Fonts, Tokens, Base" -> "Side Panel";
   "Fonts, Tokens, Base" -> "Spinner";
