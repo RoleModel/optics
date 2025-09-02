@@ -14,6 +14,7 @@
 @import 'modal';
 @import 'navbar';
 @import 'pagination';
+@import 'segmented-control';
 @import 'sidebar';
 @import 'side_panel';
 @import 'spinner';
