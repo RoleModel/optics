@@ -16,6 +16,9 @@
   .sbdocs.sbdocs-toc--custom {
     width: 15rem;
     min-width: 15rem;
+    background-color: var(--op-color-background);
+    color: var(--op-color-on-background);
+    color-scheme: light;
 
     > nav {
       width: 15rem;
@@ -170,6 +173,7 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--op-space-large);
+  color-scheme: light;
   gap: var(--op-space-large);
 
   .card__info {
