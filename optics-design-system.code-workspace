@@ -7,12 +7,23 @@
   "settings": {
     "prettier.configPath": ".prettierrc.json",
     "stylelint.configFile": ".stylelintrc.json",
-    "stylelint.validate": ["css"],
+    "stylelint.validate": [
+      "css"
+    ],
     "editor.codeActionsOnSave": {
       "source.fixAll.stylelint": "always",
     },
     "editor.formatOnSave": true,
-    "cSpell.words": ["esbenp", "graphviz", "subline", "tintinweb", "unifiedjs"],
+    "cSpell.words": [
+      "esbenp",
+      "graphviz",
+      "subline",
+      "tintinweb",
+      "unifiedjs"
+    ],
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
   },
   "extensions": {
     "recommendations": [
