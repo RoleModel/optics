@@ -66,7 +66,7 @@
     "stylelint": "^16.23.1",
     "stylelint-config-idiomatic-order": "^10.0.0",
     "stylelint-prettier": "^5.0.3",
-    "vite": "^5.4.19"
+    "vite": "^7.1.4"
   },
   "peerDependencies": {
     "tom-select": "^2.0.0"
