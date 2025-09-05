@@ -1,0 +1,12 @@
+import{j as o,M as t}from"./blocks-DX_T_ZP4.js";import{useMDXComponents as s}from"./index-BODO6xtx.js";import{c as d}from"./sourceCodeLink-Chh3FteF.js";import{O as a}from"./index-BRvzl5MA.js";import"./preload-helper-D9Z9MdNV.js";import"./iframe-CivF7LaH.js";function n(r){const e={code:"code",h1:"h1",h2:"h2",p:"p",pre:"pre",...s(),...r.components};return o.jsxs(o.Fragment,{children:[o.jsx(t,{title:"Tokens/Color/Border Color"}),`
+`,o.jsx(e.h1,{id:"border-color",children:"Border Color"}),`
+`,o.jsx("div",{dangerouslySetInnerHTML:{__html:d({link:"core/tokens/base_tokens.css"}).outerHTML}}),`
+`,o.jsx(e.p,{children:"Border color tokens can be used to define the color of borders and box shadows."}),`
+`,o.jsx(e.h2,{id:"usage",children:"Usage"}),`
+`,o.jsx(e.p,{children:"These tokens can be applied with a border or box shadow."}),`
+`,o.jsx(e.pre,{children:o.jsx(e.code,{className:"language-css",children:`border-color: var(--op-color-border);
+/* or */
+box-shadow: var(--op-border-top) var(--op-color-border);
+`})}),`
+`,o.jsx(e.h2,{id:"available-tokens-and-their-definitions",children:"Available tokens and their definitions"}),`
+`,o.jsx(a,{categoryName:"Border Color",viewType:"card"})]})}function m(r={}){const{wrapper:e}={...s(),...r.components};return e?o.jsx(e,{...r,children:o.jsx(n,{...r})}):n(r)}export{m as default};
