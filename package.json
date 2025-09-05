@@ -50,7 +50,7 @@
     "@eslint/js": "^9.34.0",
     "@storybook/addon-docs": "^9.1.4",
     "@storybook/html-vite": "^9.1.4",
-    "cssnano": "^7.0.6",
+    "cssnano": "^7.1.1",
     "eslint": "^9.34.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-storybook": "^9.1.4",
