@@ -43,36 +43,70 @@ SegmentedControl can be used as a standalone component, however, it does have a 
 @import '@rolemodel/optics/dist/css/components/icon';
 
 /* Component */
-@import '@rolemodel/optics/dist/css/components/button';
+@import '@rolemodel/optics/dist/css/components/segmented-control';
 ```
 
 ## Variations
 
 ### Default
 
-Description of the default example
+`.segmented-control` Provides styled radio select group.
 
 <Canvas of={SegmentedControlStories.Default} />
 
-### Alternate
+### Input
 
-Description of alternate example
+`.segmented-control__input` can be used on the radio inputs.
+
+### Label
+
+`.segmented-control__label` can be used on the radio labels.
+
+The [Icon](?path=/docs/content-components-icon--docs) component can be used within the label as a prefix or suffix and will follow the sizing appropriately.
+
+<Canvas of={SegmentedControlStories.WithIcons} />
+
+### Size
+
+`.segmented-control--small`, `.segmented-control--medium`, `.segmented-control--large` (with large being the default) modify the size of any other segmented control class by changing the font, padding, and height to be smaller or larger.
 
 <Canvas of={SegmentedControlStories.Size} />
 
 ## SegmentedControl API
 
-Styles are built on css variables scoped to the segmentedcontrol.
+Styles are built on css variables scoped to the segmented control.
 
 Here are the variables that can be customized.
 
 {/* prettier-ignore-start */}
 ```css
---_op-
+/* Some global tokens are overridden within this component */
+--op-input-inner-focus
+--op-input-focus-primary
+
+/* Public API (customizable component options) */
+--_op-segmented-control-height-small
+--_op-segmented-control-height-medium
+--_op-segmented-control-height-large
+
+--_op-segmented-control-font-small
+--_op-segmented-control-font-medium
+--_op-segmented-control-font-large
+
+--_op-segmented-control-label-padding-small
+--_op-segmented-control-label-padding-medium
+--_op-segmented-control-label-padding-large
+
+--_op-segmented-control-label-gap-small
+--_op-segmented-control-label-gap-medium
+--_op-segmented-control-label-gap-large
+
+--_op-segmented-control-color-icon-default
+--_op-segmented-control-color-icon-active
 ```
 {/* prettier-ignore-end */}
 
-## Customizing SegmentedControl styles
+## Customizing Segmented Control styles
 
 <div
   dangerouslySetInnerHTML={{
@@ -83,23 +117,25 @@ Here are the variables that can be customized.
   }}
 ></div>
 
-The segmentedcontrol classes are structured using the [BEM methodology](https://getbem.com/naming).
+The segmented control classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all segmentedcontrol behavior by overriding the `.segmentedcontrol` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all segmented control behavior by overriding the `.segmented-control` class and setting any properties:
 
 ```css
-.segmentedcontrol {
+.segmented-control {
+  color: red;
 }
 ```
 
-If you need to override the behavior of a particular segmentedcontrol modifier, you can open the respective class and set or change properties
+If you need to override the behavior of a particular segmented control modifier, you can open the respective class and set or change properties
 
 ```css
-.segmentedcontrol--modifier {
+.segmented-control--small {
+  color: red;
 }
 ```
 
-## New SegmentedControl Variations
+## New Segmented Control Variations
 
 <div
   dangerouslySetInnerHTML={{
@@ -113,7 +149,20 @@ If you need to override the behavior of a particular segmentedcontrol modifier, 
 Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
 
 ```css
-.segmentedcontrol--{name} {
-  @extend %segmentedcontrol-global;
+.segmented-control--{name} {
+  background-color: white;
+  color: purple;
+
+  &.segmented-control--small {
+    color: red;
+  }
+
+  &.segmented-control--medium {
+    color: green;
+  }
+
+  &.segmented-control--large {
+    color: blue;
+  }
 }
 ```

@@ -37,3 +37,9 @@ export const Size = {
     size: 'small',
   },
 }
+
+export const WithIcons = {
+  args: {
+    showSuffixIcon: true,
+  },
+}

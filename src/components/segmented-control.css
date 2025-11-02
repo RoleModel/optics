@@ -1,6 +1,7 @@
 .segmented-control {
   --op-input-inner-focus: 0 0 0 var(--op-border-width-large);
-  --op-input-focus-primary: var(--op-input-inner-focus) var(--op-color-primary-plus-two),
+  --op-input-focus-primary:
+    var(--op-input-inner-focus) var(--op-color-primary-plus-two),
     var(--op-input-outer-focus) var(--op-color-primary-plus-five);
 
   /* Public API (customizable component options) */
