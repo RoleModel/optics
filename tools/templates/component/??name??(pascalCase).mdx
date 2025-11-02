@@ -74,7 +74,7 @@ Here are the variables that can be customized.
 
 The ??name??(lowerCase) classes are structured using the [BEM methodology](https://getbem.com/naming).
 
-This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all ??name??(lowerCase) behavior by overriding the `.??name??(lowerCase)` placeholder selector and setting any properties:
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all ??name??(lowerCase) behavior by overriding the `.??name??(lowerCase)` class and setting any properties:
 
 ```css
 .??name??(lowerCase) {
@@ -103,6 +103,7 @@ Your application may need a variation. To add one, just follow this template. No
 
 ```css
 .??name??(lowerCase)--{name} {
-  @extend %??name??(lowerCase)-global;
+  background-color:
+  color:
 }
 ```
