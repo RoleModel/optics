@@ -7,37 +7,32 @@
   --_op-switch-opacity-disabled: var(--op-opacity-disabled);
   --_op-switch-switch-padding: var(--op-space-2x-small);
 
-  /* Private API (don't touch these) */
+  /* Private API (component option defaults) */
   --__op-switch-width: var(--_op-switch-width-large);
   --__op-switch-height: var(--_op-switch-height-large);
   --__op-switch-switch-size: calc(var(--__op-switch-height) - var(--_op-switch-switch-padding));
   --__op-switch-half-switch-padding: calc(var(--_op-switch-switch-padding) / 2);
 
   position: relative;
-  display: flex;
-  align-items: center;
+  border-radius: var(--op-radius-pill);
+  margin: 0;
+  appearance: none;
+  background-color: var(--op-color-neutral-base);
+  block-size: var(--__op-switch-height);
+  box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
+  cursor: pointer;
+  inline-size: var(--__op-switch-width);
 
-  label {
-    position: relative;
-    display: block;
-    border-radius: var(--op-radius-pill);
-    background: var(--op-color-neutral-base);
-    block-size: var(--__op-switch-height);
-    box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
-    inline-size: var(--__op-switch-width);
-    text-indent: -9999px; /* Normally text would not be put in the label, but this hides it in case you do put text in the label */
-
-    &::after {
-      position: absolute;
-      border-radius: var(--op-radius-circle);
-      background-color: var(--op-color-neutral-plus-eight);
-      block-size: var(--__op-switch-switch-size);
-      content: '';
-      inline-size: var(--__op-switch-switch-size);
-      inset-block-start: var(--__op-switch-half-switch-padding);
-      inset-inline-start: var(--__op-switch-half-switch-padding);
-      transition: var(--op-transition-input);
-    }
+  &::after {
+    position: absolute;
+    border-radius: var(--op-radius-circle);
+    background-color: var(--op-color-neutral-plus-eight);
+    block-size: var(--__op-switch-switch-size);
+    content: '';
+    inline-size: var(--__op-switch-switch-size);
+    inset-block-start: var(--__op-switch-half-switch-padding);
+    inset-inline-start: var(--__op-switch-half-switch-padding);
+    transition: var(--op-transition-input);
   }
 
   /* Prevent labels after the toggle being full width */
@@ -45,53 +40,51 @@
     inline-size: fit-content;
   }
 
-  input {
-    block-size: 0;
-    inline-size: 0;
-    margin-inline-end: calc(-1 * var(--op-space-x-small));
+  /* Focus State */
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    outline: none;
+  }
 
-    &:disabled {
-      visibility: hidden;
+  &:focus-visible {
+    box-shadow:
+      0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-six),
+      inset var(--op-border-all) var(--op-color-primary-minus-three);
+
+    &::after {
+      background-color: var(--op-color-neutral-plus-five);
+      box-shadow: var(--op-border-all) var(--op-color-primary-minus-three);
     }
 
-    &:disabled + label {
-      cursor: not-allowed;
-      opacity: var(--_op-switch-opacity-disabled);
-    }
-
-    &:checked + label {
-      background-color: var(--op-color-primary-base);
-      box-shadow: none;
-
-      &::after {
-        inset-inline-start: calc(100% - var(--__op-switch-half-switch-padding));
-        transform: translateX(-100%);
-      }
-    }
-
-    &:hover + label {
-      &::after {
-        background-color: var(--op-color-primary-plus-five);
-      }
-    }
-
-    &:focus-visible + label {
-      box-shadow:
-        0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-six),
-        inset var(--op-border-all) var(--op-color-primary-minus-three);
-
-      &::after {
-        background-color: var(--op-color-neutral-plus-five);
-        box-shadow: var(--op-border-all) var(--op-color-primary-minus-three);
-      }
-    }
-
-    &:focus-visible:checked + label {
+    &:checked {
       &::after {
         background-color: var(--op-color-primary-plus-six);
         box-shadow: var(--op-border-all) var(--op-color-primary-minus-two);
       }
     }
+  }
+
+  /* Hover State */
+  &:hover::after {
+    background-color: var(--op-color-primary-plus-five);
+  }
+
+  /* Checked state */
+  &:checked {
+    background-color: var(--op-color-primary-base);
+    box-shadow: none;
+
+    &::after {
+      inset-inline-start: calc(100% - var(--__op-switch-half-switch-padding));
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Disabled State */
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: var(--_op-switch-opacity-disabled);
   }
 
   /* Size Modifiers */
