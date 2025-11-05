@@ -47,6 +47,10 @@
   gap: var(--op-space-2x-small);
   grid-auto-flow: column;
 
+  &.segmented-control--full-width {
+    width: 100%;
+  }
+
   .icon {
     color: var(--__op-segmented-control-color-icon);
   }
@@ -79,10 +83,11 @@
 
   .segmented-control__label {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: var(--op-radius-small);
     gap: var(--__op-segmented-control-label-gap);
     padding-inline: var(--__op-segmented-control-label-padding);
-    place-items: center;
     white-space: nowrap;
 
     &:hover {

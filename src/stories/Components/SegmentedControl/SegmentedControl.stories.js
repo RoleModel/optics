@@ -11,6 +11,9 @@ export default {
       options: ['small', 'medium', 'large'],
     },
     options: { control: 'number' },
+    fullWidth: {
+      control: 'boolean',
+    },
     showPrefixIcon: {
       control: 'boolean',
       description: 'This is not a class. It just provides an example of using icons within the options',
@@ -19,6 +22,9 @@ export default {
       control: 'boolean',
       description: 'This is not a class. It just provides an example of using icons within the options',
     },
+  },
+  parameters: {
+    layout: 'padded',
   },
 }
 
@@ -35,6 +41,13 @@ export const Size = {
   args: {
     label: 'Small',
     size: 'small',
+  },
+}
+
+export const FullWidth = {
+  args: {
+    label: 'Full Width',
+    fullWidth: true,
   },
 }
 

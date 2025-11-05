@@ -36,6 +36,7 @@ const createOptionLabel = (index, showPrefixIcon, showSuffixIcon) => {
 
 export const createSegmentedControl = ({
   size = 'large',
+  fullWidth = false,
   showPrefixIcon = false,
   showSuffixIcon = false,
   options = 3,
@@ -43,7 +44,11 @@ export const createSegmentedControl = ({
   const element = document.createElement('div')
   element.role = 'radiogroup'
 
-  element.className = ['segmented-control', size === 'large' ? '' : `segmented-control--${size}`]
+  element.className = [
+    'segmented-control',
+    size === 'large' ? '' : `segmented-control--${size}`,
+    fullWidth ? 'segmented-control--full-width' : '',
+  ]
     .filter(Boolean)
     .join(' ')
 
