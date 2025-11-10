@@ -1,0 +1,176 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as SegmentedControlStories from './SegmentedControl.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
+
+import { createAlert } from '../Alert/Alert.js'
+
+<Meta of={SegmentedControlStories} />
+
+{/* TODO: Add generator for SimpleForm */}
+
+# Segmented Control
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'components/segmented-control.css' }).outerHTML,
+  }}
+></div>
+
+Segmented Control classes can be used to create a stylized radio select group.
+
+Segmented Control component is similar to the Button Group component, however it has a different semantic purpose. Segmented Control is intended to be used for form option selection and submission where Button Group is intended to be used for grouping related actions or navigational buttons. See [Button Group](?path=/docs/components-buttongroup--docs) for details on its usage.
+
+## Note on Implementation
+
+This is just a styling pattern that builds on standard radio inputs and labels. Your project may need some tooling to generate this easily.
+
+A commonly used tool for Ruby on Rails projects is [SimpleForm](https://github.com/heartcombo/simple_form). It allows you to build forms with pre-made inputs and allows you to make custom input types.
+
+[RoleModel Rails SimpleForm Generator](https://github.com/RoleModel/rolemodel_rails/tree/master/lib/generators/rolemodel/simple_form) provides a generator to install a custom segmented control input that can be used with SimpleForm with Optics classes applied.
+
+## Playground
+
+<Canvas of={SegmentedControlStories.Default} />
+<Controls of={SegmentedControlStories.Default} />
+
+### Selective Imports
+
+SegmentedControl can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](?path=/docs/overview-selective-imports--docs#dependencies)
+
+```css
+/* Depends on */
+@import '@rolemodel/optics/dist/css/core/fonts';
+@import '@rolemodel/optics/dist/css/core/tokens';
+@import '@rolemodel/optics/dist/css/core/base';
+@import '@rolemodel/optics/dist/css/components/icon';
+
+/* Component */
+@import '@rolemodel/optics/dist/css/components/segmented-control';
+```
+
+## Variations
+
+### Default
+
+`.segmented-control` Provides styled radio select group.
+
+<Canvas of={SegmentedControlStories.Default} />
+
+### Input
+
+`.segmented-control__input` can be used on the radio inputs.
+
+### Label
+
+`.segmented-control__label` can be used on the radio labels.
+
+The [Icon](?path=/docs/components-icon--docs) component can be used within the label as a prefix or suffix and will follow the sizing appropriately.
+
+<Canvas of={SegmentedControlStories.WithIcons} />
+
+### Size
+
+`.segmented-control--small`, `.segmented-control--medium`, `.segmented-control--large` (with large being the default) modify the size of any other segmented control class by changing the font, padding, and height to be smaller or larger.
+
+<Canvas of={SegmentedControlStories.Size} />
+
+### Full Width
+
+`.segmented-control--full-width` can be used to make the segmented control take up the full width of its container.
+
+<Canvas of={SegmentedControlStories.FullWidth} />
+
+## SegmentedControl API
+
+Styles are built on css variables scoped to the segmented control.
+
+Here are the variables that can be customized.
+
+{/* prettier-ignore-start */}
+```css
+/* Some global tokens are overridden within this component */
+--op-input-inner-focus
+--op-input-focus-primary
+
+/* Public API (customizable component options) */
+--_op-segmented-control-height-small
+--_op-segmented-control-height-medium
+--_op-segmented-control-height-large
+
+--_op-segmented-control-font-small
+--_op-segmented-control-font-medium
+--_op-segmented-control-font-large
+
+--_op-segmented-control-label-padding-small
+--_op-segmented-control-label-padding-medium
+--_op-segmented-control-label-padding-large
+
+--_op-segmented-control-label-gap-small
+--_op-segmented-control-label-gap-medium
+--_op-segmented-control-label-gap-large
+
+--_op-segmented-control-color-icon-default
+--_op-segmented-control-color-icon-active
+```
+{/* prettier-ignore-end */}
+
+## Customizing Segmented Control styles
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to customize the style of the segmentedcontrol for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+The segmented control classes are structured using the [BEM methodology](https://getbem.com/naming).
+
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all segmented control behavior by overriding the `.segmented-control` class and setting any properties:
+
+```css
+.segmented-control {
+  color: red;
+}
+```
+
+If you need to override the behavior of a particular segmented control modifier, you can open the respective class and set or change properties
+
+```css
+.segmented-control--small {
+  color: red;
+}
+```
+
+## New Segmented Control Variations
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createAlert({
+      title: 'Important!',
+      description: 'These patterns represent how to create new variations of the SegmentedControl for your project.',
+    }).outerHTML,
+  }}
+></div>
+
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
+
+```css
+.segmented-control--{name} {
+  background-color: white;
+  color: purple;
+
+  &.segmented-control--small {
+    color: red;
+  }
+
+  &.segmented-control--medium {
+    color: green;
+  }
+
+  &.segmented-control--large {
+    color: blue;
+  }
+}
+```

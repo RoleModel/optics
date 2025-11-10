@@ -1,0 +1,135 @@
+.segmented-control {
+  --op-input-inner-focus: 0 0 0 var(--op-border-width-large);
+  --op-input-focus-primary:
+    var(--op-input-inner-focus) var(--op-color-primary-plus-two),
+    var(--op-input-outer-focus) var(--op-color-primary-plus-five);
+
+  /* Public API (customizable component options) */
+  --_op-segmented-control-height-small: var(--op-input-height-small);
+  --_op-segmented-control-height-medium: var(--op-input-height-medium);
+  --_op-segmented-control-height-large: var(--op-input-height-large);
+
+  --_op-segmented-control-font-small: var(--op-font-x-small);
+  --_op-segmented-control-font-medium: var(--op-font-small);
+  --_op-segmented-control-font-large: var(--op-font-small);
+
+  --_op-segmented-control-label-padding-small: var(--op-space-x-small);
+  --_op-segmented-control-label-padding-medium: var(--op-space-small);
+  --_op-segmented-control-label-padding-large: var(--op-space-small);
+
+  --_op-segmented-control-label-gap-small: var(--op-space-3x-small);
+  --_op-segmented-control-label-gap-medium: var(--op-space-2x-small);
+  --_op-segmented-control-label-gap-large: var(--op-space-2x-small);
+
+  --_op-segmented-control-color-icon-default: var(--op-color-neutral-on-plus-eight-alt);
+  --_op-segmented-control-color-icon-active: light-dark(
+    var(--op-color-primary-plus-four),
+    var(--op-color-primary-minus-six)
+  );
+
+  /* Private API (component option defaults) */
+  --__op-segmented-control-height: var(--_op-segmented-control-height-large);
+  --__op-segmented-control-font-size: var(--_op-segmented-control-font-large);
+  --__op-segmented-control-label-padding: var(--_op-segmented-control-label-padding-large);
+  --__op-segmented-control-label-gap: var(--_op-segmented-control-label-gap-large);
+  --__op-segmented-control-color-icon: var(--_op-segmented-control-color-icon-default);
+
+  position: relative;
+  display: grid;
+  width: fit-content;
+  height: var(--__op-segmented-control-height);
+  padding: var(--op-space-2x-small);
+  border-radius: var(--op-radius-medium);
+  background-color: var(--op-color-neutral-plus-eight);
+  box-shadow: var(--op-border-all) var(--op-color-border);
+  color: var(--op-color-neutral-on-plus-eight);
+  font-size: var(--__op-segmented-control-font-size);
+  gap: var(--op-space-2x-small);
+  grid-auto-flow: column;
+
+  &.segmented-control--full-width {
+    width: 100%;
+  }
+
+  .icon {
+    color: var(--__op-segmented-control-color-icon);
+  }
+
+  .segmented-control__input {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border-width: 0;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    /* Selected Option */
+    &:checked + .segmented-control__label {
+      --__op-segmented-control-color-icon: var(--_op-segmented-control-color-icon-active);
+
+      background-color: var(--op-color-primary-plus-one);
+      color: var(--op-color-primary-on-plus-one);
+    }
+
+    &:focus-visible {
+      + .segmented-control__label {
+        box-shadow: var(--op-input-focus-primary);
+      }
+    }
+  }
+
+  .segmented-control__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--op-radius-small);
+    gap: var(--__op-segmented-control-label-gap);
+    padding-inline: var(--__op-segmented-control-label-padding);
+    white-space: nowrap;
+
+    &:hover {
+      background-color: var(--op-color-neutral-plus-five);
+      color: var(--op-color-neutral-on-plus-five);
+    }
+  }
+
+  /* Size Modifiers */
+  &.segmented-control--small {
+    --__op-segmented-control-height: var(--_op-segmented-control-height-small);
+    --__op-segmented-control-font-size: var(--_op-segmented-control-font-small);
+    --__op-segmented-control-label-padding: var(--_op-segmented-control-label-padding-small);
+    --__op-segmented-control-label-gap: var(--_op-segmented-control-label-gap-small);
+
+    .icon {
+      --__op-icon-font-size: var(--_op-icon-font-size-small);
+      --__op-icon-optical-size: var(--_op-icon-optical-size-small);
+    }
+  }
+
+  &.segmented-control--medium {
+    --__op-segmented-control-height: var(--_op-segmented-control-height-medium);
+    --__op-segmented-control-font-size: var(--_op-segmented-control-font-medium);
+    --__op-segmented-control-label-padding: var(--_op-segmented-control-label-padding-medium);
+    --__op-segmented-control-label-gap: var(--_op-segmented-control-label-gap-medium);
+
+    .icon {
+      --__op-icon-font-size: var(--_op-icon-font-size-medium);
+      --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
+    }
+  }
+
+  &.segmented-control--large {
+    --__op-segmented-control-height: var(--_op-segmented-control-height-large);
+    --__op-segmented-control-font-size: var(--_op-segmented-control-font-large);
+    --__op-segmented-control-label-padding: var(--_op-segmented-control-label-padding-large);
+    --__op-segmented-control-label-gap: var(--_op-segmented-control-label-gap-large);
+
+    .icon {
+      --__op-icon-font-size: var(--_op-icon-font-size-medium);
+      --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
+    }
+  }
+}

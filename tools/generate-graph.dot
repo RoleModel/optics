@@ -5,48 +5,43 @@ digraph dependencies {
   node [shape = box;];
   "Fonts, Tokens, Base";
 
-  "Accordion" -> "Fonts, Tokens, Base";
-  "Accordion" -> "Icon";
+  "Fonts, Tokens, Base" -> "Accordion";
+  "Fonts, Tokens, Base" -> "Alert";
+  "Fonts, Tokens, Base" -> "Avatar";
+  "Fonts, Tokens, Base" -> "Badge";
+  "Fonts, Tokens, Base" -> "Breadcrumbs";
+  "Fonts, Tokens, Base" -> "Button";
+  "Fonts, Tokens, Base" -> "Button Group";
+  "Fonts, Tokens, Base" -> "Card";
+  "Fonts, Tokens, Base" -> "Content-Header";
+  "Fonts, Tokens, Base" -> "Confirm Dialog";
+  "Fonts, Tokens, Base" -> "Divider";
+  "Fonts, Tokens, Base" -> "Form";
+  "Fonts, Tokens, Base" -> "Icon";
+  "Fonts, Tokens, Base" -> "Modal";
+  "Fonts, Tokens, Base" -> "Navbar";
+  "Fonts, Tokens, Base" -> "Pagination";
+  "Fonts, Tokens, Base" -> "Segmented Control";
+  "Fonts, Tokens, Base" -> "Sidebar";
+  "Fonts, Tokens, Base" -> "Side Panel";
+  "Fonts, Tokens, Base" -> "Spinner";
+  "Fonts, Tokens, Base" -> "Switch";
+  "Fonts, Tokens, Base" -> "Tab";
+  "Fonts, Tokens, Base" -> "Table";
+  "Fonts, Tokens, Base" -> "Tag";
+  "Fonts, Tokens, Base" -> "Text Pair";
+  "Fonts, Tokens, Base" -> "Tooltip";
 
-  "Alert" -> "Fonts, Tokens, Base";
-  "Alert" -> "Icon";
+  "Icon" -> "Accordion";
+  "Icon" -> "Alert";
+  "Icon" -> "Badge";
+  "Icon" -> "Button";
+  "Icon" -> "Tag";
 
-  "Badge" -> "Fonts, Tokens, Base";
-  "Badge" -> "Icon";
+  "Button" -> "Button Group";
+  "Button" -> "Sidebar";
+  "Button" -> "Navbar";
+  "Button" -> "Pagination";
 
-  "Button" -> "Fonts, Tokens, Base";
-  "Button" -> "Icon";
-
-  "Tag" -> "Fonts, Tokens, Base";
-  "Tag" -> "Icon";
-
-  "Button Group" -> "Fonts, Tokens, Base";
-  "Button Group" -> "Button";
-
-  "Sidebar" -> "Fonts, Tokens, Base";
-  "Sidebar" -> "Button";
-
-  "Navbar" -> "Fonts, Tokens, Base";
-  "Navbar" -> "Button";
-
-  "Pagination" -> "Button";
-  "Pagination" -> "Form";
-  "Pagination" -> "Fonts, Tokens, Base";
-
-  "Avatar" -> "Fonts, Tokens, Base";
-  "Breadcrumbs" -> "Fonts, Tokens, Base";
-  "Card" -> "Fonts, Tokens, Base";
-  "Content-Header" -> "Fonts, Tokens, Base";
-  "Confirm Dialog" -> "Fonts, Tokens, Base";
-  "Divider" -> "Fonts, Tokens, Base";
-  "Form" -> "Fonts, Tokens, Base";
-  "Icon" -> "Fonts, Tokens, Base";
-  "Modal" -> "Fonts, Tokens, Base";
-  "Side Panel" -> "Fonts, Tokens, Base";
-  "Spinner" -> "Fonts, Tokens, Base";
-  "Switch" -> "Fonts, Tokens, Base";
-  "Tab" -> "Fonts, Tokens, Base";
-  "Table" -> "Fonts, Tokens, Base";
-  "Text Pair" -> "Fonts, Tokens, Base";
-  "Tooltip" -> "Fonts, Tokens, Base";
+  "Form" -> "Pagination";
 }
