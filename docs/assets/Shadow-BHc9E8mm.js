@@ -1,0 +1,15 @@
+import{j as e,M as t}from"./WithTooltip-SK46ZJ2J-D25rk-eE.js";import{useMDXComponents as r}from"./index-DW-nmGvp.js";import{O as a}from"./index-DyV9nzhY.js";import{c as d}from"./sourceCodeLink-Chh3FteF.js";import"./preload-helper-PPVm8Dsz.js";import"./iframe-CR1j2QAj.js";function s(o){const n={a:"a",code:"code",h1:"h1",h2:"h2",h3:"h3",p:"p",pre:"pre",...r(),...o.components};return e.jsxs(e.Fragment,{children:[e.jsx(t,{title:"Tokens/Shadow"}),`
+`,e.jsx(n.h1,{id:"shadow",children:"Shadow"}),`
+`,e.jsx("div",{dangerouslySetInnerHTML:{__html:d({link:"core/tokens/base_tokens.css"}).outerHTML}}),`
+`,e.jsxs(n.p,{children:["Shadow tokens can be used to create an elevation effect on any element. There are also ",e.jsx(n.a,{href:"?path=/docs/components-card--docs#shadow",children:"Card classes"})," to create an elevated card effect."]}),`
+`,e.jsx(n.h2,{id:"usage",children:"Usage"}),`
+`,e.jsx(n.p,{children:"These tokens can be applied as box shadows."}),`
+`,e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-css",children:`box-shadow: var(--op-shadow-x-small);
+/* or */
+box-shadow: var(--op-shadow-x-large);
+`})}),`
+`,e.jsx(n.h2,{id:"available-tokens-and-their-definitions",children:"Available tokens and their definitions"}),`
+`,e.jsx(n.h3,{id:"light-mode",children:"Light Mode"}),`
+`,e.jsx(a,{categoryName:"Shadows",viewType:"card"}),`
+`,e.jsx(n.h3,{id:"dark-mode",children:"Dark Mode"}),`
+`,e.jsx(a,{categoryName:"Dark Shadows",viewType:"card"})]})}function p(o={}){const{wrapper:n}={...r(),...o.components};return n?e.jsx(n,{...o,children:e.jsx(s,{...o})}):s(o)}export{p as default};
