@@ -144,7 +144,7 @@
     outline: none;
   }
 
-  /* https:/*uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/ */
+  /* https:/uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/ */
 
   /* --op-breakpoint-small */
   @media (width <= 768px) {

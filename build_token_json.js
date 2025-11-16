@@ -108,16 +108,16 @@ function addToJson(keys, data, value) {
 }
 
 try {
-  const arguments = {}
+  const args = {}
   process.argv.forEach((argument) => {
     const values = argument.slice(2).split('=')
     if (values.length === 2) {
-      arguments[values[0]] = values[1]
+      args[values[0]] = values[1]
     }
   })
 
-  const source = arguments['source'] || 'src/core/tokens'
-  const output = arguments['output'] || './dist/tokens'
+  const source = args['source'] || 'src/core/tokens'
+  const output = args['output'] || './dist/tokens'
   const outputPath = path.dirname(output)
   const outputFile = path.basename(output)
 

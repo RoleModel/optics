@@ -46,27 +46,27 @@
     "modern-css-reset": "^1.4.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.28.3",
-    "@eslint/js": "^9.34.0",
-    "@storybook/addon-docs": "^9.1.4",
-    "@storybook/html-vite": "^9.1.4",
-    "cssnano": "^7.1.1",
-    "eslint": "^9.34.0",
+    "@babel/preset-env": "^7.28.5",
+    "@eslint/js": "^9.39.1",
+    "@storybook/addon-docs": "^10.0.7",
+    "@storybook/html-vite": "^10.0.7",
+    "cssnano": "^7.1.2",
+    "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-storybook": "^9.1.4",
+    "eslint-plugin-storybook": "^10.0.7",
     "generate-template-files": "^3.2.1",
-    "globals": "^16.3.0",
+    "globals": "^16.5.0",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
     "prettier": "^3.6.2",
-    "storybook": "^9.1.4",
+    "storybook": "^10.0.7",
     "storybook-design-token": "^4.1.0",
     "style-loader": "^4.0.0",
-    "stylelint": "^16.23.1",
+    "stylelint": "^16.25.0",
     "stylelint-config-idiomatic-order": "^10.0.0",
     "stylelint-prettier": "^5.0.3",
-    "vite": "^7.1.4"
+    "vite": "^7.2.2"
   },
   "peerDependencies": {
     "tom-select": "^2.0.0"
