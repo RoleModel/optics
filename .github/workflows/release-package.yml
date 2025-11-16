@@ -3,7 +3,8 @@ name: Deploy to NPM and GHP
 on:
   release:
     types: [published]
-
+permissions:
+  contents: read
 jobs:
   build-npm:
     runs-on: ubuntu-latest
