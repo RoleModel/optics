@@ -48,9 +48,13 @@
     
     <link href="./sb-addons/storybook-core-server-presets-0/common-manager-bundle.js" rel="modulepreload" />
     
-    <link href="./sb-addons/docs-1/manager-bundle.js" rel="modulepreload" />
+    <link href="./sb-addons/storybook-design-token-1/manager-bundle.js" rel="modulepreload" />
     
-    <link href="./sb-addons/storybook-2/manager-bundle.js" rel="modulepreload" />
+    <link href="./sb-addons/storybook-design-token-2/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/docs-3/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/storybook-4/manager-bundle.js" rel="modulepreload" />
       <style lang="css">
   button[data-action='collapse-root'] {
     color: hsl(273, 22%, 18%);
@@ -124,7 +128,18 @@
         
       
         
-          window['TAGS_OPTIONS'] = {};
+          window['TAGS_OPTIONS'] = {
+  "dev-only": {
+    "excludeFromDocsStories": true
+  },
+  "docs-only": {
+    "excludeFromSidebar": true
+  },
+  "test-only": {
+    "excludeFromSidebar": true,
+    "excludeFromDocsStories": true
+  }
+};
         
       
         
@@ -132,11 +147,11 @@
         
       
         
-          window['STORYBOOK_BUILDER'] = "@storybook/builder-vite/dist/index.js";
+          window['STORYBOOK_BUILDER'] = "@storybook/builder-vite";
         
       
         
-          window['STORYBOOK_FRAMEWORK'] = "@storybook/html-vite";
+          window['STORYBOOK_FRAMEWORK'] = "/home/runner/work/optics/optics/node_modules/@storybook/html-vite";
         
       
     </script>
@@ -148,9 +163,13 @@
       
         import './sb-addons/storybook-core-server-presets-0/common-manager-bundle.js';
       
-        import './sb-addons/docs-1/manager-bundle.js';
+        import './sb-addons/storybook-design-token-1/manager-bundle.js';
       
-        import './sb-addons/storybook-2/manager-bundle.js';
+        import './sb-addons/storybook-design-token-2/manager-bundle.js';
+      
+        import './sb-addons/docs-3/manager-bundle.js';
+      
+        import './sb-addons/storybook-4/manager-bundle.js';
       
 
       import './sb-manager/runtime.js';
