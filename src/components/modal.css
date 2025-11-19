@@ -48,13 +48,13 @@
   --_op-modal-max-height: calc(125 * var(--op-size-unit)); /* 500px */
 
   z-index: var(--op-z-index-dialog-content);
-  width: var(--_op-modal-width);
   border-radius: var(--op-radius-medium);
   background-color: var(--op-color-background);
   box-shadow: var(--op-border-all) var(--op-color-border);
   color: var(--op-color-on-background);
   contain: paint;
   font-size: var(--op-font-medium);
+  inline-size: var(--_op-modal-width);
   line-height: var(--op-line-height-base);
   opacity: var(--op-opacity-none);
   transform: scale(0.7);
@@ -75,8 +75,8 @@
   }
 
   .modal__body {
-    max-height: var(--_op-modal-max-height);
     box-shadow: var(--op-border-all) var(--op-color-border);
+    max-block-size: var(--_op-modal-max-height);
     overflow-y: auto;
   }
 

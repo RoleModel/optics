@@ -36,8 +36,8 @@
       text-decoration: none;
 
       svg {
-        width: var(--op-space-3x-large);
-        height: var(--op-space-3x-large);
+        block-size: var(--op-space-3x-large);
+        inline-size: var(--op-space-3x-large);
       }
 
       .sidebar__brand-label {

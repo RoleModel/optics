@@ -8,8 +8,8 @@ html {
 
 body {
   overflow: auto;
-  height: 100vh;
   background: var(--op-color-background);
+  block-size: 100vh;
   color: var(--op-color-on-background);
   font-size: var(--op-font-medium);
 }
@@ -56,9 +56,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
-  margin-bottom: var(--op-space-small);
   font-weight: var(--op-font-weight-normal);
+  margin-block: 0 var(--op-space-small);
 }
 
 h1 {
@@ -86,8 +85,8 @@ h6 {
 }
 
 p {
-  margin-bottom: var(--op-space-small);
   font-size: var(--op-font-medium);
+  margin-block-end: var(--op-space-small);
 }
 
 small {

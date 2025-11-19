@@ -34,10 +34,10 @@
   --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
 
   display: inline-block;
-  width: var(--__op-icon-font-size);
-  height: var(--__op-icon-font-size);
+  block-size: var(--__op-icon-font-size);
   font-size: var(--__op-icon-font-size);
   font-weight: var(--__op-icon-weight);
+  inline-size: var(--__op-icon-font-size);
   line-height: var(--op-line-height-densest);
   vertical-align: middle;
 
@@ -115,7 +115,7 @@
 /* Custom SVG Icons app specific */
 .custom-icons {
   svg {
-    width: 100%;
-    height: 100%;
+    block-size: 100%;
+    inline-size: 100%;
   }
 }

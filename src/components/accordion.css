@@ -9,11 +9,11 @@
 
   summary {
     display: grid;
-    min-height: var(--_op-accordion-summary-min-height);
     align-items: center;
     cursor: pointer;
     gap: var(--op-space-2x-small);
     grid-template-columns: auto 1fr auto;
+    min-block-size: var(--_op-accordion-summary-min-height);
 
     &::marker,
     &::-webkit-details-marker {
@@ -38,7 +38,7 @@
   }
 
   &::details-content {
-    height: 0;
+    block-size: 0;
     transition: var(--op-transition-accordion-content);
   }
 
@@ -48,7 +48,7 @@
     }
 
     &::details-content {
-      height: auto;
+      block-size: auto;
     }
   }
 
