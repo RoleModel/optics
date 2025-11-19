@@ -16,7 +16,6 @@
   --__op-btn-padding: var(--_op-btn-padding-large);
 
   display: inline-flex;
-  min-height: var(--__op-btn-height);
   align-items: center;
   justify-content: center;
   padding: var(--__op-btn-padding);
@@ -29,6 +28,7 @@
   font-size: var(--__op-btn-font-size);
   font-weight: var(--op-font-weight-normal);
   gap: var(--op-space-x-small);
+  min-block-size: var(--__op-btn-height);
   text-align: center;
   text-decoration: none;
   transition: var(--op-transition-input);
@@ -92,9 +92,9 @@
 
   /* Icon Modifier */
   &.btn--icon {
-    width: var(--__op-btn-height);
-    min-width: var(--__op-btn-height);
     padding: 0;
+    inline-size: var(--__op-btn-height);
+    min-inline-size: var(--__op-btn-height);
   }
 
   /* Icon With Label Modifier */

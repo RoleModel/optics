@@ -1575,6 +1575,7 @@ __metadata:
     stylelint: "npm:^16.23.1"
     stylelint-config-idiomatic-order: "npm:^10.0.0"
     stylelint-prettier: "npm:^5.0.3"
+    stylelint-use-logical: "npm:^2.1.2"
     vite: "npm:^7.1.4"
   peerDependencies:
     tom-select: ^2.0.0
@@ -6167,6 +6168,15 @@ __metadata:
     prettier: ">=3.0.0"
     stylelint: ">=16.0.0"
   checksum: 10c0/955e647131b96e088f3ea80ef409772aff8854d9f9831ac5826b76780fc9a49e0ad0f5aac1b5e6ed714848bea85068a7ba815585ed8b9f1e4da41a29b5666e4d
+  languageName: node
+  linkType: hard
+
+"stylelint-use-logical@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "stylelint-use-logical@npm:2.1.2"
+  peerDependencies:
+    stylelint: ">= 11 < 17"
+  checksum: 10c0/a9b178725e14b65c05c01f0fc8f979546bde0da87ff4314fb169a91a5b1f809448b89c0dbab7fc6d71c3cb2696fc89f54bb56bf373dce2a616335b301587b3e8
   languageName: node
   linkType: hard
 

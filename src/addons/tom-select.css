@@ -2,7 +2,6 @@
 .ts-wrapper {
   /* Control */
   .ts-control {
-    min-height: var(--op-input-height-large);
     align-items: center;
     border: none;
     border-radius: var(--op-radius-large);
@@ -12,13 +11,14 @@
     font-size: var(--op-font-x-small);
     font-weight: var(--op-font-weight-light);
     line-height: var(--op-line-height-base);
+    min-block-size: var(--op-input-height-large);
   }
 
   /* Active control */
   &.dropdown-active {
     .ts-control {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      border-end-end-radius: 0;
+      border-end-start-radius: 0;
     }
   }
 
@@ -26,8 +26,8 @@
   .ts-dropdown {
     border: none;
     margin: 0;
-    border-bottom-left-radius: var(--op-radius-large);
-    border-bottom-right-radius: var(--op-radius-large);
+    border-end-end-radius: var(--op-radius-large);
+    border-end-start-radius: var(--op-radius-large);
     box-shadow: var(--op-border-all) var(--op-color-border);
     contain: paint;
 

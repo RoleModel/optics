@@ -3,10 +3,10 @@
 
   position: absolute;
   z-index: var(--op-z-index-sidebar);
-  width: var(--op-panel-width);
-  height: 100vh;
   background-color: var(--op-color-background);
+  block-size: 100vh;
   color: var(--op-color-on-background);
+  inline-size: var(--op-panel-width);
   inset-inline-end: calc(-1 * var(--op-panel-width)); /* this pushes the panel off the screen to the right */
   overflow-y: scroll;
   padding-block-end: var(--op-space-large);
@@ -23,7 +23,7 @@
   padding: var(--op-space-medium);
   border-radius: 100%;
   cursor: pointer;
-  float: right;
+  float: inline-end;
 
   &:hover {
     background-color: var(--op-color-neutral-plus-seven);

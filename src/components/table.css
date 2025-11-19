@@ -11,11 +11,11 @@
   /* These allow for overriding specific padding versions easier. */
   --__op-table-cell-height: var(--_op-table-cell-height-default);
 
-  width: 100%;
   border-radius: var(--op-radius-medium);
   border-collapse: collapse;
   box-shadow: var(--op-border-all) var(--op-color-border);
   contain: paint;
+  inline-size: 100%;
   table-layout: auto;
 
   /* Elements */
@@ -33,7 +33,7 @@
 
   th {
     font-weight: var(--op-font-weight-semi-bold);
-    text-align: left;
+    text-align: start;
   }
 
   tbody,
@@ -44,7 +44,7 @@
 
   th,
   td {
-    height: var(--__op-table-cell-height);
+    block-size: var(--__op-table-cell-height);
     font-size: var(--op-font-small);
     padding-block: var(--op-space-2x-small);
     padding-inline: var(--op-space-small);

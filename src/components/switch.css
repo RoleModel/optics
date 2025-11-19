@@ -20,20 +20,20 @@
   label {
     position: relative;
     display: block;
-    width: var(--__op-switch-width);
-    height: var(--__op-switch-height);
     border-radius: var(--op-radius-pill);
     background: var(--op-color-neutral-base);
+    block-size: var(--__op-switch-height);
     box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
+    inline-size: var(--__op-switch-width);
     text-indent: -9999px; /* Normally text would not be put in the label, but this hides it in case you do put text in the label */
 
     &::after {
       position: absolute;
-      width: var(--__op-switch-switch-size);
-      height: var(--__op-switch-switch-size);
       border-radius: var(--op-radius-circle);
       background-color: var(--op-color-neutral-plus-eight);
+      block-size: var(--__op-switch-switch-size);
       content: '';
+      inline-size: var(--__op-switch-switch-size);
       inset-block-start: var(--__op-switch-half-switch-padding);
       inset-inline-start: var(--__op-switch-half-switch-padding);
       transition: var(--op-transition-input);
@@ -42,12 +42,12 @@
 
   /* Prevent labels after the toggle being full width */
   & + label {
-    width: fit-content;
+    inline-size: fit-content;
   }
 
   input {
-    width: 0;
-    height: 0;
+    block-size: 0;
+    inline-size: 0;
     margin-inline-end: calc(-1 * var(--op-space-x-small));
 
     &:disabled {
@@ -64,7 +64,7 @@
       box-shadow: none;
 
       &::after {
-        left: calc(100% - var(--__op-switch-half-switch-padding));
+        inset-inline-start: calc(100% - var(--__op-switch-half-switch-padding));
         transform: translateX(-100%);
       }
     }

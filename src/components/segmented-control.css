@@ -36,19 +36,19 @@
 
   position: relative;
   display: grid;
-  width: fit-content;
-  height: var(--__op-segmented-control-height);
   padding: var(--op-space-2x-small);
   border-radius: var(--op-radius-medium);
   background-color: var(--op-color-neutral-plus-eight);
+  block-size: var(--__op-segmented-control-height);
   box-shadow: var(--op-border-all) var(--op-color-border);
   color: var(--op-color-neutral-on-plus-eight);
   font-size: var(--__op-segmented-control-font-size);
   gap: var(--op-space-2x-small);
   grid-auto-flow: column;
+  inline-size: fit-content;
 
   &.segmented-control--full-width {
-    width: 100%;
+    inline-size: 100%;
   }
 
   .icon {
@@ -58,12 +58,12 @@
   .segmented-control__input {
     position: absolute;
     overflow: hidden;
-    width: 1px;
-    height: 1px;
     padding: 0;
     border-width: 0;
     margin: -1px;
+    block-size: 1px;
     clip: rect(0, 0, 0, 0);
+    inline-size: 1px;
     white-space: nowrap;
 
     /* Selected Option */

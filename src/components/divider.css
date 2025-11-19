@@ -11,10 +11,9 @@
   /* Private API (component option defaults) */
   --__op-divider-height: var(--_op-divider-height-small);
   --__op-divider-padding: 0;
-
-  width: 100%;
-  height: var(--__op-divider-height);
   background-color: var(--op-color-border);
+  block-size: var(--__op-divider-height);
+  inline-size: 100%;
   margin-block: var(--__op-divider-padding);
   margin-inline: 0;
 
@@ -46,10 +45,10 @@
 
   /* Direction Modifier */
   &.divider--vertical {
-    width: var(--__op-divider-height);
-    height: 100%;
-    min-height: var(--_op-divider-vertical-min-height);
+    block-size: 100%;
+    inline-size: var(--__op-divider-height);
     margin-block: 0;
     margin-inline: var(--__op-divider-padding);
+    min-block-size: var(--_op-divider-vertical-min-height);
   }
 }

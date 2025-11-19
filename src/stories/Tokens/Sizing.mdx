@@ -12,16 +12,16 @@ import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
   }}
 ></div>
 
-The Size token enables creating scalable widths and heights for your application. It is meant to be used in a `calc` expression with whole numbers. This ensures any sizes you create will be a multiple of 4px.
+The Size token enables creating scalable widths (inline-size) and heights (block-size) for your application. It is meant to be used in a `calc` expression with whole numbers. This ensures any sizes you create will be a multiple of 4px.
 
 ## Usage
 
 These tokens can be applied like:
 
 ```css
-height: calc(11 * var(--op-size-unit)); /* 44px */
+block-size: calc(11 * var(--op-size-unit)); /* 44px */
 /* Or */
-width: calc(54 * var(--op-size-unit)); /* 216px */
+inline-size: calc(54 * var(--op-size-unit)); /* 216px */
 ```
 
 ## Available tokens and their definitions

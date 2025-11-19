@@ -129,10 +129,11 @@ const createLoginLayout = () => {
 <style>
   /* These classes are not included by Optics, but you can create them easily. */
   .app__login {
-    margin: calc(2 * var(--op-space-4x-large)) auto auto;
+    margin-block-start: calc(2 * var(--op-space-4x-large));
+    margin-inline: auto;
     padding-inline: var(--op-space-large);
-    width: 100%;
-    max-width: calc(116 * var(--op-size-unit));
+    inline-size: 100%;
+    max-inline-size: calc(116 * var(--op-size-unit));
   }
 
   /* This could also be its own card variant */
@@ -143,7 +144,7 @@ const createLoginLayout = () => {
     }
 
     .card__header img {
-      width: calc(23 * var(--op-size-unit));
+      inline-size: calc(23 * var(--op-size-unit));
     }
 
     .card__body {

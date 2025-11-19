@@ -23,11 +23,11 @@
   /* Elements */
 
   .navbar__brand {
-    height: var(--_op-navbar-brand-height);
-    margin-right: var(--_op-navbar-horizontal-spacing);
+    block-size: var(--_op-navbar-brand-height);
+    margin-inline-end: var(--_op-navbar-horizontal-spacing);
 
     img {
-      height: 100%;
+      block-size: 100%;
     }
   }
 

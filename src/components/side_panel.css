@@ -7,13 +7,13 @@
   --_op-side-panel-section-padding: var(--op-space-medium);
 
   display: flex;
-  width: var(--_op-side-panel-width);
-  min-width: var(--_op-side-panel-width);
-  height: 100vh;
-  max-height: 100%;
   flex-direction: column;
   background-color: var(--op-color-background);
+  block-size: 100vh;
   color: var(--op-color-on-background);
+  inline-size: var(--_op-side-panel-width);
+  max-block-size: 100%;
+  min-inline-size: var(--_op-side-panel-width);
 
   /* Modifiers */
   &.side-panel--border-left {
