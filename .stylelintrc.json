@@ -1,6 +1,6 @@
 {
   "extends": ["stylelint-config-idiomatic-order"],
-  "plugins": ["stylelint-prettier"],
+  "plugins": ["stylelint-prettier", "stylelint-use-logical"],
   "overrides": [],
   "rules": {
     "prettier/prettier": true,
@@ -10,6 +10,7 @@
         "message": "CSS variables should be prefixed with op-"
       }
     ],
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "csstools/use-logical": "always"
   }
 }
