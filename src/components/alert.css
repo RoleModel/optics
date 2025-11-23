@@ -36,9 +36,9 @@
   &.alert--flash {
     position: fixed;
     z-index: var(--op-z-index-alert-group);
-    top: var(--op-space-large);
-    right: var(--op-space-large);
     animation: var(--op-animation-flash);
+    inset-block-start: var(--op-space-large);
+    inset-inline-end: var(--op-space-large);
   }
 
   &.alert--warning {

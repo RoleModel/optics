@@ -324,21 +324,21 @@
     Start off the Screen
   */
   0% {
-    right: -100%;
+    inset-inline-end: -100%;
   }
 
   /* Animate onto the screen for 0.5s */
   10% {
-    right: var(--op-space-large);
+    inset-inline-end: var(--op-space-large);
   }
 
   /* Stay on the screen for 3s */
   70% {
-    right: var(--op-space-large);
+    inset-inline-end: var(--op-space-large);
   }
 
   /* Animate off the screen for 1.5s */
   100% {
-    right: -100%;
+    inset-inline-end: -100%;
   }
 }

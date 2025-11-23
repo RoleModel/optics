@@ -29,23 +29,23 @@
 
   z-index: var(--op-z-index-sidebar);
   display: flex;
-  width: var(--__op-sidebar-width);
-  min-width: var(--__op-sidebar-width);
   flex-direction: column;
   background-color: var(--_op-sidebar-background-color);
   box-shadow: var(--op-border-right) var(--_op-sidebar-border-color);
   color: var(--_op-sidebar-text-color);
+  inline-size: var(--__op-sidebar-width);
+  min-inline-size: var(--__op-sidebar-width);
   overflow-y: auto;
   transition: var(--_op-sidebar-transition);
 
   /* Elements */
   .sidebar__brand {
-    height: var(--__op-sidebar-brand-width);
     padding: var(--_op-sidebar-brand-spacing);
+    block-size: var(--__op-sidebar-brand-width);
     margin-inline: auto;
 
     img {
-      height: 100%;
+      block-size: 100%;
     }
   }
 
@@ -118,13 +118,14 @@
       align-items: center;
 
       > * {
-        /* Need to get icon behavior */
-        width: var(--__op-btn-height);
-        min-width: var(--__op-btn-height);
         justify-content: center;
         padding: 0;
         font-size: 0;
         gap: 0;
+
+        /* Need to get icon behavior */
+        inline-size: var(--__op-btn-height);
+        min-inline-size: var(--__op-btn-height);
       }
     }
   }

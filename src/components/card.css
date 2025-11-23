@@ -50,8 +50,8 @@
   }
 
   .card__header {
-    border-top-left-radius: var(--_op-card-radius);
-    border-top-right-radius: var(--_op-card-radius);
+    border-start-end-radius: var(--_op-card-radius);
+    border-start-start-radius: var(--_op-card-radius);
 
     h1,
     h2,
@@ -64,7 +64,7 @@
   }
 
   .card__footer {
-    border-bottom-left-radius: var(--_op-card-radius);
-    border-bottom-right-radius: var(--_op-card-radius);
+    border-end-end-radius: var(--_op-card-radius);
+    border-end-start-radius: var(--_op-card-radius);
   }
 }

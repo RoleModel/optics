@@ -24,8 +24,6 @@
     position: absolute;
     z-index: var(--op-z-index-tooltip);
     display: block;
-    width: max-content;
-    max-width: var(--_op-tooltip-max-width);
     padding: var(--_op-tooltip-padding);
     border-radius: var(--_op-tooltip-tooltip-radius);
     background-color: var(--_op-tooltip-background-color);
@@ -33,6 +31,8 @@
     content: attr(data-tooltip-text);
     font-family: var(--op-font-family); /* Makes tooltips on icons work */
     font-size: var(--_op-tooltip-tooltip-font-size);
+    inline-size: max-content;
+    max-inline-size: var(--_op-tooltip-max-width);
     overflow-wrap: break-word;
     pointer-events: none;
     text-align: center;
