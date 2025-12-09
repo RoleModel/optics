@@ -443,3 +443,18 @@
     gap: var(--op-space-medium);
   }
 }
+
+/* Equivalent to .flex.flex-wrap.items-center.justify-between.gap-md */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &:not([class*='items-']) {
+    align-items: center;
+  }
+
+  &:not([class*='gap-']) {
+    gap: var(--op-space-medium);
+  }
+}
