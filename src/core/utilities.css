@@ -429,3 +429,17 @@
     gap: var(--op-space-medium);
   }
 }
+
+/* Equivalent to .flex.flex-wrap.items-center.gap-md */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+
+  &:not([class*='items-']) {
+    align-items: center;
+  }
+
+  &:not([class*='gap-']) {
+    gap: var(--op-space-medium);
+  }
+}

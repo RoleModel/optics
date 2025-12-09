@@ -1,0 +1,71 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as ClusterStories from './Cluster.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
+
+<Meta of={ClusterStories} />
+
+# Cluster
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/utilities.css' }).outerHTML,
+  }}
+></div>
+
+While flex utilities are great for moving quickly or for simple layouts, they can easily become
+cumbersome to manage and tend to turn into "Flex Spaghetti". In some of these cases, reaching
+for named components may make sense. However, there are times when a full component is more
+restrictive than you need and hurts productivity. Sometimes you need just a bit more structure
+to your layout, but not a component. Stacks provide a simple way to create readable,
+flexible layouts without the overhead of a full component.
+
+The cluster utility provides a simple way to create a wrapping, group of spaced items. It
+works with all of the gap and other flex utilities. It is effectively equivalent to using
+`.flex .flex-wrap .items-center .gap-md` together.
+
+## Playground
+
+<Canvas of={ClusterStories.With} />
+<Controls of={ClusterStories.With} />
+
+## Without
+
+A normal `div` without the cluster utility
+
+<Canvas of={ClusterStories.Without} />
+
+## Cluster Property
+
+`.cluster` Creates a flex cluster.
+
+<Canvas of={ClusterStories.With} />
+
+## Align Items Stretch
+
+`.items-stretch` Stretches each item across the cross axis. This is the default alignment and doesn't need to be applied unless you are overriding something set differently.
+
+<Canvas of={ClusterStories.AlignStretch} />
+
+## Align Items Start
+
+`.items-start` places each item at the start of the cross axis.
+
+<Canvas of={ClusterStories.AlignStart} />
+
+## Align Items Center
+
+`.items-center` places each item at the center of the cross axis.
+
+<Canvas of={ClusterStories.AlignCenter} />
+
+## Align Items End
+
+`.items-end` places each item at the end of the cross axis.
+
+<Canvas of={ClusterStories.AlignEnd} />
+
+## Align Items Baseline
+
+`.items-baseline` places each item at the text baseline of the cross axis.
+
+<Canvas of={ClusterStories.AlignBaseline} />
