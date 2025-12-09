@@ -193,6 +193,99 @@ const createLoginLayout = () => {
 `
 }
 
+const createUtilityLayout = () => {
+  return `
+<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
+  <!-- Alert Flash message here -->
+  <!-- Confirm here -->
+  <!-- Modal here -->
+  <!-- Panel here -->
+  <div class='app__content'>
+    <div class='stack'>
+      <h3>Timeline with Icons</h3>
+      <div class='stack'>
+        <div class='split gap-sm'>
+          <div class='cluster'>
+            <span class='material-symbols-outlined icon icon--x-large'>nature</span>
+            <span>
+              Buried by
+              <strong>Squirrel</strong>
+            </span>
+          </div>
+          <span class='text-right'>Mar 31</span>
+        </div>
+        <div class='divider'></div>
+        <div class='split gap-sm'>
+          <div class='cluster'>
+            <span class='material-symbols-outlined icon icon--x-large'>eco</span>
+            <span>
+              Germinated in
+              <strong>nutrient-rich soil</strong>
+            </span>
+          </div>
+          <span class='text-right'>May 28</span>
+        </div>
+        <div class='divider'></div>
+        <div class='split gap-sm'>
+          <div class='cluster'>
+            <span class='material-symbols-outlined icon icon--x-large'>forest</span>
+            <span>
+              Matured by
+              <strong>water</strong>
+              and
+              <strong>sunlight</strong>
+            </span>
+          </div>
+          <span class='text-right'>Sep 14</span>
+        </div>
+      </div>
+    </div>
+
+    <div class='divider divider--spacing-large'></div>
+
+    <!-- Without the split, stack, and cluster utilities, this would look like: -->
+    <div class='flex flex-col gap-md'>
+      <h3>Timeline with Icons</h3>
+      <div class='flex justify-between gap-sm'>
+        <div class='flex flex-wrap gap-sm'>
+          <span class='material-symbols-outlined icon icon--x-large'>nature</span>
+          <span>
+            Buried by
+            <strong>squirrel</strong>
+          </span>
+        </div>
+        <span class='text-right'>Mar 31</span>
+      </div>
+      <div class='divider'></div>
+      <div class='flex justify-between gap-sm'>
+        <div class='flex flex-wrap gap-sm'>
+          <span class='material-symbols-outlined icon icon--x-large'>eco</span>
+          <span>
+            Germinated in
+            <strong>nutrient-rich soil</strong>
+          </span>
+        </div>
+        <span class='text-right'>May 28</span>
+      </div>
+      <div class='divider'></div>
+      <div class='flex justify-between gap-sm'>
+        <div class='flex flex-wrap gap-sm'>
+          <span class='material-symbols-outlined icon icon--x-large'>forest</span>
+          <span>
+            Matured by
+            <strong>water</strong>
+            and
+            <strong>sunlight</strong>
+          </span>
+        </div>
+        <span class='text-right'>Sep 14</span>
+      </div>
+    </div>
+  </div>
+</div>
+`
+}
+
 export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
   if (style === 'basic') {
     return createBasicLayout()
@@ -216,6 +309,10 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
 
   if (style === 'login') {
     return createLoginLayout()
+  }
+
+  if (style === 'utility') {
+    return createUtilityLayout()
   }
 
   return `<div></div>`
