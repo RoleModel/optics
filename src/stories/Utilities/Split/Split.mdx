@@ -16,11 +16,14 @@ While flex utilities are great for moving quickly or for simple layouts, they ca
 cumbersome to manage and tend to turn into "Flex Spaghetti". In some of these cases, reaching
 for named components may make sense. However, there are times when a full component is more
 restrictive than you need and hurts productivity. Sometimes you need just a bit more structure
-to your layout, but not a component. Stacks provide a simple way to create readable,
+to your layout, but not a component. Splits provide a simple way to create readable,
 flexible layouts without the overhead of a full component.
 
 The split utility provides a simple way to push two items apart from each other.
 It is effectively equivalent to using `.flex .flex-wrap .items-center .justify-between .gap-md` together.
+
+See [Utility Layout](?path=/docs/recipes-layout--docs#utility) for an example of how splits
+can be used to create more readable flex layouts.
 
 ## Playground
 
@@ -29,13 +32,13 @@ It is effectively equivalent to using `.flex .flex-wrap .items-center .justify-b
 
 ## Without
 
-A normal `div` without the cluster utility
+A normal `div` without the split utility
 
 <Canvas of={SplitStories.Without} />
 
-## Cluster Property
+## Split Property
 
-`.cluster` Creates a flex cluster.
+`.split` Creates a flex split.
 
 <Canvas of={SplitStories.With} />
 
