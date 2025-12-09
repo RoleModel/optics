@@ -417,3 +417,15 @@
   clip: rect(1px, 1px, 1px, 1px);
   inline-size: 1px;
 }
+
+/* Advanced Layout Utilities */
+
+/* Equivalent to .flex.flex-col.gap-md */
+.stack {
+  display: flex;
+  flex-direction: column;
+
+  &:not([class*='gap-']) {
+    gap: var(--op-space-medium);
+  }
+}
