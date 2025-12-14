@@ -424,24 +424,21 @@
 .op-stack {
   display: flex;
   flex-direction: column;
+}
 
-  &:not([class*='gap-']) {
-    gap: var(--op-space-medium);
-  }
+:where(.op-stack) {
+  gap: var(--op-space-medium);
 }
 
 /* Equivalent to .flex.flex-wrap.items-center.gap-md */
 .op-cluster {
   display: flex;
   flex-wrap: wrap;
+}
 
-  &:not([class*='items-']) {
-    align-items: center;
-  }
-
-  &:not([class*='gap-']) {
-    gap: var(--op-space-medium);
-  }
+:where(.op-cluster) {
+  align-items: center;
+  gap: var(--op-space-medium);
 }
 
 /* Equivalent to .flex.flex-wrap.items-center.justify-between.gap-md */
@@ -449,12 +446,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
 
-  &:not([class*='items-']) {
-    align-items: center;
-  }
-
-  &:not([class*='gap-']) {
-    gap: var(--op-space-medium);
-  }
+:where(.op-split) {
+  align-items: center;
+  gap: var(--op-space-medium);
 }
