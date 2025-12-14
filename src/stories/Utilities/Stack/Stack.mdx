@@ -1,0 +1,70 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as StackStories from './Stack.stories'
+import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
+
+<Meta of={StackStories} />
+
+# Stack
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/utilities.css' }).outerHTML,
+  }}
+></div>
+
+The stack utility provides a simple way to create a vertical stack of spaced items. It
+works with all of the gap and other flex utilities. It is effectively equivalent to using
+`.flex .flex-col .gap-md` together. See [Utility Introduction](?path=/docs/utilities-introduction--docs#higher-order-utilities-vs-components) for more information.
+
+See [Utility Layout](?path=/docs/recipes-layout--docs#utility) for an example of how stacks
+can be used to create more readable flex layouts.
+
+Note: This utility uses the `op` prefix to avoid potential naming conflicts with other CSS frameworks.
+This is a pattern we hope to move towards for all utilities in the future.
+
+## Playground
+
+<Canvas of={StackStories.With} />
+<Controls of={StackStories.With} />
+
+## Without
+
+A normal `div` without the stack utility
+
+<Canvas of={StackStories.Without} />
+
+## Stack Property
+
+`.op-stack` Creates a flex stack.
+
+<Canvas of={StackStories.With} />
+
+## Align Items Stretch
+
+`.items-stretch` Stretches each item across the cross axis. This is the default alignment and doesn't need to be applied unless you are overriding something set differently.
+
+<Canvas of={StackStories.AlignStretch} />
+
+## Align Items Start
+
+`.items-start` places each item at the start of the cross axis.
+
+<Canvas of={StackStories.AlignStart} />
+
+## Align Items Center
+
+`.items-center` places each item at the center of the cross axis.
+
+<Canvas of={StackStories.AlignCenter} />
+
+## Align Items End
+
+`.items-end` places each item at the end of the cross axis.
+
+<Canvas of={StackStories.AlignEnd} />
+
+## Align Items Baseline
+
+`.items-baseline` places each item at the text baseline of the cross axis.
+
+<Canvas of={StackStories.AlignBaseline} />

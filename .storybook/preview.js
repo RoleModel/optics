@@ -23,6 +23,7 @@ const preview = {
           ['Base Reset', 'File Organization', 'Selective Imports', 'Tokens', 'Themes', 'Scale Overriding', 'Addons'],
           'Tokens',
           'Utilities',
+          ['Introduction'],
           'Components',
           'Recipes',
         ],

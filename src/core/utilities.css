@@ -417,3 +417,38 @@
   clip: rect(1px, 1px, 1px, 1px);
   inline-size: 1px;
 }
+
+/* Advanced Layout Utilities */
+
+/* Equivalent to .flex.flex-col.gap-md */
+.op-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+:where(.op-stack) {
+  gap: var(--op-space-medium);
+}
+
+/* Equivalent to .flex.flex-wrap.items-center.gap-md */
+.op-cluster {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+:where(.op-cluster) {
+  align-items: center;
+  gap: var(--op-space-medium);
+}
+
+/* Equivalent to .flex.flex-wrap.items-center.justify-between.gap-md */
+.op-split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+:where(.op-split) {
+  align-items: center;
+  gap: var(--op-space-medium);
+}

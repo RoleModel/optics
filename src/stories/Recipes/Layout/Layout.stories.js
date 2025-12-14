@@ -8,7 +8,7 @@ export default {
   argTypes: {
     style: {
       control: { type: 'select' },
-      options: ['basic', 'sidebar', 'navbar', 'spinner', 'sidepanel', 'login'],
+      options: ['basic', 'sidebar', 'navbar', 'spinner', 'sidepanel', 'login', 'utility'],
     },
     rightSidebar: {
       control: { type: 'boolean' },
@@ -60,5 +60,11 @@ export const SidebarWithNavbarAndSidePanel = {
 export const Login = {
   args: {
     style: 'login',
+  },
+}
+
+export const Utility = {
+  args: {
+    style: 'utility',
   },
 }
