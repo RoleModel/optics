@@ -4,7 +4,6 @@
   "packageManager": "yarn@4.8.1",
   "description": "Optics is a css package that provides base styles and components that can be integrated and customized in a variety of projects.",
   "main": "dist/css/optics.css",
-  "type": "module",
   "scripts": {
     "test": "exit 0",
     "build": "yarn build:css && yarn build:css-min && yarn build:tokens && yarn build:files",
