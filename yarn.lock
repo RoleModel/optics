@@ -1570,7 +1570,7 @@ __metadata:
     postcss-import: "npm:^16.1.1"
     prettier: "npm:^3.6.2"
     storybook: "npm:^9.1.4"
-    storybook-design-token: "npm:^4.1.0"
+    storybook-design-token: "npm:^5.0.0"
     style-loader: "npm:^4.0.0"
     stylelint: "npm:^16.23.1"
     stylelint-config-idiomatic-order: "npm:^10.0.0"
@@ -5996,9 +5996,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-design-token@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "storybook-design-token@npm:4.1.0"
+"storybook-design-token@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "storybook-design-token@npm:5.0.0"
   dependencies:
     "@storybook/icons": "npm:^1.4.0"
     "@tanstack/react-virtual": "npm:^3.13.9"
@@ -6013,13 +6013,13 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-    storybook: ^9.0.0
+    storybook: ^10.0.0
   peerDependenciesMeta:
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/774511f7bc3359b887464868b7e8106fb1cb4e05b70239a2f504c23a547d2d1bd2c91595bd8b9b20d97ce18f40e4aea5940966547acbf87b77a63053e8e2a5a6
+  checksum: 10c0/313659c55cce8ae1dd556ed12f4dfd138f1d3dbc2078b1c82700bc10f01332b7b7d9e0a815431747f77ee84780df4c4f08c695ba5421e91726d9d8421752db55
   languageName: node
   linkType: hard
 

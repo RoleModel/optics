@@ -61,7 +61,7 @@
     "postcss-import": "^16.1.1",
     "prettier": "^3.6.2",
     "storybook": "^9.1.4",
-    "storybook-design-token": "^4.1.0",
+    "storybook-design-token": "^5.0.0",
     "style-loader": "^4.0.0",
     "stylelint": "^16.23.1",
     "stylelint-config-idiomatic-order": "^10.0.0",
