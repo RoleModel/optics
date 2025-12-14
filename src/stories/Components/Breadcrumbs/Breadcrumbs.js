@@ -39,7 +39,7 @@ export const createBreadcrumbs = ({ size = '', separator = 'arrow_right' }) => {
   }
 
   element.innerHTML += `
-  ${links.map((item, index) => createLink(item, index).outerHTML).join('\n  ')}
+  ${links.map((item, _index) => createLink(item).outerHTML).join('\n  ')}
 `
 
   return element
