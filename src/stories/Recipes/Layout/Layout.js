@@ -201,11 +201,11 @@ const createUtilityLayout = () => {
   <!-- Modal here -->
   <!-- Panel here -->
   <div class='app__content'>
-    <div class='stack'>
+    <div class='op-stack'>
       <h3>Timeline with Icons</h3>
-      <div class='stack'>
-        <div class='split gap-sm'>
-          <div class='cluster'>
+      <div class='op-stack'>
+        <div class='op-split gap-sm'>
+          <div class='op-cluster'>
             <span class='material-symbols-outlined icon icon--x-large'>nature</span>
             <span>
               Buried by
@@ -215,8 +215,8 @@ const createUtilityLayout = () => {
           <span class='text-right'>Mar 31</span>
         </div>
         <div class='divider'></div>
-        <div class='split gap-sm'>
-          <div class='cluster'>
+        <div class='op-split gap-sm'>
+          <div class='op-cluster'>
             <span class='material-symbols-outlined icon icon--x-large'>eco</span>
             <span>
               Germinated in
@@ -226,8 +226,8 @@ const createUtilityLayout = () => {
           <span class='text-right'>May 28</span>
         </div>
         <div class='divider'></div>
-        <div class='split gap-sm'>
-          <div class='cluster'>
+        <div class='op-split gap-sm'>
+          <div class='op-cluster'>
             <span class='material-symbols-outlined icon icon--x-large'>forest</span>
             <span>
               Matured by
@@ -243,7 +243,7 @@ const createUtilityLayout = () => {
 
     <div class='divider divider--spacing-large'></div>
 
-    <!-- Without the split, stack, and cluster utilities, this would look like: -->
+    <!-- Without the stack, cluster, and split utilities, this would look like: -->
     <div class='flex flex-col gap-md'>
       <h3>Timeline with Icons</h3>
       <div class='flex justify-between gap-sm'>

@@ -421,7 +421,7 @@
 /* Advanced Layout Utilities */
 
 /* Equivalent to .flex.flex-col.gap-md */
-.stack {
+.op-stack {
   display: flex;
   flex-direction: column;
 
@@ -431,7 +431,7 @@
 }
 
 /* Equivalent to .flex.flex-wrap.items-center.gap-md */
-.cluster {
+.op-cluster {
   display: flex;
   flex-wrap: wrap;
 
@@ -445,7 +445,7 @@
 }
 
 /* Equivalent to .flex.flex-wrap.items-center.justify-between.gap-md */
-.split {
+.op-split {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
