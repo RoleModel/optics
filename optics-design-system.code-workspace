@@ -21,13 +21,14 @@
       "tintinweb",
       "unifiedjs"
     ],
+    "editor.defaultFormatter": "prettier.prettier-vscode",
     "[css]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "prettier.prettier-vscode",
     },
   },
   "extensions": {
     "recommendations": [
-      "esbenp.prettier-vscode",
+      "prettier.prettier-vscode",
       "stylelint.vscode-stylelint",
       "tintinweb.graphviz-interactive-preview",
       "unifiedjs.vscode-mdx",

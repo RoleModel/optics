@@ -39,7 +39,7 @@ export const createSidebar = ({
   const brandSection = brand
     ? `
     <a class="sidebar__brand" href="/">
-      <img src="https://rolemodelsoftware.com/assets/rolemodel-logo--blue-29fb1367cab78181f9fb9756064de7d6f0e57e0c0280add196d3659bfa45b0fd.svg">
+      <img src="./public/rms-logo.svg" alt="RoleModel Software Logo" />
     </a>
   `
     : ''
