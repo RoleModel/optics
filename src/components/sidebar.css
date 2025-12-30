@@ -31,7 +31,9 @@
   display: flex;
   flex-direction: column;
   background-color: var(--_op-sidebar-background-color);
-  box-shadow: var(--op-border-right) var(--_op-sidebar-border-color);
+  box-shadow:
+    var(--op-border-left) var(--_op-sidebar-border-color),
+    var(--op-border-right) var(--_op-sidebar-border-color);
   color: var(--_op-sidebar-text-color);
   inline-size: var(--__op-sidebar-width);
   min-inline-size: var(--__op-sidebar-width);
