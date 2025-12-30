@@ -34,3 +34,11 @@ export const Inline = {
     inlineDemo: true,
   },
 }
+
+export const Dialog = {
+  args: {
+    header: 'Modal Title',
+    body: 'This is the contents of the modal!',
+    dialog: true,
+  },
+}
