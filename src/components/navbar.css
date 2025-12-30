@@ -16,7 +16,9 @@
   align-items: center;
   padding: var(--op-space-small) var(--_op-navbar-horizontal-spacing);
   background-color: var(--_op-navbar-background-color);
-  box-shadow: var(--op-border-bottom) var(--_op-navbar-border-color);
+  box-shadow:
+    var(--op-border-top) var(--_op-navbar-border-color),
+    var(--op-border-bottom) var(--_op-navbar-border-color);
   color: var(--_op-navbar-text-color);
   gap: var(--_op-navbar-content-spacing);
 
