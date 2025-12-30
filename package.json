@@ -48,26 +48,26 @@
   "devDependencies": {
     "@babel/preset-env": "^7.28.5",
     "@eslint/js": "^9.39.2",
-    "@storybook/addon-docs": "^10.1.8",
-    "@storybook/html-vite": "^10.1.8",
+    "@storybook/addon-docs": "^10.1.11",
+    "@storybook/html-vite": "^10.1.11",
     "cssnano": "^7.1.2",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-storybook": "^10.1.8",
+    "eslint-plugin-storybook": "^10.1.11",
     "generate-template-files": "^3.2.1",
     "globals": "^16.5.0",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
     "prettier": "^3.7.4",
-    "storybook": "^10.1.8",
+    "storybook": "^10.1.11",
     "storybook-design-token": "^5.0.0",
     "style-loader": "^4.0.0",
     "stylelint": "^16.26.1",
     "stylelint-config-idiomatic-order": "^10.0.0",
     "stylelint-prettier": "^5.0.3",
     "stylelint-use-logical": "^2.1.2",
-    "vite": "^7.2.7"
+    "vite": "^7.3.0"
   },
   "peerDependencies": {
     "tom-select": "^2.0.0"
