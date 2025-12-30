@@ -203,7 +203,8 @@
   --op-transition-accordion-content: height 300ms ease, content-visibility 300ms ease allow-discrete;
   --op-transition-input: all 120ms ease-in;
   --op-transition-sidebar: all 200ms ease-in-out;
-  --op-transition-modal: all 300ms ease-in;
+  --op-transition-modal-time: 300ms;
+  --op-transition-modal: all var(--op-transition-modal-time) ease-in;
   --op-transition-panel: right 400ms ease-in;
   --op-transition-tooltip: all 300ms ease-in 300ms;
 
