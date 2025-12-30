@@ -168,7 +168,7 @@ const createLoginLayout = () => {
   <div class='app__login'> <!-- See style block above -->
     <form class='card card--login'> <!-- See style block above -->
       <div class='card__header'>
-        <img src="https://rolemodelsoftware.com/assets/rolemodel-logo--blue-29fb1367cab78181f9fb9756064de7d6f0e57e0c0280add196d3659bfa45b0fd.svg" />
+        <img src="./public/rms-logo.svg" alt="RoleModel Software Logo" />
       </div>
       <div class='card__body'>
         <div class='form-group'>
