@@ -6,6 +6,8 @@
 @import 'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.30.0/dist/tabler-icons.min.css';
 
 /* Tabler Icons */
-.ti {
-  font-weight: unset;
+@layer optics.components {
+  .ti {
+    font-weight: unset;
+  }
 }

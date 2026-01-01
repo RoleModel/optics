@@ -13,32 +13,34 @@
 /* Note: the important tag is how Phosphor sets up the fonts which is why we replicate them here */
 
 /* Phosphor Icons */
-.ph {
-  font-weight: unset;
+@layer optics.components {
+  .ph {
+    font-weight: unset;
 
-  /* Fill Modifiers */
-  &.icon--filled {
-    font-family: 'Phosphor-Fill' !important;
+    /* Fill Modifiers */
+    &.icon--filled {
+      font-family: 'Phosphor-Fill' !important;
+    }
+
+    /* Weight Modifiers */
+    &.icon--weight-thin {
+      font-family: 'Phosphor-Thin' !important;
+    }
+
+    &.icon--weight-light {
+      font-family: 'Phosphor-Light' !important;
+    }
+
+    &.icon--weight-normal {
+      font-family: 'Phosphor' !important;
+    }
+
+    &.icon--weight-bold {
+      font-family: 'Phosphor-Bold' !important;
+    }
   }
 
-  /* Weight Modifiers */
-  &.icon--weight-thin {
-    font-family: 'Phosphor-Thin' !important;
+  .ph-duotone {
+    font-weight: unset;
   }
-
-  &.icon--weight-light {
-    font-family: 'Phosphor-Light' !important;
-  }
-
-  &.icon--weight-normal {
-    font-family: 'Phosphor' !important;
-  }
-
-  &.icon--weight-bold {
-    font-family: 'Phosphor-Bold' !important;
-  }
-}
-
-.ph-duotone {
-  font-weight: unset;
 }
