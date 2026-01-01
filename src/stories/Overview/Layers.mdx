@@ -1,0 +1,127 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
+
+<Meta title="Overview/Layers" />
+
+# Layers
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'layers' }).outerHTML,
+  }}
+></div>
+
+Optics uses [CSS Layers](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer) to organize its stylesheets.
+This allows for better control over the cascade and specificity of styles.
+
+Reading the [MDN Documentation on CSS Layers](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@layer) is highly recommended to understand how layers work.
+
+## Optics Layer Structure
+
+Optics organizes its styles into the following layers (higher number means higher precedence):
+
+- 7: implicit outer layer
+  - 6: optics
+    - 0: reset
+    - 1: theme
+    - 2: base
+    - 3: layout
+    - 4: components
+    - 5: utilities
+
+This means that any styles you write in your application (not in a layer) will be in the implicit outer layer and will
+have higher precedence than Optics styles.
+This allows you to easily override Optics styles without needing to use `!important` or increase specificity.
+
+## App Specific Layers
+
+You can use layers in your own application to further organize your styles.
+
+If you want to modify existing Optics behavior without completely overriding, you can place your styles in the same layer as the Optics styles which ensures proper precedence:
+
+```css
+@layer optics.components {
+  .btn {
+    /* Your custom button styles here */
+  }
+}
+```
+
+If you want to organize your app specific changes, your can define your own layers:
+
+```css
+@layer optics, app-name.theme, app-name.layout, app-name.components, app-name.utilities;
+
+@layer app-name.components {
+  .example-component {
+    /* Your styles here */
+  }
+}
+
+/*
+  Resulting layer structure (higher number means higher precedence):
+
+  - 12: implicit outer layer
+    - 6: optics
+      - 0: reset
+      - 1: theme
+      - 2: base
+      - 3: layout
+      - 4: components
+      - 5: utilities
+    - 11: app-name
+      - 7: theme
+      - 8: layout
+      - 9: components
+      - 10: utilities
+*/
+```
+
+## Layers are not Scopes or Namespaces
+
+One potential confusion point is that layers act as a scope or namespace. Layers only affect the order in which styles are applied in the cascade.
+They do no prevent naming collisions, just determine which style wins in a conflict.
+
+Example:
+
+```css
+@layer optics.components, app-name.components;
+
+@layer optics.components {
+  .btn {
+    color: red;
+    font-weight: bold;
+  }
+}
+
+@layer app-name.components {
+  .btn {
+    color: green;
+    text-transform: uppercase;
+  }
+}
+```
+
+The resulting styles for `.btn` will be:
+
+```css
+.btn {
+  color: green; /* from app-name.components */
+  font-weight: bold; /* from optics.components */
+  text-transform: uppercase; /* from app-name.components */
+}
+```
+
+If the layers were defined in the opposite order, the resulting styles would be different.
+
+```css
+@layer app-name.components, optics.components;
+
+.btn {
+  color: red; /* from optics.components */
+  font-weight: bold; /* from optics.components */
+  text-transform: uppercase; /* from app-name.components */
+}
+```
+
+Note in both cases, both layers are affecting `.btn`, but the order of the layers determines which properties win in cases of conflict.
