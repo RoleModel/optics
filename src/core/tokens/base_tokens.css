@@ -1,344 +1,346 @@
-:root {
-  /* Color HSLs
-    A theme comprised of a primary, neutral, warning, danger, info, and notice colors.
-  */
+@layer optics.theme {
+  :root {
+    /* Color HSLs
+      A theme comprised of a primary, neutral, warning, danger, info, and notice colors.
+    */
 
-  /* Basic Colors */
+    /* Basic Colors */
 
-  /**
-  * @tokens Basic Colors
-  * @presenter Color
-  */
-  --op-color-white: hsl(0deg 100% 100%);
-  --op-color-black: hsl(0deg 0% 0%);
+    /**
+    * @tokens Basic Colors
+    * @presenter Color
+    */
+    --op-color-white: hsl(0deg 100% 100%);
+    --op-color-black: hsl(0deg 0% 0%);
 
-  /**
-  * @tokens Primary Colors
-  * @presenter Color
-  */
-  --op-color-primary-h: 216;
-  --op-color-primary-s: 58%;
-  --op-color-primary-l: 48%;
+    /**
+    * @tokens Primary Colors
+    * @presenter Color
+    */
+    --op-color-primary-h: 216;
+    --op-color-primary-s: 58%;
+    --op-color-primary-l: 48%;
 
-  /**
-  * @tokens Neutral Colors
-  * @presenter Color
-  */
-  --op-color-neutral-h: var(--op-color-primary-h);
-  --op-color-neutral-s: 4%;
-  --op-color-neutral-l: var(--op-color-primary-l);
+    /**
+    * @tokens Neutral Colors
+    * @presenter Color
+    */
+    --op-color-neutral-h: var(--op-color-primary-h);
+    --op-color-neutral-s: 4%;
+    --op-color-neutral-l: var(--op-color-primary-l);
 
-  /**
-  * @tokens Alerts Warning Colors
-  * @presenter Color
-  */
-  --op-color-alerts-warning-h: 47;
-  --op-color-alerts-warning-s: 100%;
-  --op-color-alerts-warning-l: 61%;
+    /**
+    * @tokens Alerts Warning Colors
+    * @presenter Color
+    */
+    --op-color-alerts-warning-h: 47;
+    --op-color-alerts-warning-s: 100%;
+    --op-color-alerts-warning-l: 61%;
 
-  /**
-  * @tokens Alerts Danger Colors
-  * @presenter Color
-  */
-  --op-color-alerts-danger-h: 0;
-  --op-color-alerts-danger-s: 99%;
-  --op-color-alerts-danger-l: 76%;
+    /**
+    * @tokens Alerts Danger Colors
+    * @presenter Color
+    */
+    --op-color-alerts-danger-h: 0;
+    --op-color-alerts-danger-s: 99%;
+    --op-color-alerts-danger-l: 76%;
 
-  /**
-  * @tokens Alerts Info Colors
-  * @presenter Color
-  */
-  --op-color-alerts-info-h: 216;
-  --op-color-alerts-info-s: 58%;
-  --op-color-alerts-info-l: 48%;
+    /**
+    * @tokens Alerts Info Colors
+    * @presenter Color
+    */
+    --op-color-alerts-info-h: 216;
+    --op-color-alerts-info-s: 58%;
+    --op-color-alerts-info-l: 48%;
 
-  /**
-  * @tokens Alerts Notice Colors
-  * @presenter Color
-  */
-  --op-color-alerts-notice-h: 130;
-  --op-color-alerts-notice-s: 61%;
-  --op-color-alerts-notice-l: 64%;
+    /**
+    * @tokens Alerts Notice Colors
+    * @presenter Color
+    */
+    --op-color-alerts-notice-h: 130;
+    --op-color-alerts-notice-s: 61%;
+    --op-color-alerts-notice-l: 64%;
 
-  /**
-  * @tokens Opacities
-  * @presenter Opacity
-  */
-  --op-opacity-none: 0;
-  --op-opacity-overlay: 0.2;
-  --op-opacity-disabled: 0.4;
-  --op-opacity-half: 0.5;
-  --op-opacity-full: 1;
+    /**
+    * @tokens Opacities
+    * @presenter Opacity
+    */
+    --op-opacity-none: 0;
+    --op-opacity-overlay: 0.2;
+    --op-opacity-disabled: 0.4;
+    --op-opacity-half: 0.5;
+    --op-opacity-full: 1;
 
-  /*
-    Breakpoints
-    CSS does not support using variables within @media or @container queries. Environment variables are drafted but likely to not be implemented soon.
-    https://drafts.csswg.org/css-env-1/
-    https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
+    /*
+      Breakpoints
+      CSS does not support using variables within @media or @container queries. Environment variables are drafted but likely to not be implemented soon.
+      https://drafts.csswg.org/css-env-1/
+      https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 
-    Here is a list of breakpoints used throughout Optics:
-  */
+      Here is a list of breakpoints used throughout Optics:
+    */
 
-  /**
-  * @tokens Breakpoints
-  * @presenter Spacing
-  */
-  --op-breakpoint-x-small: 512px; /* vertical phone */
-  --op-breakpoint-small: 768px; /* vertical ipad */
-  --op-breakpoint-medium: 1024px; /* landscape ipad */
-  --op-breakpoint-large: 1280px; /* small laptop */
-  --op-breakpoint-x-large: 1440px; /* medium laptop */
+    /**
+    * @tokens Breakpoints
+    * @presenter Spacing
+    */
+    --op-breakpoint-x-small: 512px; /* vertical phone */
+    --op-breakpoint-small: 768px; /* vertical ipad */
+    --op-breakpoint-medium: 1024px; /* landscape ipad */
+    --op-breakpoint-large: 1280px; /* small laptop */
+    --op-breakpoint-x-large: 1440px; /* medium laptop */
 
-  /* Border */
+    /* Border */
 
-  /**
-  * @tokens Border Radius
-  * @presenter BorderRadius
-  */
-  --op-radius-small: 2px;
-  --op-radius-medium: 4px;
-  --op-radius-large: 8px;
-  --op-radius-x-large: 12px;
-  --op-radius-2x-large: 16px;
-  --op-radius-circle: 50%;
-  --op-radius-pill: 9999px;
+    /**
+    * @tokens Border Radius
+    * @presenter BorderRadius
+    */
+    --op-radius-small: 2px;
+    --op-radius-medium: 4px;
+    --op-radius-large: 8px;
+    --op-radius-x-large: 12px;
+    --op-radius-2x-large: 16px;
+    --op-radius-circle: 50%;
+    --op-radius-pill: 9999px;
 
-  /**
-  * @tokens Border Width
-  * @presenter Spacing
-  */
-  --op-border-width: 1px;
-  --op-border-width-large: 2px;
-  --op-border-width-x-large: 4px;
+    /**
+    * @tokens Border Width
+    * @presenter Spacing
+    */
+    --op-border-width: 1px;
+    --op-border-width-large: 2px;
+    --op-border-width-x-large: 4px;
 
-  /**
-  * @tokens Border Color
-  * @presenter Color
-  */
-  --op-color-border: var(--op-color-neutral-plus-five);
+    /**
+    * @tokens Border Color
+    * @presenter Color
+    */
+    --op-color-border: var(--op-color-neutral-plus-five);
 
-  /* E.G. box-shadow: var(--op-border-top) var(--op-color-border); */
+    /* E.G. box-shadow: var(--op-border-top) var(--op-color-border); */
 
-  /**
-  * @tokens Border Shadow
-  * @presenter Shadow
-  */
-  --op-border-none: 0 0 0 0;
-  --op-border-all: 0 0 0 var(--op-border-width);
-  --op-border-top: 0 calc(-1 * var(--op-border-width)) 0 0;
-  --op-border-right: var(--op-border-width) 0 0 0;
-  --op-border-bottom: 0 var(--op-border-width) 0 0;
-  --op-border-left: calc(-1 * var(--op-border-width)) 0 0 0;
-  --op-border-y: var(--op-border-top) var(--op-color-border), var(--op-border-bottom) var(--op-color-border);
-  --op-border-x: var(--op-border-left) var(--op-color-border), var(--op-border-right) var(--op-color-border);
+    /**
+    * @tokens Border Shadow
+    * @presenter Shadow
+    */
+    --op-border-none: 0 0 0 0;
+    --op-border-all: 0 0 0 var(--op-border-width);
+    --op-border-top: 0 calc(-1 * var(--op-border-width)) 0 0;
+    --op-border-right: var(--op-border-width) 0 0 0;
+    --op-border-bottom: 0 var(--op-border-width) 0 0;
+    --op-border-left: calc(-1 * var(--op-border-width)) 0 0 0;
+    --op-border-y: var(--op-border-top) var(--op-color-border), var(--op-border-bottom) var(--op-color-border);
+    --op-border-x: var(--op-border-left) var(--op-color-border), var(--op-border-right) var(--op-color-border);
 
-  /* Font */
+    /* Font */
 
-  /**
-  * @tokens Font Scale
-  * @presenter FontSize
-  */
-  --op-font-scale-unit: 1rem; /* 10px; */
-  --op-font-2x-small: calc(var(--op-font-scale-unit) * 1); /* 10px */
-  --op-font-x-small: calc(var(--op-font-scale-unit) * 1.2); /* 12px */
-  --op-font-small: calc(var(--op-font-scale-unit) * 1.4); /* 14px */
-  --op-font-medium: calc(var(--op-font-scale-unit) * 1.6); /* 16px */
-  --op-font-large: calc(var(--op-font-scale-unit) * 1.8); /* 18px */
-  --op-font-x-large: calc(var(--op-font-scale-unit) * 2); /* 20px */
-  --op-font-2x-large: calc(var(--op-font-scale-unit) * 2.4); /* 24px */
-  --op-font-3x-large: calc(var(--op-font-scale-unit) * 2.8); /* 28px */
-  --op-font-4x-large: calc(var(--op-font-scale-unit) * 3.2); /* 32px */
-  --op-font-5x-large: calc(var(--op-font-scale-unit) * 3.6); /* 36px */
-  --op-font-6x-large: calc(var(--op-font-scale-unit) * 4.8); /* 48px */
+    /**
+    * @tokens Font Scale
+    * @presenter FontSize
+    */
+    --op-font-scale-unit: 1rem; /* 10px; */
+    --op-font-2x-small: calc(var(--op-font-scale-unit) * 1); /* 10px */
+    --op-font-x-small: calc(var(--op-font-scale-unit) * 1.2); /* 12px */
+    --op-font-small: calc(var(--op-font-scale-unit) * 1.4); /* 14px */
+    --op-font-medium: calc(var(--op-font-scale-unit) * 1.6); /* 16px */
+    --op-font-large: calc(var(--op-font-scale-unit) * 1.8); /* 18px */
+    --op-font-x-large: calc(var(--op-font-scale-unit) * 2); /* 20px */
+    --op-font-2x-large: calc(var(--op-font-scale-unit) * 2.4); /* 24px */
+    --op-font-3x-large: calc(var(--op-font-scale-unit) * 2.8); /* 28px */
+    --op-font-4x-large: calc(var(--op-font-scale-unit) * 3.2); /* 32px */
+    --op-font-5x-large: calc(var(--op-font-scale-unit) * 3.6); /* 36px */
+    --op-font-6x-large: calc(var(--op-font-scale-unit) * 4.8); /* 48px */
 
-  /**
-  * @tokens Font Weight
-  * @presenter FontWeight
-  */
-  --op-font-weight-thin: 100;
-  --op-font-weight-extra-light: 200;
-  --op-font-weight-light: 300;
-  --op-font-weight-normal: 400;
-  --op-font-weight-medium: 500;
-  --op-font-weight-semi-bold: 600;
-  --op-font-weight-bold: 700;
-  --op-font-weight-extra-bold: 800;
-  --op-font-weight-black: 900;
+    /**
+    * @tokens Font Weight
+    * @presenter FontWeight
+    */
+    --op-font-weight-thin: 100;
+    --op-font-weight-extra-light: 200;
+    --op-font-weight-light: 300;
+    --op-font-weight-normal: 400;
+    --op-font-weight-medium: 500;
+    --op-font-weight-semi-bold: 600;
+    --op-font-weight-bold: 700;
+    --op-font-weight-extra-bold: 800;
+    --op-font-weight-black: 900;
 
-  /**
-  * @tokens Font Family
-  * @presenter FontFamily
-  */
-  --op-font-family: 'Noto Sans', sans-serif;
-  --op-font-family-alt: 'Noto Serif', serif;
+    /**
+    * @tokens Font Family
+    * @presenter FontFamily
+    */
+    --op-font-family: 'Noto Sans', sans-serif;
+    --op-font-family-alt: 'Noto Serif', serif;
 
-  /* Text */
+    /* Text */
 
-  /**
-  * @tokens Line Height
-  * @presenter LineHeight
-  */
-  --op-line-height-none: 0;
-  --op-line-height-densest: 1;
-  --op-line-height-denser: 1.15;
-  --op-line-height-dense: 1.3;
-  --op-line-height-base: 1.5;
-  --op-line-height-loose: 1.6;
-  --op-line-height-looser: 1.7;
-  --op-line-height-loosest: 1.8;
+    /**
+    * @tokens Line Height
+    * @presenter LineHeight
+    */
+    --op-line-height-none: 0;
+    --op-line-height-densest: 1;
+    --op-line-height-denser: 1.15;
+    --op-line-height-dense: 1.3;
+    --op-line-height-base: 1.5;
+    --op-line-height-loose: 1.6;
+    --op-line-height-looser: 1.7;
+    --op-line-height-loosest: 1.8;
 
-  /**
-  * @tokens Letter Spacing
-  * @presenter LetterSpacing
-  */
-  --op-letter-spacing-navigation: 0.01rem;
-  --op-letter-spacing-label: 0.04rem;
+    /**
+    * @tokens Letter Spacing
+    * @presenter LetterSpacing
+    */
+    --op-letter-spacing-navigation: 0.01rem;
+    --op-letter-spacing-label: 0.04rem;
 
-  /* Transitions and Animations */
+    /* Transitions and Animations */
 
-  /**
-  * @tokens Transition
-  */
-  --op-transition-accordion: rotate 120ms ease-in;
-  --op-transition-accordion-content: height 300ms ease, content-visibility 300ms ease allow-discrete;
-  --op-transition-input: all 120ms ease-in;
-  --op-transition-sidebar: all 200ms ease-in-out;
-  --op-transition-modal: all 300ms ease-in;
-  --op-transition-panel: right 400ms ease-in;
-  --op-transition-tooltip: all 300ms ease-in 300ms;
+    /**
+    * @tokens Transition
+    */
+    --op-transition-accordion: rotate 120ms ease-in;
+    --op-transition-accordion-content: height 300ms ease, content-visibility 300ms ease allow-discrete;
+    --op-transition-input: all 120ms ease-in;
+    --op-transition-sidebar: all 200ms ease-in-out;
+    --op-transition-modal: all 300ms ease-in;
+    --op-transition-panel: right 400ms ease-in;
+    --op-transition-tooltip: all 300ms ease-in 300ms;
 
-  /**
-  * @tokens Animation
-  * @presenter Animation
-  */
-  --op-animation-flash: rm-slide-in-out-flash 5s normal forwards;
+    /**
+    * @tokens Animation
+    * @presenter Animation
+    */
+    --op-animation-flash: rm-slide-in-out-flash 5s normal forwards;
 
-  /* Encoded Images */
+    /* Encoded Images */
 
-  /**
-  * @tokens Encoded Images
-  */
-  --op-encoded-images-dropdown-arrow-width: calc(
-    1.2 * var(--op-space-scale-unit)
-  ); /* 12px No way to string interpolate */
+    /**
+    * @tokens Encoded Images
+    */
+    --op-encoded-images-dropdown-arrow-width: calc(
+      1.2 * var(--op-space-scale-unit)
+    ); /* 12px No way to string interpolate */
 
-  --op-encoded-images-dropdown-arrow: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02IDguMzc1MDFMMCAyLjM3NTAxTDEuNCAwLjk3NTAwNkw2IDUuNTc1MDFMMTAuNiAwLjk3NTAwNkwxMiAyLjM3NTAxTDYgOC4zNzUwMVoiIGZpbGw9IiMwQTBBMEIiLz4KPC9zdmc+Cg==');
+    --op-encoded-images-dropdown-arrow: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik02IDguMzc1MDFMMCAyLjM3NTAxTDEuNCAwLjk3NTAwNkw2IDUuNTc1MDFMMTAuNiAwLjk3NTAwNkwxMiAyLjM3NTAxTDYgOC4zNzUwMVoiIGZpbGw9IiMwQTBBMEIiLz4KPC9zdmc+Cg==');
 
-  /* Spacing */
+    /* Spacing */
 
-  /**
-  * @tokens Size Scale
-  * @presenter Spacing
-  */
-  --op-size-unit: 0.4rem; /* 4px */
+    /**
+    * @tokens Size Scale
+    * @presenter Spacing
+    */
+    --op-size-unit: 0.4rem; /* 4px */
 
-  /**
-  * @tokens Space Scale
-  * @presenter Spacing
-  */
-  --op-space-scale-unit: 1rem; /* 10px; */
-  --op-space-3x-small: calc(var(--op-space-scale-unit) * 0.2); /* 2px */
-  --op-space-2x-small: calc(var(--op-space-scale-unit) * 0.4); /* 4px */
-  --op-space-x-small: calc(var(--op-space-scale-unit) * 0.8); /* 8px */
-  --op-space-small: calc(var(--op-space-scale-unit) * 1.2); /* 12px */
-  --op-space-medium: calc(var(--op-space-scale-unit) * 1.6); /* 16px */
-  --op-space-large: calc(var(--op-space-scale-unit) * 2); /* 20px */
-  --op-space-x-large: calc(var(--op-space-scale-unit) * 2.4); /* 24px */
-  --op-space-2x-large: calc(var(--op-space-scale-unit) * 2.8); /* 28px */
-  --op-space-3x-large: calc(var(--op-space-scale-unit) * 4); /* 40px */
-  --op-space-4x-large: calc(var(--op-space-scale-unit) * 8); /* 80px */
+    /**
+    * @tokens Space Scale
+    * @presenter Spacing
+    */
+    --op-space-scale-unit: 1rem; /* 10px; */
+    --op-space-3x-small: calc(var(--op-space-scale-unit) * 0.2); /* 2px */
+    --op-space-2x-small: calc(var(--op-space-scale-unit) * 0.4); /* 4px */
+    --op-space-x-small: calc(var(--op-space-scale-unit) * 0.8); /* 8px */
+    --op-space-small: calc(var(--op-space-scale-unit) * 1.2); /* 12px */
+    --op-space-medium: calc(var(--op-space-scale-unit) * 1.6); /* 16px */
+    --op-space-large: calc(var(--op-space-scale-unit) * 2); /* 20px */
+    --op-space-x-large: calc(var(--op-space-scale-unit) * 2.4); /* 24px */
+    --op-space-2x-large: calc(var(--op-space-scale-unit) * 2.8); /* 28px */
+    --op-space-3x-large: calc(var(--op-space-scale-unit) * 4); /* 40px */
+    --op-space-4x-large: calc(var(--op-space-scale-unit) * 8); /* 80px */
 
-  /* Shadows */
+    /* Shadows */
 
-  /**
-  * @tokens Shadows
-  * @presenter Shadow
-  */
-  --op-shadow-x-small: 0 1px 2px hsl(0deg 0% 0% / 3%), 0 1px 3px hsl(0deg 0% 0% / 15%);
-  --op-shadow-small: 0 1px 2px hsl(0deg 0% 0% / 3%), 0 2px 6px hsl(0deg 0% 0% / 15%);
-  --op-shadow-medium: 0 4px 8px hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 3%);
-  --op-shadow-large: 0 6px 10px hsl(0deg 0% 0% / 15%), 0 2px 3px hsl(0deg 0% 0% / 3%);
-  --op-shadow-x-large: 0 8px 12px hsl(0deg 0% 0% / 15%), 0 4px 4px hsl(0deg 0% 0% / 3%);
+    /**
+    * @tokens Shadows
+    * @presenter Shadow
+    */
+    --op-shadow-x-small: 0 1px 2px hsl(0deg 0% 0% / 3%), 0 1px 3px hsl(0deg 0% 0% / 15%);
+    --op-shadow-small: 0 1px 2px hsl(0deg 0% 0% / 3%), 0 2px 6px hsl(0deg 0% 0% / 15%);
+    --op-shadow-medium: 0 4px 8px hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 3%);
+    --op-shadow-large: 0 6px 10px hsl(0deg 0% 0% / 15%), 0 2px 3px hsl(0deg 0% 0% / 3%);
+    --op-shadow-x-large: 0 8px 12px hsl(0deg 0% 0% / 15%), 0 4px 4px hsl(0deg 0% 0% / 3%);
 
-  /* Z Index */
+    /* Z Index */
 
-  /**
-  * @tokens Z-Index
-  */
-  --op-z-index-header: 500;
-  --op-z-index-footer: 500;
-  --op-z-index-sidebar: 700;
-  --op-z-index-dialog: 800;
-  --op-z-index-dialog-backdrop: 801;
-  --op-z-index-dialog-content: 802;
-  --op-z-index-dropdown: 900;
-  --op-z-index-alert-group: 950;
-  --op-z-index-tooltip: 1000;
+    /**
+    * @tokens Z-Index
+    */
+    --op-z-index-header: 500;
+    --op-z-index-footer: 500;
+    --op-z-index-sidebar: 700;
+    --op-z-index-dialog: 800;
+    --op-z-index-dialog-backdrop: 801;
+    --op-z-index-dialog-content: 802;
+    --op-z-index-dropdown: 900;
+    --op-z-index-alert-group: 950;
+    --op-z-index-tooltip: 1000;
 
-  /* Inputs */
+    /* Inputs */
 
-  /*
-    This should follow multiples of 4
-    https: //uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec See example 8
-  */
+    /*
+      This should follow multiples of 4
+      https: //uxdesign.cc/baseline-grids-design-systems-ae23b5af8cec See example 8
+    */
 
-  /**
-  * @tokens Input Heights
-  * @presenter Spacing
-  */
-  --op-input-height-small: 2.8rem; /* 28px */
-  --op-input-height-medium: 3.6rem; /* 36px */
-  --op-input-height-large: 4rem; /* 40px */
-  --op-input-height-x-large: 8.4rem; /* 84px */
+    /**
+    * @tokens Input Heights
+    * @presenter Spacing
+    */
+    --op-input-height-small: 2.8rem; /* 28px */
+    --op-input-height-medium: 3.6rem; /* 36px */
+    --op-input-height-large: 4rem; /* 40px */
+    --op-input-height-x-large: 8.4rem; /* 84px */
 
-  /**
-  * @tokens Input Focus
-  * @presenter Shadow
-  */
-  --op-input-inner-focus: inset 0 0 0 var(--op-border-width-large);
-  --op-input-outer-focus: 0 0 0 var(--op-border-width-x-large);
-  --op-input-focus-primary:
-    var(--op-input-inner-focus) var(--op-color-primary-plus-two),
-    var(--op-input-outer-focus) var(--op-color-primary-plus-five);
-  --op-input-focus-neutral:
-    var(--op-input-inner-focus) var(--op-color-neutral-plus-two),
-    var(--op-input-outer-focus) var(--op-color-neutral-plus-five);
-  --op-input-focus-danger:
-    var(--op-input-inner-focus) var(--op-color-alerts-danger-plus-two),
-    var(--op-input-outer-focus) var(--op-color-alerts-danger-plus-five);
-  --op-input-focus-warning:
-    var(--op-input-inner-focus) var(--op-color-alerts-warning-plus-two),
-    var(--op-input-outer-focus) var(--op-color-alerts-warning-plus-five);
-  --op-input-focus-info:
-    var(--op-input-inner-focus) var(--op-color-alerts-info-plus-two),
-    var(--op-input-outer-focus) var(--op-color-alerts-info-plus-five);
-  --op-input-focus-notice:
-    var(--op-input-inner-focus) var(--op-color-alerts-notice-plus-two),
-    var(--op-input-outer-focus) var(--op-color-alerts-notice-plus-five);
-}
-
-/* Animations */
-@keyframes rm-slide-in-out-flash {
-  /*
-    If an duration of 5s is set:
-    Start off the Screen
-  */
-  0% {
-    inset-inline-end: -100%;
+    /**
+    * @tokens Input Focus
+    * @presenter Shadow
+    */
+    --op-input-inner-focus: inset 0 0 0 var(--op-border-width-large);
+    --op-input-outer-focus: 0 0 0 var(--op-border-width-x-large);
+    --op-input-focus-primary:
+      var(--op-input-inner-focus) var(--op-color-primary-plus-two),
+      var(--op-input-outer-focus) var(--op-color-primary-plus-five);
+    --op-input-focus-neutral:
+      var(--op-input-inner-focus) var(--op-color-neutral-plus-two),
+      var(--op-input-outer-focus) var(--op-color-neutral-plus-five);
+    --op-input-focus-danger:
+      var(--op-input-inner-focus) var(--op-color-alerts-danger-plus-two),
+      var(--op-input-outer-focus) var(--op-color-alerts-danger-plus-five);
+    --op-input-focus-warning:
+      var(--op-input-inner-focus) var(--op-color-alerts-warning-plus-two),
+      var(--op-input-outer-focus) var(--op-color-alerts-warning-plus-five);
+    --op-input-focus-info:
+      var(--op-input-inner-focus) var(--op-color-alerts-info-plus-two),
+      var(--op-input-outer-focus) var(--op-color-alerts-info-plus-five);
+    --op-input-focus-notice:
+      var(--op-input-inner-focus) var(--op-color-alerts-notice-plus-two),
+      var(--op-input-outer-focus) var(--op-color-alerts-notice-plus-five);
   }
 
-  /* Animate onto the screen for 0.5s */
-  10% {
-    inset-inline-end: var(--op-space-large);
-  }
+  /* Animations */
+  @keyframes rm-slide-in-out-flash {
+    /*
+      If an duration of 5s is set:
+      Start off the Screen
+    */
+    0% {
+      inset-inline-end: -100%;
+    }
 
-  /* Stay on the screen for 3s */
-  70% {
-    inset-inline-end: var(--op-space-large);
-  }
+    /* Animate onto the screen for 0.5s */
+    10% {
+      inset-inline-end: var(--op-space-large);
+    }
 
-  /* Animate off the screen for 1.5s */
-  100% {
-    inset-inline-end: -100%;
+    /* Stay on the screen for 3s */
+    70% {
+      inset-inline-end: var(--op-space-large);
+    }
+
+    /* Animate off the screen for 1.5s */
+    100% {
+      inset-inline-end: -100%;
+    }
   }
 }

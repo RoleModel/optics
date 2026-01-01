@@ -1,94 +1,96 @@
 /* After a reset, introduce base element styles specific to this system */
 
-html {
-  overflow: hidden; /* Needed to prevent flash messages and panels from causing overflow */
-  font-family: var(--op-font-family);
-  font-size: 62.5%; /* 1rem = 10px */
-}
+@layer optics.base {
+  html {
+    overflow: hidden; /* Needed to prevent flash messages and panels from causing overflow */
+    font-family: var(--op-font-family);
+    font-size: 62.5%; /* 1rem = 10px */
+  }
 
-body {
-  overflow: auto;
-  background: var(--op-color-background);
-  block-size: 100vh;
-  color: var(--op-color-on-background);
-  font-size: var(--op-font-medium);
-}
+  body {
+    overflow: auto;
+    background: var(--op-color-background);
+    block-size: 100vh;
+    color: var(--op-color-on-background);
+    font-size: var(--op-font-medium);
+  }
 
-button {
-  background: none;
-  cursor: pointer;
-}
-
-button,
-input[type='submit'] {
-  border: 0;
-}
-
-label {
-  display: inline-block;
-
-  &:hover {
+  button {
+    background: none;
     cursor: pointer;
   }
-}
 
-a {
-  color: var(--op-color-primary-original);
-}
+  button,
+  input[type='submit'] {
+    border: 0;
+  }
 
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-figure,
-pre {
-  margin: 0;
-}
+  label {
+    display: inline-block;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: var(--op-font-weight-normal);
-  margin-block: 0 var(--op-space-small);
-}
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
-h1 {
-  font-size: var(--op-font-3x-large);
-}
+  a {
+    color: var(--op-color-primary-original);
+  }
 
-h2 {
-  font-size: var(--op-font-2x-large);
-}
+  blockquote,
+  dl,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  figure,
+  pre {
+    margin: 0;
+  }
 
-h3 {
-  font-size: var(--op-font-large);
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: var(--op-font-weight-normal);
+    margin-block: 0 var(--op-space-small);
+  }
 
-h4 {
-  font-size: var(--op-font-medium);
-}
+  h1 {
+    font-size: var(--op-font-3x-large);
+  }
 
-h5 {
-  font-size: var(--op-font-small);
-}
+  h2 {
+    font-size: var(--op-font-2x-large);
+  }
 
-h6 {
-  font-size: var(--op-font-x-small);
-}
+  h3 {
+    font-size: var(--op-font-large);
+  }
 
-p {
-  font-size: var(--op-font-medium);
-  margin-block-end: var(--op-space-small);
-}
+  h4 {
+    font-size: var(--op-font-medium);
+  }
 
-small {
-  font-size: var(--op-font-small);
+  h5 {
+    font-size: var(--op-font-small);
+  }
+
+  h6 {
+    font-size: var(--op-font-x-small);
+  }
+
+  p {
+    font-size: var(--op-font-medium);
+    margin-block-end: var(--op-space-small);
+  }
+
+  small {
+    font-size: var(--op-font-small);
+  }
 }

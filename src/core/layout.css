@@ -1,43 +1,45 @@
-.app-with-sidebar {
-  display: grid;
-  block-size: 100vh;
-  grid-template-columns: auto 1fr auto;
-  inline-size: 100%;
-}
+@layer optics.layout {
+  .app-with-sidebar {
+    display: grid;
+    block-size: 100vh;
+    grid-template-columns: auto 1fr auto;
+    inline-size: 100%;
+  }
 
-.app-body {
-  display: flex;
-  overflow: auto;
-  flex-direction: column;
-}
+  .app-body {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+  }
 
-.app__header {
-  position: sticky;
-  z-index: var(--op-z-index-header);
-  flex-grow: 0;
-  flex-shrink: 0;
-  inset-block-start: 0;
-}
+  .app__header {
+    position: sticky;
+    z-index: var(--op-z-index-header);
+    flex-grow: 0;
+    flex-shrink: 0;
+    inset-block-start: 0;
+  }
 
-.app__content {
-  flex-grow: 1;
-  padding: 0 var(--op-space-large);
-  margin: 0 auto;
-  inline-size: 100%;
-  max-inline-size: var(--op-breakpoint-medium);
-}
+  .app__content {
+    flex-grow: 1;
+    padding: 0 var(--op-space-large);
+    margin: 0 auto;
+    inline-size: 100%;
+    max-inline-size: var(--op-breakpoint-medium);
+  }
 
-.app__content-no-margin {
-  flex-grow: 1;
-  padding: 0 var(--op-space-large);
-  inline-size: 100%;
-  overflow-y: auto;
-}
+  .app__content-no-margin {
+    flex-grow: 1;
+    padding: 0 var(--op-space-large);
+    inline-size: 100%;
+    overflow-y: auto;
+  }
 
-.app__footer {
-  position: sticky;
-  z-index: var(--op-z-index-footer);
-  flex-grow: 0;
-  flex-shrink: 0;
-  inset-block-end: 0;
+  .app__footer {
+    position: sticky;
+    z-index: var(--op-z-index-footer);
+    flex-grow: 0;
+    flex-shrink: 0;
+    inset-block-end: 0;
+  }
 }

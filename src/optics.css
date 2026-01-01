@@ -1,5 +1,8 @@
+/* Layers */
+@import 'core/layers.css';
+
 /* Third party Vendors */
-@import 'modern-css-reset/dist/reset';
+@import 'modern-css-reset/dist/reset' layer(optics.reset);
 
 /* Fonts */
 @import 'core/fonts/index.css';
