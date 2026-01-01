@@ -2,15 +2,15 @@
 @import 'modern-css-reset/dist/reset';
 
 /* Fonts */
-@import 'core/fonts';
+@import 'core/fonts/index.css';
 
 /* Tokens */
-@import 'core/tokens';
+@import 'core/tokens/index.css';
 
 /* Base styles and utilities */
-@import 'core/base';
-@import 'core/layout';
-@import 'core/utilities';
+@import 'core/base.css';
+@import 'core/layout.css';
+@import 'core/utilities.css';
 
 /* Components */
-@import 'components';
+@import 'components/index.css';
