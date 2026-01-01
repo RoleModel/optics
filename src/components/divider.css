@@ -1,54 +1,56 @@
-.divider {
-  /* Public API (customizable component options) */
-  --_op-divider-vertical-min-height: var(--op-space-large);
-  --_op-divider-height-small: var(--op-border-width);
-  --_op-divider-height-medium: var(--op-border-width-large);
-  --_op-divider-height-large: var(--op-border-width-x-large);
-  --_op-divider-padding-small: var(--op-space-2x-small);
-  --_op-divider-padding-medium: var(--op-space-x-small);
-  --_op-divider-padding-large: var(--op-space-medium);
+@layer optics.components {
+  .divider {
+    /* Public API (customizable component options) */
+    --_op-divider-vertical-min-height: var(--op-space-large);
+    --_op-divider-height-small: var(--op-border-width);
+    --_op-divider-height-medium: var(--op-border-width-large);
+    --_op-divider-height-large: var(--op-border-width-x-large);
+    --_op-divider-padding-small: var(--op-space-2x-small);
+    --_op-divider-padding-medium: var(--op-space-x-small);
+    --_op-divider-padding-large: var(--op-space-medium);
 
-  /* Private API (component option defaults) */
-  --__op-divider-height: var(--_op-divider-height-small);
-  --__op-divider-padding: 0;
-  background-color: var(--op-color-border);
-  block-size: var(--__op-divider-height);
-  inline-size: 100%;
-  margin-block: var(--__op-divider-padding);
-  margin-inline: 0;
-
-  /* Size Modifiers */
-  &.divider--small {
+    /* Private API (component option defaults) */
     --__op-divider-height: var(--_op-divider-height-small);
-  }
+    --__op-divider-padding: 0;
+    background-color: var(--op-color-border);
+    block-size: var(--__op-divider-height);
+    inline-size: 100%;
+    margin-block: var(--__op-divider-padding);
+    margin-inline: 0;
 
-  &.divider--medium {
-    --__op-divider-height: var(--_op-divider-height-medium);
-  }
+    /* Size Modifiers */
+    &.divider--small {
+      --__op-divider-height: var(--_op-divider-height-small);
+    }
 
-  &.divider--large {
-    --__op-divider-height: var(--_op-divider-height-large);
-  }
+    &.divider--medium {
+      --__op-divider-height: var(--_op-divider-height-medium);
+    }
 
-  /* Spacing Modifiers */
-  &.divider--spacing-small {
-    --__op-divider-padding: var(--_op-divider-padding-small);
-  }
+    &.divider--large {
+      --__op-divider-height: var(--_op-divider-height-large);
+    }
 
-  &.divider--spacing-medium {
-    --__op-divider-padding: var(--_op-divider-padding-medium);
-  }
+    /* Spacing Modifiers */
+    &.divider--spacing-small {
+      --__op-divider-padding: var(--_op-divider-padding-small);
+    }
 
-  &.divider--spacing-large {
-    --__op-divider-padding: var(--_op-divider-padding-large);
-  }
+    &.divider--spacing-medium {
+      --__op-divider-padding: var(--_op-divider-padding-medium);
+    }
 
-  /* Direction Modifier */
-  &.divider--vertical {
-    block-size: 100%;
-    inline-size: var(--__op-divider-height);
-    margin-block: 0;
-    margin-inline: var(--__op-divider-padding);
-    min-block-size: var(--_op-divider-vertical-min-height);
+    &.divider--spacing-large {
+      --__op-divider-padding: var(--_op-divider-padding-large);
+    }
+
+    /* Direction Modifier */
+    &.divider--vertical {
+      block-size: 100%;
+      inline-size: var(--__op-divider-height);
+      margin-block: 0;
+      margin-inline: var(--__op-divider-padding);
+      min-block-size: var(--_op-divider-vertical-min-height);
+    }
   }
 }

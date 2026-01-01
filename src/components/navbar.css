@@ -1,60 +1,62 @@
-.navbar {
-  /* Public API (customizable component options) */
+@layer optics.components {
+  .navbar {
+    /* Public API (customizable component options) */
 
-  /* Normal */
-  --_op-navbar-background-color: var(--op-color-neutral-plus-eight);
-  --_op-navbar-text-color: var(--op-color-neutral-on-plus-eight);
-  --_op-navbar-border-color: var(--op-color-neutral-plus-four);
-  --_op-navbar-brand-height: calc(12 * var(--op-size-unit)); /* 48px */
+    /* Normal */
+    --_op-navbar-background-color: var(--op-color-neutral-plus-eight);
+    --_op-navbar-text-color: var(--op-color-neutral-on-plus-eight);
+    --_op-navbar-border-color: var(--op-color-neutral-plus-four);
+    --_op-navbar-brand-height: calc(12 * var(--op-size-unit)); /* 48px */
 
-  /* Spacing */
-  --_op-navbar-horizontal-spacing: var(--op-space-x-large);
-  --_op-navbar-content-spacing: var(--op-space-x-small);
-  --_op-navbar-content-item-spacing: var(--op-space-2x-small);
+    /* Spacing */
+    --_op-navbar-horizontal-spacing: var(--op-space-x-large);
+    --_op-navbar-content-spacing: var(--op-space-x-small);
+    --_op-navbar-content-item-spacing: var(--op-space-2x-small);
 
-  display: flex;
-  align-items: center;
-  padding: var(--op-space-small) var(--_op-navbar-horizontal-spacing);
-  background-color: var(--_op-navbar-background-color);
-  box-shadow: var(--op-border-bottom) var(--_op-navbar-border-color);
-  color: var(--_op-navbar-text-color);
-  gap: var(--_op-navbar-content-spacing);
-
-  /* Elements */
-
-  .navbar__brand {
-    block-size: var(--_op-navbar-brand-height);
-    margin-inline-end: var(--_op-navbar-horizontal-spacing);
-
-    img {
-      block-size: 100%;
-    }
-  }
-
-  .navbar__content {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: var(--_op-navbar-content-item-spacing);
+    padding: var(--op-space-small) var(--_op-navbar-horizontal-spacing);
+    background-color: var(--_op-navbar-background-color);
+    box-shadow: var(--op-border-bottom) var(--_op-navbar-border-color);
+    color: var(--_op-navbar-text-color);
+    gap: var(--_op-navbar-content-spacing);
 
-    &.navbar__content--justify-start {
-      margin-inline-end: auto;
+    /* Elements */
+
+    .navbar__brand {
+      block-size: var(--_op-navbar-brand-height);
+      margin-inline-end: var(--_op-navbar-horizontal-spacing);
+
+      img {
+        block-size: 100%;
+      }
     }
 
-    &.navbar__content--justify-center {
-      margin-inline: auto;
+    .navbar__content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--_op-navbar-content-item-spacing);
+
+      &.navbar__content--justify-start {
+        margin-inline-end: auto;
+      }
+
+      &.navbar__content--justify-center {
+        margin-inline: auto;
+      }
+
+      &.navbar__content--justify-end {
+        margin-inline-start: auto;
+      }
     }
 
-    &.navbar__content--justify-end {
-      margin-inline-start: auto;
+    /* Modifiers */
+
+    &.navbar--primary {
+      --_op-navbar-background-color: var(--op-color-primary-plus-six);
+      --_op-navbar-text-color: var(--op-color-primary-on-plus-six);
+      --_op-navbar-border-color: var(--op-color-primary-plus-four);
     }
-  }
-
-  /* Modifiers */
-
-  &.navbar--primary {
-    --_op-navbar-background-color: var(--op-color-primary-plus-six);
-    --_op-navbar-text-color: var(--op-color-primary-on-plus-six);
-    --_op-navbar-border-color: var(--op-color-primary-plus-four);
   }
 }

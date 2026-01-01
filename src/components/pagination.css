@@ -1,24 +1,26 @@
-.pagination {
-  display: flex;
-  align-items: center;
-  gap: 0;
-
-  /* Showing Dropdown */
-  .form-group {
+@layer optics.components {
+  .pagination {
+    display: flex;
     align-items: center;
+    gap: 0;
 
-    .form-label {
-      grid-column: 1;
+    /* Showing Dropdown */
+    .form-group {
+      align-items: center;
+
+      .form-label {
+        grid-column: 1;
+      }
+
+      .form-control {
+        grid-column: 2;
+      }
     }
 
-    .form-control {
-      grid-column: 2;
+    /* ... Gap */
+    .pagination__divider {
+      block-size: 100%;
+      padding-inline: var(--op-space-x-small);
     }
-  }
-
-  /* ... Gap */
-  .pagination__divider {
-    block-size: 100%;
-    padding-inline: var(--op-space-x-small);
   }
 }

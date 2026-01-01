@@ -1,134 +1,136 @@
 /* Inspired by https://blog.logrocket.com/creating-beautiful-tooltips-with-only-css/ */
 
-[data-tooltip-text] {
-  /* Public API (customizable component options) */
-  --_op-tooltip-max-width: calc(50 * var(--op-size-unit)); /* 200px */
-  --_op-tooltip-padding: var(--op-space-x-small) var(--op-space-medium);
-  --_op-tooltip-background-color: var(--op-color-neutral-minus-max);
-  --_op-tooltip-text-color: var(--op-color-neutral-on-minus-max);
-  --_op-tooltip-arrow-size: calc(var(--op-space-small) / 2);
-  --_op-tooltip-tooltip-offset: var(--op-space-x-small);
-  --_op-tooltip-tooltip-radius: var(--op-radius-medium);
-  --_op-tooltip-tooltip-font-size: var(--op-font-small);
+@layer optics.components {
+  [data-tooltip-text] {
+    /* Public API (customizable component options) */
+    --_op-tooltip-max-width: calc(50 * var(--op-size-unit)); /* 200px */
+    --_op-tooltip-padding: var(--op-space-x-small) var(--op-space-medium);
+    --_op-tooltip-background-color: var(--op-color-neutral-minus-max);
+    --_op-tooltip-text-color: var(--op-color-neutral-on-minus-max);
+    --_op-tooltip-arrow-size: calc(var(--op-space-small) / 2);
+    --_op-tooltip-tooltip-offset: var(--op-space-x-small);
+    --_op-tooltip-tooltip-radius: var(--op-radius-medium);
+    --_op-tooltip-tooltip-font-size: var(--op-font-small);
 
-  position: relative;
+    position: relative;
 
-  &::before,
-  &::after {
-    opacity: var(--op-opacity-none);
-    transition: var(--op-transition-tooltip);
-    visibility: hidden;
-  }
-
-  &::before {
-    position: absolute;
-    z-index: var(--op-z-index-tooltip);
-    display: block;
-    padding: var(--_op-tooltip-padding);
-    border-radius: var(--_op-tooltip-tooltip-radius);
-    background-color: var(--_op-tooltip-background-color);
-    color: var(--_op-tooltip-text-color);
-    content: attr(data-tooltip-text);
-    font-family: var(--op-font-family); /* Makes tooltips on icons work */
-    font-size: var(--_op-tooltip-tooltip-font-size);
-    inline-size: max-content;
-    max-inline-size: var(--_op-tooltip-max-width);
-    overflow-wrap: break-word;
-    pointer-events: none;
-    text-align: center;
-    white-space: normal;
-  }
-
-  &::after {
-    position: absolute;
-    z-index: var(--op-z-index-tooltip);
-    border: var(--_op-tooltip-arrow-size) solid var(--_op-tooltip-background-color);
-    content: '';
-    pointer-events: none;
-  }
-
-  &:hover {
     &::before,
     &::after {
-      opacity: var(--op-opacity-full);
-      visibility: visible;
-    }
-  }
-
-  &[data-tooltip-position='top'],
-  &:not([data-tooltip-position]) {
-    &::before,
-    &::after {
-      inset-inline-start: 50%;
-      transform: translateX(-50%);
+      opacity: var(--op-opacity-none);
+      transition: var(--op-transition-tooltip);
+      visibility: hidden;
     }
 
     &::before {
-      inset-block-end: 100%;
-      margin-block-end: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      position: absolute;
+      z-index: var(--op-z-index-tooltip);
+      display: block;
+      padding: var(--_op-tooltip-padding);
+      border-radius: var(--_op-tooltip-tooltip-radius);
+      background-color: var(--_op-tooltip-background-color);
+      color: var(--_op-tooltip-text-color);
+      content: attr(data-tooltip-text);
+      font-family: var(--op-font-family); /* Makes tooltips on icons work */
+      font-size: var(--_op-tooltip-tooltip-font-size);
+      inline-size: max-content;
+      max-inline-size: var(--_op-tooltip-max-width);
+      overflow-wrap: break-word;
+      pointer-events: none;
+      text-align: center;
+      white-space: normal;
     }
 
     &::after {
-      border-color: var(--_op-tooltip-background-color) transparent transparent transparent;
-      inset-block-end: 100%;
-      margin-block-end: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
-    }
-  }
-
-  &[data-tooltip-position='left'] {
-    &::before,
-    &::after {
-      inset-block-start: 50%;
-      transform: translateY(-50%);
+      position: absolute;
+      z-index: var(--op-z-index-tooltip);
+      border: var(--_op-tooltip-arrow-size) solid var(--_op-tooltip-background-color);
+      content: '';
+      pointer-events: none;
     }
 
-    &::before {
-      inset-inline-end: 100%;
-      margin-inline-end: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+    &:hover {
+      &::before,
+      &::after {
+        opacity: var(--op-opacity-full);
+        visibility: visible;
+      }
     }
 
-    &::after {
-      border-color: transparent transparent transparent var(--_op-tooltip-background-color);
-      inset-inline-end: 100%;
-      margin-inline-end: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
-    }
-  }
+    &[data-tooltip-position='top'],
+    &:not([data-tooltip-position]) {
+      &::before,
+      &::after {
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+      }
 
-  &[data-tooltip-position='bottom'] {
-    &::before,
-    &::after {
-      inset-inline-start: 50%;
-      transform: translateX(-50%);
-    }
+      &::before {
+        inset-block-end: 100%;
+        margin-block-end: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      }
 
-    &::before {
-      inset-block-start: 100%;
-      margin-block-start: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
-    }
-
-    &::after {
-      border-color: transparent transparent var(--_op-tooltip-background-color) transparent;
-      inset-block-start: 100%;
-      margin-block-start: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
-    }
-  }
-
-  &[data-tooltip-position='right'] {
-    &::before,
-    &::after {
-      inset-block-start: 50%;
-      transform: translateY(-50%);
+      &::after {
+        border-color: var(--_op-tooltip-background-color) transparent transparent transparent;
+        inset-block-end: 100%;
+        margin-block-end: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      }
     }
 
-    &::before {
-      inset-inline-start: 100%;
-      margin-inline-start: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+    &[data-tooltip-position='left'] {
+      &::before,
+      &::after {
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::before {
+        inset-inline-end: 100%;
+        margin-inline-end: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      }
+
+      &::after {
+        border-color: transparent transparent transparent var(--_op-tooltip-background-color);
+        inset-inline-end: 100%;
+        margin-inline-end: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      }
     }
 
-    &::after {
-      border-color: transparent var(--_op-tooltip-background-color) transparent transparent;
-      inset-inline-start: 100%;
-      margin-inline-start: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+    &[data-tooltip-position='bottom'] {
+      &::before,
+      &::after {
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+      }
+
+      &::before {
+        inset-block-start: 100%;
+        margin-block-start: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      }
+
+      &::after {
+        border-color: transparent transparent var(--_op-tooltip-background-color) transparent;
+        inset-block-start: 100%;
+        margin-block-start: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      }
+    }
+
+    &[data-tooltip-position='right'] {
+      &::before,
+      &::after {
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::before {
+        inset-inline-start: 100%;
+        margin-inline-start: calc(var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      }
+
+      &::after {
+        border-color: transparent var(--_op-tooltip-background-color) transparent transparent;
+        inset-inline-start: 100%;
+        margin-inline-start: calc(-1 * var(--_op-tooltip-arrow-size) + var(--_op-tooltip-tooltip-offset));
+      }
     }
   }
 }

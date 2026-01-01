@@ -1,133 +1,135 @@
-.table {
-  /* Public API */
+@layer optics.components {
+  .table {
+    /* Public API */
 
-  /* Cells (for height, the appropriate variable is used when using the density modifiers) */
-  --_op-table-cell-height-default: calc(11 * var(--op-size-unit)); /* 44px */
-  --_op-table-cell-height-comfortable: calc(16 * var(--op-size-unit)); /* 64px */
-  --_op-table-cell-height-compact: calc(8 * var(--op-size-unit)); /* 32px */
+    /* Cells (for height, the appropriate variable is used when using the density modifiers) */
+    --_op-table-cell-height-default: calc(11 * var(--op-size-unit)); /* 44px */
+    --_op-table-cell-height-comfortable: calc(16 * var(--op-size-unit)); /* 64px */
+    --_op-table-cell-height-compact: calc(8 * var(--op-size-unit)); /* 32px */
 
-  /* Private API */
+    /* Private API */
 
-  /* These allow for overriding specific padding versions easier. */
-  --__op-table-cell-height: var(--_op-table-cell-height-default);
-
-  border-radius: var(--op-radius-medium);
-  border-collapse: collapse;
-  box-shadow: var(--op-border-all) var(--op-color-border);
-  contain: paint;
-  inline-size: 100%;
-  table-layout: auto;
-
-  /* Elements */
-
-  thead {
-    background-color: var(--op-color-neutral-plus-eight);
-    box-shadow: inset var(--op-border-top) var(--op-color-border);
-    color: var(--op-color-neutral-on-plus-eight);
-
-    &:has(th input[type='checkbox']:checked) {
-      background-color: var(--op-color-primary-plus-seven);
-      color: var(--op-color-primary-on-plus-seven);
-    }
-  }
-
-  th {
-    font-weight: var(--op-font-weight-semi-bold);
-    text-align: start;
-  }
-
-  tbody,
-  tfoot {
-    background-color: var(--op-color-neutral-plus-max);
-    color: var(--op-color-neutral-on-plus-max);
-  }
-
-  th,
-  td {
-    block-size: var(--__op-table-cell-height);
-    font-size: var(--op-font-small);
-    padding-block: var(--op-space-2x-small);
-    padding-inline: var(--op-space-small);
-  }
-
-  tfoot tr {
-    box-shadow: var(--op-border-top) var(--op-color-border);
-  }
-
-  tr:not(:last-child) {
-    box-shadow: inset var(--op-border-top) var(--op-color-border);
-  }
-
-  /* Modifiers */
-
-  /* stylelint-disable no-descending-specificity */
-  &.table--primary {
-    thead {
-      background-color: var(--op-color-primary-plus-seven);
-      color: var(--op-color-primary-on-plus-seven);
-    }
-  }
-
-  &.table--danger {
-    thead {
-      background-color: var(--op-color-alerts-danger-plus-seven);
-      color: var(--op-color-alerts-danger-on-plus-seven);
-    }
-  }
-  /* stylelint-enable no-descending-specificity */
-
-  &.table--container {
-    overflow-y: auto;
-  }
-
-  /* Layout Modifiers */
-  &.table--auto-layout {
-    table-layout: auto;
-  }
-
-  &.table--fixed-layout {
-    table-layout: fixed;
-  }
-
-  /* Table Density Modifiers */
-  &.table--default-density {
+    /* These allow for overriding specific padding versions easier. */
     --__op-table-cell-height: var(--_op-table-cell-height-default);
-  }
 
-  &.table--comfortable-density {
-    --__op-table-cell-height: var(--_op-table-cell-height-comfortable);
-  }
+    border-radius: var(--op-radius-medium);
+    border-collapse: collapse;
+    box-shadow: var(--op-border-all) var(--op-color-border);
+    contain: paint;
+    inline-size: 100%;
+    table-layout: auto;
 
-  &.table--compact-density {
-    --__op-table-cell-height: var(--_op-table-cell-height-compact);
-  }
+    /* Elements */
 
-  /* Striped Modifiers */
-  &.table--even-striped {
-    tbody tr:nth-child(even) {
-      background-color: var(--op-color-neutral-plus-seven);
-      color: var(--op-color-neutral-on-plus-seven);
+    thead {
+      background-color: var(--op-color-neutral-plus-eight);
+      box-shadow: inset var(--op-border-top) var(--op-color-border);
+      color: var(--op-color-neutral-on-plus-eight);
+
+      &:has(th input[type='checkbox']:checked) {
+        background-color: var(--op-color-primary-plus-seven);
+        color: var(--op-color-primary-on-plus-seven);
+      }
     }
-  }
 
-  &.table--odd-striped {
-    tbody tr:nth-child(odd) {
-      background-color: var(--op-color-neutral-plus-seven);
-      color: var(--op-color-neutral-on-plus-seven);
+    th {
+      font-weight: var(--op-font-weight-semi-bold);
+      text-align: start;
     }
-  }
 
-  /* Sticky Header Row Modifier */
-  /* stylelint-disable no-descending-specificity */
-  &.table--sticky-header thead {
-    position: sticky;
-    inset-block-start: 0;
-  }
-  /* stylelint-enable no-descending-specificity */
+    tbody,
+    tfoot {
+      background-color: var(--op-color-neutral-plus-max);
+      color: var(--op-color-neutral-on-plus-max);
+    }
 
-  /* Sticky Footer Row Modifier */
-  &.table--sticky-footer tfoot {
-    position: sticky;
-    inset-block-end: 0;
+    th,
+    td {
+      block-size: var(--__op-table-cell-height);
+      font-size: var(--op-font-small);
+      padding-block: var(--op-space-2x-small);
+      padding-inline: var(--op-space-small);
+    }
+
+    tfoot tr {
+      box-shadow: var(--op-border-top) var(--op-color-border);
+    }
+
+    tr:not(:last-child) {
+      box-shadow: inset var(--op-border-top) var(--op-color-border);
+    }
+
+    /* Modifiers */
+
+    /* stylelint-disable no-descending-specificity */
+    &.table--primary {
+      thead {
+        background-color: var(--op-color-primary-plus-seven);
+        color: var(--op-color-primary-on-plus-seven);
+      }
+    }
+
+    &.table--danger {
+      thead {
+        background-color: var(--op-color-alerts-danger-plus-seven);
+        color: var(--op-color-alerts-danger-on-plus-seven);
+      }
+    }
+    /* stylelint-enable no-descending-specificity */
+
+    &.table--container {
+      overflow-y: auto;
+    }
+
+    /* Layout Modifiers */
+    &.table--auto-layout {
+      table-layout: auto;
+    }
+
+    &.table--fixed-layout {
+      table-layout: fixed;
+    }
+
+    /* Table Density Modifiers */
+    &.table--default-density {
+      --__op-table-cell-height: var(--_op-table-cell-height-default);
+    }
+
+    &.table--comfortable-density {
+      --__op-table-cell-height: var(--_op-table-cell-height-comfortable);
+    }
+
+    &.table--compact-density {
+      --__op-table-cell-height: var(--_op-table-cell-height-compact);
+    }
+
+    /* Striped Modifiers */
+    &.table--even-striped {
+      tbody tr:nth-child(even) {
+        background-color: var(--op-color-neutral-plus-seven);
+        color: var(--op-color-neutral-on-plus-seven);
+      }
+    }
+
+    &.table--odd-striped {
+      tbody tr:nth-child(odd) {
+        background-color: var(--op-color-neutral-plus-seven);
+        color: var(--op-color-neutral-on-plus-seven);
+      }
+    }
+
+    /* Sticky Header Row Modifier */
+    /* stylelint-disable no-descending-specificity */
+    &.table--sticky-header thead {
+      position: sticky;
+      inset-block-start: 0;
+    }
+    /* stylelint-enable no-descending-specificity */
+
+    /* Sticky Footer Row Modifier */
+    &.table--sticky-footer tfoot {
+      position: sticky;
+      inset-block-end: 0;
+    }
   }
 }

@@ -1,107 +1,109 @@
-.switch {
-  /* Public API (allowed to be overridden) */
-  --_op-switch-height-small: calc(4 * var(--op-size-unit)); /* 16px */
-  --_op-switch-height-large: calc(6 * var(--op-size-unit)); /* 24px */
-  --_op-switch-width-small: calc(7 * var(--op-size-unit)); /* 28px */
-  --_op-switch-width-large: calc(11 * var(--op-size-unit)); /* 44px */
-  --_op-switch-opacity-disabled: var(--op-opacity-disabled);
-  --_op-switch-switch-padding: var(--op-space-2x-small);
+@layer optics.components {
+  .switch {
+    /* Public API (allowed to be overridden) */
+    --_op-switch-height-small: calc(4 * var(--op-size-unit)); /* 16px */
+    --_op-switch-height-large: calc(6 * var(--op-size-unit)); /* 24px */
+    --_op-switch-width-small: calc(7 * var(--op-size-unit)); /* 28px */
+    --_op-switch-width-large: calc(11 * var(--op-size-unit)); /* 44px */
+    --_op-switch-opacity-disabled: var(--op-opacity-disabled);
+    --_op-switch-switch-padding: var(--op-space-2x-small);
 
-  /* Private API (don't touch these) */
-  --__op-switch-width: var(--_op-switch-width-large);
-  --__op-switch-height: var(--_op-switch-height-large);
-  --__op-switch-switch-size: calc(var(--__op-switch-height) - var(--_op-switch-switch-padding));
-  --__op-switch-half-switch-padding: calc(var(--_op-switch-switch-padding) / 2);
-
-  position: relative;
-  display: flex;
-  align-items: center;
-
-  label {
-    position: relative;
-    display: block;
-    border-radius: var(--op-radius-pill);
-    background: var(--op-color-neutral-base);
-    block-size: var(--__op-switch-height);
-    box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
-    inline-size: var(--__op-switch-width);
-    text-indent: -9999px; /* Normally text would not be put in the label, but this hides it in case you do put text in the label */
-
-    &::after {
-      position: absolute;
-      border-radius: var(--op-radius-circle);
-      background-color: var(--op-color-neutral-plus-eight);
-      block-size: var(--__op-switch-switch-size);
-      content: '';
-      inline-size: var(--__op-switch-switch-size);
-      inset-block-start: var(--__op-switch-half-switch-padding);
-      inset-inline-start: var(--__op-switch-half-switch-padding);
-      transition: var(--op-transition-input);
-    }
-  }
-
-  /* Prevent labels after the toggle being full width */
-  & + label {
-    inline-size: fit-content;
-  }
-
-  input {
-    block-size: 0;
-    inline-size: 0;
-    margin-inline-end: calc(-1 * var(--op-space-x-small));
-
-    &:disabled {
-      visibility: hidden;
-    }
-
-    &:disabled + label {
-      cursor: not-allowed;
-      opacity: var(--_op-switch-opacity-disabled);
-    }
-
-    &:checked + label {
-      background-color: var(--op-color-primary-base);
-      box-shadow: none;
-
-      &::after {
-        inset-inline-start: calc(100% - var(--__op-switch-half-switch-padding));
-        transform: translateX(-100%);
-      }
-    }
-
-    &:hover + label {
-      &::after {
-        background-color: var(--op-color-primary-plus-five);
-      }
-    }
-
-    &:focus-visible + label {
-      box-shadow:
-        0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-six),
-        inset var(--op-border-all) var(--op-color-primary-minus-three);
-
-      &::after {
-        background-color: var(--op-color-neutral-plus-five);
-        box-shadow: var(--op-border-all) var(--op-color-primary-minus-three);
-      }
-    }
-
-    &:focus-visible:checked + label {
-      &::after {
-        background-color: var(--op-color-primary-plus-six);
-        box-shadow: var(--op-border-all) var(--op-color-primary-minus-two);
-      }
-    }
-  }
-
-  /* Size Modifiers */
-  &.switch--small {
-    --__op-switch-width: var(--_op-switch-width-small);
-    --__op-switch-height: var(--_op-switch-height-small);
-  }
-
-  &.switch--large {
+    /* Private API (don't touch these) */
     --__op-switch-width: var(--_op-switch-width-large);
     --__op-switch-height: var(--_op-switch-height-large);
+    --__op-switch-switch-size: calc(var(--__op-switch-height) - var(--_op-switch-switch-padding));
+    --__op-switch-half-switch-padding: calc(var(--_op-switch-switch-padding) / 2);
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    label {
+      position: relative;
+      display: block;
+      border-radius: var(--op-radius-pill);
+      background: var(--op-color-neutral-base);
+      block-size: var(--__op-switch-height);
+      box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-three);
+      inline-size: var(--__op-switch-width);
+      text-indent: -9999px; /* Normally text would not be put in the label, but this hides it in case you do put text in the label */
+
+      &::after {
+        position: absolute;
+        border-radius: var(--op-radius-circle);
+        background-color: var(--op-color-neutral-plus-eight);
+        block-size: var(--__op-switch-switch-size);
+        content: '';
+        inline-size: var(--__op-switch-switch-size);
+        inset-block-start: var(--__op-switch-half-switch-padding);
+        inset-inline-start: var(--__op-switch-half-switch-padding);
+        transition: var(--op-transition-input);
+      }
+    }
+
+    /* Prevent labels after the toggle being full width */
+    & + label {
+      inline-size: fit-content;
+    }
+
+    input {
+      block-size: 0;
+      inline-size: 0;
+      margin-inline-end: calc(-1 * var(--op-space-x-small));
+
+      &:disabled {
+        visibility: hidden;
+      }
+
+      &:disabled + label {
+        cursor: not-allowed;
+        opacity: var(--_op-switch-opacity-disabled);
+      }
+
+      &:checked + label {
+        background-color: var(--op-color-primary-base);
+        box-shadow: none;
+
+        &::after {
+          inset-inline-start: calc(100% - var(--__op-switch-half-switch-padding));
+          transform: translateX(-100%);
+        }
+      }
+
+      &:hover + label {
+        &::after {
+          background-color: var(--op-color-primary-plus-five);
+        }
+      }
+
+      &:focus-visible + label {
+        box-shadow:
+          0 0 0 var(--op-border-width-large) var(--op-color-primary-plus-six),
+          inset var(--op-border-all) var(--op-color-primary-minus-three);
+
+        &::after {
+          background-color: var(--op-color-neutral-plus-five);
+          box-shadow: var(--op-border-all) var(--op-color-primary-minus-three);
+        }
+      }
+
+      &:focus-visible:checked + label {
+        &::after {
+          background-color: var(--op-color-primary-plus-six);
+          box-shadow: var(--op-border-all) var(--op-color-primary-minus-two);
+        }
+      }
+    }
+
+    /* Size Modifiers */
+    &.switch--small {
+      --__op-switch-width: var(--_op-switch-width-small);
+      --__op-switch-height: var(--_op-switch-height-small);
+    }
+
+    &.switch--large {
+      --__op-switch-width: var(--_op-switch-width-large);
+      --__op-switch-height: var(--_op-switch-height-large);
+    }
   }
 }

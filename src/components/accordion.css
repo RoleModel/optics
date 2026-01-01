@@ -1,66 +1,68 @@
-.accordion {
-  /* Public API (customizable component options) */
-  --_op-accordion-summary-min-height: calc(8 * var(--op-size-unit)); /* 32px */
+@layer optics.components {
+  .accordion {
+    /* Public API (customizable component options) */
+    --_op-accordion-summary-min-height: calc(8 * var(--op-size-unit)); /* 32px */
 
-  overflow: hidden;
-  interpolate-size: allow-keywords;
+    overflow: hidden;
+    interpolate-size: allow-keywords;
 
-  /* Elements */
+    /* Elements */
 
-  summary {
-    display: grid;
-    align-items: center;
-    cursor: pointer;
-    gap: var(--op-space-2x-small);
-    grid-template-columns: auto 1fr auto;
-    min-block-size: var(--_op-accordion-summary-min-height);
+    summary {
+      display: grid;
+      align-items: center;
+      cursor: pointer;
+      gap: var(--op-space-2x-small);
+      grid-template-columns: auto 1fr auto;
+      min-block-size: var(--_op-accordion-summary-min-height);
 
-    &::marker,
-    &::-webkit-details-marker {
-      display: none;
-      content: '';
-    }
+      &::marker,
+      &::-webkit-details-marker {
+        display: none;
+        content: '';
+      }
 
-    .accordion__label {
-      color: var(--op-color-neutral-on-plus-max);
-      font-size: var(--op-font-x-small);
-      font-weight: var(--op-font-weight-semi-bold);
-    }
+      .accordion__label {
+        color: var(--op-color-neutral-on-plus-max);
+        font-size: var(--op-font-x-small);
+        font-weight: var(--op-font-weight-semi-bold);
+      }
 
-    .accordion__marker {
-      --__op-icon-font-size: var(--_op-icon-font-size-x-large);
-      --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
+      .accordion__marker {
+        --__op-icon-font-size: var(--_op-icon-font-size-x-large);
+        --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
 
-      justify-self: flex-end;
-      transition: var(--op-transition-accordion);
-      user-select: none;
-    }
-  }
-
-  &::details-content {
-    block-size: 0;
-    transition: var(--op-transition-accordion-content);
-  }
-
-  &[open] {
-    summary .accordion__marker {
-      rotate: 0.25turn;
+        justify-self: flex-end;
+        transition: var(--op-transition-accordion);
+        user-select: none;
+      }
     }
 
     &::details-content {
-      block-size: auto;
-    }
-  }
-
-  /* Modifiers */
-
-  &.accordion--disable-animation {
-    summary .accordion__marker {
-      transition: none;
+      block-size: 0;
+      transition: var(--op-transition-accordion-content);
     }
 
-    &::details-content {
-      transition: none;
+    &[open] {
+      summary .accordion__marker {
+        rotate: 0.25turn;
+      }
+
+      &::details-content {
+        block-size: auto;
+      }
+    }
+
+    /* Modifiers */
+
+    &.accordion--disable-animation {
+      summary .accordion__marker {
+        transition: none;
+      }
+
+      &::details-content {
+        transition: none;
+      }
     }
   }
 }

@@ -1,121 +1,123 @@
-.icon {
-  /* Public API (customizable component options) */
+@layer optics.components {
+  .icon {
+    /* Public API (customizable component options) */
 
-  /* Weight */
-  --_op-icon-weight-light: var(--op-font-weight-light);
-  --_op-icon-weight-normal: var(--op-font-weight-normal);
-  --_op-icon-weight-semi-bold: var(--op-font-weight-semi-bold);
-  --_op-icon-weight-bold: var(--op-font-weight-bold);
+    /* Weight */
+    --_op-icon-weight-light: var(--op-font-weight-light);
+    --_op-icon-weight-normal: var(--op-font-weight-normal);
+    --_op-icon-weight-semi-bold: var(--op-font-weight-semi-bold);
+    --_op-icon-weight-bold: var(--op-font-weight-bold);
 
-  /* Fill */
-  --_op-icon-fill-outlined: 0;
-  --_op-icon-fill-filled: 1;
+    /* Fill */
+    --_op-icon-fill-outlined: 0;
+    --_op-icon-fill-filled: 1;
 
-  /* Emphasis */
-  --_op-icon-emphasis-low: -20;
-  --_op-icon-emphasis-normal: 0;
-  --_op-icon-emphasis-high: 200;
+    /* Emphasis */
+    --_op-icon-emphasis-low: -20;
+    --_op-icon-emphasis-normal: 0;
+    --_op-icon-emphasis-high: 200;
 
-  /* Size */
-  --_op-icon-font-size-small: var(--op-font-small);
-  --_op-icon-font-size-medium: var(--op-font-medium);
-  --_op-icon-font-size-large: var(--op-font-large);
-  --_op-icon-font-size-x-large: var(--op-font-2x-large);
-  --_op-icon-optical-size-small: 20;
-  --_op-icon-optical-size-medium: 20;
-  --_op-icon-optical-size-large: 40;
-  --_op-icon-optical-size-x-large: 48;
+    /* Size */
+    --_op-icon-font-size-small: var(--op-font-small);
+    --_op-icon-font-size-medium: var(--op-font-medium);
+    --_op-icon-font-size-large: var(--op-font-large);
+    --_op-icon-font-size-x-large: var(--op-font-2x-large);
+    --_op-icon-optical-size-small: 20;
+    --_op-icon-optical-size-medium: 20;
+    --_op-icon-optical-size-large: 40;
+    --_op-icon-optical-size-x-large: 48;
 
-  /* Private API (component option defaults) */
-  --__op-icon-weight: var(--_op-icon-weight-normal);
-  --__op-icon-fill: var(--_op-icon-fill-outlined);
-  --__op-icon-emphasis: var(--_op-icon-emphasis-normal);
-  --__op-icon-font-size: var(--_op-icon-font-size-medium);
-  --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
-
-  display: inline-block;
-  block-size: var(--__op-icon-font-size);
-  font-size: var(--__op-icon-font-size);
-  font-weight: var(--__op-icon-weight);
-  inline-size: var(--__op-icon-font-size);
-  line-height: var(--op-line-height-densest);
-  vertical-align: middle;
-
-  /* Fill Modifiers */
-  &.icon--outlined {
-    --__op-icon-fill: var(--_op-icon-fill-outlined);
-  }
-
-  &.icon--filled {
-    --__op-icon-fill: var(--_op-icon-fill-filled);
-  }
-
-  /* Weight Modifiers */
-  &.icon--weight-light {
-    --__op-icon-weight: var(--_op-icon-weight-light);
-  }
-
-  &.icon--weight-normal {
+    /* Private API (component option defaults) */
     --__op-icon-weight: var(--_op-icon-weight-normal);
-  }
-
-  &.icon--weight-semi-bold {
-    --__op-icon-weight: var(--_op-icon-weight-semi-bold);
-  }
-
-  &.icon--weight-bold {
-    --__op-icon-weight: var(--_op-icon-weight-bold);
-  }
-
-  /* Emphasis */
-  &.icon--low-emphasis {
-    --__op-icon-emphasis: var(--_op-icon-emphasis-low);
-  }
-
-  &.icon--normal-emphasis {
+    --__op-icon-fill: var(--_op-icon-fill-outlined);
     --__op-icon-emphasis: var(--_op-icon-emphasis-normal);
-  }
-
-  &.icon--high-emphasis {
-    --__op-icon-emphasis: var(--_op-icon-emphasis-high);
-  }
-
-  /* Size Modifiers */
-  &.icon--small {
-    --__op-icon-font-size: var(--_op-icon-font-size-small);
-    --__op-icon-optical-size: var(--_op-icon-optical-size-small);
-  }
-
-  &.icon--medium {
     --__op-icon-font-size: var(--_op-icon-font-size-medium);
     --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
+
+    display: inline-block;
+    block-size: var(--__op-icon-font-size);
+    font-size: var(--__op-icon-font-size);
+    font-weight: var(--__op-icon-weight);
+    inline-size: var(--__op-icon-font-size);
+    line-height: var(--op-line-height-densest);
+    vertical-align: middle;
+
+    /* Fill Modifiers */
+    &.icon--outlined {
+      --__op-icon-fill: var(--_op-icon-fill-outlined);
+    }
+
+    &.icon--filled {
+      --__op-icon-fill: var(--_op-icon-fill-filled);
+    }
+
+    /* Weight Modifiers */
+    &.icon--weight-light {
+      --__op-icon-weight: var(--_op-icon-weight-light);
+    }
+
+    &.icon--weight-normal {
+      --__op-icon-weight: var(--_op-icon-weight-normal);
+    }
+
+    &.icon--weight-semi-bold {
+      --__op-icon-weight: var(--_op-icon-weight-semi-bold);
+    }
+
+    &.icon--weight-bold {
+      --__op-icon-weight: var(--_op-icon-weight-bold);
+    }
+
+    /* Emphasis */
+    &.icon--low-emphasis {
+      --__op-icon-emphasis: var(--_op-icon-emphasis-low);
+    }
+
+    &.icon--normal-emphasis {
+      --__op-icon-emphasis: var(--_op-icon-emphasis-normal);
+    }
+
+    &.icon--high-emphasis {
+      --__op-icon-emphasis: var(--_op-icon-emphasis-high);
+    }
+
+    /* Size Modifiers */
+    &.icon--small {
+      --__op-icon-font-size: var(--_op-icon-font-size-small);
+      --__op-icon-optical-size: var(--_op-icon-optical-size-small);
+    }
+
+    &.icon--medium {
+      --__op-icon-font-size: var(--_op-icon-font-size-medium);
+      --__op-icon-optical-size: var(--_op-icon-optical-size-medium);
+    }
+
+    &.icon--large {
+      --__op-icon-font-size: var(--_op-icon-font-size-large);
+      --__op-icon-optical-size: var(--_op-icon-optical-size-large);
+    }
+
+    &.icon--x-large {
+      --__op-icon-font-size: var(--_op-icon-font-size-x-large);
+      --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
+    }
   }
 
-  &.icon--large {
-    --__op-icon-font-size: var(--_op-icon-font-size-large);
-    --__op-icon-optical-size: var(--_op-icon-optical-size-large);
+  /* Material Icons class provided by the Google Fonts CDN */
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' var(--__op-icon-fill),
+      'wght' var(--__op-icon-weight),
+      'GRAD' var(--__op-icon-emphasis),
+      'opsz' var(--__op-icon-optical-size);
+    font-weight: unset;
   }
 
-  &.icon--x-large {
-    --__op-icon-font-size: var(--_op-icon-font-size-x-large);
-    --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
-  }
-}
-
-/* Material Icons class provided by the Google Fonts CDN */
-.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' var(--__op-icon-fill),
-    'wght' var(--__op-icon-weight),
-    'GRAD' var(--__op-icon-emphasis),
-    'opsz' var(--__op-icon-optical-size);
-  font-weight: unset;
-}
-
-/* Custom SVG Icons app specific */
-.custom-icons {
-  svg {
-    block-size: 100%;
-    inline-size: 100%;
+  /* Custom SVG Icons app specific */
+  .custom-icons {
+    svg {
+      block-size: 100%;
+      inline-size: 100%;
+    }
   }
 }
