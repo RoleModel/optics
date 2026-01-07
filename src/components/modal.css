@@ -41,7 +41,6 @@
   }
 }
 
-/* stylelint-disable no-descending-specificity */
 .modal {
   /* Public API (customizable component options) */
   --_op-modal-width: calc(141 * var(--op-size-unit)); /* 564px */
@@ -87,63 +86,46 @@
     gap: var(--op-space-small);
   }
 }
-/* stylelint-enable no-descending-specificity */
 
 dialog.modal {
-  position: fixed;
-  display: block;
   padding: 0;
   border: none;
-  inset: 0;
+  overscroll-behavior: contain;
+  transform: scale(0.7);
+  transition:
+    display var(--op-transition-modal-time) allow-discrete,
+    overlay var(--op-transition-modal-time) allow-discrete,
+    transform var(--op-transition-modal-time),
+    opacity var(--op-transition-modal-time);
 
   &::backdrop {
-    /* The Dialog backdrop does not inheret from :root so these need to be duplicated here. */
-    --op-color-black: hsl(0deg 0% 0%);
-    --_op-modal-backdrop-active-opacity: 0.5;
-    --op-opacity-none: 0;
-    --op-opacity-full: 1;
-
-    animation: show-backdrop 300ms ease-in;
-    background: var(--op-color-black);
-    opacity: var(--_op-modal-backdrop-active-opacity);
+    overflow: hidden;
+    background-color: var(--op-color-black);
+    opacity: var(--op-opacity-none);
+    overscroll-behavior: contain;
+    transition:
+      display var(--op-transition-modal-time) allow-discrete,
+      overlay var(--op-transition-modal-time) allow-discrete,
+      transform var(--op-transition-modal-time),
+      opacity var(--op-transition-modal-time);
   }
 
   &[open] {
     opacity: var(--op-opacity-full);
     transform: scale(1);
-  }
-
-  &.modal--closing {
-    opacity: var(--op-opacity-none);
-    transform: scale(0.7);
 
     &::backdrop {
-      animation: hide-backdrop 300ms ease-in;
-      opacity: var(--op-opacity-none);
+      opacity: var(--op-opacity-half);
     }
   }
 }
 
-/* Using the Dialog element */
+@starting-style {
+  dialog.modal[open] {
+    transform: scale(0.7);
 
-/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog */
-
-@keyframes show-backdrop {
-  from {
-    opacity: var(--op-opacity-none);
-  }
-
-  to {
-    opacity: var(--_op-modal-backdrop-active-opacity);
-  }
-}
-
-@keyframes hide-backdrop {
-  from {
-    opacity: var(--_op-modal-backdrop-active-opacity);
-  }
-
-  to {
-    opacity: var(--op-opacity-none);
+    &::backdrop {
+      opacity: var(--op-opacity-none);
+    }
   }
 }
