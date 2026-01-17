@@ -16,6 +16,7 @@
   inline-size: 100%;
   margin-block: var(--__op-divider-padding);
   margin-inline: 0;
+  min-block-size: var(--__op-divider-height);
 
   /* Size Modifiers */
   &.divider--small {
@@ -50,5 +51,6 @@
     margin-block: 0;
     margin-inline: var(--__op-divider-padding);
     min-block-size: var(--_op-divider-vertical-min-height);
+    min-inline-size: var(--__op-divider-height);
   }
 }
