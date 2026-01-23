@@ -6,44 +6,122 @@ import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
 
 # Layout
 
+Optics provides two patterns for application layout. The basic (legacy) version is maintained for backwards compatibility, but all new projects should use the `op-page` pattern.
+
 <div
   dangerouslySetInnerHTML={{
     __html: createSourceCodeLink({ link: 'core/layout.css' }).outerHTML,
   }}
 ></div>
 
-## Playground
+## OP Page
+
+### Playground
+
+Since the `op-page` layout utilizes the whole window, the playground is best experienced as a full page example.
+
+{/* prettier-ignore */}
+<a href="/public/example-layout.html" target="_blank" rel="noopener noreferrer">Click here to open the playground</a>
+
+### Classes
+
+Within the `op-page` layout, the sidebar on either side is completely optional, as is the header and footer within the main content area.
+
+The full structure looks like the following:
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Example layout for the Optics design system" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rolemodel/optics/dist/css/optics.min.css" />
+    <title>Optics Example Layout</title>
+  </head>
+  <body class="op-page">
+    <div class="op-page__sidebar"></div>
+    <div class="op-page__main">
+      <header class="op-page__main-header"></header>
+      <main class="op-page__main-content"></main>
+      <footer class="op-page__main-footer"></footer>
+    </div>
+    <div class="op-page__sidebar op-page__sidebar--right"></div>
+  </body>
+</html>
+```
+
+#### `.op-page`
+
+Is meant to be used on the body of your application to create a full window layout with optional areas.
+
+#### `.op-page__sidebar`, `.op-page__sidebar--right`
+
+Is meant to be used within the `.op-page` on either side of the the main content to create sidebar or panel areas on the or right side of the application. Add the modifier class `.op-page__sidebar--right` when using on the right side.
+
+#### `.op-page__main`
+
+Is meant to be used within the `.op-page` to wrap the main content area of your application. This contains the optional header, content, and optional footer areas.
+
+#### `.op-page__main-header`
+
+Is meant to be used on a header element within the `.op-page__main` to create a fixed header for your page. Often, the navbar component is used within here.
+
+#### `.op-page__main-content`
+
+Is meant to be used on a main element within the `.op-page__main` to create the container for your page content.
+
+#### `.op-page__main-footer`
+
+### Fullscreen Spinner
+
+If you need a fullscreen spinner, use the following layout playground:
+
+{/* prettier-ignore */}
+<a href="/public/spinner-layout.html" target="_blank" rel="noopener noreferrer">Click here to open the playground</a>
+
+### Login
+
+If you need a login page, use the following layout playground:
+
+{/* prettier-ignore */}
+<a href="/public/login-layout.html" target="_blank" rel="noopener noreferrer">Click here to open the playground</a>
+
+## Legacy Layout
+
+### Playground
 
 <Canvas of={LayoutStories.Basic} />
 <Controls of={LayoutStories.Basic} />
 
-## Classes
+### Classes
 
-### `.app-with-sidebar`
+#### `.app-with-sidebar`
 
 Is meant to be used on the body of your application when using a sidebar. See the examples below.
 
-### `.app-body`
+#### `.app-body`
 
 Is meant to be used on the body of your application when not using a sidebar, or as a `div` under the body when using a sidebar. See the examples below.
 
-### `.app__header`
+#### `.app__header`
 
 Is meant to be used within the `.app-body` to achieve a fixed header for your application. This can container a navbar component. See the examples below.
 
-### `.app__content`
+#### `.app__content`
 
 Is meant to be used within the `.app-body` to wrap your main page content. It would be a sibling element between `.app__header` and `.app-footer` if you are using those. See the examples below.
 
-### `.app__content-no-margin`
+#### `.app__content-no-margin`
 
 Is an alternate to `.app__content` that does not constrain the width of the content within. This can be used if you need a side panel in your app. You can wrap your content in `.container` to still achieve the width constraint. See the examples below.
 
-### `.app__footer`
+#### `.app__footer`
 
 Is meant to be used within the `.app-body` to achieve a fixed footer for your application. See the examples below.
 
-## Basic
+### Basic
 
 The basic layout that this design system expects looks like the following:
 
@@ -76,7 +154,7 @@ The basic layout that this design system expects looks like the following:
 
 The header and footer are sticky and can be used with `app__header` and `app__footer`.
 
-## Fullscreen Spinner
+### Fullscreen Spinner
 
 If you need a fullscreen spinner, use a layout like this:
 
@@ -97,7 +175,7 @@ If you need a fullscreen spinner, use a layout like this:
 
 <Canvas of={LayoutStories.FullScreenSpinner} />
 
-## With Sidebar
+### With Sidebar
 
 For instructions on the sidebar itself, see [Sidebar Component](?path=/docs/components-sidebar--default-drawer)
 
@@ -134,7 +212,7 @@ A layout with a sidebar looks like the following:
 
 <Canvas of={LayoutStories.Sidebar} />
 
-## With Navbar
+### With Navbar
 
 For instructions on the navbar itself, see [Navbar Component](?path=/docs/components-navbar--default-navbar)
 
@@ -163,7 +241,7 @@ A layout with a navbar looks like the following:
 
 <Canvas of={LayoutStories.Navbar} />
 
-## Sidebar with Navbar and Side Panel
+### Sidebar with Navbar and Side Panel
 
 For instructions on the side panel itself, see [Side Panel Component](?path=/docs/components-sidepanel--docs)
 
@@ -171,13 +249,13 @@ A layout with a side panel looks like the following:
 
 <Canvas of={LayoutStories.SidebarWithNavbarAndSidePanel} />
 
-## Login
+### Login
 
 A layout for a login page could look like the following:
 
 <Canvas of={LayoutStories.Login} />
 
-## Utility
+### Utility
 
 A layout explaining how the stack, split, and cluster utilities can be used to make flex layouts more readable.
 

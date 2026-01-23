@@ -28,7 +28,7 @@
   },
   "extensions": {
     "recommendations": [
-      "prettier.prettier-vscode",
+      "esbenp.prettier-vscode",
       "stylelint.vscode-stylelint",
       "tintinweb.graphviz-interactive-preview",
       "unifiedjs.vscode-mdx",

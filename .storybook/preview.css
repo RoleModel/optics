@@ -14,14 +14,14 @@
 /* Table of Contents Customization */
 .sbdocs.sbdocs-wrapper {
   .sbdocs.sbdocs-toc--custom {
-    width: 15rem;
-    min-width: 15rem;
     background-color: var(--op-color-background);
     color: var(--op-color-on-background);
     color-scheme: light;
+    inline-size: 15rem;
+    min-inline-size: 15rem;
 
     > nav {
-      width: 15rem;
+      inline-size: 15rem;
     }
   }
 }
@@ -32,11 +32,11 @@
 }
 
 .sbdocs .sb-button-fix button {
-  height: 0;
+  block-size: 0;
 }
 
 /* Allow the "Show Code" button to appear above the footer in examples. */
-.docs-story div:last-child {
+.docs-story div:last-child:has(.docblock-code-toggle) {
   z-index: 1;
 }
 
@@ -67,7 +67,7 @@
   transition: var(--op-transition-accordion-content);
 
   &:hover {
-    height: 15rem;
+    block-size: 15rem;
   }
 }
 
@@ -151,7 +151,7 @@
 }
 
 .text-alignment-demo {
-  width: 400px;
+  inline-size: 400px;
 }
 
 /* Prevent our tag component from interfering with the docs */
@@ -182,7 +182,7 @@
     gap: var(--op-space-x-large);
 
     .card__info-logo {
-      width: calc(var(--op-size-unit) * 24); /* 96px */
+      inline-size: calc(var(--op-size-unit) * 24); /* 96px */
     }
 
     p {
@@ -195,7 +195,7 @@
     flex-direction: column;
 
     .btn {
-      width: 100%;
+      inline-size: 100%;
     }
   }
 }

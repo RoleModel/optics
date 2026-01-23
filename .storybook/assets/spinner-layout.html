@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Example layout for the Optics design system" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rolemodel/optics/dist/css/optics.min.css" />
+    <!-- <link rel="stylesheet" href="../src/optics.css" /> Enable this during development to see local changes -->
+    <title>Optics Spinner Layout</title>
+    <style>
+      .spinner-overlay {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-content: center;
+      }
+    </style>
+  </head>
+  <body class="op-page">
+    <div class="op-page__main">
+      <header class="op-page__main-header">
+        <div class="navbar">
+          <a class="navbar__brand" href="/">
+            <img src="optics-logo.svg" width="100" />
+          </a>
+
+          <div class="navbar__content navbar__content--justify-end">
+            <div class="flex gap-sm justify-end items-center">
+              <label class="form-label" for="theme-mode-switch">Dark Mode</label>
+              <div class="switch">
+                <input type="checkbox" id="theme-mode-switch" />
+                <label for="theme-mode-switch"></label>
+              </div>
+            </div>
+
+            <button class="btn" id="copy-template-btn">
+              <span class="icon material-symbols-outlined">content_copy</span>
+              Copy Template
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="op-page__main-content">
+        <div class="spinner-overlay">
+          <div class="spinner spinner--large" role="status">
+            <span class="sr-only">Loading</span>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      // Template Copy Button
+      document.getElementById('copy-template-btn').addEventListener('click', () => {
+        navigator.clipboard.writeText(document.documentElement.outerHTML)
+      })
+
+      // Theme Mode Switcher
+      document.getElementById('theme-mode-switch').addEventListener('change', (event) => {
+        const modeOptions = { true: 'dark', false: 'light' }
+        document.documentElement.setAttribute('data-theme-mode', modeOptions[event.target.checked])
+      })
+    </script>
+  </body>
+</html>
