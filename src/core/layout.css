@@ -42,7 +42,22 @@
   inset-block-end: 0;
 }
 
-:root[data-layout-mode='root-scrollable'] {
+/*
+  <html lang='en'>
+    <head>...</head>
+    <body class="op-page">
+      <div class="op-page__sidebar">...</div>
+      <div class="op-page__main">
+        <div class="op-page__main-header">...</div>
+        <div class="op-page__main-content">...</div>
+        <div class="op-page__main-footer">...</div>
+      </div>
+      <div class="op-page__sidebar op-page__sidebar--right">...</div>
+    </body>
+  </html>
+*/
+
+:root:has(.op-page) {
   /* Reset existing Optics layout */
   overflow: unset;
 
@@ -58,93 +73,78 @@
     block-size: 100%;
     min-block-size: 100%;
   }
+}
 
-  /*
-    <html lang='en' data-layout-mode='root-scrollable'>
-      <head>...</head>
-      <body class="op-page">
-        <div class="op-page__sidebar">...</div>
-        <div class="op-page__main">
-          <div class="op-page__main-header">...</div>
-          <div class="op-page__main-content">...</div>
-          <div class="op-page__main-footer">...</div>
-        </div>
-        <div class="op-page__sidebar op-page__sidebar--right">...</div>
-      </body>
-    </html>
-  */
+.op-page {
+  display: grid;
+  grid-template-areas: 'sidebar-left main sidebar-right';
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr) minmax(0, auto);
+  min-block-size: 100dvh;
 
-  .op-page {
+  .op-page__sidebar {
+    grid-area: sidebar-left;
+
+    &.op-page__sidebar--right {
+      grid-area: sidebar-right;
+    }
+  }
+
+  .op-page__main {
+    grid-area: main;
+  }
+
+  .op-page__sidebar {
+    position: sticky;
+    z-index: var(--op-z-index-sidebar);
+    block-size: 100dvh;
+    inset-block-start: 0;
+    max-block-size: 100dvh;
+
+    > * {
+      block-size: 100%;
+    }
+  }
+
+  .op-page__main {
     display: grid;
-    grid-template-areas: 'sidebar-left main sidebar-right';
-    grid-template-columns: minmax(0, auto) minmax(0, 1fr) minmax(0, auto);
-    min-block-size: 100dvh;
+    grid-template-areas:
+      'main-header'
+      'main-content'
+      'main-footer';
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, auto) minmax(0, 1fr) minmax(0, auto);
+    min-block-size: 100%;
 
-    .op-page__sidebar {
-      grid-area: sidebar-left;
-
-      &.op-page__sidebar--right {
-        grid-area: sidebar-right;
-      }
+    .op-page__main-header {
+      grid-area: main-header;
     }
 
-    .op-page__main {
-      grid-area: main;
+    .op-page__main-content {
+      grid-area: main-content;
     }
 
-    .op-page__sidebar {
+    .op-page__main-footer {
+      grid-area: main-footer;
+    }
+
+    .op-page__main-header {
       position: sticky;
-      z-index: var(--op-z-index-sidebar);
-      block-size: 100dvh;
+      z-index: var(--op-z-index-header);
       inset-block-start: 0;
-      max-block-size: 100dvh;
-
-      > * {
-        block-size: 100%;
-      }
     }
 
-    .op-page__main {
-      display: grid;
-      grid-template-areas:
-        'main-header'
-        'main-content'
-        'main-footer';
-      grid-template-columns: minmax(0, 1fr);
-      grid-template-rows: minmax(0, auto) minmax(0, 1fr) minmax(0, auto);
-      min-block-size: 100%;
+    .op-page__main-content {
+      inline-size: 100%;
+      margin-inline: auto;
+      max-inline-size: var(--op-breakpoint-medium);
+      padding-block: var(--op-space-medium);
+      padding-inline: var(--op-space-large);
+    }
 
-      .op-page__main-header {
-        grid-area: main-header;
-      }
-
-      .op-page__main-content {
-        grid-area: main-content;
-      }
-
-      .op-page__main-footer {
-        grid-area: main-footer;
-      }
-
-      .op-page__main-header {
-        position: sticky;
-        z-index: var(--op-z-index-header);
-        inset-block-start: 0;
-      }
-
-      .op-page__main-content {
-        inline-size: 100%;
-        margin-inline: auto;
-        max-inline-size: var(--op-breakpoint-medium);
-        padding-block: var(--op-space-medium);
-        padding-inline: var(--op-space-large);
-      }
-
-      .op-page__main-footer {
-        position: sticky;
-        z-index: var(--op-z-index-footer);
-        inset-block-end: 0;
-      }
+    .op-page__main-footer {
+      position: sticky;
+      z-index: var(--op-z-index-footer);
+      inset-block-end: 0;
     }
   }
 }
