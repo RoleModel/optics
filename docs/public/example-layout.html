@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Example layout for the Optics design system" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rolemodel/optics/dist/css/optics.min.css" />
+    <!-- <link rel="stylesheet" href="../src/optics.css" /> Enable this during development to see local changes -->
+    <script type="module" src="https://esm.sh/invokers-polyfill"></script>
+    <title>Optics Example Layout</title>
+    <style>
+      :root[data-theme='autumn'] {
+        /* Color */
+        --op-color-primary-h: 16deg;
+        --op-color-primary-s: 68%;
+        --op-color-primary-l: 10%;
+      }
+
+      :root[data-theme='green'] {
+        /* Border Radius */
+        --op-radius-small: 8px;
+        --op-radius-medium: 16px;
+        --op-radius-large: 24px;
+        --op-radius-x-large: 32px;
+        --op-radius-2x-large: 40px;
+
+        /* Scale */
+        --op-space-scale-unit: 1.1rem;
+        --op-font-scale-unit: 1.1rem;
+
+        /* Color */
+        --op-color-primary-h: 96deg;
+        --op-color-primary-s: 28%;
+        --op-color-primary-l: 10%;
+      }
+
+      /* Settings Grid */
+      .demo-settings-grid {
+        grid-column: 1 / 3;
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-rows: 1fr 5fr 1fr;
+        grid-template-areas:
+          'sidebar header panel'
+          'sidebar content panel'
+          'sidebar footer panel';
+        box-shadow: var(--op-border-all) var(--op-color-border);
+
+        div {
+          display: grid;
+          place-content: center;
+        }
+
+        .demo-settings-grid__sidebar {
+          grid-area: sidebar;
+          box-shadow: var(--op-border-right) var(--op-color-border);
+        }
+
+        .demo-settings-grid__header {
+          grid-area: header;
+          box-shadow: var(--op-border-bottom) var(--op-color-border);
+        }
+
+        .demo-settings-grid__content {
+          grid-area: content;
+        }
+
+        .demo-settings-grid__footer {
+          grid-area: footer;
+          box-shadow: var(--op-border-top) var(--op-color-border);
+        }
+
+        .demo-settings-grid__panel {
+          grid-area: panel;
+          box-shadow: var(--op-border-left) var(--op-color-border);
+        }
+      }
+
+      /* --op-breakpoint-small */
+      @media (width <= 768px) {
+        .op-page {
+          .op-page__sidebar {
+            display: none;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body class="op-page">
+    <div class="op-page__sidebar">
+      <nav class="sidebar sidebar--drawer">
+        <a class="sidebar__brand" href="#" aria-label="Home">
+          <svg
+            width="100%"
+            id="Layer_2"
+            data-name="Layer 2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 900 347.34"
+          >
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: light-dark(#0c2227, #ffffff);
+                }
+
+                .cls-1,
+                .cls-2 {
+                  stroke-width: 0px;
+                }
+
+                .cls-2 {
+                  fill: light-dark(#2a84f8, #ffffff);
+                }
+              </style>
+            </defs>
+            <g id="RM_Logo_-_Final" data-name="RM Logo - Final">
+              <g id="RM_Logo_-_Color" data-name="RM Logo - Color">
+                <path
+                  class="cls-2"
+                  d="M0,8.83c0-1.66,1.34-3,3-3h59.13c17.28,0,30.68,4.85,39.61,13.79,7.57,7.57,11.65,18.25,11.65,31.07v.39c0,21.94-11.84,35.73-29.13,42.14l29.99,43.85c1.36,1.99-.06,4.7-2.48,4.7h-27.66c-1,0-1.94-.5-2.5-1.33l-27.64-41.28c-.37-.55-1-.89-1.66-.89h-20.43c-1.11,0-2,.9-2,2v38.49c0,1.66-1.34,3-3,3H3c-1.66,0-3-1.34-3-3V8.83ZM60.19,71.85c14.56,0,22.91-7.77,22.91-19.22v-.39c0-12.82-8.93-19.42-23.5-19.42h-27.71c-1.11,0-2,.9-2,2v35.03c0,1.11.9,2,2,2h28.29Z"
+                />
+                <path
+                  class="cls-2"
+                  d="M114.76,90.29v-.39c0-29.9,24.08-54.18,56.5-54.18s56.12,23.88,56.12,53.79v.39c0,29.9-24.08,54.18-56.51,54.18s-56.12-23.88-56.12-53.79ZM198.25,90.29v-.39c0-15.34-11.07-28.74-27.38-28.74s-26.99,13.01-26.99,28.35v.39c0,15.34,11.07,28.74,27.38,28.74s26.99-13.01,26.99-28.35Z"
+                />
+                <path
+                  class="cls-2"
+                  d="M237.57,0h23.51c1.66,0,3,1.34,3,3v135.74c0,1.66-1.34,3-3,3h-23.51c-1.66,0-3-1.34-3-3V3c0-1.66,1.34-3,3-3Z"
+                />
+                <path
+                  class="cls-2"
+                  d="M271.26,90.29v-.39c0-29.71,21.16-54.18,51.46-54.18,34.76,0,50.68,26.99,50.68,56.51,0,1.52-.08,3.2-.19,4.94-.1,1.58-1.41,2.82-3,2.82h-67.04c-1.33,0-2.31,1.28-1.93,2.55,3.5,11.73,12.44,17.84,24.78,17.84,9.11,0,15.91-2.63,23.29-8.93,1.14-.98,2.83-.98,3.95.02l12.69,11.23c1.25,1.1,1.37,3.02.25,4.26-9.6,10.67-22.96,17.12-40.57,17.12-31.26,0-54.37-21.94-54.37-53.79ZM342.3,81.56c1.25,0,2.21-1.14,1.97-2.37-2.33-11.89-9.89-19.76-21.56-19.76s-19.19,7.68-22.02,19.69c-.3,1.25.67,2.45,1.96,2.45h39.65Z"
+                />
+                <path
+                  class="cls-2"
+                  d="M452.15,108.57c-.79,1.19-2.54,1.19-3.33,0l-32.91-49.4c-1.09-1.66-3.67-.89-3.67,1.1v78.48c0,1.66-1.34,3-3,3h-23.32c-1.66,0-3-1.34-3-3V8.83c0-1.66,1.34-3,3-3h27.56c1.04,0,2,.54,2.55,1.42l33.15,53.32c.78,1.26,2.62,1.26,3.4,0l33.15-53.32c.55-.88,1.51-1.42,2.55-1.42h27.56c1.66,0,3,1.34,3,3v129.92c0,1.66-1.34,3-3,3h-23.7c-1.66,0-3-1.34-3-3V59.69c0-1.99-2.58-2.76-3.67-1.1l-33.3,49.98Z"
+                />
+                <path
+                  class="cls-2"
+                  d="M527.77,90.29v-.39c0-29.9,24.08-54.18,56.5-54.18s56.12,23.88,56.12,53.79v.39c0,29.9-24.08,54.18-56.51,54.18s-56.12-23.88-56.12-53.79ZM611.26,90.29v-.39c0-15.34-11.07-28.74-27.38-28.74s-26.99,13.01-26.99,28.35v.39c0,15.34,11.07,28.74,27.38,28.74s26.99-13.01,26.99-28.35Z"
+                />
+                <path
+                  class="cls-2"
+                  d="M645.44,89.9v-.39c0-34.76,22.72-53.79,47.38-53.79,13.34,0,22.34,5.16,29.04,11.83,1.25,1.25,3.39.33,3.39-1.44V3c0-1.66,1.34-3,3-3h23.51c1.66,0,3,1.34,3,3v135.74c0,1.66-1.34,3-3,3h-23.51c-1.66,0-3-1.34-3-3v-6.36c0-1.81-2.23-2.71-3.45-1.38-6.85,7.5-15.95,12.68-28.97,12.68-24.27,0-47.38-19.03-47.38-53.79ZM725.63,89.9v-.39c0-17.28-11.46-28.74-25.24-28.74s-25.44,11.26-25.44,28.74v.39c0,17.28,11.65,28.74,25.44,28.74s25.24-11.46,25.24-28.74Z"
+                />
+                <path
+                  class="cls-2"
+                  d="M760.58,90.29v-.39c0-29.71,21.17-54.18,51.46-54.18,34.76,0,50.68,26.99,50.68,56.51,0,1.52-.08,3.2-.19,4.94-.1,1.58-1.41,2.82-3,2.82h-67.04c-1.33,0-2.31,1.28-1.93,2.55,3.5,11.73,12.44,17.84,24.78,17.84,9.1,0,15.91-2.63,23.29-8.93,1.14-.98,2.83-.98,3.95.02l12.69,11.23c1.25,1.1,1.37,3.02.25,4.26-9.6,10.67-22.96,17.12-40.57,17.12-31.26,0-54.37-21.94-54.37-53.79ZM831.62,81.56c1.25,0,2.21-1.14,1.97-2.37-2.33-11.89-9.89-19.76-21.55-19.76s-19.19,7.68-22.02,19.69c-.3,1.25.67,2.45,1.96,2.45h39.65Z"
+                />
+                <path
+                  class="cls-2"
+                  d="M873.49,0h23.51c1.66,0,3,1.34,3,3v135.74c0,1.66-1.34,3-3,3h-23.51c-1.66,0-3-1.34-3-3V3c0-1.66,1.34-3,3-3Z"
+                />
+                <g>
+                  <g>
+                    <path
+                      class="cls-1"
+                      d="M77.36,295.43l5.3-7.47c.65-.91,1.9-1.1,2.81-.46,10.44,7.41,21.87,11.62,33.12,11.62,12.04,0,20.78-6.21,20.78-15.92v-.39c0-10.1-11.84-13.98-25.05-17.67-15.73-4.47-33.21-9.9-33.21-28.35v-.39c0-17.28,14.37-28.74,34.17-28.74,11.57,0,24.36,3.82,34.42,9.99.95.58,1.26,1.81.69,2.76l-4.73,7.85c-.58.96-1.82,1.24-2.77.66-8.9-5.38-18.87-8.63-27.98-8.63-11.84,0-19.42,6.21-19.42,14.56v.39c0,9.51,12.43,13.2,25.83,17.28,15.53,4.66,32.23,10.68,32.23,28.74v.39c0,19.03-15.73,30.1-35.73,30.1-13.72,0-28.86-5.13-40-13.54-.87-.66-1.08-1.88-.45-2.77Z"
+                    />
+                    <path
+                      class="cls-1"
+                      d="M159.94,260.1v-.39c0-28.35,22.14-52.43,52.43-52.43s52.23,23.69,52.23,52.04v.39c0,28.35-22.33,52.43-52.62,52.43s-52.04-23.69-52.04-52.04ZM249.26,260.1v-.39c0-21.55-16.12-39.22-37.28-39.22s-36.7,17.67-36.7,38.84v.39c0,21.55,15.92,39.03,37.09,39.03s36.89-17.48,36.89-38.64Z"
+                    />
+                    <path
+                      class="cls-1"
+                      d="M277.2,222.62h-10.78c-1.11,0-2-.9-2-2v-9.01c0-1.11.9-2,2-2h10.78c.55,0,1-.45,1-1v-7.74c0-11.46,3.11-20.19,8.74-25.83,5.05-5.05,12.43-7.77,21.55-7.77,6.31,0,10.73.63,15.1,2.04.83.27,1.41,1.04,1.41,1.91v8.94c0,1.32-1.26,2.27-2.53,1.93-4.24-1.14-7.8-1.82-12.03-1.82-11.65,0-17.48,6.99-17.48,21.36v7.15c0,.55.45,1,1,1h28.84c1.11,0,2,.9,2,2v8.81c0,1.11-.9,2-2,2h-28.65c-.55,0-1,.45-1,1v84.18c0,1.11-.9,2-2,2h-10.95c-1.11,0-2-.9-2-2v-84.18c0-.55-.45-1-1-1Z"
+                    />
+                    <path
+                      class="cls-1"
+                      d="M428.19,209.41h11.66c.87,0,1.63.56,1.9,1.38l25.01,76.33c.3.92,1.6.92,1.9,0l25.58-76.73c.27-.82,1.04-1.37,1.9-1.37h9.54c.86,0,1.62.55,1.9,1.36l25.77,76.75c.31.91,1.6.91,1.9,0l25.02-76.34c.27-.82,1.04-1.38,1.9-1.38h11.26c1.38,0,2.34,1.36,1.89,2.66l-33.94,97.16c-.28.8-1.04,1.34-1.89,1.34h-10.16c-.86,0-1.62-.55-1.89-1.36l-25.58-75.1c-.31-.9-1.58-.9-1.89,0l-25.77,75.1c-.28.81-1.04,1.35-1.89,1.35h-10.35c-.85,0-1.61-.54-1.89-1.34l-33.75-97.16c-.45-1.3.51-2.66,1.89-2.66Z"
+                    />
+                    <path
+                      class="cls-1"
+                      d="M574.12,280.68v-.39c0-21.55,17.48-32.82,42.91-32.82,12.21,0,20.9,1.59,29.41,3.92.64.17,1.27-.3,1.27-.96v-1.79c0-17.86-10.87-27.19-29.71-27.19-11.01,0-19.85,2.52-28.53,6.31-1.06.46-2.3-.05-2.7-1.14l-3.09-8.46c-.36-.99.1-2.09,1.06-2.52,10.47-4.63,20.8-7.78,34.8-7.78s25.24,3.88,32.43,11.07c6.99,6.99,10.49,16.7,10.49,29.51v59.36c0,1.11-.9,2-2,2h-10.75c-1.11,0-2-.9-2-2v-10.18c0-.93-1.14-1.35-1.76-.65-7.1,8.06-18.1,14.97-34.36,14.97-18.84,0-37.48-10.68-37.48-31.26ZM647.9,272.91v-8.56c0-.45-.29-.84-.72-.96-7.29-2.07-16.76-4.07-28.6-4.07-18.64,0-29.32,8.16-29.32,20.19v.39c0,12.62,11.65,20,25.24,20,18.45,0,33.4-11.07,33.4-26.99Z"
+                    />
+                    <path
+                      class="cls-1"
+                      d="M732.1,221.83c0,1.06-.82,1.95-1.88,2-21.14.88-39.06,16.56-39.06,45.98v38c0,1.11-.9,2-2,2h-10.95c-1.11,0-2-.9-2-2v-96.39c0-1.11.9-2,2-2h10.95c1.11,0,2,.9,2,2v19.88c0,1.04,1.39,1.39,1.87.48,7.51-14.08,20.48-24.01,37.03-24.14,1.12,0,2.03.89,2.03,2.01v12.19Z"
+                    />
+                    <path
+                      class="cls-1"
+                      d="M778.54,299.13c13.06,0,22.46-5.05,30.35-12.85.75-.74,1.94-.75,2.72-.05l6.39,5.72c.84.76.89,2.06.11,2.88-9.83,10.41-21.8,17.31-39.96,17.31-27.57,0-50.1-21.17-50.1-52.43,0-29.13,20.39-52.43,48.16-52.43,29.71,0,46.8,23.69,46.8,53.21,0,.95,0,1.99-.07,3.33-.05,1.07-.93,1.91-2,1.91h-76.61c-.6,0-1.08.53-1,1.12,2.56,20.47,17.86,32.27,35.21,32.27ZM806.74,253.69c.6,0,1.07-.52,1-1.11-2.06-17.77-12.52-32.67-31.92-32.67-16.94,0-29.97,13.81-32.48,32.66-.08.6.4,1.13,1,1.13h62.4Z"
+                    />
+                  </g>
+                  <path
+                    class="cls-2"
+                    d="M380.83,170.85v37.51c0,.55.45,1,1,1h26.04c.86,0,1.63.55,1.9,1.37l3.07,9.2c.43,1.3-.53,2.64-1.9,2.64h-28.72c-.55,0-1,.45-1,1v118.17c0,.87-.56,1.63-1.38,1.9l-10.98,3.59c-1.29.42-2.62-.54-2.62-1.9v-121.77c0-.55-.45-1-1-1h-23.32c-1.11,0-2-.9-2-2v-9.2c0-1.11.9-2,2-2h23.32c.55,0,1-.45,1-1v-37.51c0-1.11.9-2,2-2h10.6c1.11,0,2,.9,2,2Z"
+                  />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+
+        <div class="sidebar__content sidebar__content--start">
+          <button class="btn btn--no-border btn--active">
+            <span class="material-symbols-outlined icon">inbox</span>Inbox
+          </button>
+          <button class="btn btn--no-border"><span class="material-symbols-outlined icon">send</span>Outbox</button>
+          <button class="btn btn--no-border">
+            <span class="material-symbols-outlined icon">favorite</span>Favorite
+          </button>
+          <button class="btn btn--no-border"><span class="material-symbols-outlined icon">delete</span>Trash</button>
+          <button class="btn btn--no-border"><span class="material-symbols-outlined icon">circle</span>Circle</button>
+          <button class="btn btn--no-border">
+            <span class="material-symbols-outlined icon">change_history</span>Triangle
+          </button>
+          <button class="btn btn--no-border"><span class="material-symbols-outlined icon">square</span>Square</button>
+          <button class="btn btn--no-border">
+            <span class="material-symbols-outlined icon">blur_on</span>Something
+          </button>
+        </div>
+
+        <div class="sidebar__content sidebar__content--end">
+          <button class="btn btn--no-border"><span class="material-symbols-outlined icon">logout</span>Logout</button>
+        </div>
+      </nav>
+    </div>
+    <div class="op-page__main">
+      <header class="op-page__main-header">
+        <div class="navbar">
+          <nav class="navbar__content navbar__content--justify-start">
+            <nav class="breadcrumbs">
+              <a class="breadcrumbs__link" href="#">USA</a>
+              <div class="breadcrumbs__separator">
+                <span class="material-symbols-outlined icon">arrow_right</span>
+              </div>
+              <a class="breadcrumbs__link" href="#">Mexico</a>
+              <div class="breadcrumbs__separator">
+                <span class="material-symbols-outlined icon">arrow_right</span>
+              </div>
+              <a class="breadcrumbs__link" href="#">Canada</a>
+              <div class="breadcrumbs__separator">
+                <span class="material-symbols-outlined icon">arrow_right</span>
+              </div>
+              <span class="breadcrumbs__text">England</span>
+            </nav>
+          </nav>
+
+          <div class="navbar__content">
+            <a href="#" class="avatar avatar--medium">
+              <img src="https://picsum.photos/id/1/40/40" alt="Avatar" width="40" height="40" />
+            </a>
+          </div>
+        </div>
+      </header>
+      <main class="op-page__main-content">
+        <dialog id="settings-dialog" class="modal" closedby="any">
+          <div class="modal__header">Settings</div>
+          <div class="modal__body">
+            <p>Note: The sidebar and panel automatically hide on mobile to prevent display issues.</p>
+
+            <div class="form-group">
+              <label class="form-label" for="theme">Theme</label>
+              <select name="theme" id="theme" class="form-control">
+                <option value="default">Default</option>
+                <option value="autumn">Autumn</option>
+                <option value="green">Green</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">Hide sections of the layout to see how the page behaves</span>
+              <div class="demo-settings-grid">
+                <div class="demo-settings-grid__sidebar">
+                  <div class="form-group">
+                    <label for="sidebar-setting" class="form-label">Sidebar</label>
+                    <input type="checkbox" id="sidebar-setting" class="form-control" checked />
+                  </div>
+                </div>
+                <div class="demo-settings-grid__header">
+                  <div class="form-group form-group--inline">
+                    <input type="checkbox" id="header-setting" class="form-control" checked />
+                    <label for="header-setting" class="form-label">Header</label>
+                  </div>
+                </div>
+                <div class="demo-settings-grid__content">Main Content</div>
+                <div class="demo-settings-grid__footer">
+                  <div class="form-group form-group--inline">
+                    <input type="checkbox" id="footer-setting" class="form-control" checked />
+                    <label for="footer-setting" class="form-label">Footer</label>
+                  </div>
+                </div>
+                <div class="demo-settings-grid__panel">
+                  <div class="form-group">
+                    <label for="panel-setting" class="form-label">Panel</label>
+                    <input type="checkbox" id="panel-setting" class="form-control" checked />
+                  </div>
+                </div>
+                <!-- <input type="checkbox"> -->
+              </div>
+            </div>
+          </div>
+          <div class="modal__footer">
+            <form method="dialog">
+              <button class="btn">OK</button>
+            </form>
+          </div>
+        </dialog>
+
+        <div class="content-header">
+          <div class="content-header__details">
+            <span class="content-header__context">
+              <div class="badge badge--info">Root Scrollable Layout</div>
+            </span>
+            <h1 class="content-header__title">Demo Page</h1>
+          </div>
+          <div class="content-header__aside">
+            <button class="btn" id="copy-template-btn">
+              <span class="icon material-symbols-outlined">content_copy</span>
+              Copy Template
+            </button>
+            <button class="btn" commandfor="settings-dialog" command="show-modal">
+              <span class="icon material-symbols-outlined">settings</span>
+              Demo Settings
+            </button>
+          </div>
+        </div>
+
+        <div class="op-stack">
+          <p>
+            This page serves as an example of using the <code>.op-page</code> (root scrollable) layout with various
+            components.
+          </p>
+          <div class="card">
+            <div class="card__header">
+              <h2 class="card__title">Example Form</h2>
+            </div>
+            <div class="divider"></div>
+            <div class="card__body">
+              <form>
+                <div class="op-cluster">
+                  <div class="form-group flex-grow-1">
+                    <label class="form-label" for="first-name">First Name</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="first-name"
+                      placeholder="Enter your first name"
+                      autocomplete="given-name"
+                    />
+                  </div>
+                  <div class="form-group flex-grow-1">
+                    <label class="form-label" for="last-name">Last Name</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="last-name"
+                      placeholder="Enter your last name"
+                      autocomplete="family-name"
+                    />
+                  </div>
+                </div>
+                <div class="op-cluster">
+                  <div class="form-group">
+                    <span class="form-label">Country</span>
+                    <div role="radiogroup" class="segmented-control segmented-control--medium">
+                      <input
+                        class="segmented-control__input"
+                        type="radio"
+                        id="option-1"
+                        value="england"
+                        name="example-segmented-control"
+                      />
+                      <label class="segmented-control__label" for="option-1"> England </label>
+                      <input
+                        class="segmented-control__input"
+                        type="radio"
+                        id="option-2"
+                        value="scotland"
+                        name="example-segmented-control"
+                      />
+                      <label class="segmented-control__label" for="option-2"> Scotland </label>
+                      <input
+                        class="segmented-control__input"
+                        type="radio"
+                        id="option-3"
+                        value="wales"
+                        name="example-segmented-control"
+                      />
+                      <label class="segmented-control__label" for="option-3"> Wales </label>
+                    </div>
+                  </div>
+                  <div class="form-group flex-grow-1">
+                    <label class="form-label" for="email">Email</label>
+                    <input
+                      class="form-control"
+                      type="email"
+                      id="email"
+                      placeholder="Enter your email"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="receive-notifications">Receive Notifications?</label>
+                    <input class="form-control" type="checkbox" id="receive-notifications" />
+                  </div>
+                </div>
+                <div class="op-cluster">
+                  <div class="form-group form-group--error flex-grow-1">
+                    <label class="form-label" for="number">Age</label>
+                    <input type="number" placeholder="How old?" id="number" class="form-control" />
+                    <span class="form-error">must be present</span>
+                  </div>
+                  <div class="form-group flex-grow-1">
+                    <label class="form-label" for="color">Favorite Color</label>
+                    <input type="color" id="color" class="form-control" />
+                    <span class="form-hint">Pick any color!</span>
+                  </div>
+                </div>
+                <div class="op-cluster">
+                  <div class="form-group flex-grow-1">
+                    <label class="form-label" for="date">Birth Date</label>
+                    <input type="date" id="date" class="form-control" />
+                  </div>
+                  <div class="form-group flex-grow-1">
+                    <label class="form-label" for="file">Select a File</label>
+                    <input type="file" id="file" class="form-control" />
+                  </div>
+                  <fieldset>
+                    <legend>Select an option:</legend>
+                    <div class="op-cluster items-center">
+                      <input type="radio" id="option1" name="options" value="option1" class="form-control" />
+                      <label class="form-label" for="option1">Option 1</label>
+                      <input type="radio" id="option2" name="options" value="option2" class="form-control" />
+                      <label class="form-label" for="option2">Option 2</label>
+                      <input type="radio" id="option3" name="options" value="option3" class="form-control" />
+                      <label class="form-label" for="option3">Option 3</label>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="divider"></div>
+            <div class="card__footer">
+              <div class="flex justify-end gap-md">
+                <button class="btn">Cancel</button>
+                <button class="btn btn--primary">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et accumsan diam. In hac habitasse platea
+            dictumst. Mauris scelerisque congue nulla, quis dapibus ligula tempus malesuada. Sed facilisis purus tellus,
+            porttitor consectetur ipsum dignissim quis. Nullam a dolor urna. Morbi mollis neque ut nisl iaculis aliquet.
+            Donec euismod, sapien vel semper ultricies, felis ex convallis nibh, at varius nunc magna non nisl.
+          </p>
+
+          <p>
+            Nam in posuere metus. Proin dictum congue magna non volutpat. Proin tincidunt ultrices ultrices. Vivamus
+            placerat velit sed fermentum volutpat. Nunc pellentesque elit eget libero volutpat semper. Donec aliquet,
+            nisl in commodo facilisis, est ipsum faucibus augue, nec varius urna quam sed odio. Curabitur et bibendum
+            magna. Donec placerat eget sapien quis rutrum. Phasellus finibus vitae velit vel malesuada. Nullam ac
+            suscipit nisi. Vestibulum vehicula nunc vel augue tincidunt hendrerit. Sed rutrum velit sed arcu ornare,
+            rutrum pellentesque tortor congue. Ut suscipit mi dapibus nulla consectetur cursus. Phasellus purus turpis,
+            sodales eu est in, accumsan bibendum ipsum.
+          </p>
+
+          <p>
+            Integer sodales eget leo a ornare. Duis pretium lectus a mauris sagittis pretium. Suspendisse rhoncus est in
+            tortor viverra, in imperdiet odio rutrum. Ut imperdiet tincidunt lacus, vitae scelerisque magna auctor
+            vitae. Morbi feugiat tincidunt leo, vel tristique purus fringilla ac. Orci varius natoque penatibus et
+            magnis dis parturient montes, nascetur ridiculus mus. Vestibulum dapibus, mauris eu fringilla vehicula, arcu
+            lacus commodo mauris, at facilisis magna felis ut sapien. Vestibulum suscipit, tortor eget elementum
+            sodales, nisl elit volutpat nisi, vel bibendum lorem eros vel dolor. Nullam sodales leo id euismod
+            pellentesque. Aliquam tincidunt, erat malesuada luctus malesuada, velit est egestas sem, id condimentum
+            purus magna vel lacus. Nulla eu laoreet augue.
+          </p>
+
+          <div class="op-stack">
+            <h3>Timeline with Icons</h3>
+            <div class="op-stack">
+              <div class="op-split gap-sm">
+                <div class="op-cluster">
+                  <span class="material-symbols-outlined icon icon--x-large">nature</span>
+                  <span>
+                    Buried by
+                    <strong>Squirrel</strong>
+                  </span>
+                </div>
+                <span class="text-right">Mar 31</span>
+              </div>
+              <div class="divider"></div>
+              <div class="op-split gap-sm">
+                <div class="op-cluster">
+                  <span class="material-symbols-outlined icon icon--x-large">eco</span>
+                  <span>
+                    Germinated in
+                    <strong>nutrient-rich soil</strong>
+                  </span>
+                </div>
+                <span class="text-right">May 28</span>
+              </div>
+              <div class="divider"></div>
+              <div class="op-split gap-sm">
+                <div class="op-cluster">
+                  <span class="material-symbols-outlined icon icon--x-large">forest</span>
+                  <span>
+                    Matured by
+                    <strong>water</strong>
+                    and
+                    <strong>sunlight</strong>
+                  </span>
+                </div>
+                <span class="text-right">Sep 14</span>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            Proin et dictum leo. Nullam odio magna, convallis nec varius id, feugiat in risus. Nunc hendrerit in diam et
+            laoreet. Vivamus sit amet massa sit amet sem sollicitudin mollis non eu odio. Sed est mi, sodales quis
+            sollicitudin sed, ullamcorper quis erat. Nulla nec posuere felis. Nullam iaculis urna diam, non commodo urna
+            faucibus eu. Nam ipsum ligula, volutpat tempus enim viverra, vulputate suscipit est. Praesent vitae posuere
+            nibh, eget aliquam massa. Mauris at magna id arcu aliquet porta sed sed risus. In in convallis urna.
+          </p>
+
+          <p>
+            Etiam ultricies purus odio, a suscipit eros pretium sed. Suspendisse convallis justo sodales nulla
+            dignissim, vitae facilisis diam eleifend. Sed nibh lacus, egestas auctor cursus ut, placerat sed dolor. Nam
+            est leo, finibus at metus in, vestibulum commodo ipsum. Donec in felis sit amet erat dictum dictum vitae sit
+            amet augue. Vestibulum vel quam ac odio rutrum ultrices in et leo. Etiam sit amet laoreet metus, ac viverra
+            elit. Mauris venenatis eros quis risus lobortis, et convallis purus commodo. Ut pretium est non semper
+            tristique. Vivamus vulputate lectus quis risus dapibus pretium. In hendrerit in sapien sit amet vehicula.
+            Nullam at diam arcu. Duis venenatis, nulla et tincidunt laoreet, mauris enim egestas dolor, eu sollicitudin
+            sapien velit id sapien. In elementum sit amet dolor eu blandit. Pellentesque egestas iaculis lobortis. Fusce
+            efficitur non mi commodo dignissim. Proin tempor non libero id venenatis. Donec porttitor ut purus sit amet
+            imperdiet. Curabitur tempor diam nulla, in efficitur augue aliquet non. Ut bibendum lacus et velit imperdiet
+            rutrum. Quisque et iaculis lectus.
+          </p>
+
+          <table class="table table--auto-layout table--default-density">
+            <thead>
+              <tr>
+                <th>Movie</th>
+                <th>Year Released</th>
+                <th>Trilogy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Episode IV - A New Hope</td>
+                <td>1977</td>
+                <td>Original</td>
+              </tr>
+              <tr>
+                <td>Episode V - The Empire Strikes Back</td>
+                <td>1980</td>
+                <td>Original</td>
+              </tr>
+              <tr>
+                <td>Episode VI - The Return of the Jedi</td>
+                <td>1983</td>
+                <td>Original</td>
+              </tr>
+              <tr>
+                <td>Episode I - The Phantom Menace</td>
+                <td>1999</td>
+                <td>Prequel</td>
+              </tr>
+              <tr>
+                <td>Episode II - Attack of the Clones</td>
+                <td>2002</td>
+                <td>Prequel</td>
+              </tr>
+              <tr>
+                <td>Episode III - The Revenge of the Sith</td>
+                <td>2005</td>
+                <td>Prequel</td>
+              </tr>
+              <tr>
+                <td>The Clone Wars</td>
+                <td>2008</td>
+                <td>Animated</td>
+              </tr>
+              <tr>
+                <td>Episode VII - The Force Awakens</td>
+                <td>2015</td>
+                <td>Sequel</td>
+              </tr>
+              <tr>
+                <td>Rogue One: A Star Wars Story</td>
+                <td>2016</td>
+                <td>Anthology</td>
+              </tr>
+              <tr>
+                <td>Episode VIII - The Last Jedi</td>
+                <td>2017</td>
+                <td>Sequel</td>
+              </tr>
+              <tr>
+                <td>Solo: A Star Wars Story</td>
+                <td>2018</td>
+                <td>Anthology</td>
+              </tr>
+              <tr>
+                <td>Episode IX - The Rise of Skywalker</td>
+                <td>2019</td>
+                <td>Sequel</td>
+              </tr>
+              <tr>
+                <td>The Mandalorian and Grogu</td>
+                <td>2026</td>
+                <td>Anthology</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">Total movies</td>
+                <td colspan="1">12(+1)</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <p>
+            Maecenas fermentum, lacus sed condimentum volutpat, quam purus gravida nunc, vitae tempor sapien lectus eu
+            felis. Praesent urna diam, porttitor et semper ut, bibendum nec ligula. Suspendisse vitae malesuada urna, ut
+            tempus turpis. Vestibulum vel leo in ante sollicitudin iaculis id quis dui. Phasellus a condimentum orci.
+            Cras sit amet diam tincidunt, interdum orci nec, vehicula odio. Sed tincidunt in magna et feugiat. Quisque
+            viverra massa pellentesque, bibendum arcu nec, vestibulum risus. Donec nec neque vel augue pellentesque
+            rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas
+            ullamcorper scelerisque faucibus. Curabitur dictum elit ut sapien tempus imperdiet. Aliquam erat volutpat.
+            Ut euismod vulputate est, a porttitor odio sodales sed. Morbi id bibendum ex. Cras laoreet consectetur est,
+            vitae tempus ipsum sollicitudin sodales.
+          </p>
+
+          <p>
+            Mauris a metus vel massa hendrerit varius. Integer porta fermentum neque ut porttitor. Maecenas ut ultrices
+            urna. Nunc sed condimentum ipsum, sed scelerisque lorem. Curabitur finibus convallis purus, id dignissim
+            arcu feugiat vel. Pellentesque eget vehicula enim. Integer eu neque ullamcorper enim ullamcorper pretium a a
+            urna. Nullam ac nulla dui. Nulla faucibus facilisis elit sit amet finibus. Etiam malesuada, tellus sit amet
+            faucibus vulputate, est purus convallis ligula, nec facilisis mauris dui ut sem. In vulputate dapibus ipsum
+            eget congue. Aenean consequat posuere efficitur.
+          </p>
+
+          <div class="card">
+            <div class="tab-group">
+              <a href="#tab-1" class="tab tab--active">USA</a>
+              <a href="#tab-2" class="tab">Mexico</a>
+              <a href="#tab-3" class="tab tab--disabled" tabindex="-1">Canada</a>
+              <a href="#tab-4" class="tab">England</a>
+            </div>
+            <div class="divider"></div>
+            <div class="card__body">
+              <section>
+                <h2 id="tab-1">Section 1</h2>
+                <p>Section Contents</p>
+              </section>
+              <section>
+                <h2 id="tab-2">Section 2</h2>
+                <p>Section Contents</p>
+              </section>
+              <section>
+                <h2 id="tab-3">Section 3</h2>
+                <p>Section Contents</p>
+              </section>
+              <section>
+                <h2 id="tab-4">Section 4</h2>
+                <p>Section Contents</p>
+              </section>
+            </div>
+          </div>
+
+          <p>
+            In hac habitasse platea dictumst. Proin varius turpis maximus, finibus elit ut, ultrices odio. Curabitur sed
+            suscipit lectus, sed ultricies lorem. Mauris dui nisi, elementum at ipsum a, tristique egestas mauris. Etiam
+            at erat hendrerit, convallis augue nec, auctor nunc. Nunc ac blandit dui. Aenean auctor lorem ligula, ac
+            placerat erat tincidunt id. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Maecenas rutrum quam sit amet ipsum ultricies, eu vehicula massa finibus. Cras pellentesque
+            semper pulvinar.
+          </p>
+
+          <p>
+            Fusce sollicitudin cursus tortor, quis sollicitudin felis congue sit amet. Mauris vitae tellus eros. Nam
+            felis eros, fermentum eget ligula a, pulvinar dapibus nulla. Nunc tincidunt eros sed consequat pharetra.
+            Integer nulla leo, malesuada vel risus eget, iaculis euismod ligula. Maecenas rutrum erat placerat, semper
+            dui vel, lobortis tortor. Pellentesque vel metus sed metus vehicula dignissim. Phasellus tincidunt ultricies
+            dolor. Mauris a felis a ante mattis vestibulum. Sed at leo ut turpis efficitur elementum ut non sem. Sed nec
+            felis at libero sollicitudin euismod.
+          </p>
+
+          <p>
+            Sed metus urna, laoreet in vulputate vitae, sagittis ac nunc. Morbi vitae ullamcorper libero. Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit. Proin ut pharetra turpis. Maecenas dignissim vehicula pharetra.
+            Aenean tincidunt sem et dui euismod consectetur. Aliquam eget risus maximus, tristique ligula eu, pharetra
+            mauris. Etiam facilisis id sapien vitae rutrum. Quisque arcu nulla, volutpat ut egestas ac, accumsan quis
+            nulla. Nullam nisi libero, scelerisque et pulvinar maximus, aliquet nec ex. Sed consectetur eget velit eget
+            vulputate. In a sem vel tellus bibendum efficitur mattis ac purus. Nulla eros lectus, sagittis vitae massa
+            a, blandit sodales sem. Maecenas ac commodo nisl.
+          </p>
+
+          <p>
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce vehicula
+            bibendum lacus, ac tempor mi. Cras ac velit ut ante faucibus euismod at eget justo. Nullam tempor mollis
+            mauris vel viverra. Vivamus varius lectus nec dolor vehicula bibendum. Sed condimentum libero nec dolor
+            blandit, sit amet dapibus turpis efficitur. Integer sollicitudin, dui bibendum volutpat auctor, elit sapien
+            rhoncus augue, non rhoncus purus nisl in libero.
+          </p>
+
+          <p>
+            Nam ac ex placerat arcu maximus accumsan. Proin metus nulla, tincidunt in libero et, fermentum maximus nunc.
+            Praesent auctor blandit lectus sed ultrices. Donec placerat lacus turpis, at consequat nisi pellentesque ut.
+            Suspendisse potenti. Nam aliquet a tortor vitae condimentum. Nam magna velit, aliquet ut est vel, hendrerit
+            vulputate est. Ut eget fringilla tortor. Fusce hendrerit mi a massa efficitur cursus. Curabitur euismod enim
+            nunc, non varius risus scelerisque vitae. Aenean pharetra ullamcorper diam nec scelerisque.
+          </p>
+        </div>
+      </main>
+      <footer class="op-page__main-footer">
+        <div class="navbar">
+          <div class="navbar__content navbar__content--justify-start">
+            <div class="op-cluster gap-xs">
+              <button class="btn">Action 1</button>
+              <button class="btn btn--warning">Action 2</button>
+              <button class="btn btn--destructive">Action 3</button>
+              <button class="btn btn--no-border">Action 4</button>
+            </div>
+          </div>
+          <div class="navbar__content">
+            <nav class="pagination flex-wrap">
+              <a class="btn btn--small btn--no-border btn--icon btn--disabled" href="#">
+                <span class="material-symbols-outlined">first_page</span>
+              </a>
+              <a class="btn btn--small btn--no-border btn--disabled" href="#">
+                <span class="material-symbols-outlined">chevron_left</span>
+                Prev
+              </a>
+              <a href="#" class="btn btn--no-border btn--active btn--small">1</a>
+              <a href="#" class="btn btn--no-border btn--small">2</a>
+
+              <div class="pagination__divider">...</div>
+
+              <a href="#" class="btn btn--no-border btn--small">11</a>
+              <a href="#" class="btn btn--no-border btn--small">12</a>
+              <a class="btn btn--small btn--no-border" href="#">
+                Next
+                <span class="material-symbols-outlined">chevron_right</span>
+              </a>
+              <a class="btn btn--small btn--no-border btn--icon" href="#">
+                <span class="material-symbols-outlined">last_page</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="op-page__sidebar op-page__sidebar--right">
+      <div class="side-panel side-panel--border-left">
+        <div class="side-panel__header side-panel__header--padded">
+          <div class="flex gap-sm justify-end items-center">
+            <label class="form-label" for="theme-mode-switch">Dark Mode</label>
+            <div class="switch">
+              <input type="checkbox" id="theme-mode-switch" />
+              <label for="theme-mode-switch"></label>
+            </div>
+          </div>
+        </div>
+        <div class="side-panel__body side-panel__body--padded">
+          <div class="side-panel__section">
+            <div class="alert alert--info alert--outlined">
+              <span class="material-symbols-outlined icon alert__icon">error</span>
+              <div class="alert__messages">
+                <div class="alert__title">Info</div>
+                <div class="alert__description">This is an info alert</div>
+              </div>
+            </div>
+          </div>
+          <div class="side-panel__section side-panel__section--padded-y">
+            <div class="op-stack gap-xxs">
+              <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Sed fermentum nibh vel facilisis euismod.</li>
+              </ul>
+              <ul>
+                <li>Nullam auctor ex vitae neque commodo, quis aliquet elit porta.</li>
+                <li>Suspendisse sed erat ac odio rutrum aliquet.</li>
+                <li>Aliquam id nisl pharetra elit congue pellentesque eu eget massa.</li>
+                <li>Nullam ut lorem sit amet nisi laoreet consequat eu id orci.</li>
+              </ul>
+              <ul>
+                <li>Fusce hendrerit enim ut nisl malesuada mattis. Mauris pulvinar sem eget tempor sollicitudin.</li>
+                <li>Donec ut tellus vitae lorem tempor maximus. Nunc id sem rutrum, aliquam sapien a, sodales ante.</li>
+                <li>Proin vulputate mi id pharetra feugiat.</li>
+                <li>Suspendisse molestie mi sit amet velit volutpat, ac placerat diam finibus.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Template Copy Button
+      document.getElementById('copy-template-btn').addEventListener('click', () => {
+        navigator.clipboard.writeText(document.documentElement.outerHTML)
+      })
+
+      // Theme Mode Switcher
+      document.getElementById('theme-mode-switch').addEventListener('change', (event) => {
+        const modeOptions = { true: 'dark', false: 'light' }
+        document.documentElement.setAttribute('data-theme-mode', modeOptions[event.target.checked])
+      })
+
+      // Layout Visibility Toggles
+      const visibilityToggles = {
+        'sidebar-setting': '.op-page__sidebar',
+        'panel-setting': '.op-page__sidebar--right',
+        'header-setting': '.op-page__main-header',
+        'footer-setting': '.op-page__main-footer',
+      }
+      Object.entries(visibilityToggles).forEach(([toggleId, elementSelector]) => {
+        document.getElementById(toggleId).addEventListener('change', (event) => {
+          document.querySelector(elementSelector).classList.toggle('sr-only', !event.target.checked)
+        })
+      })
+
+      // Theme Selector
+      document.getElementById('theme').addEventListener('change', (event) => {
+        document.documentElement.setAttribute('data-theme', event.target.value)
+      })
+    </script>
+  </body>
+</html>
