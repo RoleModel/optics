@@ -4,7 +4,7 @@ on:
   release:
     types: [published]
 permissions:
-  contents: read
+  contents: write
 jobs:
   build-npm:
     runs-on: ubuntu-latest
