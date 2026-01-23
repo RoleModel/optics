@@ -4,13 +4,6 @@ on:
   workflow_dispatch:
   release:
     types: [published]
-
-permissions:
-  contents: write
-
-env:
-  GITHUB_PACKAGES_TOKEN: ${{ secrets.ROLEMODEL_PACKAGE_REPO_READ_TOKEN }}
-
 jobs:
   build-gph:
     runs-on: ubuntu-latest
@@ -24,4 +17,4 @@ jobs:
       - run: yarn build
       - run: npm publish --access public
         env:
-          GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
