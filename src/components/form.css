@@ -10,6 +10,8 @@
   /* Private API (component option defaults) */
   --__op-form-control-height: var(--_op-form-control-height-large);
   --__op-form-control-font-size: var(--_op-form-control-font-large);
+  --__op-form-control-border-color: var(--op-color-neutral-plus-four);
+
   block-size: var(--__op-form-control-height);
   min-inline-size: var(--__op-form-control-height);
 
@@ -54,20 +56,91 @@
 
 /* Radio or Checkbox Form Control */
 .form-control:is([type='radio'], [type='checkbox']) {
-  /* Public API (customizable component options) */
   --_op-form-control-height-small: var(--op-space-medium);
   --_op-form-control-height-medium: var(--op-space-large);
   --_op-form-control-height-large: var(--op-space-x-large);
 
-  align-self: center;
+  border-radius: var(--op-radius-medium);
   margin: 0;
-  accent-color: var(--op-color-primary-base);
+  appearance: none;
+  background-color: var(--op-color-neutral-plus-max);
   block-size: var(--__op-form-control-height);
+  box-shadow: inset 0 0 0 var(--op-border-width-medium) var(--__op-form-control-border-color);
   cursor: pointer;
   inline-size: var(--__op-form-control-height);
 
+  &:checked {
+    background-color: var(--op-color-primary-base);
+  }
+
   & + label {
     align-self: center;
+    font-size: var(--op-font-small);
+  }
+
+  &.form-control--small {
+    align-self: center;
+
+    & + label {
+      font-size: var(--op-font-x-small);
+    }
+  }
+
+  &:focus-visible {
+    box-shadow: var(--op-input-focus-primary);
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: var(--op-opacity-disabled);
+
+    & + label {
+      cursor: not-allowed;
+      opacity: var(--op-opacity-disabled);
+    }
+  }
+}
+
+.form-control:is([type='checkbox']) {
+  --_op-form-control-checkbox-hover-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3e%3crect x='5' y='5' width='8' height='8' rx='2' fill='%23dadde0'/%3e%3c/svg%3e");
+  --_op-form-control-checkbox-checked-image: url("data:image/svg+xml,%3csvg viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6.29294 13.2929L3.41277 10.4127C3.02307 10.023 3.02307 9.3912 3.41277 9.0015C3.80199 8.61228 4.43287 8.61173 4.82276 9.00027L7.00005 11.17L13.1733 4.99672C13.5648 4.60522 14.2003 4.60674 14.5904 4.99962C14.9786 5.39054 14.9779 6.02217 14.5883 6.41172L7.70715 13.2929C7.31663 13.6834 6.68346 13.6834 6.29294 13.2929Z' fill='white'/%3e%3c/svg%3e");
+  --_op-form-control-indeterminate-image: url("data:image/svg+xml,%3csvg viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14 9C14 9.55228 13.5523 10 13 10H5C4.44772 10 4 9.55228 4 9C4 8.44772 4.44772 8 5 8H13C13.5523 8 14 8.44772 14 9Z' fill='white'/%3e%3c/svg%3e");
+
+  &:hover:not(:checked, :indeterminate, :disabled) {
+    background-image: var(--_op-form-control-checkbox-hover-image);
+  }
+
+  &:checked {
+    background-image: var(--_op-form-control-checkbox-checked-image);
+    box-shadow: none;
+  }
+
+  &:indeterminate {
+    background-color: var(--op-color-primary-base);
+    background-image: var(--_op-form-control-indeterminate-image);
+    box-shadow: none;
+  }
+}
+
+.form-control:is([type='radio']) {
+  --_op-form-control-radio-hover-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3e%3crect x='5' y='5' width='8' height='8' rx='8' fill='%23dadde0'/%3e%3c/svg%3e");
+  --_op-form-control-radio-checked-image: radial-gradient(
+    circle closest-side,
+    var(--op-color-primary-base) 56%,
+    var(--op-color-neutral-plus-max) 58%
+  );
+
+  border-radius: var(--op-radius-circle);
+
+  &:hover:not(:checked, :disabled) {
+    background-image: var(--_op-form-control-radio-hover-image);
+  }
+
+  &:checked {
+    --__op-form-control-border-color: var(--op-color-primary-base);
+
+    background: var(--_op-form-control-radio-checked-image);
   }
 }
 
@@ -75,9 +148,6 @@
 .form-control:not([type='radio'], [type='checkbox']) {
   /* Public API (customizable component options) */
   --_op-form-control-opacity-disabled: var(--op-opacity-disabled);
-
-  /* Private API (component option defaults) */
-  --__op-form-control-border-color: var(--op-color-neutral-plus-four);
 
   display: block;
   border: none;

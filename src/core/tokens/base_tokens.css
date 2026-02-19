@@ -108,6 +108,7 @@
   * @presenter Spacing
   */
   --op-border-width: 1px;
+  --op-border-width-medium: 1.5px;
   --op-border-width-large: 2px;
   --op-border-width-x-large: 4px;
 
