@@ -34,7 +34,7 @@ Cross out all that don't apply with ~~ ~~ around it like ~~this~~
   - [ ] Have you updated the dependency graph?
   - [ ] Have you updated the docs?
 - [ ] Do you need to update the package version?
-  - [ ] Did you update the example pages in /public?
+  - [ ] Did you update the example pages in `.storybook/assets`?
 
 ## Screenshots
 
