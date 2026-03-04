@@ -7,8 +7,8 @@
   "scripts": {
     "test": "exit 0",
     "build": "yarn build:css && yarn build:css-min && yarn build:tokens && yarn build:files",
-    "build:css": "postcss src/optics.css -o dist/css/optics.css",
-    "build:css-min": "postcss src/optics.css -o dist/css/optics.min.css --env=minify",
+    "build:css": "postcss 'src/optics*.css' -d dist/css",
+    "build:css-min": "postcss 'src/optics*.css' -d dist/css --ext .min.css --env=minify",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
     "build:files": "mkdir -p dist/css/addons; cp LICENSE README.md package.json dist/; cp -rL src/addons src/core src/components dist/css",
     "storybook": "storybook dev -p 6006 --docs",
