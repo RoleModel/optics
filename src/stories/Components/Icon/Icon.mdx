@@ -56,7 +56,7 @@ Icon can be used as a standalone component, however, it does have a few dependen
 
 Optics supports a variety of [Additional icon libraries](?path=/docs/overview-addons--docs) that can be imported. Due to the nature of these libraries, not all of the same icon class modifiers may be available.
 
-There are two ways these icon libraries can be used.
+There are three ways these icon libraries can be used.
 
 First is as an addon. This means that the default Material Symbols Outlined icons will still be loaded and both can be used.
 
@@ -69,6 +69,12 @@ Second is to use an alternate Optics import that does not include the default Ma
 
 ```css
 @import '@rolemodel/optics/dist/css/optics+phosphor_icons';
+```
+
+Third is to remove the default Material Symbols Outlined icons and handle icons completely on your own. This will reduce the page load time by not loading any icons.
+
+```css
+@import '@rolemodel/optics/dist/css/optics+no_icons';
 ```
 
 ### Material Symbols Outline Variable Icons
