@@ -34,6 +34,7 @@ Optics supports alternative icon libraries. It currently supports
 - [Lucide](https://lucide.dev/icons/)
 
 These can be imported alongside the base design system to provide additional icon options. They can also be integrated with the base design system instead of as an addon if you don't want to use the default Material Symbols Outlined icons. This will reduce the page load time by not loading the Material Symbols Outlined icons.
+Note: This alternate import approach (optics+icon_library) supports the minified versions as well. Just add `.min.css` to the end of the file name.
 
 For more information on how to use these icons, see the [Icon Component](?path=/docs/components-icon--docs).
 
@@ -42,31 +43,31 @@ For more information on how to use these icons, see the [Icon Component](?path=/
 @import '@rolemodel/optics';
 @import '@rolemodel/optics/dist/css/addons/fonts/material_symbols_outlined_variable';
 /* Or */
-@import '@rolemodel/optics+material_symbols_outlined_variable';
+@import '@rolemodel/optics/dist/css/optics+material_symbols_outlined_variable';
 
 /* Phosphor Icons */
 @import '@rolemodel/optics';
 @import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
 /* Or */
-@import '@rolemodel/optics+phosphor_icons';
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons';
 
 /* Tabler Icons */
 @import '@rolemodel/optics';
 @import '@rolemodel/optics/dist/css/addons/fonts/tabler_icons';
 /* Or */
-@import '@rolemodel/optics+tabler_icons';
+@import '@@rolemodel/optics/dist/css/optics+tabler_icons';
 
 /* Feather Icons */
 @import '@rolemodel/optics';
 @import '@rolemodel/optics/dist/css/addons/fonts/feather_icons';
 /* Or */
-@import '@rolemodel/optics+feather_icons';
+@import '@rolemodel/optics/dist/css/optics+feather_icons';
 
 /* Lucide Icons (a fork of feather with more icons) */
 @import '@rolemodel/optics';
 @import '@rolemodel/optics/dist/css/addons/fonts/lucide_icons';
 /* Or */
-@import '@rolemodel/optics+lucide_icons';
+@import '@rolemodel/optics/dist/css/optics+lucide_icons';
 ```
 
 ## Tom Select
