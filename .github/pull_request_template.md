@@ -34,7 +34,9 @@ Cross out all that don't apply with ~~ ~~ around it like ~~this~~
   - [ ] Have you updated the dependency graph?
   - [ ] Have you updated the docs?
 - [ ] Do you need to update the package version?
-  - [ ] Did you update the example pages in /public?
+  - [ ] Did you update the example pages in `.storybook/assets`?
+- [ ] Were any changes made to the top level optics.css file?
+  - [ ] Were those changes reflected in the other top level files?
 
 ## Screenshots
 

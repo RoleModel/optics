@@ -56,6 +56,46 @@ Icon can be used as a standalone component, however, it does have a few dependen
 
 Optics supports a variety of [Additional icon libraries](?path=/docs/overview-addons--docs) that can be imported. Due to the nature of these libraries, not all of the same icon class modifiers may be available.
 
+There are two ways these icon libraries can be used.
+
+First is as an addon. This means that the default Material Symbols Outlined icons will still be loaded and both can be used.
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
+```
+
+Second is to use an alternate Optics import that does not include the default Material Symbols Outlined icons, and only includes the additional icon library of your choice.
+
+```css
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons';
+```
+
+### Material Symbols Outline Variable Icons
+
+Optics ships with a simplified version of [Material Symbols Outlined](https://fonts.google.com/icons?icon.style=Outlined). It only includes the font weight variable aspect of the icon library which means you won't be able to utilize the fill, or emphasis properties.
+If your app does want to use the full Material Symbols Outlined library, you can import the full library by using the addon shown below.
+This will increase the page load time but will allow you to use the full capabilities of the icon library.
+
+```css
+@import '@rolemodel/optics/dist/css/optics+material_symbols_outlined_variable';
+```
+
+```html
+<i class="icon ph ph-smiley"></i>
+```
+
+The filled, size and weight modifiers can be used with Phosphor Icons.
+
+Phosphor adds `.icon--weight-thin` but does not support `.icon--weight-semi-bold`.
+It also adds a dual tone variation by replacing `.ph` with `.ph-duotone`.
+
+```html
+<i class="icon ph-duotone ph-smiley"></i>
+```
+
+Note: Phosphor Icons do not support the use of emphasis variations or the use of `.icon--filled` in combination with `.ph-duotone` or any weight variations.
+
 ### Phosphor Icons
 
 [Phosphor Icons](https://phosphoricons.com/) can be created with the `<i>` tag and uses the `.ph` prefix with `.ph-{name}` to define a specific icon.
@@ -63,6 +103,8 @@ Optics supports a variety of [Additional icon libraries](?path=/docs/overview-ad
 ```css
 @import '@rolemodel/optics';
 @import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons';
 ```
 
 ```html
@@ -87,6 +129,8 @@ Note: Phosphor Icons do not support the use of emphasis variations or the use of
 ```css
 @import '@rolemodel/optics';
 @import '@rolemodel/optics/dist/css/addons/fonts/tabler_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+tabler_icons';
 ```
 
 ```html
@@ -114,6 +158,8 @@ Note: Tabler Icons do not support the use of weight or emphasis variations.
 ```css
 @import '@rolemodel/optics';
 @import '@rolemodel/optics/dist/css/addons/fonts/feather_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+feather_icons';
 ```
 
 ```html
@@ -139,6 +185,8 @@ you can use the Feather Icons for a smaller icon pack instead. It is important t
 ```css
 @import '@rolemodel/optics';
 @import '@rolemodel/optics/dist/css/addons/fonts/lucide_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+lucide_icons';
 ```
 
 ```html

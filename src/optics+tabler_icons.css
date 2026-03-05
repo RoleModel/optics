@@ -1,0 +1,17 @@
+/* Third party Vendors */
+@import 'modern-css-reset/dist/reset';
+
+/* Fonts */
+@import 'core/fonts/text_fonts.css';
+@import 'addons/fonts/tabler_icons.css';
+
+/* Tokens */
+@import 'core/tokens';
+
+/* Base styles and utilities */
+@import 'core/base';
+@import 'core/layout';
+@import 'core/utilities';
+
+/* Components */
+@import 'components';
