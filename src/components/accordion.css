@@ -43,7 +43,7 @@
   }
 
   &[open] {
-    summary .accordion__marker {
+    > summary .accordion__marker {
       rotate: 0.25turn;
     }
 
