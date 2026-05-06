@@ -7,7 +7,7 @@ const path = require('path')
 
 const SRC_DIR = path.resolve(__dirname, '../src')
 const SRC_COMPONENTS_DIR = path.resolve(__dirname, '../src/components')
-const OUTPUT_FILE = path.resolve(__dirname, '../dist/DESIGN.md')
+const OUTPUT_FILE = path.resolve(__dirname, '../generated-docs/DESIGN.md')
 
 const EXCLUDED_DIRS = ['addons']
 

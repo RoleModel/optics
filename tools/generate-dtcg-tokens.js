@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('node:path')
 
 const SOURCE = 'src/core/tokens/base_tokens.css'
-const OUTPUT = 'dist/design-tokens.json'
+const OUTPUT = 'generated-docs/design-tokens.json'
 
 const css = fs.readFileSync(path.resolve(SOURCE), 'utf8')
 
