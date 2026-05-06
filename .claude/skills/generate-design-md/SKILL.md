@@ -46,40 +46,51 @@ As you read, note:
 - Color naming — the `plus`/`minus` luminosity scale and how `on-` variants pair with backgrounds
 - Any inline comments that explain why a pattern exists (especially workarounds or surprises)
 
-## Step 4: Append usage documentation to generated-docs/DESIGN.md
+## Step 4: Add usage documentation to generated-docs/DESIGN.md
 
 Read `generated-docs/DESIGN.md`. The file structure is:
 1. YAML frontmatter (between the opening and closing `---`)
 2. Markdown body (after the closing `---`) — includes a `## Shapes` section with content
 
-**Important:** The `## Shapes` section has content below its heading — do not inject between the heading and its body. Append all new sections after the very last line of the file (after the Shapes section content). Never modify the YAML block or any existing markdown content.
+**Never modify the YAML block or any existing markdown content.**
 
-After appending, ensure the file ends with a single trailing newline.
+The [DESIGN.md spec](https://github.com/google-labs-code/design.md) defines a required section order:
 
-Write the following sections, drawing on what you actually found in the CSS:
+1. Overview
+2. Colors
+3. Typography
+4. Layout
+5. Elevation & Depth
+6. Shapes ← already present in generated file
+7. Components
+8. Do's and Don'ts
+
+Sections 1–5 must be **inserted before `## Shapes`** to maintain spec order. Sections 7–8 and any Optics-specific sections must be **appended after the very last line of the file**.
+
+After all edits, ensure the file ends with a single trailing newline.
 
 ---
 
-### Section: CSS Custom Property Conventions
+### Sections to insert BEFORE `## Shapes`
 
-Explain the three-tier naming system:
+Insert these immediately before the `## Shapes` heading, drawing on what you found in the CSS:
 
-- `--op-*` — Public design tokens. Use these in any CSS to tap into the system.
-- `--_op-*` — Component public API. Override these on a parent to customize a component instance without touching its internals.
-- `--__op-*` — Component private implementation. These are internal defaults derived from the public API; do not reference them from outside the component.
+#### Section: Overview
 
-### Section: Color System
+A concise description of the Optics design system's personality and purpose: a CSS-only, utility-forward system built on semantic color scales, logical spacing, and component-scoped customization. Mention light/dark mode is automatic via `light-dark()`.
 
-Explain the semantic luminosity scale:
+#### Section: Colors
 
-- Colors are organized in a lightness scale: `plus-max`, `plus-eight` → `plus-one`, `base`, `minus-one` → `minus-eight`, `minus-max`
-- `plus-*` steps are lighter (toward white); `minus-*` steps are darker (toward black)
-- Every step has a paired `-on-*` color that is guaranteed to be readable as text on that step's background (e.g. `--op-color-primary-on-base` for text on `--op-color-primary-base`)
-- An `-alt` variant exists for each `-on-*` color as a secondary text option
-- Color palettes available: `primary`, `neutral`, `alerts-warning`, `alerts-danger`, `alerts-info`, `alerts-notice`
-- Light/dark mode is handled automatically via CSS `light-dark()` — no class toggling needed
+Explain the semantic luminosity scale used across all palettes:
 
-Include a concrete example showing a background + text pair and an interactive state:
+- Scale runs from `plus-max` (lightest) → `plus-eight` through `plus-one` → `base` → `minus-one` through `minus-eight` → `minus-max` (darkest)
+- `plus-*` steps are lighter; `minus-*` steps are darker
+- Every step has a paired `-on-*` color guaranteed readable as text on that background
+- An `-alt` variant of each `-on-*` color provides a secondary/muted text option
+- Palettes: `primary`, `neutral`, `alerts-warning`, `alerts-danger`, `alerts-info`, `alerts-notice`
+- Light/dark mode is automatic — all scale colors use `light-dark()`, no class toggling needed
+
+Include a concrete example:
 
 ```css
 .my-card {
@@ -92,71 +103,97 @@ Include a concrete example showing a background + text pair and an interactive s
 }
 ```
 
-### Section: Borders
+#### Section: Typography
 
-Explain that Optics renders borders via `box-shadow` instead of the `border` CSS property. This preserves layout — box-shadow does not affect element dimensions or document flow.
+Document every non-color token in this group with a reference table. Include:
+- Font size scale (`--op-font-2x-small` through `--op-font-6x-large`) — pixel values and common use
+- Font weight tokens (`--op-font-weight-thin` through `--op-font-weight-black`) — numeric values
+- Font family tokens (`--op-font-family`, `--op-font-family-alt`) — family names
+- Line height tokens (`--op-line-height-none` through `--op-line-height-loosest`) — numeric values
+- Letter spacing tokens (`--op-letter-spacing-navigation`, `--op-letter-spacing-label`) — values and use
 
-Pattern:
-```css
-/* Outline border (doesn't affect layout) */
-box-shadow: var(--op-border-all) var(--op-color-border);
+Show a composition example demonstrating how the tokens work together.
 
-/* Inset border (common inside components) */
-box-shadow: inset var(--op-border-all) var(--op-color-neutral-plus-four);
+#### Section: Layout
 
-/* Multiple borders */
-box-shadow: var(--op-border-top) var(--op-color-border), var(--op-border-bottom) var(--op-color-border);
-```
+Document every non-color token in this group with a reference table. Include:
+- Full spacing scale (`--op-space-3x-small` through `--op-space-4x-large`) — pixel values
+- `--op-size-unit` (4px) — for icon sizing and fine-grained layout
+- Breakpoint tokens (`--op-breakpoint-x-small` through `--op-breakpoint-x-large`) — pixel values and viewport descriptions
 
-Available direction tokens: `--op-border-all`, `--op-border-top`, `--op-border-right`, `--op-border-bottom`, `--op-border-left`, `--op-border-x` (left+right), `--op-border-y` (top+bottom), `--op-border-none`
+Note that breakpoints are reference values only — CSS does not support custom properties in `@media` queries.
 
-### Section: Spacing
+Show a usage example for padding and gap.
 
-Explain the scale unit (`--op-space-scale-unit: 1rem` = 10px at root `font-size: 62.5%`) and list the scale with pixel values. Show a typical usage example for padding and gap.
+#### Section: Elevation & Depth
 
-### Section: Typography
+Document every non-color token in this group with a reference table. Include:
+- Shadow scale (`--op-shadow-x-small` through `--op-shadow-x-large`) — use cases
+- Opacity tokens (`--op-opacity-none` through `--op-opacity-full`) — values and use cases
+- Input height tokens (`--op-input-height-small` through `--op-input-height-x-large`) — pixel values
+- Input focus ring tokens (`--op-input-focus-primary` through `--op-input-focus-notice`) — note these are pre-composed `box-shadow` values applied directly on `:focus-visible`
+- Z-index layers (`--op-z-index-header` through `--op-z-index-tooltip`) — values and layer descriptions
 
-Cover the font-size scale (same 10px scale unit), font-weight named tokens (thin through black), and font-family tokens (default Noto Sans, alt Noto Serif). Show how they compose:
+Note that elevation in Optics is expressed through shadows rather than color shifts.
 
-```css
-.my-label {
-  font-size: var(--op-font-small);       /* 14px */
-  font-weight: var(--op-font-weight-medium);
-  letter-spacing: var(--op-letter-spacing-label);
-  line-height: var(--op-line-height-dense);
-}
-```
+---
 
-### Section: Elevation
+### Sections to append AFTER `## Shapes` (after its content, at end of file)
 
-Explain z-index naming (what each layer is for: `header`, `footer`, `sidebar`, `dialog`, `dropdown`, `tooltip`) and the shadow scale (`x-small` through `x-large`).
+#### Section: Components
 
-### Section: Transitions and Animation
-
-List the named transitions and their intended contexts:
-- `--op-transition-input` — hover/focus state changes on interactive controls (fast: 120ms)
-- `--op-transition-accordion` — rotation of disclosure markers
-- `--op-transition-accordion-content` — accordion panel open/close
-- `--op-transition-modal` — modal appear/disappear (300ms)
-- `--op-transition-sidebar` — sidebar slide in/out
-- `--op-transition-panel` — side panel entry
-- `--op-transition-tooltip` — tooltip delayed reveal
-
-### Section: Component Customization
-
-Show the pattern for customizing a component instance using its public API vars, and explain that these overrides are scoped — they only affect components inside the selector:
+Show the pattern for customizing a component instance using its public API vars (`--_op-*`), and explain that these overrides are scoped — they only affect components inside the selector:
 
 ```css
 /* Make buttons taller in a specific form */
 .my-form .btn {
   --_op-btn-height-medium: 44px;
 }
-
-/* Use the customization pattern when available on a component;
-   check the component's CSS for --_op- vars to know what's customizable */
 ```
 
-Remind the reader that `--__op-` vars (double underscore) are internal and should never be set directly from outside the component.
+Remind the reader that `--__op-` vars (double underscore) are internal and should never be set directly from outside the component. To know what a component exposes, check its CSS file for `--_op-` declarations at the top of the root rule.
+
+#### Section: Do's and Don'ts
+
+Practical guardrails drawn from real component patterns in the CSS source:
+
+- Do pair every background color step with its matching `-on-*` text color
+- Do use `box-shadow` for borders — never the `border` property — to preserve layout dimensions
+- Do use the named transition tokens (`--op-transition-input`, `--op-transition-modal`, etc.) rather than writing raw durations
+- Don't set `--__op-*` (double underscore) vars from outside a component
+- Don't hardcode pixel values for spacing or font sizes — use the token scale
+- Don't toggle a class to switch color schemes; `light-dark()` handles it automatically
+
+#### Section: CSS Custom Property Conventions
+
+Explain the three-tier naming system (Optics-specific, not in the spec):
+
+- `--op-*` — Public design tokens. Use in any CSS to tap into the system.
+- `--_op-*` — Component public API. Override on a parent selector to customize an instance.
+- `--__op-*` — Component private implementation. Derived from `--_op-*`; never set externally.
+
+#### Section: Borders
+
+Explain that Optics renders borders via `box-shadow` instead of `border`. This preserves layout — box-shadow does not affect element dimensions or document flow.
+
+Show usage examples (outline, inset, multiple borders).
+
+Document every non-color token in this group with a reference table. Include:
+- Border direction tokens (`--op-border-all`, `--op-border-top`, etc.) — directions, noting that `--op-border-x` and `--op-border-y` are pre-composed with `var(--op-color-border)`
+- Border width tokens (`--op-border-width`, `--op-border-width-large`, `--op-border-width-x-large`) — pixel values and typical use (default, focus inner ring, focus outer ring)
+- Border radius tokens (`--op-radius-small` through `--op-radius-pill`) — pixel values and use cases
+
+#### Section: Transitions and Animation
+
+List named transitions and their intended contexts:
+
+- `--op-transition-input` — hover/focus changes on interactive controls (120ms, fast/snappy)
+- `--op-transition-accordion` — rotation of disclosure markers (120ms)
+- `--op-transition-accordion-content` — accordion panel open/close (300ms, height + content-visibility)
+- `--op-transition-modal` — modal appear/disappear (300ms)
+- `--op-transition-sidebar` — sidebar slide in/out (200ms)
+- `--op-transition-panel` — side panel entry from right (400ms)
+- `--op-transition-tooltip` — tooltip delayed reveal (300ms + 300ms delay)
 
 ---
 

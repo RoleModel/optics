@@ -560,47 +560,21 @@ components:
     color: "{colors.neutral-plus-five}"
 ---
 
-## Shapes
+## Overview
 
-To render a fully circular element, apply `border-radius: 50%` directly. This is a layout instruction rather than a fixed dimension, so it is not included in the `rounded` token scale above.
+Optics is a CSS-only design system by RoleModel Software. It provides a semantic color scale, logical spacing and typography, and BEM component classes — with no JavaScript. Light and dark mode are handled automatically via CSS `light-dark()`, requiring no class toggling from the consuming application. Components expose a public customization API through scoped CSS custom properties, keeping overrides predictable and contained.
 
----
+## Colors
 
-## CSS Custom Property Conventions
+Colors are organized in a luminosity scale borrowed from photography f-stops. Each palette defines a full range of lightness steps while preserving its hue and saturation.
 
-Optics uses a three-tier naming system for CSS custom properties:
+**Scale:** `plus-max` (lightest) → `plus-eight` through `plus-one` → `base` → `minus-one` through `minus-eight` → `minus-max` (darkest)
 
-- `--op-*` — **Public design tokens.** Available globally on `:root`. Use these in any CSS to tap into the system (colors, spacing, typography, etc.).
-- `--_op-*` — **Component public API.** Declared at the top of a component rule with default values. Override these on a parent selector to customize a component instance without touching its internals.
-- `--__op-*` — **Component private implementation.** Derived from the `--_op-*` public API vars; used only within the component. Never set these from outside the component.
-
-```css
-/* Public token — use anywhere */
-color: var(--op-color-primary-base);
-
-/* Component public API — override on a parent to customize */
-.my-form .btn {
-  --_op-btn-height-medium: 44px;
-}
-
-/* Component private — do not set externally */
-/* --__op-btn-height is resolved internally from --_op-btn-height-* */
-```
-
-## Color System
-
-Colors are organized in a luminosity scale borrowed from photography f-stops. Each palette step shifts lightness while preserving the hue and saturation of the palette.
-
-**Scale:** `plus-max` · `plus-eight` → `plus-one` · `base` · `minus-one` → `minus-eight` · `minus-max`
-
-- `plus-*` steps are **lighter** (toward white in light mode, toward near-black in dark mode)
-- `minus-*` steps are **darker** (toward black in light mode, toward near-white in dark mode)
-- Every step has a paired `-on-*` color guaranteed to be readable as text on that step's background
-- An `-alt` variant exists for each `-on-*` color as a secondary/muted text option
-- **Palettes:** `primary`, `neutral`, `alerts-warning`, `alerts-danger`, `alerts-info`, `alerts-notice`
-- **Light/dark mode is automatic** — all scale colors use CSS `light-dark()`, so switching color schemes requires no class toggling
-
-**Background + text pair example:**
+- `plus-*` steps are lighter; `minus-*` steps are darker
+- Every step has a paired `-on-*` color guaranteed readable as text on that background
+- An `-alt` variant of each `-on-*` color provides a secondary/muted text option
+- Palettes: `primary`, `neutral`, `alerts-warning`, `alerts-danger`, `alerts-info`, `alerts-notice`
+- Light and dark mode values are embedded directly in each token via `light-dark()` — no theme class needed
 
 ```css
 .my-card {
@@ -613,14 +587,215 @@ Colors are organized in a luminosity scale borrowed from photography f-stops. Ea
 }
 ```
 
-The `-on-` color always travels with its background step — if you change the background step, update the text color to match.
+## Typography
+
+Font sizes use `--op-font-scale-unit: 1rem`, which equals **10px** when the root `font-size` is `62.5%` (the Optics baseline).
+
+**Font sizes:**
+
+| Token | Value | Common use |
+|---|---|---|
+| `--op-font-2x-small` | 10px | Fine print, legal |
+| `--op-font-x-small` | 12px | Captions, timestamps |
+| `--op-font-small` | 14px | Labels, secondary text, buttons |
+| `--op-font-medium` | 16px | Body text (default) |
+| `--op-font-large` | 18px | Large body, lead text |
+| `--op-font-x-large` | 20px | Small headings |
+| `--op-font-2x-large` | 24px | Section headings |
+| `--op-font-3x-large` | 28px | Page headings |
+| `--op-font-4x-large` | 32px | Large headings |
+| `--op-font-5x-large` | 36px | Display headings |
+| `--op-font-6x-large` | 48px | Hero / display |
+
+**Font weights:**
+
+| Token | Value |
+|---|---|
+| `--op-font-weight-thin` | 100 |
+| `--op-font-weight-extra-light` | 200 |
+| `--op-font-weight-light` | 300 |
+| `--op-font-weight-normal` | 400 |
+| `--op-font-weight-medium` | 500 |
+| `--op-font-weight-semi-bold` | 600 |
+| `--op-font-weight-bold` | 700 |
+| `--op-font-weight-extra-bold` | 800 |
+| `--op-font-weight-black` | 900 |
+
+**Font families:**
+
+| Token | Value |
+|---|---|
+| `--op-font-family` | Noto Sans, sans-serif (default) |
+| `--op-font-family-alt` | Noto Serif, serif |
+
+**Line heights:**
+
+| Token | Value |
+|---|---|
+| `--op-line-height-none` | 0 |
+| `--op-line-height-densest` | 1 |
+| `--op-line-height-denser` | 1.15 |
+| `--op-line-height-dense` | 1.3 |
+| `--op-line-height-base` | 1.5 |
+| `--op-line-height-loose` | 1.6 |
+| `--op-line-height-looser` | 1.7 |
+| `--op-line-height-loosest` | 1.8 |
+
+**Letter spacing:**
+
+| Token | Value | Use for |
+|---|---|---|
+| `--op-letter-spacing-navigation` | 0.01rem | Nav items |
+| `--op-letter-spacing-label` | 0.04rem | Labels, badges, caps text |
+
+```css
+.my-label {
+  font-size: var(--op-font-small);           /* 14px */
+  font-weight: var(--op-font-weight-medium);
+  letter-spacing: var(--op-letter-spacing-label);
+  line-height: var(--op-line-height-dense);
+}
+```
+
+## Layout
+
+The spacing scale is built on `--op-space-scale-unit: 1rem` (**10px** at `font-size: 62.5%`). A separate `--op-size-unit: 0.4rem` (4px) is available for icon sizing and fine-grained layout.
+
+**Spacing:**
+
+| Token | Value |
+|---|---|
+| `--op-space-3x-small` | 2px |
+| `--op-space-2x-small` | 4px |
+| `--op-space-x-small` | 8px |
+| `--op-space-small` | 12px |
+| `--op-space-medium` | 16px |
+| `--op-space-large` | 20px |
+| `--op-space-x-large` | 24px |
+| `--op-space-2x-large` | 28px |
+| `--op-space-3x-large` | 40px |
+| `--op-space-4x-large` | 80px |
+
+```css
+.my-panel {
+  padding: var(--op-space-medium);
+  gap: var(--op-space-x-small);
+}
+```
+
+**Breakpoints** — reference values only. CSS does not support custom properties inside `@media` queries, so these cannot be used directly in breakpoint expressions; they document intended breakpoints for preprocessors or JavaScript.
+
+| Token | Value | Viewport |
+|---|---|---|
+| `--op-breakpoint-x-small` | 512px | Vertical phone |
+| `--op-breakpoint-small` | 768px | Vertical iPad |
+| `--op-breakpoint-medium` | 1024px | Landscape iPad |
+| `--op-breakpoint-large` | 1280px | Small laptop |
+| `--op-breakpoint-x-large` | 1440px | Medium laptop |
+
+## Elevation & Depth
+
+Elevation in Optics is expressed through box shadows, not color shifts.
+
+**Shadows:**
+
+| Token | Use for |
+|---|---|
+| `--op-shadow-x-small` | Subtle lift — inline elements, hover states |
+| `--op-shadow-small` | Cards, list items |
+| `--op-shadow-medium` | Floating panels, popovers |
+| `--op-shadow-large` | Dropdowns, sidebars |
+| `--op-shadow-x-large` | Modals, dialogs |
+
+**Opacities:**
+
+| Token | Value | Use for |
+|---|---|---|
+| `--op-opacity-none` | 0 | Fully invisible |
+| `--op-opacity-overlay` | 0.2 | Modal backdrop tint |
+| `--op-opacity-disabled` | 0.4 | Disabled elements |
+| `--op-opacity-half` | 0.5 | Dimmed states |
+| `--op-opacity-full` | 1 | Fully visible |
+
+**Input heights** — standardized heights for form controls and buttons:
+
+| Token | Value |
+|---|---|
+| `--op-input-height-small` | 28px |
+| `--op-input-height-medium` | 36px |
+| `--op-input-height-large` | 40px |
+| `--op-input-height-x-large` | 84px (textarea) |
+
+**Input focus rings** — pre-composed `box-shadow` values. Apply directly as `box-shadow` on `:focus-visible`:
+
+| Token | Palette |
+|---|---|
+| `--op-input-focus-primary` | Primary |
+| `--op-input-focus-neutral` | Neutral |
+| `--op-input-focus-danger` | Danger |
+| `--op-input-focus-warning` | Warning |
+| `--op-input-focus-info` | Info |
+| `--op-input-focus-notice` | Notice |
+
+**Z-index layers:**
+
+| Token | Value | Layer |
+|---|---|---|
+| `--op-z-index-header` | 500 | Page header |
+| `--op-z-index-footer` | 500 | Page footer |
+| `--op-z-index-sidebar` | 700 | Navigation sidebar |
+| `--op-z-index-dialog` | 800 | Modal dialog |
+| `--op-z-index-dialog-backdrop` | 801 | Dialog backdrop overlay |
+| `--op-z-index-dialog-content` | 802 | Dialog content (above backdrop) |
+| `--op-z-index-dropdown` | 900 | Dropdowns and select menus |
+| `--op-z-index-alert-group` | 950 | Flash/toast alert group |
+| `--op-z-index-tooltip` | 1000 | Tooltips (always on top) |
+
+## Shapes
+
+To render a fully circular element, apply `border-radius: 50%` directly. This is a layout instruction rather than a fixed dimension, so it is not included in the `rounded` token scale above.
+## Components
+
+Components expose a public customization API through `--_op-*` CSS custom properties declared at the top of each component rule. Override these on a containing selector to adjust the component without touching its internals. Overrides are scoped — they only affect components inside the selector.
+
+```css
+/* Make buttons taller in a specific toolbar */
+.my-toolbar .btn {
+  --_op-btn-height-medium: 44px;
+}
+
+/* Adjust card padding in a compact sidebar */
+.my-sidebar .card {
+  --_op-card-padding: var(--op-space-x-small);
+}
+```
+
+To discover what a component exposes, check its CSS file for `--_op-` declarations at the top of the root rule. Never set `--__op-*` (double-underscore) vars from outside a component — these are private resolved values derived from the public API.
+
+## Do's and Don'ts
+
+- Do pair every background color step with its matching `-on-*` text color (e.g. `--op-color-primary-plus-five` + `--op-color-primary-on-plus-five`)
+- Do use `box-shadow` for borders — never the `border` property — to preserve element dimensions and document flow
+- Do use named transition tokens (`--op-transition-input`, `--op-transition-modal`, etc.) rather than raw durations
+- Do use `--op-opacity-disabled` on disabled elements rather than inventing a value
+- Don't set `--__op-*` (double-underscore) vars from outside a component
+- Don't hardcode pixel values for spacing or font sizes — use the token scale
+- Don't toggle a class to switch color schemes; `light-dark()` handles it automatically
+
+## CSS Custom Property Conventions
+
+Optics uses a three-tier naming system:
+
+- `--op-*` — **Public design tokens.** Available globally on `:root`. Use in any CSS to tap into the system.
+- `--_op-*` — **Component public API.** Declared at the top of a component rule with defaults. Override on a parent selector to customize an instance.
+- `--__op-*` — **Component private implementation.** Derived from `--_op-*`; used only within the component. Never set externally.
 
 ## Borders
 
-Optics renders borders via `box-shadow` instead of the `border` CSS property. This preserves layout — `box-shadow` does not affect element dimensions or document flow, so adding or removing a border never causes reflow.
+Optics renders borders via `box-shadow` instead of the `border` CSS property. This means borders never affect element dimensions or document flow — adding or removing a border causes no reflow.
 
 ```css
-/* Outline border (doesn't affect layout) */
+/* Outline border */
 box-shadow: var(--op-border-all) var(--op-color-border);
 
 /* Inset border (common inside components) */
@@ -632,133 +807,53 @@ box-shadow:
   var(--op-border-bottom) var(--op-color-border);
 ```
 
-**Direction tokens:** `--op-border-all`, `--op-border-top`, `--op-border-right`, `--op-border-bottom`, `--op-border-left`, `--op-border-x` (left+right), `--op-border-y` (top+bottom), `--op-border-none`
+**Border direction tokens** — shadow offsets for use with `box-shadow: <direction> <color>`:
 
-Note: `--op-border-x` and `--op-border-y` are already composed with `var(--op-color-border)` — use them directly as the full `box-shadow` value without appending a color.
+| Token | Direction |
+|---|---|
+| `--op-border-all` | All sides (spread) |
+| `--op-border-top` | Top only |
+| `--op-border-right` | Right only |
+| `--op-border-bottom` | Bottom only |
+| `--op-border-left` | Left only |
+| `--op-border-x` | Left + right (pre-composed with `--op-color-border`) |
+| `--op-border-y` | Top + bottom (pre-composed with `--op-color-border`) |
+| `--op-border-none` | No border |
 
-## Spacing
+Note: `--op-border-x` and `--op-border-y` are already composed with `var(--op-color-border)` — use them as the complete `box-shadow` value without appending a color.
 
-The scale is built on `--op-space-scale-unit: 1rem`, which equals **10px** when the root `font-size` is set to `62.5%` (the Optics baseline).
+**Border widths:**
 
-| Token | Multiplier | Value |
+| Token | Value | Use for |
 |---|---|---|
-| `--op-space-3x-small` | × 0.2 | 2px |
-| `--op-space-2x-small` | × 0.4 | 4px |
-| `--op-space-x-small`  | × 0.8 | 8px |
-| `--op-space-small`    | × 1.2 | 12px |
-| `--op-space-medium`   | × 1.6 | 16px |
-| `--op-space-large`    | × 2.0 | 20px |
-| `--op-space-x-large`  | × 2.4 | 24px |
-| `--op-space-2x-large` | × 2.8 | 28px |
-| `--op-space-3x-large` | × 4.0 | 40px |
-| `--op-space-4x-large` | × 8.0 | 80px |
+| `--op-border-width` | 1px | Default border |
+| `--op-border-width-large` | 2px | Focus inner ring |
+| `--op-border-width-x-large` | 4px | Focus outer ring |
 
-```css
-.my-panel {
-  padding: var(--op-space-medium);
-  gap: var(--op-space-x-small);
-}
-```
+**Border radius:**
 
-A separate `--op-size-unit: 0.4rem` (4px) is available for icon sizing and fine-grained layout, independent of the spacing scale.
-
-## Typography
-
-Font sizes use the same `--op-font-scale-unit: 1rem` (10px) base as spacing:
-
-| Token | Multiplier | Value |
+| Token | Value | Use for |
 |---|---|---|
-| `--op-font-2x-small` | × 1.0 | 10px |
-| `--op-font-x-small`  | × 1.2 | 12px |
-| `--op-font-small`    | × 1.4 | 14px |
-| `--op-font-medium`   | × 1.6 | 16px |
-| `--op-font-large`    | × 1.8 | 18px |
-| `--op-font-x-large`  | × 2.0 | 20px |
-| `--op-font-2x-large` | × 2.4 | 24px |
-| `--op-font-3x-large` | × 2.8 | 28px |
-| `--op-font-4x-large` | × 3.2 | 32px |
-| `--op-font-5x-large` | × 3.6 | 36px |
-| `--op-font-6x-large` | × 4.8 | 48px |
-
-**Font weights:** `thin` (100), `extra-light` (200), `light` (300), `normal` (400), `medium` (500), `semi-bold` (600), `bold` (700), `extra-bold` (800), `black` (900)
-
-**Font families:** `--op-font-family` (Noto Sans, default), `--op-font-family-alt` (Noto Serif)
-
-**Composing typography tokens:**
-
-```css
-.my-label {
-  font-size: var(--op-font-small);         /* 14px */
-  font-weight: var(--op-font-weight-medium);
-  letter-spacing: var(--op-letter-spacing-label);
-  line-height: var(--op-line-height-dense);
-}
-```
-
-**Letter spacing tokens:** `--op-letter-spacing-navigation` (0.01rem — nav items), `--op-letter-spacing-label` (0.04rem — labels, badges)
-
-**Line height tokens:** `none` (0), `densest` (1), `denser` (1.15), `dense` (1.3), `base` (1.5), `loose` (1.6), `looser` (1.7), `loosest` (1.8)
-
-## Elevation
-
-### Z-Index
-
-| Token | Value | Layer |
-|---|---|---|
-| `--op-z-index-header` | 500 | Page header |
-| `--op-z-index-footer` | 500 | Page footer |
-| `--op-z-index-sidebar` | 700 | Navigation sidebar |
-| `--op-z-index-dialog` | 800 | Modal dialog backdrop |
-| `--op-z-index-dialog-backdrop` | 801 | Dialog backdrop overlay |
-| `--op-z-index-dialog-content` | 802 | Dialog content (above backdrop) |
-| `--op-z-index-dropdown` | 900 | Dropdowns and select menus |
-| `--op-z-index-alert-group` | 950 | Flash/toast alert group |
-| `--op-z-index-tooltip` | 1000 | Tooltips (always on top) |
-
-### Shadows
-
-```css
-box-shadow: var(--op-shadow-x-small);  /* subtle lift, e.g. cards */
-box-shadow: var(--op-shadow-small);
-box-shadow: var(--op-shadow-medium);
-box-shadow: var(--op-shadow-large);
-box-shadow: var(--op-shadow-x-large);  /* modals, prominent overlays */
-```
+| `--op-radius-small` | 2px | Subtle rounding |
+| `--op-radius-medium` | 4px | Buttons, inputs, cards (default) |
+| `--op-radius-large` | 8px | Modals, larger panels |
+| `--op-radius-x-large` | 12px | Cards with prominent rounding |
+| `--op-radius-2x-large` | 16px | Featured/hero elements |
+| `--op-radius-circle` | 50% | Avatars, icon buttons |
+| `--op-radius-pill` | 9999px | Pill badges, pill buttons |
 
 ## Transitions and Animation
 
-Named transitions are matched to specific interaction types. Using the right one keeps motion consistent across the system:
+Use named transition tokens to keep motion consistent across the system:
 
 | Token | Duration | Use for |
 |---|---|---|
-| `--op-transition-input` | 120ms | Hover/focus changes on buttons, inputs, interactive controls (fast, snappy) |
+| `--op-transition-input` | 120ms | Hover/focus on buttons, inputs, interactive controls |
 | `--op-transition-accordion` | 120ms | Rotation of disclosure chevron/marker |
 | `--op-transition-accordion-content` | 300ms | Accordion panel open/close (height + content-visibility) |
 | `--op-transition-modal` | 300ms | Modal appear/disappear |
 | `--op-transition-sidebar` | 200ms | Sidebar slide in/out |
-| `--op-transition-panel` | 400ms | Side panel entry (slides from right) |
+| `--op-transition-panel` | 400ms | Side panel entry from the right |
 | `--op-transition-tooltip` | 300ms + 300ms delay | Tooltip delayed reveal |
 
 A single animation token also exists for flash/toast alerts: `--op-animation-flash` runs a 5s slide-in-hold-slide-out sequence.
-
-## Component Customization
-
-Components expose a public customization API via `--_op-*` vars declared at the top of their rule. Override these on a containing selector to change the component's appearance without touching its CSS.
-
-```css
-/* Make buttons taller in a specific toolbar */
-.my-toolbar .btn {
-  --_op-btn-height-medium: 44px;
-}
-
-/* Override font size for a compact form */
-.my-compact-form .btn {
-  --_op-btn-font-medium: var(--op-font-x-small);
-}
-```
-
-Overrides are **scoped** — they only affect components inside the selector. The rest of the page is unchanged.
-
-To know what a component exposes, check its CSS file for `--_op-` declarations at the top of the root rule. The button, for example, exposes height, font size, and padding for each size variant.
-
-**Do not set `--__op-*` vars externally.** Double-underscore vars are private resolved values derived from the public API. Setting them directly bypasses the public API and will conflict with internal component logic.
