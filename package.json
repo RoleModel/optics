@@ -22,6 +22,7 @@
     "sanity-check": "yarn lint && yarn prettier && yarn build && yarn build-storybook && rm -rf ./dist && rm -rf ./storybook-static",
     "generate": "node ./tools/generate.js",
     "design-tokens": "node ./tools/generate-design-tokens.js",
+    "dtcg-tokens": "node ./tools/generate-dtcg-tokens.js",
     "design-tokens:lint": "npx @google/design.md lint dist/DESIGN.md",
     "design-tokens:export": "npx @google/design.md export --format dtcg dist/DESIGN.md > dist/design-tokens.json"
   },
