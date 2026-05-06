@@ -1,13 +1,5 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(node tools/generate-design-tokens.js)",
-      "Bash(yarn design-tokens)",
-      "Bash(yarn design-tokens:lint)",
-      "Bash(node build_dtcg_tokens.js)",
-      "Bash(yarn dtcg-tokens *)",
-      "Bash(node -e \"const j = require\\('./dist/design-tokens.json'\\); console.log\\(JSON.stringify\\(j['op-breakpoint'], null, 2\\)\\)\")",
-      "Bash(node -e \"const j = require\\('./dist/design-tokens.json'\\); console.log\\(JSON.stringify\\(j['op-input-height'], null, 2\\)\\)\")"
-    ]
+    "allow": []
   }
 }
