@@ -50,9 +50,11 @@ As you read, note:
 
 Read `generated-docs/DESIGN.md`. The file structure is:
 1. YAML frontmatter (between the opening and closing `---`)
-2. Markdown body (after the closing `---`) — may include a `## Shapes` section
+2. Markdown body (after the closing `---`) — includes a `## Shapes` section with content
 
-Append new sections **after the very last line of the file**. Never modify the YAML block or any existing markdown content. If a `## Shapes` section already exists, leave it intact and add your sections below it.
+**Important:** The `## Shapes` section has content below its heading — do not inject between the heading and its body. Append all new sections after the very last line of the file (after the Shapes section content). Never modify the YAML block or any existing markdown content.
+
+After appending, ensure the file ends with a single trailing newline.
 
 Write the following sections, drawing on what you actually found in the CSS:
 
