@@ -23,7 +23,7 @@
     "generate": "node ./tools/generate.js",
     "design-tokens": "node ./tools/generate-design-tokens.js",
     "design-tokens:lint": "npx @google/design.md lint dist/DESIGN.md",
-    "design-tokens:export": "npx @google/design.md export --format dtcg dist/DESIGN.md"
+    "design-tokens:export": "npx @google/design.md export --format dtcg dist/DESIGN.md > dist/design-tokens.json"
   },
   "repository": {
     "type": "git",

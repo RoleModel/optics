@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node tools/generate-design-tokens.js)"
+      "Bash(node tools/generate-design-tokens.js)",
+      "Bash(yarn design-tokens:lint)"
     ]
   }
 }
