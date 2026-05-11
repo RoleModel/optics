@@ -245,7 +245,8 @@ function parseColors() {
   return { 'op-color': result }
 }
 
-const output = deepMerge(GROUPS.map(parseGroup).reduce(deepMerge, {}), parseColors())
+// const output = deepMerge(GROUPS.map(parseGroup).reduce(deepMerge, {}), parseColors())
+const output = deepMerge(GROUPS.map(parseGroup).reduce(deepMerge, {}), {})
 fs.mkdirSync(path.dirname(path.resolve(OUTPUT)), { recursive: true })
 fs.writeFileSync(path.resolve(OUTPUT), JSON.stringify(output, null, 2))
 console.log(`Written to ${OUTPUT}`)
