@@ -46,8 +46,8 @@
     "modern-css-reset": "^1.4.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.29.0",
-    "@eslint/js": "^9.39.3",
+    "@babel/preset-env": "^8.0.2",
+    "@eslint/js": "^10.0.1",
     "@storybook/addon-docs": "^10.2.15",
     "@storybook/html-vite": "^10.2.15",
     "cssnano": "^7.1.2",
