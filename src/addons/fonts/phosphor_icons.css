@@ -1,14 +1,15 @@
 /*
   See all icons at: https://phosphoricons.com/
-  Current version: 2.1.1
+  See Changelog at: https://github.com/phosphor-icons/web/releases
+  Current version: 2.1.2
 */
 
-@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css';
-@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css';
-@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css';
-@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css';
-@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css';
-@import 'https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.2/src/regular/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.2/src/thin/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.2/src/light/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.2/src/bold/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.2/src/fill/style.css';
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.2/src/duotone/style.css';
 
 /* Note: the important tag is how Phosphor sets up the fonts which is why we replicate them here */
 
