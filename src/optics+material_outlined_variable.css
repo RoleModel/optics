@@ -6,12 +6,12 @@
 @import 'addons/fonts/material_symbols_outlined_variable.css';
 
 /* Tokens */
-@import 'core/tokens';
+@import 'core/tokens/index.css';
 
 /* Base styles and utilities */
-@import 'core/base';
-@import 'core/layout';
-@import 'core/utilities';
+@import 'core/base.css';
+@import 'core/layout.css';
+@import 'core/utilities.css';
 
 /* Components */
-@import 'components';
+@import 'components/index.css';

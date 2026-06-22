@@ -4,5 +4,5 @@
   https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts
 */
 
-@import 'text_fonts';
-@import 'icon_fonts';
+@import 'text_fonts.css';
+@import 'icon_fonts.css';

@@ -14,9 +14,6 @@
 /* Table of Contents Customization */
 .sbdocs.sbdocs-wrapper {
   .sbdocs.sbdocs-toc--custom {
-    background-color: var(--op-color-background);
-    color: var(--op-color-on-background);
-    color-scheme: light;
     inline-size: 15rem;
     min-inline-size: 15rem;
 
