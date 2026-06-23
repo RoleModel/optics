@@ -23,18 +23,15 @@
   }
 }
 
+/* Set playground / preview background */
 .sbdocs-preview .docs-story {
   background-color: var(--op-color-background);
   color: var(--op-color-on-background);
 }
 
+/* Fix tooltip demo issue */
 .sbdocs .sb-button-fix button {
   block-size: 0;
-}
-
-/* Allow the "Show Code" button to appear above the footer in examples. */
-.docs-story div:last-child:has(.docblock-code-toggle) {
-  z-index: 1;
 }
 
 /* Transition Demos */
@@ -161,6 +158,7 @@
     font-weight: initial;
     letter-spacing: initial;
     line-height: 19px;
+    user-select: initial;
   }
 }
 
