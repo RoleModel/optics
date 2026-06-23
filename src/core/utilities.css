@@ -461,3 +461,37 @@
     gap: var(--op-space-medium);
   }
 }
+
+/*
+  side by side layout with a small area and a large area
+  similar to .flex with a .flex-grow-1 within it, but with a more semantic name and wrap handling.
+
+  |[] [         ]|
+  |[         ] []| with end
+*/
+.op-flank {
+  display: flex;
+  margin-block: 0;
+  margin-inline: 0;
+
+  /* zero specificity. Let's utilities override */
+  :where(&) {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--op-space-medium);
+  }
+
+  /* Small area */
+  &:not(.op-flank--end) > :first-child,
+  &.op-flank--end > :last-child {
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+
+  /* Large area */
+  &:not(.op-flank--end) > :last-child,
+  &.op-flank--end > :first-child {
+    flex-basis: 0;
+    flex-grow: 999;
+  }
+}

@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as FlankStories from './Flank.stories'
+import { createSourceCodeLink } from '../../../helpers/sourceCodeLink.js'
+
+<Meta of={FlankStories} />
+
+# Flank
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/utilities.css' }).outerHTML,
+  }}
+></div>
+
+The flank utility provides a simple way to create a horizontal row with an item flanked by another large item. It
+works with all of the gap and other flex utilities.
+
+See [Utility Introduction](?path=/docs/utilities-introduction--docs#higher-order-utilities-vs-components) for more information.
+
+See [Utility Layout](?path=/docs/recipes-layout--docs#utility) for an example of how flanks
+can be used to create more readable flex layouts.
+
+Note: This utility uses the `op` prefix to avoid potential naming conflicts with other CSS frameworks.
+This is a pattern we hope to move towards for all utilities in the future.
+
+## Playground
+
+<Canvas of={FlankStories.With} />
+<Controls of={FlankStories.With} />
+
+## Without
+
+A normal `div` without the flank utility
+
+<Canvas of={FlankStories.Without} />
+
+## Flank Property
+
+`.op-flank` Creates a flex row with an item flanked by another large item.
+
+<Canvas of={FlankStories.With} />
+
+## Flank End
+
+`.op-flank.op-flank--end` Flips which side of the container the item is flanked to.
+
+<Canvas of={FlankStories.FlankEnd} />
+
+## Example Flank
+
+`.op-flank` with an avatar and text pair to demonstrate a common use case.
+
+<Canvas of={FlankStories.AvatarExample} />
+
+`.op-flank.op-flank--end` to show an alternate example.
+
+<Canvas of={FlankStories.AvatarExampleEnd} />
