@@ -1,12 +1,12 @@
-import { createSplit } from './Split.js'
+import { createStack } from './Stack.js'
 
 export default {
-  title: 'Utilities/Split',
-  render: ({ split, ...args }) => {
-    return createSplit({ split, ...args })
+  title: 'Utilities/Advanced/Stack',
+  render: ({ stack, ...args }) => {
+    return createStack({ stack, ...args })
   },
   argTypes: {
-    split: { control: 'boolean' },
+    stack: { control: 'boolean' },
     alignItems: {
       control: { type: 'select' },
       options: ['stretch', 'start', 'center', 'end', 'baseline'],
@@ -23,13 +23,13 @@ export default {
 
 export const With = {
   args: {
-    split: true,
+    stack: true,
   },
 }
 
 export const Without = {
   args: {
-    split: false,
+    stack: false,
   },
 }
 

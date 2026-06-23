@@ -1,12 +1,12 @@
-import { createCluster } from './Cluster.js'
+import { createSplit } from './Split.js'
 
 export default {
-  title: 'Utilities/Cluster',
-  render: ({ cluster, ...args }) => {
-    return createCluster({ cluster, ...args })
+  title: 'Utilities/Advanced/Split',
+  render: ({ split, ...args }) => {
+    return createSplit({ split, ...args })
   },
   argTypes: {
-    cluster: { control: 'boolean' },
+    split: { control: 'boolean' },
     alignItems: {
       control: { type: 'select' },
       options: ['stretch', 'start', 'center', 'end', 'baseline'],
@@ -23,13 +23,13 @@ export default {
 
 export const With = {
   args: {
-    cluster: true,
+    split: true,
   },
 }
 
 export const Without = {
   args: {
-    cluster: false,
+    split: false,
   },
 }
 

@@ -1,10 +1,10 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs/blocks'
-import * as StackStories from './Stack.stories'
-import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
+import * as SplitStories from './Split.stories'
+import { createSourceCodeLink } from '../../../helpers/sourceCodeLink.js'
 
-<Meta of={StackStories} />
+<Meta of={SplitStories} />
 
-# Stack
+# Split
 
 <div
   dangerouslySetInnerHTML={{
@@ -12,11 +12,11 @@ import { createSourceCodeLink } from '../../helpers/sourceCodeLink.js'
   }}
 ></div>
 
-The stack utility provides a simple way to create a vertical stack of spaced items. It
-works with all of the gap and other flex utilities. It is effectively equivalent to using
-`.flex .flex-col .gap-md` together. See [Utility Introduction](?path=/docs/utilities-introduction--docs#higher-order-utilities-vs-components) for more information.
+The split utility provides a simple way to push two items apart from each other.
+It is effectively equivalent to using `.flex .flex-wrap .items-center .justify-between .gap-md` together.
+See [Utility Introduction](?path=/docs/utilities-introduction--docs#higher-order-utilities-vs-components) for more information.
 
-See [Utility Layout](?path=/docs/recipes-layout--docs#utility) for an example of how stacks
+See [Utility Layout](?path=/docs/recipes-layout--docs#utility) for an example of how splits
 can be used to create more readable flex layouts.
 
 Note: This utility uses the `op` prefix to avoid potential naming conflicts with other CSS frameworks.
@@ -24,47 +24,47 @@ This is a pattern we hope to move towards for all utilities in the future.
 
 ## Playground
 
-<Canvas of={StackStories.With} />
-<Controls of={StackStories.With} />
+<Canvas of={SplitStories.With} />
+<Controls of={SplitStories.With} />
 
 ## Without
 
-A normal `div` without the stack utility
+A normal `div` without the split utility
 
-<Canvas of={StackStories.Without} />
+<Canvas of={SplitStories.Without} />
 
-## Stack Property
+## Split Property
 
-`.op-stack` Creates a flex stack.
+`.op-split` Creates a flex split.
 
-<Canvas of={StackStories.With} />
+<Canvas of={SplitStories.With} />
 
 ## Align Items Stretch
 
 `.items-stretch` Stretches each item across the cross axis. This is the default alignment and doesn't need to be applied unless you are overriding something set differently.
 
-<Canvas of={StackStories.AlignStretch} />
+<Canvas of={SplitStories.AlignStretch} />
 
 ## Align Items Start
 
 `.items-start` places each item at the start of the cross axis.
 
-<Canvas of={StackStories.AlignStart} />
+<Canvas of={SplitStories.AlignStart} />
 
 ## Align Items Center
 
 `.items-center` places each item at the center of the cross axis.
 
-<Canvas of={StackStories.AlignCenter} />
+<Canvas of={SplitStories.AlignCenter} />
 
 ## Align Items End
 
 `.items-end` places each item at the end of the cross axis.
 
-<Canvas of={StackStories.AlignEnd} />
+<Canvas of={SplitStories.AlignEnd} />
 
 ## Align Items Baseline
 
 `.items-baseline` places each item at the text baseline of the cross axis.
 
-<Canvas of={StackStories.AlignBaseline} />
+<Canvas of={SplitStories.AlignBaseline} />
