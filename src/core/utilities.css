@@ -495,3 +495,42 @@
     flex-grow: 999;
   }
 }
+
+/* Grid Layout */
+.op-grid {
+  --_op-grid-min-column-size: var(--op-space-4x-large);
+  --_op-grid-max-column-size: 0px;
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(max(var(--_op-grid-min-column-size), var(--_op-grid-max-column-size)), 1fr)
+  );
+  margin-block: 0;
+  margin-inline: 0;
+
+  /* zero specificity. Let's utilities override */
+  :where(&) {
+    gap: var(--op-space-medium);
+  }
+
+  &.op-grid--2-column {
+    --_op-grid-max-column-size: calc(100% / 3);
+  }
+
+  &.op-grid--3-column {
+    --_op-grid-max-column-size: calc(100% / 4);
+  }
+
+  &.op-grid--4-column {
+    --_op-grid-max-column-size: calc(100% / 5);
+  }
+
+  &.op-grid--5-column {
+    --_op-grid-max-column-size: calc(100% / 6);
+  }
+
+  &.op-grid--6-column {
+    --_op-grid-max-column-size: calc(100% / 7);
+  }
+}
