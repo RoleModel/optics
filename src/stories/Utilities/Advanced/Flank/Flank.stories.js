@@ -34,14 +34,14 @@ export const Without = {
 export const FlankEnd = {
   args: {
     flank: true,
-    end: true
+    end: true,
   },
 }
 
 export const AvatarExample = {
   args: {
     flank: true,
-    example: true
+    example: true,
   },
 }
 
@@ -49,6 +49,6 @@ export const AvatarExampleEnd = {
   args: {
     flank: true,
     example: true,
-    end: true
+    end: true,
   },
 }

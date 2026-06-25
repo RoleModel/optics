@@ -50,8 +50,8 @@ const createSidebarLayout = (rightSidebar) => {
     <div class='app__header'>Header</div>
     <div class='app__content'>
       ${Array.from(Array(16))
-      .map((_item) => '<p>Some content</p>')
-      .join('\n')}
+        .map((_item) => '<p>Some content</p>')
+        .join('\n')}
     </div>
     <div class='app__footer'>Footer</div>
   </div>
@@ -89,32 +89,34 @@ const createSidePanelLayout = () => {
   <!-- Confirm here -->
   <!-- Modal here -->
   <!-- Panel here -->
-  ${createSidebar({
-    style: 'default',
-    size: 'drawer',
-    brand: true,
-    position: 'start',
-    activeLink: 'Home',
-    logout: false,
-    trailingDiv: false,
-  }).innerHTML
-    }
+  ${
+    createSidebar({
+      style: 'default',
+      size: 'drawer',
+      brand: true,
+      position: 'start',
+      activeLink: 'Home',
+      logout: false,
+      trailingDiv: false,
+    }).innerHTML
+  }
   <div class='app-body'>
     ${createNavbar({ style: 'default' }).innerHTML}
     <div class='app__content-wrapper'> <!-- See style block above -->
       <div class='app__content-no-margin'>
         ${Array.from(Array(16))
-      .map((_item) => '<p>Some content</p>')
-      .join('\n')}
+          .map((_item) => '<p>Some content</p>')
+          .join('\n')}
       </div>
-      ${createSidePanel({
-        border: 'both',
-        sections: 20,
-        showDividers: true,
-        sectionPadding: 'all',
-        includeDemoWrapper: false,
-      }).outerHTML
-    }
+      ${
+        createSidePanel({
+          border: 'both',
+          sections: 20,
+          showDividers: true,
+          sectionPadding: 'all',
+          includeDemoWrapper: false,
+        }).outerHTML
+      }
     </div>
     <div class='app__footer'>Footer</div>
   </div>

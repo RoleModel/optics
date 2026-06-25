@@ -88,4 +88,3 @@ export const CustomInlineSize = {
     inlineSize: '50%',
   },
 }
-

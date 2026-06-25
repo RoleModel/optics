@@ -8,11 +8,9 @@ export const createTextPair = ({
 }) => {
   const element = document.createElement('div')
 
-  element.className = [
-    'text-pair',
-    inline ? 'text-pair--inline' : '',
-    gap ? `gap-${gap}` : ''
-  ].filter(Boolean).join(' ')
+  element.className = ['text-pair', inline ? 'text-pair--inline' : '', gap ? `gap-${gap}` : '']
+    .filter(Boolean)
+    .join(' ')
 
   const title = document.createElement('span')
   title.className = ['text-pair__title', titleSize === '' ? '' : `text-pair__title--${titleSize}`]

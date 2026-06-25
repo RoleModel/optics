@@ -17,7 +17,11 @@ export const createFlank = ({ flank = true, end = false, gap = '', example = fal
 }
 
 const createAvatarExample = ({ flank, end, gap }) => {
-  const avatar = createAvatar({ size: 'large', useLink: false, imageSource: 'https://avatars.githubusercontent.com/u/5957102?v=4' }).outerHTML
+  const avatar = createAvatar({
+    size: 'large',
+    useLink: false,
+    imageSource: 'https://avatars.githubusercontent.com/u/5957102?v=4',
+  }).outerHTML
   const textPairEl = createTextPair({ titleText: 'Jeremy Walton', subtitleText: 'RoleModel Software' })
   if (end) textPairEl.classList.add('text-right')
   const textPair = textPairEl.outerHTML
@@ -36,5 +40,7 @@ const createAvatarExample = ({ flank, end, gap }) => {
 }
 
 const classlist = (flank, end, gap) => {
-  return [flank ? 'op-flank' : '', flank && end ? 'op-flank--end' : '', gap ? `gap-${gap}` : ''].filter(Boolean).join(' ')
+  return [flank ? 'op-flank' : '', flank && end ? 'op-flank--end' : '', gap ? `gap-${gap}` : '']
+    .filter(Boolean)
+    .join(' ')
 }
