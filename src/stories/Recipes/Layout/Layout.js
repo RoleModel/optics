@@ -286,6 +286,73 @@ const createUtilityLayout = () => {
 `
 }
 
+const createCardGridLayout = () => {
+  return `
+<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
+  <!-- Alert Flash message here -->
+  <!-- Confirm here -->
+  <!-- Modal here -->
+  <!-- Panel here -->
+  <div class='app__content' style="padding: var(--op-space-large);"> <!-- Padding is for demo only, don't write inline styles -->
+    <div class='op-grid op-grid--2-column'>
+      <div class='card'>
+        <div class='op-frame op-frame--landscape'>
+          <img src='https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9' alt='Clint' />
+        </div>
+        <div class='card__header'>
+          <div class='text-pair'>
+            <span class='text-pair__title'>Clint</span>
+            <span class='text-pair__subtitle'>Dog · Male</span>
+          </div>
+        </div>
+      </div>
+
+      <div class='card'>
+        <div class='op-frame op-frame--landscape'>
+          <div class='text-pair items-center'>
+            <span class='text-pair__title'>
+              <span class='material-symbols-outlined icon'>photo</span>
+            </span>
+            <span class='text-pair__subtitle'>Coming soon</span>
+          </div>
+        </div>
+        <div class='card__header'>
+          <div class='text-pair'>
+            <span class='text-pair__title'>Daisy</span>
+            <span class='text-pair__subtitle'>Dog · Female</span>
+          </div>
+        </div>
+      </div>
+
+      <div class='card'>
+        <div class='op-frame op-frame--landscape'>
+          <img src='https://images.unsplash.com/photo-1510771463146-e89e6e86560e' alt='June' />
+        </div>
+        <div class='card__header'>
+          <div class='text-pair'>
+            <span class='text-pair__title'>June</span>
+            <span class='text-pair__subtitle'>Dog · Female</span>
+          </div>
+        </div>
+      </div>
+
+      <div class='card'>
+        <div class='op-frame op-frame--landscape'>
+          <img src='https://images.unsplash.com/photo-1505628346881-b72b27e84530?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='Wallace' />
+        </div>
+        <div class='card__header'>
+          <div class='text-pair'>
+            <span class='text-pair__title'>Wallace</span>
+            <span class='text-pair__subtitle'>Dog · Male</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`
+}
+
 export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
   if (style === 'basic') {
     return createBasicLayout()
@@ -313,6 +380,10 @@ export const createLayout = ({ style = 'basic', rightSidebar = false }) => {
 
   if (style === 'utility') {
     return createUtilityLayout()
+  }
+
+  if (style === 'card-grid') {
+    return createCardGridLayout()
   }
 
   return `<div></div>`
