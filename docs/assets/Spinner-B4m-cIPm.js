@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";var t,n=e((()=>{t=({size:e=`large`})=>{let t=document.createElement(`div`);return t.className=`spinner spinner--${e}`,t.role=`status`,t.innerHTML=`<span class="sr-only">Loading</span>`,t}}));export{n,t};

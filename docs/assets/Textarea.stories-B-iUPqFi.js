@@ -1,0 +1,3 @@
+import{i as e}from"./preload-helper-xPQekRTU.js";import{o as t,s as n}from"./Form-Kb7cVBWg.js";var r,i,a,o=e((()=>{n(),r={title:`Components/Form/Textarea`,render:({...e})=>t({...e}),argTypes:{readonly:{control:{type:`boolean`}}}},i={args:{}},i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  args: {}
+}`,...i.parameters?.docs?.source}}},a=[`Default`]}));o();export{i as Default,a as __namedExportsOrder,r as default,o as t};
