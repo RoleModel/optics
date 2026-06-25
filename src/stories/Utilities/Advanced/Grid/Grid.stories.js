@@ -9,7 +9,7 @@ export default {
     grid: { control: 'boolean' },
     gap: {
       control: { type: 'select' },
-      options: ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
+      options: ['none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
     },
     columns: {
       control: {

@@ -94,6 +94,12 @@
 }
 
 /* Gap Properties */
+.gap-none {
+  gap: 0;
+
+  --op-gap: 0;
+}
+
 .gap-xxs {
   gap: var(--op-space-2x-small);
 
