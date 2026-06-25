@@ -17,6 +17,10 @@ export default {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
     },
+    gap: {
+      control: { type: 'select' },
+      options: ['none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
+    },
   },
 }
 
