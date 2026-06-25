@@ -5,7 +5,7 @@ import { createSidePanel } from '../../Components/SidePanel/SidePanel.js'
 
 const createBasicLayout = () => {
   return `
-<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
+<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Inline styles are for demo purposes -->
   <!-- Alert Flash message here -->
   <!-- Confirm here -->
   <!-- Modal here -->
@@ -20,7 +20,7 @@ const createBasicLayout = () => {
 const createSpinnerLayout = () => {
   const spinner = createSpinner({ size: 'large' }).outerHTML
   return `
-<div class='app-body items-center justify-center' style="height: 80rem;"> <!-- These classes should be on body. Height is for demo purposed -->
+<div class='app-body items-center justify-center' style="height: 80rem;"> <!-- These classes should be on body. Inline styles are for demo purposes -->
   ${spinner}
 </div>
     `
@@ -40,7 +40,7 @@ const createSidebarLayout = (rightSidebar) => {
   }
 
   return `
-<div class='app-with-sidebar' style="height: 40rem;"> <!-- This class should be on body. Height is for demo purposed -->
+<div class='app-with-sidebar' style="height: 40rem;"> <!-- This class should be on body. Inline styles are for demo purposes -->
   <!-- Alert Flash message here -->
   <!-- Confirm here -->
   <!-- Modal here -->
@@ -50,8 +50,8 @@ const createSidebarLayout = (rightSidebar) => {
     <div class='app__header'>Header</div>
     <div class='app__content'>
       ${Array.from(Array(16))
-        .map((_item) => '<p>Some content</p>')
-        .join('\n')}
+      .map((_item) => '<p>Some content</p>')
+      .join('\n')}
     </div>
     <div class='app__footer'>Footer</div>
   </div>
@@ -62,7 +62,7 @@ const createSidebarLayout = (rightSidebar) => {
 
 const createNavbarLayout = () => {
   return `
-<div class='app-body' style="height: 40rem;"> <!-- This class should be on body. Height is for demo purposed -->
+<div class='app-body' style="height: 40rem;"> <!-- This class should be on body. Inline styles are for demo purposes -->
   <!-- Alert Flash message here -->
   <!-- Confirm here -->
   <!-- Modal here -->
@@ -84,39 +84,37 @@ const createSidePanelLayout = () => {
     overflow: auto;
   }
 </style>
-<div class='app-with-sidebar' style="height: 60rem;"> <!-- This class should be on body. Height is for demo purposed -->
+<div class='app-with-sidebar' style="height: 60rem;"> <!-- This class should be on body. Inline styles are for demo purposes -->
   <!-- Alert Flash message here -->
   <!-- Confirm here -->
   <!-- Modal here -->
   <!-- Panel here -->
-  ${
-    createSidebar({
-      style: 'default',
-      size: 'drawer',
-      brand: true,
-      position: 'start',
-      activeLink: 'Home',
-      logout: false,
-      trailingDiv: false,
-    }).innerHTML
-  }
+  ${createSidebar({
+    style: 'default',
+    size: 'drawer',
+    brand: true,
+    position: 'start',
+    activeLink: 'Home',
+    logout: false,
+    trailingDiv: false,
+  }).innerHTML
+    }
   <div class='app-body'>
     ${createNavbar({ style: 'default' }).innerHTML}
     <div class='app__content-wrapper'> <!-- See style block above -->
       <div class='app__content-no-margin'>
         ${Array.from(Array(16))
-          .map((_item) => '<p>Some content</p>')
-          .join('\n')}
+      .map((_item) => '<p>Some content</p>')
+      .join('\n')}
       </div>
-      ${
-        createSidePanel({
-          border: 'both',
-          sections: 20,
-          showDividers: true,
-          sectionPadding: 'all',
-          includeDemoWrapper: false,
-        }).outerHTML
-      }
+      ${createSidePanel({
+        border: 'both',
+        sections: 20,
+        showDividers: true,
+        sectionPadding: 'all',
+        includeDemoWrapper: false,
+      }).outerHTML
+    }
     </div>
     <div class='app__footer'>Footer</div>
   </div>
@@ -159,7 +157,7 @@ const createLoginLayout = () => {
     }
   }
 </style>
-<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
+<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Inline styles are for demo purposes -->
   <!-- Alert Flash message here -->
   <!-- Confirm here -->
   <!-- Modal here -->
@@ -195,22 +193,24 @@ const createLoginLayout = () => {
 
 const createUtilityLayout = () => {
   return `
-<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
+<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Inline styles are for demo purposes -->
   <!-- Alert Flash message here -->
   <!-- Confirm here -->
   <!-- Modal here -->
   <!-- Panel here -->
-  <div class='app__content'>
+  <div class='app__content' style="padding: var(--op-space-large);"> <!-- Padding is for demo only, don't write inline styles -->
     <div class='op-stack'>
-      <h3>Timeline with Icons</h3>
+    <h3>Timeline with Icons</h3>
       <div class='op-stack'>
         <div class='op-split gap-sm'>
-          <div class='op-cluster'>
-            <span class='material-symbols-outlined icon icon--x-large'>nature</span>
-            <span>
-              Buried by
-              <strong>Squirrel</strong>
-            </span>
+          <div class='op-flank'>
+            <div class="avatar avatar--medium">
+              <img src="https://images.unsplash.com/photo-1542382689-217623cad37c" alt="Squirrel">
+            </div>
+            <div class='text-pair gap-xxs'>
+              <span class='text-pair__title'>Squirrel</span>
+              <span class='text-pair__subtitle'>Animal</span>
+            </div>
           </div>
           <span class='text-right'>Mar 31</span>
         </div>
@@ -243,16 +243,20 @@ const createUtilityLayout = () => {
 
     <div class='divider divider--spacing-large'></div>
 
-    <!-- Without the stack, cluster, and split utilities, this would look like: -->
+    <!-- Without the stack, cluster, split, and flank utilities, this would look like: -->
     <div class='flex flex-col gap-md'>
       <h3>Timeline with Icons</h3>
       <div class='flex justify-between gap-sm'>
-        <div class='flex flex-wrap gap-sm'>
-          <span class='material-symbols-outlined icon icon--x-large'>nature</span>
-          <span>
-            Buried by
-            <strong>squirrel</strong>
-          </span>
+        <div class='flex flex-wrap gap-md'>
+          <div class="avatar avatar--medium">
+            <img src="https://images.unsplash.com/photo-1542382689-217623cad37c" alt="Squirrel">
+          </div>
+          <div class='flex-grow-1'>
+            <div class='text-pair gap-xxs'>
+              <span class='text-pair__title'>Squirrel</span>
+              <span class='text-pair__subtitle'>Animal</span>
+            </div>
+          </div>
         </div>
         <span class='text-right'>Mar 31</span>
       </div>
@@ -288,7 +292,7 @@ const createUtilityLayout = () => {
 
 const createCardGridLayout = () => {
   return `
-<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Height is for demo purposed -->
+<div class='app-body' style="height: 80rem;"> <!-- This class should be on body. Inline styles are for demo purposes -->
   <!-- Alert Flash message here -->
   <!-- Confirm here -->
   <!-- Modal here -->
