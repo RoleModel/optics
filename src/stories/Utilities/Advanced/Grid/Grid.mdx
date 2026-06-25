@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as GridStories from './Grid.stories.js'
+import { createSourceCodeLink } from '../../../helpers/sourceCodeLink.js'
+
+<Meta of={GridStories} />
+
+# Grid
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: createSourceCodeLink({ link: 'core/utilities.css' }).outerHTML,
+  }}
+></div>
+
+The grid utility provides a simple way to create a dynamic grid layout. It is primarily intended for simple layouts with a minimum column size, or evenly divided columns from 2 to 6.
+
+See [Utility Introduction](?path=/docs/utilities-introduction--docs#higher-order-utilities-vs-components) for more information.
+
+Note: This utility uses the `op` prefix to avoid potential naming conflicts with other CSS frameworks.
+This is a pattern we hope to move towards for all utilities in the future.
+
+## Playground
+
+<Canvas of={GridStories.With} />
+<Controls of={GridStories.With} />
+
+## Without
+
+A normal `div` without the grid utility
+
+<Canvas of={GridStories.Without} />
+
+## Two columns
+
+<Canvas of={GridStories.TwoColumns} />
+
+## Six columns
+
+<Canvas of={GridStories.SixColumns} />

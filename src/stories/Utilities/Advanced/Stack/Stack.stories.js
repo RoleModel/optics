@@ -1,19 +1,19 @@
-import { createCluster } from './Cluster.js'
+import { createStack } from './Stack.js'
 
 export default {
-  title: 'Utilities/Cluster',
-  render: ({ cluster, ...args }) => {
-    return createCluster({ cluster, ...args })
+  title: 'Utilities/Advanced/Stack',
+  render: ({ stack, ...args }) => {
+    return createStack({ stack, ...args })
   },
   argTypes: {
-    cluster: { control: 'boolean' },
+    stack: { control: 'boolean' },
     alignItems: {
       control: { type: 'select' },
       options: ['stretch', 'start', 'center', 'end', 'baseline'],
     },
     gap: {
       control: { type: 'select' },
-      options: ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
+      options: ['none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
     },
   },
   parameters: {
@@ -23,13 +23,13 @@ export default {
 
 export const With = {
   args: {
-    cluster: true,
+    stack: true,
   },
 }
 
 export const Without = {
   args: {
-    cluster: false,
+    stack: false,
   },
 }
 

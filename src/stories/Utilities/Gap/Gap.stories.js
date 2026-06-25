@@ -8,8 +8,14 @@ export default {
   argTypes: {
     size: {
       control: { type: 'select' },
-      options: ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
+      options: ['none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
     },
+  },
+}
+
+export const None = {
+  args: {
+    size: 'none',
   },
 }
 

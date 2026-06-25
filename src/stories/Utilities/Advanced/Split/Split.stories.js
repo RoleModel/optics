@@ -1,7 +1,7 @@
 import { createSplit } from './Split.js'
 
 export default {
-  title: 'Utilities/Split',
+  title: 'Utilities/Advanced/Split',
   render: ({ split, ...args }) => {
     return createSplit({ split, ...args })
   },
@@ -13,7 +13,7 @@ export default {
     },
     gap: {
       control: { type: 'select' },
-      options: ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
+      options: ['none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
     },
   },
   parameters: {

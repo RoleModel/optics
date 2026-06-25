@@ -94,6 +94,12 @@
 }
 
 /* Gap Properties */
+.gap-none {
+  gap: 0;
+
+  --op-gap: 0;
+}
+
 .gap-xxs {
   gap: var(--op-space-2x-small);
 
@@ -424,21 +430,27 @@
 .op-stack {
   display: flex;
   flex-direction: column;
-}
+  margin-block: 0;
+  margin-inline: 0;
 
-:where(.op-stack) {
-  gap: var(--op-space-medium);
+  /* zero specificity. Lets utilities override */
+  :where(&) {
+    gap: var(--op-space-medium);
+  }
 }
 
 /* Equivalent to .flex.flex-wrap.items-center.gap-md */
 .op-cluster {
   display: flex;
   flex-wrap: wrap;
-}
+  margin-block: 0;
+  margin-inline: 0;
 
-:where(.op-cluster) {
-  align-items: center;
-  gap: var(--op-space-medium);
+  /* zero specificity. Lets utilities override */
+  :where(&) {
+    align-items: center;
+    gap: var(--op-space-medium);
+  }
 }
 
 /* Equivalent to .flex.flex-wrap.items-center.justify-between.gap-md */
@@ -446,9 +458,144 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-block: 0;
+  margin-inline: 0;
+
+  /* zero specificity. Lets utilities override */
+  :where(&) {
+    align-items: center;
+    gap: var(--op-space-medium);
+  }
 }
 
-:where(.op-split) {
-  align-items: center;
-  gap: var(--op-space-medium);
+/*
+  side by side layout with a small area and a large area
+  similar to .flex with a .flex-grow-1 within it, but with a more semantic name and wrap handling.
+
+  |[] [         ]|
+  |[         ] []| with end
+*/
+.op-flank {
+  display: flex;
+  margin-block: 0;
+  margin-inline: 0;
+
+  /* zero specificity. Lets utilities override */
+  :where(&) {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--op-space-medium);
+  }
+
+  /* Small area */
+  &:not(.op-flank--end) > :first-child,
+  &.op-flank--end > :last-child {
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+
+  /* Large area */
+  &:not(.op-flank--end) > :last-child,
+  &.op-flank--end > :first-child {
+    flex-basis: 0;
+    flex-grow: 999;
+  }
+}
+
+/* Grid Layout */
+.op-grid {
+  --_op-grid-min-column-size: var(--op-space-4x-large);
+  --_op-grid-max-column-size: 0px;
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(max(var(--_op-grid-min-column-size), var(--_op-grid-max-column-size)), 1fr)
+  );
+  margin-block: 0;
+  margin-inline: 0;
+
+  /* zero specificity. Lets utilities override */
+  :where(&) {
+    gap: var(--op-space-medium);
+  }
+
+  &.op-grid--2-column {
+    --_op-grid-max-column-size: calc(100% / 3);
+  }
+
+  &.op-grid--3-column {
+    --_op-grid-max-column-size: calc(100% / 4);
+  }
+
+  &.op-grid--4-column {
+    --_op-grid-max-column-size: calc(100% / 5);
+  }
+
+  &.op-grid--5-column {
+    --_op-grid-max-column-size: calc(100% / 6);
+  }
+
+  &.op-grid--6-column {
+    --_op-grid-max-column-size: calc(100% / 7);
+  }
+}
+
+/* Frame */
+@property --_op-frame-inline-size {
+  inherits: true;
+  initial-value: 100%;
+  syntax: '<length> | <percentage>';
+}
+
+.op-frame {
+  display: flex;
+  overflow: hidden;
+  border-radius: inherit;
+  aspect-ratio: 1 / 1;
+  margin-block: 0;
+  margin-inline: 0;
+  max-inline-size: var(--_op-frame-inline-size);
+
+  :where(&) {
+    align-items: center;
+    justify-content: center;
+  }
+
+  > img,
+  > video {
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+  }
+
+  /* aspect ratio */
+
+  &.op-frame--square {
+    aspect-ratio: 1 / 1;
+  }
+
+  &.op-frame--landscape {
+    aspect-ratio: 16 / 9;
+  }
+
+  &.op-frame--portrait {
+    aspect-ratio: 9 / 16;
+  }
+
+  &.op-frame--4-3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  &.op-frame--3-4 {
+    aspect-ratio: 3 / 4;
+  }
+
+  &.op-frame--3-2 {
+    aspect-ratio: 3 / 2;
+  }
+
+  &.op-frame--2-3 {
+    aspect-ratio: 2 / 3;
+  }
 }

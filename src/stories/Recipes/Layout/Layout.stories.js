@@ -8,7 +8,7 @@ export default {
   argTypes: {
     style: {
       control: { type: 'select' },
-      options: ['basic', 'sidebar', 'navbar', 'spinner', 'sidepanel', 'login', 'utility'],
+      options: ['basic', 'sidebar', 'navbar', 'spinner', 'sidepanel', 'login', 'utility', 'card-grid'],
     },
     rightSidebar: {
       control: { type: 'boolean' },
@@ -66,5 +66,11 @@ export const Login = {
 export const Utility = {
   args: {
     style: 'utility',
+  },
+}
+
+export const CardGrid = {
+  args: {
+    style: 'card-grid',
   },
 }

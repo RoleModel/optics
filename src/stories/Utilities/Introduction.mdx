@@ -12,9 +12,8 @@ import { createAlert } from '../Components/Alert/Alert.js'
   }}
 ></div>
 
-Utility classes are simple CSS classes scoped to a simple style property like flex or gap.
-They can be added together to style a portion of your HTML from scratch.
-This is especially useful for quickly scaffolding out page layouts.
+Utility classes are CSS classes scoped to a simple style property like flex or gap or a collection of related properties.
+They can be combined together to quickly scaffold out page layouts or a portion of your HTML.
 
 Optics provides limited but high value utility classes. Utilities can often and easily lead to poorly written CSS,
 inconsistent styling, or unresponsive layouts. However, there are cases where utilities can provide great value.
@@ -69,13 +68,13 @@ This will allow for more complex layout to be managed within a named CSS class a
 - If your layout needs to handle breakpoints or special responsive rules, utilities are going to get in the way of making this easy. You probably want to name the concept.
 - If a particular collection of utilities is getting used together often, it may point to a UI pattern in your design that should be named.
 
-### Higher Order Utilities vs Components
+### Advanced Utilities vs Components
 
 While flex utilities are great for moving quickly or for simple layouts, they can easily become
 cumbersome to manage and tend to turn into "Flex Spaghetti". In some of these cases, reaching
 for named components may make sense. However, there are times when a full component is more
 restrictive than you need and hurts productivity. Sometimes you need just a bit more structure
-to your layout, but not a component. [Stack](?path=/docs/utilities-stack--docs), [Cluster](?path=/docs/utilities-cluster--docs), and [Split](?path=/docs/utilities-split--docs)
+to your layout, but not a component. [Stack](?path=/docs/utilities-advanced-stack--docs), [Cluster](?path=/docs/utilities-advanced-cluster--docs), [Split](?path=/docs/utilities-advanced-split--docs), [Flank](?path=/docs/utilities-advanced-flank--docs), and [Grid](?path=/docs/utilities-advanced-grid--docs)
 provide a simple way to create readable, flexible layouts without the overhead of a full component.
 
 ## A word of warning
