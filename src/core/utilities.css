@@ -540,3 +540,62 @@
     --_op-grid-max-column-size: calc(100% / 7);
   }
 }
+
+/* Frame */
+@property --_op-frame-inline-size {
+  inherits: true;
+  initial-value: 100%;
+  syntax: '<length> | <percentage>';
+}
+
+.op-frame {
+  display: flex;
+  overflow: hidden;
+  border-radius: inherit;
+  aspect-ratio: 1 / 1;
+  margin-block: 0;
+  margin-inline: 0;
+  max-inline-size: var(--_op-frame-inline-size);
+
+  :where(&) {
+    align-items: center;
+    justify-content: center;
+  }
+
+  > img,
+  > video {
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+  }
+
+  /* aspect ratio */
+
+  &.op-frame--square {
+    aspect-ratio: 1 / 1;
+  }
+
+  &.op-frame--landscape {
+    aspect-ratio: 16 / 9;
+  }
+
+  &.op-frame--portrait {
+    aspect-ratio: 9 / 16;
+  }
+
+  &.op-frame--4-3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  &.op-frame--3-4 {
+    aspect-ratio: 3 / 4;
+  }
+
+  &.op-frame--3-2 {
+    aspect-ratio: 3 / 2;
+  }
+
+  &.op-frame--2-3 {
+    aspect-ratio: 2 / 3;
+  }
+}
