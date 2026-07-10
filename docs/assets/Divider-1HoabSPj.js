@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DaJ6WEGw.js";var t,n=e((()=>{t=({vertical:e=!1,size:t=`small`,spacing:n=`none`})=>{let r=document.createElement(`div`);return r.className=e?`divider divider--vertical`:`divider`,t!==`small`&&r.classList.add(`divider--${t}`),n!==`none`&&r.classList.add(`divider--spacing-${n}`),r}}));export{n,t};

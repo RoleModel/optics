@@ -1,0 +1,4 @@
+import{n as e}from"./rolldown-runtime-DaJ6WEGw.js";var t,n=e((()=>{t=({inline:e=!1,titleText:t=`This is the Title`,titleSize:n=``,subtitleText:r=`This is the Subtitle`,subtitleSize:i=``,gap:a=``})=>{let o=document.createElement(`div`);o.className=[`text-pair`,e?`text-pair--inline`:``,a?`gap-${a}`:``].filter(Boolean).join(` `);let s=document.createElement(`span`);s.className=[`text-pair__title`,n===``?``:`text-pair__title--${n}`].filter(Boolean).join(` `),s.innerText=t;let c=document.createElement(`span`);return c.className=[`text-pair__subtitle`,i===``?``:`text-pair__subtitle--${i}`].filter(Boolean).join(` `),c.innerText=r,o.append(`
+  `),o.appendChild(s),o.append(`
+  `),o.appendChild(c),o.append(`
+`),o}}));export{n,t};
