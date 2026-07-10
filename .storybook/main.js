@@ -28,5 +28,13 @@ const config = {
   features: {
     backgrounds: false,
   },
+
+  // Vite's default target (chrome111/firefox114/safari16.4) predates
+  // light-dark() support, so lightningcss tries to polyfill it and breaks.
+  async viteFinal(viteConfig) {
+    viteConfig.build ??= {}
+    viteConfig.build.cssTarget = ['chrome123', 'edge123', 'firefox120', 'safari17.5', 'ios17.5']
+    return viteConfig
+  },
 }
 export default config
