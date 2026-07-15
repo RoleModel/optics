@@ -1,0 +1,313 @@
+# Icon
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/components/icon.css)
+
+Icon classes are built on top of [Google's Material Symbols Icon Font](https://fonts.google.com/icons). They provide a way to integrate iconography into your application in a flexible and customizable way.
+Optics ships with a simplified version of [Material Symbols Outlined](https://fonts.google.com/icons?icon.style=Outlined). We only include the font weight variable aspect of the library.
+This means that adjusting the size and font weight are always available, but the emphasis and fill options below are not available by default. If your app would like to use these options, you can import the full library by using the [Icon Font Addon](overview-addons.md#icon-fonts).
+
+If you don't need the full library, but want a specific axis of the [Variable Font](tokens-typography-font-family.md#variable-fonts), You can use one of these imports alongside the Optics import.
+
+```css
+/* No fill, weight, or emphasis options, just allows for size modifiers */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block';
+
+/* Only fill option */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&display=block';
+
+/* Only emphasis option */
+@import 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,GRAD@20..48,-50..200&display=block';
+```
+
+A combination of these could be used as well based on your applications needs. See [Google Variable Fonts](https://developers.google.com/fonts/docs/material_symbols#variable_font_with_google_fonts) for more details.
+
+## Playground
+
+```html
+<span class="material-symbols-outlined icon">settings</span>
+```
+| Arg | Default | Options | Description |
+| --- | --- | --- | --- |
+| `iconPack` | `"Material Symbols Outlined"` | `Material Symbols Outlined`, `Phosphor`, `Tabler`, `Feather`, `Lucide` |  |
+| `name` | `"settings"` |  |  |
+| `filled` |  |  |  |
+| `size` |  | `small`, `medium`, `large`, `x-large` |  |
+| `weight` |  | `thin`, `light`, `normal`, `semi-bold`, `bold` |  |
+| `emphasis` |  | `low`, `normal`, `high` |  |
+| `duotone` |  |  |  |
+
+### Selective Imports
+
+Icon can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](overview-selective-imports.md#dependencies)
+
+```css
+/* Depends on */
+@import '@rolemodel/optics/dist/css/core/fonts'; /* (specifically core/fonts/icon_fonts) */
+@import '@rolemodel/optics/dist/css/core/tokens';
+@import '@rolemodel/optics/dist/css/core/base';
+
+/* Component */
+@import '@rolemodel/optics/dist/css/components/icon';
+```
+
+### Additional Icon libraries
+
+Optics supports a variety of [Additional icon libraries](overview-addons.md) that can be imported. Due to the nature of these libraries, not all of the same icon class modifiers may be available.
+
+There are three ways these icon libraries can be used.
+
+First is as an addon. This means that the default Material Symbols Outlined icons will still be loaded and both can be used.
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
+```
+
+Second is to use an alternate Optics import that does not include the default Material Symbols Outlined icons, and only includes the additional icon library of your choice.
+
+```css
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons';
+```
+
+Third is to remove the default Material Symbols Outlined icons and handle icons completely on your own. This will reduce the page load time by not loading any icons.
+
+```css
+@import '@rolemodel/optics/dist/css/optics+no_icons';
+```
+
+### Material Symbols Outline Variable Icons
+
+Optics ships with a simplified version of [Material Symbols Outlined](https://fonts.google.com/icons?icon.style=Outlined). It only includes the font weight variable aspect of the icon library which means you won't be able to utilize the fill, or emphasis properties.
+If your app does want to use the full Material Symbols Outlined library, you can import the full library by using the addon shown below.
+This will increase the page load time but will allow you to use the full capabilities of the icon library.
+
+```css
+@import '@rolemodel/optics/dist/css/optics+material_symbols_outlined_variable';
+```
+
+```html
+<span class="material-symbols-outlined icon">mood</span>
+```
+
+The filled, size and weight modifiers can be used with Material Symbols Icons.
+
+### Phosphor Icons
+
+[Phosphor Icons](https://phosphoricons.com/) can be created with the `<i>` tag and uses the `.ph` prefix with `.ph-{name}` to define a specific icon.
+
+We currently support version 2.1.2 of [Phosphor Icons Web](https://github.com/phosphor-icons/web)
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons';
+```
+
+```html
+<i class="icon ph ph-smiley"></i>
+```
+
+The filled, size and weight modifiers can be used with Phosphor Icons.
+
+Phosphor adds `.icon--weight-thin` but does not support `.icon--weight-semi-bold`.
+It also adds a dual tone variation by replacing `.ph` with `.ph-duotone`.
+
+```html
+<i class="icon ph-duotone ph-smiley"></i>
+```
+
+Note: Phosphor Icons do not support the use of emphasis variations or the use of `.icon--filled` in combination with `.ph-duotone` or any weight variations.
+
+### Tabler Icons
+
+[Tabler Icons](https://tabler.io/icons) can be created with the `<i>` tag and uses the `.ti` prefix with `.ti-{name}` to define a specific icon.
+
+We currently support version 3.44.0 of [Tabler Icons Iconfont](https://github.com/tabler/tabler-icons#cdn)
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/tabler_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+tabler_icons';
+```
+
+```html
+<i class="icon ti ti-settings"></i>
+```
+
+The size modifiers can be used with Tabler Icons.
+
+```html
+<i class="icon ti ti-settings icon--x-large"></i>
+```
+
+It also supports a filled variant, however, rather than using the `.icon--filled` modifier, you can replace the `ti-{name}` class with `.ti-{name}-filled`.
+
+```html
+<i class="icon ti ti-settings-filled"></i>
+```
+
+Note: Tabler Icons do not support the use of weight or emphasis variations.
+
+### Feather Icons
+
+[Feather Icons](https://feathericons.com/) can be created with the `<i>` tag and uses the `.fi` prefix with `.fi-{name}` to define a specific icon.
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/feather_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+feather_icons';
+```
+
+```html
+<i class="icon fi fi-feather"></i>
+```
+
+The size modifiers can be used with Feather Icons.
+
+```html
+<i class="icon fi fi-feather icon--x-large"></i>
+```
+
+Note: Feather Icons do not support the use of filled, weight, or emphasis variations. The Feather Icon CDN does not include all of the Feather Icons.
+If you want access to the broader range of Feather Icons, consider using Lucide Icons instead. However, if your needs are not as extensive or you are looking for a smaller icon pack, Feather Icons may be a better choice.
+
+We currently support version 4.29.0 of [Feather Icons Iconfont](https://github.com/AT-UI/feather-font)
+
+### Lucide Icons
+
+Lucide Icons are a fork of Feather Icons with more icons. If you don't need all the icons that Lucide provides,
+you can use the Feather Icons for a smaller icon pack instead. It is important to note that Feather Icons are less supported and not all of the listed icons are available.
+
+[Lucide Icons](https://lucide.dev/icons/) can be created with the `<i>` tag and uses the `.li` prefix with `.li-{name}` to define a specific icon.
+
+We currently support version 1.21.0 of [Lucide Icons Static](https://github.com/lucide-icons/lucide/tree/main/packages/lucide-static)
+
+```css
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/lucide_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+lucide_icons';
+```
+
+```html
+<i class="icon li li-banana"></i>
+```
+
+The size modifiers can be used with Lucide Icons.
+
+```html
+<i class="icon li li-banana icon--x-large"></i>
+```
+
+Note: Lucide Icons do not support the use of filled, weight, or emphasis variations.
+
+## Variations
+
+### Default
+
+To use an icon, put a `span` with the class of `.icon.material-symbols-outlined` and inner text of whatever icon you wish to use I.E. `settings` onto the page.
+
+```html
+<span class="icon material-symbols-outlined">settings</span>
+```
+
+```html
+<span class="material-symbols-outlined icon">settings</span>
+```
+
+### Filled
+
+`.icon--filled`, `.icon--outlined` (with outlined being the default) Provide a filled or outlined icon.
+
+```html
+<span class="material-symbols-outlined icon--filled icon">settings</span>
+```
+
+### Size
+
+`.icon--small`, `.icon--medium`, `.icon--large`, `.icon--x-large` (with medium being the default) modify the size of any icon.
+
+```html
+<span class="material-symbols-outlined icon icon--large">settings</span>
+```
+
+### Weight
+
+`.icon--weight-light`, `.icon--weight-normal`, `.icon--weight-semi-bold`, `.icon--weight-bold` (with normal being the default) modify the font weight of any icon.
+
+```html
+<span class="material-symbols-outlined icon--weight-bold icon">settings</span>
+```
+
+### Emphasis
+
+Emphasis acts similarly to weight, but changes the thickness of the icon strokes in subtle ways.
+
+`.icon--low-emphasis`, `.icon--normal-emphasis`, `.icon--high-emphasis` (with normal being the default) modify the emphasis of any icon.
+
+```html
+<span class="material-symbols-outlined icon--high-emphasis icon">settings</span>
+```
+
+## Icon API
+
+Styles are built on CSS variables scoped to the icon.
+
+Here are the variables that can be customized:
+
+```css
+/* Weight */
+--_op-icon-weight-light
+--_op-icon-weight-normal
+--_op-icon-weight-semi-bold
+--_op-icon-weight-bold
+
+/* Fill */
+--_op-icon-fill-outlined
+--_op-icon-fill-filled
+
+/* Emphasis */
+--_op-icon-emphasis-low
+--_op-icon-emphasis-normal
+--_op-icon-emphasis-high
+
+/* Size */
+--_op-icon-font-size-small
+--_op-icon-font-size-medium
+--_op-icon-font-size-large
+--_op-icon-font-size-x-large
+--_op-icon-optical-size-small
+--_op-icon-optical-size-medium
+--_op-icon-optical-size-large
+--_op-icon-optical-size-x-large
+```
+
+## Customizing Icon styles
+
+> **Important!:** These patterns represent how to customize the style of the icon for your project.
+
+The icon classes are structured using the [BEM methodology](https://getbem.com/naming).
+
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all icon behavior by overriding the `.icon` selector and setting any properties:
+
+```css
+.icon {
+}
+```
+
+## New Icon Variations
+
+> **Important!:** These patterns represent how to create new variations of the icon for your project.
+
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
+
+```css
+.icon {
+  &.icon--{name} {
+    --_op-icon-font-size-small: var(--op-font-small);
+  }
+}
+```

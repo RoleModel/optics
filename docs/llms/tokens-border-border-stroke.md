@@ -1,0 +1,45 @@
+# Border Stroke
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+
+Border tokens can be used as box shadows to add borders to various elements. Box Shadows are used in order to provide border styling without affecting the sizing of elements.
+These can be composed with other box shadows such as [Shadow](tokens-shadow.md) to stack effects.
+
+## Usage
+
+These tokens can be applied as a box shadow with any color you wish.
+
+```css
+box-shadow: var(--op-border-all) var(--op-color-border);
+/* or */
+box-shadow: var(--op-border-left) var(--op-color-primary-base);
+```
+
+## Inset
+
+`inset` can be prefixed to invert a border.
+
+```css
+box-shadow: inset var(--op-border-all) var(--op-color-border);
+/* or */
+box-shadow: inset var(--op-border-left) var(--op-color-primary-base);
+```
+
+Due to how box shadows are implemented, insetting can cause seemingly strange behavior.
+
+Insetting a left border will move it to the right, and insetting a top border will move it to the bottom. The same applies for right and bottom.
+
+Insetting the x and y borders is currently **not supported**. You can achieve this manually, but it requires defining the box shadow yourself.
+
+## Available tokens and their definitions
+
+| Token | Value |
+| --- | --- |
+| `--op-border-none` | `0 0 0 0` |
+| `--op-border-all` | `0 0 0 var(--op-border-width)` |
+| `--op-border-top` | `0 calc(-1 * var(--op-border-width)) 0 0` |
+| `--op-border-right` | `var(--op-border-width) 0 0 0` |
+| `--op-border-bottom` | `0 var(--op-border-width) 0 0` |
+| `--op-border-left` | `calc(-1 * var(--op-border-width)) 0 0 0` |
+| `--op-border-y` | `var(--op-border-top) var(--op-color-border), var(--op-border-bottom) var(--op-color-border)` |
+| `--op-border-x` | `var(--op-border-left) var(--op-color-border), var(--op-border-right) var(--op-color-border)` |

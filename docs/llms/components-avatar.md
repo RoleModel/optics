@@ -1,0 +1,122 @@
+# Avatar
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/components/avatar.css)
+
+Avatar classes can be used on `a` or `div` html elements with an `img` within it. They provide consistent and composable styling for application avatars or profile pictures.
+
+When using on an `a` element, the avatar will support a hover and focus state.
+When using on a `div` element, the avatar will not support a hover or focus state.
+
+## Playground
+
+```html
+<a href="/?path=/docs/components-avatar--docs" class="avatar avatar--large"
+  ><img src="https://picsum.photos/id/1/400/400" alt="Avatar"
+/></a>
+```
+| Arg | Default | Options | Description |
+| --- | --- | --- | --- |
+| `size` | `"large"` | `small`, `medium`, `large` |  |
+| `disabled` |  |  |  |
+| `imageSource` |  |  |  |
+| `useLink` |  |  |  |
+
+### Selective Imports
+
+Avatar can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](overview-selective-imports.md#dependencies)
+
+```css
+/* Depends on */
+@import '@rolemodel/optics/dist/css/core/fonts';
+@import '@rolemodel/optics/dist/css/core/tokens';
+@import '@rolemodel/optics/dist/css/core/base';
+
+/* Component */
+@import '@rolemodel/optics/dist/css/components/avatar';
+```
+
+## Variations
+
+### Default
+
+`.avatar` is the default avatar class.
+
+```html
+<a href="/?path=/docs/components-avatar--docs" class="avatar avatar--large"
+  ><img src="https://picsum.photos/id/1/400/400" alt="Avatar"
+/></a>
+```
+
+### Disabled
+
+`.avatar--disabled` will disable the avatar and give it an opacity.
+
+```html
+<a href="/?path=/docs/components-avatar--docs" class="avatar avatar--large avatar--disabled"
+  ><img src="https://picsum.photos/id/1/400/400" alt="Avatar"
+/></a>
+```
+
+### Size
+
+`.avatar--small`, `.avatar--medium`, `.avatar--large` (with large being the default) modify the size of any avatar by changing the width and height to be smaller or larger.
+
+```html
+<a href="/?path=/docs/components-avatar--docs" class="avatar avatar--small"
+  ><img src="https://picsum.photos/id/1/400/400" alt="Avatar"
+/></a>
+```
+
+### Without Link
+
+The avatar classes can be used either on an `a` or `div` element that wraps an `img` element.
+
+`a` is a good choice for avatars that may have interaction such as a link to the users profile or settings.
+`div` is a good choice if it is purely to display an image or profile picture and does not need to be interactive. Note: the hover and focus outlines will not be visible when using an `div` element directly.
+
+```html
+<div class="avatar avatar--large"><img src="https://picsum.photos/id/1/400/400" alt="Avatar" /></div>
+```
+
+## Avatar API
+
+The size and border styles are built on CSS variables scoped to the avatar.
+
+Here are the variables that can be customized:
+
+```css
+--_op-avatar-border-radius
+--_op-avatar-inner-border-color
+--_op-avatar-outer-border-color
+--_op-avatar-inner-border-width
+--_op-avatar-outer-border-width
+--_op-avatar-disabled-opacity
+--_op-avatar-size-small
+--_op-avatar-size-medium
+--_op-avatar-size-large
+```
+
+## Customizing Avatar styles
+
+> **Important!:** These patterns represent how to customize the style of the avatar for your project.
+
+The avatar classes are structured using the [BEM methodology](https://getbem.com/naming).
+
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all avatar behavior by overriding the `.avatar` selector and setting any properties:
+
+```css
+.avatar {
+}
+```
+
+## New Avatar Variations
+
+> **Important!:** These patterns represent how to create new variations of the avatar for your project.
+
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
+
+```css
+.avatar--{name} {
+  --_op-avatar-border-radius: var(--op-radius-2x-large);
+}
+```

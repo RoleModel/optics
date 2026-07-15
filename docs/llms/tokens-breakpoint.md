@@ -1,0 +1,55 @@
+# Breakpoint
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+
+Breakpoint tokens are used to define common device sizes for use within media queries or max widths.
+
+They are implemented in two ways. First as CSS custom properties (css variables) and second as guided pixel assignments.
+
+The CSS variables can be used like any of the other tokens for things requiring calculations or max widths.
+
+The guided pixel assignments can be used for media queries.
+
+Custom properties (css variables) currently cannot be used in a media query since they get defined in an element scope (`:root` in our case).
+Media queries exist at the document level and therefore cannot access custom properties.
+
+[CSS ENV Variables](https://drafts.csswg.org/css-env-1/) aims at addressing this by allowing variables at the global document level.
+
+For common breakpoints, define the variables in the `:root` as a comment block. When using them, use the pixel value, but include a comment above with the named breakpoint. This makes it searchable and provide a bit of intention to what the value means.
+
+## Usage
+
+These token values can be applied in a media query to create responsive behavior.
+
+```css
+.small-area {
+  max-inline-size: var(--op-breakpoint-small);
+}
+
+:root {
+  /*
+  Breakpoints
+  These breakpoint values will be used as a guide for media queries.
+  Annotate the uses with a comment above referring to the variable being referenced.
+
+  --op-breakpoint-medium: 1024px;
+  ...
+  */
+}
+
+/* --op-breakpoint-medium */
+@media (width > 1024px) {
+  background-color: var(--op-color-primary-base);
+  color: var(--op-color-primary-on-base);
+}
+```
+
+## Available tokens and their definitions
+
+| Token | Value |
+| --- | --- |
+| `--op-breakpoint-x-small` | `512px` |
+| `--op-breakpoint-small` | `768px` |
+| `--op-breakpoint-medium` | `1024px` |
+| `--op-breakpoint-large` | `1280px` |
+| `--op-breakpoint-x-large` | `1440px` |

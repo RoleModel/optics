@@ -1,0 +1,87 @@
+# Addons
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/addons)
+
+Optics provides a few addons for integrating Third-Party tools with your application.
+
+## Icon Fonts
+
+### Material Symbols Outlined
+
+Optics ships with a simplified version of [Material Symbols Outlined](https://fonts.google.com/icons?icon.style=Outlined). It only includes the font weight variable aspect of the icon library which means you won't be able to utilize the fill, or emphasis properties.
+This is a trade-off for a smaller file size which reduces page load "flash-in" where icons are blank until the font has loaded.
+This flash has been mitigated some by using the `font-display: block;` property on the font face to hide the underlying text until loaded as well as a fixed size to prevent layout shift.
+
+If your app does want to use the full Material Symbols Outlined library, you can import the full library by using the addon shown below.
+This will increase the page load time but will allow you to use the full capabilities of the icon library.
+
+### Additional Icon libraries
+
+Optics supports alternative icon libraries. It currently supports
+
+- [Phosphor](https://phosphoricons.com/)
+- [Tabler](https://tabler.io/icons)
+- [Feather](https://feathericons.com/)
+- [Lucide](https://lucide.dev/icons/)
+
+These can be imported alongside the base design system to provide additional icon options. They can also be integrated with the base design system instead of as an addon if you don't want to use the default Material Symbols Outlined icons. This will reduce the page load time by not loading the Material Symbols Outlined icons.
+Note: This alternate import approach (optics+icon_library) supports the minified versions as well. Just add `.min.css` to the end of the file name.
+
+For more information on how to use these icons, see the [Icon Component](components-icon.md).
+
+```css
+/* Full Material Symbols Outlined Package */
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/material_symbols_outlined_variable';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+material_symbols_outlined_variable';
+
+/* Phosphor Icons */
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/phosphor_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons';
+
+/* Tabler Icons */
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/tabler_icons';
+/* Or */
+@import '@@rolemodel/optics/dist/css/optics+tabler_icons';
+
+/* Feather Icons */
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/feather_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+feather_icons';
+
+/* Lucide Icons (a fork of feather with more icons) */
+@import '@rolemodel/optics';
+@import '@rolemodel/optics/dist/css/addons/fonts/lucide_icons';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+lucide_icons';
+```
+
+## Tom Select
+
+[Tom Select](https://tom-select.js.org/) is a dynamic, framework agnostic, and lightweight (~16kb gzipped) `<select>` UI control. With autocomplete and native-feeling keyboard navigation, it's useful for tagging, contact lists, country selectors, and so on.
+
+If your application uses Tom Select, you can import the styles from Tom Select along with the Design Systems tokens applied to it by placing this after importing the base design system.
+
+```css
+@import '@rolemodel/optics';
+@import 'tom-select/dist/css/tom-select';
+
+@import '@rolemodel/optics/dist/css/addons/tom-select';
+```
+
+## Rails Panel
+
+Panel provide styles that are intended to accompany the rails configuration and javascript implemented by [RoleModel Rails Panel](https://github.com/RoleModel/rolemodel_rails/tree/master/lib/generators/rolemodel/modals) Similar to the Modal Component
+
+If your application uses this implementation, you can import the styles via:
+
+```css
+@import '@rolemodel/optics';
+
+@import '@rolemodel/optics/dist/css/addons/panel';
+```

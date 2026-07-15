@@ -1,0 +1,145 @@
+# Card
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/components/card.css)
+
+Card classes can be used to denote bordered sections of an application. They provide simple styles to create sections or "cards" for your interface. They can also be used as a starting point for "row" or list styles.
+
+## Playground
+
+```html
+<div class="card">Plain</div>
+```
+| Arg | Default | Options | Description |
+| --- | --- | --- | --- |
+| `label` | `"Plain"` |  |  |
+| `padded` |  |  |  |
+| `condensed` |  |  |  |
+| `header` |  |  |  |
+| `body` |  |  |  |
+| `footer` |  |  |  |
+| `shadow` |  | `none`, `x-small`, `small`, `medium`, `large`, `x-large` |  |
+
+### Selective Imports
+
+Card can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](overview-selective-imports.md#dependencies)
+
+```css
+/* Depends on */
+@import '@rolemodel/optics/dist/css/core/fonts';
+@import '@rolemodel/optics/dist/css/core/tokens';
+@import '@rolemodel/optics/dist/css/core/base';
+
+/* Component */
+@import '@rolemodel/optics/dist/css/components/card';
+```
+
+## Variations
+
+### Plain
+
+`.card` Provides basic card styles.
+
+```html
+<div class="card">Plain</div>
+```
+
+### Padded
+
+`.card--padded` Provides a padded card.
+
+```html
+<div class="card card--padded">Padded</div>
+```
+
+### Full
+
+`.card__header`, `.card__body`, and `.card__footer` Provide padded sections of a card.
+
+```html
+<div class="card">
+  <div class="card__header">Full</div>
+
+  <div class="card__body">Body</div>
+
+  <div class="card__footer">Footer</div>
+</div>
+```
+
+### Condensed
+
+`.card--condensed` Changes the padding for everything below it.
+
+```html
+<div class="card card--condensed">
+  <div class="card__header">Condensed</div>
+
+  <div class="card__body">Body</div>
+
+  <div class="card__footer">Footer</div>
+</div>
+```
+
+### Shadow
+
+`.card--shadow-x-small`, `.card--shadow-small`, `.card--shadow-medium`, `.card--shadow-large`, `.card--shadow-x-large` Add a shadow elevation effect to the card.
+
+```html
+<div class="card card--padded card--shadow-large">Shadow</div>
+```
+
+## Card API
+
+Padding, Box Shadow (border), and Radius styles are built on css variables scoped to the card. They can ben overridden to customize the card.
+
+```css
+--_op-card-padding
+--_op-card-box-shadow
+--_op-card-radius
+```
+
+## Customizing Card styles
+
+> **Important!:** These patterns represent how to customize the style of the card for your project.
+
+The card classes are structured using the [BEM methodology](https://getbem.com/naming).
+
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all card behavior by overriding the `.card` selector and setting any properties:
+
+```css
+.card {
+  font-size: var(--op-font-2x-large);
+}
+```
+
+If you need to override the behavior of a particular card modifier, you can open the respective class and set or change properties
+
+```css
+.card--modifier {
+}
+```
+
+## New Card Variations
+
+> **Important!:** These patterns represent how to create new variations of the card for your project.
+
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
+
+```css
+.card--{name} {
+  background-color:
+  color:
+}
+```
+
+```css
+.card--purple {
+  --_op-card-radius: var(--op-radius-large);
+
+  font-size: var(--op-font-2x-large);
+
+  .card__header {
+    background-color: purple;
+    color: white;
+  }
+}
+```

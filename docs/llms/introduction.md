@@ -1,0 +1,130 @@
+# Optics
+
+<h2>A RoleModel Design System.</h2>
+
+<p>v{packageData.version}</p>
+
+<div class='flex gap-sm'>
+
+[![Code](https://img.shields.io/badge/GitHub-Code-232323.svg?logo=github&logoColor=white)](https://github.com/RoleModel/optics)
+
+[![License](https://img.shields.io/badge/license-MIT-232323.svg)](https://github.com/RoleModel/optics/blob/main/LICENSE)
+
+[![npm](https://img.shields.io/npm/dw/@rolemodel/optics?label=npm)](https://www.npmjs.com/package/@rolemodel/optics)
+
+[![Linting CI](https://github.com/RoleModel/optics/actions/workflows/linting.yml/badge.svg)](https://github.com/RoleModel/optics/actions/workflows/linting.yml)
+
+</div>
+
+<div class='flex flex-col gap-md'>
+  <div class="card card--company card--shadow-x-small">
+    <div class="card__info">
+      <img class="card__info-logo" src="./public/rms-logo.svg" alt="RoleModel Software Logo" />
+      <span>Optics, a RoleModel Software innovation, is a product of our mission to deliver exceptional digital products.</span>
+    </div>
+    <a class="btn sb-unstyled" href="https://rolemodelsoftware.com/" target="_blank">
+      <span>Learn About RoleModel Software</span>
+      <span class="material-symbols-outlined">open_in_new</span>
+    </a>
+  </div>
+
+  <div class="card card--company card--shadow-x-small">
+    <div class="card__info">
+      <img class="card__info-logo" src="./public/optics-logo.svg" alt="Optics Logo" />
+      <span>
+        Optics embodies the RoleModel ethos of deep collaboration, uniting our team's diverse expertise with the shared
+        goal of crafting excellent design solutions and our commitment to Character, Collaboration, and Craftsmanship.
+      </span>
+    </div>
+    <a class="btn sb-unstyled" href="https://optics.rolemodel.design/" target="_blank">
+      <span>Learn About The Vision Behind Optics</span>
+      <span class="material-symbols-outlined">open_in_new</span>
+    </a>
+  </div>
+</div>
+
+Optics is a CSS package that provides base styles and components that can be integrated and customized in a variety of projects.
+
+## Installation
+
+### NPM
+
+```sh
+npm install @rolemodel/optics
+```
+
+### Yarn
+
+```sh
+yarn add @rolemodel/optics
+```
+
+## Getting Started
+
+### Importing with a compiler
+
+You can add this import to the top of your root level `css` file.
+
+```css
+@import '@rolemodel/optics'; /* Using webpack to compile */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics'; /* Using a different compiler */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+no_icons'; /* Don't load the default icons library */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics.min.css'; /* If you want a single file with all the styles in it. */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons.css'; /* Using a different icon pack */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons.min.css'; /* If you want a single file with all the styles in it and a different icon pack. */
+```
+
+### Importing without a compiler
+
+To use Optics without compilation, use a CDN like [jsDelivr](https://www.jsdelivr.com/) or [unpkg](https://unpkg.com/).
+Add a link in your HTML head or an `@import` to the top of your root level `css` file.
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css"
+/>
+<!-- Or -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics+phosphor_icons.min.css"
+/>
+```
+
+```css
+@import 'https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css';
+```
+
+Note: You can use this method to use Optics with [CodePen](https://codepen.io/). In a CodePen project, go to `Settings > CSS`, find the section for adding external stylesheets, and add the CDN link as a resource.
+
+## Browser Support
+
+Optics aims to follow [Baseline](https://web.dev/baseline) for browser support.
+
+While **Widely available** — interoperable across all major browsers for 30 months is the goal, we currently sit at **Newly available** — interoperable across all major browsers for 24 months (as of July 2026).
+
+<table>
+  <thead>
+    <tr>
+      <th>Chrome</th>
+      <th>Edge</th>
+      <th>Firefox</th>
+      <th>Safari</th>
+      <th>iOS Safari</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>123</td>
+      <td>123</td>
+      <td>128</td>
+      <td>17.5</td>
+      <td>17.5</td>
+    </tr>
+  </tbody>
+</table>

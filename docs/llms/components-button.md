@@ -1,0 +1,271 @@
+# Button
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/components/button.css)
+
+Button classes can be used on `button` or `a` html elements. They provide consistent and composable styling that should address most applications basic needs.
+
+## Playground
+
+```html
+<button class="btn">Primary</button>
+```
+| Arg | Default | Options | Description |
+| --- | --- | --- | --- |
+| `label` | `"Primary"` |  |  |
+| `variant` | `"default"` | `default`, `primary`, `destructive`, `warning` |  |
+| `noBorder` |  |  |  |
+| `disabled` |  |  |  |
+| `active` |  |  |  |
+| `pill` |  |  |  |
+| `icon` |  |  |  |
+| `iconWithLabel` |  |  |  |
+| `showPrefixIcon` |  |  | This is not a class. It just provides an example of using icons within a button |
+| `showSuffixIcon` |  |  | This is not a class. It just provides an example of using icons within a button |
+| `size` |  | `small`, `medium`, `large` |  |
+
+### Selective Imports
+
+Button can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](overview-selective-imports.md#dependencies)
+
+```css
+/* Depends on */
+@import '@rolemodel/optics/dist/css/core/fonts';
+@import '@rolemodel/optics/dist/css/core/tokens';
+@import '@rolemodel/optics/dist/css/core/base';
+@import '@rolemodel/optics/dist/css/components/icon';
+
+/* Component */
+@import '@rolemodel/optics/dist/css/components/button';
+```
+
+## Variations
+
+### Default
+
+`.btn` Provides a default outlined button. This would be commonly used as a cancel button in a form or a secondary action on a page.
+
+```html
+<button class="btn">Primary</button>
+```
+
+### Primary
+
+`.btn--primary` Provides a filled button using the primary color in your theme. This should be used as the primary action on a screen such as the login button on an account screen or the submit button on a form.
+
+```html
+<button class="btn btn--primary">Primary</button>
+```
+
+### Destructive
+
+`.btn--destructive` Provides a filled button using the red danger color. This should be used as a destructive action such as delete.
+Note: `.btn--delete` also works for backwards compatibility, but `.btn--destructive` is the preferred class name.
+
+```html
+<button class="btn btn--destructive">Delete</button>
+```
+
+### Active
+
+`.btn--active` This is a modifier which can be used with all button classes. It provides an active state that adapts it's color to all the btn variations.
+
+```html
+<button class="btn btn--primary btn--active">Active</button>
+```
+
+### No Border
+
+`.btn--no-border` This is a modifier which can be used with all button classes except destructive and warning. It provides a button with no border, but the same sizing and adapts it's color to all the btn variations.
+
+Note: `.btn--destructive` and `.btn--warning` do not support the `.btn--no-border` modifier. Borderless warning or destructive buttons are not considered a good pattern and can easily lead to confusion so are not available.
+
+```html
+<button class="btn btn--primary btn--no-border">No Border</button>
+```
+
+### Disabled
+
+`.btn--disabled` Should be used on `a` elements that need to be disabled. `button` elements can use the `disabled` attribute as well as this class. This makes the button opaque and prevents any onClick events from being triggered.
+
+```html
+<a class="btn btn--primary btn--disabled">Disabled</a>
+```
+
+### Pill
+
+`.btn--pill` Modifies the shape of any other buttons by adding a radius to the left and right.
+
+```html
+<button class="btn btn--pill">Pill</button>
+```
+
+### Icon
+
+`.btn--icon` Modifies the shape of any other button class by setting the width and height be be the same. This should only be used with an icon as the button text. You can also combine it with `.btn--no-border` for a borderless icon button, or `.btn--pill` for a round icon button.
+
+```html
+<button class="btn btn--primary btn--icon"><span class="material-symbols-outlined icon">add</span></button>
+```
+
+### Icon With label
+
+`.btn--icon-with-label` Modifies the shape of any other button class by ensuring an icon used within the button will be stacked on top of the label.
+
+```html
+<button class="btn btn--primary btn--icon-with-label">
+  <span class="material-symbols-outlined icon icon--large">add</span>Label
+</button>
+```
+
+### Size
+
+`.btn--small`, `.btn--medium`, `.btn--large` (with large being the default) modify the size of any other button class by changing the font, padding, and height to be smaller or larger.
+
+```html
+<button class="btn btn--primary btn--small">Small</button>
+```
+
+## Mobile Buttons
+
+All button classes, regardless of the currently applied size modifier, will automatically adjust to the large button size on mobile screens (--op-breakpoint-small ~ 768px).
+This is to ensure a large enough tap area on smaller devices and screens.
+
+See https://uxmovement.com/mobile/optimal-size-and-spacing-for-mobile-buttons/
+
+## Button API
+
+Size (Height, Padding, and Font) button styles are built on css variables scoped to the button.
+Buttons have various states that are styled as well.
+
+Here are the variables and states used
+
+```css
+/* Variable API */
+--_op-btn-height-small
+--_op-btn-height-medium
+--_op-btn-height-large
+
+--_op-btn-font-small
+--_op-btn-font-medium
+--_op-btn-font-large
+
+--_op-btn-padding-small
+--_op-btn-padding-medium
+--_op-btn-padding-large
+
+/* Different states */
+.btn {} /* Default behavior */
+.btn:not(:disabled, .btn--disabled):hover {} /* Hover behavior  */
+.btn.btn--no-border {} /* No Border Modifier  */
+.btn.btn--no-border:not(:disabled, .btn--disabled):hover {} /* Hovered No Border Modifier  */
+.btn.btn--active {} /* Active Modifier  */
+.btn.btn--active:not(:disabled, .btn--disabled):hover {} /* Hovered No Border Modifier  */
+```
+
+## Customizing Button styles
+
+> **Important!:** These patterns represent how to customize the style of the button for your project.
+
+The button classes are structured using the [BEM methodology](https://getbem.com/naming).
+
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all button behavior by overriding the `.btn` selector and setting any properties:
+
+```css
+.btn {
+  border-radius: 0;
+}
+```
+
+If you want to override how the size modifier behaves, you can use API described above to change which height and font each size uses.
+
+```css
+.btn {
+  --_op-btn-height-small: var(--op-space-2x-large);
+  --_op-btn-height-medium: var(--op-space-3x-large);
+  --_op-btn-height-large: var(--op-space-4x-large);
+
+  --_op-btn-font-small: var(--op-font-4x-large);
+  --_op-btn-font-medium: var(--op-font-5x-large);
+  --_op-btn-font-large: var(--op-font-6x-large);
+
+  --_op-btn-padding-small: var(--op-space-large);
+  --_op-btn-padding-medium: var(--op-space-x-large);
+  --_op-btn-padding-large: var(--op-space-2x-large);
+}
+```
+
+If you need to override the color of a particular button style, you can open the respective class and change the `background-color`, `color`, and `box-shadow` properties to change the look.
+
+```css
+/* This will only affect the default button, but not primary, secondary, etc. */
+.btn {
+  background-color: red;
+  color: white;
+  box-shadow: red;
+}
+```
+
+## New Button Variations
+
+> **Important!:** These patterns represent how to create new variations of the button for your project.
+
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
+
+```css
+.btn--{name} {
+  background-color:
+  box-shadow:
+  color:
+
+  /* Active State */
+  &.btn--active {
+    background-color:
+    box-shadow:
+    color:
+  }
+
+  /* Hover State */
+  &:hover {
+    background-color:
+    box-shadow:
+    color:
+  }
+
+  /* Focus State */
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    box-shadow:
+  }
+
+  /* Borderless State */
+  &.btn--no-border {
+    background-color:
+    box-shadow:
+    color:
+
+    /* Borderless + Active State. */
+    &.btn--active {
+      background-color:
+      box-shadow:
+      color:
+    }
+
+    /* Borderless + Hover State */
+    &:hover {
+      background-color:
+      box-shadow:
+      color:
+    }
+
+    /* Borderless + Focus State */
+    &:focus,
+    &:focus-within,
+    &:focus-visible {
+      background-color:
+      box-shadow:
+      color:
+    }
+  }
+}
+```

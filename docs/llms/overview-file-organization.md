@@ -1,0 +1,64 @@
+# File Organization
+
+As you use Optics, you will likely want to organize your Optics configuration into multiple files.
+
+## Folder Structure
+
+The recommended folder structure is to have a `main or application` file that is the root file. This file should import all of the other files in the folder.
+
+- `/stylesheets`
+  - `application.css`
+  - `/core`
+    - `/theme`
+      - `{name}-theme-core.css`
+      - `{name}-theme-light.css`
+      - `{name}-theme-dark.css`
+    - `base.css`
+    - `layout.css`
+    - `utilities.css`
+  - `/vendors`
+    - `{vendor-name}-overrides.css`
+  - `/components`
+    - `/optics-overrides`
+      - `{component-name}.css`
+    - `{component-name}.css`
+  - `/general`
+    - `{general-name}.css`
+
+## Import Structure
+
+Using the above folder structure, the application file should import all of the other files. Comments can be used to describe the purpose of each section of files.
+
+```css
+/* Optics */
+@import '@rolemodel/optics';
+
+/* Vendors */
+@import 'something-from-node-modules/something';
+
+/* Font Customization */
+@import 'core/fonts/text_fonts';
+@import 'core/fonts/icon_fonts';
+
+/* Theme Customization */
+@import 'core/theme/{name}-theme-core';
+@import 'core/theme/{name}-theme-light';
+@import 'core/theme/{name}-theme-dark';
+
+/* Core Customization */
+@import 'core/base';
+@import 'core/layout';
+@import 'core/utilities';
+
+/* Vendor Customization */
+@import 'vendors/{vendor-name}-overrides';
+
+/* Optics Component Customization */
+@import 'components/optics-overrides/{component-name}';
+
+/* Component */
+@import 'components/{component-name}';
+
+/* General Styles */
+@import 'general/{general-name}';
+```

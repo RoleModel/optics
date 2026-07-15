@@ -1,0 +1,58 @@
+# Selective Imports
+
+By default, when you import the design system, it will include the basics. CSS reset, All Tokens, Base styles, Utilities, and all Components.
+
+```css
+@import '@rolemodel/optics';
+/* or */
+@import '@rolemodel/optics/dist/css/optics';
+```
+
+If your application doesn't need all styles provided, you can import only the files you need like this:
+
+```css
+/* Third party Vendors */
+@import 'modern-css-reset/dist/reset';
+
+/* Fonts */
+@import 'core/fonts';
+
+/* Tokens */
+@import 'core/tokens';
+
+/* Base styles and utilities */
+@import 'core/base';
+@import 'core/layout';
+@import 'core/utilities';
+
+/* Just the button and card Components */
+@import 'components/button';
+@import 'components/card';
+```
+
+Or this:
+
+```css
+/* Third party Vendors */
+@import 'modern-css-reset/dist/reset';
+
+/* No Material Icons */
+@import 'core/fonts/text_fonts';
+
+/* Tokens */
+@import 'core/tokens';
+
+/* Base styles and utilities */
+@import 'core/base';
+@import 'core/layout';
+@import 'core/utilities';
+
+/* Components */
+@import 'components';
+```
+
+## Dependencies
+
+Some components rely on other components for their usage. Each document page describes these dependencies. Additionally, here is a visualization of all dependencies:
+
+<img src={imageFile} alt="Dependency Graph" />

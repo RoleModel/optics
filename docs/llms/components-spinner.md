@@ -1,0 +1,129 @@
+# Spinner
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/components/spinner.css)
+
+Spinners are CSS loading indicators that should be shown when retrieving data or performing slow computations.
+
+## Accessibility
+
+A spinner should have the Aria `role="status"` and contain assistive text that explains what is currently happening. Inserting a `span.assistive-invisible Loading` which then gets hidden is the preferred method for adding this accessibility feature.
+
+## Playground
+
+```html
+<div class="spinner spinner--large" role="status"><span class="sr-only">Loading</span></div>
+```
+| Arg | Default | Options | Description |
+| --- | --- | --- | --- |
+| `size` | `"large"` | `x-small`, `small`, `medium`, `large` |  |
+
+### Selective Imports
+
+Spinner can be used as a standalone component, however, it does have a few dependencies. To see a full dependency list, see [Dependency Graph](overview-selective-imports.md#dependencies)
+
+```css
+/* Depends on */
+@import '@rolemodel/optics/dist/css/core/fonts';
+@import '@rolemodel/optics/dist/css/core/tokens';
+@import '@rolemodel/optics/dist/css/core/base';
+
+/* Component */
+@import '@rolemodel/optics/dist/css/components/spinner';
+```
+
+## Variations
+
+### Default
+
+Use `.spinner` to create the default spinner class which defaults to the `.spinner--large` size.
+
+```html
+<div class="spinner spinner--large" role="status"><span class="sr-only">Loading</span></div>
+```
+
+### X-Small
+
+Use `.spinner.spinner--x-small` to create an x-small spinner.
+
+```html
+<div class="spinner spinner--x-small" role="status"><span class="sr-only">Loading</span></div>
+```
+
+### Small
+
+Use `.spinner.spinner--small` to create a small spinner.
+
+```html
+<div class="spinner spinner--small" role="status"><span class="sr-only">Loading</span></div>
+```
+
+### Medium
+
+Use `.spinner.spinner--medium` to create a medium spinner.
+
+```html
+<div class="spinner spinner--medium" role="status"><span class="sr-only">Loading</span></div>
+```
+
+### Large
+
+Use `.spinner.spinner--large` to create a large spinner.
+
+```html
+<div class="spinner spinner--large" role="status"><span class="sr-only">Loading</span></div>
+```
+
+## Spinner API
+
+Styles are built on CSS variables scoped to the spinner.
+
+Here are the variables that can be customized:
+
+```css
+  --_op-spinner-indicator-color
+  --_op-spinner-track-color
+  --_op-spinner-track-width-x-small
+  --_op-spinner-track-width-small
+  --_op-spinner-track-width-medium
+  --_op-spinner-track-width-large
+  --_op-spinner-diameter-x-small
+  --_op-spinner-diameter-small
+  --_op-spinner-diameter-medium
+  --_op-spinner-diameter-large
+  --_op-spinner-animation-duration
+  --_op-spinner-animation-timing-function
+```
+
+## Customizing Spinner styles
+
+> **Important!:** These patterns represent how to customize the style of the spinner for your project.
+
+The spinner classes are structured using the [BEM methodology](https://getbem.com/naming).
+
+This allows us to define core styles on a main [block](https://getbem.com/naming/#block) class, and use [modifiers](https://getbem.com/naming/#modifier) to encapsulate variant styles. You can modify all spinner behavior by overriding the `.spinner` selector and setting any properties:
+
+```css
+.spinner {
+}
+```
+
+If you need to override the behavior of a particular spinner style, you can open the respective class and set or change properties:
+
+```css
+.spinner--modifier {
+  --_op-spinner-track-color: var(--op-color-primary-minus-three);
+}
+```
+
+## New Spinner Variations
+
+> **Important!:** These patterns represent how to create new variations of the Spinner for your project.
+
+Your application may need a variation. To add one, just follow this template. Note the double hyphen, indicating that this is a [modifier](https://getbem.com/naming/#modifier):
+
+```css
+.spinner--{name} {
+  --_op-spinner-indicator-color: red;
+  --_op-spinner-track-color: purple;
+}
+```

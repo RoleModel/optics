@@ -1,0 +1,136 @@
+# Themes
+
+Optics defines a default theme along with it's dark mode.
+If you import the design system, it will be used automatically.
+
+## Dark Mode
+
+By default, Dark mode will automatically apply when your system is set to dark mode.
+You can control the theme mode manually by setting a data attribute on the root html element to either `light` or `dark`.
+This will ignore the system preference and use specified theme mode (I.E. your application doesn't need a dark mode).
+
+```html
+<!doctype html>
+<html data-theme-mode="light">
+  ...
+</html>
+```
+
+The theme mode can also be controlled within an individual component, rather than at the app level. This can be done by using the following attribute:
+
+```css
+.my-component {
+  color-scheme: only light;
+  /*
+    Options:
+    color-scheme: light dark;
+    color-scheme: only light;
+    color-scheme: only dark;
+  */
+
+  background-color: var(--op-color-primary-plus-one);
+  color: var(--op-color-primary-on-plus-one);
+}
+```
+
+See the [Color Scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme) and [light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark) for more information.
+
+## Theming
+
+If you want to customize your application, you can provide your own theme files that serve as overrides to the existing tokens.
+An example implementation your main css file would look like:
+
+```css
+@import '@rolemodel/optics';
+
+@import 'stylesheets/theme/my_app_theme';
+```
+
+Your custom theme can change any tokens, including colors, radius, fonts, even redefine the luminosity and semantic scales. It generally will look like:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Colors */
+  --op-color-primary-h: my-new-value;
+  --op-color-primary-s: my-new-value;
+  --op-color-primary-l: my-new-value;
+
+  /* Color Scale */
+  --op-color-primary-plus-two: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 64%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 32%)
+  );
+
+  /* Fonts */
+  --op-font-family: 'Coming Soon', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme-mode='light']) {
+    --op-font-family: 'Grandstander', sans-serif;
+  }
+}
+
+:root[data-theme-mode='dark'] {
+  --op-font-family: 'Grandstander', sans-serif;
+}
+```
+
+## Dynamic Themes
+
+Your application can have multiple predefined themes which can be switched between by setting a data attribute on the root html element.
+
+The theme can be created in a similar way to default theme overriding with the exception of a rule on when it is applied.
+This theme would always be included in your application, but only activate when setting the data attribute.
+
+```html
+<!doctype html>
+<html data-theme="example">
+  ...
+</html>
+```
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root[data-theme='example'] {
+  /* Colors */
+  --op-color-primary-h: my-new-value;
+  --op-color-primary-s: my-new-value;
+  --op-color-primary-l: my-new-value;
+
+  /* Color Scale */
+  --op-color-primary-plus-two: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 64%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 32%)
+  );
+
+  /* Fonts */
+  --op-font-family: 'Coming Soon', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme='example']:not([data-theme-mode='light']) {
+    /* Fonts */
+    --op-font-family: 'Grandstander', sans-serif;
+  }
+}
+
+:root[data-theme='example'][data-theme-mode='dark'] {
+  /* Fonts */
+  --op-font-family: 'Grandstander', sans-serif;
+}
+```
+
+Dynamic themes also support both light and dark mode and can be manually controlled with data attributes.
+
+```html
+<!doctype html>
+<html data-theme="example" data-theme-mode="light">
+  ...
+</html>
+```
