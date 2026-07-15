@@ -21,7 +21,7 @@
     "lint:css": "stylelint 'src/**/*.css'",
     "prettier": "prettier -w .",
     "prettier-check": "prettier -c .",
-    "sanity-check": "yarn lint && yarn prettier && yarn build && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static",
+    "sanity-check": "yarn lint && yarn prettier && yarn build && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs",
     "generate": "node ./tools/generate.js"
   },
   "repository": {
