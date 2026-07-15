@@ -33,5 +33,7 @@ jobs:
         run: yarn build:css
       - name: Build Tokens
         run: yarn build:tokens
+      - name: Build LLMS Docs
+        run: yarn build-docs:llms
       - name: Build Storybook
-        run: yarn build-storybook
+        run: yarn build-docs:storybook
