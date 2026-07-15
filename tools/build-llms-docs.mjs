@@ -39,22 +39,26 @@ const OUT_DIR = path.join(ROOT, 'llms-docs')
 const SITE_URL = 'https://docs.optics.rolemodel.design'
 const SOURCE_URL = 'https://github.com/RoleModel/optics/blob/main/src'
 
-// The story render functions build real DOM nodes.
-const dom = new JSDOM('<!doctype html><html><body></body></html>')
-global.window = dom.window
-global.document = dom.window.document
-for (const key of ['HTMLElement', 'Node', 'CustomEvent', 'DocumentFragment']) {
-  global[key] = dom.window[key]
+// The story render functions build real DOM nodes. This must run before any
+// story module is dynamically imported (they call these globals at import time).
+const setupDomGlobals = () => {
+  const dom = new JSDOM('<!doctype html><html><body></body></html>')
+  global.window = dom.window
+  global.document = dom.window.document
+  for (const key of ['HTMLElement', 'Node', 'CustomEvent', 'DocumentFragment']) {
+    global[key] = dom.window[key]
+  }
+  // jsdom does not implement innerText, which the story render functions use
+  Object.defineProperty(dom.window.HTMLElement.prototype, 'innerText', {
+    get() {
+      return this.textContent
+    },
+    set(value) {
+      this.textContent = value
+    },
+  })
 }
-// jsdom does not implement innerText, which the story render functions use
-Object.defineProperty(dom.window.HTMLElement.prototype, 'innerText', {
-  get() {
-    return this.textContent
-  },
-  set(value) {
-    this.textContent = value
-  },
-})
+setupDomGlobals()
 
 const warnings = []
 const warn = (file, message) => warnings.push(`${path.relative(ROOT, file)}: ${message}`)
@@ -102,6 +106,9 @@ const tokenCategories = parseTokenCategories()
 // `|` would break out of a markdown table cell
 const escapeCell = (text) => text.replaceAll('|', '\\|')
 
+const markdownTable = (headers, rows) =>
+  [`| ${headers.join(' | ')} |`, `| ${headers.map(() => '---').join(' | ')} |`, ...rows].join('\n')
+
 // Renders one category as a markdown table, e.g. tokenTable('Border Radius'):
 //
 //   | Token | Value |
@@ -115,7 +122,7 @@ const tokenTable = (categoryName, file) => {
     return `_No tokens found for category "${categoryName}"._`
   }
   const rows = tokens.map((token) => `| \`${token.name}\` | \`${escapeCell(token.value)}\` |`)
-  return ['| Token | Value |', '| --- | --- |', ...rows].join('\n')
+  return markdownTable(['Token', 'Value'], rows)
 }
 
 // ---------------------------------------------------------------------------
@@ -183,7 +190,7 @@ const controlsTable = (storiesModule, storyName) => {
     const description = escapeCell(argType.description || '').replace(/\s+/g, ' ')
     return `| \`${name}\` | ${formatValue(args[name])} | ${escapeCell(options)} | ${description} |`
   })
-  return ['| Arg | Default | Options | Description |', '| --- | --- | --- | --- |', ...rows].join('\n')
+  return markdownTable(['Arg', 'Default', 'Options', 'Description'], rows)
 }
 
 // ---------------------------------------------------------------------------
@@ -217,52 +224,54 @@ const replaceAsync = async (text, regex, replacer) => {
   return parts.join('')
 }
 
-// Converts one MDX docs page to plain markdown by replacing each JSX/Storybook
-// construct with a static markdown equivalent (details at each step below).
-const convertMdx = async (file) => {
-  let text = fs.readFileSync(file, 'utf8')
+// Story module namespace imports (`import * as FooStories from './Foo.stories'`),
+// loaded concurrently since each is an independent file with no shared state.
+const loadStoryModules = async (text, file) => {
+  const imports = [...text.matchAll(/^import \* as (\w+) from '([^']+)'/gm)]
+  const modules = await Promise.all(
+    imports.map(async ([, name, importPath]) => {
+      let modulePath = path.resolve(path.dirname(file), importPath)
+      if (!fs.existsSync(modulePath)) modulePath += '.js'
+      return [name, await import(pathToFileURL(modulePath).href)]
+    })
+  )
+  return Object.fromEntries(modules)
+}
 
-  // Story module namespace imports (`import * as FooStories from './Foo.stories'`)
-  const storyModules = {}
-  for (const match of text.matchAll(/^import \* as (\w+) from '([^']+)'/gm)) {
-    let modulePath = path.resolve(path.dirname(file), match[2])
-    if (!fs.existsSync(modulePath)) modulePath += '.js'
-    storyModules[match[1]] = await import(pathToFileURL(modulePath).href)
-  }
+// Page title: from `<Meta title="..." />` or the story module's meta
+const findTitle = (text, storyModules) => {
+  const explicitTitle = text.match(/<Meta\s+title="([^"]+)"/)?.[1]
+  if (explicitTitle) return explicitTitle
+  const metaOf = text.match(/<Meta\s+of=\{(\w+)\}/)?.[1]
+  return storyModules[metaOf]?.default?.title
+}
 
-  // Page title: from `<Meta title="..." />` or the story module's meta
-  let title = text.match(/<Meta\s+title="([^"]+)"/)?.[1]
-  if (!title) {
-    const metaOf = text.match(/<Meta\s+of=\{(\w+)\}/)?.[1]
-    title = storyModules[metaOf]?.default?.title
-  }
-  if (!title) {
-    warn(file, 'could not determine title; skipped')
-    return null
-  }
+// Strip imports, Meta, and MDX comments
+const stripImportsAndMeta = (text) =>
+  text
+    .replace(/^import .*\n/gm, '')
+    .replace(/<Meta[\s\S]*?\/>\n?/g, '')
+    .replace(/\{\/\*[\s\S]*?\*\/\}\n?/g, '')
 
-  // Strip imports, Meta, and MDX comments
-  text = text.replace(/^import .*\n/gm, '')
-  text = text.replace(/<Meta[\s\S]*?\/>\n?/g, '')
-  text = text.replace(/\{\/\*[\s\S]*?\*\/\}\n?/g, '')
-
-  // Source-code breadcrumb helper -> plain link. The MDX pages embed
-  // `createSourceCodeLink({ link: 'components/button.css' })` in a div;
-  // it becomes:
-  //
-  //   [Source Code](https://github.com/RoleModel/optics/blob/main/src/components/button.css)
-  text = text.replace(
+// Source-code breadcrumb helper -> plain link. The MDX pages embed
+// `createSourceCodeLink({ link: 'components/button.css' })` in a div;
+// it becomes:
+//
+//   [Source Code](https://github.com/RoleModel/optics/blob/main/src/components/button.css)
+const replaceSourceCodeLink = (text) =>
+  text.replace(
     /<div\s+dangerouslySetInnerHTML=\{\{\s*__html:\s*createSourceCodeLink\(\{[^}]*link:\s*'([^']+)'[^}]*\}\)[\s\S]*?<\/div>/g,
     (_, link) => `[Source Code](${SOURCE_URL}/${link})`
   )
 
-  // Alert helper -> blockquote. The argument is a plain object literal;
-  // evaluate it to cope with any key order, template literals, or HTML in
-  // the description. `createAlert({ title: 'Note', description: 'Some <strong>info</strong>.' })`
-  // becomes:
-  //
-  //   > **Note:** Some info.
-  text = text.replace(
+// Alert helper -> blockquote. The argument is a plain object literal;
+// evaluate it to cope with any key order, template literals, or HTML in
+// the description. `createAlert({ title: 'Note', description: 'Some <strong>info</strong>.' })`
+// becomes:
+//
+//   > **Note:** Some info.
+const replaceAlertBlocks = (text, file) =>
+  text.replace(
     /<div\s+dangerouslySetInnerHTML=\{\{\s*__html:\s*createAlert\((\{[\s\S]*?\})\)\.outerHTML,?[\s\S]*?<\/div>/g,
     (whole, argsText) => {
       let alertArgs
@@ -283,13 +292,14 @@ const convertMdx = async (file) => {
     }
   )
 
-  // <Canvas of={FooStories.Bar} /> -> the story's rendered HTML in a fenced
-  // code block. `<Canvas of={ButtonStories.Primary} />` becomes:
-  //
-  //   ```html
-  //   <button class="btn btn--primary">Primary</button>
-  //   ```
-  text = await replaceAsync(text, /<Canvas\s+of=\{(\w+)\.(\w+)\}[^/]*\/>/g, async (whole, ns, storyName) => {
+// <Canvas of={FooStories.Bar} /> -> the story's rendered HTML in a fenced
+// code block. `<Canvas of={ButtonStories.Primary} />` becomes:
+//
+//   ```html
+//   <button class="btn btn--primary">Primary</button>
+//   ```
+const replaceCanvasBlocks = (text, storyModules, file) =>
+  replaceAsync(text, /<Canvas\s+of=\{(\w+)\.(\w+)\}[^/]*\/>/g, async (whole, ns, storyName) => {
     const storiesModule = storyModules[ns]
     if (!storiesModule) {
       warn(file, `unknown story module "${ns}"`)
@@ -299,124 +309,173 @@ const convertMdx = async (file) => {
     return html ? `\`\`\`html\n${html}\n\`\`\`` : ''
   })
 
-  // <Controls of={FooStories.Bar} /> -> markdown args table (see controlsTable above)
-  text = text.replace(/<Controls\s+of=\{(\w+)\.(\w+)\}[^/]*\/>/g, (whole, ns, storyName) => {
+// <Controls of={FooStories.Bar} /> -> markdown args table (see controlsTable above)
+const replaceControlsBlocks = (text, storyModules) =>
+  text.replace(/<Controls\s+of=\{(\w+)\.(\w+)\}[^/]*\/>/g, (whole, ns, storyName) => {
     const storiesModule = storyModules[ns]
     if (!storiesModule) return ''
     return controlsTable(storiesModule, storyName) || ''
   })
 
-  // <DesignTokenDocBlock categoryName="X" /> -> markdown token table (see tokenTable above)
-  text = text.replace(/<DesignTokenDocBlock\s+categoryName="([^"]+)"[^/]*\/>/g, (_, category) =>
-    tokenTable(category, file)
-  )
+// <DesignTokenDocBlock categoryName="X" /> -> markdown token table (see tokenTable above)
+const replaceTokenDocBlocks = (text, file) =>
+  text.replace(/<DesignTokenDocBlock\s+categoryName="([^"]+)"[^/]*\/>/g, (_, category) => tokenTable(category, file))
 
-  // Color palette blocks (ColorScale.mdx) render swatches from JS at runtime;
-  // point readers at the token source instead.
-  text = text.replace(
+// Color palette blocks (ColorScale.mdx) render swatches from JS at runtime;
+// point readers at the token source instead.
+const replaceColorPalette = (text) =>
+  text.replace(
     /<ColorPalette>[\s\S]*?<\/ColorPalette>/g,
     `_Full scale definitions: [scale_color_tokens.css](${SOURCE_URL}/core/tokens/scale_color_tokens.css)_`
   )
 
-  // Storybook links -> relative markdown page links, so cross-references stay
-  // navigable inside the llms docs. `(?path=/docs/components-button--docs#usage)`
-  // becomes `(components-button.md#usage)`.
-  text = text.replace(/\(\?path=\/docs\/([a-z0-9-]+?)--[a-z0-9-]+(#[^)]*)?\)/g, '($1.md$2)')
+// Storybook links -> relative markdown page links, so cross-references stay
+// navigable inside the llms docs. `(?path=/docs/components-button--docs#usage)`
+// becomes `(components-button.md#usage)`.
+const rewriteStorybookLinks = (text) => text.replace(/\(\?path=\/docs\/([a-z0-9-]+?)--[a-z0-9-]+(#[^)]*)?\)/g, '($1.md$2)')
 
-  // Inline JSX demos -> plain HTML
-  text = text.replace(/className=/g, 'class=')
+// Inline JSX demos -> plain HTML
+const replaceClassNameAttr = (text) => text.replace(/className=/g, 'class=')
 
-  // Leftover JSX we do not handle: drop and warn
-  text = text.replace(/^\s*<[A-Z][\s\S]*?\/>\n?/gm, (block) => {
+// Leftover JSX we do not handle: drop and warn
+const dropLeftoverJsx = (text, file) => {
+  const cleaned = text.replace(/^\s*<[A-Z][\s\S]*?\/>\n?/gm, (block) => {
     warn(file, `dropped unhandled JSX: ${block.trim().split('\n')[0]}`)
     return ''
   })
-  if (/dangerouslySetInnerHTML/.test(text)) {
+  if (/dangerouslySetInnerHTML/.test(cleaned)) {
     warn(file, 'unhandled dangerouslySetInnerHTML block left in output')
   }
+  return cleaned
+}
 
-  text = text.replace(/\n{3,}/g, '\n\n').trim()
-
-  // First prose paragraph after the H1 = page description for the index
+// First prose paragraph after the H1 = page description for the index
+const extractDescription = (text) => {
   const isProse = (line) => line && !/^[#[>`|<{\-*_]/.test(line)
   const lines = text.split('\n').map((line) => line.trim())
   const firstProseIndex = lines.findIndex(isProse)
-  let description = ''
-  if (firstProseIndex !== -1) {
-    const paragraph = []
-    for (let i = firstProseIndex; i < lines.length && isProse(lines[i]); i++) paragraph.push(lines[i])
-    description = paragraph.join(' ')
+  if (firstProseIndex === -1) return ''
+  const paragraph = []
+  for (let i = firstProseIndex; i < lines.length && isProse(lines[i]); i++) paragraph.push(lines[i])
+  return paragraph.join(' ')
+}
+
+// Converts one MDX docs page to plain markdown by replacing each JSX/Storybook
+// construct with a static markdown equivalent (see each transform above).
+const convertMdx = async (file) => {
+  let text = fs.readFileSync(file, 'utf8')
+
+  const storyModules = await loadStoryModules(text, file)
+
+  const title = findTitle(text, storyModules)
+  if (!title) {
+    warn(file, 'could not determine title; skipped')
+    return null
   }
 
-  return { file, title, slug: storybookSlug(title), description, markdown: `${text}\n` }
+  text = stripImportsAndMeta(text)
+  text = replaceSourceCodeLink(text)
+  text = replaceAlertBlocks(text, file)
+  text = await replaceCanvasBlocks(text, storyModules, file)
+  text = replaceControlsBlocks(text, storyModules)
+  text = replaceTokenDocBlocks(text, file)
+  text = replaceColorPalette(text)
+  text = rewriteStorybookLinks(text)
+  text = replaceClassNameAttr(text)
+  text = dropLeftoverJsx(text, file)
+
+  text = text.replace(/\n{3,}/g, '\n\n').trim()
+
+  return { file, title, slug: storybookSlug(title), description: extractDescription(text), markdown: `${text}\n` }
 }
 
 // ---------------------------------------------------------------------------
 // Build
 // ---------------------------------------------------------------------------
 
-const pages = []
-for (const file of walk(STORIES_DIR).sort()) {
-  const page = await convertMdx(file)
-  if (page) pages.push(page)
+const renderPages = async () => {
+  const pages = []
+  for (const file of walk(STORIES_DIR).sort()) {
+    const page = await convertMdx(file)
+    if (page) pages.push(page)
+  }
+  return pages
 }
 
 // Group pages by the first segment of their Storybook title (e.g.
 // 'Components/Button' is in 'Components'), in the same order the docs
 // site's sidebar uses.
 const SECTION_ORDER = ['Introduction', 'Overview', 'Tokens', 'Utilities', 'Components', 'Recipes']
-const sectionOf = (page) => {
-  const section = page.title.split('/')[0]
+const sectionOf = (title) => {
+  const section = title.split('/')[0]
   return SECTION_ORDER.includes(section) ? section : 'Other'
 }
 const sectionRank = (name) => {
   const index = SECTION_ORDER.indexOf(name)
   return index === -1 ? SECTION_ORDER.length : index
 }
-pages.sort((a, b) => sectionRank(sectionOf(a)) - sectionRank(sectionOf(b)) || a.title.localeCompare(b.title))
 
-fs.rmSync(OUT_DIR, { recursive: true, force: true })
-fs.mkdirSync(path.join(OUT_DIR, 'llms'), { recursive: true })
-
-for (const page of pages) {
-  fs.writeFileSync(path.join(OUT_DIR, 'llms', `${page.slug}.md`), page.markdown)
+const sortBySection = (pages) => {
+  for (const page of pages) page.section = sectionOf(page.title)
+  pages.sort((a, b) => sectionRank(a.section) - sectionRank(b.section) || a.title.localeCompare(b.title))
+  return pages
 }
 
-const version = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8')).version
+const writePages = (pages) => {
+  fs.rmSync(OUT_DIR, { recursive: true, force: true })
+  fs.mkdirSync(path.join(OUT_DIR, 'llms'), { recursive: true })
+  for (const page of pages) {
+    fs.writeFileSync(path.join(OUT_DIR, 'llms', `${page.slug}.md`), page.markdown)
+  }
+}
 
 // llms.txt index, following the llms.txt convention (https://llmstxt.org):
 // an H1, a blockquote summary, then sections of page links. Each entry looks like:
 //
 //   - [Components/Button](https://docs.optics.rolemodel.design/llms/components-button.md): Button classes can be used on `button` or `a` html elements. ...
-const indexLines = [
-  '# Optics Design System',
-  '',
-  `> Optics is a pure-CSS design system by RoleModel Software (npm: \`@rolemodel/optics\`, v${version}). It provides design tokens (CSS custom properties prefixed \`--op-\`), base styles, utilities, and BEM-style components (\`.btn\`, \`.card\`, ...) that are customized per project via token overrides.`,
-  '',
-  `Every page below is plain markdown. Component pages include the actual HTML markup for each variant, the component's CSS variable API, and customization patterns. The full documentation in one file: [llms-full.txt](${SITE_URL}/llms-full.txt). All design tokens as JSON: https://unpkg.com/@rolemodel/optics/dist/tokens/tokens.json`,
-]
+const buildIndexLines = (pages) => {
+  const version = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8')).version
+  const indexLines = [
+    '# Optics Design System',
+    '',
+    `> Optics is a pure-CSS design system by RoleModel Software (npm: \`@rolemodel/optics\`, v${version}). It provides design tokens (CSS custom properties prefixed \`--op-\`), base styles, utilities, and BEM-style components (\`.btn\`, \`.card\`, ...) that are customized per project via token overrides.`,
+    '',
+    `Every page below is plain markdown. Component pages include the actual HTML markup for each variant, the component's CSS variable API, and customization patterns. The full documentation in one file: [llms-full.txt](${SITE_URL}/llms-full.txt). All design tokens as JSON: https://unpkg.com/@rolemodel/optics/dist/tokens/tokens.json`,
+  ]
 
-let currentSection = null
-for (const page of pages) {
-  const section = sectionOf(page)
-  if (section !== currentSection) {
-    indexLines.push('', `## ${section}`, '')
-    currentSection = section
+  let currentSection = null
+  for (const page of pages) {
+    if (page.section !== currentSection) {
+      indexLines.push('', `## ${page.section}`, '')
+      currentSection = page.section
+    }
+    const shortDescription = page.description.length > 160 ? `${page.description.slice(0, 157)}...` : page.description
+    indexLines.push(
+      `- [${page.title}](${SITE_URL}/llms/${page.slug}.md)${shortDescription ? `: ${shortDescription}` : ''}`
+    )
   }
-  const shortDescription = page.description.length > 160 ? `${page.description.slice(0, 157)}...` : page.description
-  indexLines.push(
-    `- [${page.title}](${SITE_URL}/llms/${page.slug}.md)${shortDescription ? `: ${shortDescription}` : ''}`
-  )
+  return indexLines
 }
-fs.writeFileSync(path.join(OUT_DIR, 'llms.txt'), `${indexLines.join('\n')}\n`)
+
+const writeIndex = (indexLines) => {
+  fs.writeFileSync(path.join(OUT_DIR, 'llms.txt'), `${indexLines.join('\n')}\n`)
+}
 
 // llms-full.txt: the index followed by every page, each introduced by an
 // HTML comment marker (`<!-- Page: Components/Button (components-button.md) -->`)
 // and separated by a horizontal rule.
-const fullDoc = pages
-  .map((page) => `<!-- Page: ${page.title} (${page.slug}.md) -->\n\n${page.markdown}`)
-  .join('\n---\n\n')
-fs.writeFileSync(path.join(OUT_DIR, 'llms-full.txt'), `${indexLines.join('\n')}\n\n---\n\n${fullDoc}`)
+const writeFullDoc = (indexLines, pages) => {
+  const fullDoc = pages
+    .map((page) => `<!-- Page: ${page.title} (${page.slug}.md) -->\n\n${page.markdown}`)
+    .join('\n---\n\n')
+  fs.writeFileSync(path.join(OUT_DIR, 'llms-full.txt'), `${indexLines.join('\n')}\n\n---\n\n${fullDoc}`)
+}
+
+const pages = sortBySection(await renderPages())
+writePages(pages)
+const indexLines = buildIndexLines(pages)
+writeIndex(indexLines)
+writeFullDoc(indexLines, pages)
 
 console.log(`llms-docs: wrote ${pages.length} pages to ${path.relative(ROOT, OUT_DIR)}/`)
 if (warnings.length > 0) {
