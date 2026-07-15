@@ -8,6 +8,20 @@
  *   llms-docs/llms.txt        — index of all pages
  *   llms-docs/llms-full.txt   — every page concatenated
  *   llms-docs/llms/<slug>.md  — one markdown file per docs page
+ *
+ * For example, Button.mdx becomes llms/components-button.md, which starts:
+ *
+ *   # Button
+ *
+ *   [Source Code](https://github.com/RoleModel/optics/blob/main/src/components/button.css)
+ *
+ *   Button classes can be used on `button` or `a` html elements. ...
+ *
+ *   ## Playground
+ *
+ *   ```html
+ *   <button class="btn">Primary</button>
+ *   ```
  */
 import fs from 'node:fs'
 import path from 'node:path'
@@ -49,6 +63,18 @@ const warn = (file, message) => warnings.push(`${path.relative(ROOT, file)}: ${m
 // Design tokens, parsed from the `@tokens <Category>` annotations in the CSS
 // ---------------------------------------------------------------------------
 
+// Scans every CSS file in src/core/tokens for doc comments like:
+//
+//   /**
+//    * Border Radius
+//    * @tokens Border Radius
+//    * @presenter BorderRadius
+//    */
+//   --op-radius-small: 0.125rem;
+//   --op-radius-medium: 0.25rem;
+//
+// and returns { 'Border Radius': [{ name: '--op-radius-small', value: '0.125rem' }, ...], ... }.
+// These are the same annotations storybook-design-token uses to build its doc blocks.
 const parseTokenCategories = () => {
   const categories = {}
   for (const file of fs.readdirSync(TOKENS_DIR)) {
@@ -73,8 +99,15 @@ const parseTokenCategories = () => {
 
 const tokenCategories = parseTokenCategories()
 
+// `|` would break out of a markdown table cell
 const escapeCell = (text) => text.replaceAll('|', '\\|')
 
+// Renders one category as a markdown table, e.g. tokenTable('Border Radius'):
+//
+//   | Token | Value |
+//   | --- | --- |
+//   | `--op-radius-small` | `0.125rem` |
+//   | `--op-radius-medium` | `0.25rem` |
 const tokenTable = (categoryName, file) => {
   const tokens = tokenCategories[categoryName]
   if (!tokens || tokens.length === 0) {
@@ -89,6 +122,11 @@ const tokenTable = (categoryName, file) => {
 // Story rendering
 // ---------------------------------------------------------------------------
 
+// Calls a story's render function (the same one Storybook calls) with its
+// resolved args and returns the resulting markup, pretty-printed. For example
+// the Button `Primary` story returns:
+//
+//   <button class="btn btn--primary">Primary</button>
 const renderStory = async (storiesModule, storyName, file) => {
   const meta = storiesModule.default || {}
   const story = storiesModule[storyName]
@@ -124,6 +162,13 @@ const renderStory = async (storiesModule, storyName, file) => {
   }
 }
 
+// Markdown stand-in for Storybook's <Controls /> panel, built from the story
+// meta's argTypes and default args. For the Button story it renders:
+//
+//   | Arg | Default | Options | Description |
+//   | --- | --- | --- | --- |
+//   | `label` | `"Primary"` |  |  |
+//   | `variant` | `"default"` | `default`, `primary`, `destructive`, `warning` |  |
 const controlsTable = (storiesModule, storyName) => {
   const meta = storiesModule.default || {}
   const story = storiesModule[storyName] || {}
@@ -145,6 +190,8 @@ const controlsTable = (storiesModule, storyName) => {
 // MDX -> markdown
 // ---------------------------------------------------------------------------
 
+// Mirrors Storybook's own URL slugs so page links stay stable, e.g.
+// 'Components/Button Group' becomes 'components-button-group'
 const storybookSlug = (title) =>
   title
     .toLowerCase()
@@ -158,6 +205,7 @@ const walk = (dir) =>
     return entry.name.endsWith('.mdx') ? [full] : []
   })
 
+// String.replace with an async replacer (needed because rendering a story is async)
 const replaceAsync = async (text, regex, replacer) => {
   const parts = []
   let lastIndex = 0
@@ -169,6 +217,8 @@ const replaceAsync = async (text, regex, replacer) => {
   return parts.join('')
 }
 
+// Converts one MDX docs page to plain markdown by replacing each JSX/Storybook
+// construct with a static markdown equivalent (details at each step below).
 const convertMdx = async (file) => {
   let text = fs.readFileSync(file, 'utf8')
 
@@ -196,7 +246,11 @@ const convertMdx = async (file) => {
   text = text.replace(/<Meta[\s\S]*?\/>\n?/g, '')
   text = text.replace(/\{\/\*[\s\S]*?\*\/\}\n?/g, '')
 
-  // Source-code breadcrumb helper -> plain link
+  // Source-code breadcrumb helper -> plain link. The MDX pages embed
+  // `createSourceCodeLink({ link: 'components/button.css' })` in a div;
+  // it becomes:
+  //
+  //   [Source Code](https://github.com/RoleModel/optics/blob/main/src/components/button.css)
   text = text.replace(
     /<div\s+dangerouslySetInnerHTML=\{\{\s*__html:\s*createSourceCodeLink\(\{[^}]*link:\s*'([^']+)'[^}]*\}\)[\s\S]*?<\/div>/g,
     (_, link) => `[Source Code](${SOURCE_URL}/${link})`
@@ -204,7 +258,10 @@ const convertMdx = async (file) => {
 
   // Alert helper -> blockquote. The argument is a plain object literal;
   // evaluate it to cope with any key order, template literals, or HTML in
-  // the description.
+  // the description. `createAlert({ title: 'Note', description: 'Some <strong>info</strong>.' })`
+  // becomes:
+  //
+  //   > **Note:** Some info.
   text = text.replace(
     /<div\s+dangerouslySetInnerHTML=\{\{\s*__html:\s*createAlert\((\{[\s\S]*?\})\)\.outerHTML,?[\s\S]*?<\/div>/g,
     (whole, argsText) => {
@@ -226,7 +283,12 @@ const convertMdx = async (file) => {
     }
   )
 
-  // <Canvas of={FooStories.Bar} /> -> rendered HTML
+  // <Canvas of={FooStories.Bar} /> -> the story's rendered HTML in a fenced
+  // code block. `<Canvas of={ButtonStories.Primary} />` becomes:
+  //
+  //   ```html
+  //   <button class="btn btn--primary">Primary</button>
+  //   ```
   text = await replaceAsync(text, /<Canvas\s+of=\{(\w+)\.(\w+)\}[^/]*\/>/g, async (whole, ns, storyName) => {
     const storiesModule = storyModules[ns]
     if (!storiesModule) {
@@ -237,14 +299,14 @@ const convertMdx = async (file) => {
     return html ? `\`\`\`html\n${html}\n\`\`\`` : ''
   })
 
-  // <Controls of={FooStories.Bar} /> -> args table
+  // <Controls of={FooStories.Bar} /> -> markdown args table (see controlsTable above)
   text = text.replace(/<Controls\s+of=\{(\w+)\.(\w+)\}[^/]*\/>/g, (whole, ns, storyName) => {
     const storiesModule = storyModules[ns]
     if (!storiesModule) return ''
     return controlsTable(storiesModule, storyName) || ''
   })
 
-  // <DesignTokenDocBlock categoryName="X" /> -> token table
+  // <DesignTokenDocBlock categoryName="X" /> -> markdown token table (see tokenTable above)
   text = text.replace(/<DesignTokenDocBlock\s+categoryName="([^"]+)"[^/]*\/>/g, (_, category) =>
     tokenTable(category, file)
   )
@@ -256,7 +318,9 @@ const convertMdx = async (file) => {
     `_Full scale definitions: [scale_color_tokens.css](${SOURCE_URL}/core/tokens/scale_color_tokens.css)_`
   )
 
-  // Storybook links (`(?path=/docs/<page-slug>--docs#anchor)`) -> markdown page links
+  // Storybook links -> relative markdown page links, so cross-references stay
+  // navigable inside the llms docs. `(?path=/docs/components-button--docs#usage)`
+  // becomes `(components-button.md#usage)`.
   text = text.replace(/\(\?path=\/docs\/([a-z0-9-]+?)--[a-z0-9-]+(#[^)]*)?\)/g, '($1.md$2)')
 
   // Inline JSX demos -> plain HTML
@@ -297,6 +361,9 @@ for (const file of walk(STORIES_DIR).sort()) {
   if (page) pages.push(page)
 }
 
+// Group pages by the first segment of their Storybook title (e.g.
+// 'Components/Button' is in 'Components'), in the same order the docs
+// site's sidebar uses.
 const SECTION_ORDER = ['Introduction', 'Overview', 'Tokens', 'Utilities', 'Components', 'Recipes']
 const sectionOf = (page) => {
   const section = page.title.split('/')[0]
@@ -317,6 +384,10 @@ for (const page of pages) {
 
 const version = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8')).version
 
+// llms.txt index, following the llms.txt convention (https://llmstxt.org):
+// an H1, a blockquote summary, then sections of page links. Each entry looks like:
+//
+//   - [Components/Button](https://docs.optics.rolemodel.design/llms/components-button.md): Button classes can be used on `button` or `a` html elements. ...
 const indexLines = [
   '# Optics Design System',
   '',
@@ -339,6 +410,9 @@ for (const page of pages) {
 }
 fs.writeFileSync(path.join(OUT_DIR, 'llms.txt'), `${indexLines.join('\n')}\n`)
 
+// llms-full.txt: the index followed by every page, each introduced by an
+// HTML comment marker (`<!-- Page: Components/Button (components-button.md) -->`)
+// and separated by a horizontal rule.
 const fullDoc = pages
   .map((page) => `<!-- Page: ${page.title} (${page.slug}.md) -->\n\n${page.markdown}`)
   .join('\n---\n\n')
