@@ -91,6 +91,16 @@ npm run generate
 
 The visual graphic found on the Selective Imports page in the documentation is generated from the `tools/generate-graph.dot` file. You can preview and export a newer svg version of the graphic by using the `tintinweb.graphviz-interactive-preview` VSCode extension.
 
+### AI-Friendly Documentation (llms.txt)
+
+The docs site also serves the full documentation as plain markdown for AI tools:
+
+- [llms.txt](https://docs.optics.rolemodel.design/llms.txt) — index of every docs page
+- [llms-full.txt](https://docs.optics.rolemodel.design/llms-full.txt) — the entire documentation in one file
+- `https://docs.optics.rolemodel.design/llms/<page-slug>.md` — one markdown file per page
+
+These are generated from the Storybook MDX docs by `yarn build:llms` (run automatically by the `storybook` and `build-storybook` scripts). Each `<Canvas>` embed is replaced with the story's actual rendered HTML, and each token doc block with a table parsed from the token CSS.
+
 ## License
 
 [MIT](LICENSE)

@@ -29,6 +29,7 @@ node_modules/
 
 # Distribution files
 dist
+llms-docs
 public/design-tokens.source.json
 
 *storybook.log

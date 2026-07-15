@@ -2,3 +2,6 @@
 tools/templates
 .yarn/*
 optics-design-system.code-workspace
+
+# Generated docs
+llms-docs
