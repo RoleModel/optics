@@ -93,13 +93,15 @@ The visual graphic found on the Selective Imports page in the documentation is g
 
 ### AI-Friendly Documentation (llms.txt)
 
+[llms txt](https://llmstxt.org/)
+
 The docs site also serves the full documentation as plain markdown for AI tools:
 
 - [llms.txt](https://docs.optics.rolemodel.design/llms.txt) — index of every docs page
 - [llms-full.txt](https://docs.optics.rolemodel.design/llms-full.txt) — the entire documentation in one file
 - `https://docs.optics.rolemodel.design/llms/<page-slug>.md` — one markdown file per page
 
-These are generated from the Storybook MDX docs by `yarn build:llms` (run automatically by the `storybook` and `build-storybook` scripts). Each `<Canvas>` embed is replaced with the story's actual rendered HTML, and each token doc block with a table parsed from the token CSS.
+These are generated from the Storybook MDX docs by `yarn build-docs:llms`. Each `<Canvas>` embed is replaced with the story's actual rendered HTML, and each token doc block with a table parsed from the token CSS.
 
 ## License
 

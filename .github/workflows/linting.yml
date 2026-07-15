@@ -34,4 +34,6 @@ jobs:
       - name: Build Tokens
         run: yarn build:tokens
       - name: Build Storybook
-        run: yarn build-storybook
+        run: yarn build-docs:storybook
+      - name: Build LLMS Docs
+        run: yarn build-docs:llms
