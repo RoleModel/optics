@@ -1,0 +1,88 @@
+# Plan: Third cleanup pass of `tools/build-llms-docs.mjs`
+
+Follow-up pass on top of the [simplify pass](simplify-build-llms-docs.md) and the
+[OO cleanup pass](oo-cleanup-build-llms-docs.md). Another `/simplify` run (reuse,
+simplification, efficiency, altitude reviews in parallel) against the class-based file —
+same hard constraint: **the generated output must be byte-identical before and after.**
+
+## Phase 1 — Capture baseline
+
+- [x] Run `yarn build-docs:llms`, copy `llms-docs/` to the scratchpad as
+      `pass3-baseline-llms-docs/`, save console output as `pass3-baseline-stdout.txt`.
+
+**Result:** 73 pages, no warnings — matches the prior pass's final state.
+
+## Phase 2 — Review and apply
+
+- [x] Run 4 parallel `/simplify` review agents (reuse, simplification, efficiency,
+      altitude) against the file, each briefed on the byte-identical constraint and the
+      prior passes' already-rejected ideas.
+- [x] Dedup and apply the surviving findings.
+
+**Applied:**
+
+- **Resolve-hook altitude fix** — `loadStoryModules`' `if (!fs.existsSync(modulePath))
+  modulePath += '.js'` re-implemented the extensionless-import rule that
+  `tools/llms-resolve-hooks.mjs` already generalizes (the hook just didn't fire for the
+  converter's absolute `file:` URLs). Widened the hook's guard to cover extensionless
+  `file:` specifiers and deleted the `existsSync` special case, so the resolution rule
+  lives in one place.
+- **`TokenCatalog.table(categoryName)` de-threading** (flagged by both simplification and
+  altitude) — the catalog no longer takes the referencing page's `file` and the warning
+  collector; it returns the table or `null`, and `replaceTokenDocBlocks` owns the warning
+  and the `_No tokens found..._` fallback prose. Same warning text/order (single call site).
+- **Shared `resolveStory(storiesModule, storyName)` helper** — the story-module
+  interpretation (`default` meta, story lookup, `{ ...meta.args, ...story.args }` merge)
+  was duplicated between `StoryRenderer.render` and `controlsTable`; both now call one
+  module-level helper.
+- **Explicit `document` dependency** — `replaceAlertBlocks` used the bare global
+  `document` that `StoryRenderer`'s constructor happens to install, a hidden ordering
+  dependency. `StoryRenderer` now exposes `this.document` and the converter uses
+  `this.storyRenderer.document` (the injected dependency it already has).
+- **Dropped `DocsBuilder`'s `storiesDir`/`outDir` fields** — redundant aliases of the
+  `STORIES_DIR`/`OUT_DIR` module constants; use sites reference the constants directly.
+- **Dropped dead `return pages` from `sortBySection`** — the caller relies on in-place
+  mutation; the return value misleadingly suggested a non-mutating API.
+- **`storybookSlug` replaced with Storybook's own `sanitize`** (reuse) — imported from
+  `storybook/internal/csf` (already a devDependency; loads in plain Node). The hand-rolled
+  function only approximated Storybook's slugs; verified identical over all current page
+  titles, and `sanitize` stays correct for titles (e.g. non-ASCII) where the approximation
+  would drift from the real docs-site URLs.
+
+**Skipped:**
+
+- Efficiency review returned no findings above the cost/benefit bar (one-shot build
+  script; the only real duplicate work — `indexLines.join('\n')` computed twice — saves
+  microseconds at the cost of worse method signatures).
+- ColorPalette replacement hardcoding the `scale_color_tokens.css` link (single-page
+  knowledge in a global transform) — low confidence, fix space is speculative; noted as a
+  known trade-off.
+- `SECTION_ORDER` duplicating `.storybook/preview.js`'s `storySort.order`, and
+  `SOURCE_URL` duplicating the literal in `src/stories/helpers/sourceCodeLink.js` —
+  drift risks, but no importable shared source exists (preview.js needs the browser
+  runtime); fixing means new shared-constants modules, out of scope for a pure refactor.
+
+## Phase 2b — TokenCatalog readability rework (user-directed)
+
+- [x] `TokenCatalog`'s constructor was one nested parsing blob with inline regexes and an
+      undocumented `categories` shape. Reworked: the three regexes are named module
+      constants (`DOC_COMMENT_OPENER`, `TOKEN_CATEGORY_ANNOTATION`,
+      `CUSTOM_PROPERTY_DECLARATION`), the `categories` class field documents its shape at
+      the declaration, and parsing is decomposed into `parseTokenCss(css)` (doc-comment
+      segmentation) and `addTokens(category, declarations)` (declaration matching +
+      cross-comment append), leaving the constructor as file iteration only. Re-verified
+      byte-identical after the change.
+
+## Phase 3 — Verify output is unchanged
+
+- [x] Re-run `yarn build-docs:llms`; `diff -r pass3-baseline-llms-docs/ llms-docs/` empty.
+- [x] Console output matches `pass3-baseline-stdout.txt` verbatim.
+- [x] `eslint` on both files: same 3 pre-existing `no-undef` errors on `global`
+      (same lines as prior passes), no new errors; the hook file is clean.
+
+## Constraints
+
+- No behavior changes: same files, same bytes, same warnings, same ordering. (The
+  `sanitize` swap is byte-identical for every current title; it changes only what a
+  hypothetical future non-ASCII title would slug to — matching the real docs-site URL.)
+- No new dependencies (`storybook` was already a devDependency).

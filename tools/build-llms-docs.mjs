@@ -29,6 +29,7 @@ import { register } from 'node:module'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { JSDOM } from 'jsdom'
 import prettier from 'prettier'
+import { sanitize } from 'storybook/internal/csf'
 
 register('./llms-resolve-hooks.mjs', import.meta.url)
 
@@ -94,18 +95,16 @@ class TokenCatalog {
     }
   }
 
-  // Renders one category as a markdown table, e.g. table('Border Radius', ...):
+  // Renders one category as a markdown table, or null for an unknown/empty
+  // category. table('Border Radius') gives:
   //
   //   | Token | Value |
   //   | --- | --- |
   //   | `--op-radius-small` | `0.125rem` |
   //   | `--op-radius-medium` | `0.25rem` |
-  table(categoryName, file, warnings) {
+  table(categoryName) {
     const tokens = this.categories[categoryName]
-    if (!tokens || tokens.length === 0) {
-      warnings.add(file, `no tokens found for category "${categoryName}"`)
-      return `_No tokens found for category "${categoryName}"._`
-    }
+    if (!tokens || tokens.length === 0) return null
     const rows = tokens.map((token) => `| \`${token.name}\` | \`${escapeCell(token.value)}\` |`)
     return markdownTable(['Token', 'Value'], rows)
   }
@@ -115,11 +114,21 @@ class TokenCatalog {
 // Story rendering
 // ---------------------------------------------------------------------------
 
+// A story module's meta (default export), one named story (undefined if
+// absent), and the story's resolved args — story args override meta args,
+// the same resolution Storybook applies.
+const resolveStory = (storiesModule, storyName) => {
+  const meta = storiesModule.default || {}
+  const story = storiesModule[storyName]
+  return { meta, story, args: { ...meta.args, ...story?.args } }
+}
+
 class StoryRenderer {
   // The story render functions build real DOM nodes. This must run before any
   // story module is dynamically imported (they call these globals at import time).
   constructor() {
     const dom = new JSDOM('<!doctype html><html><body></body></html>')
+    this.document = dom.window.document
     global.window = dom.window
     global.document = dom.window.document
     for (const key of ['HTMLElement', 'Node', 'CustomEvent', 'DocumentFragment']) {
@@ -142,8 +151,7 @@ class StoryRenderer {
   //
   //   <button class="btn btn--primary">Primary</button>
   async render(storiesModule, storyName, file, warnings) {
-    const meta = storiesModule.default || {}
-    const story = storiesModule[storyName]
+    const { meta, story, args } = resolveStory(storiesModule, storyName)
     if (!story) {
       warnings.add(file, `story "${storyName}" not found`)
       return null
@@ -153,7 +161,6 @@ class StoryRenderer {
       warnings.add(file, `story "${storyName}" has no render function`)
       return null
     }
-    const args = { ...meta.args, ...story.args }
     let result
     try {
       result = render(args, { args })
@@ -185,10 +192,8 @@ class StoryRenderer {
 //   | `label` | `"Primary"` |  |  |
 //   | `variant` | `"default"` | `default`, `primary`, `destructive`, `warning` |  |
 const controlsTable = (storiesModule, storyName) => {
-  const meta = storiesModule.default || {}
-  const story = storiesModule[storyName] || {}
+  const { meta, args } = resolveStory(storiesModule, storyName)
   const argTypes = meta.argTypes || {}
-  const args = { ...meta.args, ...story.args }
   const names = [...new Set([...Object.keys(argTypes), ...Object.keys(args)])]
   if (names.length === 0) return null
   const formatValue = (value) => (value === undefined ? '' : `\`${escapeCell(JSON.stringify(value))}\``)
@@ -204,14 +209,6 @@ const controlsTable = (storiesModule, storyName) => {
 // ---------------------------------------------------------------------------
 // MDX -> markdown
 // ---------------------------------------------------------------------------
-
-// Mirrors Storybook's own URL slugs so page links stay stable, e.g.
-// 'Components/Button Group' becomes 'components-button-group'
-const storybookSlug = (title) =>
-  title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
 
 const walk = (dir) =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -278,12 +275,12 @@ class MdxPageConverter {
 
   // Story module namespace imports (`import * as FooStories from './Foo.stories'`),
   // loaded concurrently since each is an independent file with no shared state.
+  // Extensionless paths are resolved by the registered llms-resolve-hooks.mjs.
   async loadStoryModules() {
     const imports = [...this.text.matchAll(/^import \* as (\w+) from '([^']+)'/gm)]
     const modules = await Promise.all(
       imports.map(async ([, name, importPath]) => {
-        let modulePath = path.resolve(path.dirname(this.file), importPath)
-        if (!fs.existsSync(modulePath)) modulePath += '.js'
+        const modulePath = path.resolve(path.dirname(this.file), importPath)
         return [name, await import(pathToFileURL(modulePath).href)]
       })
     )
@@ -335,7 +332,7 @@ class MdxPageConverter {
           this.warnings.add(this.file, `could not parse createAlert args: ${error.message}`)
           return ''
         }
-        const scratch = document.createElement('div')
+        const scratch = this.storyRenderer.document.createElement('div')
         scratch.innerHTML = (alertArgs.description || '').replaceAll('</div>', '</div>\n')
         const description = scratch.textContent
           .split('\n')
@@ -376,9 +373,12 @@ class MdxPageConverter {
 
   // <DesignTokenDocBlock categoryName="X" /> -> markdown token table (see TokenCatalog#table above)
   replaceTokenDocBlocks() {
-    this.text = this.text.replace(/<DesignTokenDocBlock\s+categoryName="([^"]+)"[^/]*\/>/g, (_, category) =>
-      this.tokenCatalog.table(category, this.file, this.warnings)
-    )
+    this.text = this.text.replace(/<DesignTokenDocBlock\s+categoryName="([^"]+)"[^/]*\/>/g, (_, category) => {
+      const table = this.tokenCatalog.table(category)
+      if (table) return table
+      this.warnings.add(this.file, `no tokens found for category "${category}"`)
+      return `_No tokens found for category "${category}"._`
+    })
   }
 
   // Color palette blocks (ColorScale.mdx) render swatches from JS at runtime;
@@ -418,7 +418,10 @@ class MdxPageConverter {
     return {
       file: this.file,
       title: this.title,
-      slug: storybookSlug(this.title),
+      // sanitize is Storybook's own title->slug function, so page filenames
+      // match the docs site's URL slugs ('Components/Button Group' becomes
+      // 'components-button-group')
+      slug: sanitize(this.title),
       description: extractDescription(this.text),
       markdown: `${this.text}\n`,
     }
@@ -444,8 +447,6 @@ const sectionRank = (name) => {
 
 class DocsBuilder {
   constructor() {
-    this.storiesDir = STORIES_DIR
-    this.outDir = OUT_DIR
     // Must be constructed before any MdxPageConverter, since converting a page
     // dynamically imports its story modules (see StoryRenderer's constructor).
     this.storyRenderer = new StoryRenderer()
@@ -465,7 +466,7 @@ class DocsBuilder {
 
   async renderPages() {
     const pages = []
-    for (const file of walk(this.storiesDir).sort()) {
+    for (const file of walk(STORIES_DIR).sort()) {
       const converter = new MdxPageConverter(file, this.tokenCatalog, this.storyRenderer, this.warnings)
       const page = await converter.convert()
       if (page) pages.push(page)
@@ -476,14 +477,13 @@ class DocsBuilder {
   sortBySection(pages) {
     for (const page of pages) page.section = sectionOf(page.title)
     pages.sort((a, b) => sectionRank(a.section) - sectionRank(b.section) || a.title.localeCompare(b.title))
-    return pages
   }
 
   writePages(pages) {
-    fs.rmSync(this.outDir, { recursive: true, force: true })
-    fs.mkdirSync(path.join(this.outDir, 'llms'), { recursive: true })
+    fs.rmSync(OUT_DIR, { recursive: true, force: true })
+    fs.mkdirSync(path.join(OUT_DIR, 'llms'), { recursive: true })
     for (const page of pages) {
-      fs.writeFileSync(path.join(this.outDir, 'llms', `${page.slug}.md`), page.markdown)
+      fs.writeFileSync(path.join(OUT_DIR, 'llms', `${page.slug}.md`), page.markdown)
     }
   }
 
@@ -516,7 +516,7 @@ class DocsBuilder {
   }
 
   writeIndex(indexLines) {
-    fs.writeFileSync(path.join(this.outDir, 'llms.txt'), `${indexLines.join('\n')}\n`)
+    fs.writeFileSync(path.join(OUT_DIR, 'llms.txt'), `${indexLines.join('\n')}\n`)
   }
 
   // llms-full.txt: the index followed by every page, each introduced by an
@@ -526,11 +526,11 @@ class DocsBuilder {
     const fullDoc = pages
       .map((page) => `<!-- Page: ${page.title} (${page.slug}.md) -->\n\n${page.markdown}`)
       .join('\n---\n\n')
-    fs.writeFileSync(path.join(this.outDir, 'llms-full.txt'), `${indexLines.join('\n')}\n\n---\n\n${fullDoc}`)
+    fs.writeFileSync(path.join(OUT_DIR, 'llms-full.txt'), `${indexLines.join('\n')}\n\n---\n\n${fullDoc}`)
   }
 
   report(pages) {
-    console.log(`llms-docs: wrote ${pages.length} pages to ${path.relative(ROOT, this.outDir)}/`)
+    console.log(`llms-docs: wrote ${pages.length} pages to ${path.relative(ROOT, OUT_DIR)}/`)
     if (this.warnings.list.length > 0) {
       console.log(`llms-docs: ${this.warnings.list.length} warnings`)
       for (const warning of this.warnings.list) console.log(`  - ${warning}`)
