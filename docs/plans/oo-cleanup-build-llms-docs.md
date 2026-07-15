@@ -74,35 +74,52 @@ if a class-ification attempt does this.
 
 ## Phase 1 — Capture baseline
 
-- [ ] Run `yarn build-docs:llms`, copy `llms-docs/` to the scratchpad as
+- [x] Run `yarn build-docs:llms`, copy `llms-docs/` to the scratchpad as
       `oo-baseline-llms-docs/` (fresh copy for *this* pass — don't reuse a previous
       session's scratchpad path).
-- [ ] Save console output as `oo-baseline-stdout.txt`.
-- [ ] (Determinism was already confirmed in the prior pass; no need to re-check unless
+- [x] Save console output as `oo-baseline-stdout.txt`.
+- [x] (Determinism was already confirmed in the prior pass; no need to re-check unless
       this baseline looks different from that pass's final output.)
+
+**Result:** 73 pages, no warnings — matches the prior pass's final state. Baseline saved
+in scratchpad at `oo-baseline-llms-docs/` and `oo-baseline-stdout.txt`.
 
 ## Phase 2 — Restructure into classes
 
-- [ ] Introduce `WarningCollector`, `TokenCatalog`, `StoryRenderer`, `MdxPageConverter`,
+- [x] Introduce `WarningCollector`, `TokenCatalog`, `StoryRenderer`, `MdxPageConverter`,
       `DocsBuilder` per the target structure above.
-- [ ] Wire constructor injection for `warnings` (and `tokenCatalog`/`storyRenderer` where
+- [x] Wire constructor injection for `warnings` (and `tokenCatalog`/`storyRenderer` where
       needed) instead of closing over module-level state.
-- [ ] Keep every transform method's logic byte-for-byte the same as today's function
+- [x] Keep every transform method's logic byte-for-byte the same as today's function
       bodies — this pass changes *organization*, not the regexes/logic themselves.
-- [ ] Keep the existing explanatory comments (they document shape/why, not restructured
+- [x] Keep the existing explanatory comments (they document shape/why, not restructured
       by this pass) — move them to sit above the method they now describe.
-- [ ] Leave the stateless helpers listed above as plain functions.
-- [ ] Update this plan file after the step completes.
+- [x] Leave the stateless helpers listed above as plain functions.
+- [x] Update this plan file after the step completes.
+
+**Result:** Restructured per the target class structure. One deviation from the plan's
+illustrative signature: `TokenCatalog#table` takes `(categoryName, file, warnings)` rather
+than `(categoryName, warnings)` — the original `tokenTable` needed `file` to build the
+warning message (`warnings.add(file, message)`), so dropping it would have broken warning
+output. `extractDescription` stayed a plain module function (pure, no state) alongside
+`storybookSlug`/`walk`/`replaceAsync`, since the plan didn't require it to become a method
+and forcing it onto `MdxPageConverter` would add ceremony without clarity. Everything else
+matches the plan's target structure and method-call order exactly.
 
 ## Phase 3 — Verify output is unchanged
 
-- [ ] Re-run `yarn build-docs:llms`.
-- [ ] **Primary check:** `diff -r oo-baseline-llms-docs/ llms-docs/` — must be empty.
-- [ ] Secondary check: compare console output against `oo-baseline-stdout.txt`.
-- [ ] Run `eslint` on the file — compare error count/lines against the 3 pre-existing
+- [x] Re-run `yarn build-docs:llms`.
+- [x] **Primary check:** `diff -r oo-baseline-llms-docs/ llms-docs/` — must be empty.
+- [x] Secondary check: compare console output against `oo-baseline-stdout.txt`.
+- [x] Run `eslint` on the file — compare error count/lines against the 3 pre-existing
       `global`-related `no-undef` errors from the prior pass (see that plan's Phase 3) so
       no new lint errors are mistaken for pre-existing ones.
-- [ ] If any diff appears, fix the refactor (never the baseline) and re-verify.
+- [x] If any diff appears, fix the refactor (never the baseline) and re-verify.
+
+**Result:** `diff -r` empty — byte-identical output (73 pages, no warnings, matches
+baseline exactly). Console output matches baseline verbatim. `eslint` reports the same 3
+pre-existing `no-undef` errors on `global` (same lines as the prior pass) — no new lint
+errors introduced by the class restructure.
 
 ## Constraints
 
