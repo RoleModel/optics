@@ -127,6 +127,20 @@ Applied the same lens as the `TokenCatalog` rework to every other class:
       re-litigates the deliberate explicit-dependency design from Phase 2c.
 - [x] Re-verified byte-identical (diff + stdout).
 
+## Phase 2e — JSDoc conversion (user-directed)
+
+- [x] Converted the prose comments to typed JSDoc across every class and helper:
+      `@param`/`@returns` on all methods and functions, `@type` on class fields
+      (`WarningCollector.list`, `TokenCatalog.categories`), and a `StoriesModule`
+      typedef for the story-module shape threaded through
+      `resolveStory`/`StoryRenderer.render`/`controlsTable`/`loadStoryModules`.
+      Example-output snippets kept, folded into the relevant JSDoc blocks (the
+      token-CSS example's inner comment terminators escaped as `*\/`). Also
+      preserved an external edit: `TokenCatalog` now reads `TOKENS_DIR` directly
+      (no-arg constructor).
+- [x] Re-verified byte-identical (diff + stdout); eslint unchanged (1 pre-existing
+      `global` error).
+
 ## Phase 3 — Verify output is unchanged
 
 - [x] Re-run `yarn build-docs:llms`; `diff -r pass3-baseline-llms-docs/ llms-docs/` empty.
