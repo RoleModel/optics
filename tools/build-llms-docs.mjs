@@ -70,29 +70,55 @@ const markdownTable = (headers, rows) =>
 //   --op-radius-small: 0.125rem;
 //   --op-radius-medium: 0.25rem;
 //
-// and exposes { 'Border Radius': [{ name: '--op-radius-small', value: '0.125rem' }, ...], ... }
-// as markdown tables. These are the same annotations storybook-design-token uses to build
-// its doc blocks.
+// and exposes them as markdown tables. These are the same annotations
+// storybook-design-token uses to build its doc blocks.
+const DOC_COMMENT_OPENER = /\/\*\*/
+const TOKEN_CATEGORY_ANNOTATION = /@tokens\s+([^\n*]+)/
+const CUSTOM_PROPERTY_DECLARATION = /(--[\w-]+)\s*:\s*([^;]+);/g
+
+// One design token: a CSS custom property declaration like
+// `--op-radius-small: 0.125rem;`
+class Token {
+  constructor(name, value) {
+    this.name = name
+    // values may span multiple lines in the source CSS
+    this.value = value.replace(/\s+/g, ' ').trim()
+  }
+
+  markdownRow() {
+    return `| \`${this.name}\` | \`${escapeCell(this.value)}\` |`
+  }
+}
+
 class TokenCatalog {
+  // category name -> Token[]
+  categories = {}
+
   constructor(tokensDir) {
-    this.categories = {}
     for (const file of fs.readdirSync(tokensDir)) {
       if (!file.endsWith('.css')) continue
-      const css = fs.readFileSync(path.join(tokensDir, file), 'utf8')
-      // Split on doc comments; a `@tokens` comment owns the tokens that follow it.
-      const segments = css.split(/\/\*\*/)
-      for (const segment of segments) {
-        const categoryMatch = segment.match(/@tokens\s+([^\n*]+)/)
-        if (!categoryMatch) continue
-        const name = categoryMatch[1].trim()
-        const body = segment.slice(segment.indexOf('*/') + 2)
-        const tokens = []
-        for (const tokenMatch of body.matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)) {
-          tokens.push({ name: tokenMatch[1], value: tokenMatch[2].replace(/\s+/g, ' ').trim() })
-        }
-        this.categories[name] = (this.categories[name] || []).concat(tokens)
-      }
+      this.parseTokenCss(fs.readFileSync(path.join(tokensDir, file), 'utf8'))
     }
+  }
+
+  // A `@tokens` doc comment owns every custom property that follows it, up to
+  // the next doc comment.
+  parseTokenCss(css) {
+    for (const segment of css.split(DOC_COMMENT_OPENER)) {
+      const categoryMatch = segment.match(TOKEN_CATEGORY_ANNOTATION)
+      if (!categoryMatch) continue
+      const declarations = segment.slice(segment.indexOf('*/') + 2)
+      this.addTokens(categoryMatch[1].trim(), declarations)
+    }
+  }
+
+  // A category may span several doc comments (even across files); later
+  // declarations append to it.
+  addTokens(category, declarations) {
+    const tokens = [...declarations.matchAll(CUSTOM_PROPERTY_DECLARATION)].map(
+      ([, name, value]) => new Token(name, value)
+    )
+    this.categories[category] = (this.categories[category] || []).concat(tokens)
   }
 
   // Renders one category as a markdown table, or null for an unknown/empty
@@ -105,8 +131,11 @@ class TokenCatalog {
   table(categoryName) {
     const tokens = this.categories[categoryName]
     if (!tokens || tokens.length === 0) return null
-    const rows = tokens.map((token) => `| \`${token.name}\` | \`${escapeCell(token.value)}\` |`)
-    return markdownTable(['Token', 'Value'], rows)
+
+    return markdownTable(
+      ['Token', 'Value'],
+      tokens.map((token) => token.markdownRow())
+    )
   }
 }
 

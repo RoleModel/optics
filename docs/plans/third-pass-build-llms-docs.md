@@ -73,6 +73,12 @@ same hard constraint: **the generated output must be byte-identical before and a
       cross-comment append), leaving the constructor as file iteration only. Re-verified
       byte-identical after the change.
 
+- [x] Introduced the `Token` value object the catalog's structure was implying: it owns
+      its name, the whitespace normalization of its value (previously done inline at
+      parse time), and its own `markdownRow()` rendering (previously inlined in
+      `table()`). `categories` is now documented as `category name -> Token[]`.
+      Re-verified byte-identical.
+
 ## Phase 3 — Verify output is unchanged
 
 - [x] Re-run `yarn build-docs:llms`; `diff -r pass3-baseline-llms-docs/ llms-docs/` empty.

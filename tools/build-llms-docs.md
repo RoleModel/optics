@@ -37,8 +37,15 @@ classDiagram
         render(storiesModule, storyName, file, warnings)
     }
     class TokenCatalog {
-        categories
+        categories: name -> Token[]
+        parseTokenCss(css)
+        addTokens(category, declarations)
         table(categoryName)
+    }
+    class Token {
+        name
+        value
+        markdownRow()
     }
     class WarningCollector {
         list
@@ -53,6 +60,7 @@ classDiagram
     MdxPageConverter --> TokenCatalog : table(category)
     MdxPageConverter --> WarningCollector : add(file, message)
     StoryRenderer ..> WarningCollector : add() via per-call argument
+    TokenCatalog o-- Token : one per declaration; table() collects markdownRow()s
 ```
 
 ## Runtime flow for one page (`convert()`)
@@ -78,6 +86,7 @@ sequenceDiagram
 
     loop each <DesignTokenDocBlock>
         C->>T: table(categoryName)
+        Note over T: each Token renders its own markdownRow()
         T-->>C: markdown table (or null)
         C--)W: add(file, "no tokens found...") — only when null
     end
@@ -100,6 +109,10 @@ sequenceDiagram
   `StoryRenderer.render` receives it per call (rendering needs the page's file path for
   the message). `DocsBuilder.report()` reads the accumulated list at the very end, which
   is why warning *order* is load-bearing.
+- `Token` is a value object owned entirely by `TokenCatalog`: the catalog creates one per
+  CSS custom-property declaration, and each token normalizes its own value and renders
+  its own markdown row. Nothing outside the catalog touches tokens directly — the rest of
+  the build only sees `table(categoryName)`'s finished markdown (or `null`).
 - Module-level pure helpers (`resolveStory`, `controlsTable`, `markdownTable`, `walk`,
   etc.) are left off the diagrams — they're stateless functions, not communicating
   objects.
