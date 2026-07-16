@@ -79,6 +79,37 @@ same hard constraint: **the generated output must be byte-identical before and a
       `table()`). `categories` is now documented as `category name -> Token[]`.
       Re-verified byte-identical.
 
+## Phase 2c — Class-by-class readability pass (user-directed)
+
+Applied the same lens as the `TokenCatalog` rework to every other class:
+
+- [x] **Hidden objects surfaced:** `Page` value object (was an anonymous literal from
+      `toPage()` that `DocsBuilder` mutated `.section` onto and formatted index/full-doc
+      entries from) — now owns slug/section/description plus `indexEntry()` and
+      `fullDocEntry()`. Dropped the literal's unused `file` field. `packageVersion()`
+      names the package.json read hidden in `buildIndexLines`; `WarningCollector.report()`
+      owns warning output instead of `DocsBuilder` reaching into `.list`.
+- [x] **Named regexes:** every pattern is a `static` field on the class that uses it
+      (user-directed follow-up: class statics rather than module constants, so patterns
+      are organized with their consumers) — 16 on `MdxPageConverter`
+      (`STORY_MODULE_IMPORT`, `META_BLOCK`, `ALERT_BLOCK`, `CANVAS_BLOCK`,
+      `TOKEN_DOC_BLOCK`, `UNHANDLED_JSX_BLOCK`, `EXCESS_BLANK_LINES`, ...), 3 on
+      `TokenCatalog` (`DOC_COMMENT_OPENER`, `TOKEN_CATEGORY_ANNOTATION`,
+      `CUSTOM_PROPERTY_DECLARATION`), and `UNDEFINED_MODIFIER_CLASS` + `PRETTIER_HTML`
+      on `StoryRenderer`.
+- [x] **No work in initializers:** `StoryRenderer`'s JSDOM/global setup moved from its
+      constructor to an explicit `installDomGlobals()` called at the top of
+      `DocsBuilder.run()` (ordering is now a visible call, not a construction
+      side-effect); `innerText` shim extracted to `shimInnerText(window)`.
+      `DocsBuilder`'s constructor is wiring-only.
+- [x] **Nested callbacks decomposed:** alert conversion split into `alertBlockquote()` +
+      `blockquoteText()`; canvas conversion into `canvasCodeBlock()`; prettier fallback
+      into `StoryRenderer.prettyPrint()`; `buildIndexLines` header extracted to
+      `indexHeader()`; `sortBySection`'s mutation loop gone (Page computes its section).
+- [x] Updated `tools/build-llms-docs.md` diagrams (Page class, installDomGlobals
+      ordering, warnings.report(), named-regex note).
+- [x] Re-verified byte-identical (diff + stdout), same 3 pre-existing lint errors.
+
 ## Phase 3 — Verify output is unchanged
 
 - [x] Re-run `yarn build-docs:llms`; `diff -r pass3-baseline-llms-docs/ llms-docs/` empty.
