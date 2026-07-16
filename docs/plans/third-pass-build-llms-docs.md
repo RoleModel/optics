@@ -110,6 +110,23 @@ Applied the same lens as the `TokenCatalog` rework to every other class:
       ordering, warnings.report(), named-regex note).
 - [x] Re-verified byte-identical (diff + stdout), same 3 pre-existing lint errors.
 
+## Phase 2d — Final `/simplify` re-run
+
+- [x] Re-ran the 4-angle review against the reworked file. Reuse and efficiency came
+      back clean (the efficiency agent explicitly verified the shared static `/g`
+      regexes are hazard-free: `replace` resets `lastIndex`, `matchAll` iterates a
+      clone, no `.exec()`/`.test()` on shared globals).
+- [x] Applied: `StoryRenderer.render(storiesModule, storyName)` no longer takes
+      `(file, warnings)` — it returns `{ html }` or `{ failure }` and
+      `canvasCodeBlock` records the failure against its own file (same warning text
+      and order); `installDomGlobals` unified to one assignment loop including
+      `window`/`document` (drops the pre-existing eslint `no-undef` errors from 3 to
+      1); `walk` renamed `mdxFiles` (the generic name hid the `.mdx` filter); unused
+      `whole` replacer param renamed `_` for consistency.
+- [x] Skipped: dropping `StoryRenderer.document`/moving DOM install to module level —
+      re-litigates the deliberate explicit-dependency design from Phase 2c.
+- [x] Re-verified byte-identical (diff + stdout).
+
 ## Phase 3 — Verify output is unchanged
 
 - [x] Re-run `yarn build-docs:llms`; `diff -r pass3-baseline-llms-docs/ llms-docs/` empty.

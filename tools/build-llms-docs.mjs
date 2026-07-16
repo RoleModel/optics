@@ -171,9 +171,7 @@ class StoryRenderer {
   installDomGlobals() {
     const dom = new JSDOM('<!doctype html><html><body></body></html>')
     this.document = dom.window.document
-    global.window = dom.window
-    global.document = dom.window.document
-    for (const key of ['HTMLElement', 'Node', 'CustomEvent', 'DocumentFragment']) {
+    for (const key of ['window', 'document', 'HTMLElement', 'Node', 'CustomEvent', 'DocumentFragment']) {
       global[key] = dom.window[key]
     }
     this.shimInnerText(dom.window)
@@ -192,35 +190,28 @@ class StoryRenderer {
   }
 
   // Calls a story's render function (the same one Storybook calls) with its
-  // resolved args and returns the resulting markup, pretty-printed. For example
-  // the Button `Primary` story returns:
+  // resolved args and returns `{ html }`, pretty-printed. For example the
+  // Button `Primary` story returns:
   //
   //   <button class="btn btn--primary">Primary</button>
-  async render(storiesModule, storyName, file, warnings) {
+  //
+  // When the story can't be rendered, returns `{ failure }` with the reason
+  // instead, for the caller to record.
+  async render(storiesModule, storyName) {
     const { meta, story, args } = resolveStory(storiesModule, storyName)
-    if (!story) {
-      warnings.add(file, `story "${storyName}" not found`)
-      return null
-    }
+    if (!story) return { failure: `story "${storyName}" not found` }
     const render = story.render || meta.render
-    if (!render) {
-      warnings.add(file, `story "${storyName}" has no render function`)
-      return null
-    }
+    if (!render) return { failure: `story "${storyName}" has no render function` }
     let result
     try {
       result = render(args, { args })
     } catch (error) {
-      warnings.add(file, `story "${storyName}" failed to render: ${error.message}`)
-      return null
+      return { failure: `story "${storyName}" failed to render: ${error.message}` }
     }
     let html = typeof result === 'string' ? result : result?.outerHTML
     html = html?.replace(StoryRenderer.UNDEFINED_MODIFIER_CLASS, '')
-    if (!html) {
-      warnings.add(file, `story "${storyName}" rendered nothing`)
-      return null
-    }
-    return this.prettyPrint(html)
+    if (!html) return { failure: `story "${storyName}" rendered nothing` }
+    return { html: await this.prettyPrint(html) }
   }
 
   // Prettier can choke on unusual fragments; fall back to the raw markup
@@ -259,10 +250,10 @@ const controlsTable = (storiesModule, storyName) => {
 // MDX -> markdown
 // ---------------------------------------------------------------------------
 
-const walk = (dir) =>
+const mdxFiles = (dir) =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name)
-    if (entry.isDirectory()) return walk(full)
+    if (entry.isDirectory()) return mdxFiles(full)
     return entry.name.endsWith('.mdx') ? [full] : []
   })
 
@@ -436,13 +427,17 @@ class MdxPageConverter {
       this.warnings.add(this.file, `unknown story module "${moduleName}"`)
       return ''
     }
-    const html = await this.storyRenderer.render(storiesModule, storyName, this.file, this.warnings)
+    const { html, failure } = await this.storyRenderer.render(storiesModule, storyName)
+    if (failure) {
+      this.warnings.add(this.file, failure)
+      return ''
+    }
     return html ? `\`\`\`html\n${html}\n\`\`\`` : ''
   }
 
   // <Controls of={FooStories.Bar} /> -> markdown args table (see controlsTable above)
   replaceControlsBlocks() {
-    this.text = this.text.replace(MdxPageConverter.CONTROLS_BLOCK, (whole, moduleName, storyName) => {
+    this.text = this.text.replace(MdxPageConverter.CONTROLS_BLOCK, (_, moduleName, storyName) => {
       const storiesModule = this.storyModules[moduleName]
       if (!storiesModule) return ''
       return controlsTable(storiesModule, storyName) || ''
@@ -565,7 +560,7 @@ class DocsBuilder {
 
   async renderPages() {
     const pages = []
-    for (const file of walk(STORIES_DIR).sort()) {
+    for (const file of mdxFiles(STORIES_DIR).sort()) {
       const converter = new MdxPageConverter(file, this.tokenCatalog, this.storyRenderer, this.warnings)
       const page = await converter.convert()
       if (page) pages.push(page)

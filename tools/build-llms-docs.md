@@ -45,7 +45,7 @@ classDiagram
         document
         installDomGlobals()
         shimInnerText(window)
-        render(storiesModule, storyName, file, warnings)
+        render(storiesModule, storyName)
         prettyPrint(html)
     }
     class TokenCatalog {
@@ -74,7 +74,6 @@ classDiagram
     MdxPageConverter --> TokenCatalog : table(category)
     MdxPageConverter --> WarningCollector : add(file, message)
     MdxPageConverter --> Page : toPage() creates
-    StoryRenderer ..> WarningCollector : add() via per-call argument
     TokenCatalog o-- Token : one per declaration; table() collects markdownRow()s
 ```
 
@@ -95,9 +94,9 @@ sequenceDiagram
     Note over C: resolve hook appends .js to extensionless paths
 
     loop each <Canvas of={...}>
-        C->>R: render(storiesModule, storyName, file, warnings)
-        R--)W: add(file, msg) — only on missing story / render failure
-        R-->>C: pretty-printed HTML (or null)
+        C->>R: render(storiesModule, storyName)
+        R-->>C: { html } pretty-printed, or { failure } with the reason
+        C--)W: add(file, failure) — only on missing story / render failure
     end
 
     loop each <DesignTokenDocBlock>
@@ -121,10 +120,10 @@ sequenceDiagram
   `run()` calls `storyRenderer.installDomGlobals()` before the first page conversion
   triggers a dynamic import. The converter's alert handling also uses
   `storyRenderer.document` (the dashed dependency above).
-- `WarningCollector` is the one shared sink: converters hold it as a field, while
-  `StoryRenderer.render` receives it per call (rendering needs the page's file path for
-  the message). `DocsBuilder.report()` delegates to `warnings.report()` at the very end,
-  which is why warning *order* is load-bearing.
+- `WarningCollector` is the one shared sink, and only `MdxPageConverter` writes to it —
+  `StoryRenderer.render` doesn't know warnings exist; it returns `{ failure }` reasons
+  that the converter records against its own file. `DocsBuilder.report()` delegates to
+  `warnings.report()` at the very end, which is why warning *order* is load-bearing.
 - `Page` and `Token` are value objects. A `Page` (created by `MdxPageConverter.toPage()`)
   knows its own slug, section, and description, and renders its own index and full-doc
   entries — `DocsBuilder` only sorts pages and concatenates what they produce. A `Token`
@@ -134,6 +133,6 @@ sequenceDiagram
   `MdxPageConverter` declares one regex per transform method (`CANVAS_BLOCK`,
   `ALERT_BLOCK`, `TOKEN_DOC_BLOCK`, ...), `TokenCatalog` its three CSS-annotation
   patterns, and `StoryRenderer` its class-name cleanup regex and prettier options.
-- Module-level pure helpers (`resolveStory`, `controlsTable`, `markdownTable`, `walk`,
-  etc.) are left off the diagrams — they're stateless functions, not communicating
-  objects.
+- Module-level pure helpers (`resolveStory`, `controlsTable`, `markdownTable`,
+  `mdxFiles`, etc.) are left off the diagrams — they're stateless functions, not
+  communicating objects.
