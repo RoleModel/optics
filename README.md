@@ -103,6 +103,10 @@ The docs site also serves the full documentation as plain markdown for AI tools:
 
 These are generated from the Storybook MDX docs by `yarn build-docs:llms`. Each `<Canvas>` embed is replaced with the story's actual rendered HTML, and each token doc block with a table parsed from the token CSS.
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes.
+
 ## License
 
 [MIT](LICENSE)
