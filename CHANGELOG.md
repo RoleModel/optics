@@ -8,7 +8,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Component Changes
 
-- Add `.svg-icon` for inline SVG icon sets (for example, Hugeicons), used with `.icon`
+- Add the `.icon--svg` modifier for inline SVG icon sets (for example, Hugeicons)
   - Size modifiers work as they do for icon fonts. Weight modifiers set the stroke width, and `.icon--low-emphasis` lowers the opacity. Stroke widths can be customized with `--_op-icon-stroke-width-*`.
 
 ## [2.4.0] - 2026-06-25

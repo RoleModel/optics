@@ -79,7 +79,7 @@ const svgGlyphs = [
 ]
 
 const svgIcon = (glyph, classes = '') =>
-  `<span class="icon svg-icon ${classes}" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">${glyph}</svg></span>`
+  `<span class="icon icon--svg ${classes}" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">${glyph}</svg></span>`
 
 const svgRow = (label, classes) =>
   `<div style="display: flex; gap: var(--op-space-medium); align-items: center;">
@@ -93,7 +93,7 @@ export const Svg = {
     wrapper.style.display = 'grid'
     wrapper.style.gap = 'var(--op-space-medium)'
     wrapper.innerHTML = [
-      ['icon svg-icon', ''],
+      ['icon icon--svg', ''],
       ['icon--small', 'icon--small'],
       ['icon--large', 'icon--large'],
       ['icon--x-large', 'icon--x-large'],

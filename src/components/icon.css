@@ -26,7 +26,7 @@
   --_op-icon-optical-size-large: 40;
   --_op-icon-optical-size-x-large: 48;
 
-  /* Stroke width and emphasis for SVG icon sets (.svg-icon) */
+  /* SVG (.icon--svg) */
   --_op-icon-stroke-width-light: 1;
   --_op-icon-stroke-width-normal: 1.5;
   --_op-icon-stroke-width-semi-bold: 2;
@@ -111,6 +111,25 @@
     --__op-icon-font-size: var(--_op-icon-font-size-x-large);
     --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
   }
+
+  /* SVG Modifier: an inline SVG instead of a font glyph, e.g. `icon icon--svg icon--large` */
+  &.icon--svg {
+    svg {
+      display: block;
+      block-size: 100%;
+      inline-size: 100%;
+    }
+
+    /* A rule on the <svg> root cannot beat a stroke-width attribute on a child, so target the attribute.
+       With no weight modifier the set keeps the widths it was drawn with. */
+    &:is(.icon--weight-light, .icon--weight-normal, .icon--weight-semi-bold, .icon--weight-bold) svg [stroke-width] {
+      stroke-width: var(--__op-icon-stroke-width);
+    }
+
+    &.icon--low-emphasis {
+      opacity: var(--_op-icon-svg-opacity-low-emphasis);
+    }
+  }
 }
 
 /* Material Icons class provided by the Google Fonts CDN */
@@ -121,25 +140,6 @@
     'GRAD' var(--__op-icon-emphasis),
     'opsz' var(--__op-icon-optical-size);
   font-weight: unset;
-}
-
-/* Inline SVG icon sets (Hugeicons, Lucide, Tabler...). Used with .icon, e.g. `icon svg-icon icon--large` */
-.svg-icon {
-  svg {
-    display: block;
-    block-size: 100%;
-    inline-size: 100%;
-  }
-
-  /* A rule on the <svg> root cannot beat a stroke-width attribute on a child, so target the attribute.
-     With no weight modifier the set keeps the widths it was drawn with. */
-  &:is(.icon--weight-light, .icon--weight-normal, .icon--weight-semi-bold, .icon--weight-bold) svg [stroke-width] {
-    stroke-width: var(--__op-icon-stroke-width);
-  }
-
-  &.icon--low-emphasis {
-    opacity: var(--_op-icon-svg-opacity-low-emphasis);
-  }
 }
 
 /* Custom SVG Icons app specific */

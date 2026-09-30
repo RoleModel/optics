@@ -246,10 +246,10 @@ Emphasis acts similarly to weight, but changes the thickness of the icon strokes
 
 ## SVG Icons
 
-`.svg-icon` is the block for an icon drawn as inline SVG instead of a font glyph. Use it together with `.icon`, the same way `.material-symbols-outlined` is used with `.icon` for the font. Use it for SVG sets such as [Hugeicons](https://hugeicons.com), or for Lucide, Tabler, and Phosphor when you want only the icons your app uses. Optics does not ship the SVG files. Each app keeps its own, and the [rolemodel_rails icon generator](https://github.com/RoleModel/rolemodel_rails/tree/main/lib/generators/rolemodel/optics/icons) (`--hugeicons`) renders them.
+`.icon--svg` is a modifier of `.icon` for an icon drawn as inline SVG instead of a font glyph. Use it for SVG sets such as [Hugeicons](https://hugeicons.com), or for Lucide, Tabler, and Phosphor when you want only the icons your app uses. Optics does not ship the SVG files. Each app keeps its own, and the [rolemodel_rails icon generator](https://github.com/RoleModel/rolemodel_rails/tree/main/lib/generators/rolemodel/optics/icons) (`--custom`) renders them.
 
 ```html
-<span class="icon svg-icon icon--large" aria-hidden="true">
+<span class="icon icon--svg icon--large" aria-hidden="true">
   <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
     <path d="..." stroke="currentColor" stroke-width="1.5" />
   </svg>
@@ -299,7 +299,7 @@ Here are the variables that can be customized:
 --_op-icon-optical-size-large
 --_op-icon-optical-size-x-large
 
-/* SVG icons (.svg-icon) */
+/* SVG icons (.icon--svg) */
 --_op-icon-stroke-width-light
 --_op-icon-stroke-width-normal
 --_op-icon-stroke-width-semi-bold
