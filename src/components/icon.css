@@ -26,6 +26,13 @@
   --_op-icon-optical-size-large: 40;
   --_op-icon-optical-size-x-large: 48;
 
+  /* SVG (.icon--svg) */
+  --_op-icon-stroke-width-light: 1;
+  --_op-icon-stroke-width-normal: 1.5;
+  --_op-icon-stroke-width-semi-bold: 2;
+  --_op-icon-stroke-width-bold: 2.5;
+  --_op-icon-svg-opacity-low-emphasis: 0.6;
+
   /* Private API (component option defaults) */
   --__op-icon-weight: var(--_op-icon-weight-normal);
   --__op-icon-fill: var(--_op-icon-fill-outlined);
@@ -53,18 +60,22 @@
   /* Weight Modifiers */
   &.icon--weight-light {
     --__op-icon-weight: var(--_op-icon-weight-light);
+    --__op-icon-stroke-width: var(--_op-icon-stroke-width-light);
   }
 
   &.icon--weight-normal {
     --__op-icon-weight: var(--_op-icon-weight-normal);
+    --__op-icon-stroke-width: var(--_op-icon-stroke-width-normal);
   }
 
   &.icon--weight-semi-bold {
     --__op-icon-weight: var(--_op-icon-weight-semi-bold);
+    --__op-icon-stroke-width: var(--_op-icon-stroke-width-semi-bold);
   }
 
   &.icon--weight-bold {
     --__op-icon-weight: var(--_op-icon-weight-bold);
+    --__op-icon-stroke-width: var(--_op-icon-stroke-width-bold);
   }
 
   /* Emphasis */
@@ -99,6 +110,25 @@
   &.icon--x-large {
     --__op-icon-font-size: var(--_op-icon-font-size-x-large);
     --__op-icon-optical-size: var(--_op-icon-optical-size-x-large);
+  }
+
+  /* SVG Modifier: an inline SVG instead of a font glyph, e.g. `icon icon--svg icon--large` */
+  &.icon--svg {
+    svg {
+      display: block;
+      block-size: 100%;
+      inline-size: 100%;
+    }
+
+    /* A rule on the <svg> root cannot beat a stroke-width attribute on a child, so target the attribute.
+       With no weight modifier the set keeps the widths it was drawn with. */
+    &:is(.icon--weight-light, .icon--weight-normal, .icon--weight-semi-bold, .icon--weight-bold) svg [stroke-width] {
+      stroke-width: var(--__op-icon-stroke-width);
+    }
+
+    &.icon--low-emphasis {
+      opacity: var(--_op-icon-svg-opacity-low-emphasis);
+    }
   }
 }
 
