@@ -4,12 +4,29 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.5.0] - 2026-09-30
 
 ### Component Changes
 
-- Add the `.icon--svg` modifier for inline SVG icon sets (for example, Hugeicons)
-  - Size modifiers work as they do for icon fonts. Weight modifiers set the stroke width, and `.icon--low-emphasis` lowers the opacity. Stroke widths can be customized with `--_op-icon-stroke-width-*`.
+- Add .icon--svg for inline SVG icon sets by @dallasbpeters in https://github.com/RoleModel/optics/pull/359
+  - `.icon--svg` is a modifier of `.icon` for icons drawn as inline SVG, such as Hugeicons. Size modifiers work as they do for icon fonts, weight modifiers set the stroke width, and `.icon--low-emphasis` lowers the opacity. Stroke widths can be customized with `--_op-icon-stroke-width-*`.
+
+### Dependencies
+
+- Combine Dependabot updates by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/357
+  - Nine development dependencies were updated in the lockfile. None of these affect the shipped CSS.
+
+### Documentation Changes
+
+- Fix documentation site by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/341
+  - Fixed the sidebar examples, the switch syntax example and light-dark compilation on the documentation site, and added browser support to the introduction page
+- Serve AI-Friendly Markdown Docs (llms.txt) from the Docs Site by @zoopmaster in https://github.com/RoleModel/optics/pull/343
+  - The documentation is now also served as plain markdown (llms.txt), so AI coding assistants can read component markup, token values and customization patterns
+- Claim Context7 entry to allow admin access by @theojluciano in https://github.com/RoleModel/optics/pull/344
+- Backfill changelog by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/358
+  - Added this changelog, with every release since v0.0.1-alpha
+
+**Full Changelog**: https://github.com/RoleModel/optics/compare/v2.4.0...v2.5.0
 
 ## [2.4.0] - 2026-06-25
 
