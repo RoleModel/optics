@@ -4,8 +4,12 @@ on:
   workflow_dispatch:
   release:
     types: [published]
+# npm Trusted Publishing: GitHub proves who is publishing with a short-lived OIDC token, so there
+# is no NPM_TOKEN to expire or leak. The trusted publisher is set on npmjs.com under the package's
+# settings, and names this workflow file.
 permissions:
-  contents: write
+  contents: read
+  id-token: write
 jobs:
   build-npm:
     runs-on: ubuntu-latest
@@ -15,8 +19,8 @@ jobs:
         with:
           node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
+      # Trusted Publishing needs npm 11.5.1 or later.
+      - run: npm install -g npm@latest
       - run: yarn install --immutable
       - run: yarn build
       - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
