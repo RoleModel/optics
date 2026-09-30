@@ -252,6 +252,241 @@ Emphasis acts similarly to weight, but changes the thickness of the icon strokes
 <span class="material-symbols-outlined icon--high-emphasis icon">settings</span>
 ```
 
+## SVG Icons
+
+`.icon--svg` is a modifier of `.icon` for an icon drawn as inline SVG instead of a font glyph. Use it for SVG sets such as [Hugeicons](https://hugeicons.com), or for Lucide, Tabler, and Phosphor when you want only the icons your app uses. Optics does not ship the SVG files. Each app keeps its own, and the [rolemodel_rails icon generator](https://github.com/RoleModel/rolemodel_rails/tree/main/lib/generators/rolemodel/optics/icons) (`--custom`) renders them.
+
+```html
+<span class="icon icon--svg icon--large" aria-hidden="true">
+  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+    <path d="..." stroke="currentColor" stroke-width="1.5" />
+  </svg>
+</span>
+```
+
+```html
+<div style="display: grid; gap: var(--op-space-medium)">
+  <div style="display: flex; gap: var(--op-space-medium); align-items: center">
+    <code style="min-inline-size: 32ch">icon icon--svg</code>
+    <span class="icon icon--svg" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+        <path
+          d="M8 12.5l2.5 2.5L16 9.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path></svg></span
+    ><span class="icon icon--svg" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 5v14M5 12h14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        ></path></svg></span
+    ><span class="icon icon--svg" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 10.5L12 4l8 6.5V19a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        ></path></svg
+    ></span>
+  </div>
+  <div style="display: flex; gap: var(--op-space-medium); align-items: center">
+    <code style="min-inline-size: 32ch">icon--small</code>
+    <span class="icon icon--svg icon--small" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+        <path
+          d="M8 12.5l2.5 2.5L16 9.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--small" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 5v14M5 12h14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--small" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 10.5L12 4l8 6.5V19a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        ></path></svg
+    ></span>
+  </div>
+  <div style="display: flex; gap: var(--op-space-medium); align-items: center">
+    <code style="min-inline-size: 32ch">icon--large</code>
+    <span class="icon icon--svg icon--large" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+        <path
+          d="M8 12.5l2.5 2.5L16 9.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--large" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 5v14M5 12h14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--large" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 10.5L12 4l8 6.5V19a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        ></path></svg
+    ></span>
+  </div>
+  <div style="display: flex; gap: var(--op-space-medium); align-items: center">
+    <code style="min-inline-size: 32ch">icon--x-large</code>
+    <span class="icon icon--svg icon--x-large" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+        <path
+          d="M8 12.5l2.5 2.5L16 9.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--x-large" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 5v14M5 12h14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--x-large" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 10.5L12 4l8 6.5V19a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        ></path></svg
+    ></span>
+  </div>
+  <div style="display: flex; gap: var(--op-space-medium); align-items: center">
+    <code style="min-inline-size: 32ch">icon--large icon--weight-light</code>
+    <span class="icon icon--svg icon--large icon--weight-light" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+        <path
+          d="M8 12.5l2.5 2.5L16 9.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--large icon--weight-light" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 5v14M5 12h14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--large icon--weight-light" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 10.5L12 4l8 6.5V19a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        ></path></svg
+    ></span>
+  </div>
+  <div style="display: flex; gap: var(--op-space-medium); align-items: center">
+    <code style="min-inline-size: 32ch">icon--large icon--weight-bold</code>
+    <span class="icon icon--svg icon--large icon--weight-bold" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+        <path
+          d="M8 12.5l2.5 2.5L16 9.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--large icon--weight-bold" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 5v14M5 12h14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--large icon--weight-bold" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 10.5L12 4l8 6.5V19a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        ></path></svg
+    ></span>
+  </div>
+  <div style="display: flex; gap: var(--op-space-medium); align-items: center">
+    <code style="min-inline-size: 32ch">icon--large icon--low-emphasis</code>
+    <span class="icon icon--svg icon--large icon--low-emphasis" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"></circle>
+        <path
+          d="M8 12.5l2.5 2.5L16 9.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--large icon--low-emphasis" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 5v14M5 12h14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        ></path></svg></span
+    ><span class="icon icon--svg icon--large icon--low-emphasis" aria-hidden="true"
+      ><svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 10.5L12 4l8 6.5V19a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        ></path></svg
+    ></span>
+  </div>
+</div>
+```
+
+- **Color:** the SVG uses `currentColor`, so it follows the text color.
+- **Size:** the size modifiers work as they do for fonts. The SVG fills the `.icon` box.
+- **Weight:** the stroke keeps the width the set drew until a weight modifier is set. Then `.icon--weight-*` sets the stroke width of every stroked element.
+- **Emphasis:** `.icon--low-emphasis` lowers the opacity. Normal and high look the same.
+- **Fill:** SVG sets draw filled icons as a separate style (for example, Hugeicons `solid-rounded`), so the fill modifiers do not apply.
+
+If the app uses only SVG icons, import `optics+no_icons.css` so that no icon font loads.
+
 ## Icon API
 
 Styles are built on CSS variables scoped to the icon.
@@ -283,6 +518,13 @@ Here are the variables that can be customized:
 --_op-icon-optical-size-medium
 --_op-icon-optical-size-large
 --_op-icon-optical-size-x-large
+
+/* SVG icons (.icon--svg) */
+--_op-icon-stroke-width-light
+--_op-icon-stroke-width-normal
+--_op-icon-stroke-width-semi-bold
+--_op-icon-stroke-width-bold
+--_op-icon-svg-opacity-low-emphasis
 ```
 
 ## Customizing Icon styles
