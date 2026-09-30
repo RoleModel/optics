@@ -116,6 +116,10 @@ gh run list --workflow publish-storybook.yml --limit 1
 - `publish-storybook.yml` runs on `release: created`. GitHub does not send `created` when a
   draft is published, so the docs site likely did not redeploy. Run it:
   `gh workflow run publish-storybook.yml --ref main`
+- `deploy-to-npm.yml` failing with `E404 Not Found - PUT https://registry.npmjs.org/@rolemodel%2foptics`
+  means the `NPM_TOKEN` secret has expired or can't publish the package. It is not a missing
+  package. Re-running won't help: someone with npm access to `@rolemodel` must replace the secret
+  first. Then re-run the failed run, which builds from the tag: `gh run rerun <run id> --failed`.
 - If `deploy-to-npm.yml` failed, read the log first, then re-run it with
   `gh workflow run deploy-to-npm.yml --ref main`. This builds the current `main`, so only do it
   if nothing has merged since the tag.
