@@ -81,28 +81,37 @@
   }
 
   /* Layout Modifiers */
+  /* The *-layout names are kept for backwards compatibility */
+  &.table--layout-auto,
   &.table--auto-layout {
     table-layout: auto;
   }
 
+  &.table--layout-fixed,
   &.table--fixed-layout {
     table-layout: fixed;
   }
 
   /* Table Density Modifiers */
+  /* The *-density names are kept for backwards compatibility */
+  &.table--density-default,
   &.table--default-density {
     --__op-table-cell-height: var(--_op-table-cell-height-default);
   }
 
+  &.table--density-comfortable,
   &.table--comfortable-density {
     --__op-table-cell-height: var(--_op-table-cell-height-comfortable);
   }
 
+  &.table--density-compact,
   &.table--compact-density {
     --__op-table-cell-height: var(--_op-table-cell-height-compact);
   }
 
   /* Striped Modifiers */
+  /* The *-striped names are kept for backwards compatibility */
+  &.table--striped-even,
   &.table--even-striped {
     tbody tr:nth-child(even) {
       background-color: var(--op-color-neutral-plus-seven);
@@ -110,6 +119,7 @@
     }
   }
 
+  &.table--striped-odd,
   &.table--odd-striped {
     tbody tr:nth-child(odd) {
       background-color: var(--op-color-neutral-plus-seven);
