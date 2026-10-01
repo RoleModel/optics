@@ -1,6 +1,6 @@
 # Optics Design System
 
-> Optics is a pure-CSS design system by RoleModel Software (npm: `@rolemodel/optics`, v2.5.0). It provides design tokens (CSS custom properties prefixed `--op-`), base styles, utilities, and BEM-style components (`.btn`, `.card`, ...) that are customized per project via token overrides.
+> Optics is a pure-CSS design system by RoleModel Software (npm: `@rolemodel/optics`, v2.5.1). It provides design tokens (CSS custom properties prefixed `--op-`), base styles, utilities, and BEM-style components (`.btn`, `.card`, ...) that are customized per project via token overrides.
 
 Every page below is plain markdown. Component pages include the actual HTML markup for each variant, the component's CSS variable API, and customization patterns. The full documentation in one file: [llms-full.txt](https://docs.optics.rolemodel.design/llms-full.txt). All design tokens as JSON: https://unpkg.com/@rolemodel/optics/dist/tokens/tokens.json
 

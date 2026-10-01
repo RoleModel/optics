@@ -7,7 +7,7 @@ Table classes provide simple styling for tables and their content.
 ## Playground
 
 ```html
-<table class="table table--auto-layout table--default-density">
+<table class="table table--layout-auto table--density-default">
   <thead>
     <tr>
       <th>Movie</th>
@@ -112,7 +112,7 @@ Table can be used as a standalone component, however, it does have a few depende
 `.table` Provides a default style to a table element.
 
 ```html
-<table class="table table--auto-layout table--default-density">
+<table class="table table--layout-auto table--density-default">
   <thead>
     <tr>
       <th>Movie</th>
@@ -191,7 +191,7 @@ Table can be used as a standalone component, however, it does have a few depende
 `.table.table--primary` Provides a Primary table. This uses the primary color in the header.
 
 ```html
-<table class="table table--primary table--auto-layout table--default-density">
+<table class="table table--primary table--layout-auto table--density-default">
   <thead>
     <tr>
       <th>Movie</th>
@@ -270,7 +270,7 @@ Table can be used as a standalone component, however, it does have a few depende
 `.table.table--danger` Provides a Danger table. This uses the danger alert color in the header.
 
 ```html
-<table class="table table--danger table--auto-layout table--default-density">
+<table class="table table--danger table--layout-auto table--density-default">
   <thead>
     <tr>
       <th>Movie</th>
@@ -346,10 +346,10 @@ Table can be used as a standalone component, however, it does have a few depende
 
 ### Layout
 
-`.table.table--auto-layout`, `.table.table--fixed-layout` (with auto being the default) modify the table layout. Auto will adjust according to the contents, fixed will evenly divide based on the amount of columns.
+`.table.table--layout-auto`, `.table.table--layout-fixed` (with auto being the default) modify the table layout. Auto will adjust according to the contents, fixed will evenly divide based on the amount of columns.
 
 ```html
-<table class="table table--fixed-layout table--default-density">
+<table class="table table--layout-fixed table--density-default">
   <thead>
     <tr>
       <th>Movie</th>
@@ -425,10 +425,10 @@ Table can be used as a standalone component, however, it does have a few depende
 
 ### Density
 
-`.table.table--default-density`, `.table.table--comfortable-density`, `.table.table--compact-density` (with default being the default) modify the table cell padding to expand or contract how much space they use.
+`.table.table--density-default`, `.table.table--density-comfortable`, `.table.table--density-compact` (with default being the default) modify the table cell padding to expand or contract how much space they use.
 
 ```html
-<table class="table table--auto-layout table--comfortable-density">
+<table class="table table--layout-auto table--density-comfortable">
   <thead>
     <tr>
       <th>Movie</th>
@@ -503,7 +503,7 @@ Table can be used as a standalone component, however, it does have a few depende
 ```
 
 ```html
-<table class="table table--auto-layout table--compact-density">
+<table class="table table--layout-auto table--density-compact">
   <thead>
     <tr>
       <th>Movie</th>
@@ -579,10 +579,10 @@ Table can be used as a standalone component, however, it does have a few depende
 
 ### Striping
 
-`.table.table--even-striped`, `.table.table--odd-striped` color every other (odd or even) row with a light color on the neutral scale.
+`.table.table--striped-even`, `.table.table--striped-odd` color every other (odd or even) row with a light color on the neutral scale.
 
 ```html
-<table class="table table--auto-layout table--default-density table--even-striped">
+<table class="table table--layout-auto table--density-default table--striped-even">
   <thead>
     <tr>
       <th>Movie</th>
@@ -657,7 +657,7 @@ Table can be used as a standalone component, however, it does have a few depende
 ```
 
 ```html
-<table class="table table--auto-layout table--default-density table--odd-striped">
+<table class="table table--layout-auto table--density-default table--striped-odd">
   <thead>
     <tr>
       <th>Movie</th>
@@ -748,7 +748,7 @@ These are best used in conjunction with a wrapping container fixed table height,
 
 ```html
 <div class="table table--container" style="height: 20vh">
-  <table class="table table--auto-layout table--default-density table--sticky-header">
+  <table class="table table--layout-auto table--density-default table--sticky-header">
     <thead>
       <tr>
         <th>Movie</th>
@@ -825,7 +825,7 @@ These are best used in conjunction with a wrapping container fixed table height,
 
 ```html
 <div class="table table--container" style="height: 20vh">
-  <table class="table table--auto-layout table--default-density table--sticky-footer">
+  <table class="table table--layout-auto table--density-default table--sticky-footer">
     <thead>
       <tr>
         <th>Movie</th>
@@ -902,7 +902,7 @@ These are best used in conjunction with a wrapping container fixed table height,
 
 ```html
 <div class="table table--container" style="height: 20vh">
-  <table class="table table--auto-layout table--default-density table--sticky-header table--sticky-footer">
+  <table class="table table--layout-auto table--density-default table--sticky-header table--sticky-footer">
     <thead>
       <tr>
         <th>Movie</th>
@@ -985,7 +985,7 @@ Here is an example of using it in the table footer.
 
 ```html
 <div class="table table--container" style="height: 20vh">
-  <table class="table table--auto-layout table--default-density table--sticky-footer">
+  <table class="table table--layout-auto table--density-default table--sticky-footer">
     <thead>
       <tr>
         <th>Movie</th>
