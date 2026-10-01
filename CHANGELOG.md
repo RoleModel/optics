@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.5.1] - 2026-10-01
+
+### Component Changes
+
+- Update table classes for consistency by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/364
+  - The table modifiers now put the modifier name before its value: `.table--layout-auto`, `.table--layout-fixed`, `.table--density-default`, `.table--density-comfortable`, `.table--density-compact`, `.table--striped-even` and `.table--striped-odd`. The old names (such as `.table--comfortable-density`) still work, so no change is needed.
+
+### Dependencies
+
+- Bump brace-expansion from 1.1.16 to 1.1.21 by @dependabot[bot] in https://github.com/RoleModel/optics/pull/361
+  - A development dependency was updated in the lockfile. It does not affect the shipped CSS.
+- Bump undici from 7.29.0 to 7.30.0 by @dependabot[bot] in https://github.com/RoleModel/optics/pull/362
+  - A development dependency was updated in the lockfile. It does not affect the shipped CSS.
+
+### Repository Changes
+
+- Add a github-release skill by @dallasbpeters in https://github.com/RoleModel/optics/pull/360
+  - Added a Claude Code skill that runs the same release steps every time.
+- Publish to npm with Trusted Publishing by @dallasbpeters in https://github.com/RoleModel/optics/pull/363
+  - The package is now published to npm with Trusted Publishing, so no npm token is stored. Each published version now has provenance, which shows the GitHub workflow that built it.
+
+**Full Changelog**: https://github.com/RoleModel/optics/compare/v2.5.0...v2.5.1
+
 ## [2.5.0] - 2026-09-30
 
 ### Component Changes

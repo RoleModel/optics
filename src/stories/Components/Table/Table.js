@@ -26,9 +26,9 @@ export const createTable = ({
   table.className = [
     'table',
     style !== 'default' ? `table--${style}` : '',
-    `table--${layout}-layout`,
-    `table--${density}-density`,
-    striped === 'off' ? '' : `table--${striped}-striped`,
+    `table--layout-${layout}`,
+    `table--density-${density}`,
+    striped === 'off' ? '' : `table--striped-${striped}`,
     stickyClass,
   ]
     .filter(Boolean)
