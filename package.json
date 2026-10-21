@@ -17,7 +17,7 @@
     "build-docs": "yarn build-docs:llms && yarn build-docs:storybook",
     "build-docs:llms": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/build-llms-docs.mjs",
     "build-docs:storybook": "storybook build --docs",
-    "storybook": "storybook dev -p 6006 --docs",
+    "storybook": "yarn build-docs:llms && storybook dev -p 6006 --docs",
     "lint": "yarn lint:js && yarn lint:css",
     "lint-fix": "yarn lint:js --fix && yarn lint:css --fix",
     "lint:js": "eslint 'src/stories/**/*.js'",
