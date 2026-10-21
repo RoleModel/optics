@@ -22,7 +22,8 @@
     "prettier": "prettier -w .",
     "prettier-check": "prettier -c .",
     "sanity-check": "yarn lint && yarn prettier && yarn build && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs",
-    "generate": "node ./tools/generate.js"
+    "generate": "node ./tools/generate.js",
+    "oklch-values": "node tools/oklch-values.mjs"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,7 @@
     "@eslint/js": "^10.0.1",
     "@storybook/addon-docs": "^10.4.6",
     "@storybook/html-vite": "^10.4.6",
+    "colorjs.io": "^0.7.1",
     "cssnano": "^8.0.2",
     "eslint": "^10.6.0",
     "eslint-config-prettier": "^10.1.8",

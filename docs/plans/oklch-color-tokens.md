@@ -59,12 +59,15 @@ src/
 - Check: compiled `dist/css/optics.css` has the same custom property values as before. Run `yarn sanity-check`.
 - Result: compiled CSS has the same 2193 declarations, and `tokens.json` is the same. `--op-color-border` and the input focus rings stay in `base_tokens.css`, because they only reference scale vars and both builds share them. Source links in `BasicColor.mdx` and `Shadow.mdx` now point to `base_color_tokens.css`.
 
-### Phase 2: Compute OKLCH values
+### Phase 2: Compute OKLCH values — Done
 
 - Add a devDependency for color math (`colorjs.io` or `culori`).
 - Script converts each light and dark step of today's neutral scale to OKLCH L.
 - Script converts default primary, neutral, and alert colors to OKLCH `l c h`.
 - Pick taper factors per step. Start near 1.0 in the middle, near 0.1 at `plus-max` / `minus-max`.
+- Result: added `colorjs.io`. `yarn oklch-values` runs `tools/oklch-values.mjs` and writes `tools/oklch-values.json` (6 defaults, 57 steps with light/dark `l` and `taper`).
+- Taper: one curve can't fit every hue (yellow is only vivid when light, blue only when dark). Three curves were compared: A matches today's HSL chroma, B is the most chroma that keeps every default color inside P3, C is the geometric mean of A and B. Picked C. A clips yellow/green mid steps; B makes blue and red dull.
+- Defaults: primary/info `53.9% 0.146 258.5`, neutral `c 0.01` (h and l stay linked to primary), warning `88.2% 0.166 92.3`, danger `75.2% 0.148 21.2`, notice `80.4% 0.166 147.4`.
 
 ### Phase 3: Generate OKLCH token files
 
@@ -107,4 +110,4 @@ src/
 ## Open questions
 
 - Contrast target for `on-alt` text (AA 4.5:1 or AA large 3:1)?
-- Generator script vs hand-written OKLCH scale file?
+- Generator script vs hand-written OKLCH scale file? (Leaning generator: it can read `tools/oklch-values.json`.)

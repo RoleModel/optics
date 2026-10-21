@@ -1,0 +1,606 @@
+{
+  "defaults": {
+    "primary": {
+      "l": 53.9,
+      "c": 0.146,
+      "h": 258.5
+    },
+    "neutral": {
+      "l": 57.6,
+      "c": 0.01,
+      "h": 258.4
+    },
+    "alerts-warning": {
+      "l": 88.2,
+      "c": 0.166,
+      "h": 92.3
+    },
+    "alerts-danger": {
+      "l": 75.2,
+      "c": 0.148,
+      "h": 21.2
+    },
+    "alerts-info": {
+      "l": 53.9,
+      "c": 0.146,
+      "h": 258.5
+    },
+    "alerts-notice": {
+      "l": 80.4,
+      "c": 0.166,
+      "h": 147.4
+    }
+  },
+  "steps": {
+    "plus-max": {
+      "light": {
+        "l": 100,
+        "taper": 0
+      },
+      "dark": {
+        "l": 19.2,
+        "taper": 0.3
+      }
+    },
+    "plus-eight": {
+      "light": {
+        "l": 98.5,
+        "taper": 0.06
+      },
+      "dark": {
+        "l": 21.4,
+        "taper": 0.34
+      }
+    },
+    "plus-seven": {
+      "light": {
+        "l": 96.9,
+        "taper": 0.11
+      },
+      "dark": {
+        "l": 25.7,
+        "taper": 0.42
+      }
+    },
+    "plus-six": {
+      "light": {
+        "l": 95.4,
+        "taper": 0.17
+      },
+      "dark": {
+        "l": 27.8,
+        "taper": 0.46
+      }
+    },
+    "plus-five": {
+      "light": {
+        "l": 92.3,
+        "taper": 0.29
+      },
+      "dark": {
+        "l": 29.9,
+        "taper": 0.5
+      }
+    },
+    "plus-four": {
+      "light": {
+        "l": 87.5,
+        "taper": 0.47
+      },
+      "dark": {
+        "l": 31.9,
+        "taper": 0.54
+      }
+    },
+    "plus-three": {
+      "light": {
+        "l": 76.2,
+        "taper": 0.9
+      },
+      "dark": {
+        "l": 35.8,
+        "taper": 0.61
+      }
+    },
+    "plus-two": {
+      "light": {
+        "l": 71.3,
+        "taper": 1.02
+      },
+      "dark": {
+        "l": 37.7,
+        "taper": 0.64
+      }
+    },
+    "plus-one": {
+      "light": {
+        "l": 54.1,
+        "taper": 0.94
+      },
+      "dark": {
+        "l": 41.5,
+        "taper": 0.71
+      }
+    },
+    "base": {
+      "light": {
+        "l": 50.6,
+        "taper": 0.88
+      },
+      "dark": {
+        "l": 43.4,
+        "taper": 0.75
+      }
+    },
+    "minus-one": {
+      "light": {
+        "l": 47,
+        "taper": 0.81
+      },
+      "dark": {
+        "l": 47,
+        "taper": 0.81
+      }
+    },
+    "minus-two": {
+      "light": {
+        "l": 43.4,
+        "taper": 0.75
+      },
+      "dark": {
+        "l": 50.6,
+        "taper": 0.88
+      }
+    },
+    "minus-three": {
+      "light": {
+        "l": 39.6,
+        "taper": 0.68
+      },
+      "dark": {
+        "l": 54.1,
+        "taper": 0.94
+      }
+    },
+    "minus-four": {
+      "light": {
+        "l": 35.8,
+        "taper": 0.61
+      },
+      "dark": {
+        "l": 61.1,
+        "taper": 1.04
+      }
+    },
+    "minus-five": {
+      "light": {
+        "l": 31.9,
+        "taper": 0.54
+      },
+      "dark": {
+        "l": 71.3,
+        "taper": 1.02
+      }
+    },
+    "minus-six": {
+      "light": {
+        "l": 27.8,
+        "taper": 0.46
+      },
+      "dark": {
+        "l": 77.9,
+        "taper": 0.84
+      }
+    },
+    "minus-seven": {
+      "light": {
+        "l": 19.2,
+        "taper": 0.3
+      },
+      "dark": {
+        "l": 84.3,
+        "taper": 0.59
+      }
+    },
+    "minus-eight": {
+      "light": {
+        "l": 14.5,
+        "taper": 0.21
+      },
+      "dark": {
+        "l": 90.7,
+        "taper": 0.35
+      }
+    },
+    "minus-max": {
+      "light": {
+        "l": 0,
+        "taper": 0
+      },
+      "dark": {
+        "l": 100,
+        "taper": 0
+      }
+    },
+    "on-plus-max": {
+      "light": {
+        "l": 0,
+        "taper": 0
+      },
+      "dark": {
+        "l": 100,
+        "taper": 0
+      }
+    },
+    "on-plus-max-alt": {
+      "light": {
+        "l": 50.6,
+        "taper": 0.88
+      },
+      "dark": {
+        "l": 62.8,
+        "taper": 1.05
+      }
+    },
+    "on-plus-eight": {
+      "light": {
+        "l": 14.5,
+        "taper": 0.21
+      },
+      "dark": {
+        "l": 90.7,
+        "taper": 0.35
+      }
+    },
+    "on-plus-eight-alt": {
+      "light": {
+        "l": 45.2,
+        "taper": 0.78
+      },
+      "dark": {
+        "l": 62.8,
+        "taper": 1.05
+      }
+    },
+    "on-plus-seven": {
+      "light": {
+        "l": 19.2,
+        "taper": 0.3
+      },
+      "dark": {
+        "l": 84.3,
+        "taper": 0.59
+      }
+    },
+    "on-plus-seven-alt": {
+      "light": {
+        "l": 39.6,
+        "taper": 0.68
+      },
+      "dark": {
+        "l": 66.2,
+        "taper": 1.05
+      }
+    },
+    "on-plus-six": {
+      "light": {
+        "l": 27.8,
+        "taper": 0.46
+      },
+      "dark": {
+        "l": 77.9,
+        "taper": 0.84
+      }
+    },
+    "on-plus-six-alt": {
+      "light": {
+        "l": 47,
+        "taper": 0.81
+      },
+      "dark": {
+        "l": 92.3,
+        "taper": 0.29
+      }
+    },
+    "on-plus-five": {
+      "light": {
+        "l": 31.9,
+        "taper": 0.54
+      },
+      "dark": {
+        "l": 84.3,
+        "taper": 0.59
+      }
+    },
+    "on-plus-five-alt": {
+      "light": {
+        "l": 50.6,
+        "taper": 0.88
+      },
+      "dark": {
+        "l": 95.4,
+        "taper": 0.17
+      }
+    },
+    "on-plus-four": {
+      "light": {
+        "l": 35.8,
+        "taper": 0.61
+      },
+      "dark": {
+        "l": 90.7,
+        "taper": 0.35
+      }
+    },
+    "on-plus-four-alt": {
+      "light": {
+        "l": 14.5,
+        "taper": 0.21
+      },
+      "dark": {
+        "l": 74.6,
+        "taper": 0.96
+      }
+    },
+    "on-plus-three": {
+      "light": {
+        "l": 31.9,
+        "taper": 0.54
+      },
+      "dark": {
+        "l": 90.7,
+        "taper": 0.35
+      }
+    },
+    "on-plus-three-alt": {
+      "light": {
+        "l": 21.4,
+        "taper": 0.34
+      },
+      "dark": {
+        "l": 74.6,
+        "taper": 0.96
+      }
+    },
+    "on-plus-two": {
+      "light": {
+        "l": 27.8,
+        "taper": 0.46
+      },
+      "dark": {
+        "l": 90.7,
+        "taper": 0.35
+      }
+    },
+    "on-plus-two-alt": {
+      "light": {
+        "l": 16.9,
+        "taper": 0.26
+      },
+      "dark": {
+        "l": 77.9,
+        "taper": 0.84
+      }
+    },
+    "on-plus-one": {
+      "light": {
+        "l": 100,
+        "taper": 0
+      },
+      "dark": {
+        "l": 100,
+        "taper": 0
+      }
+    },
+    "on-plus-one-alt": {
+      "light": {
+        "l": 96.1,
+        "taper": 0.14
+      },
+      "dark": {
+        "l": 80.3,
+        "taper": 0.75
+      }
+    },
+    "on-base": {
+      "light": {
+        "l": 100,
+        "taper": 0
+      },
+      "dark": {
+        "l": 100,
+        "taper": 0
+      }
+    },
+    "on-base-alt": {
+      "light": {
+        "l": 92.3,
+        "taper": 0.29
+      },
+      "dark": {
+        "l": 82.7,
+        "taper": 0.65
+      }
+    },
+    "on-minus-one": {
+      "light": {
+        "l": 95.4,
+        "taper": 0.17
+      },
+      "dark": {
+        "l": 92.3,
+        "taper": 0.29
+      }
+    },
+    "on-minus-one-alt": {
+      "light": {
+        "l": 87.5,
+        "taper": 0.47
+      },
+      "dark": {
+        "l": 98.5,
+        "taper": 0.06
+      }
+    },
+    "on-minus-two": {
+      "light": {
+        "l": 92.3,
+        "taper": 0.29
+      },
+      "dark": {
+        "l": 92.3,
+        "taper": 0.29
+      }
+    },
+    "on-minus-two-alt": {
+      "light": {
+        "l": 82.7,
+        "taper": 0.65
+      },
+      "dark": {
+        "l": 98.5,
+        "taper": 0.06
+      }
+    },
+    "on-minus-three": {
+      "light": {
+        "l": 89.1,
+        "taper": 0.41
+      },
+      "dark": {
+        "l": 99.2,
+        "taper": 0.03
+      }
+    },
+    "on-minus-three-alt": {
+      "light": {
+        "l": 79.5,
+        "taper": 0.78
+      },
+      "dark": {
+        "l": 96.1,
+        "taper": 0.14
+      }
+    },
+    "on-minus-four": {
+      "light": {
+        "l": 87.5,
+        "taper": 0.47
+      },
+      "dark": {
+        "l": 22.5,
+        "taper": 0.36
+      }
+    },
+    "on-minus-four-alt": {
+      "light": {
+        "l": 81.1,
+        "taper": 0.71
+      },
+      "dark": {
+        "l": 11.5,
+        "taper": 0.16
+      }
+    },
+    "on-minus-five": {
+      "light": {
+        "l": 90.7,
+        "taper": 0.35
+      },
+      "dark": {
+        "l": 31.9,
+        "taper": 0.54
+      }
+    },
+    "on-minus-five-alt": {
+      "light": {
+        "l": 81.1,
+        "taper": 0.71
+      },
+      "dark": {
+        "l": 11.5,
+        "taper": 0.16
+      }
+    },
+    "on-minus-six": {
+      "light": {
+        "l": 95.4,
+        "taper": 0.17
+      },
+      "dark": {
+        "l": 14.5,
+        "taper": 0.21
+      }
+    },
+    "on-minus-six-alt": {
+      "light": {
+        "l": 85.9,
+        "taper": 0.53
+      },
+      "dark": {
+        "l": 37.7,
+        "taper": 0.64
+      }
+    },
+    "on-minus-seven": {
+      "light": {
+        "l": 96.9,
+        "taper": 0.11
+      },
+      "dark": {
+        "l": 19.2,
+        "taper": 0.3
+      }
+    },
+    "on-minus-seven-alt": {
+      "light": {
+        "l": 87.5,
+        "taper": 0.47
+      },
+      "dark": {
+        "l": 43.4,
+        "taper": 0.75
+      }
+    },
+    "on-minus-eight": {
+      "light": {
+        "l": 98.5,
+        "taper": 0.06
+      },
+      "dark": {
+        "l": 14.5,
+        "taper": 0.21
+      }
+    },
+    "on-minus-eight-alt": {
+      "light": {
+        "l": 89.1,
+        "taper": 0.41
+      },
+      "dark": {
+        "l": 47,
+        "taper": 0.81
+      }
+    },
+    "on-minus-max": {
+      "light": {
+        "l": 100,
+        "taper": 0
+      },
+      "dark": {
+        "l": 14.5,
+        "taper": 0.21
+      }
+    },
+    "on-minus-max-alt": {
+      "light": {
+        "l": 90.7,
+        "taper": 0.35
+      },
+      "dark": {
+        "l": 57.6,
+        "taper": 1.01
+      }
+    }
+  }
+}
