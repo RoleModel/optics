@@ -1,65 +1,4 @@
 :root {
-  /* Color HSLs
-    A theme comprised of a primary, neutral, warning, danger, info, and notice colors.
-  */
-
-  /* Basic Colors */
-
-  /**
-  * @tokens Basic Colors
-  * @presenter Color
-  */
-  --op-color-white: hsl(0deg 100% 100%);
-  --op-color-black: hsl(0deg 0% 0%);
-
-  /**
-  * @tokens Primary Colors
-  * @presenter Color
-  */
-  --op-color-primary-h: 216;
-  --op-color-primary-s: 58%;
-  --op-color-primary-l: 48%;
-
-  /**
-  * @tokens Neutral Colors
-  * @presenter Color
-  */
-  --op-color-neutral-h: var(--op-color-primary-h);
-  --op-color-neutral-s: 4%;
-  --op-color-neutral-l: var(--op-color-primary-l);
-
-  /**
-  * @tokens Alerts Warning Colors
-  * @presenter Color
-  */
-  --op-color-alerts-warning-h: 47;
-  --op-color-alerts-warning-s: 100%;
-  --op-color-alerts-warning-l: 61%;
-
-  /**
-  * @tokens Alerts Danger Colors
-  * @presenter Color
-  */
-  --op-color-alerts-danger-h: 0;
-  --op-color-alerts-danger-s: 99%;
-  --op-color-alerts-danger-l: 76%;
-
-  /**
-  * @tokens Alerts Info Colors
-  * @presenter Color
-  */
-  --op-color-alerts-info-h: 216;
-  --op-color-alerts-info-s: 58%;
-  --op-color-alerts-info-l: 48%;
-
-  /**
-  * @tokens Alerts Notice Colors
-  * @presenter Color
-  */
-  --op-color-alerts-notice-h: 130;
-  --op-color-alerts-notice-s: 61%;
-  --op-color-alerts-notice-l: 64%;
-
   /**
   * @tokens Opacities
   * @presenter Opacity
@@ -248,18 +187,6 @@
   --op-space-2x-large: calc(var(--op-space-scale-unit) * 2.8); /* 28px */
   --op-space-3x-large: calc(var(--op-space-scale-unit) * 4); /* 40px */
   --op-space-4x-large: calc(var(--op-space-scale-unit) * 8); /* 80px */
-
-  /* Shadows */
-
-  /**
-  * @tokens Shadows
-  * @presenter Shadow
-  */
-  --op-shadow-x-small: 0 1px 2px hsl(0deg 0% 0% / 3%), 0 1px 3px hsl(0deg 0% 0% / 15%);
-  --op-shadow-small: 0 1px 2px hsl(0deg 0% 0% / 3%), 0 2px 6px hsl(0deg 0% 0% / 15%);
-  --op-shadow-medium: 0 4px 8px hsl(0deg 0% 0% / 15%), 0 1px 3px hsl(0deg 0% 0% / 3%);
-  --op-shadow-large: 0 6px 10px hsl(0deg 0% 0% / 15%), 0 2px 3px hsl(0deg 0% 0% / 3%);
-  --op-shadow-x-large: 0 8px 12px hsl(0deg 0% 0% / 15%), 0 4px 4px hsl(0deg 0% 0% / 3%);
 
   /* Z Index */
 
