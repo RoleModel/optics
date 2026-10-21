@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.6.0] - 2026-10-21
+
+### Theme Token Changes
+
+- Add an opt-in OKLCH color build by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/368
+  - A new `optics-oklch.css` build (and one per icon set) defines every color token with `oklch()`. The HSL build is unchanged. Apps that import `core/tokens/base_tokens.css` directly must also import `core/tokens/base_color_tokens.css`. Apps can run `optics-check-contrast` in CI to check their theme's text contrast.
+
+### Dependencies
+
+- Update transitive dependencies to resolve Dependabot alerts by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/367
+  - Development dependencies were updated in the lockfile. It does not affect the shipped CSS.
+
+**Full Changelog**: https://github.com/RoleModel/optics/compare/v2.5.1...v2.6.0
+
 ## [2.5.1] - 2026-10-01
 
 ### Component Changes
