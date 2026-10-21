@@ -45,4 +45,5 @@ It exits with `1` if any pair fails, and `2` if it can't read your theme.
 
 - Selectors are ignored, so check each [dynamic theme](?path=/docs/overview-themes--docs#dynamic-themes) file on its own.
 - Colors outside sRGB are clipped, as browsers do on most screens.
+- Translucent colors, and `calc()` that mixes units (such as `calc(50% + 5%)`), can't be measured, so the check stops with exit code `2`.
 - Only the scale steps and their `on` colors are checked, not your own color pairs.

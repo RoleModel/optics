@@ -17,7 +17,8 @@
  *
  * Tokens are read without their selectors, so overrides scoped to a class or
  * attribute are treated as if they were on :root. Colors outside sRGB are
- * clipped, as browsers do. Exits with 1 if any pair fails, and 2 if the theme can't be read.
+ * clipped, as browsers do. Exits with 1 if any pair fails, and 2 if the theme can't be read
+ * or a color can't be measured (translucent colors, or calc() that isn't plain numbers).
  */
 // CommonJS, because Yarn Plug'n'Play can't load an ES module bin from inside its zip cache.
 const fs = require('node:fs')
@@ -48,6 +49,8 @@ for (const { background, text, min } of pairs) {
   const textColor = lightDark(tokens[text])
   for (const mode of ['light', 'dark']) {
     const ratio = contrast(backgroundColor[mode], textColor[mode])
+    // NaN < min is false, so an unmeasurable pair would otherwise pass.
+    if (!Number.isFinite(ratio)) exitWithError(`Can't measure ${text} (${mode}) against ${background}`)
     if (ratio < min) failures.push({ text, mode, ratio, min })
     if (flags.report)
       console.log(`${ratio < min ? 'FAIL' : 'pass'}  ${ratio.toFixed(2).padStart(5)}  ${mode.padEnd(5)}  ${text}`)
@@ -75,7 +78,7 @@ function parseArgs(args) {
 
 function detectColorSet(css) {
   if (/--op-color-[a-z0-9-]+-c\s*:|oklch\(/.test(css)) return 'oklch'
-  if (/--op-color-[a-z0-9-]+-s\s*:|hsl\(var\(--op-color/.test(css)) return 'hsl'
+  if (/--op-color-[a-z0-9-]+-s\s*:|hsla?\(/.test(css)) return 'hsl'
   if (!css) return 'oklch'
   exitWithError('Could not tell if your theme is HSL or OKLCH. Pass --hsl or --oklch.')
 }
@@ -90,16 +93,22 @@ function readTokens(css) {
   return Object.fromEntries([...declarations].map(([, name, value]) => [name, value.trim()]))
 }
 
-function resolve(value) {
-  let resolved = value
-  while (resolved.includes('var(')) {
-    resolved = resolved.replace(/var\((--[a-z0-9-]+)\s*(?:,\s*([^()]*))?\)/g, (_match, name, fallback) => {
-      if (name in tokens) return tokens[name]
-      if (fallback !== undefined) return fallback
-      exitWithError(`${name} is not defined`)
-    })
+function resolve(value, seen = []) {
+  const withVars = value.replace(/var\(\s*(--[a-z0-9-]+)\s*(?:,\s*([^()]*))?\)/g, (_match, name, fallback) => {
+    if (seen.includes(name)) exitWithError(`Circular reference: ${[...seen, name].join(' -> ')}`)
+    if (name in tokens) return resolve(tokens[name], [...seen, name])
+    if (fallback !== undefined) return resolve(fallback, seen)
+    exitWithError(`${name} is not defined`)
+  })
+  if (withVars.includes('var(')) exitWithError(`Can't resolve: ${value}`)
+
+  // Innermost calc() first, until none are left that are plain numbers.
+  let resolved = withVars
+  for (let previous; previous !== resolved;) {
+    previous = resolved
+    resolved = resolved.replace(/calc\(([\d.\s*/+-]+)\)/g, (_match, math) => String(Function(`return ${math}`)()))
   }
-  return resolved.replace(/calc\(([\d.\s*/+-]+)\)/g, (_match, math) => String(Function(`return ${math}`)()))
+  return resolved
 }
 
 function lightDark(value) {
@@ -125,8 +134,14 @@ function toLuminance(color) {
 
   const [, space, args] = value.match(/^(oklch|hsla?)\((.*)\)$/s) ?? []
   if (!space) exitWithError(`Can't check color: ${value}`)
-  const parts = args.trim().split(/[\s,/]+/)
+  const [channels, slashAlpha] = args.split('/')
+  const parts = channels.trim().split(/[\s,]+/)
   const [a, b, c] = parts.map(parseFloat)
+  // Alpha comes after "/", or fourth in the legacy comma syntax. Translucent text depends on what is behind it.
+  const alpha = slashAlpha?.trim() ?? (channels.includes(',') ? parts[3] : undefined)
+  if (alpha !== undefined && (alpha.endsWith('%') ? parseFloat(alpha) / 100 : parseFloat(alpha)) < 1) {
+    exitWithError(`Can't check translucent color: ${value}`)
+  }
 
   if (space === 'oklch') return luminance(oklchToLinearSrgb(parts[0].endsWith('%') ? a / 100 : a, b, c))
   return luminance(hslToSrgb(a, b / 100, c / 100).map(linearize))
