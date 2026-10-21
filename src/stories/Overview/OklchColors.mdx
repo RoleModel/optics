@@ -14,7 +14,8 @@ import { createSourceCodeLink } from '../helpers/sourceCodeLink.js'
 Optics ships an optional build where every color token uses [oklch()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) instead of `hsl()`.
 The token names are the same, so components and your own styles don't change. Only the theme variables you override are different.
 
-OKLCH lightness matches how light a color looks. In HSL, yellow and blue at the same lightness look very different. In OKLCH, every color scale uses the same lightness at each step, so `--op-color-primary-plus-two` and `--op-color-alerts-danger-plus-two` look equally light.
+OKLCH lightness matches how light a color looks, and its hue stays the same from light to dark. In HSL, yellow and blue at the same lightness look very different. In OKLCH, a step at 70% looks about as light in any hue, which makes your own colors and scale steps easier to pick.
+Each scale is converted from its HSL scale, so the default colors look nearly the same in both builds.
 
 The HSL build stays the default for now. OKLCH is planned to become the default in the next major version.
 
@@ -88,7 +89,7 @@ Each color is set by three variables, in `oklch()` order:
 ```
 
 Like in HSL, the scale steps set their own lightness, so `-l` only changes `--op-color-primary-original`.
-Each step multiplies `-c` by a factor that gets smaller toward the very light and very dark ends, so tints and shades don't clip.
+Each step multiplies `-c` by a factor taken from the HSL scale, so tints and shades get less colorful toward the light and dark ends, as they do in HSL.
 
 ## Migrating Your Theme
 
@@ -168,10 +169,4 @@ These are the Optics defaults in both builds:
 
 If you [override scale steps](?path=/docs/overview-scale-overriding--docs), rewrite each `hsl()` as `oklch()`. Lightness values are not the same in both builds, so copy them from `core/tokens/oklch/scale_color_tokens.css`.
 
-## Differences From HSL
-
-- Brand colors change most in dark mode, because every scale now uses the neutral scale's lightness steps.
-- Colors can go past sRGB on wide-color (P3) screens. Other screens clip them.
-- A few `-alt` text steps are close to their main `on` step, so every pair passes WCAG AA with the default colors.
-
-After you change your theme, run the [contrast checker](?path=/docs/overview-themes--docs#checking-contrast) to find any text that no longer passes.
+After you change your theme, run the [contrast checker](?path=/docs/tools-contrast-checker--docs) to find any text that no longer passes.

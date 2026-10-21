@@ -46,6 +46,7 @@ const preview = {
           ],
           'Components',
           'Recipes',
+          'Tools',
         ],
       },
     },

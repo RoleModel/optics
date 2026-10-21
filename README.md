@@ -80,7 +80,7 @@ After customizing your theme, add `optics-check-contrast` to your CI to check th
 }
 ```
 
-See [Themes](https://docs.optics.rolemodel.design/?path=/docs/overview-themes--docs#checking-contrast) for options.
+See [Contrast Checker](https://docs.optics.rolemodel.design/?path=/docs/tools-contrast-checker--docs) for options.
 
 ## Documentation
 

@@ -92,8 +92,8 @@ If you use the [OKLCH build](?path=/docs/overview-oklch-colors--docs), set `-l`,
   --op-color-primary-h: my-new-value;
 
   --op-color-primary-plus-two: light-dark(
-    oklch(71.3% calc(var(--op-color-primary-c) * 1.02) var(--op-color-primary-h)),
-    oklch(37.7% calc(var(--op-color-primary-c) * 0.64) var(--op-color-primary-h))
+    oklch(67.7% calc(var(--op-color-primary-c) * 0.73) var(--op-color-primary-h)),
+    oklch(40.6% calc(var(--op-color-primary-c) * 0.72) var(--op-color-primary-h))
   );
 }
 ```
@@ -156,18 +156,4 @@ Dynamic themes also support both light and dark mode and can be manually control
 
 ## Checking Contrast
 
-Optics ships a contrast checker you can run in CI after customizing your theme.
-It checks every color scale step against its `on` and `on-alt` text colors, in light and dark mode, and fails if any pair is below WCAG AA (4.5:1).
-
-```json
-{
-  "scripts": {
-    "check-contrast": "optics-check-contrast app/assets/stylesheets/theme.css"
-  }
-}
-```
-
-Pass your theme files or your compiled CSS. Your `--op-*` values are applied on top of the Optics tokens, and the tool detects whether you use the HSL or OKLCH build (or pass `--hsl` / `--oklch`).
-Options: `--min=4.5` and `--alt-min=4.5` set the required ratios, and `--report` lists every pair without failing.
-
-Selectors are ignored, so check each dynamic theme file on its own.
+After customizing your theme, check that text on every color scale step still passes WCAG AA with the [Contrast Checker](?path=/docs/tools-contrast-checker--docs).
