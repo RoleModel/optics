@@ -3,5 +3,8 @@ tools/templates
 .yarn/*
 optics-design-system.code-workspace
 
+# Claude Code settings and worktrees (each worktree is a full checkout)
+.claude/
+
 # Generated docs
 llms-docs
