@@ -36,6 +36,11 @@ src/
       index.css                   # imports ../base_tokens.css + the two files below
       base_color_tokens.css       # OKLCH white/black, -l/-c/-h, shadows
       scale_color_tokens.css      # OKLCH scales
+  tools/
+    check-contrast.cjs            # optics-check-contrast bin, copied to dist/tools
+  stories/
+    Overview/OklchColors.mdx      # OKLCH build docs
+    Tools/ContrastChecker.mdx     # contrast checker docs
 ```
 
 `build:css` globs `src/optics*.css`, so the new entry files build with no script change. `build:files` copies `src/core`, so `core/tokens/oklch/` ships for selective imports.
@@ -80,7 +85,7 @@ src/
 - Storybook's token addon scanned every CSS file, so the OKLCH tokens would have shown up twice in the token tables. `.storybook/main.js` now sets `designTokenGlob: 'src/core/tokens/*.css'`.
 - Checks: the HSL and OKLCH sets have the same 504 token names (with `-s` renamed to `-c`). All 354 color tokens compute to valid colors in Chrome in light and dark mode. Generated files pass prettier and stylelint. `yarn sanity-check` passes.
 - Later removed: `tools/build-oklch-tokens.mjs` was deleted with the other conversion scripts. The OKLCH token files are now edited by hand, like the HSL ones.
-- Note: every color now uses the neutral L steps. Brand dark-mode steps shift the most, because the HSL brand scales used different dark steps than neutral (e.g. `plus-five` dark is HSL 24% for primary but 18% for neutral). In OKLCH, both use neutral's step (29.9%).
+- Superseded by Phase 8: the shared neutral L steps were replaced by each color's own converted steps.
 
 ### Phase 4: Entry files — Done
 
@@ -100,6 +105,7 @@ src/
 - Baseline before tuning: HSL 450/456 (worst 2.27:1, warning `on-minus-one-alt` dark); OKLCH 439/456 (worst 4.06:1). At the same OKLCH L, WCAG sees green and yellow as brighter than blue, so some pairs fell just short.
 - Tuning is automatic: `tools/oklch-values.mjs` nudges each `on` step's L away from its background by 0.1 until every default color passes. 7 steps moved, by 2.7 at most (e.g. `on-plus-one-alt` light 96.1 → 98.2). Now 456/456 pass.
 - Trade-off: some `-alt` steps are now close to their main `on` step (e.g. `on-plus-one-alt` light is 98.2 vs 100).
+- Superseded by Phase 8: these nudges applied to the shared steps. The per-color steps were re-checked and fixed there.
 - Limit: the check uses the default theme colors. An app that sets its own `-c`/`-h` is not checked.
 
 #### Phase 5b: Ship the checker to apps — Done
@@ -131,9 +137,9 @@ Checking Optics' own defaults has little value, because they don't change. The v
 - `src/stories/Tokens/Color/ColorWithAlpha.mdx`: `oklch(... / 40%)` example.
 - `src/stories/Overview/SelectiveImports.mdx`: `core/tokens/oklch` import.
 - Migration note: HSL hue numbers do not equal OKLCH hue numbers (HSL 216 is about OKLCH 258). Give a conversion table for the defaults and a link to a converter.
-- ~~Contrast checker page~~ Done: "Checking Contrast" section at the end of `src/stories/Overview/Themes.mdx` (what it checks, the CI script, flags, and the "selectors are ignored" limit).
+- ~~Contrast checker page~~ Done: `src/stories/Tools/ContrastChecker.mdx` (moved there in Phase 8; Themes keeps a one-line pointer).
 - `README.md` and `CHANGELOG.md`.
-- Result: new page `src/stories/Overview/OklchColors.mdx` ("Overview/OKLCH Colors", sorted after Scale Overriding): why OKLCH, imports, the `-l/-c/-h` variables, a defaults table (HSL vs OKLCH), migration steps with a link to oklch.com, differences from HSL, and a link to the contrast checker. Themes, Scale Overriding, Color with Alpha, and Selective Imports each got a short OKLCH example that links to it. README got "OKLCH colors (optional)" and "Checking theme contrast" sections.
+- Result: new page `src/stories/Overview/OklchColors.mdx` ("Overview/OKLCH Colors", sorted after Scale Overriding): why OKLCH, imports, the `-l/-c/-h` variables, a defaults table (HSL vs OKLCH), migration steps with a link to oklch.com, and a link to the contrast checker. Themes, Scale Overriding, Color with Alpha, and Selective Imports each got a short OKLCH example that links to it. README got "OKLCH colors (optional)" and "Checking theme contrast" sections.
 - Tables use HTML `<table>`, like `Introduction.mdx`, because Storybook's MDX doesn't render Markdown tables.
 - CHANGELOG not edited: the github-release skill writes each version's section from the merged PRs at release time.
 - Checks: all five pages render in the Storybook dev server with no console errors. `yarn sanity-check` passes.
@@ -147,6 +153,7 @@ Shared neutral steps (Phases 2–3) made yellow and green much darker than today
 - Contrast: 447/456 after conversion (the 6 HSL failures plus 3 rounding misses). A two-way search moved each failing text step to the nearest passing L: 7 moved by ≤ 0.9; warning `on-plus-one-alt` dark 28.1 → 99.4 and `on-minus-one-alt` dark 90.5 → 30.3 now match their main `on` text. 456/456 pass.
 - Docs: OKLCH Colors intro rewritten and the Differences From HSL section dropped (it read like a changelog); example values in Themes, Scale Overriding, and Color with Alpha updated to the new tokens.
 - Contrast checker docs moved to a new `Tools/Contrast Checker` page (sorted after Recipes); Themes keeps a one-line pointer.
+- Doc gaps found in review: `ColorScale.mdx` got an OKLCH step example and an OKLCH custom scale template (copied from the default primary scale with `{name}`); `Tokens.mdx` lists the `core/tokens/oklch` files; `Icon.mdx` notes the `optics-oklch+<icons>` imports.
 
 ## Out of scope
 
