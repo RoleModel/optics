@@ -2066,6 +2066,8 @@ __metadata:
   peerDependenciesMeta:
     tom-select:
       optional: true
+  bin:
+    optics-check-contrast: dist/tools/check-contrast.cjs
   languageName: unknown
   linkType: soft
 
