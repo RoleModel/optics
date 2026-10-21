@@ -69,11 +69,15 @@ src/
 - Taper: one curve can't fit every hue (yellow is only vivid when light, blue only when dark). Three curves were compared: A matches today's HSL chroma, B is the most chroma that keeps every default color inside P3, C is the geometric mean of A and B. Picked C. A clips yellow/green mid steps; B makes blue and red dull.
 - Defaults: primary/info `53.9% 0.146 258.5`, neutral `c 0.01` (h and l stay linked to primary), warning `88.2% 0.166 92.3`, danger `75.2% 0.148 21.2`, notice `80.4% 0.166 147.4`.
 
-### Phase 3: Generate OKLCH token files
+### Phase 3: Generate OKLCH token files — Done
 
 - Add a generator in `tools/` that writes `src/core/tokens/oklch/scale_color_tokens.css` from the L table and factors. Commit the generated file.
 - Write `src/core/tokens/oklch/base_color_tokens.css` and `src/core/tokens/oklch/index.css`.
 - Keep the same token names, `@tokens` comments, dark-mode blocks, and `data-theme-mode` overrides.
+- Result: `yarn oklch-tokens` runs `tools/build-oklch-tokens.mjs`. It rewrites both HSL color files into `src/core/tokens/oklch/`, and it fails if any `hsl(` or `-s` is left. `index.css` is hand-written.
+- Storybook's token addon scanned every CSS file, so the OKLCH tokens would have shown up twice in the token tables. `.storybook/main.js` now sets `designTokenGlob: 'src/core/tokens/*.css'`.
+- Checks: the HSL and OKLCH sets have the same 504 token names (with `-s` renamed to `-c`). All 354 color tokens compute to valid colors in Chrome in light and dark mode. Generated files pass prettier and stylelint. `yarn sanity-check` passes.
+- Note: every color now uses the neutral L steps. Brand dark-mode steps shift the most, because the HSL brand scales used different dark steps than neutral (e.g. `plus-five` dark is HSL 24% for primary but 18% for neutral). In OKLCH, both use neutral's step (29.9%).
 
 ### Phase 4: Entry files
 
@@ -110,4 +114,4 @@ src/
 ## Open questions
 
 - Contrast target for `on-alt` text (AA 4.5:1 or AA large 3:1)?
-- Generator script vs hand-written OKLCH scale file? (Leaning generator: it can read `tools/oklch-values.json`.)
+- ~~Generator script vs hand-written OKLCH scale file?~~ Generator (Phase 3).

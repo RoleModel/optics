@@ -23,7 +23,8 @@
     "prettier-check": "prettier -c .",
     "sanity-check": "yarn lint && yarn prettier && yarn build && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs",
     "generate": "node ./tools/generate.js",
-    "oklch-values": "node tools/oklch-values.mjs"
+    "oklch-values": "node tools/oklch-values.mjs",
+    "oklch-tokens": "node tools/build-oklch-tokens.mjs"
   },
   "repository": {
     "type": "git",

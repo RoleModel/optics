@@ -7,6 +7,8 @@ const config = {
       name: 'storybook-design-token',
       options: {
         preserveCSSVars: true,
+        // Top-level only, so the alternate token sets in subfolders (e.g. oklch/) don't duplicate the token tables.
+        designTokenGlob: 'src/core/tokens/*.css',
       },
     },
     '@storybook/addon-docs',
