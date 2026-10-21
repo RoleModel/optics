@@ -9,9 +9,9 @@ Ship an alternate build of Optics where every color token uses `oklch()` instead
 | Opt-in       | New entry files: `src/optics-oklch.css` + one per icon set (`optics-oklch+lucide_icons.css`, etc.)                |
 | Scope        | Color tokens only. Components, base, layout, utilities stay the same.                                             |
 | Override API | `--op-color-{name}-l`, `-c`, `-h` (matches `oklch(L C H)` order)                                                  |
-| Lightness    | Every color uses the same L per step. L values come from today's neutral scale, converted to OKLCH.               |
-| Chroma       | Tapered: `calc(var(--op-color-{name}-c) * <factor>)`. Factor is lower at the light and dark ends.                 |
-| Gamut        | P3 allowed. Browsers clip to sRGB on sRGB screens.                                                                |
+| Lightness    | Per color: each scale's own HSL steps converted to OKLCH L (changed in Phase 8; was shared neutral steps).        |
+| Chroma       | `calc(var(--op-color-{name}-c) * <factor>)`, factor = that HSL step's OKLCH chroma ÷ the color's `-c`.            |
+| Gamut        | Defaults stay in sRGB (converted from HSL). A high app `-c` can reach P3; sRGB screens clip it.                   |
 | Defaults     | Convert today's primary, neutral, and alert HSL values to OKLCH.                                                  |
 | Contrast     | `optics-check-contrast` ships in `dist/tools` for apps to run on their own theme in CI. No dependencies.          |
 | Token source | `src/core/tokens/oklch/` is hand-maintained. The one-time conversion scripts were removed after Phase 5.          |
@@ -137,6 +137,16 @@ Checking Optics' own defaults has little value, because they don't change. The v
 - Tables use HTML `<table>`, like `Introduction.mdx`, because Storybook's MDX doesn't render Markdown tables.
 - CHANGELOG not edited: the github-release skill writes each version's section from the merged PRs at release time.
 - Checks: all five pages render in the Storybook dev server with no console errors. `yarn sanity-check` passes.
+
+### Phase 8: Per-color steps — Done
+
+Shared neutral steps (Phases 2–3) made yellow and green much darker than today: the HSL scales were never shared, each color was hand-tuned, and only 1 of 57 steps matched across all colors (e.g. warning `base` went from `#cca000` to `#835f00`, and its `on` text flipped from dark to white). To keep the look of today's scales, each color's own HSL steps were converted instead.
+
+- One-time scratch conversion (not committed): for each token and mode, `hsl(<color h> <color s> <step l>)` → OKLCH L, and chroma ÷ the color's `-c` as the factor. Hue uses the color's `-h` var, so it is constant across steps.
+- Closeness to HSL: average ΔE (OKLab × 100) 0.26 across 684 colors; 15 above 2, none above 3.4. All 15 are danger's middle steps, because HSL red drifts to OKLCH hue 29 there while the OKLCH build keeps 21.2.
+- Contrast: 447/456 after conversion (the 6 HSL failures plus 3 rounding misses). A two-way search moved each failing text step to the nearest passing L: 7 moved by ≤ 0.9; warning `on-plus-one-alt` dark 28.1 → 99.4 and `on-minus-one-alt` dark 90.5 → 30.3 now match their main `on` text. 456/456 pass.
+- Docs: OKLCH Colors intro rewritten and the Differences From HSL section dropped (it read like a changelog); example values in Themes, Scale Overriding, and Color with Alpha updated to the new tokens.
+- Contrast checker docs moved to a new `Tools/Contrast Checker` page (sorted after Recipes); Themes keeps a one-line pointer.
 
 ## Out of scope
 
