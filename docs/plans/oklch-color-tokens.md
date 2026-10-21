@@ -116,10 +116,13 @@ Checking Optics' own defaults has little value, because they don't change. The v
 - Optics' `sanity-check` runs `yarn check-contrast` after `yarn build` as a smoke test of the shipped tool (default OKLCH theme, 456/456).
 - Tested from a packed tarball in a scratch app with npm and with Yarn 4 PnP: theme files, a minified bundle, HSL and OKLCH, flags, and error cases.
 
-### Phase 6: Storybook toggle
+### Phase 6: Storybook toggle — Done
 
 - Add a `colorSpace` global (HSL / OKLCH) in `.storybook/preview.js`.
 - A decorator swaps the loaded stylesheet.
+- Result: a "Color space" toolbar menu (HSL default, OKLCH). `.storybook/useColorSpace.js` imports `src/core/tokens/oklch/index.css?inline` and, when OKLCH is picked, appends it as a `<style>` at the end of `<head>`. The token names are the same, so it overrides every HSL color token; picking HSL removes it. Works with the light/dark toggle and in URLs (`&globals=colorSpace:oklch`).
+- Checks: in the dev server, `--op-color-primary-base` resolves to `oklch(...)` with OKLCH and back to HSL after switching; a dark-mode warning alert changes background as expected; docs pages with stories switch too. No console errors. `yarn sanity-check` passes (the static build compiles; not opened in a browser).
+- Limits: like the light/dark toggle, it applies when a story renders, so MDX pages with no stories don't switch. The token tables (storybook-design-token) still list the HSL values.
 
 ### Phase 7: Docs
 
