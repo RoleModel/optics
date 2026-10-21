@@ -27,6 +27,8 @@ const path = require('node:path')
 const { files, flags } = parseArgs(process.argv.slice(2))
 const min = Number(flags.min ?? 4.5)
 const altMin = Number(flags['alt-min'] ?? 4.5)
+// A NaN threshold would make every ratio < min check false, so every pair would pass.
+if (!Number.isFinite(min) || !Number.isFinite(altMin)) exitWithError('--min and --alt-min must be numbers, like 4.5')
 
 const missing = files.find((file) => !fs.existsSync(file))
 if (missing) exitWithError(`File not found: ${missing}`)
@@ -89,12 +91,13 @@ function exitWithError(message) {
 }
 
 function readTokens(css) {
-  const declarations = css.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/(--op-[a-z0-9-]+)\s*:\s*([^;}]+)/g)
+  // All custom properties, not just --op-*, so theme vars like var(--brand-hue) resolve.
+  const declarations = css.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/(--[\w-]+)\s*:\s*([^;}]+)/g)
   return Object.fromEntries([...declarations].map(([, name, value]) => [name, value.trim()]))
 }
 
 function resolve(value, seen = []) {
-  const withVars = value.replace(/var\(\s*(--[a-z0-9-]+)\s*(?:,\s*([^()]*))?\)/g, (_match, name, fallback) => {
+  const withVars = value.replace(/var\(\s*(--[\w-]+)\s*(?:,\s*([^()]*))?\)/g, (_match, name, fallback) => {
     if (seen.includes(name)) exitWithError(`Circular reference: ${[...seen, name].join(' -> ')}`)
     if (name in tokens) return resolve(tokens[name], [...seen, name])
     if (fallback !== undefined) return resolve(fallback, seen)
@@ -143,8 +146,20 @@ function toLuminance(color) {
     exitWithError(`Can't check translucent color: ${value}`)
   }
 
-  if (space === 'oklch') return luminance(oklchToLinearSrgb(parts[0].endsWith('%') ? a / 100 : a, b, c))
-  return luminance(hslToSrgb(a, b / 100, c / 100).map(linearize))
+  if (space === 'oklch') {
+    // In CSS, 100% chroma is 0.4.
+    const chroma = parts[1].endsWith('%') ? (b / 100) * 0.4 : b
+    return luminance(oklchToLinearSrgb(parts[0].endsWith('%') ? a / 100 : a, chroma, toDegrees(parts[2])))
+  }
+  return luminance(hslToSrgb(toDegrees(parts[0]), b / 100, c / 100).map(linearize))
+}
+
+// Hue in degrees from 0 to 360, from any CSS angle unit (deg is the default).
+function toDegrees(angle = '') {
+  const value = parseFloat(angle)
+  const unit = angle.match(/[a-z]+$/i)?.[0].toLowerCase()
+  const degrees = { rad: (value * 180) / Math.PI, grad: value * 0.9, turn: value * 360 }[unit] ?? value
+  return ((degrees % 360) + 360) % 360
 }
 
 // OKLCH -> OKLab -> LMS -> linear sRGB (https://bottosson.github.io/posts/oklab/)
