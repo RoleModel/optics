@@ -79,10 +79,13 @@ src/
 - Checks: the HSL and OKLCH sets have the same 504 token names (with `-s` renamed to `-c`). All 354 color tokens compute to valid colors in Chrome in light and dark mode. Generated files pass prettier and stylelint. `yarn sanity-check` passes.
 - Note: every color now uses the neutral L steps. Brand dark-mode steps shift the most, because the HSL brand scales used different dark steps than neutral (e.g. `plus-five` dark is HSL 24% for primary but 18% for neutral). In OKLCH, both use neutral's step (29.9%).
 
-### Phase 4: Entry files
+### Phase 4: Entry files — Done
 
 - Add `src/optics-oklch.css` and one `optics-oklch+<icons>.css` per existing icon entry.
 - Each one is a copy of its HSL entry, with the tokens import set to `core/tokens/oklch/index.css`.
+- Result: 7 entry files, hand-copied like the existing HSL entries. `yarn build` outputs each one plus a `.min.css`, with no build script change.
+- Checks: each compiled OKLCH file has the same non-color declarations as its HSL twin (0 differences), and no `hsl(`. Minified output keeps `oklch(... calc(...) ...)` intact. `yarn sanity-check` passes.
+- Apps opt in with `@import '@rolemodel/optics/dist/css/optics-oklch';` (or an `optics-oklch+<icons>` variant).
 
 ### Phase 5: Contrast check
 

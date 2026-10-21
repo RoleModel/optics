@@ -1,0 +1,16 @@
+/* Third party Vendors */
+@import 'modern-css-reset/dist/reset';
+
+/* Fonts */
+@import 'core/fonts/index.css';
+
+/* Tokens */
+@import 'core/tokens/oklch/index.css';
+
+/* Base styles and utilities */
+@import 'core/base.css';
+@import 'core/layout.css';
+@import 'core/utilities.css';
+
+/* Components */
+@import 'components/index.css';
