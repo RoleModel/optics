@@ -58,6 +58,30 @@ Add a link in your HTML head or an `@import` to the top of your root level `css`
 
 Note: You can use this method to use Optics with [CodePen](https://codepen.io/). In a CodePen project, go to `Settings > CSS`, find the section for adding external stylesheets, and add the CDN link as a resource.
 
+### OKLCH colors (optional)
+
+An alternate build defines every color token with `oklch()` instead of `hsl()`. Token names are the same; theme colors are set with `--op-color-{name}-l`, `-c`, and `-h`. Replace `optics` with `optics-oklch` in any import above:
+
+```css
+@import '@rolemodel/optics/dist/css/optics-oklch';
+```
+
+See [OKLCH Colors](https://docs.optics.rolemodel.design/?path=/docs/overview-oklch-colors--docs) for theme variables and migration.
+
+### Checking theme contrast
+
+After customizing your theme, add `optics-check-contrast` to your CI to check that text on every color scale step passes WCAG AA:
+
+```json
+{
+  "scripts": {
+    "check-contrast": "optics-check-contrast app/assets/stylesheets/theme.css"
+  }
+}
+```
+
+See [Themes](https://docs.optics.rolemodel.design/?path=/docs/overview-themes--docs#checking-contrast) for options.
+
 ## Documentation
 
 We use [Storybook](https://storybook.js.org/docs/html/get-started/introduction) as a way to provide informative and interactive documentation.

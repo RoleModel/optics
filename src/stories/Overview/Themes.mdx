@@ -83,6 +83,21 @@ Your custom theme can change any tokens, including colors, radius, fonts, even r
 }
 ```
 
+If you use the [OKLCH build](?path=/docs/overview-oklch-colors--docs), set `-l`, `-c`, and `-h` instead, and write scale steps with `oklch()`:
+
+```css
+:root {
+  --op-color-primary-l: my-new-value;
+  --op-color-primary-c: my-new-value;
+  --op-color-primary-h: my-new-value;
+
+  --op-color-primary-plus-two: light-dark(
+    oklch(71.3% calc(var(--op-color-primary-c) * 1.02) var(--op-color-primary-h)),
+    oklch(37.7% calc(var(--op-color-primary-c) * 0.64) var(--op-color-primary-h))
+  );
+}
+```
+
 ## Dynamic Themes
 
 Your application can have multiple predefined themes which can be switched between by setting a data attribute on the root html element.

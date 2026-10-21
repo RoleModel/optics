@@ -21,7 +21,16 @@ const preview = {
         order: [
           'Introduction',
           'Overview',
-          ['Base Reset', 'File Organization', 'Selective Imports', 'Tokens', 'Themes', 'Scale Overriding', 'Addons'],
+          [
+            'Base Reset',
+            'File Organization',
+            'Selective Imports',
+            'Tokens',
+            'Themes',
+            'Scale Overriding',
+            'OKLCH Colors',
+            'Addons',
+          ],
           'Tokens',
           'Utilities',
           [

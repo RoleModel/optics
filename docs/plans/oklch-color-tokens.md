@@ -124,7 +124,7 @@ Checking Optics' own defaults has little value, because they don't change. The v
 - Checks: in the dev server, `--op-color-primary-base` resolves to `oklch(...)` with OKLCH and back to HSL after switching; a dark-mode warning alert changes background as expected; docs pages with stories switch too. No console errors. `yarn sanity-check` passes (the static build compiles; not opened in a browser).
 - Limits: like the light/dark toggle, it applies when a story renders, so MDX pages with no stories don't switch. The token tables (storybook-design-token) still list the HSL values.
 
-### Phase 7: Docs
+### Phase 7: Docs — Done
 
 - `src/stories/Overview/Themes.mdx`: OKLCH theme override example.
 - `src/stories/Overview/ScaleOverriding.mdx`: OKLCH scale override example.
@@ -133,6 +133,10 @@ Checking Optics' own defaults has little value, because they don't change. The v
 - Migration note: HSL hue numbers do not equal OKLCH hue numbers (HSL 216 is about OKLCH 258). Give a conversion table for the defaults and a link to a converter.
 - ~~Contrast checker page~~ Done: "Checking Contrast" section at the end of `src/stories/Overview/Themes.mdx` (what it checks, the CI script, flags, and the "selectors are ignored" limit).
 - `README.md` and `CHANGELOG.md`.
+- Result: new page `src/stories/Overview/OklchColors.mdx` ("Overview/OKLCH Colors", sorted after Scale Overriding): why OKLCH, imports, the `-l/-c/-h` variables, a defaults table (HSL vs OKLCH), migration steps with a link to oklch.com, differences from HSL, and a link to the contrast checker. Themes, Scale Overriding, Color with Alpha, and Selective Imports each got a short OKLCH example that links to it. README got "OKLCH colors (optional)" and "Checking theme contrast" sections.
+- Tables use HTML `<table>`, like `Introduction.mdx`, because Storybook's MDX doesn't render Markdown tables.
+- CHANGELOG not edited: the github-release skill writes each version's section from the merged PRs at release time.
+- Checks: all five pages render in the Storybook dev server with no console errors. `yarn sanity-check` passes.
 
 ## Out of scope
 
