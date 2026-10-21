@@ -2041,7 +2041,6 @@ __metadata:
     "@eslint/js": "npm:^10.0.1"
     "@storybook/addon-docs": "npm:^10.4.6"
     "@storybook/html-vite": "npm:^10.4.6"
-    colorjs.io: "npm:^0.7.1"
     cssnano: "npm:^8.0.2"
     eslint: "npm:^10.6.0"
     eslint-config-prettier: "npm:^10.1.8"
@@ -3054,13 +3053,6 @@ __metadata:
   version: 2.9.3
   resolution: "colord@npm:2.9.3"
   checksum: 10c0/9699e956894d8996b28c686afe8988720785f476f59335c80ce852ded76ab3ebe252703aec53d9bef54f6219aea6b960fb3d9a8300058a1d0c0d4026460cd110
-  languageName: node
-  linkType: hard
-
-"colorjs.io@npm:^0.7.1":
-  version: 0.7.1
-  resolution: "colorjs.io@npm:0.7.1"
-  checksum: 10c0/a1237a1aedf168ede908a818ba3fc35097895dd48868ed0534c32ade5ee49db364ae889910f5cacd3e48057f7a16d00408935ca99e5246f2011f956833c9b10b
   languageName: node
   linkType: hard
 

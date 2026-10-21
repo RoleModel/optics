@@ -138,3 +138,21 @@ Dynamic themes also support both light and dark mode and can be manually control
   ...
 </html>
 ```
+
+## Checking Contrast
+
+Optics ships a contrast checker you can run in CI after customizing your theme.
+It checks every color scale step against its `on` and `on-alt` text colors, in light and dark mode, and fails if any pair is below WCAG AA (4.5:1).
+
+```json
+{
+  "scripts": {
+    "check-contrast": "optics-check-contrast app/assets/stylesheets/theme.css"
+  }
+}
+```
+
+Pass your theme files or your compiled CSS. Your `--op-*` values are applied on top of the Optics tokens, and the tool detects whether you use the HSL or OKLCH build (or pass `--hsl` / `--oklch`).
+Options: `--min=4.5` and `--alt-min=4.5` set the required ratios, and `--report` lists every pair without failing.
+
+Selectors are ignored, so check each dynamic theme file on its own.
