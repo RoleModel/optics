@@ -122,10 +122,16 @@ function stripComments(css) {
 function readTokens(css) {
   // All custom properties, not just --op-*, so theme vars like var(--brand-hue) resolve.
   const declarations = stripComments(css).matchAll(/(--[\w-]+)\s*:\s*([^;}]+)/g)
-  // !important is declaration priority, not part of the value.
-  return Object.fromEntries(
-    [...declarations].map(([, name, value]) => [name, value.trim().replace(/\s*!\s*important$/i, '')])
-  )
+  // The last value wins, except a normal value can't replace an !important one, as in CSS.
+  const tokens = {}
+  const important = new Set()
+  for (const [, name, rawValue] of declarations) {
+    const isImportant = /!\s*important\s*$/i.test(rawValue)
+    if (important.has(name) && !isImportant) continue
+    if (isImportant) important.add(name)
+    tokens[name] = rawValue.trim().replace(/\s*!\s*important$/i, '')
+  }
+  return tokens
 }
 
 function resolve(value) {
@@ -133,10 +139,20 @@ function resolve(value) {
   let resolved = resolveVars(value, [])
   for (let previous; previous !== resolved;) {
     previous = resolved
-    // Parentheses keep a line break after "return" from ending the statement (multiline calc()).
-    resolved = resolved.replace(/calc\(([\d.\s*/+-]+)\)/g, (_match, math) => String(Function(`return (${math})`)()))
+    resolved = resolved.replace(/calc\(([\d.\s*/+-]+)\)/g, (match, math) => String(calculate(match, math)))
   }
   return resolved
+}
+
+function calculate(expression, math) {
+  // Number() reads each literal as a decimal; plain JavaScript would read 070 as octal 56.
+  const decimals = math.replace(/[\d.]+/g, (number) => String(Number(number)))
+  try {
+    // Parentheses keep a line break after "return" from ending the statement (multiline calc()).
+    return Function(`return (${decimals})`)()
+  } catch {
+    exitWithError(`Can't calculate: ${expression}`)
+  }
 }
 
 // Walks each var() with balanced parentheses, so fallbacks can hold their own var(),
