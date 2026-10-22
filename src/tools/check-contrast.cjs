@@ -34,14 +34,22 @@ const missing = files.find((file) => !fs.existsSync(file))
 if (missing) exitWithError(`File not found: ${missing}`)
 const userCss = files.map((file) => fs.readFileSync(file, 'utf8')).join('\n')
 const colorSet = flags.hsl ? 'hsl' : flags.oklch ? 'oklch' : detectColorSet(userCss)
-const tokensDir = path.join(__dirname, '../css/core/tokens', colorSet === 'oklch' ? 'oklch' : '')
-const opticsCss = ['base_color_tokens.css', 'scale_color_tokens.css']
-  .map((file) => fs.readFileSync(path.join(tokensDir, file), 'utf8'))
+const tokensDir = path.join(__dirname, '../css/core/tokens')
+const colorDir = path.join(tokensDir, colorSet === 'oklch' ? 'oklch' : '')
+// base_tokens.css is shared by both builds and defines aliases like --op-color-border.
+const opticsCss = [
+  path.join(tokensDir, 'base_tokens.css'),
+  path.join(colorDir, 'base_color_tokens.css'),
+  path.join(colorDir, 'scale_color_tokens.css'),
+]
+  .map((file) => fs.readFileSync(file, 'utf8'))
   .join('\n')
 
 const tokens = readTokens(`${opticsCss}\n${userCss}`)
+// Only base and the plus/minus steps, so derived tokens like -on-base-alpha-40 aren't paired.
+const step = 'base|(?:plus|minus)-(?:one|two|three|four|five|six|seven|eight|max)'
 const pairs = Object.keys(tokens)
-  .map((name) => name.match(/^--op-color-([a-z0-9-]+?)-on-([a-z0-9-]+?)(-alt)?$/))
+  .map((name) => name.match(new RegExp(`^--op-color-([a-z0-9-]+?)-on-(${step})(-alt)?$`)))
   .filter((match) => match && tokens[`--op-color-${match[1]}-${match[2]}`])
   .map(([text, color, step, alt]) => ({ background: `--op-color-${color}-${step}`, text, min: alt ? altMin : min }))
 
@@ -171,12 +179,18 @@ function toLuminance(color) {
     if (opacity < 1) exitWithError(`Can't check translucent color: ${value}`)
   }
 
+  // CSS clamps out-of-range channels (e.g. hsl(240 200% 75%) is drawn at 100% saturation).
   if (space === 'oklch') {
     // In CSS, 100% chroma is 0.4.
-    const chroma = parts[1].endsWith('%') ? (b / 100) * 0.4 : b
-    return luminance(oklchToLinearSrgb(parts[0].endsWith('%') ? a / 100 : a, chroma, toDegrees(parts[2])))
+    const chroma = parts[1]?.endsWith('%') ? (b / 100) * 0.4 : b
+    const lightness = parts[0].endsWith('%') ? a / 100 : a
+    return luminance(oklchToLinearSrgb(clamp(lightness, 0, 1), Math.max(0, chroma), toDegrees(parts[2])))
   }
-  return luminance(hslToSrgb(toDegrees(parts[0]), b / 100, c / 100).map(linearize))
+  return luminance(hslToSrgb(toDegrees(parts[0]), clamp(b / 100, 0, 1), clamp(c / 100, 0, 1)).map(linearize))
+}
+
+function clamp(value, low, high) {
+  return Math.min(high, Math.max(low, value))
 }
 
 // Hue in degrees from 0 to 360, from any CSS angle unit (deg is the default).
