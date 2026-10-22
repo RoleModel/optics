@@ -121,7 +121,7 @@ function stripComments(css) {
 
 function readTokens(css) {
   // All custom properties, not just --op-*, so theme vars like var(--brand-hue) resolve.
-  const declarations = stripComments(css).matchAll(/(--[\w-]+)\s*:\s*([^;}]+)/g)
+  const declarations = stripComments(css).matchAll(/(--[\w-]+)\s*:\s*([^;}]*)/g)
   // The last value wins, except a normal value can't replace an !important one, as in CSS.
   const tokens = {}
   const important = new Set()
