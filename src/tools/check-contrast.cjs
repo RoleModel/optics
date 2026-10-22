@@ -96,22 +96,44 @@ function readTokens(css) {
   return Object.fromEntries([...declarations].map(([, name, value]) => [name, value.trim()]))
 }
 
-function resolve(value, seen = []) {
-  const withVars = value.replace(/var\(\s*(--[\w-]+)\s*(?:,\s*([^()]*))?\)/g, (_match, name, fallback) => {
-    if (seen.includes(name)) exitWithError(`Circular reference: ${[...seen, name].join(' -> ')}`)
-    if (name in tokens) return resolve(tokens[name], [...seen, name])
-    if (fallback !== undefined) return resolve(fallback, seen)
-    exitWithError(`${name} is not defined`)
-  })
-  if (withVars.includes('var(')) exitWithError(`Can't resolve: ${value}`)
-
+function resolve(value) {
   // Innermost calc() first, until none are left that are plain numbers.
-  let resolved = withVars
+  let resolved = resolveVars(value, [])
   for (let previous; previous !== resolved;) {
     previous = resolved
     resolved = resolved.replace(/calc\(([\d.\s*/+-]+)\)/g, (_match, math) => String(Function(`return ${math}`)()))
   }
   return resolved
+}
+
+// Walks each var() with balanced parentheses, so fallbacks can hold their own var(),
+// and a fallback is only resolved when its variable is not defined.
+function resolveVars(value, seen) {
+  let output = ''
+  let index = 0
+  for (let start; (start = value.indexOf('var(', index)) !== -1;) {
+    output += value.slice(index, start)
+    let depth = 0
+    let comma = -1
+    let end = start + 3
+    for (; end < value.length; end++) {
+      const char = value[end]
+      if (char === '(') depth++
+      else if (char === ')' && --depth === 0) break
+      else if (char === ',' && depth === 1 && comma === -1) comma = end
+    }
+    if (depth !== 0) exitWithError(`Can't resolve: ${value}`)
+
+    const name = value.slice(start + 4, comma === -1 ? end : comma).trim()
+    const fallback = comma === -1 ? undefined : value.slice(comma + 1, end).trim()
+    if (!/^--[\w-]+$/.test(name)) exitWithError(`Can't resolve: ${value}`)
+    if (seen.includes(name)) exitWithError(`Circular reference: ${[...seen, name].join(' -> ')}`)
+    if (name in tokens) output += resolveVars(tokens[name], [...seen, name])
+    else if (fallback !== undefined) output += resolveVars(fallback, seen)
+    else exitWithError(`${name} is not defined`)
+    index = end + 1
+  }
+  return output + value.slice(index)
 }
 
 function lightDark(value) {
@@ -142,8 +164,11 @@ function toLuminance(color) {
   const [a, b, c] = parts.map(parseFloat)
   // Alpha comes after "/", or fourth in the legacy comma syntax. Translucent text depends on what is behind it.
   const alpha = slashAlpha?.trim() ?? (channels.includes(',') ? parts[3] : undefined)
-  if (alpha !== undefined && (alpha.endsWith('%') ? parseFloat(alpha) / 100 : parseFloat(alpha)) < 1) {
-    exitWithError(`Can't check translucent color: ${value}`)
+  if (alpha !== undefined) {
+    const opacity = alpha.endsWith('%') ? parseFloat(alpha) / 100 : parseFloat(alpha)
+    // NaN < 1 is false, so an unresolved alpha would otherwise count as opaque.
+    if (!Number.isFinite(opacity)) exitWithError(`Can't measure alpha: ${value}`)
+    if (opacity < 1) exitWithError(`Can't check translucent color: ${value}`)
   }
 
   if (space === 'oklch') {
