@@ -8,7 +8,7 @@
     "optics-check-contrast": "dist/tools/check-contrast.cjs"
   },
   "scripts": {
-    "test": "exit 0",
+    "test": "node --test 'test/**/*.test.cjs'",
     "build": "yarn build:css && yarn build:css-min && yarn build:tokens && yarn build:files",
     "build:css": "postcss 'src/optics*.css' -d dist/css",
     "build:css-min": "postcss 'src/optics*.css' -d dist/css --ext .min.css --env=minify",
@@ -24,7 +24,7 @@
     "lint:css": "stylelint 'src/**/*.css'",
     "prettier": "prettier -w .",
     "prettier-check": "prettier -c .",
-    "sanity-check": "yarn lint && yarn prettier && yarn build && yarn check-contrast && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs",
+    "sanity-check": "yarn lint && yarn prettier && yarn test && yarn build && yarn check-contrast && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs",
     "generate": "node ./tools/generate.js",
     "check-contrast": "node dist/tools/check-contrast.cjs"
   },
