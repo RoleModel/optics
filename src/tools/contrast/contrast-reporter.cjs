@@ -19,10 +19,11 @@ class ContrastReporter {
   }
 
   finish() {
-    const { min, altMin, report } = this.#options
+    const { mode, min, altMin, report } = this.#options
     const passed = this.#count - this.#failures.length
+    const checked = mode ? ` (${mode})` : ''
     this.#print(
-      `Optics ${this.#build.name} contrast: ${passed}/${this.#count} pairs pass (on >= ${min}, on-alt >= ${altMin})`
+      `Optics ${this.#build.name} contrast${checked}: ${passed}/${this.#count} pairs pass (on >= ${min}, on-alt >= ${altMin})`
     )
     if (report || !this.#failures.length) return 0
 

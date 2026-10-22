@@ -3,7 +3,7 @@ const ColorPair = require('./color-pair.cjs')
 const ContrastResult = require('./contrast-result.cjs')
 const ThemedColor = require('./colors/themed-color.cjs')
 
-// Measures every scale step against its `on` and `on-alt` text colors, in light and dark mode.
+// Measures every scale step against its `on` and `on-alt` text colors, in light and dark mode, or just --mode.
 class ContrastCheck {
   #theme
   #options
@@ -15,10 +15,11 @@ class ContrastCheck {
 
   // Yields one result per pair and mode, so a report can print each one as it is measured.
   *results() {
+    const modes = this.#options.mode ? [this.#options.mode] : ThemedColor.MODES
     for (const pair of ColorPair.findAll(this.#theme)) {
       const background = this.#colorOf(pair.background)
       const text = this.#colorOf(pair.text)
-      for (const mode of ThemedColor.MODES) {
+      for (const mode of modes) {
         const ratio = background.in(mode).contrastWith(text.in(mode))
         // NaN < min is false, so an unmeasurable pair would otherwise pass.
         if (!Number.isFinite(ratio))
