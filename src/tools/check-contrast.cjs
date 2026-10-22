@@ -37,9 +37,9 @@ const userCss = stripComments(files.map((file) => fs.readFileSync(file, 'utf8'))
 const colorSet = flags.hsl ? 'hsl' : flags.oklch ? 'oklch' : detectColorSet(userCss)
 const tokensDir = path.join(__dirname, '../css/core/tokens')
 const colorDir = path.join(tokensDir, colorSet === 'oklch' ? 'oklch' : '')
-// base_tokens.css is shared by both builds and defines aliases like --op-color-border.
+// shared_tokens.css is used by both builds and defines aliases like --op-color-border.
 const opticsCss = [
-  path.join(tokensDir, 'base_tokens.css'),
+  path.join(tokensDir, 'shared_tokens.css'),
   path.join(colorDir, 'base_color_tokens.css'),
   path.join(colorDir, 'scale_color_tokens.css'),
 ]

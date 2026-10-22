@@ -9,7 +9,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Theme Token Changes
 
 - Add an opt-in OKLCH color build by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/368
-  - A new `optics-oklch.css` build (and one per icon set) defines every color token with `oklch()`. The HSL build is unchanged. Apps that import `core/tokens/base_tokens.css` directly must also import `core/tokens/base_color_tokens.css`. Apps can run `optics-check-contrast` in CI to check their theme's text contrast.
+  - A new `optics-oklch.css` build (and one per icon set) defines every color token with `oklch()`. The HSL build is unchanged, and `core/tokens/base_tokens.css` still includes the color tokens for apps that import it directly. Apps can run `optics-check-contrast` in CI to check their theme's text contrast.
 
 ### Dependencies
 
