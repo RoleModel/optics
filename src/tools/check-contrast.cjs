@@ -127,7 +127,8 @@ function resolve(value) {
   let resolved = resolveVars(value, [])
   for (let previous; previous !== resolved;) {
     previous = resolved
-    resolved = resolved.replace(/calc\(([\d.\s*/+-]+)\)/g, (_match, math) => String(Function(`return ${math}`)()))
+    // Parentheses keep a line break after "return" from ending the statement (multiline calc()).
+    resolved = resolved.replace(/calc\(([\d.\s*/+-]+)\)/g, (_match, math) => String(Function(`return (${math})`)()))
   }
   return resolved
 }
