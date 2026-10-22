@@ -22,6 +22,13 @@ One option for adding alpha support is to define alpha tokens that can sit along
 --op-color-primary-on-base-alt-alpha-40: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 88% / 40%);
 ```
 
+With the [OKLCH build](overview-oklch-colors.md), copy the lightness and chroma factor from the matching step, then add the alpha:
+
+```css
+/* Matches the light mode value of --op-color-primary-base */
+--op-color-primary-base-alpha-40: oklch(47.3% calc(var(--op-color-primary-c) * 0.86) var(--op-color-primary-h) / 40%);
+```
+
 The downside of this approach is that it can be difficult to manage and can lead to a lot of tokens. It also requires a lot of manual work to create the tokens and keep them in sync with the color scale.
 
 ## Color Mix

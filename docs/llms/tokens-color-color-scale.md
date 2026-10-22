@@ -4,7 +4,7 @@
 
 Optics has five main color scales that provide all the color your application may need. These Consist of the `Primary` scale, the `Neutral` scale, and four Alert Color Scales, `Warning`, `Danger`, `Info`, and `Notice`.
 
-Each scale is a set of semantically named variables that use the same hue and saturation, but change the luminosity.
+Each scale is a set of semantically named variables that use the same hue and saturation (hue and chroma in the [OKLCH build](overview-oklch-colors.md)), but change the luminosity.
 
 We borrow from the photography concept of [Aperture f-stops](https://www.adobe.com/creativecloud/photography/discover/f-stop.html).
 
@@ -29,6 +29,23 @@ Here is an example of what these variables look like:
 --op-color-primary-on-plus-four-alt: light-dark(
   hsl(var(--op-color-primary-h) var(--op-color-primary-s) 4%),
   hsl(var(--op-color-primary-h) var(--op-color-primary-s) 44%)
+);
+```
+
+In the OKLCH build, each step sets its lightness and multiplies the color's chroma by a factor:
+
+```css
+--op-color-primary-plus-four: light-dark(
+  oklch(85.7% calc(var(--op-color-primary-c) * 0.31) var(--op-color-primary-h)),
+  oklch(35.3% calc(var(--op-color-primary-c) * 0.61) var(--op-color-primary-h))
+);
+--op-color-primary-on-plus-four: light-dark(
+  oklch(33.5% calc(var(--op-color-primary-c) * 0.57) var(--op-color-primary-h)),
+  oklch(82.1% calc(var(--op-color-primary-c) * 0.39) var(--op-color-primary-h))
+);
+--op-color-primary-on-plus-four-alt: light-dark(
+  oklch(13.8% calc(var(--op-color-primary-c) * 0.13) var(--op-color-primary-h)),
+  oklch(92.9% calc(var(--op-color-primary-c) * 0.15) var(--op-color-primary-h))
 );
 ```
 
@@ -316,6 +333,256 @@ Your application may need a new scale. To add one, use the following template. K
   --op-color-{name}-on-minus-max-alt: light-dark(
     hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 88%),
     hsl(var(--op-color-{name}-h) var(--op-color-{name}-s) 8%)
+  );
+}
+```
+
+### OKLCH Template
+
+With the [OKLCH build](overview-oklch-colors.md), use this template instead. Its values are the default primary scale, so pick a `-c` and `-h` for your color, then adjust the steps as needed. Run the [Contrast Checker](tools-contrast-checker.md) to confirm the `on` colors still pass.
+
+```css
+:root {
+  /* {name}-color */
+
+  --op-color-{name}-l: new-value-l;
+  --op-color-{name}-c: new-value-c;
+  --op-color-{name}-h: new-value-h;
+
+  /* {name}-semantic-scale */
+
+  --op-color-{name}-original: oklch(var(--op-color-{name}-l) var(--op-color-{name}-c) var(--op-color-{name}-h));
+
+  /* Main Scale */
+  --op-color-{name}-plus-max: light-dark(
+    oklch(100% 0 var(--op-color-{name}-h)),
+    oklch(22.2% calc(var(--op-color-{name}-c) * 0.32) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-eight: light-dark(
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h)),
+    oklch(24.2% calc(var(--op-color-{name}-c) * 0.36) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-seven: light-dark(
+    oklch(96.4% calc(var(--op-color-{name}-c) * 0.07) var(--op-color-{name}-h)),
+    oklch(26.1% calc(var(--op-color-{name}-c) * 0.4) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-six: light-dark(
+    oklch(94.7% calc(var(--op-color-{name}-c) * 0.11) var(--op-color-{name}-h)),
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-five: light-dark(
+    oklch(91.1% calc(var(--op-color-{name}-c) * 0.19) var(--op-color-{name}-h)),
+    oklch(33.5% calc(var(--op-color-{name}-c) * 0.57) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-four: light-dark(
+    oklch(85.7% calc(var(--op-color-{name}-c) * 0.31) var(--op-color-{name}-h)),
+    oklch(35.3% calc(var(--op-color-{name}-c) * 0.61) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-three: light-dark(
+    oklch(73.1% calc(var(--op-color-{name}-c) * 0.6) var(--op-color-{name}-h)),
+    oklch(38% calc(var(--op-color-{name}-c) * 0.66) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-two: light-dark(
+    oklch(67.7% calc(var(--op-color-{name}-c) * 0.73) var(--op-color-{name}-h)),
+    oklch(40.6% calc(var(--op-color-{name}-c) * 0.72) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-one: light-dark(
+    oklch(51.4% calc(var(--op-color-{name}-c) * 0.95) var(--op-color-{name}-h)),
+    oklch(43.1% calc(var(--op-color-{name}-c) * 0.77) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-base: light-dark(
+    oklch(47.3% calc(var(--op-color-{name}-c) * 0.86) var(--op-color-{name}-h)),
+    oklch(45.7% calc(var(--op-color-{name}-c) * 0.83) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-one: light-dark(
+    oklch(44% calc(var(--op-color-{name}-c) * 0.79) var(--op-color-{name}-h)),
+    oklch(47.3% calc(var(--op-color-{name}-c) * 0.86) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-two: light-dark(
+    oklch(40.6% calc(var(--op-color-{name}-c) * 0.72) var(--op-color-{name}-h)),
+    oklch(51.4% calc(var(--op-color-{name}-c) * 0.95) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-three: light-dark(
+    oklch(37.1% calc(var(--op-color-{name}-c) * 0.64) var(--op-color-{name}-h)),
+    oklch(53.9% calc(var(--op-color-{name}-c) * 1) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-four: light-dark(
+    oklch(33.5% calc(var(--op-color-{name}-c) * 0.57) var(--op-color-{name}-h)),
+    oklch(57.2% calc(var(--op-color-{name}-c) * 0.99) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-five: light-dark(
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h)),
+    oklch(67.7% calc(var(--op-color-{name}-c) * 0.73) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-six: light-dark(
+    oklch(26.1% calc(var(--op-color-{name}-c) * 0.4) var(--op-color-{name}-h)),
+    oklch(74.9% calc(var(--op-color-{name}-c) * 0.55) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-seven: light-dark(
+    oklch(18.1% calc(var(--op-color-{name}-c) * 0.22) var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-eight: light-dark(
+    oklch(13.8% calc(var(--op-color-{name}-c) * 0.13) var(--op-color-{name}-h)),
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-max: light-dark(
+    oklch(0% 0 var(--op-color-{name}-h)),
+    oklch(100% 0 var(--op-color-{name}-h))
+  );
+
+  /* On Scale */
+  --op-color-{name}-on-plus-max: light-dark(
+    oklch(0% 0 var(--op-color-{name}-h)),
+    oklch(100% 0 var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-max-alt: light-dark(
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h)),
+    oklch(80.3% calc(var(--op-color-{name}-c) * 0.43) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-eight: light-dark(
+    oklch(13.8% calc(var(--op-color-{name}-c) * 0.13) var(--op-color-{name}-h)),
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-eight-alt: light-dark(
+    oklch(33.5% calc(var(--op-color-{name}-c) * 0.57) var(--op-color-{name}-h)),
+    oklch(73.1% calc(var(--op-color-{name}-c) * 0.6) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-seven: light-dark(
+    oklch(18.1% calc(var(--op-color-{name}-c) * 0.22) var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-seven-alt: light-dark(
+    oklch(37.1% calc(var(--op-color-{name}-c) * 0.64) var(--op-color-{name}-h)),
+    oklch(67.7% calc(var(--op-color-{name}-c) * 0.73) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-six: light-dark(
+    oklch(26.1% calc(var(--op-color-{name}-c) * 0.4) var(--op-color-{name}-h)),
+    oklch(74.9% calc(var(--op-color-{name}-c) * 0.55) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-six-alt: light-dark(
+    oklch(35.3% calc(var(--op-color-{name}-c) * 0.61) var(--op-color-{name}-h)),
+    oklch(96.4% calc(var(--op-color-{name}-c) * 0.07) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-five: light-dark(
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h)),
+    oklch(74.9% calc(var(--op-color-{name}-c) * 0.55) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-five-alt: light-dark(
+    oklch(47.3% calc(var(--op-color-{name}-c) * 0.86) var(--op-color-{name}-h)),
+    oklch(87.5% calc(var(--op-color-{name}-c) * 0.27) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-four: light-dark(
+    oklch(33.5% calc(var(--op-color-{name}-c) * 0.57) var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-four-alt: light-dark(
+    oklch(13.8% calc(var(--op-color-{name}-c) * 0.13) var(--op-color-{name}-h)),
+    oklch(92.9% calc(var(--op-color-{name}-c) * 0.15) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-three: light-dark(
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h)),
+    oklch(80.3% calc(var(--op-color-{name}-c) * 0.43) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-three-alt: light-dark(
+    oklch(20.2% calc(var(--op-color-{name}-c) * 0.27) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-two: light-dark(
+    oklch(26.1% calc(var(--op-color-{name}-c) * 0.4) var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-two-alt: light-dark(
+    oklch(16% calc(var(--op-color-{name}-c) * 0.18) var(--op-color-{name}-h)),
+    oklch(92.9% calc(var(--op-color-{name}-c) * 0.15) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-one: light-dark(
+    oklch(100% 0 var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-one-alt: light-dark(
+    oklch(95.6% calc(var(--op-color-{name}-c) * 0.09) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-base: light-dark(
+    oklch(100% 0 var(--op-color-{name}-h)),
+    oklch(100% 0 var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-base-alt: light-dark(
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h)),
+    oklch(85.7% calc(var(--op-color-{name}-c) * 0.31) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-one: light-dark(
+    oklch(94.7% calc(var(--op-color-{name}-c) * 0.11) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-one-alt: light-dark(
+    oklch(83.9% calc(var(--op-color-{name}-c) * 0.35) var(--op-color-{name}-h)),
+    oklch(91.1% calc(var(--op-color-{name}-c) * 0.19) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-two: light-dark(
+    oklch(91.1% calc(var(--op-color-{name}-c) * 0.19) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-two-alt: light-dark(
+    oklch(80.3% calc(var(--op-color-{name}-c) * 0.43) var(--op-color-{name}-h)),
+    oklch(92.9% calc(var(--op-color-{name}-c) * 0.15) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-three: light-dark(
+    oklch(87.5% calc(var(--op-color-{name}-c) * 0.27) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-three-alt: light-dark(
+    oklch(76.7% calc(var(--op-color-{name}-c) * 0.51) var(--op-color-{name}-h)),
+    oklch(96.4% calc(var(--op-color-{name}-c) * 0.07) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-four: light-dark(
+    oklch(85.7% calc(var(--op-color-{name}-c) * 0.31) var(--op-color-{name}-h)),
+    oklch(10.9% calc(var(--op-color-{name}-c) * 0.09) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-four-alt: light-dark(
+    oklch(74.9% calc(var(--op-color-{name}-c) * 0.55) var(--op-color-{name}-h)),
+    oklch(10.9% calc(var(--op-color-{name}-c) * 0.09) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-five: light-dark(
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h)),
+    oklch(10.9% calc(var(--op-color-{name}-c) * 0.09) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-five-alt: light-dark(
+    oklch(80.3% calc(var(--op-color-{name}-c) * 0.43) var(--op-color-{name}-h)),
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-six: light-dark(
+    oklch(94.7% calc(var(--op-color-{name}-c) * 0.11) var(--op-color-{name}-h)),
+    oklch(18.1% calc(var(--op-color-{name}-c) * 0.22) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-six-alt: light-dark(
+    oklch(83.9% calc(var(--op-color-{name}-c) * 0.35) var(--op-color-{name}-h)),
+    oklch(35.3% calc(var(--op-color-{name}-c) * 0.61) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-seven: light-dark(
+    oklch(96.4% calc(var(--op-color-{name}-c) * 0.07) var(--op-color-{name}-h)),
+    oklch(18.1% calc(var(--op-color-{name}-c) * 0.22) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-seven-alt: light-dark(
+    oklch(85.7% calc(var(--op-color-{name}-c) * 0.31) var(--op-color-{name}-h)),
+    oklch(42.3% calc(var(--op-color-{name}-c) * 0.76) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-eight: light-dark(
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h)),
+    oklch(13.8% calc(var(--op-color-{name}-c) * 0.13) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-eight-alt: light-dark(
+    oklch(87.5% calc(var(--op-color-{name}-c) * 0.27) var(--op-color-{name}-h)),
+    oklch(45.7% calc(var(--op-color-{name}-c) * 0.83) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-max: light-dark(
+    oklch(100% 0 var(--op-color-{name}-h)),
+    oklch(0% 0 var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-max-alt: light-dark(
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h)),
+    oklch(45.7% calc(var(--op-color-{name}-c) * 0.83) var(--op-color-{name}-h))
   );
 }
 ```

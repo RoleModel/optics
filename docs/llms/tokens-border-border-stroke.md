@@ -1,6 +1,6 @@
 # Border Stroke
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Border tokens can be used as box shadows to add borders to various elements. Box Shadows are used in order to provide border styling without affecting the sizing of elements.
 These can be composed with other box shadows such as [Shadow](tokens-shadow.md) to stack effects.

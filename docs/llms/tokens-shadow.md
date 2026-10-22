@@ -1,6 +1,6 @@
 # Shadow
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_color_tokens.css)
 
 Shadow tokens can be used to create an elevation effect on any element. There are also [Card classes](components-card.md#shadow) to create an elevated card effect.
 

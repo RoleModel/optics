@@ -1,6 +1,6 @@
 # Spacing Size
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 The Spacing Size tokens enable creating scalable spaces for your application. They can be used for margin, padding, gap, and anything else that is intended for spacing.
 

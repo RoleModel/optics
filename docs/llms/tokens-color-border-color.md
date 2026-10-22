@@ -1,6 +1,6 @@
 # Border Color
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Border color tokens can be used to define the color of borders and box shadows.
 

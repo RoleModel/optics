@@ -69,3 +69,29 @@ Regardless of the reason, you can customize and override each scale like the fol
 ```
 
 You can override as many or as few variables or scales as your application needs.
+
+### OKLCH Scales
+
+With the [OKLCH build](overview-oklch-colors.md), each step sets its lightness and a chroma factor. The factor scales your `-c` value down at the light and dark ends of the scale.
+
+```css
+:root {
+  --op-color-primary-l: 70%;
+  --op-color-primary-c: 0.15;
+  --op-color-primary-h: 170;
+
+  /* Main Scale */
+  --op-color-primary-plus-two: light-dark(
+    oklch(67.7% calc(var(--op-color-primary-c) * 0.73) var(--op-color-primary-h)),
+    oklch(40.6% calc(var(--op-color-primary-c) * 0.72) var(--op-color-primary-h))
+  );
+
+  /* On Scale */
+  --op-color-primary-on-plus-two: light-dark(
+    oklch(26.1% calc(var(--op-color-primary-c) * 0.4) var(--op-color-primary-h)),
+    oklch(82.1% calc(var(--op-color-primary-c) * 0.39) var(--op-color-primary-h))
+  );
+}
+```
+
+See `core/tokens/oklch/scale_color_tokens.css` for the default value of every step.

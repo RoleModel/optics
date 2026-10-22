@@ -1,0 +1,50 @@
+import{n as e}from"./rolldown-runtime-DaJ6WEGw.js";import{i as t}from"./react-CaHZDgIm.js";import{s as n}from"./chunk-LITCR56V-BxXRPQK8.js";import{l as r,u as i}from"./blocks-CyTtSge0.js";import{t as a}from"./mdx-react-shim-DIeO1dVO.js";var o,s,c,l,u,d,f,p,m,h,g,_,v,y,b,x,S,C,w=e((()=>{o=`@rolemodel/optics`,s=`2.6.0`,c=`yarn@4.8.1`,l=`Optics is a css package that provides base styles and components that can be integrated and customized in a variety of projects.`,u=`dist/css/optics.css`,d={"optics-check-contrast":`dist/tools/check-contrast.cjs`},f={test:`node --test 'test/**/*.test.cjs'`,build:`yarn build:css && yarn build:css-min && yarn build:tokens && yarn build:files`,"build:css":`postcss 'src/optics*.css' -d dist/css`,"build:css-min":`postcss 'src/optics*.css' -d dist/css --ext .min.css --env=minify`,"build:tokens":`node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json`,"build:files":`mkdir -p dist/css/addons; cp LICENSE README.md package.json dist/; cp -rL src/addons src/core src/components dist/css; cp -r src/tools dist`,"build-docs":`yarn build-docs:llms && yarn build-docs:storybook`,"build-docs:llms":`node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/build-llms-docs.mjs`,"build-docs:storybook":`storybook build --docs`,storybook:`yarn build-docs:llms && storybook dev -p 6006 --docs`,lint:`yarn lint:js && yarn lint:css`,"lint-fix":`yarn lint:js --fix && yarn lint:css --fix`,"lint:js":`eslint 'src/stories/**/*.js'`,"lint:css":`stylelint 'src/**/*.css'`,prettier:`prettier -w .`,"prettier-check":`prettier -c .`,"sanity-check":`yarn lint && yarn prettier && yarn test && yarn build && yarn check-contrast && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs`,generate:`node ./tools/generate.js`,"check-contrast":`node dist/tools/check-contrast.cjs`},p={type:`git`,url:`git+https://github.com/RoleModel/optics.git`},m=[`Design`,`CSS`,`System`,`RoleModel`,`Optics`],h=`RoleModel Software`,g={url:`https://github.com/RoleModel/optics/issues`},_=`https://github.com/RoleModel/optics#readme`,v={"@RoleModel:registry":`https://npm.pkg.github.com`},y={"modern-css-reset":`^1.4.0`},b={"@babel/preset-env":`^8.0.2`,"@eslint/js":`^10.0.1`,"@storybook/addon-docs":`^10.4.6`,"@storybook/html-vite":`^10.4.6`,cssnano:`^8.0.2`,eslint:`^10.6.0`,"eslint-config-prettier":`^10.1.8`,"eslint-plugin-storybook":`^10.4.6`,"generate-template-files":`^3.2.1`,globals:`^17.7.0`,jsdom:`^29.1.1`,postcss:`^8.5.16`,"postcss-cli":`^11.0.1`,"postcss-import":`^16.1.1`,prettier:`^3.9.5`,storybook:`^10.4.6`,"storybook-design-token":`^5.0.0`,"style-loader":`^4.0.0`,stylelint:`^17.14.0`,"stylelint-config-idiomatic-order":`^10.0.0`,"stylelint-prettier":`^5.0.3`,"stylelint-use-logical":`^2.1.3`,vite:`^8.1.4`},x={"tom-select":`^2.0.0`},S={"tom-select":{optional:!0}},C={name:o,version:s,packageManager:c,description:l,main:u,bin:d,scripts:f,repository:p,keywords:m,author:h,license:`MIT`,bugs:g,homepage:_,publishConfig:v,dependencies:y,devDependencies:b,peerDependencies:x,peerDependenciesMeta:S}}));function T(e){let n={a:`a`,code:`code`,h1:`h1`,h2:`h2`,h3:`h3`,img:`img`,p:`p`,pre:`pre`,strong:`strong`,...t(),...e.components};return(0,D.jsxs)(D.Fragment,{children:[(0,D.jsx)(r,{title:`Introduction`}),`
+`,(0,D.jsx)(n.h1,{id:`optics`,children:`Optics`}),`
+`,(0,D.jsx)(`h2`,{children:`A RoleModel Design System.`}),`
+`,(0,D.jsxs)(`p`,{children:[`v`,C.version]}),`
+`,(0,D.jsxs)(`div`,{className:`flex gap-sm`,children:[(0,D.jsx)(n.p,{children:(0,D.jsx)(n.a,{href:`https://github.com/RoleModel/optics`,rel:`nofollow`,children:(0,D.jsx)(n.img,{src:`https://img.shields.io/badge/GitHub-Code-232323.svg?logo=github&logoColor=white`,alt:`Code`})})}),(0,D.jsx)(n.p,{children:(0,D.jsx)(n.a,{href:`https://github.com/RoleModel/optics/blob/main/LICENSE`,rel:`nofollow`,children:(0,D.jsx)(n.img,{src:`https://img.shields.io/badge/license-MIT-232323.svg`,alt:`License`})})}),(0,D.jsx)(n.p,{children:(0,D.jsx)(n.a,{href:`https://www.npmjs.com/package/@rolemodel/optics`,rel:`nofollow`,children:(0,D.jsx)(n.img,{src:`https://img.shields.io/npm/dw/@rolemodel/optics?label=npm`,alt:`npm`})})}),(0,D.jsx)(n.p,{children:(0,D.jsx)(n.a,{href:`https://github.com/RoleModel/optics/actions/workflows/linting.yml`,rel:`nofollow`,children:(0,D.jsx)(n.img,{src:`https://github.com/RoleModel/optics/actions/workflows/linting.yml/badge.svg`,alt:`Linting CI`})})})]}),`
+`,(0,D.jsxs)(`div`,{className:`flex flex-col gap-md`,children:[(0,D.jsxs)(`div`,{className:`card card--company card--shadow-x-small`,children:[(0,D.jsxs)(`div`,{className:`card__info`,children:[(0,D.jsx)(`img`,{className:`card__info-logo`,src:`./public/rms-logo.svg`,alt:`RoleModel Software Logo`}),(0,D.jsx)(`span`,{children:`Optics, a RoleModel Software innovation, is a product of our mission to deliver exceptional digital products.`})]}),(0,D.jsxs)(`a`,{className:`btn sb-unstyled`,href:`https://rolemodelsoftware.com/`,target:`_blank`,children:[(0,D.jsx)(`span`,{children:`Learn About RoleModel Software`}),(0,D.jsx)(`span`,{className:`material-symbols-outlined`,children:`open_in_new`})]})]}),(0,D.jsxs)(`div`,{className:`card card--company card--shadow-x-small`,children:[(0,D.jsxs)(`div`,{className:`card__info`,children:[(0,D.jsx)(`img`,{className:`card__info-logo`,src:`./public/optics-logo.svg`,alt:`Optics Logo`}),(0,D.jsx)(`span`,{children:(0,D.jsx)(n.p,{children:`Optics embodies the RoleModel ethos of deep collaboration, uniting our team's diverse expertise with the shared
+goal of crafting excellent design solutions and our commitment to Character, Collaboration, and Craftsmanship.`})})]}),(0,D.jsxs)(`a`,{className:`btn sb-unstyled`,href:`https://optics.rolemodel.design/`,target:`_blank`,children:[(0,D.jsx)(`span`,{children:`Learn About The Vision Behind Optics`}),(0,D.jsx)(`span`,{className:`material-symbols-outlined`,children:`open_in_new`})]})]})]}),`
+`,(0,D.jsx)(n.p,{children:`Optics is a CSS package that provides base styles and components that can be integrated and customized in a variety of projects.`}),`
+`,(0,D.jsx)(n.h2,{id:`installation`,children:`Installation`}),`
+`,(0,D.jsx)(n.h3,{id:`npm`,children:`NPM`}),`
+`,(0,D.jsx)(n.pre,{children:(0,D.jsx)(n.code,{className:`language-sh`,children:`npm install @rolemodel/optics
+`})}),`
+`,(0,D.jsx)(n.h3,{id:`yarn`,children:`Yarn`}),`
+`,(0,D.jsx)(n.pre,{children:(0,D.jsx)(n.code,{className:`language-sh`,children:`yarn add @rolemodel/optics
+`})}),`
+`,(0,D.jsx)(n.h2,{id:`getting-started`,children:`Getting Started`}),`
+`,(0,D.jsx)(n.h3,{id:`importing-with-a-compiler`,children:`Importing with a compiler`}),`
+`,(0,D.jsxs)(n.p,{children:[`You can add this import to the top of your root level `,(0,D.jsx)(n.code,{children:`css`}),` file.`]}),`
+`,(0,D.jsx)(n.pre,{children:(0,D.jsx)(n.code,{className:`language-css`,children:`@import '@rolemodel/optics'; /* Using webpack to compile */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics'; /* Using a different compiler */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+no_icons'; /* Don't load the default icons library */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics.min.css'; /* If you want a single file with all the styles in it. */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons.css'; /* Using a different icon pack */
+/* Or */
+@import '@rolemodel/optics/dist/css/optics+phosphor_icons.min.css'; /* If you want a single file with all the styles in it and a different icon pack. */
+`})}),`
+`,(0,D.jsx)(n.h3,{id:`importing-without-a-compiler`,children:`Importing without a compiler`}),`
+`,(0,D.jsxs)(n.p,{children:[`To use Optics without compilation, use a CDN like `,(0,D.jsx)(n.a,{href:`https://www.jsdelivr.com/`,rel:`nofollow`,children:`jsDelivr`}),` or `,(0,D.jsx)(n.a,{href:`https://unpkg.com/`,rel:`nofollow`,children:`unpkg`}),`.
+Add a link in your HTML head or an `,(0,D.jsx)(n.code,{children:`@import`}),` to the top of your root level `,(0,D.jsx)(n.code,{children:`css`}),` file.`]}),`
+`,(0,D.jsx)(n.pre,{children:(0,D.jsx)(n.code,{className:`language-html`,children:`<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css"
+/>
+<!-- Or -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics+phosphor_icons.min.css"
+/>
+`})}),`
+`,(0,D.jsx)(n.pre,{children:(0,D.jsx)(n.code,{className:`language-css`,children:`@import 'https://cdn.jsdelivr.net/npm/@rolemodel/optics@[desired version]/dist/css/optics.min.css';
+`})}),`
+`,(0,D.jsxs)(n.p,{children:[`Note: You can use this method to use Optics with `,(0,D.jsx)(n.a,{href:`https://codepen.io/`,rel:`nofollow`,children:`CodePen`}),`. In a CodePen project, go to `,(0,D.jsx)(n.code,{children:`Settings > CSS`}),`, find the section for adding external stylesheets, and add the CDN link as a resource.`]}),`
+`,(0,D.jsx)(n.h2,{id:`browser-support`,children:`Browser Support`}),`
+`,(0,D.jsxs)(n.p,{children:[`Optics aims to follow `,(0,D.jsx)(n.a,{href:`https://web.dev/baseline`,rel:`nofollow`,children:`Baseline`}),` for browser support.`]}),`
+`,(0,D.jsxs)(n.p,{children:[`While `,(0,D.jsx)(n.strong,{children:`Widely available`}),` — interoperable across all major browsers for 30 months is the goal, we currently sit at `,(0,D.jsx)(n.strong,{children:`Newly available`}),` — interoperable across all major browsers for 24 months (as of July 2026).`]}),`
+`,(0,D.jsxs)(`table`,{children:[(0,D.jsx)(`thead`,{children:(0,D.jsxs)(`tr`,{children:[(0,D.jsx)(`th`,{children:`Chrome`}),(0,D.jsx)(`th`,{children:`Edge`}),(0,D.jsx)(`th`,{children:`Firefox`}),(0,D.jsx)(`th`,{children:`Safari`}),(0,D.jsx)(`th`,{children:`iOS Safari`})]})}),(0,D.jsx)(`tbody`,{children:(0,D.jsxs)(`tr`,{children:[(0,D.jsx)(`td`,{children:`123`}),(0,D.jsx)(`td`,{children:`123`}),(0,D.jsx)(`td`,{children:`128`}),(0,D.jsx)(`td`,{children:`17.5`}),(0,D.jsx)(`td`,{children:`17.5`})]})})]})]})}function E(e={}){let{wrapper:n}={...t(),...e.components};return n?(0,D.jsx)(n,{...e,children:(0,D.jsx)(T,{...e})}):T(e)}var D;e((()=>{D=n(),a(),i(),w()}))();export{E as default};

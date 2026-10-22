@@ -1,6 +1,6 @@
 # Encoded Image
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Encoded Image tokens are primarily used to create the dropdown arrow on `<select>` elements using the `.form-control` class.
 
@@ -24,7 +24,7 @@ background: var(--op-encoded-images-dropdown-arrow) center right no-repeat;
 
 | Token | Value |
 | --- | --- |
+| `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |
+| `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |
 | `--op-encoded-images-dropdown-arrow-width` | `calc( 1.2 * var(--op-space-scale-unit) )` |
-| `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |
-| `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |
 | `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |

@@ -1,6 +1,6 @@
 # Opacity
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Opacity tokens can be used to create a faded or disabled effect on any element.
 

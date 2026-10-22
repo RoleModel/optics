@@ -1,6 +1,6 @@
 # Border Width
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Border width tokens can be used to define a border width or a box shadow width.
 

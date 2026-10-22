@@ -1,6 +1,6 @@
 # Optics Design System
 
-> Optics is a pure-CSS design system by RoleModel Software (npm: `@rolemodel/optics`, v2.5.1). It provides design tokens (CSS custom properties prefixed `--op-`), base styles, utilities, and BEM-style components (`.btn`, `.card`, ...) that are customized per project via token overrides.
+> Optics is a pure-CSS design system by RoleModel Software (npm: `@rolemodel/optics`, v2.6.0). It provides design tokens (CSS custom properties prefixed `--op-`), base styles, utilities, and BEM-style components (`.btn`, `.card`, ...) that are customized per project via token overrides.
 
 Every page below is plain markdown. Component pages include the actual HTML markup for each variant, the component's CSS variable API, and customization patterns. The full documentation in one file: [llms-full.txt](https://docs.optics.rolemodel.design/llms-full.txt). All design tokens as JSON: https://unpkg.com/@rolemodel/optics/dist/tokens/tokens.json
 
@@ -13,6 +13,7 @@ Every page below is plain markdown. Component pages include the actual HTML mark
 - [Overview/Addons](https://docs.optics.rolemodel.design/llms/overview-addons.md): Optics provides a few addons for integrating Third-Party tools with your application.
 - [Overview/Base Reset](https://docs.optics.rolemodel.design/llms/overview-base-reset.md): All browsers ship with some default styles. These styles are inconsistent across browsers and can cause issues when building a UI. To ensure consistency acro...
 - [Overview/File Organization](https://docs.optics.rolemodel.design/llms/overview-file-organization.md): As you use Optics, you will likely want to organize your Optics configuration into multiple files.
+- [Overview/OKLCH Colors](https://docs.optics.rolemodel.design/llms/overview-oklch-colors.md): Optics ships an optional build where every color token uses [oklch()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) instead of `hsl()`....
 - [Overview/Scale Overriding](https://docs.optics.rolemodel.design/llms/overview-scale-overriding.md): There are multiple scales in Optics. Unit Scales exist to allow adjusting font and spacing values. Color Scales exist to provide semantically named color var...
 - [Overview/Selective Imports](https://docs.optics.rolemodel.design/llms/overview-selective-imports.md): By default, when you import the design system, it will include the basics. CSS reset, All Tokens, Base styles, Utilities, and all Components.
 - [Overview/Themes](https://docs.optics.rolemodel.design/llms/overview-themes.md): Optics defines a default theme along with it's dark mode. If you import the design system, it will be used automatically.
@@ -94,3 +95,7 @@ Every page below is plain markdown. Component pages include the actual HTML mark
 - [Recipes/Aligned Header](https://docs.optics.rolemodel.design/llms/recipes-aligned-header.md): There are cases when you want to vertically center something on a line of text that wraps. Like a badge or edit button at the end of a text header. Achieving...
 - [Recipes/Custom Sidebar](https://docs.optics.rolemodel.design/llms/recipes-custom-sidebar.md): Your app may want to customize the sidebar to change the look and feel. Here are a few examples to help you get started:
 - [Recipes/Layout](https://docs.optics.rolemodel.design/llms/recipes-layout.md): Optics provides two patterns for application layout. The basic (legacy) version is maintained for backwards compatibility, but all new projects should use th...
+
+## Other
+
+- [Tools/Contrast Checker](https://docs.optics.rolemodel.design/llms/tools-contrast-checker.md): Optics ships a contrast checker you can run in CI after customizing your theme. It checks every color scale step against its `on` and `on-alt` text colors, i...

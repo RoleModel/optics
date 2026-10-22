@@ -1,6 +1,6 @@
 # Basic Color
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_color_tokens.css)
 
 Basic color tokens can be used to define exact colors.
 

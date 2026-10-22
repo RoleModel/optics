@@ -1,6 +1,6 @@
 # Optics Design System
 
-> Optics is a pure-CSS design system by RoleModel Software (npm: `@rolemodel/optics`, v2.5.1). It provides design tokens (CSS custom properties prefixed `--op-`), base styles, utilities, and BEM-style components (`.btn`, `.card`, ...) that are customized per project via token overrides.
+> Optics is a pure-CSS design system by RoleModel Software (npm: `@rolemodel/optics`, v2.6.0). It provides design tokens (CSS custom properties prefixed `--op-`), base styles, utilities, and BEM-style components (`.btn`, `.card`, ...) that are customized per project via token overrides.
 
 Every page below is plain markdown. Component pages include the actual HTML markup for each variant, the component's CSS variable API, and customization patterns. The full documentation in one file: [llms-full.txt](https://docs.optics.rolemodel.design/llms-full.txt). All design tokens as JSON: https://unpkg.com/@rolemodel/optics/dist/tokens/tokens.json
 
@@ -13,6 +13,7 @@ Every page below is plain markdown. Component pages include the actual HTML mark
 - [Overview/Addons](https://docs.optics.rolemodel.design/llms/overview-addons.md): Optics provides a few addons for integrating Third-Party tools with your application.
 - [Overview/Base Reset](https://docs.optics.rolemodel.design/llms/overview-base-reset.md): All browsers ship with some default styles. These styles are inconsistent across browsers and can cause issues when building a UI. To ensure consistency acro...
 - [Overview/File Organization](https://docs.optics.rolemodel.design/llms/overview-file-organization.md): As you use Optics, you will likely want to organize your Optics configuration into multiple files.
+- [Overview/OKLCH Colors](https://docs.optics.rolemodel.design/llms/overview-oklch-colors.md): Optics ships an optional build where every color token uses [oklch()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) instead of `hsl()`....
 - [Overview/Scale Overriding](https://docs.optics.rolemodel.design/llms/overview-scale-overriding.md): There are multiple scales in Optics. Unit Scales exist to allow adjusting font and spacing values. Color Scales exist to provide semantically named color var...
 - [Overview/Selective Imports](https://docs.optics.rolemodel.design/llms/overview-selective-imports.md): By default, when you import the design system, it will include the basics. CSS reset, All Tokens, Base styles, Utilities, and all Components.
 - [Overview/Themes](https://docs.optics.rolemodel.design/llms/overview-themes.md): Optics defines a default theme along with it's dark mode. If you import the design system, it will be used automatically.
@@ -94,6 +95,10 @@ Every page below is plain markdown. Component pages include the actual HTML mark
 - [Recipes/Aligned Header](https://docs.optics.rolemodel.design/llms/recipes-aligned-header.md): There are cases when you want to vertically center something on a line of text that wraps. Like a badge or edit button at the end of a text header. Achieving...
 - [Recipes/Custom Sidebar](https://docs.optics.rolemodel.design/llms/recipes-custom-sidebar.md): Your app may want to customize the sidebar to change the look and feel. Here are a few examples to help you get started:
 - [Recipes/Layout](https://docs.optics.rolemodel.design/llms/recipes-layout.md): Optics provides two patterns for application layout. The basic (legacy) version is maintained for backwards compatibility, but all new projects should use th...
+
+## Other
+
+- [Tools/Contrast Checker](https://docs.optics.rolemodel.design/llms/tools-contrast-checker.md): Optics ships a contrast checker you can run in CI after customizing your theme. It checks every color scale step against its `on` and `on-alt` text colors, i...
 
 ---
 
@@ -403,6 +408,174 @@ Using the above folder structure, the application file should import all of the 
 
 ---
 
+<!-- Page: Overview/OKLCH Colors (overview-oklch-colors.md) -->
+
+# OKLCH Colors
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/oklch)
+
+Optics ships an optional build where every color token uses [oklch()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) instead of `hsl()`.
+The token names are the same, so components and your own styles don't change. Only the theme variables you override are different.
+
+OKLCH lightness matches how light a color looks, and its hue stays the same from light to dark. In HSL, yellow and blue at the same lightness look very different. In OKLCH, a step at 70% looks about as light in any hue, which makes your own colors and scale steps easier to pick.
+Each scale is converted from its HSL scale, so the default colors look nearly the same in both builds.
+
+The HSL build stays the default for now. OKLCH is planned to become the default in the next major version.
+
+Use the **Color space** menu in the Storybook toolbar to compare any story in HSL and OKLCH.
+
+## Importing
+
+Replace `optics` with `optics-oklch` in your import. Every icon variant has an OKLCH version too.
+
+```css
+@import '@rolemodel/optics/dist/css/optics-oklch';
+/* Or */
+@import '@rolemodel/optics/dist/css/optics-oklch.min.css';
+/* Or, with an icon set */
+@import '@rolemodel/optics/dist/css/optics-oklch+lucide_icons';
+```
+
+With [selective imports](overview-selective-imports.md), import `core/tokens/oklch` instead of `core/tokens`.
+
+## Theme Variables
+
+Each color is set by three variables, in `oklch()` order:
+
+<table>
+  <thead>
+    <tr>
+      <th>HSL build</th>
+      <th>OKLCH build</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>--op-color-primary-l</code>
+      </td>
+      <td>
+        <code>--op-color-primary-l</code>
+      </td>
+      <td>
+        Lightness of <code>-original</code> (0% to 100%)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--op-color-primary-s</code>
+      </td>
+      <td>
+        <code>--op-color-primary-c</code>
+      </td>
+      <td>Saturation (HSL) or chroma (OKLCH, 0 to 0.4)</td>
+    </tr>
+    <tr>
+      <td>
+        <code>--op-color-primary-h</code>
+      </td>
+      <td>
+        <code>--op-color-primary-h</code>
+      </td>
+      <td>Hue (0 to 360), but on a different color map</td>
+    </tr>
+  </tbody>
+</table>
+
+```css
+:root {
+  --op-color-primary-l: 53.9%;
+  --op-color-primary-c: 0.146;
+  --op-color-primary-h: 258.5;
+}
+```
+
+Like in HSL, the scale steps set their own lightness, so `-l` only changes `--op-color-primary-original`.
+Each step multiplies `-c` by a factor taken from the HSL scale, so tints and shades get less colorful toward the light and dark ends, as they do in HSL.
+
+## Migrating Your Theme
+
+HSL and OKLCH numbers don't match. For example, HSL hue `216` is about OKLCH hue `258`. Convert your brand colors with a tool like [oklch.com](https://oklch.com), then set `-l`, `-c`, and `-h`.
+
+These are the Optics defaults in both builds:
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>
+        HSL (<code>h s l</code>)
+      </th>
+      <th>
+        OKLCH (<code>l c h</code>)
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Primary</td>
+      <td>
+        <code>216 58% 48%</code>
+      </td>
+      <td>
+        <code>53.9% 0.146 258.5</code>
+      </td>
+    </tr>
+    <tr>
+      <td>Neutral</td>
+      <td>
+        primary hue and l, <code>s: 4%</code>
+      </td>
+      <td>
+        primary hue and l, <code>c: 0.01</code>
+      </td>
+    </tr>
+    <tr>
+      <td>Alerts Warning</td>
+      <td>
+        <code>47 100% 61%</code>
+      </td>
+      <td>
+        <code>88.2% 0.166 92.3</code>
+      </td>
+    </tr>
+    <tr>
+      <td>Alerts Danger</td>
+      <td>
+        <code>0 99% 76%</code>
+      </td>
+      <td>
+        <code>75.2% 0.148 21.2</code>
+      </td>
+    </tr>
+    <tr>
+      <td>Alerts Info</td>
+      <td>
+        <code>216 58% 48%</code>
+      </td>
+      <td>
+        <code>53.9% 0.146 258.5</code>
+      </td>
+    </tr>
+    <tr>
+      <td>Alerts Notice</td>
+      <td>
+        <code>130 61% 64%</code>
+      </td>
+      <td>
+        <code>80.4% 0.166 147.4</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+If you [override scale steps](overview-scale-overriding.md), rewrite each `hsl()` as `oklch()`. Lightness values are not the same in both builds, so copy them from `core/tokens/oklch/scale_color_tokens.css`.
+
+After you change your theme, run the [contrast checker](tools-contrast-checker.md) to find any text that no longer passes.
+
+---
+
 <!-- Page: Overview/Scale Overriding (overview-scale-overriding.md) -->
 
 # Scale Overriding
@@ -477,6 +650,32 @@ Regardless of the reason, you can customize and override each scale like the fol
 
 You can override as many or as few variables or scales as your application needs.
 
+### OKLCH Scales
+
+With the [OKLCH build](overview-oklch-colors.md), each step sets its lightness and a chroma factor. The factor scales your `-c` value down at the light and dark ends of the scale.
+
+```css
+:root {
+  --op-color-primary-l: 70%;
+  --op-color-primary-c: 0.15;
+  --op-color-primary-h: 170;
+
+  /* Main Scale */
+  --op-color-primary-plus-two: light-dark(
+    oklch(67.7% calc(var(--op-color-primary-c) * 0.73) var(--op-color-primary-h)),
+    oklch(40.6% calc(var(--op-color-primary-c) * 0.72) var(--op-color-primary-h))
+  );
+
+  /* On Scale */
+  --op-color-primary-on-plus-two: light-dark(
+    oklch(26.1% calc(var(--op-color-primary-c) * 0.4) var(--op-color-primary-h)),
+    oklch(82.1% calc(var(--op-color-primary-c) * 0.39) var(--op-color-primary-h))
+  );
+}
+```
+
+See `core/tokens/oklch/scale_color_tokens.css` for the default value of every step.
+
 ---
 
 <!-- Page: Overview/Selective Imports (overview-selective-imports.md) -->
@@ -532,6 +731,13 @@ Or this:
 
 /* Components */
 @import 'components';
+```
+
+To use the [OKLCH color tokens](overview-oklch-colors.md), import `core/tokens/oklch` instead of `core/tokens`:
+
+```css
+/* Tokens */
+@import 'core/tokens/oklch';
 ```
 
 ## Dependencies
@@ -625,6 +831,21 @@ Your custom theme can change any tokens, including colors, radius, fonts, even r
 }
 ```
 
+If you use the [OKLCH build](overview-oklch-colors.md), set `-l`, `-c`, and `-h` instead, and write scale steps with `oklch()`:
+
+```css
+:root {
+  --op-color-primary-l: my-new-value;
+  --op-color-primary-c: my-new-value;
+  --op-color-primary-h: my-new-value;
+
+  --op-color-primary-plus-two: light-dark(
+    oklch(67.7% calc(var(--op-color-primary-c) * 0.73) var(--op-color-primary-h)),
+    oklch(40.6% calc(var(--op-color-primary-c) * 0.72) var(--op-color-primary-h))
+  );
+}
+```
+
 ## Dynamic Themes
 
 Your application can have multiple predefined themes which can be switched between by setting a data attribute on the root html element.
@@ -681,6 +902,10 @@ Dynamic themes also support both light and dark mode and can be manually control
 </html>
 ```
 
+## Checking Contrast
+
+After customizing your theme, check that text on every color scale step still passes WCAG AA with the [Contrast Checker](tools-contrast-checker.md).
+
 ---
 
 <!-- Page: Overview/Tokens (overview-tokens.md) -->
@@ -691,8 +916,11 @@ Dynamic themes also support both light and dark mode and can be manually control
 
 Tokens are defined in `src/core/tokens`
 
-- All core tokens are defined in `src/core/tokens/base_tokens.css`
+- All core tokens are defined in `src/core/tokens/shared_tokens.css`
+- Base color and shadow tokens are defined in `src/core/tokens/base_color_tokens.css`
 - Color scale tokens are defined in `src/core/tokens/scale_color_tokens.css`
+- `src/core/tokens/base_tokens.css` imports the core and base color tokens together
+- The [OKLCH build](overview-oklch-colors.md) defines its own `base_color_tokens.css` and `scale_color_tokens.css` in `src/core/tokens/oklch`, and shares `shared_tokens.css`
 
 There are also a few component specific tokens that are defined in their respective component file, but those are not intended to be global or used outside of that file.
 
@@ -843,7 +1071,7 @@ These tokens follow a structure like `--_prefix-component-name-sub-name-variant-
 
 # Animation
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Animation and Transition tokens can be used for element transitions or animations.
 
@@ -889,7 +1117,7 @@ animation: var(--op-animation-flash);
 
 # Border Radius
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Border radius tokens can be used to round corners on various elements.
 
@@ -919,7 +1147,7 @@ border-radius: var(--op-radius-small);
 
 # Border Stroke
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Border tokens can be used as box shadows to add borders to various elements. Box Shadows are used in order to provide border styling without affecting the sizing of elements.
 These can be composed with other box shadows such as [Shadow](tokens-shadow.md) to stack effects.
@@ -969,7 +1197,7 @@ Insetting the x and y borders is currently **not supported**. You can achieve th
 
 # Border Width
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Border width tokens can be used to define a border width or a box shadow width.
 
@@ -997,7 +1225,7 @@ box-shadow: 0 0 0 var(--op-border-width);
 
 # Breakpoint
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Breakpoint tokens are used to define common device sizes for use within media queries or max widths.
 
@@ -1057,7 +1285,7 @@ These token values can be applied in a media query to create responsive behavior
 
 # Basic Color
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_color_tokens.css)
 
 Basic color tokens can be used to define exact colors.
 
@@ -1089,7 +1317,7 @@ color: var(--op-color-white);
 
 # Border Color
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Border color tokens can be used to define the color of borders and box shadows.
 
@@ -1119,7 +1347,7 @@ box-shadow: var(--op-border-top) var(--op-color-border);
 
 Optics has five main color scales that provide all the color your application may need. These Consist of the `Primary` scale, the `Neutral` scale, and four Alert Color Scales, `Warning`, `Danger`, `Info`, and `Notice`.
 
-Each scale is a set of semantically named variables that use the same hue and saturation, but change the luminosity.
+Each scale is a set of semantically named variables that use the same hue and saturation (hue and chroma in the [OKLCH build](overview-oklch-colors.md)), but change the luminosity.
 
 We borrow from the photography concept of [Aperture f-stops](https://www.adobe.com/creativecloud/photography/discover/f-stop.html).
 
@@ -1144,6 +1372,23 @@ Here is an example of what these variables look like:
 --op-color-primary-on-plus-four-alt: light-dark(
   hsl(var(--op-color-primary-h) var(--op-color-primary-s) 4%),
   hsl(var(--op-color-primary-h) var(--op-color-primary-s) 44%)
+);
+```
+
+In the OKLCH build, each step sets its lightness and multiplies the color's chroma by a factor:
+
+```css
+--op-color-primary-plus-four: light-dark(
+  oklch(85.7% calc(var(--op-color-primary-c) * 0.31) var(--op-color-primary-h)),
+  oklch(35.3% calc(var(--op-color-primary-c) * 0.61) var(--op-color-primary-h))
+);
+--op-color-primary-on-plus-four: light-dark(
+  oklch(33.5% calc(var(--op-color-primary-c) * 0.57) var(--op-color-primary-h)),
+  oklch(82.1% calc(var(--op-color-primary-c) * 0.39) var(--op-color-primary-h))
+);
+--op-color-primary-on-plus-four-alt: light-dark(
+  oklch(13.8% calc(var(--op-color-primary-c) * 0.13) var(--op-color-primary-h)),
+  oklch(92.9% calc(var(--op-color-primary-c) * 0.15) var(--op-color-primary-h))
 );
 ```
 
@@ -1435,6 +1680,256 @@ Your application may need a new scale. To add one, use the following template. K
 }
 ```
 
+### OKLCH Template
+
+With the [OKLCH build](overview-oklch-colors.md), use this template instead. Its values are the default primary scale, so pick a `-c` and `-h` for your color, then adjust the steps as needed. Run the [Contrast Checker](tools-contrast-checker.md) to confirm the `on` colors still pass.
+
+```css
+:root {
+  /* {name}-color */
+
+  --op-color-{name}-l: new-value-l;
+  --op-color-{name}-c: new-value-c;
+  --op-color-{name}-h: new-value-h;
+
+  /* {name}-semantic-scale */
+
+  --op-color-{name}-original: oklch(var(--op-color-{name}-l) var(--op-color-{name}-c) var(--op-color-{name}-h));
+
+  /* Main Scale */
+  --op-color-{name}-plus-max: light-dark(
+    oklch(100% 0 var(--op-color-{name}-h)),
+    oklch(22.2% calc(var(--op-color-{name}-c) * 0.32) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-eight: light-dark(
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h)),
+    oklch(24.2% calc(var(--op-color-{name}-c) * 0.36) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-seven: light-dark(
+    oklch(96.4% calc(var(--op-color-{name}-c) * 0.07) var(--op-color-{name}-h)),
+    oklch(26.1% calc(var(--op-color-{name}-c) * 0.4) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-six: light-dark(
+    oklch(94.7% calc(var(--op-color-{name}-c) * 0.11) var(--op-color-{name}-h)),
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-five: light-dark(
+    oklch(91.1% calc(var(--op-color-{name}-c) * 0.19) var(--op-color-{name}-h)),
+    oklch(33.5% calc(var(--op-color-{name}-c) * 0.57) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-four: light-dark(
+    oklch(85.7% calc(var(--op-color-{name}-c) * 0.31) var(--op-color-{name}-h)),
+    oklch(35.3% calc(var(--op-color-{name}-c) * 0.61) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-three: light-dark(
+    oklch(73.1% calc(var(--op-color-{name}-c) * 0.6) var(--op-color-{name}-h)),
+    oklch(38% calc(var(--op-color-{name}-c) * 0.66) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-two: light-dark(
+    oklch(67.7% calc(var(--op-color-{name}-c) * 0.73) var(--op-color-{name}-h)),
+    oklch(40.6% calc(var(--op-color-{name}-c) * 0.72) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-plus-one: light-dark(
+    oklch(51.4% calc(var(--op-color-{name}-c) * 0.95) var(--op-color-{name}-h)),
+    oklch(43.1% calc(var(--op-color-{name}-c) * 0.77) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-base: light-dark(
+    oklch(47.3% calc(var(--op-color-{name}-c) * 0.86) var(--op-color-{name}-h)),
+    oklch(45.7% calc(var(--op-color-{name}-c) * 0.83) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-one: light-dark(
+    oklch(44% calc(var(--op-color-{name}-c) * 0.79) var(--op-color-{name}-h)),
+    oklch(47.3% calc(var(--op-color-{name}-c) * 0.86) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-two: light-dark(
+    oklch(40.6% calc(var(--op-color-{name}-c) * 0.72) var(--op-color-{name}-h)),
+    oklch(51.4% calc(var(--op-color-{name}-c) * 0.95) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-three: light-dark(
+    oklch(37.1% calc(var(--op-color-{name}-c) * 0.64) var(--op-color-{name}-h)),
+    oklch(53.9% calc(var(--op-color-{name}-c) * 1) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-four: light-dark(
+    oklch(33.5% calc(var(--op-color-{name}-c) * 0.57) var(--op-color-{name}-h)),
+    oklch(57.2% calc(var(--op-color-{name}-c) * 0.99) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-five: light-dark(
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h)),
+    oklch(67.7% calc(var(--op-color-{name}-c) * 0.73) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-six: light-dark(
+    oklch(26.1% calc(var(--op-color-{name}-c) * 0.4) var(--op-color-{name}-h)),
+    oklch(74.9% calc(var(--op-color-{name}-c) * 0.55) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-seven: light-dark(
+    oklch(18.1% calc(var(--op-color-{name}-c) * 0.22) var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-eight: light-dark(
+    oklch(13.8% calc(var(--op-color-{name}-c) * 0.13) var(--op-color-{name}-h)),
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-minus-max: light-dark(
+    oklch(0% 0 var(--op-color-{name}-h)),
+    oklch(100% 0 var(--op-color-{name}-h))
+  );
+
+  /* On Scale */
+  --op-color-{name}-on-plus-max: light-dark(
+    oklch(0% 0 var(--op-color-{name}-h)),
+    oklch(100% 0 var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-max-alt: light-dark(
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h)),
+    oklch(80.3% calc(var(--op-color-{name}-c) * 0.43) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-eight: light-dark(
+    oklch(13.8% calc(var(--op-color-{name}-c) * 0.13) var(--op-color-{name}-h)),
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-eight-alt: light-dark(
+    oklch(33.5% calc(var(--op-color-{name}-c) * 0.57) var(--op-color-{name}-h)),
+    oklch(73.1% calc(var(--op-color-{name}-c) * 0.6) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-seven: light-dark(
+    oklch(18.1% calc(var(--op-color-{name}-c) * 0.22) var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-seven-alt: light-dark(
+    oklch(37.1% calc(var(--op-color-{name}-c) * 0.64) var(--op-color-{name}-h)),
+    oklch(67.7% calc(var(--op-color-{name}-c) * 0.73) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-six: light-dark(
+    oklch(26.1% calc(var(--op-color-{name}-c) * 0.4) var(--op-color-{name}-h)),
+    oklch(74.9% calc(var(--op-color-{name}-c) * 0.55) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-six-alt: light-dark(
+    oklch(35.3% calc(var(--op-color-{name}-c) * 0.61) var(--op-color-{name}-h)),
+    oklch(96.4% calc(var(--op-color-{name}-c) * 0.07) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-five: light-dark(
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h)),
+    oklch(74.9% calc(var(--op-color-{name}-c) * 0.55) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-five-alt: light-dark(
+    oklch(47.3% calc(var(--op-color-{name}-c) * 0.86) var(--op-color-{name}-h)),
+    oklch(87.5% calc(var(--op-color-{name}-c) * 0.27) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-four: light-dark(
+    oklch(33.5% calc(var(--op-color-{name}-c) * 0.57) var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-four-alt: light-dark(
+    oklch(13.8% calc(var(--op-color-{name}-c) * 0.13) var(--op-color-{name}-h)),
+    oklch(92.9% calc(var(--op-color-{name}-c) * 0.15) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-three: light-dark(
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h)),
+    oklch(80.3% calc(var(--op-color-{name}-c) * 0.43) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-three-alt: light-dark(
+    oklch(20.2% calc(var(--op-color-{name}-c) * 0.27) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-two: light-dark(
+    oklch(26.1% calc(var(--op-color-{name}-c) * 0.4) var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-two-alt: light-dark(
+    oklch(16% calc(var(--op-color-{name}-c) * 0.18) var(--op-color-{name}-h)),
+    oklch(92.9% calc(var(--op-color-{name}-c) * 0.15) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-one: light-dark(
+    oklch(100% 0 var(--op-color-{name}-h)),
+    oklch(82.1% calc(var(--op-color-{name}-c) * 0.39) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-plus-one-alt: light-dark(
+    oklch(95.6% calc(var(--op-color-{name}-c) * 0.09) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-base: light-dark(
+    oklch(100% 0 var(--op-color-{name}-h)),
+    oklch(100% 0 var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-base-alt: light-dark(
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h)),
+    oklch(85.7% calc(var(--op-color-{name}-c) * 0.31) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-one: light-dark(
+    oklch(94.7% calc(var(--op-color-{name}-c) * 0.11) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-one-alt: light-dark(
+    oklch(83.9% calc(var(--op-color-{name}-c) * 0.35) var(--op-color-{name}-h)),
+    oklch(91.1% calc(var(--op-color-{name}-c) * 0.19) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-two: light-dark(
+    oklch(91.1% calc(var(--op-color-{name}-c) * 0.19) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-two-alt: light-dark(
+    oklch(80.3% calc(var(--op-color-{name}-c) * 0.43) var(--op-color-{name}-h)),
+    oklch(92.9% calc(var(--op-color-{name}-c) * 0.15) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-three: light-dark(
+    oklch(87.5% calc(var(--op-color-{name}-c) * 0.27) var(--op-color-{name}-h)),
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-three-alt: light-dark(
+    oklch(76.7% calc(var(--op-color-{name}-c) * 0.51) var(--op-color-{name}-h)),
+    oklch(96.4% calc(var(--op-color-{name}-c) * 0.07) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-four: light-dark(
+    oklch(85.7% calc(var(--op-color-{name}-c) * 0.31) var(--op-color-{name}-h)),
+    oklch(10.9% calc(var(--op-color-{name}-c) * 0.09) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-four-alt: light-dark(
+    oklch(74.9% calc(var(--op-color-{name}-c) * 0.55) var(--op-color-{name}-h)),
+    oklch(10.9% calc(var(--op-color-{name}-c) * 0.09) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-five: light-dark(
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h)),
+    oklch(10.9% calc(var(--op-color-{name}-c) * 0.09) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-five-alt: light-dark(
+    oklch(80.3% calc(var(--op-color-{name}-c) * 0.43) var(--op-color-{name}-h)),
+    oklch(29.9% calc(var(--op-color-{name}-c) * 0.49) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-six: light-dark(
+    oklch(94.7% calc(var(--op-color-{name}-c) * 0.11) var(--op-color-{name}-h)),
+    oklch(18.1% calc(var(--op-color-{name}-c) * 0.22) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-six-alt: light-dark(
+    oklch(83.9% calc(var(--op-color-{name}-c) * 0.35) var(--op-color-{name}-h)),
+    oklch(35.3% calc(var(--op-color-{name}-c) * 0.61) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-seven: light-dark(
+    oklch(96.4% calc(var(--op-color-{name}-c) * 0.07) var(--op-color-{name}-h)),
+    oklch(18.1% calc(var(--op-color-{name}-c) * 0.22) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-seven-alt: light-dark(
+    oklch(85.7% calc(var(--op-color-{name}-c) * 0.31) var(--op-color-{name}-h)),
+    oklch(42.3% calc(var(--op-color-{name}-c) * 0.76) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-eight: light-dark(
+    oklch(98.2% calc(var(--op-color-{name}-c) * 0.04) var(--op-color-{name}-h)),
+    oklch(13.8% calc(var(--op-color-{name}-c) * 0.13) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-eight-alt: light-dark(
+    oklch(87.5% calc(var(--op-color-{name}-c) * 0.27) var(--op-color-{name}-h)),
+    oklch(45.7% calc(var(--op-color-{name}-c) * 0.83) var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-max: light-dark(
+    oklch(100% 0 var(--op-color-{name}-h)),
+    oklch(0% 0 var(--op-color-{name}-h))
+  );
+  --op-color-{name}-on-minus-max-alt: light-dark(
+    oklch(89.3% calc(var(--op-color-{name}-c) * 0.23) var(--op-color-{name}-h)),
+    oklch(45.7% calc(var(--op-color-{name}-c) * 0.83) var(--op-color-{name}-h))
+  );
+}
+```
+
 ---
 
 <!-- Page: Tokens/Color/Color with Alpha (tokens-color-color-with-alpha.md) -->
@@ -1461,6 +1956,13 @@ One option for adding alpha support is to define alpha tokens that can sit along
 --op-color-primary-base-alpha-40: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 40% / 40%);
 --op-color-primary-on-base-alpha-40: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 100% / 40%);
 --op-color-primary-on-base-alt-alpha-40: hsl(var(--op-color-primary-h) var(--op-color-primary-s) 88% / 40%);
+```
+
+With the [OKLCH build](overview-oklch-colors.md), copy the lightness and chroma factor from the matching step, then add the alpha:
+
+```css
+/* Matches the light mode value of --op-color-primary-base */
+--op-color-primary-base-alpha-40: oklch(47.3% calc(var(--op-color-primary-c) * 0.86) var(--op-color-primary-h) / 40%);
 ```
 
 The downside of this approach is that it can be difficult to manage and can lead to a lot of tokens. It also requires a lot of manual work to create the tokens and keep them in sync with the color scale.
@@ -1503,7 +2005,7 @@ Another option is to use the `color-mix` (see [color-mix()](https://developer.mo
 
 # Encoded Image
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Encoded Image tokens are primarily used to create the dropdown arrow on `<select>` elements using the `.form-control` class.
 
@@ -1527,9 +2029,9 @@ background: var(--op-encoded-images-dropdown-arrow) center right no-repeat;
 
 | Token | Value |
 | --- | --- |
+| `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |
+| `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |
 | `--op-encoded-images-dropdown-arrow-width` | `calc( 1.2 * var(--op-space-scale-unit) )` |
-| `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |
-| `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |
 | `--op-encoded-images-dropdown-arrow` | `url('data:image/svg+xml` |
 
 ---
@@ -1598,7 +2100,7 @@ min-block-size: var(--op-input-height-medium);
 
 # Opacity
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Opacity tokens can be used to create a faded or disabled effect on any element.
 
@@ -1628,7 +2130,7 @@ opacity: var(--op-opacity-full);
 
 # Shadow
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_color_tokens.css)
 
 Shadow tokens can be used to create an elevation effect on any element. There are also [Card classes](components-card.md#shadow) to create an elevated card effect.
 
@@ -1678,7 +2180,7 @@ box-shadow: var(--op-shadow-x-large);
 
 # Size
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 The Size token enables creating scalable widths (inline-size) and heights (block-size) for your application. It is meant to be used in a `calc` expression with whole numbers. This ensures any sizes you create will be a multiple of 4px.
 
@@ -1706,7 +2208,7 @@ The size unit can be overridden if you want to change the scale or size basis. S
 
 # Spacing Size
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 The Spacing Size tokens enable creating scalable spaces for your application. They can be used for margin, padding, gap, and anything else that is intended for spacing.
 
@@ -2010,7 +2512,7 @@ Not all fonts have the same baseline line height. This can cause alignment issue
 
 # Z-Index
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Z-Index tokens can be used to define the page z-index of an element.
 
@@ -10349,6 +10851,8 @@ Third is to remove the default Material Symbols Outlined icons and handle icons 
 @import '@rolemodel/optics/dist/css/optics+no_icons';
 ```
 
+Each of these imports has an [OKLCH](overview-oklch-colors.md) version. Replace `optics` with `optics-oklch`, such as `optics-oklch+phosphor_icons` or `optics-oklch+no_icons`.
+
 ### Material Symbols Outline Variable Icons
 
 Optics ships with a simplified version of [Material Symbols Outlined](https://fonts.google.com/icons?icon.style=Outlined). It only includes the font weight variable aspect of the icon library which means you won't be able to utilize the fill, or emphasis properties.
@@ -16435,3 +16939,50 @@ media at a consistent aspect ratio regardless of the source image dimensions, an
   </div>
 </div>
 ```
+
+---
+
+<!-- Page: Tools/Contrast Checker (tools-contrast-checker.md) -->
+
+# Contrast Checker
+
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/tools/check-contrast.cjs)
+
+Optics ships a contrast checker you can run in CI after customizing your theme.
+It checks every color scale step against its `on` and `on-alt` text colors, in light and dark mode, and fails if any pair is below WCAG AA (4.5:1).
+
+It works with both the HSL build (`optics.css`) and the [OKLCH build](overview-oklch-colors.md) (`optics-oklch.css`), and it has no dependencies.
+
+## Usage
+
+The checker is installed with Optics as the `optics-check-contrast` command. Add a script to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "check-contrast": "optics-check-contrast app/assets/stylesheets/theme.css"
+  }
+}
+```
+
+Then run `yarn check-contrast` (or `npm run check-contrast`) in CI.
+
+Pass your theme files or your compiled CSS. Your `--op-*` values are applied on top of the Optics tokens, and the last value of each token wins.
+
+## Options
+
+- `--hsl` or `--oklch`: the build to check against. By default it is detected from your files (`-s` or `hsl()` means HSL, `-c` or `oklch()` means OKLCH).
+- `--min=4.5`: the ratio `on` text needs.
+- `--alt-min=4.5`: the ratio `on-alt` text needs. Use `--alt-min=3` to allow AA large text.
+- `--report`: list every pair and its ratio, without failing.
+
+It exits with `1` if any pair fails, and `2` if it can't read your theme.
+
+## Limits
+
+- Selectors are ignored, so check each [dynamic theme](overview-themes.md#dynamic-themes) file on its own.
+- Colors outside sRGB are clipped, as browsers do on most screens. OKLCH colors at 0% or 100% lightness are black or white, whatever their chroma.
+- A checked color that is set inside `@media`, `@supports`, `@container`, or `@layer`, or that uses a variable set there, stops the check with exit code `2`. Conditions change when it applies, and layers change which value wins. Set dark mode colors with `light-dark()` instead. Other variables, such as fonts, are fine there.
+- `@import` rules are followed, relative to the importing file. Imports of Optics itself and of remote URLs (such as fonts) are skipped. An import that can't be read or found stops the check with exit code `2`, so pass your compiled CSS if your imports need a bundler to resolve.
+- Translucent colors, and `calc()` that mixes units (such as `calc(50% + 5%)`), can't be measured, so the check stops with exit code `2`.
+- Only the scale steps and their `on` colors are checked, not your own color pairs.

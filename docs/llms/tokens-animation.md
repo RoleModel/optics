@@ -1,6 +1,6 @@
 # Animation
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Animation and Transition tokens can be used for element transitions or animations.
 

@@ -1,6 +1,6 @@
 # Breakpoint
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Breakpoint tokens are used to define common device sizes for use within media queries or max widths.
 

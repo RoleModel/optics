@@ -51,6 +51,13 @@ Or this:
 @import 'components';
 ```
 
+To use the [OKLCH color tokens](overview-oklch-colors.md), import `core/tokens/oklch` instead of `core/tokens`:
+
+```css
+/* Tokens */
+@import 'core/tokens/oklch';
+```
+
 ## Dependencies
 
 Some components rely on other components for their usage. Each document page describes these dependencies. Additionally, here is a visualization of all dependencies:

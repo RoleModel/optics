@@ -1,6 +1,6 @@
 # Z-Index
 
-[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/base_tokens.css)
+[Source Code](https://github.com/RoleModel/optics/blob/main/src/core/tokens/shared_tokens.css)
 
 Z-Index tokens can be used to define the page z-index of an element.
 
