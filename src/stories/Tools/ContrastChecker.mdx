@@ -44,6 +44,7 @@ It exits with `1` if any pair fails, and `2` if it can't read your theme.
 ## Limits
 
 - Selectors are ignored, so check each [dynamic theme](?path=/docs/overview-themes--docs#dynamic-themes) file on its own.
-- Colors outside sRGB are clipped, as browsers do on most screens.
+- Colors outside sRGB are clipped, as browsers do on most screens. OKLCH colors at 0% or 100% lightness are black or white, whatever their chroma.
+- `--op-color-*` tokens inside `@media`, `@supports`, or `@container` stop the check with exit code `2`, because they apply only under that condition. Set dark mode colors with `light-dark()` instead.
 - Translucent colors, and `calc()` that mixes units (such as `calc(50% + 5%)`), can't be measured, so the check stops with exit code `2`.
 - Only the scale steps and their `on` colors are checked, not your own color pairs.

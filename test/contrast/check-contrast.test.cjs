@@ -122,6 +122,18 @@ const CASES = [
     prints: 'pass   6.62  light  --op-color-primary-on-base',
   },
   {
+    name: 'stops on a color token inside @media',
+    css: ':root { --op-color-primary-on-base: #fff; --op-color-primary-c: 0.1; }\n@media (prefers-color-scheme: dark) { :root { --op-color-primary-on-base: #000; } }',
+    error:
+      "Can't check --op-color-primary-on-base inside @media (prefers-color-scheme: dark). Set mode colors with light-dark(), or check that theme in its own file.",
+  },
+  {
+    name: 'allows other tokens inside @media',
+    css: ':root { --op-color-primary-c: 0.12; }\n@media (prefers-color-scheme: dark) { :root { --op-font-family: serif; } }',
+    exit: 0,
+    prints: 'Optics oklch contrast: 456/456 pairs pass (on >= 4.5, on-alt >= 4.5)',
+  },
+  {
     name: 'uses nested var() fallbacks',
     css: onBase('var(--nope, var(--also-nope, oklch(0.1 0 0)))'),
     args: ['--report'],
@@ -177,6 +189,25 @@ const CASES = [
     args: ['--report'],
     exit: 0,
     prints: 'FAIL   2.50  light  --op-color-primary-on-base',
+  },
+  {
+    name: 'reads OKLCH 100% lightness as white, whatever the chroma',
+    css: ':root { --op-color-primary-base: #666; --op-color-primary-on-base: oklch(100% 0.2 0); --op-color-primary-c: 0.1; }',
+    args: ['--report'],
+    exit: 0,
+    prints: 'pass   5.74  light  --op-color-primary-on-base',
+  },
+  {
+    name: 'reads OKLCH 0% lightness as black, whatever the chroma',
+    css: ':root { --op-color-primary-base: #000; --op-color-primary-on-base: oklch(0% 1 90); --op-color-primary-c: 0.1; }',
+    args: ['--report'],
+    exit: 0,
+    prints: 'FAIL   1.00  light  --op-color-primary-on-base',
+  },
+  {
+    name: 'stops on an OKLCH endpoint with a channel it cannot read',
+    css: onBase('oklch(100% nope 0)'),
+    error: "Can't measure --op-color-primary-on-base (light) against --op-color-primary-base",
   },
   {
     name: 'clamps out-of-range channels',

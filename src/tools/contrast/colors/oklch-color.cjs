@@ -13,6 +13,13 @@ class OklchColor extends FunctionColor {
     const chroma = Math.max(0, this.fraction(1, FULL_CHROMA))
     const hue = (this.hue(2) * Math.PI) / 180
 
+    // CSS gamut mapping draws 0% lightness as black and 100% as white, whatever the chroma and hue.
+    // Only when they are numbers, so an unresolved channel still stops the check as unmeasurable.
+    if (Number.isFinite(chroma) && Number.isFinite(hue)) {
+      if (lightness === 0) return [0, 0, 0]
+      if (lightness === 1) return [1, 1, 1]
+    }
+
     const a = chroma * Math.cos(hue)
     const b = chroma * Math.sin(hue)
     const l = (lightness + 0.3963377774 * a + 0.2158037573 * b) ** 3
