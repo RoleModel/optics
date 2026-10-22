@@ -1,18 +1,19 @@
 #!/usr/bin/env node
 /**
  * Checks WCAG 2.1 contrast between every Optics scale step and its `on` text
- * colors, in light and dark mode, for your theme:
+ * colors, in light and dark mode (or just one, with --mode), for your theme:
  *
  *   --op-color-primary-plus-five  vs  --op-color-primary-on-plus-five      (needs --min)
  *   --op-color-primary-plus-five  vs  --op-color-primary-on-plus-five-alt  (needs --alt-min)
  *
  * Usage:
- *   optics-check-contrast [files...] [--hsl | --oklch] [--min=4.5] [--alt-min=4.5] [--report]
+ *   optics-check-contrast [files...] [--hsl | --oklch] [--mode=light | --mode=dark] [--min=4.5] [--alt-min=4.5] [--report]
  *
  *   files      CSS with your --op-* overrides: theme files, or your compiled CSS bundle.
  *              They are applied on top of the Optics tokens, the last value of each token wins.
  *   --hsl      Check against the HSL tokens (optics.css). Detected from -s / hsl() in your files.
  *   --oklch    Check against the OKLCH tokens (optics-oklch.css). Detected from -c / oklch().
+ *   --mode     Check only light or dark mode. Both are checked by default.
  *   --report   List every pair, and don't fail.
  *
  * Tokens are read without their selectors, so overrides scoped to a class or

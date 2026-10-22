@@ -1,9 +1,10 @@
 const CheckError = require('./check-error.cjs')
+const ThemedColor = require('./colors/themed-color.cjs')
 
 const DEFAULT_MIN = 4.5
 const FLAG = /^--([a-z-]+)(?:=(.*))?$/
 
-// The command-line arguments: optics-check-contrast [files...] [--hsl | --oklch] [--min=4.5] [--alt-min=4.5] [--report]
+// The command-line arguments: optics-check-contrast [files...] [--hsl | --oklch] [--mode=light | --mode=dark] [--min=4.5] [--alt-min=4.5] [--report]
 class ToolOptions {
   static parse(args) {
     const flags = {}
@@ -19,6 +20,7 @@ class ToolOptions {
   constructor(files, flags) {
     this.files = files
     this.buildName = forcedBuildName(flags)
+    this.mode = mode(flags.mode)
     this.min = threshold(flags.min)
     this.altMin = threshold(flags['alt-min'])
     this.report = Boolean(flags.report)
@@ -29,6 +31,11 @@ function forcedBuildName(flags) {
   if (flags.hsl) return 'hsl'
   if (flags.oklch) return 'oklch'
   return undefined
+}
+
+function mode(value) {
+  if (value === undefined || ThemedColor.MODES.includes(value)) return value
+  throw new CheckError('--mode must be light or dark')
 }
 
 function threshold(value) {

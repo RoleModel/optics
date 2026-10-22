@@ -17,9 +17,11 @@ const AMBIGUOUS = 'Could not tell if your theme is HSL or OKLCH. Pass --hsl or -
 const onBase = (color, channel = '--op-color-primary-c: 0.1;') =>
   `:root { --op-color-primary-on-base: ${color}; ${channel} }`
 const HSL_CHANNEL = '--op-color-primary-s: 1%;'
+const DARK_ONLY_FAILURE = ':root { --op-color-primary-h: 60; --op-color-primary-c: 0.2; --op-color-primary-l: 0.9; }'
 
 // Each case gives `css` (theme files to pass, as theme-0.css and on), `files` (other files it can @import)
-// and `args`, then either the `error` it must stop with (exit 2), or the `exit` code and the lines it must print.
+// and `args`, then either the `error` it must stop with (exit 2), or the `exit` code, the lines it must print,
+// and the lines it `omits`.
 const CASES = [
   // Results and flags
   {
@@ -47,10 +49,41 @@ const CASES = [
   },
   {
     name: 'fails a pair only in dark mode',
-    css: ':root { --op-color-primary-h: 60; --op-color-primary-c: 0.2; --op-color-primary-l: 0.9; }',
+    css: DARK_ONLY_FAILURE,
     exit: 1,
     prints: '  --op-color-primary-on-minus-four (dark): 4.40 < 4.5',
   },
+  {
+    name: 'checks only light mode with --mode=light',
+    css: DARK_ONLY_FAILURE,
+    args: ['--mode=light'],
+    exit: 0,
+    prints: 'Optics oklch contrast (light): 228/228 pairs pass (on >= 4.5, on-alt >= 4.5)',
+  },
+  {
+    name: 'checks only dark mode with --mode=dark',
+    css: DARK_ONLY_FAILURE,
+    args: ['--mode=dark'],
+    exit: 1,
+    prints: [
+      'Optics oklch contrast (dark): 226/228 pairs pass (on >= 4.5, on-alt >= 4.5)',
+      '  --op-color-primary-on-minus-four (dark): 4.40 < 4.5',
+    ],
+  },
+  {
+    name: 'lists only the chosen mode with --mode and --report',
+    css: OKLCH_THEME,
+    args: ['--mode=dark', '--report'],
+    exit: 0,
+    prints: 'FAIL   4.26  dark   --op-color-primary-on-plus-one',
+    omits: 'pass   5.98  light  --op-color-primary-on-base',
+  },
+  ...['--mode', '--mode=', '--mode=night'].map((flag) => ({
+    name: `rejects ${flag}`,
+    css: OKLCH_THEME,
+    args: [flag],
+    error: '--mode must be light or dark',
+  })),
   {
     name: 'lists every pair with --report, and does not fail',
     css: OKLCH_THEME,
@@ -340,7 +373,7 @@ describe('optics-check-contrast', { concurrency: true }, () => {
 
   after(() => fs.rmSync(tempDir, { recursive: true, force: true }))
 
-  CASES.forEach(({ name, css = [], files = {}, args = [], error, exit = 2, prints = [] }, index) => {
+  CASES.forEach(({ name, css = [], files = {}, args = [], error, exit = 2, prints = [], omits = [] }, index) => {
     test(name, () => {
       const dir = path.join(tempDir, 'themes', `case-${index}`)
       fs.mkdirSync(dir)
@@ -360,6 +393,7 @@ describe('optics-check-contrast', { concurrency: true }, () => {
       assert.strictEqual(status, exit, output)
       for (const line of error ? [`optics-check-contrast: ${error}`] : [prints].flat())
         assert.ok(lines.includes(line), `Missing line: ${line}\n\n${output}`)
+      for (const line of [omits].flat()) assert.ok(!lines.includes(line), `Unexpected line: ${line}\n\n${output}`)
     })
   })
 })
