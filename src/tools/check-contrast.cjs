@@ -25,8 +25,8 @@ const fs = require('node:fs')
 const path = require('node:path')
 
 const { files, flags } = parseArgs(process.argv.slice(2))
-const min = Number(flags.min ?? 4.5)
-const altMin = Number(flags['alt-min'] ?? 4.5)
+const min = threshold(flags.min)
+const altMin = threshold(flags['alt-min'])
 // A NaN threshold would make every ratio < min check false, so every pair would pass.
 if (!Number.isFinite(min) || !Number.isFinite(altMin)) exitWithError('--min and --alt-min must be numbers, like 4.5')
 
@@ -76,6 +76,12 @@ console.log(
 if (!flags.report && failures.length) {
   for (const { text, mode, ratio, min } of failures) console.log(`  ${text} (${mode}): ${ratio.toFixed(2)} < ${min}`)
   process.exit(1)
+}
+
+// A bare --min (true) or empty --min= ('') would become 1 or 0 with Number(), so require a numeric string.
+function threshold(value) {
+  if (value === undefined) return 4.5
+  return typeof value === 'string' && value.trim() !== '' ? Number(value) : NaN
 }
 
 function parseArgs(args) {
