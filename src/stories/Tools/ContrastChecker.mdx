@@ -34,10 +34,11 @@ Pass your theme files or your compiled CSS. Your `--op-*` values are applied on 
 
 ## Options
 
-- `--hsl` or `--oklch`: the build to check against. By default it is detected from your files (`-s` or `hsl()` means HSL, `-c` or `oklch()` means OKLCH).
-- `--min=4.5`: the ratio `on` text needs.
-- `--alt-min=4.5`: the ratio `on-alt` text needs. Use `--alt-min=3` to allow AA large text.
-- `--report`: list every pair and its ratio, without failing.
+- `--hsl` or `--oklch`: the build to check against. Default: detected from your files (`-s` or `hsl()` means HSL, `-c` or `oklch()` means OKLCH).
+- `--mode=light` or `--mode=dark`: check only one color mode. Use it if your app forces one mode, such as with `data-theme-mode="light"`. Default: both modes.
+- `--min`: the ratio `on` text needs. Default: `4.5`.
+- `--alt-min`: the ratio `on-alt` text needs. Use `--alt-min=3` to allow AA large text. Default: `4.5`.
+- `--report`: list every pair and its ratio, without failing. Default: off, so only failures are listed.
 
 It exits with `1` if any pair fails, and `2` if it can't read your theme.
 
