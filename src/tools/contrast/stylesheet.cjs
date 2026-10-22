@@ -6,11 +6,10 @@ const { findClosingParen } = require('./css-syntax.cjs')
 // All custom properties, not just --op-*, so theme vars like var(--brand-hue) resolve.
 const DECLARATION = /(--[\w-]+)\s*:\s*([^;}]*)/g
 const IMPORTANT = /\s*!\s*important$/i
-const CONDITIONAL_RULE = /^@(media|supports|container)\b/i
-// @import 'file.css' conditions; or @import url(file.css) conditions;
-const IMPORT = /@import\s+(?:url\(\s*)?(['"]?)([^'")\s;]+)\1\s*\)?([^;]*);/gi
-// Optics itself is already loaded, and a remote URL (http:, data:) is usually a font, not a theme.
-const SKIPPED_IMPORT = /^[a-z][a-z0-9+.-]*:|(^|\/)@rolemodel\/optics(\/|@|$)/i
+// Blocks that change whether or how much a declaration applies, which the cascade here doesn't follow.
+const SCOPED_RULE = /^@(media|supports|container|layer)\b/i
+// Optics itself is already loaded, and a remote URL (https:, data:, or //host) is usually a font, not a theme.
+const SKIPPED_IMPORT = /^(?:[a-z][a-z0-9+.-]*:|\/\/)|(^|\/)@rolemodel\/optics(\/|@|$)/i
 
 // The text of one or more CSS files, with their imports and without comments. Selectors are ignored.
 class Stylesheet {
@@ -36,20 +35,20 @@ class Stylesheet {
     return pattern.test(this.#css)
   }
 
-  // Every custom property declaration, in source order, with duplicates. `condition` is the innermost
-  // @media, @supports or @container rule around it, if any.
+  // Every custom property declaration, in source order, with duplicates. `rule` is the innermost
+  // @media, @supports, @container or @layer rule around it, if any.
   *declarations() {
-    const conditionalBlocks = this.#conditionalBlocks()
+    const scopedBlocks = this.#scopedBlocks()
     for (const match of this.#css.matchAll(DECLARATION)) {
       const [, name, rawValue] = match
-      const block = conditionalBlocks.find(({ start, end }) => match.index > start && match.index < end)
+      const block = scopedBlocks.find(({ start, end }) => match.index > start && match.index < end)
       const value = rawValue.trim()
-      yield { name, value: value.replace(IMPORTANT, ''), important: IMPORTANT.test(value), condition: block?.rule }
+      yield { name, value: value.replace(IMPORTANT, ''), important: IMPORTANT.test(value), rule: block?.rule }
     }
   }
 
-  // The start and end of each conditional block, innermost first, with its rule, like "@media (prefers-color-scheme: dark)".
-  #conditionalBlocks() {
+  // The start and end of each scoped block, innermost first, with its rule, like "@media (prefers-color-scheme: dark)".
+  #scopedBlocks() {
     const blocks = []
     const open = []
     let ruleStart = 0
@@ -57,7 +56,7 @@ class Stylesheet {
       const char = this.#css[index]
       if (char === '{') {
         const rule = this.#css.slice(ruleStart, index).trim()
-        open.push(CONDITIONAL_RULE.test(rule) ? { rule, start: index } : undefined)
+        open.push(SCOPED_RULE.test(rule) ? { rule, start: index } : undefined)
       } else if (char === '}') {
         const block = open.pop()
         if (block) blocks.push({ ...block, end: index })
@@ -71,36 +70,101 @@ class Stylesheet {
 }
 
 // Replaces each @import with the imported file, found relative to the importing file, as CSS does.
-// An import that can't be found stops the check, because the theme would be checked without its tokens.
+// An import that can't be read or found stops the check, because the theme would be checked without its tokens.
 function readWithImports(file, chain) {
-  return stripComments(fs.readFileSync(file, 'utf8')).replace(IMPORT, (rule, quote, url, conditions) => {
-    if (SKIPPED_IMPORT.test(url)) return ''
-
-    const imported = [url, `${url}.css`]
-      .map((candidate) => path.resolve(path.dirname(file), candidate))
-      .find((candidate) => fs.existsSync(candidate) && fs.statSync(candidate).isFile())
-    if (!imported)
-      throw new CheckError(
-        `Can't find @import '${url}' in ${path.relative('.', file)}. Fix the path, or pass your compiled CSS instead.`
-      )
-    // CSS skips an import that would loop back to a file already being read.
-    if (chain.includes(imported)) return ''
-    return withConditions(readWithImports(imported, [...chain, imported]), conditions.trim())
-  })
+  const css = stripComments(fs.readFileSync(file, 'utf8'))
+  const where = path.relative('.', file)
+  let output = ''
+  let index = 0
+  for (const { index: start } of css.matchAll(/@import\b/gi)) {
+    if (start < index) continue
+    const statement = parseImport(css, start)
+    if (!statement) throw new CheckError(`Can't read an @import in ${where}. Pass your compiled CSS instead.`)
+    output += css.slice(index, start) + importedCss(statement, file, where, chain)
+    index = statement.end
+  }
+  return output + css.slice(index)
 }
 
-// Wraps imported CSS in the import's supports() and media conditions, so its tokens count as conditional.
+function importedCss({ url, conditions }, file, where, chain) {
+  if (SKIPPED_IMPORT.test(url)) return ''
+
+  const imported = [url, `${url}.css`]
+    .map((candidate) => path.resolve(path.dirname(file), candidate))
+    .find((candidate) => fs.existsSync(candidate) && fs.statSync(candidate).isFile())
+  if (!imported)
+    throw new CheckError(`Can't find @import '${url}' in ${where}. Fix the path, or pass your compiled CSS instead.`)
+  // CSS skips an import that would loop back to a file already being read.
+  if (chain.includes(imported)) return ''
+  return withConditions(readWithImports(imported, [...chain, imported]), conditions)
+}
+
+// Reads `@import "url" conditions;`, `@import 'url' ...;` or `@import url(...) ...;` starting at `start`.
+// Quoted URLs can hold spaces and semicolons. Returns undefined when the statement can't be read.
+function parseImport(css, start) {
+  let index = start + '@import'.length
+  const skipSpaces = () => {
+    while (/\s/.test(css[index] ?? '')) index++
+  }
+
+  skipSpaces()
+  const isUrlFunction = css.slice(index, index + 4).toLowerCase() === 'url('
+  if (isUrlFunction) {
+    index += 4
+    skipSpaces()
+  }
+
+  let url
+  const quote = css[index]
+  if (quote === '"' || quote === "'") {
+    const close = css.indexOf(quote, index + 1)
+    if (close === -1) return undefined
+    url = css.slice(index + 1, close)
+    index = close + 1
+  } else if (isUrlFunction) {
+    const close = css.indexOf(')', index)
+    if (close === -1) return undefined
+    url = css.slice(index, close).trim()
+    index = close
+  } else {
+    return undefined
+  }
+
+  if (isUrlFunction) {
+    skipSpaces()
+    if (css[index] !== ')') return undefined
+    index++
+  }
+
+  // The last statement in a file may end without a semicolon.
+  const semicolon = css.indexOf(';', index)
+  const end = semicolon === -1 ? css.length : semicolon
+  return { url, conditions: css.slice(index, end).trim(), end: end + 1 }
+}
+
+// Wraps imported CSS in the import's media, supports() and layer() parts, so its tokens count as scoped.
 function withConditions(css, conditions) {
-  let media = conditions.replace(/^layer(\([^)]*\))?\s*/i, '')
-  let wrapped = css
-  if (/^supports\(/i.test(media)) {
-    const end = findClosingParen(media, 'supports'.length)
+  let rest = conditions
+  let layer
+  const layerMatch = rest.match(/^layer(?:\(([^)]*)\))?\s*/i)
+  if (layerMatch) {
+    layer = layerMatch[1]?.trim() ?? ''
+    rest = rest.slice(layerMatch[0].length)
+  }
+
+  let supports
+  if (/^supports\(/i.test(rest)) {
+    const end = findClosingParen(rest, 'supports'.length)
     if (end !== -1) {
-      wrapped = `@supports (${media.slice('supports('.length, end)}) {\n${wrapped}\n}`
-      media = media.slice(end + 1).trim()
+      supports = rest.slice('supports('.length, end)
+      rest = rest.slice(end + 1).trim()
     }
   }
-  return media ? `@media ${media} {\n${wrapped}\n}` : wrapped
+
+  let wrapped = css
+  if (layer !== undefined) wrapped = `@layer ${layer} {\n${wrapped}\n}`
+  if (supports !== undefined) wrapped = `@supports (${supports}) {\n${wrapped}\n}`
+  return rest ? `@media ${rest} {\n${wrapped}\n}` : wrapped
 }
 
 function stripComments(css) {

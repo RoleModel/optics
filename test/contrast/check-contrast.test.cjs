@@ -149,13 +149,32 @@ const CASES = [
     prints: 'FAIL   1.00  light  --op-color-primary-on-base',
   },
   {
+    name: 'follows a quoted @import with spaces in the path',
+    css: "@import './brand colors.css';\n:root { --op-color-primary-c: 0.1; }",
+    files: { 'brand colors.css': ':root { --op-color-primary-base: #fff; --op-color-primary-on-base: #fff; }' },
+    args: ['--report'],
+    exit: 0,
+    prints: 'FAIL   1.00  light  --op-color-primary-on-base',
+  },
+  {
+    name: 'stops on an @import it cannot read',
+    css: '@import brand.css;',
+    error: "Can't read an @import in theme-0.css. Pass your compiled CSS instead.",
+  },
+  {
     name: 'stops on an @import it cannot find',
     css: "@import 'missing.css';",
     error: "Can't find @import 'missing.css' in theme-0.css. Fix the path, or pass your compiled CSS instead.",
   },
   {
     name: 'skips an @import of Optics or a remote URL',
-    css: "@import '@rolemodel/optics';\n@import url('https://fonts.googleapis.com/css2?family=Inter');\n:root { --op-color-primary-c: 0.12; }",
+    css: [
+      "@import '@rolemodel/optics';",
+      "@import url('https://fonts.googleapis.com/css2?family=Inter');",
+      "@import url('//fonts.googleapis.com/css2?family=Inter');",
+      '@import "https://fonts.googleapis.com/css2?family=Noto+Sans:wght@0,100;1,100";',
+      ':root { --op-color-primary-c: 0.12; }',
+    ].join('\n'),
     exit: 0,
     prints: 'Optics oklch contrast: 456/456 pairs pass (on >= 4.5, on-alt >= 4.5)',
   },
@@ -176,6 +195,23 @@ const CASES = [
     },
     error:
       "Can't check --op-color-primary-on-base: it is set inside @media (prefers-color-scheme: dark). Set mode colors with light-dark(), or check that theme in its own file.",
+  },
+  {
+    name: 'stops on a color set inside @layer',
+    css: ':root { --op-color-primary-base: #fff; --op-color-primary-on-base: #fff; --op-color-primary-c: 0.1; }\n@layer theme { :root { --op-color-primary-on-base: #000; } }',
+    error:
+      "Can't check --op-color-primary-on-base: it is set inside @layer theme. Layers change which value wins, so move color tokens out of @layer.",
+  },
+  {
+    name: 'stops on a color from an @import with a layer',
+    css: "@import 'light.css';\n@import 'text.css' layer(theme);",
+    files: {
+      'light.css':
+        ':root { --op-color-primary-base: #fff; --op-color-primary-on-base: #fff; --op-color-primary-c: 0.1; }',
+      'text.css': ':root { --op-color-primary-on-base: #000; }',
+    },
+    error:
+      "Can't check --op-color-primary-on-base: it is set inside @layer theme. Layers change which value wins, so move color tokens out of @layer.",
   },
   {
     name: 'uses nested var() fallbacks',
