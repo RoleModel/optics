@@ -9,12 +9,22 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Theme Token Changes
 
 - Add an opt-in OKLCH color build by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/368
-  - A new `optics-oklch.css` build (and one per icon set) defines every color token with `oklch()`. The HSL build is unchanged, and `core/tokens/base_tokens.css` still includes the color tokens for apps that import it directly. Apps can run `optics-check-contrast` in CI to check their theme's text contrast.
+  - A new `optics-oklch.css` build (and one per icon set, such as `optics-oklch+lucide_icons.css`) defines every color token with `oklch()`. To switch, replace `optics` with `optics-oklch` in your import. The HSL build stays the default and is unchanged, and `core/tokens/base_tokens.css` still includes the color tokens for apps that import it directly. Apps can also run the new `optics-check-contrast` command in CI to check their theme's text contrast. See [OKLCH Colors](https://docs.optics.rolemodel.design/?path=/docs/overview-oklch-colors--docs) and [Contrast Checker](https://docs.optics.rolemodel.design/?path=/docs/tools-contrast-checker--docs)
 
 ### Dependencies
 
 - Update transitive dependencies to resolve Dependabot alerts by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/367
   - Development dependencies were updated in the lockfile. It does not affect the shipped CSS.
+
+### Repository Changes
+
+- Add an opt-in OKLCH color build by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/368
+  - Added tests for the contrast checker, which `yarn test` and the Linting CI workflow now run. The docs build now creates the llms docs before Storybook.
+
+### Documentation Changes
+
+- Add an opt-in OKLCH color build by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/368
+  - Added an [OKLCH Colors](https://docs.optics.rolemodel.design/?path=/docs/overview-oklch-colors--docs) page, a Tools section with the [Contrast Checker](https://docs.optics.rolemodel.design/?path=/docs/tools-contrast-checker--docs) page, an HSL / OKLCH toggle in the documentation site toolbar, and an OKLCH template on the Color Scale page.
 
 **Full Changelog**: https://github.com/RoleModel/optics/compare/v2.5.1...v2.6.0
 
