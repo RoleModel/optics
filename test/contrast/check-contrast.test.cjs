@@ -18,8 +18,8 @@ const onBase = (color, channel = '--op-color-primary-c: 0.1;') =>
   `:root { --op-color-primary-on-base: ${color}; ${channel} }`
 const HSL_CHANNEL = '--op-color-primary-s: 1%;'
 
-// Each case gives `css` (one file, a list of files, or none) and `args`, then either the `error` it must stop
-// with (exit 2), or the `exit` code and the lines it must print.
+// Each case gives `css` (theme files to pass, as theme-0.css and on), `files` (other files it can @import)
+// and `args`, then either the `error` it must stop with (exit 2), or the `exit` code and the lines it must print.
 const CASES = [
   // Results and flags
   {
@@ -125,13 +125,57 @@ const CASES = [
     name: 'stops on a color token inside @media',
     css: ':root { --op-color-primary-on-base: #fff; --op-color-primary-c: 0.1; }\n@media (prefers-color-scheme: dark) { :root { --op-color-primary-on-base: #000; } }',
     error:
-      "Can't check --op-color-primary-on-base inside @media (prefers-color-scheme: dark). Set mode colors with light-dark(), or check that theme in its own file.",
+      "Can't check --op-color-primary-on-base: it is set inside @media (prefers-color-scheme: dark). Set mode colors with light-dark(), or check that theme in its own file.",
+  },
+  {
+    name: 'stops on a color that uses a var() set inside @media',
+    css: ':root { --brand-text: #fff; --op-color-primary-base: #fff; --op-color-primary-on-base: var(--brand-text); --op-color-primary-c: 0.1; }\n@media (prefers-color-scheme: dark) { :root { --brand-text: #000; } }',
+    error:
+      "Can't check --op-color-primary-on-base: it uses --brand-text, which is set inside @media (prefers-color-scheme: dark). Set mode colors with light-dark(), or check that theme in its own file.",
   },
   {
     name: 'allows other tokens inside @media',
     css: ':root { --op-color-primary-c: 0.12; }\n@media (prefers-color-scheme: dark) { :root { --op-font-family: serif; } }',
     exit: 0,
     prints: 'Optics oklch contrast: 456/456 pairs pass (on >= 4.5, on-alt >= 4.5)',
+  },
+  // @import
+  {
+    name: 'follows an @import of a local file',
+    css: "@import './brand';\n:root { --op-color-primary-c: 0.1; }",
+    files: { 'brand.css': ':root { --op-color-primary-base: #fff; --op-color-primary-on-base: #fff; }' },
+    args: ['--report'],
+    exit: 0,
+    prints: 'FAIL   1.00  light  --op-color-primary-on-base',
+  },
+  {
+    name: 'stops on an @import it cannot find',
+    css: "@import 'missing.css';",
+    error: "Can't find @import 'missing.css' in theme-0.css. Fix the path, or pass your compiled CSS instead.",
+  },
+  {
+    name: 'skips an @import of Optics or a remote URL',
+    css: "@import '@rolemodel/optics';\n@import url('https://fonts.googleapis.com/css2?family=Inter');\n:root { --op-color-primary-c: 0.12; }",
+    exit: 0,
+    prints: 'Optics oklch contrast: 456/456 pairs pass (on >= 4.5, on-alt >= 4.5)',
+  },
+  {
+    name: 'skips an @import that loops back',
+    css: "@import 'loop.css';\n:root { --op-color-primary-c: 0.12; }",
+    files: { 'loop.css': "@import 'theme-0.css';" },
+    exit: 0,
+    prints: 'Optics oklch contrast: 456/456 pairs pass (on >= 4.5, on-alt >= 4.5)',
+  },
+  {
+    name: 'stops on a color from an @import with a media condition',
+    css: "@import 'light.css';\n@import 'dark.css' (prefers-color-scheme: dark);",
+    files: {
+      'light.css':
+        ':root { --op-color-primary-base: #fff; --op-color-primary-on-base: #fff; --op-color-primary-c: 0.1; }',
+      'dark.css': ':root { --op-color-primary-on-base: #000; }',
+    },
+    error:
+      "Can't check --op-color-primary-on-base: it is set inside @media (prefers-color-scheme: dark). Set mode colors with light-dark(), or check that theme in its own file.",
   },
   {
     name: 'uses nested var() fallbacks',
@@ -260,15 +304,18 @@ describe('optics-check-contrast', { concurrency: true }, () => {
 
   after(() => fs.rmSync(tempDir, { recursive: true, force: true }))
 
-  CASES.forEach(({ name, css = [], args = [], error, exit = 2, prints = [] }, index) => {
+  CASES.forEach(({ name, css = [], files = {}, args = [], error, exit = 2, prints = [] }, index) => {
     test(name, () => {
-      const files = [css].flat().map((text, part) => {
-        const file = `case-${index}-${part}.css`
-        fs.writeFileSync(path.join(tempDir, 'themes', file), text)
+      const dir = path.join(tempDir, 'themes', `case-${index}`)
+      fs.mkdirSync(dir)
+      for (const [file, text] of Object.entries(files)) fs.writeFileSync(path.join(dir, file), text)
+      const themes = [css].flat().map((text, part) => {
+        const file = `theme-${part}.css`
+        fs.writeFileSync(path.join(dir, file), text)
         return file
       })
-      const { status, stdout, stderr } = spawnSync(process.execPath, [bin, ...files, ...args], {
-        cwd: path.join(tempDir, 'themes'),
+      const { status, stdout, stderr } = spawnSync(process.execPath, [bin, ...themes, ...args], {
+        cwd: dir,
         encoding: 'utf8',
       })
       const output = `${stderr}${stdout}`
