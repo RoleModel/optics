@@ -32,7 +32,8 @@ if (!Number.isFinite(min) || !Number.isFinite(altMin)) exitWithError('--min and 
 
 const missing = files.find((file) => !fs.existsSync(file))
 if (missing) exitWithError(`File not found: ${missing}`)
-const userCss = files.map((file) => fs.readFileSync(file, 'utf8')).join('\n')
+// Comments are stripped first, so commented-out tokens can't sway build detection.
+const userCss = stripComments(files.map((file) => fs.readFileSync(file, 'utf8')).join('\n'))
 const colorSet = flags.hsl ? 'hsl' : flags.oklch ? 'oklch' : detectColorSet(userCss)
 const tokensDir = path.join(__dirname, '../css/core/tokens')
 const colorDir = path.join(tokensDir, colorSet === 'oklch' ? 'oklch' : '')
@@ -108,9 +109,13 @@ function exitWithError(message) {
   process.exit(2)
 }
 
+function stripComments(css) {
+  return css.replace(/\/\*[\s\S]*?\*\//g, '')
+}
+
 function readTokens(css) {
   // All custom properties, not just --op-*, so theme vars like var(--brand-hue) resolve.
-  const declarations = css.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/(--[\w-]+)\s*:\s*([^;}]+)/g)
+  const declarations = stripComments(css).matchAll(/(--[\w-]+)\s*:\s*([^;}]+)/g)
   // !important is declaration priority, not part of the value.
   return Object.fromEntries(
     [...declarations].map(([, name, value]) => [name, value.trim().replace(/\s*!\s*important$/i, '')])
