@@ -1,0 +1,77 @@
+import{n as e}from"./rolldown-runtime-sJBDdmOt.js";import{i as t,r as n}from"./react-DTG9IdOZ.js";import{s as r}from"./chunk-LITCR56V-5npheFyz.js";import{l as i,u as a}from"./blocks-CxVnX0yB.js";function o(e){let n={a:`a`,code:`code`,h1:`h1`,h2:`h2`,h3:`h3`,p:`p`,pre:`pre`,...t(),...e.components};return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(i,{title:`Overview/Scale Overriding`}),`
+`,(0,c.jsx)(n.h1,{id:`scale-overriding`,children:`Scale Overriding`}),`
+`,(0,c.jsx)(n.p,{children:`There are multiple scales in Optics. Unit Scales exist to allow adjusting font and spacing values. Color Scales exist to provide semantically named color variables with corresponding "on" values that strive to maintain contrast when used on an element with the matching color.`}),`
+`,(0,c.jsx)(n.h2,{id:`unit-scale-overriding`,children:`Unit Scale Overriding`}),`
+`,(0,c.jsxs)(n.p,{children:[`A Unit Scale is defined for both font sizes and spacing variables. All values are multiplied by their respective units which default as `,(0,c.jsx)(n.code,{children:`1rem`}),` (equivalent to `,(0,c.jsx)(n.code,{children:`10px`}),`)`]}),`
+`,(0,c.jsxs)(n.p,{children:[`If you want to change the font or spacing scale globally, or within the context of a specific component, you can set the `,(0,c.jsx)(n.code,{children:`--op-space-scale-unit`}),` in the `,(0,c.jsx)(n.code,{children:`:root`}),`.`]}),`
+`,(0,c.jsx)(n.pre,{children:(0,c.jsx)(n.code,{className:`language-css`,children:`:root {
+  --op-space-scale-unit: 0.5rem;
+}
+`})}),`
+`,(0,c.jsx)(n.pre,{children:(0,c.jsx)(n.code,{className:`language-css`,children:`:root {
+  --op-font-scale-unit: 0.5rem;
+}
+`})}),`
+`,(0,c.jsx)(n.pre,{children:(0,c.jsx)(n.code,{className:`language-css`,children:`:root {
+  --op-size-unit: 0.2rem;
+}
+`})}),`
+`,(0,c.jsx)(n.h2,{id:`color-scale-overriding`,children:`Color Scale Overriding`}),`
+`,(0,c.jsx)(n.p,{children:`There are multiple reasons your application may need to override the provided color scales. You may set a primary color that doesn't work well with the default semantic color scale provided. Your design may want to stray from the present plus or minus stops.`}),`
+`,(0,c.jsx)(n.p,{children:`Regardless of the reason, you can customize and override each scale like the following example:`}),`
+`,(0,c.jsx)(n.pre,{children:(0,c.jsx)(n.code,{className:`language-css`,children:`:root {
+  --op-color-primary-h: 164;
+  --op-color-primary-s: 100%;
+  --op-color-primary-l: 50%;
+
+  /* Main Scale */
+  --op-color-primary-plus-two: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 64%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 32%)
+  );
+  --op-color-primary-plus-one: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 45%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 35%)
+  );
+
+  /* On Scale */
+  --op-color-primary-on-plus-two: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 16%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 80%)
+  );
+  --op-color-primary-on-plus-two-alt: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 6%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 92%)
+  );
+  --op-color-primary-on-plus-one: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 100%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 80%)
+  );
+  --op-color-primary-on-plus-one-alt: light-dark(
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 95%),
+    hsl(var(--op-color-primary-h) var(--op-color-primary-s) 98%)
+  );
+}
+`})}),`
+`,(0,c.jsx)(n.p,{children:`You can override as many or as few variables or scales as your application needs.`}),`
+`,(0,c.jsx)(n.h3,{id:`oklch-scales`,children:`OKLCH Scales`}),`
+`,(0,c.jsxs)(n.p,{children:[`With the `,(0,c.jsx)(n.a,{href:`?path=/docs/overview-oklch-colors--docs`,children:`OKLCH build`}),`, each step sets its lightness and a chroma factor. The factor scales your `,(0,c.jsx)(n.code,{children:`-c`}),` value down at the light and dark ends of the scale.`]}),`
+`,(0,c.jsx)(n.pre,{children:(0,c.jsx)(n.code,{className:`language-css`,children:`:root {
+  --op-color-primary-l: 70%;
+  --op-color-primary-c: 0.15;
+  --op-color-primary-h: 170;
+
+  /* Main Scale */
+  --op-color-primary-plus-two: light-dark(
+    oklch(67.7% calc(var(--op-color-primary-c) * 0.73) var(--op-color-primary-h)),
+    oklch(40.6% calc(var(--op-color-primary-c) * 0.72) var(--op-color-primary-h))
+  );
+
+  /* On Scale */
+  --op-color-primary-on-plus-two: light-dark(
+    oklch(26.1% calc(var(--op-color-primary-c) * 0.4) var(--op-color-primary-h)),
+    oklch(82.1% calc(var(--op-color-primary-c) * 0.39) var(--op-color-primary-h))
+  );
+}
+`})}),`
+`,(0,c.jsxs)(n.p,{children:[`See `,(0,c.jsx)(n.code,{children:`core/tokens/oklch/scale_color_tokens.css`}),` for the default value of every step.`]})]})}function s(e={}){let{wrapper:n}={...t(),...e.components};return n?(0,c.jsx)(n,{...e,children:(0,c.jsx)(o,{...e})}):o(e)}var c;function l(){return(l=e((()=>{c=r(),n(),a()})))()}l();export{s as default};

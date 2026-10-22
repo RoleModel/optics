@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-sJBDdmOt.js";var t;function n(){return(n=e((()=>{t=({size:e=`large`})=>{let t=document.createElement(`div`);return t.className=`spinner spinner--${e}`,t.role=`status`,t.innerHTML=`<span class="sr-only">Loading</span>`,t}})))()}export{n,t};

@@ -1,0 +1,3 @@
+import{n as e,r as t}from"./rolldown-runtime-sJBDdmOt.js";import{o as n,s as r}from"./Form-BVVyppZH.js";var i=t({Default:()=>o,__namedExportsOrder:()=>s,default:()=>a}),a,o,s;function c(){return(c=e((()=>{r(),a={title:`Components/Form/Textarea`,render:({...e})=>n({...e}),argTypes:{readonly:{control:{type:`boolean`}}}},o={args:{}},o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  args: {}
+}`,...o.parameters?.docs?.source}}},s=[`Default`]})))()}export{i as n,c as r,o as t};
