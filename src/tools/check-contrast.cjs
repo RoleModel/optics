@@ -50,7 +50,8 @@ const tokens = readTokens(`${opticsCss}\n${userCss}`)
 const step = 'base|(?:plus|minus)-(?:one|two|three|four|five|six|seven|eight|max)'
 const pairs = Object.keys(tokens)
   .map((name) => name.match(new RegExp(`^--op-color-([a-z0-9-]+?)-on-(${step})(-alt)?$`)))
-  .filter((match) => match && tokens[`--op-color-${match[1]}-${match[2]}`])
+  // `in`, not truthiness, so an empty override reaches color validation instead of dropping the pair.
+  .filter((match) => match && `--op-color-${match[1]}-${match[2]}` in tokens)
   .map(([text, color, step, alt]) => ({ background: `--op-color-${color}-${step}`, text, min: alt ? altMin : min }))
 
 const failures = []
@@ -166,7 +167,7 @@ function toLuminance(color) {
   }
 
   const [, space, args] = value.match(/^(oklch|hsla?)\((.*)\)$/s) ?? []
-  if (!space) exitWithError(`Can't check color: ${value}`)
+  if (!space) exitWithError(`Can't check color: ${value || '(empty value)'}`)
   const [channels, slashAlpha] = args.split('/')
   const parts = channels.trim().split(/[\s,]+/)
   const [a, b, c] = parts.map(parseFloat)
