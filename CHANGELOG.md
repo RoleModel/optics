@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.6.1] - 2026-10-21
+
+### Theme Token Changes
+
+- Add a `--mode` option to the contrast checker by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/371
+  - `optics-check-contrast` takes `--mode=light` or `--mode=dark` to check only one color mode. Use it if your app forces one mode, such as with `data-theme-mode="light"`. Both modes are still checked by default. See [Contrast Checker](https://docs.optics.rolemodel.design/?path=/docs/tools-contrast-checker--docs)
+
+### Dependencies
+
+- Add a `--mode` option to the contrast checker by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/371
+  - Includes the vite bump from 8.1.4 to 8.1.6 from https://github.com/RoleModel/optics/pull/369. Development dependencies were updated in the lockfile. It does not affect the shipped CSS.
+
+### Documentation Changes
+
+- Add a `--mode` option to the contrast checker by @Jeremy-Walton in https://github.com/RoleModel/optics/pull/371
+  - The [Contrast Checker](https://docs.optics.rolemodel.design/?path=/docs/tools-contrast-checker--docs) page lists the `--mode` option and the default for each option.
+
 ## [2.6.0] - 2026-10-21
 
 ### Theme Token Changes
