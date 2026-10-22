@@ -87,11 +87,20 @@ function parseArgs(args) {
   return { files, flags }
 }
 
+// Optics channel vars (-c or -s) decide first; color functions only when neither is set,
+// so an unrelated oklch() or hsl() elsewhere in the CSS can't pick the wrong build.
 function detectColorSet(css) {
-  if (/--op-color-[a-z0-9-]+-c\s*:|oklch\(/.test(css)) return 'oklch'
-  if (/--op-color-[a-z0-9-]+-s\s*:|hsla?\(/.test(css)) return 'hsl'
+  const ambiguous = 'Could not tell if your theme is HSL or OKLCH. Pass --hsl or --oklch.'
+  const chroma = /--op-color-[a-z0-9-]+-c\s*:/.test(css)
+  const saturation = /--op-color-[a-z0-9-]+-s\s*:/.test(css)
+  if (chroma && saturation) exitWithError(ambiguous)
+  if (chroma) return 'oklch'
+  if (saturation) return 'hsl'
+
+  if (/oklch\(/.test(css)) return 'oklch'
+  if (/hsla?\(/.test(css)) return 'hsl'
   if (!css) return 'oklch'
-  exitWithError('Could not tell if your theme is HSL or OKLCH. Pass --hsl or --oklch.')
+  exitWithError(ambiguous)
 }
 
 function exitWithError(message) {
@@ -102,7 +111,10 @@ function exitWithError(message) {
 function readTokens(css) {
   // All custom properties, not just --op-*, so theme vars like var(--brand-hue) resolve.
   const declarations = css.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/(--[\w-]+)\s*:\s*([^;}]+)/g)
-  return Object.fromEntries([...declarations].map(([, name, value]) => [name, value.trim()]))
+  // !important is declaration priority, not part of the value.
+  return Object.fromEntries(
+    [...declarations].map(([, name, value]) => [name, value.trim().replace(/\s*!\s*important$/i, '')])
+  )
 }
 
 function resolve(value) {
