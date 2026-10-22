@@ -1,28 +1,32 @@
 {
   "name": "@rolemodel/optics",
-  "version": "2.5.1",
+  "version": "2.6.0",
   "packageManager": "yarn@4.8.1",
   "description": "Optics is a css package that provides base styles and components that can be integrated and customized in a variety of projects.",
   "main": "dist/css/optics.css",
+  "bin": {
+    "optics-check-contrast": "dist/tools/check-contrast.cjs"
+  },
   "scripts": {
-    "test": "exit 0",
+    "test": "node --test 'test/**/*.test.cjs'",
     "build": "yarn build:css && yarn build:css-min && yarn build:tokens && yarn build:files",
     "build:css": "postcss 'src/optics*.css' -d dist/css",
     "build:css-min": "postcss 'src/optics*.css' -d dist/css --ext .min.css --env=minify",
     "build:tokens": "node build_token_json --source=src/core/tokens --output=dist/tokens/tokens.json",
-    "build:files": "mkdir -p dist/css/addons; cp LICENSE README.md package.json dist/; cp -rL src/addons src/core src/components dist/css",
+    "build:files": "mkdir -p dist/css/addons; cp LICENSE README.md package.json dist/; cp -rL src/addons src/core src/components dist/css; cp -r src/tools dist",
     "build-docs": "yarn build-docs:llms && yarn build-docs:storybook",
     "build-docs:llms": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/build-llms-docs.mjs",
     "build-docs:storybook": "storybook build --docs",
-    "storybook": "storybook dev -p 6006 --docs",
+    "storybook": "yarn build-docs:llms && storybook dev -p 6006 --docs",
     "lint": "yarn lint:js && yarn lint:css",
     "lint-fix": "yarn lint:js --fix && yarn lint:css --fix",
     "lint:js": "eslint 'src/stories/**/*.js'",
     "lint:css": "stylelint 'src/**/*.css'",
     "prettier": "prettier -w .",
     "prettier-check": "prettier -c .",
-    "sanity-check": "yarn lint && yarn prettier && yarn build && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs",
-    "generate": "node ./tools/generate.js"
+    "sanity-check": "yarn lint && yarn prettier && yarn test && yarn build && yarn check-contrast && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs",
+    "generate": "node ./tools/generate.js",
+    "check-contrast": "node dist/tools/check-contrast.cjs"
   },
   "repository": {
     "type": "git",

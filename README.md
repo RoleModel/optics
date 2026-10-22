@@ -40,6 +40,8 @@ You can add this import to the top of your root level `css` file.
 @import '@rolemodel/optics/dist/css/optics.min.css'; /* If you want a single file with all the styles in it. */
 ```
 
+An OKLCH build is also available. See [OKLCH Colors](https://docs.optics.rolemodel.design/?path=/docs/overview-oklch-colors--docs).
+
 ### Importing without a compiler
 
 To use Optics without compilation, use a CDN like [jsDelivr](https://www.jsdelivr.com/) or [unpkg](https://unpkg.com/).
@@ -57,6 +59,20 @@ Add a link in your HTML head or an `@import` to the top of your root level `css`
 ```
 
 Note: You can use this method to use Optics with [CodePen](https://codepen.io/). In a CodePen project, go to `Settings > CSS`, find the section for adding external stylesheets, and add the CDN link as a resource.
+
+### Checking theme contrast
+
+After customizing your theme, add `optics-check-contrast` to your CI to check that text on every color scale step passes WCAG AA:
+
+```json
+{
+  "scripts": {
+    "check-contrast": "optics-check-contrast app/assets/stylesheets/theme.css"
+  }
+}
+```
+
+See [Contrast Checker](https://docs.optics.rolemodel.design/?path=/docs/tools-contrast-checker--docs) for options.
 
 ## Documentation
 

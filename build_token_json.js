@@ -132,7 +132,8 @@ try {
       .filter((directoryEntry) => directoryEntry.isFile() && directoryEntry.name !== 'index.css')
       .forEach((directoryEntry) => {
         const fileContents = fs.readFileSync(`${source}/${directoryEntry.name}`)
-        const matches = fileContents.toString().match(/^\s*--.*?(?=;)/gm)
+        // Import-only files like base_tokens.css declare no variables.
+        const matches = fileContents.toString().match(/^\s*--.*?(?=;)/gm) ?? []
         matches.forEach((match) => {
           const [key, value] = match.split(':')
           variables = addToJson(splitKey(key.trim()), variables, value.trim())

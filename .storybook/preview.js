@@ -1,4 +1,5 @@
 import { useTheme } from './useTheme'
+import { useColorSpace } from './useColorSpace'
 
 const preview = {
   parameters: {
@@ -20,7 +21,16 @@ const preview = {
         order: [
           'Introduction',
           'Overview',
-          ['Base Reset', 'File Organization', 'Selective Imports', 'Tokens', 'Themes', 'Scale Overriding', 'Addons'],
+          [
+            'Base Reset',
+            'File Organization',
+            'Selective Imports',
+            'Tokens',
+            'Themes',
+            'Scale Overriding',
+            'OKLCH Colors',
+            'Addons',
+          ],
           'Tokens',
           'Utilities',
           [
@@ -36,6 +46,7 @@ const preview = {
           ],
           'Components',
           'Recipes',
+          'Tools',
         ],
       },
     },
@@ -58,6 +69,20 @@ export const globalTypes = {
       dynamicTitle: true,
     },
   },
+  colorSpace: {
+    name: 'Color space',
+    description: 'Color token set: optics.css (HSL) or optics-oklch.css (OKLCH)',
+    defaultValue: 'hsl',
+    toolbar: {
+      icon: 'paintbrush',
+      items: [
+        { value: 'hsl', title: 'HSL' },
+        { value: 'oklch', title: 'OKLCH' },
+      ],
+      showName: true,
+      dynamicTitle: true,
+    },
+  },
 }
 
-export const decorators = [useTheme]
+export const decorators = [useTheme, useColorSpace]

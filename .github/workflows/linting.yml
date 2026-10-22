@@ -29,6 +29,8 @@ jobs:
         run: yarn lint:css
       - name: Run Prettier
         run: yarn prettier-check
+      - name: Run Tests
+        run: yarn test
       - name: Build CSS
         run: yarn build:css
       - name: Build Tokens

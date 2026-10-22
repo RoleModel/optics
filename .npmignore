@@ -25,8 +25,9 @@ docs/
 # Documentation
 .storybook
 
-# Tools
-tools/
+# Tools and tests. Anchored to the root, so dist/tools (the contrast checker) is still published.
+/tools/
+/test/
 
 # Workspaces
 *.code-workspace

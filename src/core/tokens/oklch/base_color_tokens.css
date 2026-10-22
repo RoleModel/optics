@@ -1,0 +1,74 @@
+:root {
+  /* Color OKLCH values
+    A theme comprised of a primary, neutral, warning, danger, info, and notice colors.
+  */
+
+  /* Basic Colors */
+
+  /**
+  * @tokens Basic Colors
+  * @presenter Color
+  */
+  --op-color-white: oklch(100% 0 0);
+  --op-color-black: oklch(0% 0 0);
+
+  /**
+  * @tokens Primary Colors
+  * @presenter Color
+  */
+  --op-color-primary-h: 258.5;
+  --op-color-primary-c: 0.146;
+  --op-color-primary-l: 53.9%;
+
+  /**
+  * @tokens Neutral Colors
+  * @presenter Color
+  */
+  --op-color-neutral-h: var(--op-color-primary-h);
+  --op-color-neutral-c: 0.01;
+  --op-color-neutral-l: var(--op-color-primary-l);
+
+  /**
+  * @tokens Alerts Warning Colors
+  * @presenter Color
+  */
+  --op-color-alerts-warning-h: 92.3;
+  --op-color-alerts-warning-c: 0.166;
+  --op-color-alerts-warning-l: 88.2%;
+
+  /**
+  * @tokens Alerts Danger Colors
+  * @presenter Color
+  */
+  --op-color-alerts-danger-h: 21.2;
+  --op-color-alerts-danger-c: 0.148;
+  --op-color-alerts-danger-l: 75.2%;
+
+  /**
+  * @tokens Alerts Info Colors
+  * @presenter Color
+  */
+  --op-color-alerts-info-h: 258.5;
+  --op-color-alerts-info-c: 0.146;
+  --op-color-alerts-info-l: 53.9%;
+
+  /**
+  * @tokens Alerts Notice Colors
+  * @presenter Color
+  */
+  --op-color-alerts-notice-h: 147.4;
+  --op-color-alerts-notice-c: 0.166;
+  --op-color-alerts-notice-l: 80.4%;
+
+  /* Shadows */
+
+  /**
+  * @tokens Shadows
+  * @presenter Shadow
+  */
+  --op-shadow-x-small: 0 1px 2px oklch(0% 0 0 / 3%), 0 1px 3px oklch(0% 0 0 / 15%);
+  --op-shadow-small: 0 1px 2px oklch(0% 0 0 / 3%), 0 2px 6px oklch(0% 0 0 / 15%);
+  --op-shadow-medium: 0 4px 8px oklch(0% 0 0 / 15%), 0 1px 3px oklch(0% 0 0 / 3%);
+  --op-shadow-large: 0 6px 10px oklch(0% 0 0 / 15%), 0 2px 3px oklch(0% 0 0 / 3%);
+  --op-shadow-x-large: 0 8px 12px oklch(0% 0 0 / 15%), 0 4px 4px oklch(0% 0 0 / 3%);
+}
