@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "next-demo",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["next:demo", "--port", "5179", "--strictPort"],
+      "port": 5179
+    }
+  ]
+}

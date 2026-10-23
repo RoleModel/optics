@@ -1,0 +1,47 @@
+{
+  "name": "tab",
+  "description": "Classes that style a row of links or buttons as tab navigation. CSS only: no panels, no state, and no keyboard handling.",
+  "source": "src/components/tab.css",
+  "parts": {
+    "Group": {
+      "react": null,
+      "webComponent": null,
+      "html": "div",
+      "class": "tab-group",
+      "role": null,
+      "props": {}
+    },
+    "Tab": {
+      "react": null,
+      "webComponent": null,
+      "html": "a or button",
+      "class": "tab",
+      "role": null,
+      "props": {
+        "active": "Add tab--active by hand.",
+        "disabled": "Add tab--disabled by hand, and set tabindex=\"-1\" so the Tab key skips it.",
+        "size": "Add tab--small or tab--large to each tab. Large is the default."
+      }
+    }
+  },
+  "modifiers": {
+    "tab--small": "Shorter padding, smaller text, and a thinner indicator. Set on each tab",
+    "tab--large": "The default size. Set on each tab",
+    "tab--active": "The selected tab. Draws the indicator line under it",
+    "tab--disabled": "Lowers opacity and turns off pointer events"
+  },
+  "customPropertiesNote": "Public variables use the --_op-tab-* prefix and are set on .tab. The size modifiers copy them into private --__op-tab-* variables. Colors, background, hover, and focus come straight from global tokens and have no tab variable.",
+  "customProperties": {
+    "tab-group": {},
+    "tab": {
+      "--_op-tab-font-small": "Text size for tab--small",
+      "--_op-tab-font-large": "Text size for tab--large and the default",
+      "--_op-tab-padding-small": "Padding for tab--small",
+      "--_op-tab-padding-large": "Padding for tab--large and the default",
+      "--_op-tab-indicator-width-small": "Thickness of the active line for tab--small",
+      "--_op-tab-indicator-width-large": "Thickness of the active line for tab--large and the default",
+      "--_op-tab-disabled-opacity": "Opacity of a disabled tab"
+    }
+  },
+  "keyboard": {}
+}
