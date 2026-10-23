@@ -1,0 +1,5 @@
+/*
+ * The real Optics tokens, so next/ components use the same scale as Optics.
+ * The scale assumes 1rem = 10px, which Optics sets on <html> in core/base.css.
+ */
+@import '../src/core/tokens/index.css';

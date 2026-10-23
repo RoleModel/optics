@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Composed tabs</title>
+    <script type="module" src="./main.jsx"></script>
+  </head>
+  <body>
+    <h1>Composed tabs</h1>
+
+    <section>
+      <h2>Web component (also what a Rails view writes)</h2>
+      <op-tabs value="orders">
+        <op-tabs-list size="small">
+          <op-tabs-tab value="orders">Orders</op-tabs-tab>
+          <op-tabs-tab value="invoices">Invoices</op-tabs-tab>
+          <op-tabs-tab value="archived" disabled>Archived</op-tabs-tab>
+        </op-tabs-list>
+        <op-tabs-panel value="orders">Orders panel</op-tabs-panel>
+        <op-tabs-panel value="invoices">Invoices panel</op-tabs-panel>
+        <op-tabs-panel value="archived">Archived panel</op-tabs-panel>
+      </op-tabs>
+    </section>
+
+    <section>
+      <h2>React</h2>
+      <div id="react-tabs"></div>
+    </section>
+
+    <section>
+      <h2>Links (plain HTML, no JS)</h2>
+      <nav class="tabs">
+        <div class="tabs__list">
+          <a class="tabs__tab tabs__tab--active" href="#" aria-current="page">Overview</a>
+          <a class="tabs__tab" href="#">Settings</a>
+          <a class="tabs__tab tabs__tab--disabled" href="#" tabindex="-1">Billing</a>
+        </div>
+      </nav>
+    </section>
+
+    <section>
+      <h2>Plain BEM markup (no component, styles only)</h2>
+      <div class="tabs">
+        <div class="tabs__list tabs__list--small" role="tablist">
+          <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true">Orders</button>
+          <button class="tabs__tab" role="tab" aria-selected="false" tabindex="-1">Invoices</button>
+        </div>
+        <div class="tabs__panel" role="tabpanel">Orders panel. Switching tabs here needs your own JS.</div>
+        <div class="tabs__panel" role="tabpanel" hidden>Invoices panel</div>
+      </div>
+    </section>
+
+    <h2>Customized by an app</h2>
+    <p>Each one sets only the local variables, in <code>demo.css</code>. No new selectors or properties.</p>
+
+    <section class="pill">
+      <h2>Pill</h2>
+      <op-tabs>
+        <op-tabs-list>
+          <op-tabs-tab value="day">Day</op-tabs-tab>
+          <op-tabs-tab value="week">Week</op-tabs-tab>
+          <op-tabs-tab value="month">Month</op-tabs-tab>
+        </op-tabs-list>
+        <op-tabs-panel value="day"
+          >Group padding and radius, tab height and radius, and a border on the active tab.</op-tabs-panel
+        >
+        <op-tabs-panel value="week">Week panel</op-tabs-panel>
+        <op-tabs-panel value="month">Month panel</op-tabs-panel>
+      </op-tabs>
+    </section>
+
+    <section class="segmented">
+      <h2>Segmented control</h2>
+      <op-tabs>
+        <op-tabs-list>
+          <op-tabs-tab value="list">List</op-tabs-tab>
+          <op-tabs-tab value="board">Board</op-tabs-tab>
+          <op-tabs-tab value="calendar">Calendar</op-tabs-tab>
+        </op-tabs-list>
+        <op-tabs-panel value="list"
+          >A group background, and a raised active tab from a background and a shadow.</op-tabs-panel
+        >
+        <op-tabs-panel value="board">Board panel</op-tabs-panel>
+        <op-tabs-panel value="calendar">Calendar panel</op-tabs-panel>
+      </op-tabs>
+    </section>
+
+    <section class="folder">
+      <h2>Folder</h2>
+      <op-tabs>
+        <op-tabs-list>
+          <op-tabs-tab value="details">Details</op-tabs-tab>
+          <op-tabs-tab value="files">Files</op-tabs-tab>
+          <op-tabs-tab value="history">History</op-tabs-tab>
+        </op-tabs-list>
+        <op-tabs-panel value="details">
+          The active tab and the panel share a background and border, so they read as one shape.
+        </op-tabs-panel>
+        <op-tabs-panel value="files">Files panel</op-tabs-panel>
+        <op-tabs-panel value="history">History panel</op-tabs-panel>
+      </op-tabs>
+    </section>
+
+    <section class="editorial">
+      <h2>Editorial (React)</h2>
+      <div id="react-editorial"></div>
+    </section>
+  </body>
+</html>

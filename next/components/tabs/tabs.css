@@ -1,0 +1,123 @@
+/*
+ * Parts, modifiers, and custom properties: see tabs.spec.json
+ *
+ * Elements nest inside .tabs (stylelint-bem require-nesting), so every element needs a
+ * .tabs ancestor. Each element declares its own variables; customize an element by
+ * setting its variables on it.
+ *
+ * Borders are box shadows. Each element draws `box-shadow: <border>, <shadow>`, so an app
+ * can change the border or add a shadow without losing the other.
+ */
+
+.tabs {
+  display: block;
+
+  .tabs__list {
+    --op-tabs-list-gap: var(--op-space-2x-small);
+    --op-tabs-list-padding: 0;
+    --op-tabs-list-radius: 0;
+    --op-tabs-list-border-color: var(--op-color-border);
+    --op-tabs-list-border: inset 0 calc(-1 * var(--op-border-width)) 0 var(--op-tabs-list-border-color);
+    --op-tabs-list-shadow: var(--op-border-none);
+    --op-tabs-list-background: transparent;
+
+    display: flex;
+    padding: var(--op-tabs-list-padding);
+    border-radius: var(--op-tabs-list-radius);
+    background: var(--op-tabs-list-background);
+    box-shadow: var(--op-tabs-list-border), var(--op-tabs-list-shadow);
+    gap: var(--op-tabs-list-gap);
+
+    /* Size is set on the list so every tab in it matches. */
+    &.tabs__list--small .tabs__tab {
+      --op-tabs-tab-height: var(--op-input-height-small);
+      --op-tabs-tab-padding: 0 var(--op-space-x-small);
+      --op-tabs-tab-font-size: var(--op-font-small);
+    }
+
+    &.tabs__list--large .tabs__tab {
+      --op-tabs-tab-height: var(--op-input-height-large);
+      --op-tabs-tab-padding: 0 var(--op-space-medium);
+      --op-tabs-tab-indicator-size: var(--op-border-width-x-large);
+    }
+  }
+
+  .tabs__tab {
+    --op-tabs-tab-height: var(--op-input-height-medium);
+    --op-tabs-tab-padding: 0 var(--op-space-small);
+    --op-tabs-tab-gap: var(--op-space-2x-small);
+    --op-tabs-tab-radius: 0;
+    --op-tabs-tab-border: var(--op-border-none);
+    --op-tabs-tab-shadow: var(--op-border-none);
+    --op-tabs-tab-font-size: var(--op-font-medium);
+    --op-tabs-tab-font-weight: var(--op-font-weight-medium);
+    --op-tabs-tab-color: var(--op-color-on-background-alt);
+    --op-tabs-tab-color-active: var(--op-color-on-background);
+    --op-tabs-tab-indicator-color: var(--op-color-primary-plus-one);
+    --op-tabs-tab-indicator-size: var(--op-border-width-large);
+    --op-tabs-tab-focus-color: var(--op-color-primary-plus-two);
+    --op-tabs-tab-focus-width: var(--op-border-width-large);
+    --op-tabs-tab-disabled-opacity: var(--op-opacity-disabled);
+    --op-tabs-tab-background: transparent;
+    --op-tabs-tab-background-hover: var(--op-tabs-tab-background);
+    --op-tabs-tab-background-active: var(--op-tabs-tab-background);
+
+    display: inline-flex;
+    align-items: center;
+    padding: var(--op-tabs-tab-padding);
+    border: 0;
+    border-radius: var(--op-tabs-tab-radius);
+    background: var(--op-tabs-tab-background);
+    box-shadow: var(--op-tabs-tab-border), var(--op-tabs-tab-shadow);
+    color: var(--op-tabs-tab-color);
+    cursor: pointer;
+    font: inherit;
+    font-size: var(--op-tabs-tab-font-size);
+    font-weight: var(--op-tabs-tab-font-weight);
+    gap: var(--op-tabs-tab-gap);
+    min-block-size: var(--op-tabs-tab-height);
+    text-decoration: none;
+
+    &:hover {
+      background: var(--op-tabs-tab-background-hover);
+      color: var(--op-tabs-tab-color-active);
+    }
+
+    &:focus-visible {
+      outline: var(--op-tabs-tab-focus-width) solid var(--op-tabs-tab-focus-color);
+      outline-offset: calc(-1 * var(--op-tabs-tab-focus-width));
+    }
+
+    &.tabs__tab--active {
+      background: var(--op-tabs-tab-background-active);
+      box-shadow:
+        inset 0 calc(-1 * var(--op-tabs-tab-indicator-size)) 0 var(--op-tabs-tab-indicator-color),
+        var(--op-tabs-tab-border),
+        var(--op-tabs-tab-shadow);
+      color: var(--op-tabs-tab-color-active);
+    }
+
+    &.tabs__tab--disabled {
+      opacity: var(--op-tabs-tab-disabled-opacity);
+      pointer-events: none;
+    }
+  }
+
+  .tabs__panel {
+    --op-tabs-panel-padding: var(--op-space-medium) 0;
+    --op-tabs-panel-radius: 0;
+    --op-tabs-panel-border: var(--op-border-none);
+    --op-tabs-panel-shadow: var(--op-border-none);
+    --op-tabs-panel-background: transparent;
+
+    display: block;
+    padding: var(--op-tabs-panel-padding);
+    border-radius: var(--op-tabs-panel-radius);
+    background: var(--op-tabs-panel-background);
+    box-shadow: var(--op-tabs-panel-border), var(--op-tabs-panel-shadow);
+
+    &[hidden] {
+      display: none;
+    }
+  }
+}

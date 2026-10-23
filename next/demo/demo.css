@@ -1,0 +1,120 @@
+/* A stand-in for an app's own brand color. */
+:root {
+  --op-demo-brand-color: #c026d3;
+}
+
+/* Same as Optics core/base.css: the token scale assumes 1rem = 10px. */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: var(--op-space-medium);
+  margin: 0 auto;
+  background: var(--op-color-background);
+  color: var(--op-color-on-background);
+  font-family: var(--op-font-family);
+  font-size: var(--op-font-medium);
+  max-inline-size: var(--op-breakpoint-small);
+}
+
+section {
+  display: grid;
+  padding: var(--op-space-medium);
+  border-radius: var(--op-radius-medium);
+  box-shadow: inset 0 0 0 var(--op-border-width) var(--op-color-border);
+  gap: var(--op-space-medium);
+  margin-block-end: var(--op-space-medium);
+}
+
+h2 {
+  margin: 0;
+  font-size: var(--op-font-medium);
+}
+
+/* Each example below sets only the local variables. */
+
+.pill {
+  .tabs__list {
+    --op-tabs-list-padding: var(--op-space-2x-small);
+    --op-tabs-list-radius: var(--op-radius-pill);
+    --op-tabs-list-border: inset 0 0 0 var(--op-border-width) var(--op-color-border);
+  }
+
+  .tabs__tab {
+    --op-tabs-tab-height: var(--op-input-height-small);
+    --op-tabs-tab-radius: var(--op-radius-pill);
+
+    &.tabs__tab--active {
+      --op-tabs-tab-indicator-color: transparent;
+      --op-tabs-tab-border: inset 0 0 0 var(--op-border-width-large) var(--op-demo-brand-color);
+    }
+  }
+}
+
+.segmented {
+  .tabs__list {
+    --op-tabs-list-padding: var(--op-space-2x-small);
+    --op-tabs-list-radius: var(--op-radius-medium);
+    --op-tabs-list-border: var(--op-border-none);
+    --op-tabs-list-background: var(--op-color-neutral-plus-seven);
+  }
+
+  .tabs__tab {
+    --op-tabs-tab-height: var(--op-input-height-small);
+    --op-tabs-tab-radius: var(--op-radius-medium);
+    --op-tabs-tab-indicator-color: transparent;
+    --op-tabs-tab-background-active: var(--op-color-background);
+
+    &.tabs__tab--active {
+      --op-tabs-tab-shadow: var(--op-shadow-x-small);
+    }
+  }
+}
+
+.folder {
+  .tabs__tab {
+    --op-tabs-tab-radius: var(--op-radius-medium) var(--op-radius-medium) 0 0;
+    --op-tabs-tab-background: var(--op-color-neutral-plus-seven);
+    --op-tabs-tab-background-active: var(--op-color-background);
+    --op-tabs-tab-indicator-color: transparent;
+
+    &.tabs__tab--active {
+      --op-tabs-tab-border:
+        inset 0 var(--op-border-width) 0 var(--op-color-border),
+        inset var(--op-border-width) 0 0 var(--op-color-border),
+        inset calc(-1 * var(--op-border-width)) 0 0 var(--op-color-border);
+    }
+  }
+
+  .tabs__panel {
+    --op-tabs-panel-padding: var(--op-space-medium);
+    --op-tabs-panel-radius: 0 0 var(--op-radius-medium) var(--op-radius-medium);
+    --op-tabs-panel-background: var(--op-color-background);
+    --op-tabs-panel-border:
+      inset var(--op-border-width) 0 0 var(--op-color-border),
+      inset calc(-1 * var(--op-border-width)) 0 0 var(--op-color-border),
+      inset 0 calc(-1 * var(--op-border-width)) 0 var(--op-color-border);
+  }
+}
+
+.editorial {
+  .tabs__list {
+    --op-tabs-list-gap: var(--op-space-medium);
+    --op-tabs-list-border: var(--op-border-none);
+  }
+
+  .tabs__tab {
+    --op-tabs-tab-height: var(--op-input-height-large);
+    --op-tabs-tab-padding: 0;
+    --op-tabs-tab-font-size: var(--op-font-x-large);
+    --op-tabs-tab-font-weight: var(--op-font-weight-bold);
+    --op-tabs-tab-color-active: var(--op-demo-brand-color);
+    --op-tabs-tab-indicator-color: var(--op-demo-brand-color);
+    --op-tabs-tab-indicator-size: var(--op-border-width-x-large);
+  }
+
+  .tabs__panel {
+    --op-tabs-panel-padding: var(--op-space-small) 0;
+  }
+}

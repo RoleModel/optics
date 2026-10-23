@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "node --test 'test/**/*.test.cjs'",
+    "test:next": "node --test \"next/**/*.test.js\"",
     "build": "yarn build:css && yarn build:css-min && yarn build:tokens && yarn build:files",
     "build:css": "postcss 'src/optics*.css' -d dist/css",
     "build:css-min": "postcss 'src/optics*.css' -d dist/css --ext .min.css --env=minify",
@@ -26,7 +27,8 @@
     "prettier-check": "prettier -c .",
     "sanity-check": "yarn lint && yarn prettier && yarn test && yarn build && yarn check-contrast && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs",
     "generate": "node ./tools/generate.js",
-    "check-contrast": "node dist/tools/check-contrast.cjs"
+    "check-contrast": "node dist/tools/check-contrast.cjs",
+    "next:demo": "vite next/demo"
   },
   "repository": {
     "type": "git",
@@ -63,10 +65,13 @@
     "generate-template-files": "^3.2.1",
     "globals": "^17.7.0",
     "jsdom": "^29.1.1",
+    "lit": "3.3.3",
     "postcss": "^8.5.16",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
     "prettier": "^3.9.5",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
     "storybook": "^10.4.6",
     "storybook-design-token": "^5.0.0",
     "style-loader": "^4.0.0",

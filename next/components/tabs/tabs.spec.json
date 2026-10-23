@@ -1,0 +1,105 @@
+{
+  "name": "tabs",
+  "description": "A set of panels where one is shown at a time, picked by a row of tabs. Or, with links, a row of tabs for page navigation.",
+  "parts": {
+    "Root": {
+      "react": "Tabs.Root",
+      "webComponent": "op-tabs",
+      "class": "tabs",
+      "props": {
+        "value": "The selected tab. React: set it to control the tabs.",
+        "defaultValue": "React: the first selected tab. The web component uses the value attribute, or the first enabled tab.",
+        "onValueChange": "React: called with the new value when a user selects a tab. Web component: an op-tabs-change event with event.detail.value."
+      }
+    },
+    "List": {
+      "react": "Tabs.List",
+      "webComponent": "op-tabs-list",
+      "class": "tabs__list",
+      "role": "tablist",
+      "props": {
+        "size": "small or large. Adds tabs__list--small or tabs__list--large, which sizes every tab in the list.",
+        "asNav": "React: render <nav class=\"tabs\"> around the list for Tabs.Link, with no Tabs.Root. Plain HTML: <nav class=\"tabs\"><div class=\"tabs__list\">."
+      }
+    },
+    "Tab": {
+      "react": "Tabs.Tab",
+      "webComponent": "op-tabs-tab",
+      "class": "tabs__tab",
+      "role": "tab",
+      "props": {
+        "value": "Required. Matches its panel.",
+        "disabled": "Skipped by arrow keys and clicks."
+      }
+    },
+    "Link": {
+      "react": "Tabs.Link",
+      "webComponent": "a (plain HTML, no JS needed)",
+      "class": "tabs__tab",
+      "props": {
+        "active": "Adds tabs__tab--active and aria-current=\"page\".",
+        "disabled": "Adds tabs__tab--disabled and takes it out of the tab order."
+      }
+    },
+    "Panel": {
+      "react": "Tabs.Panel",
+      "webComponent": "op-tabs-panel",
+      "class": "tabs__panel",
+      "role": "tabpanel",
+      "props": {
+        "value": "Required. Matches its tab."
+      }
+    }
+  },
+  "modifiers": {
+    "tabs__list--small": "Every tab in the list is shorter, with less padding and smaller text",
+    "tabs__list--large": "Every tab in the list is taller, with more padding and a thicker indicator",
+    "tabs__tab--active": "The selected tab, or the link for the current page",
+    "tabs__tab--disabled": "A tab that cannot be selected"
+  },
+  "customPropertiesNote": "Border and shadow values are box shadows. Use var(--op-border-none) to draw nothing.",
+  "customProperties": {
+    "tabs__list": {
+      "--op-tabs-list-gap": "Space between tabs",
+      "--op-tabs-list-padding": "Padding around the tabs",
+      "--op-tabs-list-radius": "Corner radius",
+      "--op-tabs-list-border-color": "Color of the line under the tabs",
+      "--op-tabs-list-border": "The line under the tabs",
+      "--op-tabs-list-shadow": "Shadow around the list",
+      "--op-tabs-list-background": "Background behind the tabs"
+    },
+    "tabs__tab": {
+      "--op-tabs-tab-height": "Minimum height of the tab",
+      "--op-tabs-tab-padding": "Padding inside the tab",
+      "--op-tabs-tab-gap": "Space between items inside the tab, like an icon and its label",
+      "--op-tabs-tab-radius": "Corner radius",
+      "--op-tabs-tab-border": "Border around the tab",
+      "--op-tabs-tab-shadow": "Shadow around the tab",
+      "--op-tabs-tab-font-size": "Tab text size",
+      "--op-tabs-tab-font-weight": "Tab text weight",
+      "--op-tabs-tab-color": "Text color when not active",
+      "--op-tabs-tab-color-active": "Text color when active or hovered",
+      "--op-tabs-tab-indicator-color": "Color of the active tab's line",
+      "--op-tabs-tab-indicator-size": "Thickness of the active tab's line",
+      "--op-tabs-tab-focus-color": "Color of the focus outline",
+      "--op-tabs-tab-focus-width": "Thickness of the focus outline",
+      "--op-tabs-tab-disabled-opacity": "Opacity of a disabled tab",
+      "--op-tabs-tab-background": "Background of the tab",
+      "--op-tabs-tab-background-hover": "Background when hovered",
+      "--op-tabs-tab-background-active": "Background when active"
+    },
+    "tabs__panel": {
+      "--op-tabs-panel-padding": "Padding inside the panel",
+      "--op-tabs-panel-radius": "Corner radius",
+      "--op-tabs-panel-border": "Border around the panel",
+      "--op-tabs-panel-shadow": "Shadow around the panel",
+      "--op-tabs-panel-background": "Background of the panel"
+    }
+  },
+  "keyboard": {
+    "ArrowRight or ArrowDown": "Select the next enabled tab, wrapping to the first",
+    "ArrowLeft or ArrowUp": "Select the previous enabled tab, wrapping to the last",
+    "Home": "Select the first enabled tab",
+    "End": "Select the last enabled tab"
+  }
+}
