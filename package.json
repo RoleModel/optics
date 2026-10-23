@@ -28,7 +28,8 @@
     "sanity-check": "yarn lint && yarn prettier && yarn test && yarn build && yarn check-contrast && yarn build-docs && rm -rf ./dist && rm -rf ./storybook-static && rm -rf ./llms-docs",
     "generate": "node ./tools/generate.js",
     "check-contrast": "node dist/tools/check-contrast.cjs",
-    "next:demo": "vite next/demo"
+    "next:demo": "vite next/demo",
+    "next:schema": "node next/tools/generate-spec-schema.js"
   },
   "repository": {
     "type": "git",
@@ -79,7 +80,8 @@
     "stylelint-config-idiomatic-order": "^10.0.0",
     "stylelint-prettier": "^5.0.3",
     "stylelint-use-logical": "^2.1.3",
-    "vite": "^8.1.4"
+    "vite": "^8.1.4",
+    "zod": "4.6.5"
   },
   "peerDependencies": {
     "tom-select": "^2.0.0"

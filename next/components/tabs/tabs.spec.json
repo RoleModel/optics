@@ -1,4 +1,5 @@
 {
+  "$schema": "../../spec.schema.json",
   "name": "tabs",
   "description": "A set of panels where one is shown at a time, picked by a row of tabs. Or, with links, a row of tabs for page navigation.",
   "parts": {

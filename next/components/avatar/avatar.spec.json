@@ -1,4 +1,5 @@
 {
+  "$schema": "../../spec.schema.json",
   "name": "avatar",
   "description": "A person's picture in a circle. Shows a fallback, like initials or an icon, until the picture loads or when it fails.",
   "parts": {

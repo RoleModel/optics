@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "description": "The component name: the BEM block, and the prefix of its variables."
+    },
+    "description": { "type": "string", "description": "What the component is, in a sentence or two." },
+    "parts": {
+      "type": "object",
+      "propertyNames": { "type": "string", "pattern": "^[A-Z][A-Za-z]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "react": { "type": "string", "description": "The React component, like Tabs.Tab." },
+          "webComponent": {
+            "type": "string",
+            "description": "The custom element, or the plain element it decorates, like op-tabs-tab."
+          },
+          "class": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*(__[a-z][a-z0-9-]*)?$",
+            "description": "The BEM block or block__element class."
+          },
+          "role": { "description": "The ARIA role the part gets.", "type": "string" },
+          "props": {
+            "type": "object",
+            "propertyNames": { "type": "string" },
+            "additionalProperties": { "type": "string", "description": "What the prop does in each version." },
+            "description": "Props and attributes, by name."
+          }
+        },
+        "required": ["react", "webComponent", "class", "props"],
+        "additionalProperties": false
+      },
+      "description": "The parts to compose, by PascalCase name."
+    },
+    "modifiers": {
+      "type": "object",
+      "propertyNames": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(__[a-z][a-z0-9-]*)?--[a-z][a-z0-9-]*$" },
+      "additionalProperties": { "type": "string", "description": "What the modifier changes." },
+      "description": "BEM modifier classes."
+    },
+    "customPropertiesNote": { "description": "Anything that applies to every custom property.", "type": "string" },
+    "customProperties": {
+      "type": "object",
+      "propertyNames": { "type": "string", "pattern": "^[a-z][a-z0-9-]*(__[a-z][a-z0-9-]*)?$" },
+      "additionalProperties": {
+        "type": "object",
+        "propertyNames": { "type": "string", "pattern": "^--op-[a-z0-9-]+$" },
+        "additionalProperties": { "type": "string", "description": "What the variable sets." }
+      },
+      "description": "Custom properties, grouped by the class that declares them."
+    },
+    "keyboard": {
+      "description": "Keys the component handles.",
+      "type": "object",
+      "propertyNames": { "type": "string" },
+      "additionalProperties": { "type": "string", "description": "What the key does." }
+    }
+  },
+  "required": ["name", "description", "parts", "modifiers", "customProperties"],
+  "additionalProperties": false
+}
