@@ -1,0 +1,49 @@
+{
+  "name": "avatar",
+  "description": "Classes that style an <a> or <div> around an <img> as a round profile picture. CSS only: no fallback and no image loading state.",
+  "source": "src/components/avatar.css",
+  "parts": {
+    "Root": {
+      "react": null,
+      "webComponent": null,
+      "html": "a or div",
+      "class": "avatar",
+      "props": {
+        "size": "Add avatar--small, avatar--medium, or avatar--large by hand. Large is the default.",
+        "disabled": "Add avatar--disabled by hand.",
+        "element": "Use <a> for hover and focus styles. A <div> gets neither."
+      }
+    },
+    "Image": {
+      "react": null,
+      "webComponent": null,
+      "html": "img",
+      "class": null,
+      "props": {
+        "src": "The picture. A broken image shows the browser's broken image icon.",
+        "alt": "Describes the picture."
+      }
+    }
+  },
+  "modifiers": {
+    "avatar--small": "32px",
+    "avatar--medium": "40px",
+    "avatar--large": "56px, the default",
+    "avatar--disabled": "Lowers opacity and turns off pointer events"
+  },
+  "customPropertiesNote": "Public variables use the --_op-avatar-* prefix and are set on .avatar. The size modifiers copy a size into the private --__op-avatar-size. Borders are two inset box shadows drawn in ::after, from separate color and width variables. Hover draws a tinted overlay in ::before. Hover and focus colors come straight from global tokens and have no avatar variable. The image is styled with an element selector (.avatar img), not a class.",
+  "customProperties": {
+    "avatar": {
+      "--_op-avatar-border-radius": "Corner radius",
+      "--_op-avatar-inner-border-color": "Color of the inner ring",
+      "--_op-avatar-outer-border-color": "Color of the outer line",
+      "--_op-avatar-inner-border-width": "Thickness of the inner ring",
+      "--_op-avatar-outer-border-width": "Thickness of the outer line",
+      "--_op-avatar-disabled-opacity": "Opacity of a disabled avatar",
+      "--_op-avatar-hover-opacity": "Opacity of the hover overlay. Not in the docs",
+      "--_op-avatar-size-small": "Width and height for avatar--small",
+      "--_op-avatar-size-medium": "Width and height for avatar--medium",
+      "--_op-avatar-size-large": "Width and height for avatar--large and the default"
+    }
+  }
+}
