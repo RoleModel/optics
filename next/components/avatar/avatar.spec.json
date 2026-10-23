@@ -1,0 +1,65 @@
+{
+  "name": "avatar",
+  "description": "A person's picture in a circle. Shows a fallback, like initials or an icon, until the picture loads or when it fails.",
+  "parts": {
+    "Root": {
+      "react": "Avatar.Root",
+      "webComponent": "op-avatar",
+      "class": "avatar",
+      "props": {
+        "size": "small, medium, or large. Adds avatar--small, avatar--medium, or avatar--large. Large is the default.",
+        "disabled": "Adds avatar--disabled.",
+        "as": "React: the element to render, span by default. Use a or button for an avatar people can click. Plain HTML: put the avatar class on an <a> or <button>."
+      }
+    },
+    "Image": {
+      "react": "Avatar.Image",
+      "webComponent": "img (plain HTML inside op-avatar)",
+      "class": "avatar__image",
+      "props": {
+        "src": "The picture. With no src, or when it fails to load, the fallback stays.",
+        "alt": "Describes the picture. Use the person's name."
+      }
+    },
+    "Fallback": {
+      "react": "Avatar.Fallback",
+      "webComponent": "op-avatar-fallback",
+      "class": "avatar__fallback",
+      "props": {
+        "children": "Initials or an icon. Shown until the image loads, and when it fails."
+      }
+    }
+  },
+  "modifiers": {
+    "avatar--small": "A smaller avatar with smaller fallback text",
+    "avatar--medium": "A medium avatar",
+    "avatar--large": "The default size",
+    "avatar--disabled": "Lowers opacity and turns off pointer events"
+  },
+  "customPropertiesNote": "Border, ring, and shadow values are box shadows. Use var(--op-border-none) to draw nothing. The border and ring draw on top of the image. Hover and focus apply only when the avatar is an <a> or <button>.",
+  "customProperties": {
+    "avatar": {
+      "--op-avatar-size": "Width and height",
+      "--op-avatar-radius": "Corner radius",
+      "--op-avatar-border-color": "Color of the outer line",
+      "--op-avatar-border-color-hover": "Color of the outer line when hovered",
+      "--op-avatar-border": "The outer line",
+      "--op-avatar-ring-color": "Color of the inner ring",
+      "--op-avatar-ring-color-hover": "Color of the inner ring when hovered",
+      "--op-avatar-ring": "The inner ring, between the outer line and the picture",
+      "--op-avatar-shadow": "Shadow around the avatar",
+      "--op-avatar-focus-color": "Color of the focus outline",
+      "--op-avatar-focus-width": "Thickness of the focus outline",
+      "--op-avatar-disabled-opacity": "Opacity of a disabled avatar"
+    },
+    "avatar__image": {
+      "--op-avatar-image-fit": "How the picture fills the circle"
+    },
+    "avatar__fallback": {
+      "--op-avatar-fallback-background": "Background behind the initials or icon",
+      "--op-avatar-fallback-color": "Color of the initials or icon",
+      "--op-avatar-fallback-font-size": "Size of the initials",
+      "--op-avatar-fallback-font-weight": "Weight of the initials"
+    }
+  }
+}

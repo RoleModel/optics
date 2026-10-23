@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Composed avatar</title>
+    <script type="module" src="./avatar.jsx"></script>
+  </head>
+  <body>
+    <nav class="demo-nav"><a href="./index.html">Tabs</a> <a href="./avatar.html" aria-current="page">Avatar</a></nav>
+    <h1>Composed avatar</h1>
+
+    <section>
+      <h2>Web component (also what a Rails view writes)</h2>
+      <div class="row">
+        <op-avatar size="small">
+          <img src="https://picsum.photos/id/64/200/200" alt="Jane Cooper" />
+          <op-avatar-fallback>JC</op-avatar-fallback>
+        </op-avatar>
+        <op-avatar size="medium">
+          <img src="https://picsum.photos/id/91/200/200" alt="Wade Warren" />
+          <op-avatar-fallback>WW</op-avatar-fallback>
+        </op-avatar>
+        <op-avatar>
+          <img src="https://picsum.photos/id/1027/200/200" alt="Esther Howard" />
+          <op-avatar-fallback>EH</op-avatar-fallback>
+        </op-avatar>
+        <op-avatar>
+          <img src="/missing.jpg" alt="Broken image" />
+          <op-avatar-fallback>BI</op-avatar-fallback>
+        </op-avatar>
+        <op-avatar>
+          <op-avatar-fallback>NI</op-avatar-fallback>
+        </op-avatar>
+        <op-avatar disabled>
+          <img src="https://picsum.photos/id/1005/200/200" alt="Disabled" />
+          <op-avatar-fallback>DA</op-avatar-fallback>
+        </op-avatar>
+      </div>
+      <p>Small, medium, large, a broken image, no image, and disabled.</p>
+    </section>
+
+    <section>
+      <h2>React</h2>
+      <div id="react-avatars" class="row"></div>
+    </section>
+
+    <section>
+      <h2>Plain BEM markup (no component, styles only)</h2>
+      <div class="row">
+        <a class="avatar avatar--medium" href="#">
+          <img class="avatar__image" src="https://picsum.photos/id/177/200/200" alt="A link to a profile" />
+        </a>
+        <span class="avatar avatar--medium">
+          <span class="avatar__fallback">PH</span>
+        </span>
+      </div>
+      <p>A link with an image, and a fallback on its own. Pick one: swapping them needs JS.</p>
+    </section>
+
+    <h2>Customized by an app</h2>
+    <p>Each one sets only the local variables, in <code>demo.css</code>. No new selectors or properties.</p>
+
+    <section class="square-avatars">
+      <h2>Square</h2>
+      <div class="row">
+        <op-avatar size="medium">
+          <img src="https://picsum.photos/id/64/200/200" alt="Jane Cooper" />
+          <op-avatar-fallback>JC</op-avatar-fallback>
+        </op-avatar>
+        <op-avatar size="medium">
+          <op-avatar-fallback>WW</op-avatar-fallback>
+        </op-avatar>
+      </div>
+    </section>
+
+    <section class="brand-avatars">
+      <h2>Brand ring and fallback</h2>
+      <div class="row">
+        <op-avatar>
+          <img src="https://picsum.photos/id/1027/200/200" alt="Esther Howard" />
+          <op-avatar-fallback>EH</op-avatar-fallback>
+        </op-avatar>
+        <op-avatar>
+          <op-avatar-fallback>EH</op-avatar-fallback>
+        </op-avatar>
+      </div>
+    </section>
+
+    <section class="flat-avatars">
+      <h2>Flat, with a shadow (React)</h2>
+      <div id="react-flat" class="row"></div>
+    </section>
+  </body>
+</html>

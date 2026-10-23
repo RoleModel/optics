@@ -1,0 +1,117 @@
+/*
+ * Parts, modifiers, and custom properties: see avatar.spec.json
+ *
+ * Elements nest inside .avatar (stylelint-bem require-nesting). Each element declares its
+ * own variables; customize an element by setting its variables on it.
+ *
+ * The image and the fallback fill the same box. The border and ring draw in ::after, which
+ * comes after them, so they sit on top of the picture.
+ */
+
+.avatar {
+  --op-avatar-size: calc(var(--op-space-3x-large) + var(--op-space-medium)); /* 56px */
+  --op-avatar-radius: var(--op-radius-circle);
+  --op-avatar-border-color: var(--op-color-neutral-base);
+  --op-avatar-border-color-hover: var(--op-color-primary-plus-one);
+  --op-avatar-border: inset 0 0 0 var(--op-border-width-large) var(--op-avatar-border-color);
+  --op-avatar-ring-color: var(--op-color-neutral-minus-max);
+  --op-avatar-ring-color-hover: var(--op-color-primary-base);
+  --op-avatar-ring: inset 0 0 0 calc(var(--op-border-width) + var(--op-border-width-large)) var(--op-avatar-ring-color);
+  --op-avatar-shadow: var(--op-border-none);
+  --op-avatar-focus-color: var(--op-color-primary-plus-two);
+  --op-avatar-focus-width: var(--op-border-width-large);
+  --op-avatar-disabled-opacity: var(--op-opacity-disabled);
+
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--op-avatar-radius);
+  background: transparent;
+  block-size: var(--op-avatar-size);
+  box-shadow: var(--op-avatar-shadow);
+  color: inherit;
+  font: inherit;
+  inline-size: var(--op-avatar-size);
+  vertical-align: middle;
+
+  &::after {
+    position: absolute;
+    border-radius: inherit;
+    box-shadow: var(--op-avatar-border), var(--op-avatar-ring);
+    content: '';
+    inset: 0;
+    pointer-events: none;
+  }
+
+  /* Only a link or button is interactive. */
+  &:is(a[href], button):hover {
+    --op-avatar-border-color: var(--op-avatar-border-color-hover);
+    --op-avatar-ring-color: var(--op-avatar-ring-color-hover);
+
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: var(--op-avatar-focus-width) solid var(--op-avatar-focus-color);
+    outline-offset: var(--op-avatar-focus-width);
+  }
+
+  &.avatar--disabled {
+    opacity: var(--op-avatar-disabled-opacity);
+    pointer-events: none;
+  }
+
+  &.avatar--small {
+    --op-avatar-size: calc(var(--op-space-2x-large) + var(--op-space-2x-small)); /* 32px */
+
+    .avatar__fallback {
+      --op-avatar-fallback-font-size: var(--op-font-x-small);
+    }
+  }
+
+  &.avatar--medium {
+    --op-avatar-size: var(--op-space-3x-large); /* 40px */
+
+    .avatar__fallback {
+      --op-avatar-fallback-font-size: var(--op-font-small);
+    }
+  }
+
+  &.avatar--large {
+    --op-avatar-size: calc(var(--op-space-3x-large) + var(--op-space-medium)); /* 56px */
+  }
+
+  .avatar__image {
+    --op-avatar-image-fit: cover;
+
+    position: absolute;
+    block-size: 100%;
+    inline-size: 100%;
+    inset: 0;
+    object-fit: var(--op-avatar-image-fit);
+  }
+
+  .avatar__fallback {
+    --op-avatar-fallback-background: var(--op-color-neutral-plus-six);
+    --op-avatar-fallback-color: var(--op-color-neutral-on-plus-six);
+    --op-avatar-fallback-font-size: var(--op-font-large);
+    --op-avatar-fallback-font-weight: var(--op-font-weight-medium);
+
+    position: absolute;
+    display: grid;
+    background: var(--op-avatar-fallback-background);
+    color: var(--op-avatar-fallback-color);
+    font-size: var(--op-avatar-fallback-font-size);
+    font-weight: var(--op-avatar-fallback-font-weight);
+    inset: 0;
+    place-items: center;
+    user-select: none;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+}
