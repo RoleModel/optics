@@ -22,6 +22,12 @@ class OpIcon extends OpticsElement {
 
   #glyphClasses = []
 
+  // It renders nothing and sets its own text, which would remove the marker Lit keeps in
+  // its render root. Lit's dev build then throws on the next update.
+  createRenderRoot() {
+    return document.createDocumentFragment()
+  }
+
   updated() {
     this.classList.add('icon')
     for (const size of ['small', 'medium', 'large', 'x-large']) {
