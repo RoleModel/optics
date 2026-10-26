@@ -1,0 +1,66 @@
+{
+  "name": "icon",
+  "description": "Classes that style a <span> or <i> as an icon from an icon font, or a <span> around an inline SVG. CSS only: no component and no screen reader handling.",
+  "source": "src/components/icon.css",
+  "parts": {
+    "Root": {
+      "react": null,
+      "webComponent": null,
+      "html": "span or i",
+      "class": "icon",
+      "props": {
+        "name": "Material Symbols: write the name as the text and add material-symbols-outlined. Other fonts: add the font's classes, like ph ph-smiley.",
+        "svg": "Add icon--svg and put an inline <svg> inside.",
+        "label": "None. Add aria-hidden or aria-label by hand.",
+        "size": "Add icon--small, icon--medium, icon--large, or icon--x-large by hand. Medium is the default.",
+        "weight": "Add icon--weight-light, icon--weight-normal, icon--weight-semi-bold, or icon--weight-bold by hand.",
+        "emphasis": "Add icon--low-emphasis, icon--normal-emphasis, or icon--high-emphasis by hand.",
+        "filled": "Add icon--filled or icon--outlined by hand."
+      }
+    }
+  },
+  "modifiers": {
+    "icon--small": "The small font size and optical size",
+    "icon--medium": "The default size",
+    "icon--large": "The large font size and optical size",
+    "icon--x-large": "The 2x-large font size and optical size",
+    "icon--outlined": "FILL 0, the default",
+    "icon--filled": "FILL 1",
+    "icon--weight-thin": "Phosphor only, from the Phosphor addon. Not in icon.css",
+    "icon--weight-light": "Light font weight, stroke width 1 on SVG",
+    "icon--weight-normal": "Normal font weight, stroke width 1.5 on SVG",
+    "icon--weight-semi-bold": "Semi-bold font weight, stroke width 2 on SVG",
+    "icon--weight-bold": "Bold font weight, stroke width 2.5 on SVG",
+    "icon--low-emphasis": "GRAD -20. Opacity 0.6 with icon--svg",
+    "icon--normal-emphasis": "GRAD 0, the default",
+    "icon--high-emphasis": "GRAD 200",
+    "icon--svg": "Sizes an inline SVG to fill the icon box"
+  },
+  "customPropertiesNote": "Public variables use the --_op-icon-* prefix and hold one value per modifier. Modifiers copy a value into a private --__op-icon-* variable. The font axes are set by the separate .material-symbols-outlined class, so another font class does not get them. The icon has no color variable and inherits the text color.",
+  "customProperties": {
+    "icon": {
+      "--_op-icon-weight-light": "Font weight for icon--weight-light",
+      "--_op-icon-weight-normal": "Font weight for icon--weight-normal and the default",
+      "--_op-icon-weight-semi-bold": "Font weight for icon--weight-semi-bold",
+      "--_op-icon-weight-bold": "Font weight for icon--weight-bold",
+      "--_op-icon-fill-outlined": "FILL for icon--outlined and the default",
+      "--_op-icon-fill-filled": "FILL for icon--filled",
+      "--_op-icon-emphasis-low": "GRAD for icon--low-emphasis",
+      "--_op-icon-emphasis-normal": "GRAD for icon--normal-emphasis and the default",
+      "--_op-icon-emphasis-high": "GRAD for icon--high-emphasis",
+      "--_op-icon-font-size-small": "Size for icon--small",
+      "--_op-icon-font-size-medium": "Size for icon--medium and the default",
+      "--_op-icon-font-size-large": "Size for icon--large",
+      "--_op-icon-font-size-x-large": "Size for icon--x-large",
+      "--_op-icon-optical-size-small": "opsz for icon--small",
+      "--_op-icon-optical-size-medium": "opsz for icon--medium and the default",
+      "--_op-icon-optical-size-large": "opsz for icon--large",
+      "--_op-icon-optical-size-x-large": "opsz for icon--x-large",
+      "--_op-icon-stroke-width-light": "SVG stroke width for icon--weight-light",
+      "--_op-icon-stroke-width-normal": "SVG stroke width for icon--weight-normal",
+      "--_op-icon-stroke-width-semi-bold": "SVG stroke width for icon--weight-semi-bold",
+      "--_op-icon-stroke-width-bold": "SVG stroke width for icon--weight-bold",
+      "--_op-icon-svg-opacity-low-emphasis": "SVG opacity for icon--low-emphasis"
+    }
+  }
+}

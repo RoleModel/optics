@@ -156,3 +156,18 @@ h2 {
     --op-avatar-shadow: var(--op-shadow-medium);
   }
 }
+
+.brand-icons {
+  .icon {
+    --op-icon-color: var(--op-demo-brand-color);
+  }
+}
+
+.chunky-icons {
+  .icon {
+    --op-icon-size: var(--op-font-4x-large);
+    --op-icon-optical-size: 48;
+    --op-icon-weight: var(--op-font-weight-bold);
+    --op-icon-fill: 1;
+  }
+}

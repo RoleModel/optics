@@ -1,0 +1,52 @@
+{
+  "$schema": "../../spec.schema.json",
+  "name": "icon",
+  "description": "A small picture from the app's icon pack, or an inline SVG. Hidden from screen readers unless it has a label. An app uses one pack: it imports one packs/*.css file and calls setIconPack() from glyph.js with the same pack, which defaults to material-symbols.",
+  "parts": {
+    "Root": {
+      "react": "Icon",
+      "webComponent": "op-icon",
+      "class": "icon",
+      "props": {
+        "name": "The icon's name in the app's pack, like settings. material-symbols: it becomes the text, which the font draws. Supports every modifier with packs/material-symbols-variable.css, and size and weight with packs/material-symbols.css. phosphor: it becomes classes, like ph ph-smiley. Supports size, with one CSS file per style: thin, light, and bold weights, fill, and duotone. tabler: ti ti-settings. Supports size and fill. feather: fi fi-feather. lucide: li li-banana. Both support size only. Plain HTML: write the text or the classes.",
+        "duotone": "Phosphor only: a two-tone icon. Uses ph-duotone in place of ph. Needs packs/phosphor-duotone.css.",
+        "children": "An inline <svg> in place of a name, for SVG icon sets. Web component and plain HTML: write it inside.",
+        "label": "Text for screen readers. Adds role=\"img\" and aria-label. With no label, the icon gets aria-hidden=\"true\".",
+        "size": "small, medium, large, or x-large. Adds icon--small, icon--medium, icon--large, or icon--x-large. Medium is the default.",
+        "weight": "thin, light, normal, semi-bold, or bold. Adds icon--weight-thin, icon--weight-light, icon--weight-normal, icon--weight-semi-bold, or icon--weight-bold.",
+        "emphasis": "low, normal, or high. Adds icon--low-emphasis, icon--normal-emphasis, or icon--high-emphasis.",
+        "filled": "Adds icon--filled."
+      }
+    }
+  },
+  "modifiers": {
+    "icon--small": "A small icon",
+    "icon--medium": "The default size",
+    "icon--large": "A large icon",
+    "icon--x-large": "The largest icon",
+    "icon--outlined": "The default fill: an outline only",
+    "icon--filled": "Fills the shape. Tabler uses a separate filled icon in place of this modifier",
+    "icon--weight-thin": "The thinnest lines",
+    "icon--weight-light": "Thinner lines",
+    "icon--weight-normal": "The default line weight",
+    "icon--weight-semi-bold": "Thicker lines",
+    "icon--weight-bold": "The thickest lines",
+    "icon--low-emphasis": "Slightly thinner lines on a font icon. Lower opacity on an SVG icon",
+    "icon--normal-emphasis": "The default emphasis",
+    "icon--high-emphasis": "Slightly thicker lines on a font icon. No change on an SVG icon"
+  },
+  "customPropertiesNote": "Fill, grade, and optical size need a font with those axes, like the full Material Symbols variable font. Other packs set their own font family and ignore them and --op-icon-font-family. An SVG icon follows the size, color, and SVG variables. Its stroke width changes only with a weight modifier, so with none it keeps the widths it was drawn with.",
+  "customProperties": {
+    "icon": {
+      "--op-icon-size": "Width, height, and font size",
+      "--op-icon-color": "Color of the icon",
+      "--op-icon-font-family": "The icon font",
+      "--op-icon-weight": "Font weight and the wght axis",
+      "--op-icon-fill": "The FILL axis: 0 for an outline, 1 for filled",
+      "--op-icon-grade": "The GRAD axis, set by the emphasis modifiers",
+      "--op-icon-optical-size": "The opsz axis, set by the size modifiers to match the size",
+      "--op-icon-stroke-width": "Stroke width of an SVG icon, set by the weight modifiers",
+      "--op-icon-svg-opacity": "Opacity of an SVG icon, set by icon--low-emphasis"
+    }
+  }
+}

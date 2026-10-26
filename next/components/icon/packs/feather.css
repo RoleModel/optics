@@ -1,0 +1,7 @@
+/* Feather: setIconPack('feather'), then <op-icon name="feather">. Supports size only. */
+@import '../../../../src/addons/fonts/feather_icons.css';
+
+/* The addon sizes .fi from today's private --__op-icon-font-size. */
+.icon.fi {
+  font-size: var(--op-icon-size);
+}

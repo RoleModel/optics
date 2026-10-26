@@ -1,0 +1,124 @@
+/*
+ * Parts, modifiers, and custom properties: see icon.spec.json
+ *
+ * A font icon is its text: a Material Symbols name, like settings, that the font draws as one
+ * ligature. An SVG icon is an inline <svg> child, which fills the box and uses currentColor.
+ */
+
+.icon {
+  --op-icon-size: var(--op-font-medium);
+  --op-icon-color: currentColor;
+  --op-icon-font-family: 'Material Symbols Outlined';
+  --op-icon-weight: var(--op-font-weight-normal);
+  --op-icon-fill: 0;
+  --op-icon-grade: 0;
+  --op-icon-optical-size: 20;
+  --op-icon-stroke-width: 1.5;
+  --op-icon-svg-opacity: var(--op-opacity-full);
+
+  display: inline-block;
+  block-size: var(--op-icon-size);
+  color: var(--op-icon-color);
+  font-family: var(--op-icon-font-family);
+  font-size: var(--op-icon-size);
+  font-style: normal;
+
+  /* Most icon fonts have one weight. Never fake a bold one. */
+  font-synthesis: none;
+  font-variation-settings:
+    'FILL' var(--op-icon-fill),
+    'wght' var(--op-icon-weight),
+    'GRAD' var(--op-icon-grade),
+    'opsz' var(--op-icon-optical-size);
+  font-weight: var(--op-icon-weight);
+  inline-size: var(--op-icon-size);
+
+  /* Inherited text styles that would break the ligature. */
+  letter-spacing: normal;
+  line-height: var(--op-line-height-densest);
+  text-transform: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  svg {
+    display: block;
+    block-size: 100%;
+    inline-size: 100%;
+    opacity: var(--op-icon-svg-opacity);
+  }
+
+  /*
+   * A rule on the <svg> cannot beat a stroke-width attribute on a child, so target the
+   * attribute. With no weight modifier, the set keeps the widths it was drawn with.
+   */
+  &[class*='icon--weight-'] svg [stroke-width] {
+    stroke-width: var(--op-icon-stroke-width);
+  }
+
+  &.icon--small {
+    --op-icon-size: var(--op-font-small);
+    --op-icon-optical-size: 20;
+  }
+
+  &.icon--medium {
+    --op-icon-size: var(--op-font-medium);
+    --op-icon-optical-size: 20;
+  }
+
+  &.icon--large {
+    --op-icon-size: var(--op-font-large);
+    --op-icon-optical-size: 40;
+  }
+
+  &.icon--x-large {
+    --op-icon-size: var(--op-font-2x-large);
+    --op-icon-optical-size: 48;
+  }
+
+  &.icon--outlined {
+    --op-icon-fill: 0;
+  }
+
+  &.icon--filled {
+    --op-icon-fill: 1;
+  }
+
+  &.icon--weight-thin {
+    --op-icon-weight: var(--op-font-weight-thin);
+    --op-icon-stroke-width: 0.5;
+  }
+
+  &.icon--weight-light {
+    --op-icon-weight: var(--op-font-weight-light);
+    --op-icon-stroke-width: 1;
+  }
+
+  &.icon--weight-normal {
+    --op-icon-weight: var(--op-font-weight-normal);
+    --op-icon-stroke-width: 1.5;
+  }
+
+  &.icon--weight-semi-bold {
+    --op-icon-weight: var(--op-font-weight-semi-bold);
+    --op-icon-stroke-width: 2;
+  }
+
+  &.icon--weight-bold {
+    --op-icon-weight: var(--op-font-weight-bold);
+    --op-icon-stroke-width: 2.5;
+  }
+
+  /* An SVG has no grade, so low emphasis lowers its opacity instead. */
+  &.icon--low-emphasis {
+    --op-icon-grade: -20;
+    --op-icon-svg-opacity: var(--op-opacity-half);
+  }
+
+  &.icon--normal-emphasis {
+    --op-icon-grade: 0;
+  }
+
+  &.icon--high-emphasis {
+    --op-icon-grade: 200;
+  }
+}

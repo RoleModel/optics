@@ -1,0 +1,7 @@
+/*
+ * Phosphor regular: setIconPack('phosphor'), then <op-icon name="smiley">. Supports size.
+ * Each other style is its own font, so import only the ones the app uses: phosphor-thin.css,
+ * phosphor-light.css, phosphor-bold.css, phosphor-fill.css, and phosphor-duotone.css.
+ * Same version as src/addons/fonts/phosphor_icons.css, which imports every style.
+ */
+@import 'https://unpkg.com/@phosphor-icons/web@2.1.2/src/regular/style.css';

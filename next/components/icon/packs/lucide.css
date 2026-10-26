@@ -1,0 +1,7 @@
+/* Lucide: setIconPack('lucide'), then <op-icon name="banana">. Supports size only. */
+@import '../../../../src/addons/fonts/lucide_icons.css';
+
+/* The addon sizes .li from today's private --__op-icon-font-size. */
+.icon.li {
+  font-size: var(--op-icon-size);
+}
