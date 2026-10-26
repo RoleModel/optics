@@ -8,3 +8,6 @@ optics-design-system.code-workspace
 
 # Generated docs
 llms-docs
+
+# Copied verbatim from RoleModel/optics-components
+docs/ui-building-guide.md
