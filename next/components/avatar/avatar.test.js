@@ -61,6 +61,14 @@ describe('<op-avatar>', () => {
     assert.ok(avatar().matches('.avatar--large:not(.avatar--small, .avatar--disabled)'))
   })
 
+  test('stays enabled over many updates when it has no disabled attribute', async () => {
+    for (let update = 0; update < 3; update++) {
+      avatar().requestUpdate()
+      await settled()
+      assert.ok(!avatar().matches('.avatar--disabled'))
+    }
+  })
+
   test('shows the fallback while the image loads, then the image', async () => {
     setImage({ complete: false })
     await settled()

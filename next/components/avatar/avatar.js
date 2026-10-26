@@ -41,7 +41,8 @@ class OpAvatar extends OpticsElement {
     for (const size of ['small', 'medium', 'large']) {
       this.classList.toggle(`avatar--${size}`, this.size === size)
     }
-    this.classList.toggle('avatar--disabled', this.disabled)
+    // toggle() with undefined flips the class, so force a boolean.
+    this.classList.toggle('avatar--disabled', Boolean(this.disabled))
 
     if (this.#image) {
       this.#image.classList.add('avatar__image')
