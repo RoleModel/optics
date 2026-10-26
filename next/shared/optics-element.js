@@ -7,8 +7,9 @@ export class OpticsElement extends LitElement {
     return this
   }
 
-  // Sends a bubbling event, so apps can listen on any ancestor.
-  emit(name, detail) {
-    return this.dispatchEvent(new CustomEvent(name, { bubbles: true, detail }))
+  // Sends a bubbling event, so apps can listen on any ancestor. Returns false when a
+  // listener cancels a cancelable event.
+  emit(name, detail, { cancelable = false } = {}) {
+    return this.dispatchEvent(new CustomEvent(name, { bubbles: true, cancelable, detail }))
   }
 }

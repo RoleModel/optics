@@ -1,0 +1,106 @@
+{
+  "$schema": "../../spec.schema.json",
+  "name": "alert",
+  "description": "A highlighted message, like a banner, an error in a form, or a flash message. Has an optional icon, title, and close button.",
+  "parts": {
+    "Root": {
+      "react": "Alert.Root",
+      "webComponent": "op-alert",
+      "class": "alert",
+      "role": "alert",
+      "props": {
+        "variant": "warning, danger, info, or notice. Adds alert--warning, alert--danger, alert--info, or alert--notice. alert is an alias for danger, to match the Rails and Devise flash key. With no variant, the alert is neutral.",
+        "tone": "outlined, muted, or filled. Adds alert--outlined, alert--muted, or alert--filled. Outlined is the default.",
+        "flash": "Adds alert--flash: the alert slides in at the top right, stays, and slides out. It dismisses itself when the animation ends.",
+        "onDismiss": "React: called with the event when the close button is clicked or a flash ends. Call event.preventDefault() to keep the alert. Web component: an op-alert-dismiss event that you can cancel. If it is not canceled, the alert removes itself.",
+        "role": "alert by default. Set role=\"status\" for a message that should not interrupt a screen reader."
+      }
+    },
+    "Icon": {
+      "react": "Alert.Icon",
+      "webComponent": "op-icon (a direct child of op-alert)",
+      "class": "alert__icon",
+      "props": {
+        "name": "The icon's name. Takes every Icon prop. Size is large and weight is bold by default. Plain HTML: add icon--large and icon--weight-bold."
+      }
+    },
+    "Messages": {
+      "react": "Alert.Messages",
+      "webComponent": "op-alert-messages",
+      "class": "alert__messages",
+      "props": {
+        "children": "The title and one or more descriptions, stacked."
+      }
+    },
+    "Title": {
+      "react": "Alert.Title",
+      "webComponent": "op-alert-title",
+      "class": "alert__title",
+      "props": {
+        "children": "Optional. A short heading for the message."
+      }
+    },
+    "Description": {
+      "react": "Alert.Description",
+      "webComponent": "op-alert-description",
+      "class": "alert__description",
+      "props": {
+        "children": "The message. Use more than one for more than one message."
+      }
+    },
+    "Close": {
+      "react": "Alert.Close",
+      "webComponent": "op-alert-close (renders the button)",
+      "class": "alert__close",
+      "props": {
+        "label": "Text for screen readers. Dismiss by default.",
+        "onClick": "React: called before the alert dismisses. Call event.preventDefault() to keep the alert. Plain HTML: write the <button> and remove the alert with your own JS."
+      }
+    }
+  },
+  "modifiers": {
+    "alert--warning": "Warning colors",
+    "alert--danger": "Danger colors",
+    "alert--alert": "An alias for alert--danger",
+    "alert--info": "Info colors",
+    "alert--notice": "Notice colors",
+    "alert--outlined": "The default tone: a light background and a border",
+    "alert--muted": "A darker background and no border",
+    "alert--filled": "The strongest background and no border",
+    "alert--flash": "Fixed at the top right of the screen, with a slide in and out animation"
+  },
+  "customPropertiesNote": "Border and shadow values are box shadows. Use var(--op-border-none) to draw nothing. Each variant and tone sets the background, color, border color, and title color. Make a new variant with a modifier class that sets only these variables.",
+  "customProperties": {
+    "alert": {
+      "--op-alert-padding": "Padding inside the alert",
+      "--op-alert-gap": "Space between the icon, messages, and close button",
+      "--op-alert-radius": "Corner radius",
+      "--op-alert-background": "Background color",
+      "--op-alert-color": "Text color",
+      "--op-alert-border-color": "Color of the border",
+      "--op-alert-border": "The border",
+      "--op-alert-shadow": "Shadow around the alert",
+      "--op-alert-flash-inset": "Space from the top and right of the screen for a flash alert. The default animation slides to --op-space-large, so it uses this only with the animation set to none",
+      "--op-alert-flash-animation": "The flash animation. Set it to none to keep a flash alert on screen"
+    },
+    "alert__messages": {
+      "--op-alert-messages-gap": "Space between the title and descriptions"
+    },
+    "alert__title": {
+      "--op-alert-title-color": "Title text color. Each variant and tone sets it",
+      "--op-alert-title-font-size": "Title text size",
+      "--op-alert-title-font-weight": "Title text weight"
+    },
+    "alert__description": {
+      "--op-alert-description-font-size": "Description text size"
+    },
+    "alert__close": {
+      "--op-alert-close-size": "Width and height of the close button",
+      "--op-alert-close-radius": "Corner radius of the close button",
+      "--op-alert-close-border": "The close button's border",
+      "--op-alert-close-border-hover": "The close button's border when hovered",
+      "--op-alert-close-focus-color": "Color of the focus outline",
+      "--op-alert-close-focus-width": "Thickness of the focus outline"
+    }
+  }
+}

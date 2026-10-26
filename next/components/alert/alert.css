@@ -1,0 +1,241 @@
+/*
+ * Parts, modifiers, and custom properties: see alert.spec.json
+ *
+ * Elements nest inside .alert (stylelint-bem require-nesting). Each element declares its
+ * own variables; customize an element by setting its variables on it.
+ *
+ * Variants and tones set only variables. With no variant, the alert is neutral. A variant
+ * sets the outlined colors, and its muted and filled tones nest inside it, so a variant and
+ * a tone together always beat either one alone.
+ */
+
+.alert {
+  --op-alert-padding: var(--op-space-x-small) var(--op-space-medium);
+  --op-alert-gap: var(--op-space-small);
+  --op-alert-radius: var(--op-radius-medium);
+  --op-alert-background: var(--op-color-neutral-plus-eight);
+  --op-alert-color: var(--op-color-neutral-on-plus-eight);
+  --op-alert-border-color: var(--op-color-neutral-base);
+  --op-alert-border: inset 0 0 0 var(--op-border-width) var(--op-alert-border-color);
+  --op-alert-shadow: var(--op-border-none);
+  --op-alert-flash-inset: var(--op-space-large);
+  --op-alert-flash-animation: var(--op-animation-flash);
+
+  display: flex;
+  align-items: center;
+  padding: var(--op-alert-padding);
+  border-radius: var(--op-alert-radius);
+  background: var(--op-alert-background);
+  box-shadow: var(--op-alert-border), var(--op-alert-shadow);
+  color: var(--op-alert-color);
+  gap: var(--op-alert-gap);
+
+  &.alert--flash {
+    position: fixed;
+    z-index: var(--op-z-index-alert-group);
+    animation: var(--op-alert-flash-animation);
+    inset-block-start: var(--op-alert-flash-inset);
+    inset-inline-end: var(--op-alert-flash-inset);
+  }
+
+  &.alert--outlined {
+    --op-alert-border: inset 0 0 0 var(--op-border-width) var(--op-alert-border-color);
+  }
+
+  &:is(.alert--muted, .alert--filled) {
+    --op-alert-border: var(--op-border-none);
+  }
+
+  &.alert--muted {
+    --op-alert-background: var(--op-color-neutral-plus-five);
+    --op-alert-color: var(--op-color-neutral-on-plus-five);
+
+    .alert__title {
+      --op-alert-title-color: var(--op-color-neutral-on-plus-five-alt);
+    }
+  }
+
+  &.alert--filled {
+    --op-alert-background: var(--op-color-neutral-base);
+    --op-alert-color: var(--op-color-neutral-on-base);
+
+    .alert__title {
+      --op-alert-title-color: var(--op-color-neutral-on-base-alt);
+    }
+  }
+
+  &.alert--warning {
+    --op-alert-background: var(--op-color-alerts-warning-plus-eight);
+    --op-alert-color: var(--op-color-alerts-warning-on-plus-eight);
+    --op-alert-border-color: var(--op-color-alerts-warning-base);
+
+    .alert__title {
+      --op-alert-title-color: var(--op-color-alerts-warning-on-plus-eight-alt);
+    }
+
+    &.alert--muted {
+      --op-alert-background: var(--op-color-alerts-warning-plus-five);
+      --op-alert-color: var(--op-color-alerts-warning-on-plus-five);
+
+      .alert__title {
+        --op-alert-title-color: var(--op-color-alerts-warning-on-plus-five-alt);
+      }
+    }
+
+    &.alert--filled {
+      --op-alert-background: var(--op-color-alerts-warning-base);
+      --op-alert-color: var(--op-color-alerts-warning-on-base);
+
+      .alert__title {
+        --op-alert-title-color: var(--op-color-alerts-warning-on-base-alt);
+      }
+    }
+  }
+
+  /* alert--alert matches the Rails and Devise flash key, so a view can write alert--<key>. */
+  &:is(.alert--danger, .alert--alert) {
+    --op-alert-background: var(--op-color-alerts-danger-plus-eight);
+    --op-alert-color: var(--op-color-alerts-danger-on-plus-eight);
+    --op-alert-border-color: var(--op-color-alerts-danger-base);
+
+    .alert__title {
+      --op-alert-title-color: var(--op-color-alerts-danger-on-plus-eight-alt);
+    }
+
+    &.alert--muted {
+      --op-alert-background: var(--op-color-alerts-danger-plus-five);
+      --op-alert-color: var(--op-color-alerts-danger-on-plus-five);
+
+      .alert__title {
+        --op-alert-title-color: var(--op-color-alerts-danger-on-plus-five-alt);
+      }
+    }
+
+    &.alert--filled {
+      --op-alert-background: var(--op-color-alerts-danger-base);
+      --op-alert-color: var(--op-color-alerts-danger-on-base);
+
+      .alert__title {
+        --op-alert-title-color: var(--op-color-alerts-danger-on-base-alt);
+      }
+    }
+  }
+
+  &.alert--info {
+    --op-alert-background: var(--op-color-alerts-info-plus-eight);
+    --op-alert-color: var(--op-color-alerts-info-on-plus-eight);
+    --op-alert-border-color: var(--op-color-alerts-info-base);
+
+    .alert__title {
+      --op-alert-title-color: var(--op-color-alerts-info-on-plus-eight-alt);
+    }
+
+    &.alert--muted {
+      --op-alert-background: var(--op-color-alerts-info-plus-five);
+      --op-alert-color: var(--op-color-alerts-info-on-plus-five);
+
+      .alert__title {
+        --op-alert-title-color: var(--op-color-alerts-info-on-plus-five-alt);
+      }
+    }
+
+    &.alert--filled {
+      --op-alert-background: var(--op-color-alerts-info-base);
+      --op-alert-color: var(--op-color-alerts-info-on-base);
+
+      .alert__title {
+        --op-alert-title-color: var(--op-color-alerts-info-on-base-alt);
+      }
+    }
+  }
+
+  &.alert--notice {
+    --op-alert-background: var(--op-color-alerts-notice-plus-eight);
+    --op-alert-color: var(--op-color-alerts-notice-on-plus-eight);
+    --op-alert-border-color: var(--op-color-alerts-notice-base);
+
+    .alert__title {
+      --op-alert-title-color: var(--op-color-alerts-notice-on-plus-eight-alt);
+    }
+
+    &.alert--muted {
+      --op-alert-background: var(--op-color-alerts-notice-plus-five);
+      --op-alert-color: var(--op-color-alerts-notice-on-plus-five);
+
+      .alert__title {
+        --op-alert-title-color: var(--op-color-alerts-notice-on-plus-five-alt);
+      }
+    }
+
+    &.alert--filled {
+      --op-alert-background: var(--op-color-alerts-notice-base);
+      --op-alert-color: var(--op-color-alerts-notice-on-base);
+
+      .alert__title {
+        --op-alert-title-color: var(--op-color-alerts-notice-on-base-alt);
+      }
+    }
+  }
+
+  .alert__icon {
+    flex-shrink: 0;
+  }
+
+  .alert__messages {
+    --op-alert-messages-gap: var(--op-space-2x-small);
+
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    gap: var(--op-alert-messages-gap);
+  }
+
+  .alert__title {
+    --op-alert-title-color: var(--op-color-neutral-on-plus-eight-alt);
+    --op-alert-title-font-size: var(--op-font-medium);
+    --op-alert-title-font-weight: var(--op-font-weight-medium);
+
+    color: var(--op-alert-title-color);
+    font-size: var(--op-alert-title-font-size);
+    font-weight: var(--op-alert-title-font-weight);
+  }
+
+  .alert__description {
+    --op-alert-description-font-size: var(--op-font-small);
+
+    font-size: var(--op-alert-description-font-size);
+  }
+
+  /* The border and focus outline use currentColor, so they show on every tone. */
+  .alert__close {
+    --op-alert-close-size: var(--op-input-height-small);
+    --op-alert-close-radius: var(--op-radius-circle);
+    --op-alert-close-border: var(--op-border-none);
+    --op-alert-close-border-hover: inset 0 0 0 var(--op-border-width) currentColor;
+    --op-alert-close-focus-color: currentColor;
+    --op-alert-close-focus-width: var(--op-border-width-large);
+
+    display: grid;
+    flex-shrink: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--op-alert-close-radius);
+    background: transparent;
+    block-size: var(--op-alert-close-size);
+    box-shadow: var(--op-alert-close-border);
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    inline-size: var(--op-alert-close-size);
+    place-items: center;
+
+    &:hover {
+      --op-alert-close-border: var(--op-alert-close-border-hover);
+    }
+
+    &:focus-visible {
+      outline: var(--op-alert-close-focus-width) solid var(--op-alert-close-focus-color);
+      outline-offset: var(--op-alert-close-focus-width);
+    }
+  }
+}

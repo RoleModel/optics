@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Composed alert</title>
+    <script type="module" src="./alert.jsx"></script>
+  </head>
+  <body>
+    <nav class="demo-nav">
+      <a href="./index.html">Tabs</a> <a href="./avatar.html">Avatar</a> <a href="./icon.html">Icon</a>
+      <a href="./alert.html" aria-current="page">Alert</a>
+    </nav>
+    <h1>Composed alert</h1>
+
+    <section>
+      <h2>Web component (also what a Rails view writes)</h2>
+      <op-alert variant="warning">
+        <op-icon name="warning"></op-icon>
+        <op-alert-messages>
+          <op-alert-title>Warning</op-alert-title>
+          <op-alert-description>Your trial ends tomorrow.</op-alert-description>
+        </op-alert-messages>
+        <op-alert-close></op-alert-close>
+      </op-alert>
+      <op-alert variant="danger">
+        <op-icon name="error"></op-icon>
+        <op-alert-messages>
+          <op-alert-title>Danger</op-alert-title>
+          <op-alert-description>The payment failed.</op-alert-description>
+          <op-alert-description>Check the card number and try again.</op-alert-description>
+        </op-alert-messages>
+        <op-alert-close></op-alert-close>
+      </op-alert>
+      <op-alert variant="info">
+        <op-icon name="info"></op-icon>
+        <op-alert-messages>
+          <op-alert-description>Info, with no title.</op-alert-description>
+        </op-alert-messages>
+      </op-alert>
+      <op-alert variant="notice">
+        <op-alert-messages>
+          <op-alert-title>Notice</op-alert-title>
+          <op-alert-description>With no icon.</op-alert-description>
+        </op-alert-messages>
+      </op-alert>
+      <op-alert>
+        <op-icon name="campaign"></op-icon>
+        <op-alert-messages>
+          <op-alert-title>No variant</op-alert-title>
+          <op-alert-description>A neutral alert.</op-alert-description>
+        </op-alert-messages>
+        <op-alert-close label="Close the message"></op-alert-close>
+      </op-alert>
+    </section>
+
+    <section>
+      <h2>Tones (web component)</h2>
+      <div class="alert-tones">
+        <op-alert variant="warning" tone="muted"><op-alert-description>Warning</op-alert-description></op-alert>
+        <op-alert variant="danger" tone="muted"><op-alert-description>Danger</op-alert-description></op-alert>
+        <op-alert variant="info" tone="muted"><op-alert-description>Info</op-alert-description></op-alert>
+        <op-alert variant="notice" tone="muted"><op-alert-description>Notice</op-alert-description></op-alert>
+        <op-alert tone="muted"><op-alert-description>Neutral</op-alert-description></op-alert>
+        <op-alert variant="warning" tone="filled"><op-alert-description>Warning</op-alert-description></op-alert>
+        <op-alert variant="alert" tone="filled"><op-alert-description>Alert</op-alert-description></op-alert>
+        <op-alert variant="info" tone="filled"><op-alert-description>Info</op-alert-description></op-alert>
+        <op-alert variant="notice" tone="filled"><op-alert-description>Notice</op-alert-description></op-alert>
+        <op-alert tone="filled"><op-alert-description>Neutral</op-alert-description></op-alert>
+      </div>
+      <p>Muted, then filled. The filled alert uses <code>variant="alert"</code>, the Rails flash key.</p>
+    </section>
+
+    <section>
+      <h2>Flash (web component)</h2>
+      <div class="row">
+        <button type="button" id="flash-notice">Show a flash notice</button>
+      </div>
+      <p>It slides in at the top right, slides out, and removes itself.</p>
+    </section>
+
+    <section>
+      <h2>React</h2>
+      <div id="react-alerts" class="alert-stack"></div>
+    </section>
+
+    <section>
+      <h2>Plain BEM markup (no component, styles only)</h2>
+      <div class="alert alert--notice alert--muted" role="status">
+        <span class="icon icon--large icon--weight-bold alert__icon" aria-hidden="true">task_alt</span>
+        <div class="alert__messages">
+          <div class="alert__title">Saved</div>
+          <div class="alert__description">The close button needs your own JS.</div>
+        </div>
+        <button type="button" class="alert__close" aria-label="Dismiss">
+          <span class="icon" aria-hidden="true">close</span>
+        </button>
+      </div>
+    </section>
+
+    <h2>Customized by an app</h2>
+    <p>Each one sets only the local variables, in <code>demo.css</code>. No new selectors or properties.</p>
+
+    <section>
+      <h2>A new variant</h2>
+      <op-alert class="alert--brand">
+        <op-icon name="auto_awesome"></op-icon>
+        <op-alert-messages>
+          <op-alert-title>Brand</op-alert-title>
+          <op-alert-description>An app variant: one class that sets the four color variables.</op-alert-description>
+        </op-alert-messages>
+        <op-alert-close></op-alert-close>
+      </op-alert>
+    </section>
+
+    <section class="card-alerts">
+      <h2>Card, with a shadow (React)</h2>
+      <div id="react-card"></div>
+    </section>
+  </body>
+</html>

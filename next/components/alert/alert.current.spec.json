@@ -1,0 +1,71 @@
+{
+  "name": "alert",
+  "description": "Classes that style a <div> as a colored message with an optional icon, title, and close icon. CSS only: no role, no dismiss, and the flash animation leaves the element on the page.",
+  "source": "src/components/alert.css",
+  "parts": {
+    "Root": {
+      "react": null,
+      "webComponent": null,
+      "html": "div",
+      "class": "alert",
+      "props": {
+        "variant": "Add alert--warning, alert--danger, alert--alert, alert--info, or alert--notice by hand. With none, the alert has no colors.",
+        "tone": "Add alert--muted or alert--filled by hand. The story helper also adds alert--outlined, which alert.css does not style.",
+        "flash": "Add alert--flash by hand. The element stays in the page after it slides out.",
+        "role": "None. Add role=\"alert\" by hand."
+      }
+    },
+    "Icon": {
+      "react": null,
+      "webComponent": null,
+      "html": "span",
+      "class": "alert__icon",
+      "props": {
+        "name": "Material Symbols: write the name as the text and add the icon classes. alert__icon sets the private icon variables for a large, bold icon."
+      }
+    },
+    "Messages": {
+      "react": null,
+      "webComponent": null,
+      "html": "div",
+      "class": "alert__messages",
+      "props": {}
+    },
+    "Title": {
+      "react": null,
+      "webComponent": null,
+      "html": "div",
+      "class": "alert__title",
+      "props": {}
+    },
+    "Description": {
+      "react": null,
+      "webComponent": null,
+      "html": "div",
+      "class": "alert__description",
+      "props": {}
+    },
+    "Close": {
+      "react": null,
+      "webComponent": null,
+      "html": "button or span",
+      "class": "alert__icon",
+      "props": {
+        "label": "None. Add aria-label by hand.",
+        "onClick": "None. Remove the alert with your own JS."
+      }
+    }
+  },
+  "modifiers": {
+    "alert--warning": "Warning colors",
+    "alert--danger": "Danger colors",
+    "alert--alert": "An alias for alert--danger",
+    "alert--info": "Info colors",
+    "alert--notice": "Notice colors",
+    "alert--muted": "A darker background and no border. Only works with a variant",
+    "alert--filled": "The strongest background and no border. Only works with a variant",
+    "alert--flash": "Fixed at the top right, with a 5s slide in and out animation"
+  },
+  "customPropertiesNote": "No custom properties. Every value comes straight from a global token. Each variant and tone sets background-color, box-shadow, color, and the title color directly, so a new variant copies all three tones' rules. The close button reuses alert__icon and Optics button classes.",
+  "customProperties": {}
+}
