@@ -8,7 +8,7 @@
       "webComponent": "op-badge",
       "class": "badge",
       "props": {
-        "variant": "primary, warning, danger, info, or notice. Adds badge--primary, badge--warning, badge--danger, badge--info, or badge--notice. With no variant, the badge is neutral.",
+        "variant": "primary, warning, danger, info, or notice. Adds badge--primary, badge--warning, badge--danger, badge--info, or badge--notice. With no variant, the badge is neutral. Any other value adds badge--<value>, for an app's own variant.",
         "pill": "Adds badge--pill: fully round ends.",
         "notification": "left or right. Adds badge--notification-left or badge--notification-right: the badge sits on that top corner of its parent, with a ring in the page color. The parent needs position: relative.",
         "children": "The text, and optional icons before or after it."

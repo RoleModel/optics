@@ -10,9 +10,10 @@ import { OpticsElement } from '../../shared/optics-element.js'
 // A decorator: it renders nothing and adds classes to the parts the author wrote. It shows
 // the fallback until the image loads, and keeps it when the image fails.
 class OpAvatar extends OpticsElement {
+  static block = 'avatar'
   static properties = {
-    size: { reflect: true },
-    disabled: { type: Boolean, reflect: true },
+    size: { reflect: true, modifier: true },
+    disabled: { type: Boolean, reflect: true, modifier: true },
   }
 
   #observer = new MutationObserver(() => this.requestUpdate())
@@ -36,13 +37,6 @@ class OpAvatar extends OpticsElement {
 
   updated() {
     const loaded = this.#status === 'loaded'
-
-    this.classList.add('avatar')
-    for (const size of ['small', 'medium', 'large']) {
-      this.classList.toggle(`avatar--${size}`, this.size === size)
-    }
-    // toggle() with undefined flips the class, so force a boolean.
-    this.classList.toggle('avatar--disabled', Boolean(this.disabled))
 
     if (this.#image) {
       this.#image.classList.add('avatar__image')

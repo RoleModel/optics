@@ -1,4 +1,5 @@
 import { createContext, use, useLayoutEffect, useState } from 'react'
+import { cx } from '../../shared/cx.js'
 
 // React version of avatar.spec.json. Compose the parts:
 //
@@ -8,8 +9,6 @@ import { createContext, use, useLayoutEffect, useState } from 'react'
 // </Avatar.Root>
 
 const AvatarContext = createContext(null)
-
-const cx = (...classes) => classes.filter(Boolean).join(' ')
 
 function useAvatar(part) {
   const avatar = use(AvatarContext)

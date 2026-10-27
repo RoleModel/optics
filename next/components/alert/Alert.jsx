@@ -1,5 +1,6 @@
 import { createContext, use, useState } from 'react'
 import { Icon } from '../icon/Icon.jsx'
+import { cx } from '../../shared/cx.js'
 
 // React version of alert.spec.json. Compose the parts:
 //
@@ -13,8 +14,6 @@ import { Icon } from '../icon/Icon.jsx'
 // </Alert.Root>
 
 const AlertContext = createContext(null)
-
-const cx = (...classes) => classes.filter(Boolean).join(' ')
 
 function useAlert(part) {
   const alert = use(AlertContext)

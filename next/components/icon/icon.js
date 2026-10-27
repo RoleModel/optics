@@ -10,13 +10,14 @@ import { iconGlyph } from './glyph.js'
 // name as text for Material Symbols, or the app's pack classes and no text for the others
 // (see setIconPack in glyph.js). With no name, it keeps the children the author wrote.
 class OpIcon extends OpticsElement {
+  static block = 'icon'
   static properties = {
     name: { reflect: true },
     label: { reflect: true },
-    size: { reflect: true },
-    weight: { reflect: true },
-    emphasis: { reflect: true },
-    filled: { type: Boolean, reflect: true },
+    size: { reflect: true, modifier: true },
+    weight: { reflect: true, modifier: (weight) => `weight-${weight}` },
+    emphasis: { reflect: true, modifier: (emphasis) => `${emphasis}-emphasis` },
+    filled: { type: Boolean, reflect: true, modifier: true },
     duotone: { type: Boolean, reflect: true },
   }
 
@@ -29,19 +30,6 @@ class OpIcon extends OpticsElement {
   }
 
   updated() {
-    this.classList.add('icon')
-    for (const size of ['small', 'medium', 'large', 'x-large']) {
-      this.classList.toggle(`icon--${size}`, this.size === size)
-    }
-    for (const weight of ['thin', 'light', 'normal', 'semi-bold', 'bold']) {
-      this.classList.toggle(`icon--weight-${weight}`, this.weight === weight)
-    }
-    for (const emphasis of ['low', 'normal', 'high']) {
-      this.classList.toggle(`icon--${emphasis}-emphasis`, this.emphasis === emphasis)
-    }
-    // toggle() with undefined flips the class, so force a boolean.
-    this.classList.toggle('icon--filled', Boolean(this.filled))
-
     const glyph = iconGlyph(this)
     this.classList.remove(...this.#glyphClasses)
     this.classList.add(...glyph.classes)

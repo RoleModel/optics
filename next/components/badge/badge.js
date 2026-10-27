@@ -8,10 +8,11 @@ import '../icon/icon.js'
 //
 // A decorator: it renders nothing and adds classes to itself and to each direct <op-icon>.
 class OpBadge extends OpticsElement {
+  static block = 'badge'
   static properties = {
-    variant: { reflect: true },
-    pill: { type: Boolean, reflect: true },
-    notification: { reflect: true },
+    variant: { reflect: true, modifier: true },
+    pill: { type: Boolean, reflect: true, modifier: true },
+    notification: { reflect: true, modifier: (side) => `notification-${side}` },
   }
 
   #observer = new MutationObserver(() => this.requestUpdate())
@@ -33,16 +34,6 @@ class OpBadge extends OpticsElement {
   }
 
   updated() {
-    this.classList.add('badge')
-    for (const variant of ['primary', 'warning', 'danger', 'info', 'notice']) {
-      this.classList.toggle(`badge--${variant}`, this.variant === variant)
-    }
-    // toggle() with undefined flips the class, so force a boolean.
-    this.classList.toggle('badge--pill', Boolean(this.pill))
-    for (const side of ['left', 'right']) {
-      this.classList.toggle(`badge--notification-${side}`, this.notification === side)
-    }
-
     for (const icon of this.querySelectorAll(':scope > op-icon')) icon.classList.add('badge__icon')
   }
 }

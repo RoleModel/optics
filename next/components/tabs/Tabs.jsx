@@ -1,4 +1,5 @@
 import { createContext, use, useId, useState } from 'react'
+import { cx } from '../../shared/cx.js'
 
 // React version of tabs.spec.json. Compose the parts:
 //
@@ -10,8 +11,6 @@ import { createContext, use, useId, useState } from 'react'
 // </Tabs.Root>
 
 const TabsContext = createContext(null)
-
-const cx = (...classes) => classes.filter(Boolean).join(' ')
 
 function useTabs(part) {
   const tabs = use(TabsContext)

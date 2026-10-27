@@ -16,10 +16,11 @@ import '../icon/icon.js'
 // A decorator: <op-alert> renders nothing and adds classes and a role to the parts the author
 // wrote. Only <op-alert-close> renders, a native <button>, so it gets focus and keys for free.
 class OpAlert extends OpticsElement {
+  static block = 'alert'
   static properties = {
-    variant: { reflect: true },
-    tone: { reflect: true },
-    flash: { type: Boolean, reflect: true },
+    variant: { reflect: true, modifier: true },
+    tone: { reflect: true, modifier: true },
+    flash: { type: Boolean, reflect: true, modifier: true },
   }
 
   constructor() {
@@ -39,15 +40,6 @@ class OpAlert extends OpticsElement {
   }
 
   updated() {
-    this.classList.add('alert')
-    for (const variant of ['warning', 'danger', 'alert', 'info', 'notice']) {
-      this.classList.toggle(`alert--${variant}`, this.variant === variant)
-    }
-    for (const tone of ['outlined', 'muted', 'filled']) {
-      this.classList.toggle(`alert--${tone}`, this.tone === tone)
-    }
-    // toggle() with undefined flips the class, so force a boolean.
-    this.classList.toggle('alert--flash', Boolean(this.flash))
     if (!this.hasAttribute('role')) this.setAttribute('role', 'alert')
 
     for (const icon of this.querySelectorAll(':scope > op-icon')) {

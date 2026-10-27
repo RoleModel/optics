@@ -1,11 +1,10 @@
 import { iconGlyph } from './glyph.js'
+import { cx } from '../../shared/cx.js'
 
 // React version of icon.spec.json:
 //
 // <Icon name="settings" size="large" />
 // <Icon label="Favorite"><svg viewBox="0 0 24 24">…</svg></Icon>
-
-const cx = (...classes) => classes.filter(Boolean).join(' ')
 
 export function Icon({ name, label, size, weight, emphasis, filled, duotone, className, children, ...props }) {
   const glyph = iconGlyph({ name, weight, filled, duotone })

@@ -1,11 +1,10 @@
 import { Icon } from '../icon/Icon.jsx'
+import { cx } from '../../shared/cx.js'
 
 // React version of badge.spec.json. Modeled on optics-components-react Badge:
 //
 // <Badge variant="notice" pill>Paid</Badge>
 // <Badge variant="primary"><Badge.Icon name="add" /> New</Badge>
-
-const cx = (...classes) => classes.filter(Boolean).join(' ')
 
 export function Badge({ variant, pill, notification, className, ...props }) {
   return <span data-slot="badge" className={badgeClasses({ variant, pill, notification, className })} {...props} />

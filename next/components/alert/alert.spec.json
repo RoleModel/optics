@@ -9,7 +9,7 @@
       "class": "alert",
       "role": "alert",
       "props": {
-        "variant": "warning, danger, info, or notice. Adds alert--warning, alert--danger, alert--info, or alert--notice. alert is an alias for danger, to match the Rails and Devise flash key. With no variant, the alert is neutral.",
+        "variant": "warning, danger, info, or notice. Adds alert--warning, alert--danger, alert--info, or alert--notice. alert is an alias for danger, to match the Rails and Devise flash key. With no variant, the alert is neutral. Any other value adds alert--<value>, for an app's own variant.",
         "tone": "outlined, muted, or filled. Adds alert--outlined, alert--muted, or alert--filled. Outlined is the default.",
         "flash": "Adds alert--flash: the alert slides in at the top right, stays, and slides out. It dismisses itself when the animation ends.",
         "onDismiss": "React: called with the event when the close button is clicked or a flash ends. Call event.preventDefault() to keep the alert. Web component: an op-alert-dismiss event that you can cancel. If it is not canceled, the alert removes itself.",
