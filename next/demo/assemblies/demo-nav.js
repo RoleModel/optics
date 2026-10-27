@@ -6,6 +6,7 @@ const PAGES = {
   'avatar.html': 'Avatar',
   'icon.html': 'Icon',
   'alert.html': 'Alert',
+  'badge.html': 'Badge',
 }
 
 // The demo app's page nav. It marks the current page:

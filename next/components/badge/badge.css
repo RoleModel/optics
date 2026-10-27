@@ -1,0 +1,104 @@
+/*
+ * Parts, modifiers, and custom properties: see badge.spec.json
+ *
+ * Elements nest inside .badge (stylelint-bem require-nesting). Each element declares its
+ * own variables; customize an element by setting its variables on it.
+ *
+ * Variants set only the background and color. With no variant, the badge is neutral.
+ */
+
+.badge {
+  --op-badge-padding: var(--op-space-2x-small) var(--op-space-x-small);
+  --op-badge-gap: var(--op-space-x-small);
+  --op-badge-radius: var(--op-radius-medium);
+  --op-badge-background: var(--op-color-neutral-base);
+  --op-badge-color: var(--op-color-neutral-on-base);
+  --op-badge-font-size: var(--op-font-x-small);
+  --op-badge-font-weight: var(--op-font-weight-bold);
+  --op-badge-border: var(--op-border-none);
+  --op-badge-ring-color: var(--op-color-neutral-plus-max);
+  --op-badge-ring: var(--op-border-none);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--op-badge-padding);
+  border-radius: var(--op-badge-radius);
+  background: var(--op-badge-background);
+  box-shadow: var(--op-badge-border), var(--op-badge-ring);
+  color: var(--op-badge-color);
+  cursor: inherit;
+  font-size: var(--op-badge-font-size);
+  font-weight: var(--op-badge-font-weight);
+  gap: var(--op-badge-gap);
+  letter-spacing: var(--op-letter-spacing-label);
+  line-height: var(--op-line-height-dense);
+  user-select: none;
+  white-space: nowrap;
+
+  &.badge--primary {
+    --op-badge-background: var(--op-color-primary-base);
+    --op-badge-color: var(--op-color-primary-on-base);
+  }
+
+  &.badge--warning {
+    --op-badge-background: var(--op-color-alerts-warning-base);
+    --op-badge-color: var(--op-color-alerts-warning-on-base);
+  }
+
+  &.badge--danger {
+    --op-badge-background: var(--op-color-alerts-danger-base);
+    --op-badge-color: var(--op-color-alerts-danger-on-base);
+  }
+
+  &.badge--info {
+    --op-badge-background: var(--op-color-alerts-info-base);
+    --op-badge-color: var(--op-color-alerts-info-on-base);
+  }
+
+  &.badge--notice {
+    --op-badge-background: var(--op-color-alerts-notice-base);
+    --op-badge-color: var(--op-color-alerts-notice-on-base);
+  }
+
+  &.badge--pill {
+    --op-badge-radius: var(--op-radius-pill);
+  }
+
+  /*
+   * The badge's center sits on the parent's corner. translate does not flip in a
+   * right-to-left page the way inset-inline does, so :dir(rtl) flips it.
+   */
+  &:is(.badge--notification-left, .badge--notification-right) {
+    --op-badge-ring: 0 0 0 var(--op-border-width-large) var(--op-badge-ring-color);
+
+    position: absolute;
+    inset-block-start: 0;
+    pointer-events: none;
+  }
+
+  &.badge--notification-left {
+    inset-inline-start: 0;
+    translate: -50% -50%;
+
+    &:dir(rtl) {
+      translate: 50% -50%;
+    }
+  }
+
+  &.badge--notification-right {
+    inset-inline-end: 0;
+    translate: 50% -50%;
+
+    &:dir(rtl) {
+      translate: -50% -50%;
+    }
+  }
+
+  .badge__icon {
+    --op-badge-icon-size: var(--op-font-small);
+    --op-icon-size: var(--op-badge-icon-size);
+
+    flex-shrink: 0;
+  }
+}

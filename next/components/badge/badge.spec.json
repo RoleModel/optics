@@ -1,0 +1,54 @@
+{
+  "$schema": "../../spec.schema.json",
+  "name": "badge",
+  "description": "A small label for a status or a count, like New, Paid, or 3. Not interactive: use a tag for input. Can sit on the corner of its parent as a notification count.",
+  "parts": {
+    "Root": {
+      "react": "Badge",
+      "webComponent": "op-badge",
+      "class": "badge",
+      "props": {
+        "variant": "primary, warning, danger, info, or notice. Adds badge--primary, badge--warning, badge--danger, badge--info, or badge--notice. With no variant, the badge is neutral.",
+        "pill": "Adds badge--pill: fully round ends.",
+        "notification": "left or right. Adds badge--notification-left or badge--notification-right: the badge sits on that top corner of its parent, with a ring in the page color. The parent needs position: relative.",
+        "children": "The text, and optional icons before or after it."
+      }
+    },
+    "Icon": {
+      "react": "Badge.Icon",
+      "webComponent": "op-icon (a direct child of op-badge)",
+      "class": "badge__icon",
+      "props": {
+        "name": "The icon's name. Takes every Icon prop. The badge sets its size with --op-badge-icon-size. Plain HTML: add badge__icon to the icon."
+      }
+    }
+  },
+  "modifiers": {
+    "badge--primary": "Primary colors",
+    "badge--warning": "Warning colors",
+    "badge--danger": "Danger colors",
+    "badge--info": "Info colors",
+    "badge--notice": "Notice colors",
+    "badge--pill": "Fully round ends",
+    "badge--notification-left": "On the top left corner of the parent, with a ring",
+    "badge--notification-right": "On the top right corner of the parent, with a ring"
+  },
+  "customPropertiesNote": "Border and ring values are box shadows. Use var(--op-border-none) to draw nothing. Each variant sets only the background and color. Make a new variant with a modifier class that sets these two variables.",
+  "customProperties": {
+    "badge": {
+      "--op-badge-padding": "Padding inside the badge",
+      "--op-badge-gap": "Space between the text and icons",
+      "--op-badge-radius": "Corner radius",
+      "--op-badge-background": "Background color",
+      "--op-badge-color": "Text and icon color",
+      "--op-badge-font-size": "Text size",
+      "--op-badge-font-weight": "Text weight",
+      "--op-badge-border": "The border",
+      "--op-badge-ring-color": "Color of the ring around a notification badge. Set it to the color behind the parent",
+      "--op-badge-ring": "The ring. Only a notification badge draws one by default"
+    },
+    "badge__icon": {
+      "--op-badge-icon-size": "Size of an icon in the badge"
+    }
+  }
+}

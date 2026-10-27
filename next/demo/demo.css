@@ -38,8 +38,17 @@ h2 {
 /* An assembly adds no box, so the component inside it lays out as if written in its place. */
 demo-alert,
 demo-avatar,
+demo-invoice-status,
+demo-notifications,
 demo-svg {
   display: contents;
+}
+
+/* A notification badge sits on the corner of its nearest positioned parent. */
+.notification-button {
+  position: relative;
+  padding: var(--op-space-x-small) var(--op-space-small);
+  font: inherit;
 }
 
 /* Each example below sets only the local variables. */
@@ -194,5 +203,29 @@ demo-svg {
     --op-alert-radius: var(--op-radius-large);
     --op-alert-border: var(--op-border-none);
     --op-alert-shadow: var(--op-shadow-medium);
+  }
+}
+
+.badge--brand {
+  --op-badge-background: var(--op-demo-brand-color);
+  --op-badge-color: var(--op-color-background);
+}
+
+.outlined-badges {
+  .badge {
+    --op-badge-background: transparent;
+    --op-badge-color: var(--op-color-on-background);
+    --op-badge-border: inset 0 0 0 var(--op-border-width) currentColor;
+  }
+}
+
+.large-badges {
+  .badge {
+    --op-badge-padding: var(--op-space-x-small) var(--op-space-small);
+    --op-badge-font-size: var(--op-font-small);
+  }
+
+  .badge__icon {
+    --op-badge-icon-size: var(--op-font-medium);
   }
 }

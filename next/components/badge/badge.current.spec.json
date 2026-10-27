@@ -1,0 +1,39 @@
+{
+  "name": "badge",
+  "description": "Classes that style a <div> or <span> as a small colored label. CSS only.",
+  "source": "src/components/badge.css",
+  "parts": {
+    "Root": {
+      "react": null,
+      "webComponent": null,
+      "html": "div or span",
+      "class": "badge",
+      "props": {
+        "variant": "Add badge--primary, badge--warning, badge--danger, badge--info, or badge--notice by hand. With none, the badge is neutral.",
+        "pill": "Add badge--pill by hand.",
+        "notification": "Add badge--notification-left or badge--notification-right by hand. The parent needs btn--with-badge, which only sets position: relative. In a right-to-left page, the badge moves into the parent, not out of it: inset-inline-start and inset-inline-end flip, but translateX() does not."
+      }
+    },
+    "Icon": {
+      "react": null,
+      "webComponent": null,
+      "html": "span",
+      "class": "material-symbols-outlined",
+      "props": {
+        "name": "Material Symbols only: badge.css sizes .material-symbols-outlined, so an icon from another pack keeps its own size."
+      }
+    }
+  },
+  "modifiers": {
+    "badge--primary": "Primary colors",
+    "badge--warning": "Warning colors",
+    "badge--danger": "Danger colors",
+    "badge--info": "Info colors",
+    "badge--notice": "Notice colors",
+    "badge--pill": "Fully round ends",
+    "badge--notification-left": "Absolute, on the top left corner of the parent, with a ring",
+    "badge--notification-right": "Absolute, on the top right corner of the parent, with a ring"
+  },
+  "customPropertiesNote": "No custom properties. Every value comes straight from a global token. Each variant sets background-color and color directly, and both notification modifiers repeat the same ring and position rules.",
+  "customProperties": {}
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Composed badge</title>
+    <script type="module" src="./badge.jsx"></script>
+  </head>
+  <body>
+    <demo-nav></demo-nav>
+    <h1>Composed badge</h1>
+
+    <section>
+      <h2>Web component (also what a Rails view writes)</h2>
+      <div class="op-cluster">
+        <op-badge>Neutral</op-badge>
+        <op-badge variant="primary">Primary</op-badge>
+        <op-badge variant="warning">Warning</op-badge>
+        <op-badge variant="danger">Danger</op-badge>
+        <op-badge variant="info">Info</op-badge>
+        <op-badge variant="notice">Notice</op-badge>
+      </div>
+      <div class="op-cluster">
+        <op-badge variant="primary" pill>Pill</op-badge>
+        <op-badge variant="info"><op-icon name="open_in_new"></op-icon> Icon first</op-badge>
+        <op-badge variant="notice" pill>Icon last <op-icon name="add"></op-icon></op-badge>
+      </div>
+      <div class="op-cluster gap-xl">
+        <button type="button" class="notification-button">
+          Inbox <op-badge variant="danger" pill notification="right">3</op-badge>
+        </button>
+        <button type="button" class="notification-button">
+          Drafts <op-badge pill notification="left">12</op-badge>
+        </button>
+      </div>
+      <p>The variants. Then a pill, icons, and notification badges on the right and left corners of a button.</p>
+    </section>
+
+    <section>
+      <h2>React</h2>
+      <div id="react-badges" class="op-cluster"></div>
+    </section>
+
+    <section>
+      <h2>Assembly (web component)</h2>
+      <div class="op-cluster">
+        <demo-invoice-status status="draft"></demo-invoice-status>
+        <demo-invoice-status status="sent"></demo-invoice-status>
+        <demo-invoice-status status="paid"></demo-invoice-status>
+        <demo-invoice-status status="due"></demo-invoice-status>
+        <demo-invoice-status status="overdue"></demo-invoice-status>
+      </div>
+      <div class="op-cluster gap-xl">
+        <demo-notifications count="3"></demo-notifications>
+        <demo-notifications count="120"></demo-notifications>
+        <demo-notifications count="0"></demo-notifications>
+      </div>
+      <p>
+        The demo app's invoice status picks the label and color from the status. Its notifications button hides the
+        badge at 0, caps it at 99+, and names the button with the full count.
+      </p>
+    </section>
+
+    <section>
+      <h2>Assembly (React)</h2>
+      <div id="react-assembly" class="op-stack"></div>
+    </section>
+
+    <section>
+      <h2>Plain BEM markup (no component, styles only)</h2>
+      <div class="op-cluster">
+        <span class="badge badge--info">Beta</span>
+        <span class="badge badge--primary badge--pill">
+          <span class="icon badge__icon" aria-hidden="true">bolt</span>
+          Fast
+        </span>
+      </div>
+    </section>
+
+    <h2>Customized by an app</h2>
+    <p>Each one sets only the local variables, in <code>demo.css</code>. No new selectors or properties.</p>
+
+    <section>
+      <h2>A new variant</h2>
+      <div class="op-cluster">
+        <op-badge class="badge--brand">Brand</op-badge>
+        <op-badge class="badge--brand" pill><op-icon name="auto_awesome"></op-icon> Pro</op-badge>
+      </div>
+      <p>An app variant: one class that sets the two color variables.</p>
+    </section>
+
+    <section class="outlined-badges">
+      <h2>Outlined</h2>
+      <div class="op-cluster">
+        <op-badge>Draft</op-badge>
+        <op-badge pill><op-icon name="schedule"></op-icon> Pending</op-badge>
+      </div>
+    </section>
+
+    <section class="large-badges">
+      <h2>Large (React)</h2>
+      <div id="react-large" class="op-cluster"></div>
+    </section>
+  </body>
+</html>
