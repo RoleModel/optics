@@ -1,3 +1,6 @@
+/* Optics layout utilities, like op-stack and op-cluster, for laying out the examples. */
+@import '../../src/core/utilities.css';
+
 /* A stand-in for an app's own brand color. */
 :root {
   --op-demo-brand-color: #c026d3;
@@ -30,6 +33,13 @@ section {
 h2 {
   margin: 0;
   font-size: var(--op-font-medium);
+}
+
+/* An assembly adds no box, so the component inside it lays out as if written in its place. */
+demo-alert,
+demo-avatar,
+demo-svg {
+  display: contents;
 }
 
 /* Each example below sets only the local variables. */
@@ -119,17 +129,6 @@ h2 {
   }
 }
 
-.demo-nav {
-  display: flex;
-  gap: var(--op-space-medium);
-}
-
-.row {
-  display: flex;
-  align-items: center;
-  gap: var(--op-space-medium);
-}
-
 .square-avatars {
   .avatar {
     --op-avatar-radius: var(--op-radius-medium);
@@ -172,11 +171,7 @@ h2 {
   }
 }
 
-.alert-stack {
-  display: grid;
-  gap: var(--op-space-medium);
-}
-
+/* A one-off layout, so a scoped class and not a utility. */
 .alert-tones {
   display: grid;
   gap: var(--op-space-small);

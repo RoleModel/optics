@@ -7,21 +7,18 @@
     <script type="module" src="./icon.jsx"></script>
   </head>
   <body>
-    <nav class="demo-nav">
-      <a href="./index.html">Tabs</a> <a href="./avatar.html">Avatar</a>
-      <a href="./icon.html" aria-current="page">Icon</a> <a href="./alert.html">Alert</a>
-    </nav>
+    <demo-nav></demo-nav>
     <h1>Composed icon</h1>
 
     <section>
       <h2>Web component (also what a Rails view writes)</h2>
-      <div class="row">
+      <div class="op-cluster">
         <op-icon name="settings" size="small"></op-icon>
         <op-icon name="settings"></op-icon>
         <op-icon name="settings" size="large"></op-icon>
         <op-icon name="settings" size="x-large"></op-icon>
       </div>
-      <div class="row">
+      <div class="op-cluster">
         <op-icon name="favorite" size="x-large" weight="light"></op-icon>
         <op-icon name="favorite" size="x-large" weight="bold"></op-icon>
         <op-icon name="favorite" size="x-large" filled></op-icon>
@@ -34,46 +31,21 @@
 
     <section>
       <h2>SVG icons (web component)</h2>
-      <div class="row">
-        <op-icon size="x-large">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              stroke-width="2"
-              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
-            />
-          </svg>
-        </op-icon>
-        <op-icon size="x-large" weight="light">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              stroke-width="2"
-              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
-            />
-          </svg>
-        </op-icon>
-        <op-icon size="x-large" weight="bold">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              stroke-width="2"
-              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
-            />
-          </svg>
-        </op-icon>
-        <op-icon size="x-large" emphasis="low">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path
-              stroke-width="2"
-              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
-            />
-          </svg>
-        </op-icon>
+      <div class="op-cluster">
+        <op-icon size="x-large"><demo-svg name="heart"></demo-svg></op-icon>
+        <op-icon size="x-large" weight="light"><demo-svg name="heart"></demo-svg></op-icon>
+        <op-icon size="x-large" weight="bold"><demo-svg name="heart"></demo-svg></op-icon>
+        <op-icon size="x-large" emphasis="low"><demo-svg name="heart"></demo-svg></op-icon>
       </div>
-      <p>As drawn, light, bold, and low emphasis. No icon--svg class: the styles target the svg inside.</p>
+      <p>
+        As drawn, light, bold, and low emphasis. No icon--svg class: the styles target the svg inside. The svg comes
+        from demo-svg, the demo app's own icon set.
+      </p>
     </section>
 
     <section>
       <h2>React</h2>
-      <div id="react-icons" class="row"></div>
+      <div id="react-icons" class="op-cluster"></div>
     </section>
 
     <section>
@@ -86,7 +58,7 @@
 
     <section>
       <h2>Plain BEM markup (no component, styles only)</h2>
-      <div class="row">
+      <div class="op-cluster">
         <span class="icon icon--large" aria-hidden="true">home</span>
         <span class="icon icon--large icon--filled" role="img" aria-label="Home">home</span>
       </div>
@@ -98,7 +70,7 @@
 
     <section class="brand-icons">
       <h2>Brand color</h2>
-      <div class="row">
+      <div class="op-cluster">
         <op-icon name="rocket_launch" size="large"></op-icon>
         <op-icon name="rocket_launch" size="large" filled></op-icon>
       </div>
@@ -106,7 +78,7 @@
 
     <section class="chunky-icons">
       <h2>Big, bold, and filled (React)</h2>
-      <div id="react-chunky" class="row"></div>
+      <div id="react-chunky" class="op-cluster"></div>
     </section>
   </body>
 </html>

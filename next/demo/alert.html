@@ -7,10 +7,7 @@
     <script type="module" src="./alert.jsx"></script>
   </head>
   <body>
-    <nav class="demo-nav">
-      <a href="./index.html">Tabs</a> <a href="./avatar.html">Avatar</a> <a href="./icon.html">Icon</a>
-      <a href="./alert.html" aria-current="page">Alert</a>
-    </nav>
+    <demo-nav></demo-nav>
     <h1>Composed alert</h1>
 
     <section>
@@ -20,68 +17,46 @@
         <op-alert-messages>
           <op-alert-title>Warning</op-alert-title>
           <op-alert-description>Your trial ends tomorrow.</op-alert-description>
-        </op-alert-messages>
-        <op-alert-close></op-alert-close>
-      </op-alert>
-      <op-alert variant="danger">
-        <op-icon name="error"></op-icon>
-        <op-alert-messages>
-          <op-alert-title>Danger</op-alert-title>
-          <op-alert-description>The payment failed.</op-alert-description>
-          <op-alert-description>Check the card number and try again.</op-alert-description>
-        </op-alert-messages>
-        <op-alert-close></op-alert-close>
-      </op-alert>
-      <op-alert variant="info">
-        <op-icon name="info"></op-icon>
-        <op-alert-messages>
-          <op-alert-description>Info, with no title.</op-alert-description>
-        </op-alert-messages>
-      </op-alert>
-      <op-alert variant="notice">
-        <op-alert-messages>
-          <op-alert-title>Notice</op-alert-title>
-          <op-alert-description>With no icon.</op-alert-description>
-        </op-alert-messages>
-      </op-alert>
-      <op-alert>
-        <op-icon name="campaign"></op-icon>
-        <op-alert-messages>
-          <op-alert-title>No variant</op-alert-title>
-          <op-alert-description>A neutral alert.</op-alert-description>
+          <op-alert-description>Add a card to keep your projects.</op-alert-description>
         </op-alert-messages>
         <op-alert-close label="Close the message"></op-alert-close>
       </op-alert>
+      <p>Every part. Only the description is required, and there can be more than one.</p>
+    </section>
+
+    <section>
+      <h2>React</h2>
+      <div id="react-alerts"></div>
+    </section>
+
+    <section>
+      <h2>Assembly (web component)</h2>
+      <div class="op-stack">
+        <demo-alert variant="danger" heading="Danger" description="The payment failed."></demo-alert>
+        <demo-alert variant="info" description="Info, with no heading."></demo-alert>
+        <demo-alert variant="notice" heading="Notice" description="Your changes were saved."></demo-alert>
+        <demo-alert heading="No variant" description="A neutral alert."></demo-alert>
+      </div>
+      <p>The demo app's own alert. It picks the icon from the variant and adds the close button.</p>
+    </section>
+
+    <section>
+      <h2>Assembly (React)</h2>
+      <div id="react-assembly" class="op-stack"></div>
     </section>
 
     <section>
       <h2>Tones (web component)</h2>
-      <div class="alert-tones">
-        <op-alert variant="warning" tone="muted"><op-alert-description>Warning</op-alert-description></op-alert>
-        <op-alert variant="danger" tone="muted"><op-alert-description>Danger</op-alert-description></op-alert>
-        <op-alert variant="info" tone="muted"><op-alert-description>Info</op-alert-description></op-alert>
-        <op-alert variant="notice" tone="muted"><op-alert-description>Notice</op-alert-description></op-alert>
-        <op-alert tone="muted"><op-alert-description>Neutral</op-alert-description></op-alert>
-        <op-alert variant="warning" tone="filled"><op-alert-description>Warning</op-alert-description></op-alert>
-        <op-alert variant="alert" tone="filled"><op-alert-description>Alert</op-alert-description></op-alert>
-        <op-alert variant="info" tone="filled"><op-alert-description>Info</op-alert-description></op-alert>
-        <op-alert variant="notice" tone="filled"><op-alert-description>Notice</op-alert-description></op-alert>
-        <op-alert tone="filled"><op-alert-description>Neutral</op-alert-description></op-alert>
-      </div>
+      <div id="alert-tones" class="alert-tones"></div>
       <p>Muted, then filled. The filled alert uses <code>variant="alert"</code>, the Rails flash key.</p>
     </section>
 
     <section>
       <h2>Flash (web component)</h2>
-      <div class="row">
+      <div class="op-cluster">
         <button type="button" id="flash-notice">Show a flash notice</button>
       </div>
       <p>It slides in at the top right, slides out, and removes itself.</p>
-    </section>
-
-    <section>
-      <h2>React</h2>
-      <div id="react-alerts" class="alert-stack"></div>
     </section>
 
     <section>
@@ -114,7 +89,7 @@
     </section>
 
     <section class="card-alerts">
-      <h2>Card, with a shadow (React)</h2>
+      <h2>Card, with a shadow (React assembly)</h2>
       <div id="react-card"></div>
     </section>
   </body>

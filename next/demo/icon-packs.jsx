@@ -5,6 +5,7 @@ import '../components/icon/icon.js'
 import '../tokens.css'
 import '../components/icon/icon.css'
 import './demo.css'
+import './assemblies/demo-nav.js'
 
 // An app picks its pack with one CSS import and one setIconPack() call. This page picks it
 // from ?pack= and loads only that pack's CSS. Phosphor loads only the styles shown.
@@ -63,13 +64,13 @@ document.getElementById('pack-name').textContent = pack
 const { icons } = PACKS[pack]
 createRoot(document.getElementById('pack-icons')).render(
   <>
-    <div className="row">
+    <div className="op-cluster">
       <strong>Web component</strong>
       {icons.map(({ filled, duotone, ...props }, index) => (
         <op-icon key={index} size="x-large" filled={filled || undefined} duotone={duotone || undefined} {...props} />
       ))}
     </div>
-    <div className="row">
+    <div className="op-cluster">
       <strong>React</strong>
       {icons.map((props, index) => (
         <Icon key={index} size="x-large" {...props} />

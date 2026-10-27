@@ -4,6 +4,7 @@ import '../components/tabs/tabs.js'
 import '../tokens.css'
 import '../components/tabs/tabs.css'
 import './demo.css'
+import './assemblies/demo-nav.js'
 
 createRoot(document.getElementById('react-tabs')).render(
   <>

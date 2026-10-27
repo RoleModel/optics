@@ -5,6 +5,8 @@ import '../tokens.css'
 import '../components/icon/icon.css'
 import '../components/icon/packs/material-symbols-variable.css'
 import './demo.css'
+import './assemblies/demo-nav.js'
+import './assemblies/demo-svg.js'
 
 createRoot(document.getElementById('react-icons')).render(
   <>
