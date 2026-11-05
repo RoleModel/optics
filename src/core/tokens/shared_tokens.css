@@ -245,6 +245,15 @@
     var(--op-input-outer-focus) var(--op-color-alerts-notice-plus-five);
 }
 
+/* @tokens-end keeps the reduced-motion override below out of the Input Focus token docs */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /* modern-css-reset forces animation-duration to 0.01ms, so the 5s goes in the delay */
+    --op-animation-flash: rm-slide-in-out-flash 0.01ms 5s forwards;
+  }
+}
+
 /* Animations */
 @keyframes rm-slide-in-out-flash {
   /*
