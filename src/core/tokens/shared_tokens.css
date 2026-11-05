@@ -152,6 +152,7 @@
   * @presenter Animation
   */
   --op-animation-flash: rm-slide-in-out-flash 5s normal forwards;
+  --op-animation-reduced-motion-flash: rm-hide-flash 5s normal forwards;
 
   /* Encoded Images */
 
@@ -268,5 +269,15 @@
   /* Animate off the screen for 1.5s */
   100% {
     inset-inline-end: -100%;
+  }
+}
+
+/*
+  Used instead of rm-slide-in-out-flash when the user prefers reduced motion.
+  The flash stays in place, then hides once the same 5s have passed.
+*/
+@keyframes rm-hide-flash {
+  to {
+    visibility: hidden;
   }
 }

@@ -39,6 +39,14 @@
     animation: var(--op-animation-flash);
     inset-block-start: var(--op-space-large);
     inset-inline-end: var(--op-space-large);
+
+    /*
+      The reset shortens every animation to 0.01ms under reduced motion, which would leave the flash
+      on the off-screen last frame of rm-slide-in-out-flash. !important is needed to override the reset.
+    */
+    @media (prefers-reduced-motion: reduce) {
+      animation: var(--op-animation-reduced-motion-flash) !important;
+    }
   }
 
   &.alert--warning {
