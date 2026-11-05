@@ -29,6 +29,18 @@ const config = {
     },
   ],
 
+  // Storybook composition: the React components have their own Storybook in react/.
+  // `yarn build-docs` publishes it under /react on the docs site.
+  refs: (_config, { configType }) => ({
+    react: {
+      title: 'React',
+      url:
+        process.env.OPTICS_REACT_STORYBOOK_URL ??
+        (configType === 'DEVELOPMENT' ? 'http://localhost:6007' : 'https://docs.optics.rolemodel.design/react'),
+      expanded: false,
+    },
+  }),
+
   core: {
     disableTelemetry: true, // 👈 Disables telemetry
   },

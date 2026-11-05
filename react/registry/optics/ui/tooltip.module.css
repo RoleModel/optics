@@ -1,0 +1,56 @@
+/* Mirrors Optics' tooltip styling (src/components/tooltip.css) for a
+   Base UI popup. Optics' own implementation is pseudo-element CSS on the
+   hovered target, which a portaled popup can't reuse — so the same visual
+   is rebuilt here from the same Optics tokens. */
+
+.popup {
+  z-index: var(--op-z-index-tooltip);
+  inline-size: max-content;
+  max-inline-size: calc(50 * var(--op-size-unit));
+  padding: var(--op-space-x-small) var(--op-space-medium);
+  border-radius: var(--op-radius-medium);
+  background-color: var(--op-color-neutral-minus-max);
+  color: var(--op-color-neutral-on-minus-max);
+  font-family: var(--op-font-family);
+  font-size: var(--op-font-small);
+  overflow-wrap: break-word;
+  text-align: center;
+  white-space: normal;
+  opacity: var(--op-opacity-full);
+  transition: opacity 300ms ease-in;
+}
+
+/* Base UI's animation contract: it stamps data-starting-style for the
+   first open frame and data-ending-style on close, delaying unmount until
+   the transition finishes. */
+.popup[data-starting-style],
+.popup[data-ending-style] {
+  opacity: var(--op-opacity-none);
+}
+
+/* Optics draws the arrow as a border triangle sized to half of
+   --op-space-small; the offsets protrude it past the popup edge facing
+   the anchor. */
+.arrow {
+  border: calc(var(--op-space-small) / 2) solid transparent;
+}
+
+.arrow[data-side='top'] {
+  inset-block-end: calc(-1 * var(--op-space-small));
+  border-block-start-color: var(--op-color-neutral-minus-max);
+}
+
+.arrow[data-side='bottom'] {
+  inset-block-start: calc(-1 * var(--op-space-small));
+  border-block-end-color: var(--op-color-neutral-minus-max);
+}
+
+.arrow[data-side='left'] {
+  inset-inline-end: calc(-1 * var(--op-space-small));
+  border-inline-start-color: var(--op-color-neutral-minus-max);
+}
+
+.arrow[data-side='right'] {
+  inset-inline-start: calc(-1 * var(--op-space-small));
+  border-inline-end-color: var(--op-color-neutral-minus-max);
+}

@@ -27,6 +27,8 @@ jobs:
         run: yarn lint:js
       - name: Run Stylelint
         run: yarn lint:css
+      - name: Typecheck React components
+        run: yarn lint:react
       - name: Run Prettier
         run: yarn prettier-check
       - name: Run Tests
@@ -39,3 +41,5 @@ jobs:
         run: yarn build-docs:llms
       - name: Build Storybook
         run: yarn build-docs:storybook
+      - name: Build React Storybook and shadcn registry
+        run: yarn build-docs:react

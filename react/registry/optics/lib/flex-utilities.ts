@@ -1,0 +1,35 @@
+export const flexUtilityVariants = {
+  align: {
+    stretch: 'items-stretch',
+    start: 'items-start',
+    center: 'items-center',
+    end: 'items-end',
+    baseline: 'items-baseline',
+  },
+  justify: {
+    start: 'justify-start',
+    center: 'justify-center',
+    end: 'justify-end',
+    between: 'justify-between',
+    around: 'justify-around',
+  },
+  gap: {
+    none: 'gap-none',
+    xxs: 'gap-xxs',
+    xs: 'gap-xs',
+    sm: 'gap-sm',
+    md: 'gap-md',
+    lg: 'gap-lg',
+    xl: 'gap-xl',
+  },
+  wrap: { false: 'flex-no-wrap', true: 'flex-wrap' },
+  self: {
+    auto: 'self-auto',
+    start: 'self-start',
+    center: 'self-center',
+    end: 'self-end',
+    stretch: 'self-stretch',
+    baseline: 'self-baseline',
+  },
+  grow: { false: null, true: 'flex-grow-1' },
+}

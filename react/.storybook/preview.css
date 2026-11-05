@@ -1,0 +1,7 @@
+@import '../../src/optics.css';
+@import '../../src/addons/fonts/material_symbols_outlined_variable.css';
+
+.sbdocs-preview .docs-story {
+  background-color: var(--op-color-background);
+  color: var(--op-color-on-background);
+}
