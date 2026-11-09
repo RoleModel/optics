@@ -1,0 +1,56 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as ModalStories from './modal.stories'
+
+<Meta of={ModalStories} />
+
+# Modal
+
+A modal dialog built on the native `dialog` element. It renders the [Optics modal](https://docs.optics.rolemodel.design/?path=/docs/components-modal--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/modal.json
+```
+
+## Playground
+
+<Canvas of={ModalStories.Default} />
+<Controls of={ModalStories.Default} />
+
+## Parts
+
+| Part            | Renders             | Props                                                                                   |
+| --------------- | ------------------- | --------------------------------------------------------------------------------------- |
+| `Modal.Trigger` | `button.btn`        | `for`: the `id` of the `Modal.Root` to open, and any `Button` prop                      |
+| `Modal.Root`    | `dialog.modal`      | `id`, and any `dialog` attribute                                                        |
+| `Modal.Header`  | `div.modal__header` |                                                                                         |
+| `Modal.Body`    | `div.modal__body`   |                                                                                         |
+| `Modal.Footer`  | `div.modal__footer` |                                                                                         |
+| `Modal.Close`   | `button.btn`        | `label`: accessible name of the icon button, default `Close`. Children replace the icon |
+
+Every part except `Modal.Root` is optional.
+
+## Variations
+
+### HTML Dialog
+
+`Modal.Root` renders a [`dialog`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) with the `modal` class. Its parts are built like the card component: `Modal.Header`, `Modal.Body`, and `Modal.Footer`.
+
+`Modal.Trigger` opens the dialog with [invoker commands](https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API): it sets `commandfor` to its `for` prop and `command="show-modal"`, so it needs no click handler. Invoker commands are in all browsers only as of December 2025. For older browsers, load a polyfill such as `invokers-polyfill`.
+
+The dialog closes on Esc or a click outside it. `Modal.Close` closes the dialog it is in. Without children it is a round, borderless icon button. With children it is a normal button, such as Cancel.
+
+The `modal-wrapper` classes in the CSS docs are for modals without a `dialog` element, so this component does not use them.
+
+<Canvas of={ModalStories.Dialog} />
+
+### Lots of Content
+
+`Modal.Body` scrolls when its content is taller than the max height of the modal. The footer can hold any content.
+
+<Canvas of={ModalStories.LotsOfContent} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Modal API](https://docs.optics.rolemodel.design/?path=/docs/components-modal--docs#modal-api) for the CSS variables.

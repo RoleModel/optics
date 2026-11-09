@@ -1,0 +1,76 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as StackStories from './stack.stories'
+
+<Meta of={StackStories} />
+
+# Stack
+
+A vertical stack of spaced items, effectively `.flex .flex-col .gap-md` together. It renders the [Optics stack](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-stack--docs) utility class.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/stack.json
+```
+
+## Playground
+
+<Canvas of={StackStories.Default} />
+<Controls of={StackStories.Default} />
+
+## Props
+
+| Prop    | Values                                          | Adds      |
+| ------- | ----------------------------------------------- | --------- |
+| `align` | `stretch`, `start`, `center`, `end`, `baseline` | `items-*` |
+| `gap`   | `none`, `xxs`, `xs`, `sm`, `md`, `lg`, `xl`     | `gap-*`   |
+
+`Stack` renders `div.op-stack` and passes any other `div` attribute through. The examples on this page are in a `15rem` tall container.
+
+## Variations
+
+### Without
+
+A plain `div` without the stack utility.
+
+<Canvas of={StackStories.Without} />
+
+### Stack Property
+
+`Stack` renders `.op-stack`. Creates a flex stack.
+
+<Canvas of={StackStories.Default} />
+
+### Align Items Stretch
+
+`align="stretch"` adds `.items-stretch`. Stretches each item across the cross axis. This is the default alignment and doesn't need to be set unless you are overriding something set differently.
+
+<Canvas of={StackStories.AlignStretch} />
+
+### Align Items Start
+
+`align="start"` adds `.items-start`. Places each item at the start of the cross axis.
+
+<Canvas of={StackStories.AlignStart} />
+
+### Align Items Center
+
+`align="center"` adds `.items-center`. Places each item at the center of the cross axis.
+
+<Canvas of={StackStories.AlignCenter} />
+
+### Align Items End
+
+`align="end"` adds `.items-end`. Places each item at the end of the cross axis.
+
+<Canvas of={StackStories.AlignEnd} />
+
+### Align Items Baseline
+
+`align="baseline"` adds `.items-baseline`. Places each item at the text baseline of the cross axis.
+
+<Canvas of={StackStories.AlignBaseline} />
+
+## Customizing
+
+`Stack` only adds classes. See the [CSS stack docs](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-stack--docs) for how the utility is built.

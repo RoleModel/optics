@@ -1,0 +1,53 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as BreadcrumbsStories from './breadcrumbs.stories'
+
+<Meta of={BreadcrumbsStories} />
+
+# Breadcrumbs
+
+Shows the user's current location in a hierarchy of pages. It renders the [Optics breadcrumbs](https://docs.optics.rolemodel.design/?path=/docs/components-breadcrumbs--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/breadcrumbs.json
+```
+
+## Playground
+
+<Canvas of={BreadcrumbsStories.Default} />
+<Controls of={BreadcrumbsStories.Default} />
+
+## Parts
+
+| Part                    | Renders                      | Props                                             |
+| ----------------------- | ---------------------------- | ------------------------------------------------- |
+| `Breadcrumbs.Root`      | `nav.breadcrumbs`            | `size`: `small`, `large`                          |
+| `Breadcrumbs.Link`      | `a.breadcrumbs__link`        | `href`, and any `a` attribute                     |
+| `Breadcrumbs.Separator` | `div.breadcrumbs__separator` | `children`: default `<Icon name="arrow_right" />` |
+| `Breadcrumbs.Text`      | `span.breadcrumbs__text`     | The current page, with `aria-current="page"`      |
+
+## Variations
+
+### Default
+
+`Breadcrumbs.Root` holds `Breadcrumbs.Link`s with a `Breadcrumbs.Separator` between them, and ends with a `Breadcrumbs.Text` for the current page.
+
+<Canvas of={BreadcrumbsStories.Default} />
+
+### Size
+
+`size` takes `small` (the default) or `large` and changes the font size of the links and text.
+
+<Canvas of={BreadcrumbsStories.Small} />
+<Canvas of={BreadcrumbsStories.Large} />
+
+### Separator
+
+`Breadcrumbs.Separator` shows an `arrow_right` [Icon](?path=/docs/components-icon--docs) by default. Pass any children to replace it, typically another `Icon`.
+
+<Canvas of={BreadcrumbsStories.SeparatorIcon} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Breadcrumb API](https://docs.optics.rolemodel.design/?path=/docs/components-breadcrumbs--docs#breadcrumb-api) for the CSS variables.

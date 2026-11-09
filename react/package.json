@@ -1,0 +1,29 @@
+{
+  "name": "@rolemodel/optics-react",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6007 --no-open",
+    "build-storybook": "storybook build -o ../storybook-static/react",
+    "build-registry": "shadcn build -o ../storybook-static/r",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.9.0",
+    "class-variance-authority": "^0.7.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^10.6.3",
+    "@storybook/react-vite": "^10.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "remark-gfm": "^4.0.1",
+    "shadcn": "^4.23.0",
+    "storybook": "^10.6.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.4"
+  }
+}

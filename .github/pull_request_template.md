@@ -30,11 +30,17 @@ Cross out all that don't apply with ~~ ~~ around it like ~~this~~
 - [ ] Did you add a component?
   - [ ] Have you added it to the dependency graph?
   - [ ] Have you added it to the docs?
+  - [ ] Have you added a React component, or noted why not? (see `react/README.md`)
 - [ ] Did you update a component?
   - [ ] Have you updated the dependency graph?
   - [ ] Have you updated the docs?
-- [ ] Do you need to update the package version?
-  - [ ] Did you update the example pages in `.storybook/assets`?
+  - [ ] Have you updated the React component in `react/registry/optics/ui/`, with its stories and MDX page, to match?
+- [ ] Did you change a React component?
+  - [ ] Have you updated `react/registry.json` if its imports changed?
+  - [ ] Have you checked it in the React Storybook? (yarn storybook:react)
+- [ ] Do you need to update the package version? Don't edit it by hand. Run `yarn set-optics-version <version>`, such as `yarn set-optics-version 2.6.2`. It sets the version in `package.json`, the `.storybook/assets` example pages, and every React component.
+  - [ ] Have you run `yarn set-optics-version <version>`?
+  - [ ] Have you adjusted the React components for this release?
 - [ ] Were any changes made to the top level optics.css file?
   - [ ] Were those changes reflected in the other top level files?
 

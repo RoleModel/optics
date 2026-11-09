@@ -1,0 +1,58 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as AvatarStories from './avatar.stories'
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+A profile picture or user avatar built on the Base UI avatar. It renders the [Optics avatar](https://docs.optics.rolemodel.design/?path=/docs/components-avatar--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/avatar.json
+```
+
+## Playground
+
+<Canvas of={AvatarStories.Default} />
+<Controls of={AvatarStories.Default} />
+
+## Parts
+
+| Part              | Renders       | Props                                                                   |
+| ----------------- | ------------- | ----------------------------------------------------------------------- |
+| `Avatar.Root`     | `span.avatar` | `size`: `small`, `medium`, `large`; `disabled`; `render`: to use an `a` |
+| `Avatar.Image`    | `img`         | `src`, `alt`, and any `img` attribute                                   |
+| `Avatar.Fallback` | `span`        | Shown while the image loads or when it fails                            |
+
+## Variations
+
+### Default
+
+`Avatar.Root` with an `Avatar.Image` inside it. Render it as a link with `render={<a href="..." />}` to get the hover and focus states.
+
+<Canvas of={AvatarStories.Default} />
+
+### Disabled
+
+`disabled` disables the avatar and gives it an opacity.
+
+<Canvas of={AvatarStories.Disabled} />
+
+### Size
+
+`size` takes `small`, `medium`, or `large` (the default) and changes the width and height.
+
+<Canvas of={AvatarStories.Small} />
+<Canvas of={AvatarStories.Medium} />
+
+### Without Link
+
+Without `render`, the avatar is a `span`. Use a link for avatars with interaction, such as a link to the user's profile or settings. Leave it as a `span` when it only displays a picture.
+
+<Canvas of={AvatarStories.WithoutLink} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Avatar API](https://docs.optics.rolemodel.design/?path=/docs/components-avatar--docs#avatar-api) for the CSS variables.

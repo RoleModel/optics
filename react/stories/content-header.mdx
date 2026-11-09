@@ -1,0 +1,74 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as ContentHeaderStories from './content-header.stories'
+
+<Meta of={ContentHeaderStories} />
+
+# Content Header
+
+A page or section header with a title, optional context and subline, and an aside for actions. It renders the [Optics content header](https://docs.optics.rolemodel.design/?path=/docs/components-content-header--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/content-header.json
+```
+
+## Playground
+
+<Canvas of={ContentHeaderStories.Default} />
+<Controls of={ContentHeaderStories.Default} />
+
+## Parts
+
+| Part                    | Renders                        | Props |
+| ----------------------- | ------------------------------ | ----- |
+| `ContentHeader.Root`    | `header.content-header`        |       |
+| `ContentHeader.Details` | `div.content-header__details`  |       |
+| `ContentHeader.Context` | `span.content-header__context` |       |
+| `ContentHeader.Title`   | `h1.content-header__title`     |       |
+| `ContentHeader.Subline` | `span.content-header__subline` |       |
+| `ContentHeader.Aside`   | `div.content-header__aside`    |       |
+
+Each part takes the attributes of the element it renders.
+
+## Variations
+
+### Default
+
+`ContentHeader.Root` holds the header. `ContentHeader.Details` holds the title, context, and subline.
+
+<Canvas of={ContentHeaderStories.Default} />
+
+### With Context
+
+`ContentHeader.Context` adds a context label above the title.
+
+<Canvas of={ContentHeaderStories.WithContext} />
+
+### With Subline
+
+`ContentHeader.Subline` adds a subline below the title.
+
+<Canvas of={ContentHeaderStories.WithSubline} />
+
+### With Aside
+
+`ContentHeader.Aside` adds a section for more information or actions. It can hold anything, but is often used for page actions.
+
+<Canvas of={ContentHeaderStories.WithAside} />
+
+### Simple
+
+`ContentHeader.Title` is the only required part, though a title alone is only meaningful with actions, context, or a subline.
+
+<Canvas of={ContentHeaderStories.Simple} />
+
+### GitHub Example
+
+A content header with other components in the subline, similar to the header of a GitHub pull request page.
+
+<Canvas of={ContentHeaderStories.GitHub} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Customizing Content Header styles](https://docs.optics.rolemodel.design/?path=/docs/components-content-header--docs#customizing-content-header-styles).

@@ -1,0 +1,56 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as TabsStories from './tabs.stories'
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+A row of tabs, either as links for page navigation or as buttons that switch between panels. It renders the [Optics tab](https://docs.optics.rolemodel.design/?path=/docs/components-tab--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/tabs.json
+```
+
+## Playground
+
+<Canvas of={TabsStories.Default} />
+<Controls of={TabsStories.Default} />
+
+## Parts
+
+There are two ways to build tabs. Use `Tabs.Nav` and `Tabs.Link` when each tab goes to a page. Use `Tabs.Root`, `Tabs.List`, `Tabs.Tab`, and `Tabs.Panel` when the tabs switch content on the same page; these are [Base UI tabs](https://base-ui.com/react/components/tabs), which handle the active tab, keyboard navigation, and ARIA roles.
+
+| Part         | Renders         | Props                                                                     |
+| ------------ | --------------- | ------------------------------------------------------------------------- |
+| `Tabs.Nav`   | `nav.tab-group` | `size`: shared by every link inside it                                    |
+| `Tabs.Link`  | `a.tab`         | `active`, `disabled`, `size`, and any `a` attribute                       |
+| `Tabs.Root`  | `div`           | `defaultValue`, `value`, `onValueChange`                                  |
+| `Tabs.List`  | `div.tab-group` | `size`: shared by every tab inside it                                     |
+| `Tabs.Tab`   | `button.tab`    | `value`, `disabled`, `size`. Gets `tab--active` when its panel is showing |
+| `Tabs.Panel` | `div`           | `value`: the `Tabs.Tab` it belongs to                                     |
+
+## Variations
+
+### Default
+
+`Tabs.Nav` groups a set of `Tabs.Link`s. Each link supports `active` and `disabled`. A disabled link gets `tabIndex={-1}` so keyboard navigation skips it.
+
+<Canvas of={TabsStories.Default} />
+
+### Small
+
+`size="small"` or `size="large"` on `Tabs.Nav` or `Tabs.List` sets the size of every tab inside it, with large being the default. Set `size` on a single tab to override it.
+
+<Canvas of={TabsStories.Small} />
+
+### Panels
+
+`Tabs.Root` connects each `Tabs.Tab` to the `Tabs.Panel` with the same `value`, and shows one panel at a time. `defaultValue` picks the tab that starts active, and `disabled` on a `Tabs.Tab` makes it unselectable.
+
+<Canvas of={TabsStories.Panels} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Tab API](https://docs.optics.rolemodel.design/?path=/docs/components-tab--docs#tab-api) for the CSS variables.

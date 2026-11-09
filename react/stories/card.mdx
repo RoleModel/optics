@@ -1,0 +1,66 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as CardStories from './card.stories'
+
+<Meta of={CardStories} />
+
+# Card
+
+A bordered section of your interface. It can also be a starting point for row or list styles. It renders the [Optics card](https://docs.optics.rolemodel.design/?path=/docs/components-card--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/card.json
+```
+
+## Playground
+
+<Canvas of={CardStories.Default} />
+<Controls of={CardStories.Default} />
+
+## Parts
+
+| Part          | Renders            | Props                                                                             |
+| ------------- | ------------------ | --------------------------------------------------------------------------------- |
+| `Card.Root`   | `div.card`         | `padded`, `condensed`, `shadow`: `x-small`, `small`, `medium`, `large`, `x-large` |
+| `Card.Header` | `div.card__header` |                                                                                   |
+| `Card.Body`   | `div.card__body`   |                                                                                   |
+| `Card.Footer` | `div.card__footer` |                                                                                   |
+
+The sections are optional. Put content straight in `Card.Root` for a plain card.
+
+## Variations
+
+### Plain
+
+`Card.Root` gives basic card styles.
+
+<Canvas of={CardStories.Default} />
+
+### Padded
+
+`padded` adds padding to the card.
+
+<Canvas of={CardStories.Padded} />
+
+### Full
+
+`Card.Header`, `Card.Body`, and `Card.Footer` give padded sections of a card.
+
+<Canvas of={CardStories.Full} />
+
+### Condensed
+
+`condensed` reduces the padding of everything inside the card.
+
+<Canvas of={CardStories.Condensed} />
+
+### Shadow
+
+`shadow` takes `x-small`, `small`, `medium`, `large`, or `x-large` and adds a shadow elevation to the card.
+
+<Canvas of={CardStories.Shadow} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Card API](https://docs.optics.rolemodel.design/?path=/docs/components-card--docs#card-api) for the CSS variables.

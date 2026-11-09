@@ -1,0 +1,101 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as SidePanelStories from './side-panel.stories'
+
+<Meta of={SidePanelStories} />
+
+# Side Panel
+
+A panel of sections with a scrollable body. It renders the [Optics side panel](https://docs.optics.rolemodel.design/?path=/docs/components-sidepanel--docs) classes.
+
+The side panel fills the height of the viewport. The wrapping `div` with a height in these examples is only there to fit it on this page; your application does not need it.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/side-panel.json
+```
+
+## Playground
+
+<Canvas of={SidePanelStories.Default} />
+<Controls of={SidePanelStories.Default} />
+
+## Parts
+
+| Part                | Renders               | Props                             |
+| ------------------- | --------------------- | --------------------------------- |
+| `SidePanel.Root`    | `div.side-panel`      | `border`: `left`, `right`, `both` |
+| `SidePanel.Header`  | `side-panel__header`  | `padding`: `x`, `y`, `all`        |
+| `SidePanel.Body`    | `side-panel__body`    | `padding`: `x`, `y`, `all`        |
+| `SidePanel.Footer`  | `side-panel__footer`  | `padding`: `x`, `y`, `all`        |
+| `SidePanel.Section` | `side-panel__section` | `padding`: `x`, `y`, `all`        |
+
+## Variations
+
+### Default
+
+`SidePanel.Root` is the shell of the panel.
+
+`SidePanel.Header`, `SidePanel.Body`, and `SidePanel.Footer` mark the areas of the panel. The body takes up as much height as is available and scrolls when its content overflows.
+
+<Canvas of={SidePanelStories.Default} />
+
+### Bordered
+
+`border="left"` or `border="right"` on `SidePanel.Root` adds a border on that side of the panel. `border="both"` adds both.
+
+<Canvas of={SidePanelStories.Bordered} />
+
+### Padded Header
+
+`padding="all"` on `SidePanel.Header` pads the whole header.
+
+`padding="x"` pads the left and right sides of the header.
+
+`padding="y"` pads the top and bottom of the header.
+
+<Canvas of={SidePanelStories.PaddedHeader} />
+
+### Padded Body
+
+`padding="all"` on `SidePanel.Body` pads the whole body.
+
+`padding="x"` pads the left and right sides of the body.
+
+`padding="y"` pads the top and bottom of the body.
+
+<Canvas of={SidePanelStories.PaddedBody} />
+
+### Padded Footer
+
+`padding="all"` on `SidePanel.Footer` pads the whole footer.
+
+`padding="x"` pads the left and right sides of the footer.
+
+`padding="y"` pads the top and bottom of the footer.
+
+<Canvas of={SidePanelStories.PaddedFooter} />
+
+### Sections
+
+`SidePanel.Section` can go in any of the other areas of the side panel to separate the content within it.
+
+This example puts a `Divider` between each section to show the separation.
+
+<Canvas of={SidePanelStories.WithSections} />
+
+### Padded Sections
+
+Each section takes the same `padding` prop, so you can pad individual sections instead of the whole area.
+
+`padding="all"` on `SidePanel.Section` pads the whole section.
+
+`padding="x"` pads the left and right sides of the section.
+
+`padding="y"` pads the top and bottom of the section.
+
+<Canvas of={SidePanelStories.PaddedSection} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [SidePanel API](https://docs.optics.rolemodel.design/?path=/docs/components-sidepanel--docs#sidepanel-api) for the CSS variables.

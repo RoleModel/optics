@@ -1,0 +1,76 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as SplitStories from './split.stories'
+
+<Meta of={SplitStories} />
+
+# Split
+
+A row that pushes its items to each end, effectively `.flex .flex-wrap .justify-between .gap-md` together. It renders the [Optics split](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-split--docs) utility class.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/split.json
+```
+
+## Playground
+
+<Canvas of={SplitStories.Default} />
+<Controls of={SplitStories.Default} />
+
+## Props
+
+| Prop    | Values                                          | Adds      |
+| ------- | ----------------------------------------------- | --------- |
+| `align` | `stretch`, `start`, `center`, `end`, `baseline` | `items-*` |
+| `gap`   | `none`, `xxs`, `xs`, `sm`, `md`, `lg`, `xl`     | `gap-*`   |
+
+`Split` renders `div.op-split` and passes any other `div` attribute through. The examples on this page are in a `10rem` tall container.
+
+## Variations
+
+### Without
+
+A plain `div` without the split utility.
+
+<Canvas of={SplitStories.Without} />
+
+### Split Property
+
+`Split` renders `.op-split`. Creates a flex split.
+
+<Canvas of={SplitStories.Default} />
+
+### Align Items Stretch
+
+`align="stretch"` adds `.items-stretch`. Stretches each item across the cross axis. This is the default alignment and doesn't need to be set unless you are overriding something set differently.
+
+<Canvas of={SplitStories.AlignStretch} />
+
+### Align Items Start
+
+`align="start"` adds `.items-start`. Places each item at the start of the cross axis.
+
+<Canvas of={SplitStories.AlignStart} />
+
+### Align Items Center
+
+`align="center"` adds `.items-center`. Places each item at the center of the cross axis.
+
+<Canvas of={SplitStories.AlignCenter} />
+
+### Align Items End
+
+`align="end"` adds `.items-end`. Places each item at the end of the cross axis.
+
+<Canvas of={SplitStories.AlignEnd} />
+
+### Align Items Baseline
+
+`align="baseline"` adds `.items-baseline`. Places each item at the text baseline of the cross axis.
+
+<Canvas of={SplitStories.AlignBaseline} />
+
+## Customizing
+
+`Split` only adds classes. See the [CSS split docs](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-split--docs) for how the utility is built.

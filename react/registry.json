@@ -1,0 +1,498 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "optics",
+  "homepage": "https://docs.optics.rolemodel.design",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Expandable sections built on native <details>.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": [
+        "https://docs.optics.rolemodel.design/r/icon-pack.json",
+        "https://docs.optics.rolemodel.design/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/optics/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Inline alert and flash (toast) messages.",
+      "dependencies": ["@base-ui/react", "@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": [
+        "https://docs.optics.rolemodel.design/r/button.json",
+        "https://docs.optics.rolemodel.design/r/icon-pack.json",
+        "https://docs.optics.rolemodel.design/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/optics/ui/alert.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/optics/ui/alert.module.css",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "User image with a fallback.",
+      "dependencies": ["@base-ui/react", "@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Small count or status label.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumbs",
+      "type": "registry:ui",
+      "title": "Breadcrumbs",
+      "description": "Trail of links to the current page.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": [
+        "https://docs.optics.rolemodel.design/r/icon-pack.json",
+        "https://docs.optics.rolemodel.design/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/optics/ui/breadcrumbs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Joins buttons into one control.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Button with Optics variants, sizes, and shapes.",
+      "dependencies": ["@base-ui/react", "@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Bordered surface with header, body, and footer.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cluster",
+      "type": "registry:ui",
+      "title": "Cluster",
+      "description": "Layout: wrapping row of items.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/flex-utilities.json"],
+      "files": [
+        {
+          "path": "registry/optics/ui/cluster.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "confirm-dialog",
+      "type": "registry:ui",
+      "title": "Confirm Dialog",
+      "description": "Native dialog that asks the user to confirm an action.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": [
+        "https://docs.optics.rolemodel.design/r/button.json",
+        "https://docs.optics.rolemodel.design/r/dialog.json"
+      ],
+      "files": [
+        {
+          "path": "registry/optics/ui/confirm-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "content-header",
+      "type": "registry:ui",
+      "title": "Content Header",
+      "description": "Page title area with context, subline, and actions.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/content-header.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "divider",
+      "type": "registry:ui",
+      "title": "Divider",
+      "description": "Horizontal or vertical rule.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/divider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flank",
+      "type": "registry:ui",
+      "title": "Flank",
+      "description": "Layout: one fixed side and one flexible side.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/flex-utilities.json"],
+      "files": [
+        {
+          "path": "registry/optics/ui/flank.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Form group, label, control, hint, and error parts.",
+      "dependencies": ["@base-ui/react", "@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "frame",
+      "type": "registry:ui",
+      "title": "Frame",
+      "description": "Layout: fixed aspect ratio box.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/frame.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "grid",
+      "type": "registry:ui",
+      "title": "Grid",
+      "description": "Layout: equal-column grid.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/flex-utilities.json"],
+      "files": [
+        {
+          "path": "registry/optics/ui/grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:ui",
+      "title": "Icon",
+      "description": "Icon from the app's icon pack, or an inline SVG.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/icon-pack.json"],
+      "files": [
+        {
+          "path": "registry/optics/ui/icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "modal",
+      "type": "registry:ui",
+      "title": "Modal",
+      "description": "Native modal dialog.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": [
+        "https://docs.optics.rolemodel.design/r/button.json",
+        "https://docs.optics.rolemodel.design/r/dialog.json",
+        "https://docs.optics.rolemodel.design/r/icon-pack.json",
+        "https://docs.optics.rolemodel.design/r/icon.json"
+      ],
+      "files": [
+        {
+          "path": "registry/optics/ui/modal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navbar",
+      "type": "registry:ui",
+      "title": "Navbar",
+      "description": "Top navigation bar.",
+      "dependencies": ["@base-ui/react", "@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/navbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page links with dividers.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/button.json"],
+      "files": [
+        {
+          "path": "registry/optics/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented Control",
+      "description": "Radio group that looks like joined buttons.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/segmented-control.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "side-panel",
+      "type": "registry:ui",
+      "title": "Side Panel",
+      "description": "Side panel with header, body, footer, and sections.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/side-panel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Side navigation in drawer, compact, or rail sizes.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Loading indicator.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "split",
+      "type": "registry:ui",
+      "title": "Split",
+      "description": "Layout: pushes items to each end.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/flex-utilities.json"],
+      "files": [
+        {
+          "path": "registry/optics/ui/split.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stack",
+      "type": "registry:ui",
+      "title": "Stack",
+      "description": "Layout: vertical stack with gap.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/flex-utilities.json"],
+      "files": [
+        {
+          "path": "registry/optics/ui/stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "On/off toggle built on a checkbox.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Table with Optics variants, density, and stripes.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs with panels, or tab-styled navigation links.",
+      "dependencies": ["@base-ui/react", "@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tag",
+      "type": "registry:ui",
+      "title": "Tag",
+      "description": "Removable label.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/tag.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-pair",
+      "type": "registry:ui",
+      "title": "Text Pair",
+      "description": "Title and subtitle pair.",
+      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "files": [
+        {
+          "path": "registry/optics/ui/text-pair.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Hover and focus tooltip.",
+      "dependencies": ["@base-ui/react", "@rolemodel/optics"],
+      "files": [
+        {
+          "path": "registry/optics/ui/tooltip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/optics/ui/tooltip.module.css",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flex-utilities",
+      "type": "registry:lib",
+      "title": "Flex Utilities",
+      "description": "Shared cva variants for the layout components.",
+      "files": [
+        {
+          "path": "registry/optics/lib/flex-utilities.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:lib",
+      "title": "Dialog",
+      "description": "Shared trigger and close handler for Modal and Confirm Dialog.",
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/button.json"],
+      "files": [
+        {
+          "path": "registry/optics/lib/dialog.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "icon-pack",
+      "type": "registry:lib",
+      "title": "Icon Pack",
+      "description": "Sets the app's icon pack and maps icon names to its classes.",
+      "files": [
+        {
+          "path": "registry/optics/lib/icon-pack.ts",
+          "type": "registry:lib"
+        }
+      ]
+    }
+  ]
+}

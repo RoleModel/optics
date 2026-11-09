@@ -1,0 +1,63 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introduction" />
+
+# Optics React
+
+React components for the Optics CSS classes. They use [Base UI](https://base-ui.com) for behavior and [cva](https://cva.style) to map props to Optics BEM classes.
+
+These components are not in the `@rolemodel/optics` npm package. You copy them into your app with the [shadcn CLI](https://ui.shadcn.com/docs/cli). Then they are your code, and you can change them.
+
+## Setup
+
+1. Install Optics and import its CSS once, with an icon font if you use `Icon`. For an icon pack other than Material Symbols, see [Icon Packs](?path=/docs/components-icon--docs#icon-packs).
+
+   ```js
+   import '@rolemodel/optics/dist/css/optics+material_outlined_variable.css'
+   ```
+
+2. Set the `@/` alias to your source folder. The shadcn CLI reads it from the root `tsconfig.json`, so put it there even if your app uses `tsconfig.app.json`. Set the same alias in your bundler.
+
+   ```json
+   { "compilerOptions": { "paths": { "@/*": ["./src/*"] } } }
+   ```
+
+3. Add a `components.json` to your app root. The CLI needs the `style` and `tailwind` keys, but Optics does not use Tailwind, so leave them as shown:
+
+   ```json
+   {
+     "$schema": "https://ui.shadcn.com/schema.json",
+     "style": "new-york",
+     "tsx": true,
+     "rsc": false,
+     "tailwind": { "config": "", "css": "", "baseColor": "neutral", "cssVariables": false },
+     "aliases": {
+       "components": "@/components",
+       "ui": "@/components/ui",
+       "lib": "@/lib",
+       "utils": "@/lib/utils",
+       "hooks": "@/hooks"
+     }
+   }
+   ```
+
+## Add a component
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/button.json
+```
+
+The CLI also adds the components it depends on (for example, `alert` adds `button` and `icon`) and installs `@base-ui/react` and `class-variance-authority`.
+
+Every component has a page in this Storybook. The file name in the URL is the component name in kebab case: `confirm-dialog.json`, `segmented-control.json`, `text-pair.json`.
+
+## Optics version
+
+Each component page and the first line of each component file show the Optics version the component matches. Every Optics release updates all components to the new version. If your app uses an older Optics, some classes may be missing.
+
+## How the components work
+
+- Compound components are objects: `Card.Root`, `Card.Header`, `Card.Body`.
+- Variant props are the styling API: `<Button variant="primary" size="small">`.
+- To render a link that looks like a button, use Base UI's `render` prop: `<Button nativeButton={false} render={<a href="/" />}>`.
+- Each part has a `data-slot` attribute, so you can target it in CSS.

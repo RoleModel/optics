@@ -1,0 +1,136 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as FormStories from './form.stories'
+
+<Meta of={FormStories} />
+
+# Form
+
+Labels, inputs, textareas, and selects that compose into form groups, built on the Base UI [Field](https://base-ui.com/react/components/field). It renders the [Optics form](https://docs.optics.rolemodel.design/?path=/docs/components-form--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/form.json
+```
+
+## Playground
+
+<Canvas of={FormStories.Default} />
+<Controls of={FormStories.Default} />
+
+## Parts
+
+| Part                | Renders                  | Props                                                                              |
+| ------------------- | ------------------------ | ---------------------------------------------------------------------------------- |
+| `Form.Group`        | `div.form-group`         | `inline`, `error`, and any Base UI `Field.Root` prop                               |
+| `Form.Label`        | `label.form-label`       |                                                                                    |
+| `Form.Control`      | `input.form-control`     | `size`, `noBorder`, `indeterminate`, and any `input` attribute, `type`, `readOnly` |
+| `Form.Textarea`     | `textarea.form-control`  | `size`, `noBorder`, and any `textarea` attribute                                   |
+| `Form.Select`       | `select.form-control`    | `size`, `noBorder`, and any `select` attribute, `multiple`                         |
+| `Form.Hint`         | `div.form-hint`          |                                                                                    |
+| `Form.Error`        | `span.form-error`        | `match`: when to show it. Shows while `Form.Group` has `error`                     |
+| `Form.ErrorSummary` | `div.form-error-summary` |                                                                                    |
+
+`Form.Label`, `Form.Hint`, and `Form.Error` work best inside a `Form.Group`. The group ties them to its control, so the label's `for` and the control's `aria-describedby` are set for you. Outside a group they render plain elements with the same classes, and `Form.Error` always shows.
+
+## Variations
+
+### Label
+
+`Form.Label` gives a label the basic styles.
+
+<Canvas of={FormStories.Label} />
+
+### Input
+
+`Form.Control` gives an `input` the basic styles. It works with many types, such as `text`, `number`, `password`, `email`, `tel`, `color`, `radio`, and `checkbox`. It can stand alone, outside a `Form.Group`.
+
+<Canvas of={FormStories.Input} />
+
+### Form Group
+
+`Form.Group` pairs a label and a control, and adds space between the pairs in a form.
+
+<Canvas of={FormStories.Default} />
+
+### Form Group Inline
+
+`inline` on `Form.Group` puts the label and the control on the same line.
+
+<Canvas of={FormStories.Inline} />
+
+### Textarea
+
+`Form.Textarea` gives a `textarea` the basic styles.
+
+<Canvas of={FormStories.Textarea} />
+
+### Dropdown
+
+`Form.Select` gives a `select` the basic styles. Pass `option` elements as children.
+
+<Canvas of={FormStories.Dropdown} />
+
+### Color
+
+`Form.Control` with `type="color"` gives a color input the basic styles.
+
+<Canvas of={FormStories.Color} />
+
+### Radio
+
+`Form.Control` with `type="radio"` gives a radio input the basic styles. Put the control before the label.
+
+<Canvas of={FormStories.Radio} />
+
+### Checkbox
+
+`Form.Control` with `type="checkbox"` gives a checkbox the basic styles. Put the control before the label.
+
+<Canvas of={FormStories.Checkbox} />
+
+### Error Summary
+
+`Form.ErrorSummary` is a section of errors, usually shown above the form with a heading and a list.
+
+<Canvas of={FormStories.ErrorSummary} />
+
+### Input Error
+
+`error` on `Form.Group` and a `Form.Error` mark a control with a validation error. They highlight the control and show the message. `Form.Error` also shows for a browser validation error, such as a `required` field left empty.
+
+<Canvas of={FormStories.InputError} />
+
+### Input Hint
+
+`Form.Hint` inside a `Form.Group` adds help text for the control.
+
+<Canvas of={FormStories.InputHint} />
+
+### No Border
+
+`noBorder` on a control removes its border. In a `Form.Group` with `error`, the control gets a red bottom border and highlight.
+
+<Canvas of={FormStories.NoBorder} />
+
+### Size
+
+`size` on a control is `small`, `medium`, or `large`, and sets its font and height. Unset looks the same as `large`.
+
+<Canvas of={FormStories.Size} />
+
+### Read Only
+
+`readOnly` on a control shows its value in a form-like way, without letting users edit it.
+
+<Canvas of={FormStories.ReadOnly} />
+
+### Indeterminate Checkbox
+
+A checkbox in the [indeterminate](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate) state shows a `-` in the box. Set `indeterminate` on a checkbox `Form.Control`.
+
+<Canvas of={FormStories.IndeterminateCheckbox} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Form API](https://docs.optics.rolemodel.design/?path=/docs/components-form--docs#form-api) for the CSS variables.

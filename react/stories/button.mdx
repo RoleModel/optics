@@ -1,0 +1,111 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as ButtonStories from './button.stories'
+
+<Meta of={ButtonStories} />
+
+# Button
+
+A button built on the Base UI button. It renders the [Optics button](https://docs.optics.rolemodel.design/?path=/docs/components-button--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/button.json
+```
+
+## Playground
+
+<Canvas of={ButtonStories.Default} />
+<Controls of={ButtonStories.Default} />
+
+## Props
+
+`Button` renders a `button.btn` and takes any Base UI button prop, plus `variant`, `size`, `shape`, `active`, `borderless`, `iconWithLabel`, `withBadge`, and `disabled`. To render a link, pass `render={<a href="..." />}` with `nativeButton={false}`.
+
+## Variations
+
+### Default
+
+`Button` with no `variant` gives an outlined button. Use it for a cancel button in a form or a secondary action on a page.
+
+<Canvas of={ButtonStories.Default} />
+
+### Primary
+
+`variant="primary"` gives a filled button using the primary color in your theme. Use it for the primary action on a screen, such as the login button on an account screen or the submit button on a form.
+
+<Canvas of={ButtonStories.Primary} />
+
+### Destructive
+
+`variant="destructive"` gives a filled button using the red danger color. Use it for a destructive action such as delete.
+
+<Canvas of={ButtonStories.Destructive} />
+
+### Warning
+
+`variant="warning"` gives a filled button using the warning color.
+
+<Canvas of={ButtonStories.Warning} />
+
+### Active
+
+`active` works with every `variant`. It gives an active state that adapts its color to the variant.
+
+<Canvas of={ButtonStories.Active} />
+
+### No Border
+
+`borderless` works with every `variant` except `destructive` and `warning`. It removes the border but keeps the same sizing, and adapts its color to the variant.
+
+Borderless warning or destructive buttons are not considered a good pattern and can easily lead to confusion, so they are not available.
+
+<Canvas of={ButtonStories.NoBorder} />
+
+### Disabled
+
+`disabled` sets the `disabled` attribute and makes the button opaque. On a link, it also prevents click events.
+
+<Canvas of={ButtonStories.Disabled} />
+
+### Pill
+
+`shape="pill"` rounds the left and right sides of any button.
+
+<Canvas of={ButtonStories.Pill} />
+
+### Icon
+
+`shape="square"` makes the width and height the same. Use it with only an `Icon` inside, and give the button an `aria-label`. Combine it with `borderless` for a borderless icon button, or use `shape="circle"` for a round icon button.
+
+<Canvas of={ButtonStories.IconButton} />
+
+### Icon With Label
+
+`iconWithLabel` stacks an `Icon` inside the button on top of the label.
+
+<Canvas of={ButtonStories.IconWithLabel} />
+
+### Size
+
+`size` takes `small`, `medium`, or `large` (the default) and changes the font, padding, and height.
+
+All sizes adjust to the large size on mobile screens (`--op-breakpoint-small`, about 768px) so the tap area is large enough.
+
+<Canvas of={ButtonStories.Size} />
+
+### With Badge
+
+`withBadge` makes room for a [Badge](?path=/docs/components-badge--docs) with `notification` on the corner of the button.
+
+<Canvas of={ButtonStories.WithBadge} />
+
+### As Link
+
+Pass `render={<a href="..." />}` and `nativeButton={false}` to render a link that looks like a button.
+
+<Canvas of={ButtonStories.AsLink} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Button API](https://docs.optics.rolemodel.design/?path=/docs/components-button--docs#button-api) for the CSS variables.

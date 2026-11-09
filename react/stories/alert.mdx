@@ -1,0 +1,103 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as AlertStories from './alert.stories'
+
+<Meta of={AlertStories} />
+
+# Alert
+
+A highlighted message or callout, for global banners or an error message within a section of your app. It renders the [Optics alert](https://docs.optics.rolemodel.design/?path=/docs/components-alert--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/alert.json
+```
+
+## Playground
+
+<Canvas of={AlertStories.Default} />
+<Controls of={AlertStories.Default} />
+
+## Parts
+
+| Part                  | Renders                  | Props                                                                       |
+| --------------------- | ------------------------ | --------------------------------------------------------------------------- |
+| `Alert.Root`          | `div.alert`              | `variant`: `warning`, `danger`, `info`, `notice`; `tone`: `muted`, `filled` |
+| `Alert.Flash`         | `div.alert.alert--flash` | `toast`, `variant`, `tone`: a Base UI toast, used in place of `Alert.Root`  |
+| `Alert.Icon`          | `alert__icon`            | `name`: icon name, and any `Icon` prop                                      |
+| `Alert.Messages`      | `alert__messages`        |                                                                             |
+| `Alert.Title`         | `alert__title`           |                                                                             |
+| `Alert.Description`   | `alert__description`     |                                                                             |
+| `Alert.Close`         | `button.alert__icon.btn` | `label`: accessible name, default `Dismiss`                                 |
+| `Alert.FlashProvider` | Base UI `Toast.Provider` | `limit`: default `1`, `timeout`, `toastManager`                             |
+| `Alert.FlashViewport` | Base UI `Toast.Viewport` | Holds the `Alert.Flash` list in a portal                                    |
+
+`Alert.Icon`, `Alert.Title`, and `Alert.Close` are optional. Use more than one `Alert.Description` for several messages.
+
+## Variations
+
+### Warning
+
+`variant="warning"` gives a warning styled message.
+
+<Canvas of={AlertStories.Default} />
+
+### Danger
+
+`variant="danger"` gives a danger styled message.
+
+<Canvas of={AlertStories.Danger} />
+
+### Info
+
+`variant="info"` gives an info styled message.
+
+<Canvas of={AlertStories.Info} />
+
+### Notice
+
+`variant="notice"` gives a notice styled message.
+
+<Canvas of={AlertStories.Notice} />
+
+### Muted
+
+`tone="muted"` works with any `variant` and changes the coloring to a muted version of that color.
+
+<Canvas of={AlertStories.Muted} />
+
+### Filled
+
+`tone="filled"` works with any `variant` and changes the coloring to a filled version of that color.
+
+<Canvas of={AlertStories.Filled} />
+
+### No Icon
+
+`Alert.Icon` is optional.
+
+<Canvas of={AlertStories.NoIcon} />
+
+### No Title
+
+`Alert.Title` is optional.
+
+<Canvas of={AlertStories.NoTitle} />
+
+### Dismissible
+
+Add an `Alert.Close` after `Alert.Messages` to let people dismiss the alert. Pass `onClick` to hide it.
+
+<Canvas of={AlertStories.Dismissible} />
+
+### As a Flash or Toast Message
+
+`Alert.Flash` is an animated notification message built on the Base UI toast. It supports every `variant` and `tone`. Wrap your app in `Alert.FlashProvider`, render each toast from `useAlertManager()` as an `Alert.Flash` inside `Alert.FlashViewport`, and call `add` to show one. A toast with `timeout: 0` stays until it is closed.
+
+For users who prefer reduced motion, the flash appears in place without sliding and hides after 5 seconds.
+
+<Canvas of={AlertStories.Flash} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Customizing alert styles](https://docs.optics.rolemodel.design/?path=/docs/components-alert--docs#customizing-alert-styles) for overrides and new variations.

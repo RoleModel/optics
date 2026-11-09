@@ -25,6 +25,9 @@ docs/
 # Documentation
 .storybook
 
+# React components are installed with the shadcn CLI, not from this package.
+/react/
+
 # Tools and tests. Anchored to the root, so dist/tools (the contrast checker) is still published.
 /tools/
 /test/

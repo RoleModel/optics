@@ -1,0 +1,48 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as SwitchStories from './switch.stories'
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+A stylized checkbox for a boolean input. It renders the [Optics switch](https://docs.optics.rolemodel.design/?path=/docs/components-switch--docs) classes.
+
+**Optics version:** 2.6.1
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/switch.json
+```
+
+## Playground
+
+<Canvas of={SwitchStories.Default} />
+<Controls of={SwitchStories.Default} />
+
+## Props
+
+`Switch` renders a `div.switch` around a checkbox `input` and the empty `label` that draws the track and thumb. Every prop except `size` goes to the `input`, so use `checked`, `defaultChecked`, `onChange`, `name`, and `disabled` as on a checkbox. The switch has no text of its own: give it an `id` and point a `Form.Label` at it with `htmlFor`, or set `aria-label`.
+
+## Variations
+
+### Default
+
+`Switch` styles a checkbox as a toggle. Put it in a `Form.Group`, usually with `inline` so the label sits beside it.
+
+<Canvas of={SwitchStories.Default} />
+
+### Size
+
+`size="large"` (the default) and `size="small"` change the size of the switch.
+
+<Canvas of={SwitchStories.Small} />
+<Canvas of={SwitchStories.Large} />
+
+### Disabled
+
+`disabled` disables the switch.
+
+<Canvas of={SwitchStories.Disabled} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Switch API](https://docs.optics.rolemodel.design/?path=/docs/components-switch--docs#switch-api) for the CSS variables.
