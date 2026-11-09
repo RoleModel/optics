@@ -9,7 +9,7 @@ They are a companion to Optics, not part of the npm package. People copy them in
 - Top-level `react/` folder. It is a Yarn workspace with its own `package.json` and Storybook (`@storybook/react-vite`).
 - Components only. The financial dashboard and Go Fish demos stay in the old repo.
 - Keep Base UI for behavior (tabs, toasts, avatar, tooltip, field).
-- Every Optics release sets all components' Optics version to the new version (`yarn set-optics-version:react`) and adjusts any component the release changed. `yarn test` fails until the versions match `package.json`.
+- Every Optics release sets all components' Optics version to the new version (`yarn set-optics-version <version>`, which also bumps `package.json` and the `.storybook/assets` example pages) and adjusts any component the release changed. `yarn test` fails until the versions match `package.json`.
 - Registry items list `@rolemodel/optics` with no version pin.
 - The `github-release` skill stays as is; the PR template covers the version step.
 
@@ -53,7 +53,7 @@ Files import each other as `@/registry/optics/ui/<name>`. The shadcn CLI rewrite
 6. [x] Verify: typecheck, `yarn sanity-check`, both Storybooks in the browser, a test install from the registry into a new Vite app
 
 7. [x] Docs pages match the CSS docs (see [Docs pages](#docs-pages))
-8. [x] Optics version on line 1 of each component and on its MDX page (`// Optics version: 2.6.1`). `test/react/registry.test.cjs` checks they match the root `package.json` version; `yarn set-optics-version:react` sets them.
+8. [x] Optics version on line 1 of each component and on its MDX page (`// Optics version: 2.6.1`). `test/react/registry.test.cjs` checks they match the root `package.json` version; `yarn set-optics-version <version>` sets them.
 9. [x] PR template asks about the React component when a CSS component changes
 10. [x] Simplify: boolean cva variants without `false: null`, shared layout story helpers (`stories/layout-helpers.tsx`), `lib/dialog.tsx` for the Modal and Confirm Dialog trigger and close handler (replaces `lib/invoker-commands.ts`), story args typed from component props
 11. [x] Fill the variation gaps: `Pagination.Link` `shape`, `Navbar.Content` `render`, Form label/hint/error outside a group, `Form.Control` `indeterminate`, `TableContainer`, `Frame` `inlineSize`, and icon packs through `setIconPack()` in `lib/icon-pack.ts` (adapted from `experiment/restructure`). Skipped: `modal-wrapper` parts (the native `dialog` replaces them) and a `btn-group-toolbar` part (use `Cluster`).

@@ -46,7 +46,7 @@ describe('react/registry.json', () => {
 
 describe('Optics version', () => {
   const { version } = JSON.parse(fs.readFileSync(path.join(REACT, '../package.json'), 'utf8'))
-  const fix = 'Run `yarn set-optics-version:react`'
+  const fix = `Run \`yarn set-optics-version ${version}\``
 
   for (const file of sourceFiles.filter((file) => file.startsWith('registry/optics/ui/'))) {
     const name = path.basename(file, '.tsx')

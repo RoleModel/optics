@@ -10,7 +10,7 @@ Run from the repo root:
 - `yarn lint:react` — typecheck
 - `yarn build-docs:react` — build the Storybook into `storybook-static/react/` and the registry into `storybook-static/r/`
 - `yarn test` — includes a check that `registry.json` matches the component imports
-- `yarn set-optics-version:react` — set every component's Optics version to the root `package.json` version. Run it when you bump the Optics version, then adjust any component the release changed.
+- `yarn set-optics-version <version>` — bump the Optics version in `package.json`, the `.storybook/assets` example pages, and every React component and MDX page. Then adjust any component the release changed.
 
 ## Add a component
 

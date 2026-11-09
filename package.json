@@ -23,7 +23,7 @@
     "build-docs:react": "yarn workspace @rolemodel/optics-react build-storybook && yarn workspace @rolemodel/optics-react build-registry",
     "storybook": "yarn build-docs:llms && storybook dev -p 6006 --docs",
     "storybook:react": "yarn workspace @rolemodel/optics-react storybook",
-    "set-optics-version:react": "yarn workspace @rolemodel/optics-react set-optics-version",
+    "set-optics-version": "node tools/set-optics-version.mjs",
     "lint": "yarn lint:js && yarn lint:css && yarn lint:react",
     "lint-fix": "yarn lint:js --fix && yarn lint:css --fix",
     "lint:js": "eslint 'src/stories/**/*.js'",
