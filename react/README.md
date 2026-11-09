@@ -14,7 +14,7 @@ Run from the repo root:
 
 ## Add a component
 
-1. Add `registry/optics/ui/<name>.tsx`. Line 1 is `// Optics version: X.Y.Z`, and its MDX page says the same version. Both match the root `package.json` version (`yarn test` checks this). Import other registry files as `@/registry/optics/ui/<name>`, so the shadcn CLI can rewrite the path on install. Give it only the options its CSS docs page offers; don't add new ones.
+1. Add `registry/optics/ui/<name>.tsx`. Line 1 is `// Optics version: X.Y.Z`, and its MDX page says the same version. Both match the root `package.json` version (`yarn test` checks this). Import other registry files as `@/registry/optics/ui/<name>`, so the shadcn CLI can rewrite the path on install. Give it only the options its CSS docs page offers; don't add new ones. To let a part render a different element, use Base UI's `render` prop (`useRender` for plain elements), not `asChild` or `as`.
 2. Add an item to [registry.json](registry.json). List each registry file it imports in `registryDependencies` as a full `https://docs.optics.rolemodel.design/r/<name>.json` URL.
 3. Add `stories/<name>.stories.tsx` and `stories/<name>.mdx`. Copy the pattern in [accordion.stories.tsx](stories/accordion.stories.tsx) and [accordion.mdx](stories/accordion.mdx): one args-driven `render`, one story per variation on the CSS docs page, and an MDX page with the same sections as the CSS docs.
    - The code panel shows the JSX each story returns. Return library components directly, not through local helper components, and pass `undefined` instead of `false` so only real props show.
