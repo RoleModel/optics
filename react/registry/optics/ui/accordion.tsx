@@ -2,6 +2,7 @@
 import { createContext, useContext, type ComponentPropsWithoutRef } from 'react'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
 import { Icon, type IconProps } from '@/registry/optics/ui/icon'
+import { builtInIconName } from '@/registry/optics/lib/icon-pack'
 
 interface AccordionRootProps extends ComponentPropsWithoutRef<'div'> {
   name?: string
@@ -61,7 +62,7 @@ interface AccordionMarkerProps extends Omit<Extract<IconProps, { name: string }>
   name?: string
 }
 
-function AccordionMarker({ name = 'arrow_right', className, ...props }: AccordionMarkerProps) {
+function AccordionMarker({ name = builtInIconName('arrow_right'), className, ...props }: AccordionMarkerProps) {
   return <Icon data-slot="accordion-marker" name={name} className={cx('accordion__marker', className)} {...props} />
 }
 

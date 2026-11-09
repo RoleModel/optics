@@ -1,3 +1,4 @@
+import { useId } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Form } from '@/registry/optics/ui/form'
@@ -24,9 +25,8 @@ const meta = {
     },
     disabled: { control: 'boolean', description: '`disabled` on `Switch`' },
   },
-  render: ({ label, size, disabled }, { id }) => {
-    // Each story needs its own id so the label toggles the right switch on the docs page.
-    const switchId = `switch-${id.split('--')[1]}`
+  render: function Render({ label, size, disabled }) {
+    const switchId = useId()
 
     return (
       <Form.Group inline>

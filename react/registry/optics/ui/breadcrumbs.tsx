@@ -3,6 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
 
 import { Icon } from '@/registry/optics/ui/icon'
+import { builtInIconName } from '@/registry/optics/lib/icon-pack'
 
 const breadcrumbsVariants = cva('breadcrumbs', {
   variants: {
@@ -31,7 +32,7 @@ function BreadcrumbsLink({ className, ...props }: BreadcrumbsLinkProps) {
 export interface BreadcrumbsSeparatorProps extends ComponentPropsWithoutRef<'div'> {}
 
 function BreadcrumbsSeparator({
-  children = <Icon name="arrow_right" />,
+  children = <Icon name={builtInIconName('arrow_right')} />,
   className,
   ...props
 }: BreadcrumbsSeparatorProps) {

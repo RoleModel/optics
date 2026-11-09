@@ -1,3 +1,4 @@
+import { useId } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Button } from '@/registry/optics/ui/button'
@@ -24,26 +25,30 @@ const meta = {
     body: { control: 'text', description: 'Children of `Modal.Body`' },
     footer: { control: 'text', description: 'Children of `Modal.Footer`. Empty shows Cancel and Save buttons' },
   },
-  render: ({ id, header, body, footer }) => (
-    <>
-      <Modal.Trigger for={id}>Show Dialog</Modal.Trigger>
-      <Modal.Root id={id}>
-        <Modal.Header>
-          {header}
-          <Modal.Close />
-        </Modal.Header>
-        <Modal.Body>{body}</Modal.Body>
-        <Modal.Footer>
-          {footer || (
-            <>
-              <Modal.Close>Cancel</Modal.Close>
-              <Button variant="primary">Save</Button>
-            </>
-          )}
-        </Modal.Footer>
-      </Modal.Root>
-    </>
-  ),
+  render: function Render({ id, header, body, footer }) {
+    const titleId = useId()
+
+    return (
+      <>
+        <Modal.Trigger for={id}>Show Dialog</Modal.Trigger>
+        <Modal.Root id={id} aria-labelledby={titleId}>
+          <Modal.Header>
+            <span id={titleId}>{header}</span>
+            <Modal.Close />
+          </Modal.Header>
+          <Modal.Body>{body}</Modal.Body>
+          <Modal.Footer>
+            {footer || (
+              <>
+                <Modal.Close>Cancel</Modal.Close>
+                <Button variant="primary">Save</Button>
+              </>
+            )}
+          </Modal.Footer>
+        </Modal.Root>
+      </>
+    )
+  },
 } satisfies Meta<ModalArgs>
 
 export default meta

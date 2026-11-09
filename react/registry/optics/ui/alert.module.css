@@ -1,0 +1,16 @@
+/* Base UI stamps data-starting-style for the first open frame and data-ending-style on
+   close, and waits for the transition to finish before it unmounts the toast.
+   translate, not inset-inline-end, because alert.css sets the inset at a higher specificity. */
+.flash {
+  transition: translate 0.5s ease-in-out;
+}
+
+.flash[data-starting-style],
+.flash[data-ending-style] {
+  translate: calc(100% + var(--op-space-large)) 0;
+}
+
+.flash:dir(rtl)[data-starting-style],
+.flash:dir(rtl)[data-ending-style] {
+  translate: calc(-100% - var(--op-space-large)) 0;
+}

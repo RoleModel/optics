@@ -5,6 +5,9 @@ import { cva, cx, type VariantProps } from 'class-variance-authority'
 
 import { buttonVariants } from '@/registry/optics/ui/button'
 import { Icon, type IconProps } from '@/registry/optics/ui/icon'
+import { builtInIconName } from '@/registry/optics/lib/icon-pack'
+
+import styles from './alert.module.css'
 
 const alertVariants = cva('alert', {
   variants: {
@@ -43,15 +46,14 @@ export interface AlertFlashProps extends Omit<Toast.Root.Props, 'className'>, Al
 }
 
 function AlertFlash({ variant, tone, className, style, ...props }: AlertFlashProps) {
-  // alert--flash plays a fixed 5s slide-in-out animation. A toast with timeout 0 must stay, so cancel the animation.
-  const persistent = props.toast.timeout === 0
-
   return (
     <FlashContext.Provider value={true}>
       <Toast.Root
         data-slot="alert"
-        className={alertVariants({ variant, tone, flash: true, className })}
-        style={persistent ? { animation: 'none', ...style } : style}
+        className={alertVariants({ variant, tone, flash: true, className: cx(styles.flash, className) })}
+        // alert--flash plays a fixed 5s slide-in-out animation that ignores the toast's timeout and
+        // hover pause. Base UI times the toast, so turn the animation off and slide with a transition.
+        style={{ animation: 'none', ...style }}
         {...props}
       />
     </FlashContext.Provider>
@@ -104,14 +106,14 @@ function AlertClose({ label = 'Dismiss', className, ...props }: AlertCloseProps)
   if (flash) {
     return (
       <Toast.Close {...closeProps}>
-        <Icon name="close" />
+        <Icon name={builtInIconName('close')} />
       </Toast.Close>
     )
   }
 
   return (
     <button type="button" {...closeProps}>
-      <Icon name="close" />
+      <Icon name={builtInIconName('close')} />
     </button>
   )
 }

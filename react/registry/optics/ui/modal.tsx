@@ -4,6 +4,7 @@ import { cx } from 'class-variance-authority'
 
 import { Button, type ButtonProps } from '@/registry/optics/ui/button'
 import { Icon } from '@/registry/optics/ui/icon'
+import { builtInIconName } from '@/registry/optics/lib/icon-pack'
 import { closeParentDialog, DialogTrigger, type DialogTriggerProps } from '@/registry/optics/lib/dialog'
 
 export interface ModalTriggerProps extends DialogTriggerProps {}
@@ -52,7 +53,7 @@ function ModalClose({ label = 'Close', children, onClick, ...props }: ModalClose
       onClick={closeParentDialog(onClick)}
       {...props}
     >
-      {children ?? <Icon name="close" size="x-large" />}
+      {children ?? <Icon name={builtInIconName('close')} size="x-large" />}
     </Button>
   )
 }

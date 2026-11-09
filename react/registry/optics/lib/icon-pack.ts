@@ -21,6 +21,19 @@ const PACKS = {
 
 export type IconPack = keyof typeof PACKS
 
+// The icons the components draw on their own. Each pack names them differently, so a
+// component asks for one of these and gets the name in the app's pack.
+const BUILT_IN_ICONS = {
+  close: { 'material-symbols': 'close', phosphor: 'x', tabler: 'x', feather: 'x', lucide: 'x' },
+  arrow_right: {
+    'material-symbols': 'arrow_right',
+    phosphor: 'caret-right',
+    tabler: 'caret-right',
+    feather: 'chevron-right',
+    lucide: 'chevron-right',
+  },
+} satisfies Record<string, Record<IconPack, string>>
+
 let currentPack: IconPack = 'material-symbols'
 
 // Call once at startup, before icons render. Icons already rendered keep the old pack.
@@ -36,4 +49,8 @@ function iconGlyph(options: GlyphOptions) {
   }
 }
 
-export { setIconPack, iconGlyph }
+function builtInIconName(icon: keyof typeof BUILT_IN_ICONS) {
+  return BUILT_IN_ICONS[icon][currentPack]
+}
+
+export { setIconPack, iconGlyph, builtInIconName }
