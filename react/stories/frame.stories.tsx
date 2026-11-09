@@ -1,9 +1,8 @@
-import type { CSSProperties } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Frame, type FrameProps } from '@/registry/optics/ui/frame'
 
-type FrameArgs = Pick<FrameProps, 'aspect'> & { inlineSize: string }
+type FrameArgs = Pick<FrameProps, 'aspect' | 'inlineSize'>
 
 const image = (
   <img
@@ -33,14 +32,11 @@ const meta = {
     },
     inlineSize: {
       control: 'text',
-      description: 'Sets `--_op-frame-inline-size`, the maximum inline size of the frame. Defaults to `100%`',
+      description: 'Maximum inline size of the frame: sets `--_op-frame-inline-size`. Defaults to `100%`',
     },
   },
   render: ({ aspect, inlineSize }) => (
-    <Frame
-      aspect={aspect}
-      style={inlineSize ? ({ '--_op-frame-inline-size': inlineSize } as CSSProperties) : undefined}
-    >
+    <Frame aspect={aspect} inlineSize={inlineSize || undefined}>
       {image}
     </Frame>
   ),

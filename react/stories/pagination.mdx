@@ -20,11 +20,11 @@ npx shadcn@latest add https://docs.optics.rolemodel.design/r/pagination.json
 
 ## Parts
 
-| Part                 | Renders                           | Props                                   |
-| -------------------- | --------------------------------- | --------------------------------------- |
-| `Pagination.Root`    | `nav.pagination`                  | any `nav` attribute                     |
-| `Pagination.Link`    | `a.btn.btn--small.btn--no-border` | `active`, and any `a` attribute, `href` |
-| `Pagination.Divider` | `div.pagination__divider`         | children, default `...`                 |
+| Part                 | Renders                           | Props                                            |
+| -------------------- | --------------------------------- | ------------------------------------------------ |
+| `Pagination.Root`    | `nav.pagination`                  | any `nav` attribute                              |
+| `Pagination.Link`    | `a.btn.btn--small.btn--no-border` | `active`, `shape`, and any `a` attribute, `href` |
+| `Pagination.Divider` | `div.pagination__divider`         | children, default `...`                          |
 
 ## Variations
 
@@ -34,7 +34,7 @@ npx shadcn@latest add https://docs.optics.rolemodel.design/r/pagination.json
 
 `active` marks the current page with `btn--active` and `aria-current="page"`.
 
-For the first and last page buttons, use a `Button` with `shape="square"`, `size="small"`, and `borderless` so the icon sits in a square button.
+For the first and last page links, set `shape="square"` so the icon sits in a square button.
 
 `Pagination.Divider` shows `...` to mark a gap in the pages. Use it when there are more than six pages, so the pagination does not grow too long.
 

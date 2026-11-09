@@ -228,8 +228,9 @@
       "name": "icon",
       "type": "registry:ui",
       "title": "Icon",
-      "description": "Material Symbols icon or inline SVG.",
+      "description": "Icon from the app's icon pack, or an inline SVG.",
       "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/icon-pack.json"],
       "files": [
         {
           "path": "registry/optics/ui/icon.tsx",
@@ -260,7 +261,7 @@
       "type": "registry:ui",
       "title": "Navbar",
       "description": "Top navigation bar.",
-      "dependencies": ["@rolemodel/optics", "class-variance-authority"],
+      "dependencies": ["@base-ui/react", "@rolemodel/optics", "class-variance-authority"],
       "files": [
         {
           "path": "registry/optics/ui/navbar.tsx",
@@ -465,6 +466,18 @@
       "files": [
         {
           "path": "registry/optics/lib/dialog.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "icon-pack",
+      "type": "registry:lib",
+      "title": "Icon Pack",
+      "description": "Sets the app's icon pack and maps icon names to its classes.",
+      "files": [
+        {
+          "path": "registry/optics/lib/icon-pack.ts",
           "type": "registry:lib"
         }
       ]

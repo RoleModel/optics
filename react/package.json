@@ -6,7 +6,8 @@
     "storybook": "storybook dev -p 6007 --no-open",
     "build-storybook": "storybook build -o ../storybook-static/react",
     "build-registry": "shadcn build -o ../storybook-static/r",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "set-optics-version": "node scripts/set-optics-version.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

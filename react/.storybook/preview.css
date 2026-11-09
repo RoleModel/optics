@@ -1,5 +1,9 @@
 @import '../../src/optics.css';
 @import '../../src/addons/fonts/material_symbols_outlined_variable.css';
+@import '../../src/addons/fonts/phosphor_icons.css';
+@import '../../src/addons/fonts/tabler_icons.css';
+@import '../../src/addons/fonts/feather_icons.css';
+@import '../../src/addons/fonts/lucide_icons.css';
 
 /* Prism marks JSX tags with .tag, which picks up the Optics .tag component styles. */
 pre .token.tag {

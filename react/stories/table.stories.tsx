@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Button } from '@/registry/optics/ui/button'
 import { Icon } from '@/registry/optics/ui/icon'
 import { Pagination } from '@/registry/optics/ui/pagination'
-import { Table, type TableProps } from '@/registry/optics/ui/table'
+import { Table, TableContainer, type TableProps } from '@/registry/optics/ui/table'
 
 const movies = [
   { title: 'Episode IV - A New Hope', year: 1977, trilogy: 'Original' },
@@ -54,7 +54,7 @@ const meta = {
     checkbox: { control: 'boolean', description: 'Add a column of checkboxes' },
     height: {
       control: 'boolean',
-      description: 'Not a prop. Wraps the table in a fixed-height container to demonstrate `sticky`',
+      description: 'Wraps the table in a fixed-height `TableContainer` to demonstrate `sticky`',
     },
     paginationInFooter: { control: 'boolean', description: 'Put a `Pagination` in the table footer' },
   },
@@ -152,11 +152,7 @@ const meta = {
 
     if (!height) return table
 
-    return (
-      <div className="table table--container" style={{ height: '20vh' }}>
-        {table}
-      </div>
-    )
+    return <TableContainer style={{ height: '20vh' }}>{table}</TableContainer>
   },
 } satisfies Meta<TableArgs>
 

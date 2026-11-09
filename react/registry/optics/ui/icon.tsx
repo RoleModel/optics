@@ -2,9 +2,11 @@
 import type { ComponentPropsWithoutRef, ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
+import { iconGlyph } from '@/registry/optics/lib/icon-pack'
+
 const iconVariants = cva('icon', {
   variants: {
-    svg: { false: 'material-symbols-outlined', true: 'icon--svg' },
+    svg: { true: 'icon--svg' },
     size: {
       small: 'icon--small',
       medium: 'icon--medium',
@@ -12,6 +14,7 @@ const iconVariants = cva('icon', {
       'x-large': 'icon--x-large',
     },
     weight: {
+      thin: 'icon--weight-thin',
       light: 'icon--weight-light',
       normal: 'icon--weight-normal',
       'semi-bold': 'icon--weight-semi-bold',
@@ -33,22 +36,22 @@ type SharedIconProps = Omit<ComponentPropsWithoutRef<'span'>, 'children'> &
     label?: string
   }
 
-// Fill is a font axis, so it has no effect on an inline SVG.
+// Fill and duotone are font styles, so they have no effect on an inline SVG.
 export type IconProps = SharedIconProps &
   (
-    | { name: string; filled?: IconVariants['filled']; children?: never }
-    | { name?: never; filled?: never; children: ReactElement }
+    | { name: string; filled?: IconVariants['filled']; duotone?: boolean; children?: never }
+    | { name?: never; filled?: never; duotone?: never; children: ReactElement }
   )
 
-function Icon({ name, label, size, weight, filled, emphasis, className, children, ...props }: IconProps) {
-  const svg = name === undefined
+function Icon({ name, label, size, weight, filled, duotone, emphasis, className, children, ...props }: IconProps) {
+  const glyph = name === undefined ? null : iconGlyph({ name, filled, duotone })
   const classes = iconVariants({
-    svg,
+    svg: glyph === null,
     size,
     weight,
     filled,
     emphasis,
-    className,
+    className: [...(glyph?.classes ?? []), className],
   })
 
   return (
@@ -60,7 +63,7 @@ function Icon({ name, label, size, weight, filled, emphasis, className, children
       aria-label={label}
       {...props}
     >
-      {svg ? children : name}
+      {glyph ? glyph.text : children}
     </span>
   )
 }

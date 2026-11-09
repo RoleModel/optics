@@ -1,5 +1,6 @@
 // Optics version: 2.6.1
 import type { ComponentPropsWithoutRef } from 'react'
+import { useRender } from '@base-ui/react/use-render'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
 
 const navbarVariants = cva('navbar', {
@@ -35,12 +36,17 @@ const navbarContentVariants = cva('navbar__content', {
 })
 
 export interface NavbarContentProps
-  extends ComponentPropsWithoutRef<'nav'>, VariantProps<typeof navbarContentVariants> {}
+  extends useRender.ComponentProps<'nav'>, VariantProps<typeof navbarContentVariants> {}
 
-function NavbarContent({ justify, className, ...props }: NavbarContentProps) {
+function NavbarContent({ justify, className, render, ref, ...props }: NavbarContentProps) {
   const classes = navbarContentVariants({ justify, className })
 
-  return <nav data-slot="navbar-content" className={classes} {...props} />
+  return useRender({
+    defaultTagName: 'nav',
+    render,
+    ref,
+    props: { 'data-slot': 'navbar-content', className: classes, ...props },
+  })
 }
 
 const Navbar = {

@@ -21,15 +21,6 @@ interface FormArgs {
   hint: string
 }
 
-// `indeterminate` is a DOM property with no HTML attribute, so it can only be set from a ref.
-const makeIndeterminate = (input: HTMLInputElement | null) => {
-  if (!input) return
-  input.indeterminate = true
-  return () => {
-    input.indeterminate = false
-  }
-}
-
 const meta = {
   title: 'Components/Form',
   args: {
@@ -59,7 +50,7 @@ const meta = {
     indeterminate: {
       control: 'boolean',
       if: { arg: 'type', eq: 'checkbox' },
-      description: 'Set the `indeterminate` property of the checkbox from a ref',
+      description: '`indeterminate` on a checkbox `Form.Control`',
     },
     multiple: { control: 'boolean', if: { arg: 'type', eq: 'select' }, description: '`multiple` on `Form.Select`' },
     inline: { control: 'boolean', description: '`inline` on `Form.Group`' },
@@ -92,7 +83,7 @@ const meta = {
           {...controlProps}
           type={type}
           placeholder={textTypes.includes(type) ? type[0].toUpperCase() + type.slice(1) : undefined}
-          ref={type === 'checkbox' && indeterminate ? makeIndeterminate : undefined}
+          indeterminate={(type === 'checkbox' && indeterminate) || undefined}
         />
       )
     }
@@ -114,11 +105,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {}
 
 export const Label: Story = {
-  render: ({ label }) => (
-    <Form.Group>
-      <Form.Label>{label}</Form.Label>
-    </Form.Group>
-  ),
+  render: ({ label }) => <Form.Label>{label}</Form.Label>,
 }
 
 export const Input: Story = {

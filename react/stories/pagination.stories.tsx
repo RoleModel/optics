@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { Button } from '@/registry/optics/ui/button'
 import { Form } from '@/registry/optics/ui/form'
 import { Icon } from '@/registry/optics/ui/icon'
 import { Pagination } from '@/registry/optics/ui/pagination'
@@ -39,15 +38,9 @@ const meta = {
           </Form.Select>
         </Form.Group>
       )}
-      <Button
-        size="small"
-        borderless
-        shape="square"
-        nativeButton={false}
-        render={<a href="#" aria-label="First page" />}
-      >
+      <Pagination.Link href="#" shape="square" aria-label="First page">
         <Icon name="first_page" />
-      </Button>
+      </Pagination.Link>
       <Pagination.Link href="#">
         <Icon name="chevron_left" />
         Prev
@@ -65,15 +58,9 @@ const meta = {
         Next
         <Icon name="chevron_right" />
       </Pagination.Link>
-      <Button
-        size="small"
-        borderless
-        shape="square"
-        nativeButton={false}
-        render={<a href="#" aria-label="Last page" />}
-      >
+      <Pagination.Link href="#" shape="square" aria-label="Last page">
         <Icon name="last_page" />
-      </Button>
+      </Pagination.Link>
     </Pagination.Root>
   ),
 } satisfies Meta<PaginationArgs>

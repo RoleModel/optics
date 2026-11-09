@@ -1,5 +1,5 @@
 // Optics version: 2.6.1
-import type { ComponentPropsWithoutRef } from 'react'
+import type { ComponentPropsWithoutRef, CSSProperties } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const frameVariants = cva('op-frame', {
@@ -16,11 +16,15 @@ const frameVariants = cva('op-frame', {
   },
 })
 
-export interface FrameProps extends ComponentPropsWithoutRef<'div'>, VariantProps<typeof frameVariants> {}
+export interface FrameProps extends ComponentPropsWithoutRef<'div'>, VariantProps<typeof frameVariants> {
+  inlineSize?: string
+}
 
-function Frame({ aspect, className, ...props }: FrameProps) {
+function Frame({ aspect, inlineSize, className, style, ...props }: FrameProps) {
   const classes = frameVariants({ aspect, className })
-  return <div data-slot="frame" className={classes} {...props} />
+  const frameStyle = inlineSize ? ({ '--_op-frame-inline-size': inlineSize, ...style } as CSSProperties) : style
+
+  return <div data-slot="frame" className={classes} style={frameStyle} {...props} />
 }
 
 export { Frame, frameVariants }

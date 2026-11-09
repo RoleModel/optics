@@ -34,14 +34,13 @@ Cross out all that don't apply with ~~ ~~ around it like ~~this~~
 - [ ] Did you update a component?
   - [ ] Have you updated the dependency graph?
   - [ ] Have you updated the docs?
-  - [ ] Have you checked the React component in `react/registry/optics/ui/`?
-    - [ ] Have you updated its props, stories, and MDX page to match?
-    - [ ] Have you updated its Optics version (line 1 and its MDX page)?
+  - [ ] Have you updated the React component in `react/registry/optics/ui/`, with its stories and MDX page, to match?
 - [ ] Did you change a React component?
   - [ ] Have you updated `react/registry.json` if its imports changed?
   - [ ] Have you checked it in the React Storybook? (yarn storybook:react)
 - [ ] Do you need to update the package version?
   - [ ] Did you update the example pages in `.storybook/assets`?
+  - [ ] Have you run `yarn set-optics-version:react` and adjusted the React components for this release?
 - [ ] Were any changes made to the top level optics.css file?
   - [ ] Were those changes reflected in the other top level files?
 

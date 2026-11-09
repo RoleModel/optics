@@ -5,7 +5,7 @@ import * as IconStories from './icon.stories'
 
 # Icon
 
-An icon from the [Material Symbols](https://fonts.google.com/icons) font, or an inline SVG. It renders the [Optics icon](https://docs.optics.rolemodel.design/?path=/docs/components-icon--docs) classes.
+An icon from your app's icon pack, or an inline SVG. The default pack is [Material Symbols](https://fonts.google.com/icons). It renders the [Optics icon](https://docs.optics.rolemodel.design/?path=/docs/components-icon--docs) classes.
 
 **Optics version:** 2.6.1
 
@@ -22,12 +22,51 @@ npx shadcn@latest add https://docs.optics.rolemodel.design/r/icon.json
 
 `Icon` renders a `span.icon` and takes `size`, `weight`, `emphasis`, and `label`, and any `span` attribute. Give it either:
 
-- `name`: a Material Symbols icon name. It adds `material-symbols-outlined`, and takes `filled`.
+- `name`: an icon name in your app's icon pack. It adds the pack's classes, and takes `filled` and, for Phosphor, `duotone`.
 - an `svg` as children. It adds `icon--svg`.
 
 Without `label` the icon is decorative and gets `aria-hidden`. With `label` it gets `role="img"` and that label.
 
-Optics ships a Material Symbols font with only the weight axis. `filled` and `emphasis` need the full variable font. See [Icon](https://docs.optics.rolemodel.design/?path=/docs/components-icon--docs) for the font imports and for other icon fonts, which use their own classes.
+Optics ships a Material Symbols font with only the weight axis. `filled` and `emphasis` need the full variable font. See [Icon](https://docs.optics.rolemodel.design/?path=/docs/components-icon--docs) for the font imports.
+
+## Icon Packs
+
+`Icon` draws `name` with your app's icon pack: `material-symbols` (the default), `phosphor`, `tabler`, `feather`, or `lucide`. Use one pack in your app. To use one other than Material Symbols:
+
+1. Import its Optics font addon, as shown in [Additional Icon libraries](https://docs.optics.rolemodel.design/?path=/docs/components-icon--docs#additional-icon-libraries).
+2. Call `setIconPack()` once at startup, before icons render. `icon-pack` is installed with `Icon`.
+
+```tsx
+import { setIconPack } from '@/lib/icon-pack'
+
+setIconPack('phosphor')
+```
+
+Then write icon names from that pack, such as `<Icon name="smiley" />` for Phosphor. Use the **Icon pack** menu in the toolbar to see any page in this Storybook with another pack.
+
+### Phosphor
+
+`size`, `weight`, and `filled` work with Phosphor. Phosphor adds `weight="thin"` but has no `semi-bold`. `duotone` shows its duotone style. It does not support `emphasis`, or `filled` with `duotone` or a weight.
+
+<Canvas of={IconStories.Phosphor} />
+
+### Tabler
+
+`size` and `filled` work with Tabler. `filled` uses the icon's `-filled` name.
+
+<Canvas of={IconStories.Tabler} />
+
+### Feather
+
+Only `size` works with Feather.
+
+<Canvas of={IconStories.Feather} />
+
+### Lucide
+
+Lucide is a fork of Feather with more icons. Only `size` works with Lucide.
+
+<Canvas of={IconStories.Lucide} />
 
 ## Variations
 

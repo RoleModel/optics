@@ -1,19 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { Icon } from '@/registry/optics/ui/icon'
+import { Icon, type IconProps } from '@/registry/optics/ui/icon'
 
-type IconSize = 'small' | 'medium' | 'large' | 'x-large'
-type IconWeight = 'light' | 'normal' | 'semi-bold' | 'bold'
-type IconEmphasis = 'low' | 'normal' | 'high'
-
-interface IconArgs {
+type IconArgs = Pick<IconProps, 'size' | 'weight' | 'emphasis' | 'label'> & {
   name: string
   svg: boolean
-  size?: IconSize
-  weight?: IconWeight
   filled?: boolean
-  emphasis?: IconEmphasis
-  label?: string
+  duotone?: boolean
 }
 
 // Simple stroke glyphs in the shape SVG icon sets ship: a 24x24 viewBox, currentColor, and a stroke-width on each element.
@@ -54,7 +47,7 @@ const meta = {
     svg: false,
   },
   argTypes: {
-    name: { control: 'text', description: 'Material Symbols icon name. Ignored when `svg` is on' },
+    name: { control: 'text', description: 'Icon name in the icon pack. Ignored when `svg` is on' },
     svg: { control: 'boolean', description: 'Pass an inline `svg` as children instead of `name`' },
     size: {
       control: 'select',
@@ -63,13 +56,18 @@ const meta = {
     },
     weight: {
       control: 'select',
-      options: ['light', 'normal', 'semi-bold', 'bold'],
-      description: '`weight`. Unset looks like `normal`',
+      options: ['thin', 'light', 'normal', 'semi-bold', 'bold'],
+      description: '`weight`. Unset looks like `normal`. `thin` is for Phosphor only',
     },
     filled: {
       control: 'boolean',
       if: { arg: 'svg', truthy: false },
       description: '`filled`: `true` adds `icon--filled`, `false` adds `icon--outlined`',
+    },
+    duotone: {
+      control: 'boolean',
+      if: { arg: 'svg', truthy: false },
+      description: '`duotone`: the Phosphor duotone style',
     },
     emphasis: {
       control: 'select',
@@ -81,13 +79,21 @@ const meta = {
       description: '`label`: an accessible name. Without it the icon is hidden from assistive tech',
     },
   },
-  render: ({ name, svg, size, weight, filled, emphasis, label }) =>
+  render: ({ name, svg, size, weight, filled, duotone, emphasis, label }) =>
     svg ? (
       <Icon size={size} weight={weight} emphasis={emphasis} label={label || undefined}>
         {checkCircle}
       </Icon>
     ) : (
-      <Icon name={name} size={size} weight={weight} filled={filled} emphasis={emphasis} label={label || undefined} />
+      <Icon
+        name={name}
+        size={size}
+        weight={weight}
+        filled={filled}
+        duotone={duotone || undefined}
+        emphasis={emphasis}
+        label={label || undefined}
+      />
     ),
 } satisfies Meta<IconArgs>
 
@@ -135,6 +141,39 @@ export const Emphasis: Story = {
       <Icon name={name} size="x-large" emphasis="high" />
     </div>
   ),
+}
+
+export const Phosphor: Story = {
+  globals: { iconPack: 'phosphor' },
+  render: () => (
+    <div className="op-cluster gap-md">
+      <Icon name="smiley" size="x-large" />
+      <Icon name="smiley" size="x-large" weight="thin" />
+      <Icon name="smiley" size="x-large" weight="bold" />
+      <Icon name="smiley" size="x-large" filled />
+      <Icon name="smiley" size="x-large" duotone />
+    </div>
+  ),
+}
+
+export const Tabler: Story = {
+  globals: { iconPack: 'tabler' },
+  render: () => (
+    <div className="op-cluster gap-md">
+      <Icon name="settings" size="x-large" />
+      <Icon name="settings" size="x-large" filled />
+    </div>
+  ),
+}
+
+export const Feather: Story = {
+  globals: { iconPack: 'feather' },
+  render: () => <Icon name="feather" size="x-large" />,
+}
+
+export const Lucide: Story = {
+  globals: { iconPack: 'lucide' },
+  render: () => <Icon name="banana" size="x-large" />,
 }
 
 export const Svg: Story = {

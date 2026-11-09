@@ -1,5 +1,6 @@
 import type { Decorator, Preview } from '@storybook/react-vite'
 
+import { setIconPack } from '../registry/optics/lib/icon-pack'
 import './preview.css'
 
 // The code panel names each component by its displayName. Name compound parts the way they are written,
@@ -16,6 +17,11 @@ for (const exports of Object.values(components)) {
 
 const withThemeMode: Decorator = (Story, context) => {
   document.documentElement.setAttribute('data-theme-mode', context.globals.theme)
+  return <Story />
+}
+
+const withIconPack: Decorator = (Story, context) => {
+  setIconPack(context.globals.iconPack)
   return <Story />
 }
 
@@ -41,9 +47,18 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
+    iconPack: {
+      description: 'Icon pack for Icon (setIconPack)',
+      toolbar: {
+        title: 'Icon pack',
+        icon: 'star',
+        items: ['material-symbols', 'phosphor', 'tabler', 'feather', 'lucide'],
+        dynamicTitle: true,
+      },
+    },
   },
-  initialGlobals: { theme: 'light' },
-  decorators: [withThemeMode],
+  initialGlobals: { theme: 'light', iconPack: 'material-symbols' },
+  decorators: [withThemeMode, withIconPack],
 }
 
 export default preview

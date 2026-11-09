@@ -9,14 +9,19 @@ They are a companion to Optics, not part of the npm package. People copy them in
 - Top-level `react/` folder. It is a Yarn workspace with its own `package.json` and Storybook (`@storybook/react-vite`).
 - Components only. The financial dashboard and Go Fish demos stay in the old repo.
 - Keep Base UI for behavior (tabs, toasts, avatar, tooltip, field).
+- Every Optics release sets all components' Optics version to the new version (`yarn set-optics-version:react`) and adjusts any component the release changed. `yarn test` fails until the versions match `package.json`.
+- Registry items list `@rolemodel/optics` with no version pin.
+- The `github-release` skill stays as is; the PR template covers the version step.
 
 ## Layout
 
 ```
 react/
   registry/optics/ui/*.tsx      one file per component, kebab-case
-  registry/optics/lib/*.ts      shared helpers (flex utility variants)
+  registry/optics/lib/*.ts(x)   shared helpers (flex utility variants, dialog trigger and close, icon pack)
   stories/*.stories.tsx         one story file per component
+  stories/*.mdx                 one docs page per component
+  stories/layout-helpers.tsx    shared boxes and controls for the layout stories
   .storybook/                   React Storybook, port 6007
   registry.json                 shadcn registry index
 ```
@@ -48,13 +53,14 @@ Files import each other as `@/registry/optics/ui/<name>`. The shadcn CLI rewrite
 6. [x] Verify: typecheck, `yarn sanity-check`, both Storybooks in the browser, a test install from the registry into a new Vite app
 
 7. [x] Docs pages match the CSS docs (see [Docs pages](#docs-pages))
-8. [x] Optics version on line 1 of each component and on its MDX page (`// Optics version: 2.6.1`). `test/react/registry.test.cjs` checks they match.
+8. [x] Optics version on line 1 of each component and on its MDX page (`// Optics version: 2.6.1`). `test/react/registry.test.cjs` checks they match the root `package.json` version; `yarn set-optics-version:react` sets them.
 9. [x] PR template asks about the React component when a CSS component changes
 10. [x] Simplify: boolean cva variants without `false: null`, shared layout story helpers (`stories/layout-helpers.tsx`), `lib/dialog.tsx` for the Modal and Confirm Dialog trigger and close handler (replaces `lib/invoker-commands.ts`), story args typed from component props
+11. [x] Fill the variation gaps: `Pagination.Link` `shape`, `Navbar.Content` `render`, Form label/hint/error outside a group, `Form.Control` `indeterminate`, `TableContainer`, `Frame` `inlineSize`, and icon packs through `setIconPack()` in `lib/icon-pack.ts` (adapted from `experiment/restructure`). Skipped: `modal-wrapper` parts (the native `dialog` replaces them) and a `btn-group-toolbar` part (use `Cluster`).
 
 ## Status
 
-- Branch `worktree-react-components`, in the worktree `.claude/worktrees/react-components`. Two commits on top of `main`: `67ad068` (components and registry) and `e7adf02` (docs pages and layout props). Not pushed, no PR.
+- Branch `worktree-react-components`, in the worktree `.claude/worktrees/react-components`. Four commits on top of `main`: `67ad068` (components and registry), `e7adf02` (docs pages and layout props), `bb734bd` (handoff notes), and `5a593a0` (Optics versions, PR template, simplifications). Not pushed, no PR.
 - `.claude/launch.json` in the worktree has `storybook` (6006) and `storybook-react` (6007). The preview tool reads the main checkout's `launch.json`, so from a worktree session start them with `yarn storybook` and `yarn storybook:react` instead.
 
 ## Next steps
@@ -62,15 +68,6 @@ Files import each other as `@/registry/optics/ui/<name>`. The shadcn CLI rewrite
 1. Review both Storybooks: `yarn storybook` and `yarn storybook:react`, then open http://localhost:6006 (React stories are under "React").
 2. Push the branch and open a PR to `main`.
 3. After merge, a release redeploys the docs site. Then check that `https://docs.optics.rolemodel.design/r/button.json` and `/react` load, and test an install into a fresh app (setup steps in [Introduction.mdx](../../react/stories/Introduction.mdx)).
-4. Decide on the open issues below.
-
-## Open issues
-
-- `breadcrumbs__separator` has no styles in `src/components/breadcrumbs.css`. The CSS-only story has the same gap.
-- `IconProps` is a union (`name` or SVG `children`), so spreading generic props into `<Icon>` needs care.
-- The first publish must happen before `registryDependencies` URLs resolve. Until then, test installs need a local server.
-- Gaps where the React parts cannot make a CSS variation: `Pagination.Link` has no `shape`, `Navbar.Content` is always a `nav`, `Form.Label`/`Hint`/`Error` need a `Form.Group`, no `indeterminate` prop, no `modal-wrapper` parts, no `btn-group-toolbar` or table container part, no `Frame` inline-size prop, and `Icon` supports only Material Symbols and SVG.
-- In dev, Copy code fails in the composed React pages because ports 6006 and 6007 are different origins. It works on the built site, where both share one origin.
 
 ## Docs pages
 

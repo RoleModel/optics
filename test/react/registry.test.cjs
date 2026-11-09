@@ -45,19 +45,18 @@ describe('react/registry.json', () => {
 })
 
 describe('Optics version', () => {
+  const { version } = JSON.parse(fs.readFileSync(path.join(REACT, '../package.json'), 'utf8'))
+  const fix = 'Run `yarn set-optics-version:react`'
+
   for (const file of sourceFiles.filter((file) => file.startsWith('registry/optics/ui/'))) {
     const name = path.basename(file, '.tsx')
 
-    test(`${name} states it on line 1 and on its docs page`, () => {
+    test(`${name} matches package.json on line 1 and on its docs page`, () => {
       const firstLine = fs.readFileSync(path.join(REACT, file), 'utf8').split('\n')[0]
-      const version = firstLine.match(/^\/\/ Optics version: (\d+\.\d+\.\d+)$/)?.[1]
-      assert.ok(version, `${file} line 1 must be "// Optics version: X.Y.Z"`)
+      assert.strictEqual(firstLine, `// Optics version: ${version}`, `${file} line 1. ${fix}`)
 
       const docs = fs.readFileSync(path.join(REACT, 'stories', `${name}.mdx`), 'utf8')
-      assert.ok(
-        docs.includes(`**Optics version:** ${version}\n`),
-        `stories/${name}.mdx must say **Optics version:** ${version}`
-      )
+      assert.ok(docs.includes(`**Optics version:** ${version}\n`), `stories/${name}.mdx. ${fix}`)
     })
   }
 })

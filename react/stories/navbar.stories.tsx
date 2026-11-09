@@ -63,7 +63,7 @@ const meta = {
           </Button>
         ))}
       </Navbar.Content>
-      <Navbar.Content>
+      <Navbar.Content render={<div />}>
         <Avatar.Root size="medium">
           <Avatar.Image src={imageUrl} alt="Avatar" />
         </Avatar.Root>

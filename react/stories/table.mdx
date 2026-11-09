@@ -20,7 +20,7 @@ npx shadcn@latest add https://docs.optics.rolemodel.design/r/table.json
 
 ## Props
 
-`Table` renders a `table.table`. Write `thead`, `tbody`, `tfoot`, and their rows as plain elements inside it. Any other `table` attribute is passed through.
+`Table` renders a `table.table`. Write `thead`, `tbody`, `tfoot`, and their rows as plain elements inside it. Any other `table` attribute is passed through. `TableContainer` renders a `div.table.table--container` to hold a sticky table.
 
 | Prop      | Values                              | Default   |
 | --------- | ----------------------------------- | --------- |
@@ -76,12 +76,12 @@ npx shadcn@latest add https://docs.optics.rolemodel.design/r/table.json
 
 `sticky="header"`, `sticky="footer"`, and `sticky="both"` make the table header, footer, or both sticky. By default they stick to the top and bottom of the viewport.
 
-They work best inside a container with a fixed height. Wrap the table in a `div.table.table--container` and set its height, so the body rows scroll between the sticky header and footer.
+They work best inside a container with a fixed height. Wrap the table in a `TableContainer` (`div.table.table--container`) and set its height, so the body rows scroll between the sticky header and footer.
 
 ```tsx
-<div className="table table--container" style={{ height: '20vh' }}>
+<TableContainer style={{ height: '20vh' }}>
   <Table sticky="both">{/* ... */}</Table>
-</div>
+</TableContainer>
 ```
 
 <Canvas of={TableStories.StickyHeader} />

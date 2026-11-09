@@ -20,18 +20,18 @@ npx shadcn@latest add https://docs.optics.rolemodel.design/r/form.json
 
 ## Parts
 
-| Part                | Renders                  | Props                                                             |
-| ------------------- | ------------------------ | ----------------------------------------------------------------- |
-| `Form.Group`        | `div.form-group`         | `inline`, `error`, and any Base UI `Field.Root` prop              |
-| `Form.Label`        | `label.form-label`       |                                                                   |
-| `Form.Control`      | `input.form-control`     | `size`, `noBorder`, and any `input` attribute, `type`, `readOnly` |
-| `Form.Textarea`     | `textarea.form-control`  | `size`, `noBorder`, and any `textarea` attribute                  |
-| `Form.Select`       | `select.form-control`    | `size`, `noBorder`, and any `select` attribute, `multiple`        |
-| `Form.Hint`         | `div.form-hint`          |                                                                   |
-| `Form.Error`        | `span.form-error`        | `match`: when to show it. Shows while `Form.Group` has `error`    |
-| `Form.ErrorSummary` | `div.form-error-summary` |                                                                   |
+| Part                | Renders                  | Props                                                                              |
+| ------------------- | ------------------------ | ---------------------------------------------------------------------------------- |
+| `Form.Group`        | `div.form-group`         | `inline`, `error`, and any Base UI `Field.Root` prop                               |
+| `Form.Label`        | `label.form-label`       |                                                                                    |
+| `Form.Control`      | `input.form-control`     | `size`, `noBorder`, `indeterminate`, and any `input` attribute, `type`, `readOnly` |
+| `Form.Textarea`     | `textarea.form-control`  | `size`, `noBorder`, and any `textarea` attribute                                   |
+| `Form.Select`       | `select.form-control`    | `size`, `noBorder`, and any `select` attribute, `multiple`                         |
+| `Form.Hint`         | `div.form-hint`          |                                                                                    |
+| `Form.Error`        | `span.form-error`        | `match`: when to show it. Shows while `Form.Group` has `error`                     |
+| `Form.ErrorSummary` | `div.form-error-summary` |                                                                                    |
 
-`Form.Label`, `Form.Hint`, and `Form.Error` must be inside a `Form.Group`. The group ties them to its control, so the label's `for` and the control's `aria-describedby` are set for you.
+`Form.Label`, `Form.Hint`, and `Form.Error` work best inside a `Form.Group`. The group ties them to its control, so the label's `for` and the control's `aria-describedby` are set for you. Outside a group they render plain elements with the same classes, and `Form.Error` always shows.
 
 ## Variations
 
@@ -127,7 +127,7 @@ npx shadcn@latest add https://docs.optics.rolemodel.design/r/form.json
 
 ### Indeterminate Checkbox
 
-A checkbox in the [indeterminate](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate) state shows a `-` in the box. `indeterminate` is a DOM property with no attribute, so set it from a `ref`.
+A checkbox in the [indeterminate](https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate) state shows a `-` in the box. Set `indeterminate` on a checkbox `Form.Control`.
 
 <Canvas of={FormStories.IndeterminateCheckbox} />
 

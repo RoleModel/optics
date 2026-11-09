@@ -20,11 +20,11 @@ npx shadcn@latest add https://docs.optics.rolemodel.design/r/navbar.json
 
 ## Parts
 
-| Part             | Renders               | Props                                  |
-| ---------------- | --------------------- | -------------------------------------- |
-| `Navbar.Root`    | `div.navbar`          | `variant`: `primary`                   |
-| `Navbar.Brand`   | `a.navbar__brand`     | any `a` attribute, `href`              |
-| `Navbar.Content` | `nav.navbar__content` | `justify`: `start`, `center`, or `end` |
+| Part             | Renders               | Props                                            |
+| ---------------- | --------------------- | ------------------------------------------------ |
+| `Navbar.Root`    | `div.navbar`          | `variant`: `primary`                             |
+| `Navbar.Brand`   | `a.navbar__brand`     | any `a` attribute, `href`                        |
+| `Navbar.Content` | `nav.navbar__content` | `justify`: `start`, `center`, or `end`; `render` |
 
 ## Variations
 
@@ -48,7 +48,7 @@ npx shadcn@latest add https://docs.optics.rolemodel.design/r/navbar.json
 
 ### Content
 
-`Navbar.Content` holds the buttons. It renders a `nav` element, so use it for sections of navigation links. `justify` is `start`, `center`, or `end` and places the section in the free space of the navbar. Set it on the section of links. The playground uses `start`.
+`Navbar.Content` holds the buttons. It renders a `nav` element for sections of navigation links. For other sections, such as an avatar, pass `render={<div />}`. `justify` is `start`, `center`, or `end` and places the section in the free space of the navbar. Set it on the section of links. The playground uses `start`.
 
 <Canvas of={NavbarStories.Centered} />
 
