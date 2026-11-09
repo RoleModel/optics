@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import { createContext, useContext, type ComponentPropsWithoutRef } from 'react'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
 import { Icon, type IconProps } from '@/registry/optics/ui/icon'
@@ -23,7 +24,7 @@ function AccordionRoot({ name, disableAnimation, children, ...props }: Accordion
 
 const accordionItemVariants = cva('accordion', {
   variants: {
-    disableAnimation: { false: null, true: 'accordion--disable-animation' },
+    disableAnimation: { true: 'accordion--disable-animation' },
   },
 })
 
@@ -93,4 +94,4 @@ const Accordion = {
   Content: AccordionContent,
 }
 
-export { Accordion, accordionItemVariants }
+export { Accordion }

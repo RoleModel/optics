@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import type { ReactElement } from 'react'
 import { Tooltip as TooltipPrimitive } from '@base-ui/react/tooltip'
 

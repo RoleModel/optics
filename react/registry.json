@@ -135,7 +135,7 @@
       "dependencies": ["@rolemodel/optics", "class-variance-authority"],
       "registryDependencies": [
         "https://docs.optics.rolemodel.design/r/button.json",
-        "https://docs.optics.rolemodel.design/r/invoker-commands.json"
+        "https://docs.optics.rolemodel.design/r/dialog.json"
       ],
       "files": [
         {
@@ -246,7 +246,7 @@
       "registryDependencies": [
         "https://docs.optics.rolemodel.design/r/button.json",
         "https://docs.optics.rolemodel.design/r/icon.json",
-        "https://docs.optics.rolemodel.design/r/invoker-commands.json"
+        "https://docs.optics.rolemodel.design/r/dialog.json"
       ],
       "files": [
         {
@@ -449,7 +449,6 @@
       "type": "registry:lib",
       "title": "Flex Utilities",
       "description": "Shared cva variants for the layout components.",
-      "dependencies": [],
       "files": [
         {
           "path": "registry/optics/lib/flex-utilities.ts",
@@ -458,14 +457,14 @@
       ]
     },
     {
-      "name": "invoker-commands",
+      "name": "dialog",
       "type": "registry:lib",
-      "title": "Invoker Commands",
-      "description": "Types for the command and commandfor button attributes.",
-      "dependencies": [],
+      "title": "Dialog",
+      "description": "Shared trigger and close handler for Modal and Confirm Dialog.",
+      "registryDependencies": ["https://docs.optics.rolemodel.design/r/button.json"],
       "files": [
         {
-          "path": "registry/optics/lib/invoker-commands.ts",
+          "path": "registry/optics/lib/dialog.tsx",
           "type": "registry:lib"
         }
       ]

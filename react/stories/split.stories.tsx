@@ -1,42 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Split, type SplitProps } from '@/registry/optics/ui/split'
+import { alignArgType, boxes, gapArgType, itemsArgType, tallContainer } from './layout-helpers'
 
 type SplitArgs = Pick<SplitProps, 'align' | 'gap'> & { items: number }
-
-const box = {
-  minWidth: 'var(--op-space-x-large)',
-  minHeight: 'var(--op-space-x-large)',
-  backgroundColor: 'var(--op-color-primary-original)',
-}
-
-const boxes = (count: number) => Array.from({ length: count }, (_, index) => <div key={index} style={box} />)
 
 const meta = {
   title: 'Layout/Split',
   parameters: { layout: 'padded' },
-  // A tall container shows how the children fill the cross axis.
-  decorators: [
-    (Story) => (
-      <div style={{ display: 'grid', minBlockSize: '10rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
+  decorators: [tallContainer('10rem')],
   args: { items: 2 },
-  argTypes: {
-    items: { control: { type: 'number', min: 0, max: 100 }, description: 'Number of child boxes' },
-    align: {
-      control: 'select',
-      options: ['stretch', 'start', 'center', 'end', 'baseline'],
-      description: 'Cross axis alignment of the children: `items-*`',
-    },
-    gap: {
-      control: 'select',
-      options: ['none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
-      description: 'Space between the children: `gap-*`. Defaults to `md`',
-    },
-  },
+  argTypes: { items: itemsArgType(100), align: alignArgType, gap: gapArgType },
   render: ({ items, ...props }) => <Split {...props}>{boxes(items)}</Split>,
 } satisfies Meta<SplitArgs>
 

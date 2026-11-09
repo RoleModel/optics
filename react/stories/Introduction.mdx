@@ -51,6 +51,10 @@ The CLI also adds the components it depends on (for example, `alert` adds `butto
 
 Every component has a page in this Storybook. The file name in the URL is the component name in kebab case: `confirm-dialog.json`, `segmented-control.json`, `text-pair.json`.
 
+## Optics version
+
+Each component page and the first line of each component file show the Optics version the component matches. It is the version we last checked its classes against. If your app uses an older Optics, some classes may be missing.
+
 ## How the components work
 
 - Compound components are objects: `Card.Root`, `Card.Header`, `Card.Body`.

@@ -1,10 +1,11 @@
+// Optics version: 2.6.1
 import type { ComponentPropsWithoutRef } from 'react'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
 
 const cardVariants = cva('card', {
   variants: {
-    padded: { false: null, true: 'card--padded' },
-    condensed: { false: null, true: 'card--condensed' },
+    padded: { true: 'card--padded' },
+    condensed: { true: 'card--condensed' },
     shadow: {
       'x-small': 'card--shadow-x-small',
       small: 'card--shadow-small',

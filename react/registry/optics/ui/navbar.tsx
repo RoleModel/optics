@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import type { ComponentPropsWithoutRef } from 'react'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
 
@@ -48,4 +49,4 @@ const Navbar = {
   Content: NavbarContent,
 }
 
-export { Navbar, navbarVariants, navbarContentVariants }
+export { Navbar, navbarVariants }

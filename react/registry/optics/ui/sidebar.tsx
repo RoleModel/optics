@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import type { ComponentPropsWithoutRef } from 'react'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
 
@@ -11,7 +12,7 @@ const sidebarVariants = cva('sidebar', {
     variant: {
       primary: 'sidebar--primary',
     },
-    padded: { false: null, true: 'sidebar--padded' },
+    padded: { true: 'sidebar--padded' },
   },
 })
 
@@ -54,4 +55,4 @@ const Sidebar = {
   Content: SidebarContent,
 }
 
-export { Sidebar, sidebarVariants, sidebarContentVariants }
+export { Sidebar, sidebarVariants }

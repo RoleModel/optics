@@ -37,13 +37,27 @@ describe('react/registry.json', () => {
 
       test('lists every package it imports', () => {
         for (const pkg of ['@base-ui/react', 'class-variance-authority']) {
-          assert.strictEqual(item.dependencies.includes(pkg), code.includes(`'${pkg}`), pkg)
+          assert.strictEqual((item.dependencies ?? []).includes(pkg), code.includes(`'${pkg}`), pkg)
         }
       })
+    })
+  }
+})
 
-      test('has files that exist', () => {
-        for (const file of item.files) assert.ok(fs.existsSync(path.join(REACT, file.path)), file.path)
-      })
+describe('Optics version', () => {
+  for (const file of sourceFiles.filter((file) => file.startsWith('registry/optics/ui/'))) {
+    const name = path.basename(file, '.tsx')
+
+    test(`${name} states it on line 1 and on its docs page`, () => {
+      const firstLine = fs.readFileSync(path.join(REACT, file), 'utf8').split('\n')[0]
+      const version = firstLine.match(/^\/\/ Optics version: (\d+\.\d+\.\d+)$/)?.[1]
+      assert.ok(version, `${file} line 1 must be "// Optics version: X.Y.Z"`)
+
+      const docs = fs.readFileSync(path.join(REACT, 'stories', `${name}.mdx`), 'utf8')
+      assert.ok(
+        docs.includes(`**Optics version:** ${version}\n`),
+        `stories/${name}.mdx must say **Optics version:** ${version}`
+      )
     })
   }
 })

@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import type { ComponentPropsWithoutRef } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
@@ -10,7 +11,7 @@ const badgeVariants = cva('badge', {
       info: 'badge--info',
       notice: 'badge--notice',
     },
-    pill: { false: null, true: 'badge--pill' },
+    pill: { true: 'badge--pill' },
     notification: {
       left: 'badge--notification-left',
       right: 'badge--notification-right',

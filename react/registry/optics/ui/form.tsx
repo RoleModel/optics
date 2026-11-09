@@ -1,11 +1,12 @@
+// Optics version: 2.6.1
 import { createContext, useContext, type ComponentPropsWithoutRef } from 'react'
 import { Field } from '@base-ui/react/field'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
 
 const formGroupVariants = cva('form-group', {
   variants: {
-    inline: { false: null, true: 'form-group--inline' },
-    error: { false: null, true: 'form-group--error' },
+    inline: { true: 'form-group--inline' },
+    error: { true: 'form-group--error' },
   },
 })
 
@@ -16,7 +17,7 @@ const formControlVariants = cva('form-control', {
       medium: 'form-control--medium',
       large: 'form-control--large',
     },
-    noBorder: { false: null, true: 'form-control--no-border' },
+    noBorder: { true: 'form-control--no-border' },
   },
 })
 
@@ -58,17 +59,8 @@ export interface FormTextareaProps
   className?: string
 }
 
-function FormTextarea({ size, noBorder, className, ...props }: FormTextareaProps) {
-  const classes = formControlVariants({ size, noBorder, className })
-  // Field.Control's props are typed for <input>. The render swap only changes the tag at runtime, so cast the props.
-  return (
-    <Field.Control
-      data-slot="form-control"
-      render={<textarea />}
-      className={classes}
-      {...(props as Field.Control.Props)}
-    />
-  )
+function FormTextarea(props: FormTextareaProps) {
+  return <NativeControl element="textarea" {...props} />
 }
 
 export interface FormSelectProps
@@ -76,12 +68,23 @@ export interface FormSelectProps
   className?: string
 }
 
-function FormSelect({ size, noBorder, className, ...props }: FormSelectProps) {
+function FormSelect(props: FormSelectProps) {
+  return <NativeControl element="select" {...props} />
+}
+
+function NativeControl({
+  element: Element,
+  size,
+  noBorder,
+  className,
+  ...props
+}: (FormTextareaProps | FormSelectProps) & { element: 'textarea' | 'select' }) {
   const classes = formControlVariants({ size, noBorder, className })
+  // Field.Control's props are typed for <input>. The render swap only changes the tag at runtime, so cast the props.
   return (
     <Field.Control
       data-slot="form-control"
-      render={<select />}
+      render={<Element />}
       className={classes}
       {...(props as Field.Control.Props)}
     />
@@ -126,4 +129,4 @@ const Form = {
   ErrorSummary: FormErrorSummary,
 }
 
-export { Form, formGroupVariants, formControlVariants }
+export { Form, formGroupVariants }

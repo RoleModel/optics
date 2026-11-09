@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { TextPair } from '@/registry/optics/ui/text-pair'
+import { TextPair, type TextPairTitleProps } from '@/registry/optics/ui/text-pair'
 
-type Size = 'small' | 'medium' | 'large'
+type Size = TextPairTitleProps['size']
 
 interface TextPairArgs {
   inline: boolean

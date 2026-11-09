@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import { createContext, useContext, useId, type ComponentPropsWithoutRef, type ReactNode } from 'react'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
 
@@ -8,7 +9,7 @@ const segmentedControlVariants = cva('segmented-control', {
       medium: 'segmented-control--medium',
       large: 'segmented-control--large',
     },
-    fullWidth: { false: null, true: 'segmented-control--full-width' },
+    fullWidth: { true: 'segmented-control--full-width' },
   },
 })
 

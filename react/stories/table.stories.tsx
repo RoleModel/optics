@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Button } from '@/registry/optics/ui/button'
 import { Icon } from '@/registry/optics/ui/icon'
 import { Pagination } from '@/registry/optics/ui/pagination'
-import { Table } from '@/registry/optics/ui/table'
+import { Table, type TableProps } from '@/registry/optics/ui/table'
 
 const movies = [
   { title: 'Episode IV - A New Hope', year: 1977, trilogy: 'Original' },
@@ -19,12 +19,7 @@ const movies = [
   { title: 'Episode IX - The Rise of Skywalker', year: 2019, trilogy: 'Sequel' },
 ]
 
-interface TableArgs {
-  variant?: 'primary' | 'danger'
-  layout?: 'auto' | 'fixed'
-  density?: 'default' | 'comfortable' | 'compact'
-  striped?: 'even' | 'odd'
-  sticky?: 'header' | 'footer' | 'both'
+type TableArgs = Pick<TableProps, 'variant' | 'layout' | 'density' | 'striped' | 'sticky'> & {
   checkbox: boolean
   height: boolean
   paginationInFooter: boolean

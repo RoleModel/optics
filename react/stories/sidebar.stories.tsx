@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Button } from '@/registry/optics/ui/button'
 import { Icon } from '@/registry/optics/ui/icon'
-import { Sidebar } from '@/registry/optics/ui/sidebar'
+import { Sidebar, type SidebarContentProps, type SidebarRootProps } from '@/registry/optics/ui/sidebar'
 
 const links = [
   { icon: 'inbox', label: 'Inbox' },
@@ -15,15 +15,13 @@ const links = [
   { icon: 'blur_on', label: 'Something' },
 ]
 
-interface SidebarArgs {
-  size: 'drawer' | 'compact' | 'rail'
-  variant?: 'primary'
-  padded: boolean
-  brand: boolean
-  justify?: 'start' | 'center' | 'end'
-  activeLink?: string
-  logout: boolean
-}
+type SidebarArgs = Pick<SidebarRootProps, 'size' | 'variant'> &
+  Pick<SidebarContentProps, 'justify'> & {
+    padded: boolean
+    brand: boolean
+    activeLink?: string
+    logout: boolean
+  }
 
 const meta = {
   title: 'Components/Sidebar',

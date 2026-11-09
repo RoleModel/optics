@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import { createContext, useContext, type ComponentPropsWithoutRef } from 'react'
 import { Toast } from '@base-ui/react/toast'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
@@ -18,7 +19,7 @@ const alertVariants = cva('alert', {
       muted: 'alert--muted',
       filled: 'alert--filled',
     },
-    flash: { false: null, true: 'alert--flash' },
+    flash: { true: 'alert--flash' },
   },
 })
 

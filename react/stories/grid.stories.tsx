@@ -1,43 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Grid, type GridProps } from '@/registry/optics/ui/grid'
+import { boxes, gapArgType, itemsArgType, tallContainer } from './layout-helpers'
 
 type GridArgs = Pick<GridProps, 'columns' | 'gap'> & { items: number }
-
-const box = {
-  minWidth: 'var(--op-space-x-large)',
-  minHeight: 'var(--op-space-x-large)',
-  backgroundColor: 'var(--op-color-primary-original)',
-}
-
-const boxes = (count: number) => Array.from({ length: count }, (_, index) => <div key={index} style={box} />)
 
 const meta = {
   title: 'Layout/Grid',
   parameters: { layout: 'padded' },
-  decorators: [
-    (Story) => (
-      <div style={{ display: 'grid', minBlockSize: '10rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
+  decorators: [tallContainer('10rem')],
   args: {
     items: 10,
   },
   argTypes: {
-    items: { control: { type: 'number', min: 0, max: 50 }, description: 'Number of child boxes' },
+    items: itemsArgType(50),
     columns: {
       control: 'select',
       options: [2, 3, 4, 5, 6],
       description:
         'Divide the grid into this many even columns: `op-grid--*-column`. Without it, columns fit a minimum size',
     },
-    gap: {
-      control: 'select',
-      options: ['none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
-      description: 'Space between the cells: `gap-*`. Defaults to `md`',
-    },
+    gap: gapArgType,
   },
   render: ({ items, ...props }) => <Grid {...props}>{boxes(items)}</Grid>,
 } satisfies Meta<GridArgs>

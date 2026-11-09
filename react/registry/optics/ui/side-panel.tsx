@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import type { ComponentPropsWithoutRef } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
@@ -89,11 +90,4 @@ const SidePanel = {
   Section: SidePanelSection,
 }
 
-export {
-  SidePanel,
-  sidePanelVariants,
-  sidePanelHeaderVariants,
-  sidePanelBodyVariants,
-  sidePanelFooterVariants,
-  sidePanelSectionVariants,
-}
+export { SidePanel, sidePanelVariants }

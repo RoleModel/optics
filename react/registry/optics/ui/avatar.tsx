@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import { Avatar as AvatarPrimitive } from '@base-ui/react/avatar'
 import { cva, type VariantProps } from 'class-variance-authority'
 
@@ -8,7 +9,7 @@ const avatarVariants = cva('avatar', {
       medium: 'avatar--medium',
       large: 'avatar--large',
     },
-    disabled: { false: null, true: 'avatar--disabled' },
+    disabled: { true: 'avatar--disabled' },
   },
 })
 

@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import { createContext, useContext, type ComponentPropsWithoutRef } from 'react'
 import { Tabs as TabsPrimitive } from '@base-ui/react/tabs'
 import { cva, cx, type VariantProps } from 'class-variance-authority'
@@ -8,8 +9,8 @@ const tabVariants = cva('tab', {
       small: 'tab--small',
       large: 'tab--large',
     },
-    active: { false: null, true: 'tab--active' },
-    disabled: { false: null, true: 'tab--disabled' },
+    active: { true: 'tab--active' },
+    disabled: { true: 'tab--disabled' },
   },
 })
 

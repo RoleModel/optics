@@ -34,9 +34,7 @@ const config = {
   refs: (_config, { configType }) => ({
     react: {
       title: 'React',
-      url:
-        process.env.OPTICS_REACT_STORYBOOK_URL ??
-        (configType === 'DEVELOPMENT' ? 'http://localhost:6007' : 'https://docs.optics.rolemodel.design/react'),
+      url: configType === 'DEVELOPMENT' ? 'http://localhost:6007' : 'https://docs.optics.rolemodel.design/react',
       expanded: false,
     },
   }),

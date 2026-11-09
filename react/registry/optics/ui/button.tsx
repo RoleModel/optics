@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import { Button as ButtonPrimitive } from '@base-ui/react/button'
 import { cva, type VariantProps } from 'class-variance-authority'
 
@@ -18,11 +19,11 @@ const buttonVariants = cva('btn', {
       circle: 'btn--pill btn--icon',
       square: 'btn--icon',
     },
-    active: { false: null, true: 'btn--active' },
-    borderless: { false: null, true: 'btn--no-border' },
-    iconWithLabel: { false: null, true: 'btn--icon-with-label' },
-    withBadge: { false: null, true: 'btn--with-badge' },
-    disabled: { false: null, true: 'btn--disabled' },
+    active: { true: 'btn--active' },
+    borderless: { true: 'btn--no-border' },
+    iconWithLabel: { true: 'btn--icon-with-label' },
+    withBadge: { true: 'btn--with-badge' },
+    disabled: { true: 'btn--disabled' },
   },
 })
 

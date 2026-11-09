@@ -1,3 +1,4 @@
+// Optics version: 2.6.1
 import type { ComponentPropsWithoutRef, ReactElement } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 

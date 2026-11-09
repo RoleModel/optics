@@ -48,6 +48,9 @@ Files import each other as `@/registry/optics/ui/<name>`. The shadcn CLI rewrite
 6. [x] Verify: typecheck, `yarn sanity-check`, both Storybooks in the browser, a test install from the registry into a new Vite app
 
 7. [x] Docs pages match the CSS docs (see [Docs pages](#docs-pages))
+8. [x] Optics version on line 1 of each component and on its MDX page (`// Optics version: 2.6.1`). `test/react/registry.test.cjs` checks they match.
+9. [x] PR template asks about the React component when a CSS component changes
+10. [x] Simplify: boolean cva variants without `false: null`, shared layout story helpers (`stories/layout-helpers.tsx`), `lib/dialog.tsx` for the Modal and Confirm Dialog trigger and close handler (replaces `lib/invoker-commands.ts`), story args typed from component props
 
 ## Status
 

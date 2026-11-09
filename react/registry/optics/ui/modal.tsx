@@ -1,16 +1,15 @@
+// Optics version: 2.6.1
 import type { ComponentPropsWithoutRef } from 'react'
 import { cx } from 'class-variance-authority'
 
 import { Button, type ButtonProps } from '@/registry/optics/ui/button'
 import { Icon } from '@/registry/optics/ui/icon'
-import '@/registry/optics/lib/invoker-commands'
+import { closeParentDialog, DialogTrigger, type DialogTriggerProps } from '@/registry/optics/lib/dialog'
 
-export interface ModalTriggerProps extends ButtonProps {
-  for: string
-}
+export interface ModalTriggerProps extends DialogTriggerProps {}
 
-function ModalTrigger({ for: commandfor, ...props }: ModalTriggerProps) {
-  return <Button data-slot="modal-trigger" commandfor={commandfor} command="show-modal" {...props} />
+function ModalTrigger(props: ModalTriggerProps) {
+  return <DialogTrigger data-slot="modal-trigger" {...props} />
 }
 
 export interface ModalRootProps extends ComponentPropsWithoutRef<'dialog'> {}
@@ -44,20 +43,13 @@ export interface ModalCloseProps extends ButtonProps {
 function ModalClose({ label = 'Close', children, onClick, ...props }: ModalCloseProps) {
   const iconOnly = children === undefined
 
-  const handleClick: ModalCloseProps['onClick'] = (event) => {
-    onClick?.(event)
-    if (!event.defaultPrevented) {
-      event.currentTarget.closest('dialog')?.close()
-    }
-  }
-
   return (
     <Button
       data-slot="modal-close"
       shape={iconOnly ? 'circle' : undefined}
       borderless={iconOnly ? true : undefined}
       aria-label={iconOnly ? label : undefined}
-      onClick={handleClick}
+      onClick={closeParentDialog(onClick)}
       {...props}
     >
       {children ?? <Icon name="close" size="x-large" />}

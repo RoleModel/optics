@@ -1,15 +1,14 @@
+// Optics version: 2.6.1
 import { useState, type ComponentPropsWithoutRef } from 'react'
 import { cx } from 'class-variance-authority'
 
 import { Button, type ButtonProps } from '@/registry/optics/ui/button'
-import '@/registry/optics/lib/invoker-commands'
+import { closeParentDialog, DialogTrigger, type DialogTriggerProps } from '@/registry/optics/lib/dialog'
 
-export interface ConfirmDialogTriggerProps extends ButtonProps {
-  for: string
-}
+export interface ConfirmDialogTriggerProps extends DialogTriggerProps {}
 
-function ConfirmDialogTrigger({ for: commandfor, ...props }: ConfirmDialogTriggerProps) {
-  return <Button data-slot="confirm-dialog-trigger" commandfor={commandfor} command="show-modal" {...props} />
+function ConfirmDialogTrigger(props: ConfirmDialogTriggerProps) {
+  return <DialogTrigger data-slot="confirm-dialog-trigger" {...props} />
 }
 
 export interface ConfirmDialogRootProps extends ComponentPropsWithoutRef<'dialog'> {}
@@ -70,14 +69,7 @@ function ConfirmDialogFooter({ className, ...props }: ConfirmDialogFooterProps) 
 export interface ConfirmDialogCloseProps extends ButtonProps {}
 
 function ConfirmDialogClose({ onClick, ...props }: ConfirmDialogCloseProps) {
-  const handleClick: ConfirmDialogCloseProps['onClick'] = (event) => {
-    onClick?.(event)
-    if (!event.defaultPrevented) {
-      event.currentTarget.closest('dialog')?.close()
-    }
-  }
-
-  return <Button data-slot="confirm-dialog-close" onClick={handleClick} {...props} />
+  return <Button data-slot="confirm-dialog-close" onClick={closeParentDialog(onClick)} {...props} />
 }
 
 const ConfirmDialog = {

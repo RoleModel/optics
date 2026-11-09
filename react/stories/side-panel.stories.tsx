@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Divider } from '@/registry/optics/ui/divider'
-import { SidePanel } from '@/registry/optics/ui/side-panel'
+import { SidePanel, type SidePanelHeaderProps, type SidePanelRootProps } from '@/registry/optics/ui/side-panel'
 
-type Padding = 'x' | 'y' | 'all'
+type Padding = SidePanelHeaderProps['padding']
 
-interface SidePanelArgs {
-  border?: 'left' | 'right' | 'both'
+type SidePanelArgs = Pick<SidePanelRootProps, 'border'> & {
   headerPadding?: Padding
   bodyPadding?: Padding
   footerPadding?: Padding

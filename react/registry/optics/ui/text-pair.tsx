@@ -1,9 +1,10 @@
+// Optics version: 2.6.1
 import type { ComponentPropsWithoutRef } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const textPairVariants = cva('text-pair', {
   variants: {
-    inline: { false: null, true: 'text-pair--inline' },
+    inline: { true: 'text-pair--inline' },
   },
 })
 
@@ -15,14 +16,18 @@ function TextPairRoot({ inline, className, ...props }: TextPairRootProps) {
   return <div data-slot="text-pair" className={classes} {...props} />
 }
 
-const textPairTitleVariants = cva('text-pair__title', {
-  variants: {
+function sizeVariants(element: 'title' | 'subtitle') {
+  return {
     size: {
-      small: 'text-pair__title--small',
-      medium: 'text-pair__title--medium',
-      large: 'text-pair__title--large',
+      small: `text-pair__${element}--small`,
+      medium: `text-pair__${element}--medium`,
+      large: `text-pair__${element}--large`,
     },
-  },
+  }
+}
+
+const textPairTitleVariants = cva('text-pair__title', {
+  variants: sizeVariants('title'),
 })
 
 export interface TextPairTitleProps
@@ -35,13 +40,7 @@ function TextPairTitle({ size, className, ...props }: TextPairTitleProps) {
 }
 
 const textPairSubtitleVariants = cva('text-pair__subtitle', {
-  variants: {
-    size: {
-      small: 'text-pair__subtitle--small',
-      medium: 'text-pair__subtitle--medium',
-      large: 'text-pair__subtitle--large',
-    },
-  },
+  variants: sizeVariants('subtitle'),
 })
 
 export interface TextPairSubtitleProps
@@ -59,4 +58,4 @@ const TextPair = {
   Subtitle: TextPairSubtitle,
 }
 
-export { TextPair, textPairVariants, textPairTitleVariants, textPairSubtitleVariants }
+export { TextPair, textPairVariants }
