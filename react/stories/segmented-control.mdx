@@ -1,0 +1,58 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as SegmentedControlStories from './segmented-control.stories'
+
+<Meta of={SegmentedControlStories} />
+
+# Segmented Control
+
+A group of radio inputs styled as one row of segments. It renders the [Optics segmented control](https://docs.optics.rolemodel.design/?path=/docs/components-segmented-control--docs) classes. Use it to pick one option in a form. To group related actions or links, use [Button Group](?path=/docs/components-button-group--docs) instead.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/segmented-control.json
+```
+
+## Playground
+
+<Canvas of={SegmentedControlStories.Default} />
+<Controls of={SegmentedControlStories.Default} />
+
+## Parts
+
+| Part                      | Renders                                                             | Props                                                                            |
+| ------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `SegmentedControl.Root`   | `div.segmented-control` with `role="radiogroup"`                    | `size`, `fullWidth`, `name`: shared by every option, generated when unset        |
+| `SegmentedControl.Option` | `input.segmented-control__input` + `label.segmented-control__label` | any radio `input` attribute, `value`, `defaultChecked`; children go in the label |
+
+## Variations
+
+### Default
+
+`SegmentedControl.Root` holds a styled radio group. Each `SegmentedControl.Option` is one segment.
+
+<Canvas of={SegmentedControlStories.Default} />
+
+### Input
+
+`SegmentedControl.Option` renders a visually hidden radio `input` with an `id`, and its attributes go on that input. Options share the `name` of the root, so only one can be checked.
+
+### Label
+
+The children of `SegmentedControl.Option` go in a `label` tied to the input. An [Icon](?path=/docs/components-icon--docs) in the label can go before or after the text, and follows the size of the control.
+
+<Canvas of={SegmentedControlStories.WithIcons} />
+
+### Size
+
+`size` is `small`, `medium`, or `large`, and sets the font, padding, and height. Unset looks the same as `large`.
+
+<Canvas of={SegmentedControlStories.Size} />
+
+### Full Width
+
+`fullWidth` makes the control take up the full width of its container.
+
+<Canvas of={SegmentedControlStories.FullWidth} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [SegmentedControl API](https://docs.optics.rolemodel.design/?path=/docs/components-segmented-control--docs#segmentedcontrol-api) for the CSS variables.

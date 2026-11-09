@@ -1,52 +1,79 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Avatar } from '@/registry/optics/ui/avatar'
-import { Button } from '@/registry/optics/ui/button'
-import { Flank } from '@/registry/optics/ui/flank'
+import { Flank, type FlankProps } from '@/registry/optics/ui/flank'
+import { TextPair } from '@/registry/optics/ui/text-pair'
+
+type FlankArgs = Pick<FlankProps, 'end' | 'gap'> & { items: number }
+
+const box = {
+  minWidth: 'var(--op-space-x-large)',
+  minHeight: 'var(--op-space-x-large)',
+  backgroundColor: 'var(--op-color-primary-original)',
+}
+
+const boxes = (count: number) => Array.from({ length: count }, (_, index) => <div key={index} style={box} />)
+
+const avatar = (
+  <Avatar.Root size="large">
+    <Avatar.Image src="https://avatars.githubusercontent.com/u/5957102?v=4" alt="Jeremy Walton" />
+  </Avatar.Root>
+)
+
+const textPair = (
+  <TextPair.Root>
+    <TextPair.Title>Jeremy Walton</TextPair.Title>
+    <TextPair.Subtitle>RoleModel Software</TextPair.Subtitle>
+  </TextPair.Root>
+)
 
 const meta = {
   title: 'Layout/Flank',
-  component: Flank,
-  tags: ['autodocs'],
   parameters: { layout: 'padded' },
   args: {
-    children: (
-      <>
-        <Avatar.Root size="medium">
-          <Avatar.Fallback>JD</Avatar.Fallback>
-        </Avatar.Root>
-        <div className="op-stack gap-none">
-          <strong>Jane Doe</strong>
-          <span>The flanked block takes the remaining space.</span>
-        </div>
-      </>
-    ),
+    items: 2,
   },
   argTypes: {
-    children: { control: false },
-    end: { control: 'boolean' },
-    align: { control: 'select', options: [undefined, 'stretch', 'start', 'center', 'end', 'baseline'] },
-    justify: { control: 'select', options: [undefined, 'start', 'center', 'end', 'between', 'around'] },
-    gap: { control: 'select', options: [undefined, 'none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'] },
-    wrap: { control: 'boolean' },
-    self: { control: 'select', options: [undefined, 'auto', 'start', 'center', 'end', 'stretch', 'baseline'] },
-    grow: { control: 'boolean' },
+    items: { control: { type: 'number', min: 0, max: 10 }, description: 'Number of child boxes' },
+    end: { control: 'boolean', description: 'Flank the small item to the end instead of the start: `op-flank--end`' },
+    gap: {
+      control: 'select',
+      options: ['none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
+      description: 'Space between the children: `gap-*`. Defaults to `md`',
+    },
   },
-} satisfies Meta<typeof Flank>
+  render: ({ items, end, ...props }) => (
+    <Flank end={end || undefined} {...props}>
+      {boxes(items)}
+    </Flank>
+  ),
+} satisfies Meta<FlankArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
+const renderExample: Story['render'] = ({ items: _items, end, ...props }) => (
+  <Flank end={end || undefined} {...props}>
+    {end ? textPair : avatar}
+    {end ? avatar : textPair}
+  </Flank>
+)
+
 export const Default: Story = {}
 
-export const End: Story = {
-  args: {
-    end: true,
-    children: (
-      <>
-        <span>A row of content with a trailing action</span>
-        <Button size="small">Action</Button>
-      </>
-    ),
-  },
+export const Without: Story = {
+  render: ({ items }) => <div>{boxes(items)}</div>,
+}
+
+export const FlankEnd: Story = {
+  args: { end: true },
+}
+
+export const AvatarExample: Story = {
+  render: renderExample,
+}
+
+export const AvatarExampleEnd: Story = {
+  args: { end: true },
+  render: renderExample,
 }

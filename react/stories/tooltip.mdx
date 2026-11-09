@@ -1,0 +1,85 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as TooltipStories from './tooltip.stories'
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+Text that appears when a user hovers over or focuses an element. It matches the look of the [Optics tooltip](https://docs.optics.rolemodel.design/?path=/docs/components-tooltip--docs).
+
+The CSS tooltip is drawn with pseudo-elements on the element itself. This component is a [Base UI tooltip](https://base-ui.com/react/components/tooltip) instead: the popup is rendered in a portal and positioned with JavaScript, so it is not clipped by overflow and flips away from the edge of the viewport.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/tooltip.json
+```
+
+## Playground
+
+<Canvas of={TooltipStories.Default} />
+<Controls of={TooltipStories.Default} />
+
+## Props
+
+Wrap a single element in `Tooltip`. That element becomes the trigger, so it must accept a `ref` and props, and should be focusable for keyboard users.
+
+| Prop       | Values                           | Default |
+| ---------- | -------------------------------- | ------- |
+| `text`     | The tooltip content              |         |
+| `position` | `top`, `right`, `bottom`, `left` | `top`   |
+| `delay`    | Milliseconds before it opens     | `300`   |
+
+Other props, such as `open`, `defaultOpen`, and `onOpenChange`, go to Base UI's `Tooltip.Root`.
+
+A disabled button does not get pointer events, so its tooltip never opens. Wrap the button in a `span` with `tabIndex={0}` and put the tooltip on the `span`.
+
+```tsx
+<Tooltip text="This is a tooltip">
+  <span tabIndex={0}>
+    <Button disabled>Disabled Button</Button>
+  </span>
+</Tooltip>
+```
+
+## Variations
+
+### Default
+
+<Canvas of={TooltipStories.Default} />
+
+### Top
+
+<Canvas of={TooltipStories.Top} />
+
+### Right
+
+<Canvas of={TooltipStories.Right} />
+
+### Bottom
+
+<Canvas of={TooltipStories.Bottom} />
+
+### Left
+
+<Canvas of={TooltipStories.Left} />
+
+### Button
+
+Tooltips can be placed on any element. Here is a tooltip on a button.
+
+<Canvas of={TooltipStories.OnButton} />
+
+### Icon
+
+Here is a tooltip on an information icon.
+
+<Canvas of={TooltipStories.OnIcon} />
+
+### Lots of Text
+
+Tooltips have a maximum width and wrap text that is too long.
+
+<Canvas of={TooltipStories.LotsOfText} />
+
+## Customizing
+
+The popup does not use the Optics tooltip classes. Its styles live in `tooltip.module.css`, which is copied into your project with the component and built from the same Optics tokens. Edit that file to change the tooltip. See [Tooltip API](https://docs.optics.rolemodel.design/?path=/docs/components-tooltip--docs#tooltip-api) for the values the CSS version uses.

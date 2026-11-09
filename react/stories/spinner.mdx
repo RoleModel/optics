@@ -1,0 +1,57 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as SpinnerStories from './spinner.stories'
+
+<Meta of={SpinnerStories} />
+
+# Spinner
+
+A loading indicator to show while retrieving data or performing slow computations. It renders the [Optics spinner](https://docs.optics.rolemodel.design/?path=/docs/components-spinner--docs) classes.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/spinner.json
+```
+
+## Playground
+
+<Canvas of={SpinnerStories.Default} />
+<Controls of={SpinnerStories.Default} />
+
+## Props
+
+`Spinner` renders a `div.spinner` with `role="status"` and a visually hidden `label` (default `Loading`) for assistive technology. Set `label` to say what is loading. Any other `div` attribute is passed through.
+
+## Variations
+
+### Default
+
+`Spinner` without a `size` is a large spinner.
+
+<Canvas of={SpinnerStories.Default} />
+
+### X-Small
+
+`size="x-small"` creates an x-small spinner.
+
+<Canvas of={SpinnerStories.XSmall} />
+
+### Small
+
+`size="small"` creates a small spinner.
+
+<Canvas of={SpinnerStories.Small} />
+
+### Medium
+
+`size="medium"` creates a medium spinner.
+
+<Canvas of={SpinnerStories.Medium} />
+
+### Large
+
+`size="large"` creates a large spinner.
+
+<Canvas of={SpinnerStories.Large} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Spinner API](https://docs.optics.rolemodel.design/?path=/docs/components-spinner--docs#spinner-api) for the CSS variables.

@@ -1,53 +1,70 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { Badge } from '@/registry/optics/ui/badge'
-import { Button } from '@/registry/optics/ui/button'
-import { Split } from '@/registry/optics/ui/split'
+import { Split, type SplitProps } from '@/registry/optics/ui/split'
+
+type SplitArgs = Pick<SplitProps, 'align' | 'gap'> & { items: number }
+
+const box = {
+  minWidth: 'var(--op-space-x-large)',
+  minHeight: 'var(--op-space-x-large)',
+  backgroundColor: 'var(--op-color-primary-original)',
+}
+
+const boxes = (count: number) => Array.from({ length: count }, (_, index) => <div key={index} style={box} />)
 
 const meta = {
   title: 'Layout/Split',
-  component: Split,
-  tags: ['autodocs'],
   parameters: { layout: 'padded' },
-  args: {
-    children: (
-      <>
-        <strong>Page title</strong>
-        <div className="op-cluster gap-sm">
-          <Button size="small" borderless>
-            Cancel
-          </Button>
-          <Button size="small" variant="primary">
-            Save
-          </Button>
-        </div>
-      </>
+  // A tall container shows how the children fill the cross axis.
+  decorators: [
+    (Story) => (
+      <div style={{ display: 'grid', minBlockSize: '10rem' }}>
+        <Story />
+      </div>
     ),
-  },
+  ],
+  args: { items: 2 },
   argTypes: {
-    children: { control: false },
-    align: { control: 'select', options: [undefined, 'stretch', 'start', 'center', 'end', 'baseline'] },
-    justify: { control: 'select', options: [undefined, 'start', 'center', 'end', 'between', 'around'] },
-    gap: { control: 'select', options: [undefined, 'none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'] },
-    wrap: { control: 'boolean' },
-    self: { control: 'select', options: [undefined, 'auto', 'start', 'center', 'end', 'stretch', 'baseline'] },
-    grow: { control: 'boolean' },
+    items: { control: { type: 'number', min: 0, max: 100 }, description: 'Number of child boxes' },
+    align: {
+      control: 'select',
+      options: ['stretch', 'start', 'center', 'end', 'baseline'],
+      description: 'Cross axis alignment of the children: `items-*`',
+    },
+    gap: {
+      control: 'select',
+      options: ['none', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
+      description: 'Space between the children: `gap-*`. Defaults to `md`',
+    },
   },
-} satisfies Meta<typeof Split>
+  render: ({ items, ...props }) => <Split {...props}>{boxes(items)}</Split>,
+} satisfies Meta<SplitArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 
-export const ThreeItems: Story = {
-  args: {
-    children: (
-      <>
-        <Badge variant="info">Left</Badge>
-        <Badge>Middle</Badge>
-        <Badge variant="info">Right</Badge>
-      </>
-    ),
-  },
+export const Without: Story = {
+  render: ({ items }) => <div>{boxes(items)}</div>,
+}
+
+export const AlignStretch: Story = {
+  args: { align: 'stretch' },
+}
+
+export const AlignStart: Story = {
+  args: { align: 'start' },
+}
+
+export const AlignCenter: Story = {
+  args: { align: 'center' },
+}
+
+export const AlignEnd: Story = {
+  args: { align: 'end' },
+}
+
+export const AlignBaseline: Story = {
+  args: { align: 'baseline' },
 }

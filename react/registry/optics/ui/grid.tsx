@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
-import { flexUtilityVariants } from '@/registry/optics/lib/flex-utilities'
+import { gapVariants } from '@/registry/optics/lib/flex-utilities'
 
 const gridVariants = cva('op-grid', {
   variants: {
@@ -12,7 +12,7 @@ const gridVariants = cva('op-grid', {
       5: 'op-grid--5-column',
       6: 'op-grid--6-column',
     },
-    gap: flexUtilityVariants.gap,
+    gap: gapVariants,
   },
 })
 

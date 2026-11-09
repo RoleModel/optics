@@ -4,78 +4,72 @@ import { Button } from '@/registry/optics/ui/button'
 import { Icon } from '@/registry/optics/ui/icon'
 import { Tag } from '@/registry/optics/ui/tag'
 
+interface TagArgs {
+  label: string
+  variant?: 'primary' | 'danger' | 'warning' | 'info' | 'notice'
+  iconLeft: boolean
+  iconRight: boolean
+}
+
 const meta = {
   title: 'Components/Tag',
-  component: Tag.Root,
-  tags: ['autodocs'],
-} satisfies Meta<typeof Tag.Root>
+  args: {
+    label: 'Readonly',
+    iconLeft: false,
+    iconRight: false,
+  },
+  argTypes: {
+    label: { control: 'text', description: 'Text of `Tag.Label`' },
+    variant: {
+      control: 'select',
+      options: ['primary', 'danger', 'warning', 'info', 'notice'],
+      description: '`variant` of `Tag.Root`. Without one the tag is readonly',
+    },
+    iconLeft: { control: 'boolean', description: 'Add a remove button before `Tag.Label`' },
+    iconRight: { control: 'boolean', description: 'Add a remove button after `Tag.Label`' },
+  },
+  render: ({ label, variant, iconLeft, iconRight }) => (
+    <Tag.Root variant={variant}>
+      {iconLeft && (
+        <Button shape="circle" borderless aria-label={`Remove ${label}`}>
+          <Icon name="close" />
+        </Button>
+      )}
+      <Tag.Label>{label}</Tag.Label>
+      {iconRight && (
+        <Button shape="circle" borderless aria-label={`Remove ${label}`}>
+          <Icon name="close" />
+        </Button>
+      )}
+    </Tag.Root>
+  ),
+} satisfies Meta<TagArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: () => (
-    <Tag.Root>
-      <Tag.Label>Design</Tag.Label>
-      <Button shape="circle" borderless aria-label="Remove Design">
-        <Icon name="close" />
-      </Button>
-    </Tag.Root>
-  ),
-}
+export const Default: Story = {}
 
 export const Readonly: Story = {
-  render: () => (
-    <Tag.Root>
-      <Tag.Label>Readonly</Tag.Label>
-    </Tag.Root>
-  ),
+  args: { label: 'Readonly' },
 }
 
-export const Variants: Story = {
-  render: () => (
-    <div className="op-cluster gap-sm">
-      <Tag.Root variant="primary">
-        <Tag.Label>Primary</Tag.Label>
-        <Button shape="circle" borderless aria-label="Remove Primary">
-          <Icon name="close" />
-        </Button>
-      </Tag.Root>
-      <Tag.Root variant="danger">
-        <Tag.Label>Danger</Tag.Label>
-        <Button shape="circle" borderless aria-label="Remove Danger">
-          <Icon name="close" />
-        </Button>
-      </Tag.Root>
-      <Tag.Root variant="warning">
-        <Tag.Label>Warning</Tag.Label>
-        <Button shape="circle" borderless aria-label="Remove Warning">
-          <Icon name="close" />
-        </Button>
-      </Tag.Root>
-      <Tag.Root variant="info">
-        <Tag.Label>Info</Tag.Label>
-        <Button shape="circle" borderless aria-label="Remove Info">
-          <Icon name="close" />
-        </Button>
-      </Tag.Root>
-      <Tag.Root variant="notice">
-        <Tag.Label>Notice</Tag.Label>
-        <Button shape="circle" borderless aria-label="Remove Notice">
-          <Icon name="close" />
-        </Button>
-      </Tag.Root>
-    </div>
-  ),
+export const Primary: Story = {
+  args: { label: 'Primary', variant: 'primary' },
 }
 
-export const LeadingButton: Story = {
-  render: () => (
-    <Tag.Root variant="info">
-      <Button shape="circle" borderless aria-label="Remove Leading">
-        <Icon name="close" />
-      </Button>
-      <Tag.Label>Leading button</Tag.Label>
-    </Tag.Root>
-  ),
+export const Danger: Story = {
+  args: { label: 'Danger', variant: 'danger' },
+}
+
+export const Warning: Story = {
+  args: { label: 'Warning', variant: 'warning' },
+}
+
+export const Info: Story = {
+  args: { label: 'Info', variant: 'info' },
+}
+
+export const Notice: Story = {
+  args: { label: 'Notice', variant: 'notice' },
 }

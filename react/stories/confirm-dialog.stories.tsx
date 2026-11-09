@@ -2,47 +2,39 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { ConfirmDialog } from '@/registry/optics/ui/confirm-dialog'
 
+interface ConfirmDialogArgs {
+  title: string
+  message: string
+}
+
 const meta = {
   title: 'Components/Confirm Dialog',
-  component: ConfirmDialog.Root,
-  tags: ['autodocs'],
-} satisfies Meta<typeof ConfirmDialog.Root>
+  args: {
+    title: 'Confirm Title',
+    message: 'Are you sure you want to delete this?',
+  },
+  argTypes: {
+    title: { control: 'text', description: 'Children of `ConfirmDialog.Header`' },
+    message: { control: 'text', description: 'Children of `ConfirmDialog.Body`' },
+  },
+  render: ({ title, message }) => (
+    <>
+      <ConfirmDialog.Trigger for="confirm-dialog" variant="destructive">
+        Delete
+      </ConfirmDialog.Trigger>
+      <ConfirmDialog.Root id="confirm-dialog">
+        <ConfirmDialog.Header>{title}</ConfirmDialog.Header>
+        <ConfirmDialog.Body>{message}</ConfirmDialog.Body>
+        <ConfirmDialog.Footer>
+          <ConfirmDialog.Close>Cancel</ConfirmDialog.Close>
+          <ConfirmDialog.Close variant="destructive">Yes, I'm Sure</ConfirmDialog.Close>
+        </ConfirmDialog.Footer>
+      </ConfirmDialog.Root>
+    </>
+  ),
+} satisfies Meta<ConfirmDialogArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: () => (
-    <>
-      <ConfirmDialog.Trigger for="confirm-dialog-default" variant="destructive">
-        Delete project
-      </ConfirmDialog.Trigger>
-      <ConfirmDialog.Root id="confirm-dialog-default">
-        <ConfirmDialog.Header>Delete project?</ConfirmDialog.Header>
-        <ConfirmDialog.Body>This permanently removes the project and its files.</ConfirmDialog.Body>
-        <ConfirmDialog.Footer>
-          <ConfirmDialog.Close>Cancel</ConfirmDialog.Close>
-          <ConfirmDialog.Close variant="destructive">Yes, delete it</ConfirmDialog.Close>
-        </ConfirmDialog.Footer>
-      </ConfirmDialog.Root>
-    </>
-  ),
-}
-
-export const Primary: Story = {
-  render: () => (
-    <>
-      <ConfirmDialog.Trigger for="confirm-dialog-primary" variant="primary">
-        Publish changes
-      </ConfirmDialog.Trigger>
-      <ConfirmDialog.Root id="confirm-dialog-primary">
-        <ConfirmDialog.Header>Publish changes?</ConfirmDialog.Header>
-        <ConfirmDialog.Body>Everyone with access will see the new version.</ConfirmDialog.Body>
-        <ConfirmDialog.Footer>
-          <ConfirmDialog.Close>Not yet</ConfirmDialog.Close>
-          <ConfirmDialog.Close variant="primary">Publish</ConfirmDialog.Close>
-        </ConfirmDialog.Footer>
-      </ConfirmDialog.Root>
-    </>
-  ),
-}
+export const Default: Story = {}

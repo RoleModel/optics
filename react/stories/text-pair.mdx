@@ -1,0 +1,57 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as TextPairStories from './text-pair.stories'
+
+<Meta of={TextPairStories} />
+
+# Text Pair
+
+A title and subtitle shown together. It can group other elements too, but is meant for text. It renders the [Optics text pair](https://docs.optics.rolemodel.design/?path=/docs/components-text-pair--docs) classes.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/text-pair.json
+```
+
+## Playground
+
+<Canvas of={TextPairStories.Default} />
+<Controls of={TextPairStories.Default} />
+
+## Parts
+
+| Part                | Renders               | Props                                                   |
+| ------------------- | --------------------- | ------------------------------------------------------- |
+| `TextPair.Root`     | `div.text-pair`       | `inline`                                                |
+| `TextPair.Title`    | `text-pair__title`    | `size`: `small`, `medium`, `large`. Default is `medium` |
+| `TextPair.Subtitle` | `text-pair__subtitle` | `size`: `small`, `medium`, `large`. Default is `small`  |
+
+To change the space between the title and subtitle, add an Optics gap utility to `TextPair.Root`, such as `className="gap-sm"`.
+
+## Variations
+
+### Default
+
+`TextPair.Root` holds a `TextPair.Title` and a `TextPair.Subtitle`.
+
+<Canvas of={TextPairStories.Default} />
+
+### Inline
+
+`inline` puts the title and subtitle side by side. This is useful for a key and value pair.
+
+<Canvas of={TextPairStories.Inline} />
+
+### Title Size
+
+`size="small"`, `size="medium"`, and `size="large"` on `TextPair.Title` (with medium being the default) change the font size of the title.
+
+<Canvas of={TextPairStories.TitleSize} />
+
+### Subtitle Size
+
+`size="small"`, `size="medium"`, and `size="large"` on `TextPair.Subtitle` (with small being the default) change the font size of the subtitle.
+
+<Canvas of={TextPairStories.SubtitleSize} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Text Pair API](https://docs.optics.rolemodel.design/?path=/docs/components-text-pair--docs#text-pair-api) for the CSS variables.

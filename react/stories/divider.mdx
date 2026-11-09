@@ -1,0 +1,51 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as DividerStories from './divider.stories'
+
+<Meta of={DividerStories} />
+
+# Divider
+
+A horizontal or vertical line between content. It renders the [Optics divider](https://docs.optics.rolemodel.design/?path=/docs/components-divider--docs) classes.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/divider.json
+```
+
+## Playground
+
+<Canvas of={DividerStories.Default} />
+<Controls of={DividerStories.Default} />
+
+## Props
+
+`Divider` renders a `div.divider` with `role="separator"`. It takes `vertical`, `size`, and `spacing`, and any `div` attribute. It has no children.
+
+## Variations
+
+### Default
+
+`Divider` with no props is a horizontal divider.
+
+<Canvas of={DividerStories.Default} />
+
+### Vertical
+
+`vertical` makes a vertical divider and sets `aria-orientation="vertical"`.
+
+<Canvas of={DividerStories.Vertical} />
+
+### Size
+
+`size` is `small`, `medium`, or `large` and sets the thickness of the line. Unset looks the same as `small`.
+
+<Canvas of={DividerStories.Size} />
+
+### Spacing
+
+`spacing` is `small`, `medium`, or `large` and adds space on each side of the line. Unset adds none.
+
+<Canvas of={DividerStories.Spacing} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Divider API](https://docs.optics.rolemodel.design/?path=/docs/components-divider--docs#divider-api) for the CSS variables.

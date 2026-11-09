@@ -4,79 +4,164 @@ import { Button } from '@/registry/optics/ui/button'
 import { ButtonGroup } from '@/registry/optics/ui/button-group'
 import { Icon } from '@/registry/optics/ui/icon'
 
+interface ButtonGroupArgs {
+  variant: 'default' | 'primary' | 'destructive' | 'warning'
+  size?: 'small' | 'medium' | 'large'
+  active: boolean
+  borderless: boolean
+  pill: boolean
+  disabled: boolean
+  segmentedPreview: boolean
+}
+
 const meta = {
   title: 'Components/Button Group',
-  component: ButtonGroup,
-  tags: ['autodocs'],
-} satisfies Meta<typeof ButtonGroup>
+  args: {
+    variant: 'default',
+    active: false,
+    borderless: false,
+    pill: false,
+    disabled: false,
+    segmentedPreview: false,
+  },
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'primary', 'destructive', 'warning'],
+      description: '`variant` on each `Button`',
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+      description: '`size` on each `Button`. Large when unset',
+    },
+    active: { control: 'boolean', description: '`active` on each `Button`' },
+    borderless: { control: 'boolean', description: '`borderless` on each `Button`' },
+    pill: { control: 'boolean', description: '`shape="pill"` on each `Button`' },
+    disabled: { control: 'boolean', description: '`disabled` on each `Button`' },
+    segmentedPreview: {
+      control: 'boolean',
+      description: 'Not a prop. Sets `active` on the middle `Button` only, like a segmented control',
+    },
+  },
+  render: ({ variant, size, active, borderless, pill, disabled, segmentedPreview }) => {
+    const buttonProps = {
+      variant: variant === 'default' ? undefined : variant,
+      size,
+      shape: pill ? ('pill' as const) : undefined,
+      active: active || undefined,
+      borderless: borderless || undefined,
+      disabled: disabled || undefined,
+    }
+
+    return (
+      <ButtonGroup>
+        <Button {...buttonProps}>Left</Button>
+        <Button {...buttonProps} active={active || segmentedPreview || undefined}>
+          Middle
+        </Button>
+        <Button {...buttonProps}>Right</Button>
+      </ButtonGroup>
+    )
+  },
+} satisfies Meta<ButtonGroupArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: () => (
-    <ButtonGroup>
-      <Button>Left</Button>
-      <Button>Middle</Button>
-      <Button>Right</Button>
-    </ButtonGroup>
-  ),
-}
+export const Default: Story = {}
 
-export const Variants: Story = {
+export const Toolbar: Story = {
   render: () => (
-    <div className="op-stack gap-md">
+    <div className="btn-group-toolbar gap-xs">
       <ButtonGroup>
-        <Button variant="primary">Left</Button>
-        <Button variant="primary">Middle</Button>
-        <Button variant="primary">Right</Button>
+        <Button aria-label="Bold">
+          <Icon name="format_bold" />
+        </Button>
+        <Button aria-label="Italic">
+          <Icon name="format_italic" />
+        </Button>
+        <Button aria-label="Strikethrough">
+          <Icon name="format_strikethrough" />
+        </Button>
+        <Button aria-label="Underline">
+          <Icon name="format_underlined" />
+        </Button>
+        <Button aria-label="Link">
+          <Icon name="link" />
+        </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="destructive">Left</Button>
-        <Button variant="destructive">Middle</Button>
-        <Button variant="destructive">Right</Button>
+        <Button aria-label="Text style">
+          <Icon name="text_fields" />
+        </Button>
+        <Button aria-label="Quote">
+          <Icon name="format_quote" />
+        </Button>
+        <Button aria-label="Code">
+          <Icon name="code" />
+        </Button>
+        <Button aria-label="Bulleted list">
+          <Icon name="format_list_bulleted" />
+        </Button>
+        <Button aria-label="Numbered list">
+          <Icon name="format_list_numbered" />
+        </Button>
+        <Button aria-label="Align left">
+          <Icon name="format_align_left" />
+        </Button>
+        <Button aria-label="Align center">
+          <Icon name="format_align_center" />
+        </Button>
+        <Button aria-label="Align right">
+          <Icon name="format_align_right" />
+        </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="warning">Left</Button>
-        <Button variant="warning">Middle</Button>
-        <Button variant="warning">Right</Button>
+        <Button aria-label="Attach">
+          <Icon name="attachment" />
+        </Button>
+      </ButtonGroup>
+      <ButtonGroup>
+        <Button aria-label="Undo">
+          <Icon name="undo" />
+        </Button>
+        <Button aria-label="Redo">
+          <Icon name="redo" />
+        </Button>
       </ButtonGroup>
     </div>
   ),
 }
 
-export const ActiveButton: Story = {
-  render: () => (
-    <ButtonGroup>
-      <Button>Day</Button>
-      <Button active>Week</Button>
-      <Button>Month</Button>
-    </ButtonGroup>
-  ),
+export const Primary: Story = {
+  args: { variant: 'primary' },
+}
+
+export const Destructive: Story = {
+  args: { variant: 'destructive' },
+}
+
+export const Warning: Story = {
+  args: { variant: 'warning' },
+}
+
+export const Active: Story = {
+  args: { variant: 'destructive', active: true },
+}
+
+export const NoBorder: Story = {
+  args: { variant: 'primary', borderless: true },
+}
+
+export const Disabled: Story = {
+  args: { variant: 'primary', disabled: true },
 }
 
 export const Pill: Story = {
-  render: () => (
-    <ButtonGroup>
-      <Button shape="pill">Left</Button>
-      <Button shape="pill">Middle</Button>
-      <Button shape="pill">Right</Button>
-    </ButtonGroup>
-  ),
+  args: { pill: true },
 }
 
-export const IconButtons: Story = {
-  render: () => (
-    <ButtonGroup aria-label="Text formatting">
-      <Button aria-label="Bold">
-        <Icon name="format_bold" />
-      </Button>
-      <Button aria-label="Italic">
-        <Icon name="format_italic" />
-      </Button>
-      <Button aria-label="Underline">
-        <Icon name="format_underlined" />
-      </Button>
-    </ButtonGroup>
-  ),
+export const Size: Story = {
+  args: { variant: 'primary', size: 'small' },
 }

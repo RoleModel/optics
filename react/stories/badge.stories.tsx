@@ -4,88 +4,94 @@ import { Badge } from '@/registry/optics/ui/badge'
 import { Button } from '@/registry/optics/ui/button'
 import { Icon } from '@/registry/optics/ui/icon'
 
+interface BadgeArgs {
+  label: string
+  variant: 'default' | 'primary' | 'warning' | 'danger' | 'info' | 'notice'
+  pill: boolean
+  notification: 'none' | 'left' | 'right'
+  showPrefixIcon: boolean
+  showSuffixIcon: boolean
+}
+
 const meta = {
   title: 'Components/Badge',
-  component: Badge,
-  tags: ['autodocs'],
   args: {
-    children: 'Badge',
+    label: 'Default',
+    variant: 'default',
+    pill: false,
+    notification: 'none',
+    showPrefixIcon: false,
+    showSuffixIcon: false,
   },
   argTypes: {
-    variant: { control: 'select', options: [undefined, 'primary', 'warning', 'danger', 'info', 'notice'] },
-    pill: { control: 'boolean' },
-    notification: { control: 'select', options: [undefined, 'left', 'right'] },
+    label: { control: 'text', description: 'Text of the `Badge`' },
+    variant: {
+      control: 'select',
+      options: ['default', 'primary', 'warning', 'danger', 'info', 'notice'],
+      description: '`variant` on `Badge`',
+    },
+    pill: { control: 'boolean', description: '`pill` on `Badge`' },
+    notification: {
+      control: 'select',
+      options: ['none', 'left', 'right'],
+      description: '`notification` on `Badge`, inside a `Button` with `withBadge`',
+    },
+    showPrefixIcon: { control: 'boolean', description: 'Not a prop. Shows an `Icon` before the label' },
+    showSuffixIcon: { control: 'boolean', description: 'Not a prop. Shows an `Icon` after the label' },
   },
-} satisfies Meta<typeof Badge>
+  render: ({ label, variant, pill, notification, showPrefixIcon, showSuffixIcon }) => {
+    const badge = (
+      <Badge
+        variant={variant === 'default' ? undefined : variant}
+        pill={pill || undefined}
+        notification={notification === 'none' ? undefined : notification}
+      >
+        {showPrefixIcon ? <Icon name="open_in_new" /> : null}
+        {label}
+        {showSuffixIcon ? <Icon name="add" /> : null}
+      </Badge>
+    )
+
+    if (notification === 'none') return badge
+
+    return (
+      <Button variant="primary" withBadge>
+        Notifications
+        {badge}
+      </Button>
+    )
+  },
+} satisfies Meta<BadgeArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 
-export const Variants: Story = {
-  render: (args) => (
-    <div className="op-cluster gap-md">
-      <Badge {...args}>Default</Badge>
-      <Badge {...args} variant="primary">
-        Primary
-      </Badge>
-      <Badge {...args} variant="warning">
-        Warning
-      </Badge>
-      <Badge {...args} variant="danger">
-        Danger
-      </Badge>
-      <Badge {...args} variant="info">
-        Info
-      </Badge>
-      <Badge {...args} variant="notice">
-        Notice
-      </Badge>
-    </div>
-  ),
+export const Primary: Story = {
+  args: { label: 'Primary', variant: 'primary' },
+}
+
+export const Warning: Story = {
+  args: { label: 'Warning', variant: 'warning' },
+}
+
+export const Danger: Story = {
+  args: { label: 'Danger', variant: 'danger' },
+}
+
+export const Info: Story = {
+  args: { label: 'Info', variant: 'info' },
+}
+
+export const Notice: Story = {
+  args: { label: 'Notice', variant: 'notice' },
 }
 
 export const Pill: Story = {
-  render: (args) => (
-    <div className="op-cluster gap-md">
-      <Badge {...args} pill>
-        Pill
-      </Badge>
-      <Badge {...args} variant="primary" pill>
-        Primary pill
-      </Badge>
-    </div>
-  ),
+  args: { label: 'Pill', pill: true },
 }
 
-export const WithIcon: Story = {
-  args: {
-    variant: 'info',
-    children: (
-      <>
-        <Icon name="info" />
-        Info
-      </>
-    ),
-  },
-}
-
-export const Notification: Story = {
-  render: () => (
-    <div className="op-cluster gap-md">
-      <Button withBadge>
-        Inbox
-        <Badge variant="info" pill notification="left">
-          12
-        </Badge>
-      </Button>
-      <Button variant="primary" withBadge>
-        Notifications
-        <Badge variant="danger" pill notification="right">
-          5
-        </Badge>
-      </Button>
-    </div>
-  ),
+export const NotificationButton: Story = {
+  args: { label: '5', variant: 'danger', pill: true, notification: 'right' },
 }

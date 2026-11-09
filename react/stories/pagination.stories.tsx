@@ -1,43 +1,44 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Button } from '@/registry/optics/ui/button'
+import { Form } from '@/registry/optics/ui/form'
 import { Icon } from '@/registry/optics/ui/icon'
 import { Pagination } from '@/registry/optics/ui/pagination'
 
-const meta = {
-  title: 'Components/Pagination',
-  component: Pagination.Root,
-  tags: ['autodocs'],
-} satisfies Meta<typeof Pagination.Root>
+const pages = ['1', '2', '3', '...', '10', '11', '12']
 
-export default meta
-type Story = StoryObj<typeof meta>
-
-export const Default: Story = {
-  render: () => (
-    <Pagination.Root>
-      <Pagination.Link href="#">
-        <Icon name="chevron_left" />
-        Prev
-      </Pagination.Link>
-      <Pagination.Link href="#" active>
-        1
-      </Pagination.Link>
-      <Pagination.Link href="#">2</Pagination.Link>
-      <Pagination.Link href="#">3</Pagination.Link>
-      <Pagination.Divider />
-      <Pagination.Link href="#">10</Pagination.Link>
-      <Pagination.Link href="#">
-        Next
-        <Icon name="chevron_right" />
-      </Pagination.Link>
-    </Pagination.Root>
-  ),
+interface PaginationArgs {
+  activePage: string
+  includeShowing: boolean
 }
 
-export const WithFirstAndLast: Story = {
-  render: () => (
+const meta = {
+  title: 'Components/Pagination',
+  args: {
+    activePage: '1',
+    includeShowing: false,
+  },
+  argTypes: {
+    activePage: {
+      control: 'select',
+      options: pages.filter((page) => page !== '...'),
+      description: 'The `Pagination.Link` with `active`',
+    },
+    includeShowing: { control: 'boolean', description: 'Add a `Form.Group` with a select for the page size' },
+  },
+  render: ({ activePage, includeShowing }) => (
     <Pagination.Root>
+      {includeShowing && (
+        <Form.Group>
+          <Form.Label>Showing</Form.Label>
+          <Form.Select noBorder size="small">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </Form.Select>
+        </Form.Group>
+      )}
       <Button
         size="small"
         borderless
@@ -47,11 +48,23 @@ export const WithFirstAndLast: Story = {
       >
         <Icon name="first_page" />
       </Button>
-      <Pagination.Link href="#">1</Pagination.Link>
-      <Pagination.Link href="#" active>
-        2
+      <Pagination.Link href="#">
+        <Icon name="chevron_left" />
+        Prev
       </Pagination.Link>
-      <Pagination.Link href="#">3</Pagination.Link>
+      {pages.map((page) =>
+        page === '...' ? (
+          <Pagination.Divider key={page} />
+        ) : (
+          <Pagination.Link key={page} href="#" active={activePage === page || undefined}>
+            {page}
+          </Pagination.Link>
+        )
+      )}
+      <Pagination.Link href="#">
+        Next
+        <Icon name="chevron_right" />
+      </Pagination.Link>
       <Button
         size="small"
         borderless
@@ -63,4 +76,13 @@ export const WithFirstAndLast: Story = {
       </Button>
     </Pagination.Root>
   ),
+} satisfies Meta<PaginationArgs>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {}
+
+export const WithShowing: Story = {
+  args: { includeShowing: true },
 }

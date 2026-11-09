@@ -32,6 +32,7 @@ Files import each other as `@/registry/optics/ui/<name>`. The shadcn CLI rewrite
 
 ## Cleanup rules for the port
 
+- Props match the options in the CSS docs. No new options: for example, Cluster, Split, and Stack take only `align` and `gap`, and Flank takes `end` and `gap`.
 - Kebab-case file names, shadcn import paths.
 - One polymorphism API: Base UI's `render` prop. Drop `Button`'s `asChild`.
 - Repo Prettier config (print width 120).
@@ -51,3 +52,9 @@ Files import each other as `@/registry/optics/ui/<name>`. The shadcn CLI rewrite
 - `breadcrumbs__separator` has no styles in `src/components/breadcrumbs.css`. The CSS-only story has the same gap.
 - `IconProps` is a union (`name` or SVG `children`), so spreading generic props into `<Icon>` needs care.
 - The first publish must happen before `registryDependencies` URLs resolve. Until then, test installs need a local server.
+- Gaps where the React parts cannot make a CSS variation: `Pagination.Link` has no `shape`, `Navbar.Content` is always a `nav`, `Form.Label`/`Hint`/`Error` need a `Form.Group`, no `indeterminate` prop, no `modal-wrapper` parts, no `btn-group-toolbar` or table container part, no `Frame` inline-size prop, and `Icon` supports only Material Symbols and SVG.
+- In dev, Copy code fails in the composed React pages because ports 6006 and 6007 are different origins. It works on the built site, where both share one origin.
+
+## Docs pages
+
+Each component has `<name>.stories.tsx` (args-driven, one story per CSS variation) and `<name>.mdx` (same sections as the CSS docs). The code panel shows the JSX each story renders: `.storybook/preview.tsx` sets `docs.source.type: 'dynamic'` and names compound parts like `Accordion.Root`.

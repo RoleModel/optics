@@ -1,89 +1,93 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Accordion } from '@/registry/optics/ui/accordion'
+import { Button } from '@/registry/optics/ui/button'
+
+interface AccordionArgs {
+  label: string
+  marker: string
+  content: string
+  swapLabelAndMarker: boolean
+  disableAnimation: boolean
+  additionalHeaderContent: boolean
+}
 
 const meta = {
   title: 'Components/Accordion',
-  component: Accordion.Root,
-  tags: ['autodocs'],
   parameters: { layout: 'padded' },
-} satisfies Meta<typeof Accordion.Root>
+  args: {
+    label: 'Header Label',
+    marker: 'arrow_right',
+    content: 'Something small enough to escape casual notice.',
+    swapLabelAndMarker: false,
+    disableAnimation: false,
+    additionalHeaderContent: false,
+  },
+  argTypes: {
+    label: { control: 'text', description: 'Text of `Accordion.Label`' },
+    marker: { control: 'text', description: '`name` of `Accordion.Marker`, a Material Symbols icon' },
+    content: { control: 'text', description: 'Children of `Accordion.Content`' },
+    swapLabelAndMarker: { control: 'boolean', description: 'Put the marker after the label' },
+    disableAnimation: { control: 'boolean', description: '`disableAnimation` on `Accordion.Item` or `Accordion.Root`' },
+    additionalHeaderContent: { control: 'boolean', description: 'Add a button to `Accordion.Trigger`' },
+  },
+  render: ({ label, marker, content, swapLabelAndMarker, disableAnimation, additionalHeaderContent }) => {
+    const markerIcon = <Accordion.Marker name={marker === 'arrow_right' ? undefined : marker} />
+    const labelText = <Accordion.Label>{label}</Accordion.Label>
+
+    return (
+      <Accordion.Item disableAnimation={disableAnimation || undefined}>
+        <Accordion.Trigger>
+          {swapLabelAndMarker ? labelText : markerIcon}
+          {swapLabelAndMarker ? markerIcon : labelText}
+          {additionalHeaderContent && <Button size="small">Button</Button>}
+        </Accordion.Trigger>
+        <Accordion.Content>{content}</Accordion.Content>
+      </Accordion.Item>
+    )
+  },
+} satisfies Meta<AccordionArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: () => (
-    <Accordion.Root>
-      <Accordion.Item>
-        <Accordion.Trigger>
-          <Accordion.Label>What is Optics?</Accordion.Label>
-          <Accordion.Marker />
-        </Accordion.Trigger>
-        <Accordion.Content>RoleModel's design system, providing tokens, utilities, and components.</Accordion.Content>
-      </Accordion.Item>
-      <Accordion.Item>
-        <Accordion.Trigger>
-          <Accordion.Label>Can I customize it?</Accordion.Label>
-          <Accordion.Marker />
-        </Accordion.Trigger>
-        <Accordion.Content>Every component exposes CSS custom properties you can override.</Accordion.Content>
-      </Accordion.Item>
-    </Accordion.Root>
-  ),
+export const Default: Story = {}
+
+export const SwapLabelAndMarker: Story = {
+  args: { swapLabelAndMarker: true },
+}
+
+export const DisableAnimation: Story = {
+  args: { disableAnimation: true },
+}
+
+export const AdditionalHeaderContent: Story = {
+  args: { additionalHeaderContent: true },
 }
 
 export const Exclusive: Story = {
   render: () => (
-    <Accordion.Root name="accordion-exclusive">
-      <Accordion.Item open>
+    <Accordion.Root name="faq">
+      <Accordion.Item>
         <Accordion.Trigger>
+          <Accordion.Marker />
           <Accordion.Label>First</Accordion.Label>
-          <Accordion.Marker />
         </Accordion.Trigger>
-        <Accordion.Content>Items sharing a name close each other when opened.</Accordion.Content>
+        <Accordion.Content>Opening another item closes this one.</Accordion.Content>
       </Accordion.Item>
       <Accordion.Item>
         <Accordion.Trigger>
+          <Accordion.Marker />
           <Accordion.Label>Second</Accordion.Label>
-          <Accordion.Marker />
         </Accordion.Trigger>
-        <Accordion.Content>Opening this one closes the first.</Accordion.Content>
+        <Accordion.Content>Items that share a name act as one group.</Accordion.Content>
       </Accordion.Item>
       <Accordion.Item>
         <Accordion.Trigger>
-          <Accordion.Label>Third</Accordion.Label>
           <Accordion.Marker />
+          <Accordion.Label>Third</Accordion.Label>
         </Accordion.Trigger>
         <Accordion.Content>Only one item is open at a time.</Accordion.Content>
-      </Accordion.Item>
-    </Accordion.Root>
-  ),
-}
-
-export const CustomMarker: Story = {
-  render: () => (
-    <Accordion.Root>
-      <Accordion.Item>
-        <Accordion.Trigger>
-          <Accordion.Label>Custom marker icon</Accordion.Label>
-          <Accordion.Marker name="expand_more" />
-        </Accordion.Trigger>
-        <Accordion.Content>The marker accepts any icon name.</Accordion.Content>
-      </Accordion.Item>
-    </Accordion.Root>
-  ),
-}
-
-export const DisableAnimation: Story = {
-  render: () => (
-    <Accordion.Root disableAnimation>
-      <Accordion.Item>
-        <Accordion.Trigger>
-          <Accordion.Label>Animation disabled</Accordion.Label>
-          <Accordion.Marker />
-        </Accordion.Trigger>
-        <Accordion.Content>This item opens and closes instantly.</Accordion.Content>
       </Accordion.Item>
     </Accordion.Root>
   ),

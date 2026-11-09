@@ -1,0 +1,66 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as AccordionStories from './accordion.stories'
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+A disclosure widget built on the native `details` and `summary` elements. It renders the [Optics accordion](https://docs.optics.rolemodel.design/?path=/docs/components-accordion--docs) classes.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/accordion.json
+```
+
+## Playground
+
+<Canvas of={AccordionStories.Default} />
+<Controls of={AccordionStories.Default} />
+
+## Parts
+
+| Part                | Renders             | Props                                                           |
+| ------------------- | ------------------- | --------------------------------------------------------------- |
+| `Accordion.Root`    | `div`               | `name`, `disableAnimation`: shared by every item inside it      |
+| `Accordion.Item`    | `details.accordion` | `name`, `disableAnimation`, and any `details` attribute, `open` |
+| `Accordion.Trigger` | `summary`           |                                                                 |
+| `Accordion.Marker`  | `accordion__marker` | `name`: icon name, default `arrow_right`                        |
+| `Accordion.Label`   | `accordion__label`  |                                                                 |
+| `Accordion.Content` | `div`               |                                                                 |
+
+`Accordion.Root` is optional. Use it to share `name` or `disableAnimation` with a group of items.
+
+## Variations
+
+### Default
+
+`Accordion.Trigger` must contain an `Accordion.Label` and an `Accordion.Marker`. The marker comes first, so it sits on the left.
+
+<Canvas of={AccordionStories.Default} />
+
+### Swapped Label and Marker
+
+Put the marker after the label to move it to the right side.
+
+<Canvas of={AccordionStories.SwapLabelAndMarker} />
+
+### Disable Animation
+
+`disableAnimation` turns off the transition on the marker and the content.
+
+<Canvas of={AccordionStories.DisableAnimation} />
+
+### Additional Header Content
+
+Other content can go in `Accordion.Trigger` in any order. Content between the label and the marker fills the space between them, so wrap a button in a `div` if it should not stretch.
+
+<Canvas of={AccordionStories.AdditionalHeaderContent} />
+
+### Exclusive
+
+Items with the same `name` act as one group: only one is open at a time. Set `name` on `Accordion.Root` to share it with every item. See the [`name` attribute on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details#name).
+
+<Canvas of={AccordionStories.Exclusive} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Accordion API](https://docs.optics.rolemodel.design/?path=/docs/components-accordion--docs#accordion-api) for the CSS variables.

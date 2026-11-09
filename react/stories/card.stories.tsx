@@ -1,72 +1,72 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { Button } from '@/registry/optics/ui/button'
 import { Card } from '@/registry/optics/ui/card'
+
+interface CardArgs {
+  label: string
+  padded: boolean
+  condensed: boolean
+  header: string
+  body: string
+  footer: string
+  shadow: 'none' | 'x-small' | 'small' | 'medium' | 'large' | 'x-large'
+}
 
 const meta = {
   title: 'Components/Card',
-  component: Card.Root,
-  tags: ['autodocs'],
-} satisfies Meta<typeof Card.Root>
+  args: {
+    label: 'Plain',
+    padded: false,
+    condensed: false,
+    header: '',
+    body: '',
+    footer: '',
+    shadow: 'none',
+  },
+  argTypes: {
+    label: { control: 'text', description: 'Children of `Card.Root` when it has no sections' },
+    padded: { control: 'boolean', description: '`padded` on `Card.Root`' },
+    condensed: { control: 'boolean', description: '`condensed` on `Card.Root`' },
+    header: { control: 'text', description: 'Children of `Card.Header`. Leave empty to omit it' },
+    body: { control: 'text', description: 'Children of `Card.Body`. Leave empty to omit it' },
+    footer: { control: 'text', description: 'Children of `Card.Footer`. Leave empty to omit it' },
+    shadow: {
+      control: 'select',
+      options: ['none', 'x-small', 'small', 'medium', 'large', 'x-large'],
+      description: '`shadow` on `Card.Root`',
+    },
+  },
+  render: ({ label, padded, condensed, header, body, footer, shadow }) => (
+    <Card.Root
+      padded={padded || undefined}
+      condensed={condensed || undefined}
+      shadow={shadow === 'none' ? undefined : shadow}
+    >
+      {header || body || footer ? null : label}
+      {header ? <Card.Header>{header}</Card.Header> : null}
+      {body ? <Card.Body>{body}</Card.Body> : null}
+      {footer ? <Card.Footer>{footer}</Card.Footer> : null}
+    </Card.Root>
+  ),
+} satisfies Meta<CardArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: () => (
-    <Card.Root shadow="small">
-      <Card.Header>
-        <h3>Project update</h3>
-      </Card.Header>
-      <Card.Body>The design review is scheduled for Thursday afternoon.</Card.Body>
-      <Card.Footer>
-        <div className="op-cluster gap-sm justify-end">
-          <Button size="small" borderless>
-            Dismiss
-          </Button>
-          <Button size="small" variant="primary">
-            View
-          </Button>
-        </div>
-      </Card.Footer>
-    </Card.Root>
-  ),
-}
+export const Default: Story = {}
 
 export const Padded: Story = {
-  render: () => <Card.Root padded>A padded card with no sections.</Card.Root>,
+  args: { label: 'Padded', padded: true },
+}
+
+export const Full: Story = {
+  args: { header: 'Full', body: 'Body', footer: 'Footer' },
 }
 
 export const Condensed: Story = {
-  render: () => (
-    <Card.Root condensed>
-      <Card.Header>
-        <h3>Condensed</h3>
-      </Card.Header>
-      <Card.Body>Tighter padding for every section.</Card.Body>
-      <Card.Footer>Footer</Card.Footer>
-    </Card.Root>
-  ),
+  args: { condensed: true, header: 'Condensed', body: 'Body', footer: 'Footer' },
 }
 
-export const Shadows: Story = {
-  render: () => (
-    <div className="op-cluster gap-lg">
-      <Card.Root padded shadow="x-small">
-        x-small
-      </Card.Root>
-      <Card.Root padded shadow="small">
-        small
-      </Card.Root>
-      <Card.Root padded shadow="medium">
-        medium
-      </Card.Root>
-      <Card.Root padded shadow="large">
-        large
-      </Card.Root>
-      <Card.Root padded shadow="x-large">
-        x-large
-      </Card.Root>
-    </div>
-  ),
+export const Shadow: Story = {
+  args: { label: 'Shadow', padded: true, shadow: 'large' },
 }

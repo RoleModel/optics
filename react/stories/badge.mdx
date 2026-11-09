@@ -1,0 +1,75 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as BadgeStories from './badge.stories'
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+A small label for notification and information. Use [Tag](?path=/docs/components-tag--docs) for interaction and input instead. It renders the [Optics badge](https://docs.optics.rolemodel.design/?path=/docs/components-badge--docs) classes.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/badge.json
+```
+
+## Playground
+
+<Canvas of={BadgeStories.Default} />
+<Controls of={BadgeStories.Default} />
+
+## Props
+
+`Badge` renders a `span.badge` and takes any `span` attribute, plus `variant`, `pill`, and `notification`. Put an `Icon` inside it before or after the label.
+
+## Variations
+
+### Default
+
+`Badge` with no `variant` gives a neutral colored badge.
+
+<Canvas of={BadgeStories.Default} />
+
+### Primary
+
+`variant="primary"` uses the primary color defined in your theme.
+
+<Canvas of={BadgeStories.Primary} />
+
+### Warning
+
+`variant="warning"` uses the warning alert color.
+
+<Canvas of={BadgeStories.Warning} />
+
+### Danger
+
+`variant="danger"` uses the danger alert color.
+
+<Canvas of={BadgeStories.Danger} />
+
+### Info
+
+`variant="info"` uses the info alert color.
+
+<Canvas of={BadgeStories.Info} />
+
+### Notice
+
+`variant="notice"` uses the notice alert color.
+
+<Canvas of={BadgeStories.Notice} />
+
+### Pill
+
+`pill` works with any `variant` and rounds the left and right sides.
+
+<Canvas of={BadgeStories.Pill} />
+
+### Notification Button
+
+`notification="right"` and `notification="left"` place the badge on the corner of a `Button` with `withBadge`.
+
+<Canvas of={BadgeStories.NotificationButton} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Customizing Badge styles](https://docs.optics.rolemodel.design/?path=/docs/components-badge--docs#customizing-badge-styles) for overrides and new variations.

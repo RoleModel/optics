@@ -1,26 +1,16 @@
 import type { ComponentPropsWithoutRef } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
-import { flexUtilityVariants } from '@/registry/optics/lib/flex-utilities'
+import { alignVariants, gapVariants } from '@/registry/optics/lib/flex-utilities'
 
 const clusterVariants = cva('op-cluster', {
-  variants: flexUtilityVariants,
+  variants: { align: alignVariants, gap: gapVariants },
 })
 
 export interface ClusterProps extends ComponentPropsWithoutRef<'div'>, VariantProps<typeof clusterVariants> {}
 
-function Cluster({ align, justify, gap, wrap, self, grow, className, ...props }: ClusterProps) {
-  const classes = clusterVariants({
-    align,
-    justify,
-    gap,
-    wrap,
-    self,
-    grow,
-    className,
-  })
-
-  return <div data-slot="cluster" className={classes} {...props} />
+function Cluster({ align, gap, className, ...props }: ClusterProps) {
+  return <div data-slot="cluster" className={clusterVariants({ align, gap, className })} {...props} />
 }
 
 export { Cluster, clusterVariants }

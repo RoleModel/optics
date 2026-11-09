@@ -1,0 +1,85 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as FrameStories from './frame.stories'
+
+<Meta of={FrameStories} />
+
+# Frame
+
+Constrains content to a consistent aspect ratio. It centers its content and clips any overflow, so images, videos, cards, map embeds or charts fill a fixed shape regardless of their intrinsic dimensions. It renders the [Optics frame](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-frame--docs) utility class.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/frame.json
+```
+
+## Playground
+
+<Canvas of={FrameStories.Default} />
+<Controls of={FrameStories.Default} />
+
+## Props
+
+| Prop     | Values                                                        | Adds          |
+| -------- | ------------------------------------------------------------- | ------------- |
+| `aspect` | `square`, `landscape`, `portrait`, `4-3`, `3-4`, `3-2`, `2-3` | `op-frame--*` |
+
+`Frame` renders `div.op-frame` and passes any other `div` attribute through. The examples on this page are in a `20rem` wide container.
+
+## Variations
+
+### Without
+
+A plain `div` with the same image, for comparison.
+
+<Canvas of={FrameStories.Without} />
+
+### Square
+
+`aspect="square"` crops media to a 1:1 aspect ratio. This is also the default when `aspect` is not set.
+
+<Canvas of={FrameStories.Square} />
+
+### Landscape
+
+`aspect="landscape"` crops media to a 16:9 aspect ratio.
+
+<Canvas of={FrameStories.Landscape} />
+
+### Portrait
+
+`aspect="portrait"` crops media to a 9:16 aspect ratio.
+
+<Canvas of={FrameStories.Portrait} />
+
+### 4:3
+
+`aspect="4-3"` crops media to a 4:3 aspect ratio.
+
+<Canvas of={FrameStories.FourThree} />
+
+### 3:4
+
+`aspect="3-4"` crops media to a 3:4 (inverse of 4:3) aspect ratio.
+
+<Canvas of={FrameStories.ThreeFour} />
+
+### 3:2
+
+`aspect="3-2"` crops media to a 3:2 aspect ratio.
+
+<Canvas of={FrameStories.ThreeTwo} />
+
+### 2:3
+
+`aspect="2-3"` crops media to a 2:3 (inverse of 3:2) aspect ratio.
+
+<Canvas of={FrameStories.TwoThree} />
+
+### Custom Inline Size
+
+The `--_op-frame-inline-size` custom property controls the frame's `max-inline-size` (defaults to `100%`). Set it with `style` to constrain the frame to a smaller width while keeping its aspect ratio.
+
+<Canvas of={FrameStories.CustomInlineSize} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Frame](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-frame--docs) for the utility classes.

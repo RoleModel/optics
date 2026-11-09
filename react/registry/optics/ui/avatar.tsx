@@ -14,10 +14,12 @@ const avatarVariants = cva('avatar', {
 
 interface AvatarRootProps extends AvatarPrimitive.Root.Props, VariantProps<typeof avatarVariants> {}
 
-function AvatarRoot({ size, disabled, className, ...props }: AvatarRootProps) {
+function AvatarRoot({ size, disabled, className, render = <div />, ...props }: AvatarRootProps) {
   const classes = avatarVariants({ size, disabled, className })
 
-  return <AvatarPrimitive.Root data-slot="avatar" className={classes} {...props} />
+  // Optics shows the hover state on any avatar that is not a div, so a plain avatar must be a div.
+  // Pass `render={<a href="..." />}` for a linked avatar.
+  return <AvatarPrimitive.Root data-slot="avatar" className={classes} render={render} {...props} />
 }
 
 type AvatarImageProps = AvatarPrimitive.Image.Props

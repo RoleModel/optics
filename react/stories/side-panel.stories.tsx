@@ -3,69 +3,91 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Divider } from '@/registry/optics/ui/divider'
 import { SidePanel } from '@/registry/optics/ui/side-panel'
 
+type Padding = 'x' | 'y' | 'all'
+
+interface SidePanelArgs {
+  border?: 'left' | 'right' | 'both'
+  headerPadding?: Padding
+  bodyPadding?: Padding
+  footerPadding?: Padding
+  sections: number
+  sectionPadding?: Padding
+  showDividers: boolean
+}
+
+const paddingControl = (part: string) => ({
+  control: 'select' as const,
+  options: ['x', 'y', 'all'],
+  description: `\`padding\` of \`SidePanel.${part}\``,
+})
+
 const meta = {
   title: 'Components/Side Panel',
-  component: SidePanel.Root,
-  tags: ['autodocs'],
-  // The panel fills its container's height; the wrapper stands in for a page layout.
-  decorators: [
-    (Story) => (
-      <div style={{ blockSize: '24rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
-} satisfies Meta<typeof SidePanel.Root>
+  args: {
+    sections: 1,
+    showDividers: false,
+  },
+  argTypes: {
+    border: {
+      control: 'select',
+      options: ['left', 'right', 'both'],
+      description: '`border` of `SidePanel.Root`',
+    },
+    headerPadding: paddingControl('Header'),
+    bodyPadding: paddingControl('Body'),
+    footerPadding: paddingControl('Footer'),
+    sections: {
+      control: { type: 'number', min: 0 },
+      description: 'Number of `SidePanel.Section`s in the body. With 0 the body holds plain text',
+    },
+    sectionPadding: paddingControl('Section'),
+    showDividers: { control: 'boolean', description: 'Add a `Divider` after each section' },
+  },
+  render: ({ border, headerPadding, bodyPadding, footerPadding, sections, sectionPadding, showDividers }) => (
+    <div style={{ height: '40rem' }}>
+      <SidePanel.Root border={border}>
+        <SidePanel.Header padding={headerPadding}>This is a header</SidePanel.Header>
+        <SidePanel.Body padding={bodyPadding}>
+          {sections > 0
+            ? Array.from({ length: sections }).flatMap((_, index) => [
+                <SidePanel.Section key={`section-${index}`} padding={sectionPadding}>
+                  This is a section
+                </SidePanel.Section>,
+                showDividers && <Divider key={`divider-${index}`} />,
+              ])
+            : 'This is a body'}
+        </SidePanel.Body>
+        <SidePanel.Footer padding={footerPadding}>This is a footer</SidePanel.Footer>
+      </SidePanel.Root>
+    </div>
+  ),
+} satisfies Meta<SidePanelArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: () => (
-    <SidePanel.Root>
-      <SidePanel.Header>Filters</SidePanel.Header>
-      <SidePanel.Body>
-        <SidePanel.Section>Status</SidePanel.Section>
-        <Divider />
-        <SidePanel.Section>Owner</SidePanel.Section>
-        <Divider />
-        <SidePanel.Section>Due date</SidePanel.Section>
-        <Divider />
-        <SidePanel.Section>Tags</SidePanel.Section>
-      </SidePanel.Body>
-      <SidePanel.Footer>Footer</SidePanel.Footer>
-    </SidePanel.Root>
-  ),
+export const Default: Story = {}
+
+export const Bordered: Story = {
+  args: { border: 'both' },
 }
 
-export const Padded: Story = {
-  render: () => (
-    <SidePanel.Root>
-      <SidePanel.Header padding="all">Padded header</SidePanel.Header>
-      <SidePanel.Body>
-        <SidePanel.Section padding="all">Padded section</SidePanel.Section>
-        <Divider />
-        <SidePanel.Section padding="x">Padded x only</SidePanel.Section>
-        <Divider />
-        <SidePanel.Section padding="y">Padded y only</SidePanel.Section>
-      </SidePanel.Body>
-      <SidePanel.Footer padding="all">Padded footer</SidePanel.Footer>
-    </SidePanel.Root>
-  ),
+export const PaddedHeader: Story = {
+  args: { headerPadding: 'all' },
 }
 
-export const Borders: Story = {
-  render: () => (
-    <div className="op-cluster gap-lg items-stretch">
-      <SidePanel.Root border="left">
-        <SidePanel.Header padding="all">Left border</SidePanel.Header>
-      </SidePanel.Root>
-      <SidePanel.Root border="right">
-        <SidePanel.Header padding="all">Right border</SidePanel.Header>
-      </SidePanel.Root>
-      <SidePanel.Root border="both">
-        <SidePanel.Header padding="all">Both borders</SidePanel.Header>
-      </SidePanel.Root>
-    </div>
-  ),
+export const PaddedBody: Story = {
+  args: { bodyPadding: 'all' },
+}
+
+export const PaddedFooter: Story = {
+  args: { footerPadding: 'all' },
+}
+
+export const WithSections: Story = {
+  args: { sections: 20, showDividers: true },
+}
+
+export const PaddedSection: Story = {
+  args: { sections: 3, sectionPadding: 'all', showDividers: true },
 }

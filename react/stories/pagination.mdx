@@ -1,0 +1,49 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as PaginationStories from './pagination.stories'
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+A row of buttons to move through a series of pages, often below a table. It renders the [Optics pagination](https://docs.optics.rolemodel.design/?path=/docs/components-pagination--docs) classes. It is a styling pattern only: fetching the pages is up to your app.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/pagination.json
+```
+
+## Playground
+
+<Canvas of={PaginationStories.Default} />
+<Controls of={PaginationStories.Default} />
+
+## Parts
+
+| Part                 | Renders                           | Props                                   |
+| -------------------- | --------------------------------- | --------------------------------------- |
+| `Pagination.Root`    | `nav.pagination`                  | any `nav` attribute                     |
+| `Pagination.Link`    | `a.btn.btn--small.btn--no-border` | `active`, and any `a` attribute, `href` |
+| `Pagination.Divider` | `div.pagination__divider`         | children, default `...`                 |
+
+## Variations
+
+### Default
+
+`Pagination.Root` wraps a set of [buttons](?path=/docs/components-button--docs). `Pagination.Link` is a small, borderless button rendered as a link.
+
+`active` marks the current page with `btn--active` and `aria-current="page"`.
+
+For the first and last page buttons, use a `Button` with `shape="square"`, `size="small"`, and `borderless` so the icon sits in a square button.
+
+`Pagination.Divider` shows `...` to mark a gap in the pages. Use it when there are more than six pages, so the pagination does not grow too long.
+
+<Canvas of={PaginationStories.Default} />
+
+### With Showing Select
+
+To let users change how many items show on a page, add a `Form.Group` with a `Form.Select`. The pagination styles put the label inline.
+
+<Canvas of={PaginationStories.WithShowing} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Customizing Pagination styles](https://docs.optics.rolemodel.design/?path=/docs/components-pagination--docs#customizing-pagination-styles).

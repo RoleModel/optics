@@ -1,0 +1,57 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as NavbarStories from './navbar.stories'
+
+<Meta of={NavbarStories} />
+
+# Navbar
+
+A navigation header with optional branding and sections of buttons. It renders the [Optics navbar](https://docs.optics.rolemodel.design/?path=/docs/components-navbar--docs) classes. Any [Button](?path=/docs/components-button--docs) style can be used for the links.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/navbar.json
+```
+
+## Playground
+
+<Canvas of={NavbarStories.Default} />
+<Controls of={NavbarStories.Default} />
+
+## Parts
+
+| Part             | Renders               | Props                                  |
+| ---------------- | --------------------- | -------------------------------------- |
+| `Navbar.Root`    | `div.navbar`          | `variant`: `primary`                   |
+| `Navbar.Brand`   | `a.navbar__brand`     | any `a` attribute, `href`              |
+| `Navbar.Content` | `nav.navbar__content` | `justify`: `start`, `center`, or `end` |
+
+## Variations
+
+### Default
+
+`Navbar.Root` with no `variant` is a neutral navbar. It uses the neutral color of your theme.
+
+<Canvas of={NavbarStories.Default} />
+
+### Primary
+
+`variant="primary"` makes a primary colored navbar. It uses the primary color of your theme.
+
+<Canvas of={NavbarStories.Primary} />
+
+### Brand
+
+`Navbar.Brand` holds an `img` for your app's branding or logo. The brand is optional, and the content adjusts without it.
+
+<Canvas of={NavbarStories.NoBrand} />
+
+### Content
+
+`Navbar.Content` holds the buttons. It renders a `nav` element, so use it for sections of navigation links. `justify` is `start`, `center`, or `end` and places the section in the free space of the navbar. Set it on the section of links. The playground uses `start`.
+
+<Canvas of={NavbarStories.Centered} />
+
+<Canvas of={NavbarStories.JustifyEnd} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Navbar API](https://docs.optics.rolemodel.design/?path=/docs/components-navbar--docs#navbar-api) for the CSS variables.

@@ -1,0 +1,70 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as TagStories from './tag.stories'
+
+<Meta of={TagStories} />
+
+# Tag
+
+A label for interaction and input, such as the categories or metadata tags on a record. It usually holds a button that removes it. It renders the [Optics tag](https://docs.optics.rolemodel.design/?path=/docs/components-tag--docs) classes.
+
+Tag looks like [Badge](?path=/docs/components-badge--docs) but has a different purpose: Tag is for interaction and input, Badge is for notification and information.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/tag.json
+```
+
+## Playground
+
+<Canvas of={TagStories.Default} />
+<Controls of={TagStories.Default} />
+
+## Parts
+
+| Part        | Renders      | Props                                                       |
+| ----------- | ------------ | ----------------------------------------------------------- |
+| `Tag.Root`  | `div.tag`    | `variant`: `primary`, `danger`, `warning`, `info`, `notice` |
+| `Tag.Label` | `tag__label` |                                                             |
+
+To make a tag removable, put a `Button` with `shape="circle"` and `borderless` before or after `Tag.Label`, with an `Icon` and an `aria-label`. Turn on `iconLeft` or `iconRight` in the Playground to see one.
+
+## Variations
+
+### Readonly
+
+`Tag.Root` without a `variant` is a readonly tag. Leave out the button for tags that cannot be removed.
+
+<Canvas of={TagStories.Readonly} />
+
+### Primary
+
+`variant="primary"` uses the primary color.
+
+<Canvas of={TagStories.Primary} />
+
+### Danger
+
+`variant="danger"` uses the danger alert color.
+
+<Canvas of={TagStories.Danger} />
+
+### Warning
+
+`variant="warning"` uses the warning alert color.
+
+<Canvas of={TagStories.Warning} />
+
+### Info
+
+`variant="info"` uses the info alert color.
+
+<Canvas of={TagStories.Info} />
+
+### Notice
+
+`variant="notice"` uses the notice alert color.
+
+<Canvas of={TagStories.Notice} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Customizing Tag styles](https://docs.optics.rolemodel.design/?path=/docs/components-tag--docs#customizing-tag-styles) for the selectors to override.

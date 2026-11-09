@@ -2,28 +2,180 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Form } from '@/registry/optics/ui/form'
 
+const inputTypes = ['text', 'number', 'email', 'password', 'tel', 'date', 'file', 'color', 'checkbox', 'radio'] as const
+const textTypes: readonly string[] = ['text', 'number', 'email', 'password', 'tel']
+
+type FormType = (typeof inputTypes)[number] | 'textarea' | 'select'
+
+interface FormArgs {
+  label: string
+  type: FormType
+  size: 'small' | 'medium' | 'large'
+  noBorder: boolean
+  readOnly: boolean
+  disabled: boolean
+  indeterminate: boolean
+  multiple: boolean
+  inline: boolean
+  error: string
+  hint: string
+}
+
+// `indeterminate` is a DOM property with no HTML attribute, so it can only be set from a ref.
+const makeIndeterminate = (input: HTMLInputElement | null) => {
+  if (!input) return
+  input.indeterminate = true
+  return () => {
+    input.indeterminate = false
+  }
+}
+
 const meta = {
   title: 'Components/Form',
-  component: Form.Group,
-  tags: ['autodocs'],
-} satisfies Meta<typeof Form.Group>
+  args: {
+    label: 'A Label',
+    type: 'text',
+    size: 'large',
+    noBorder: false,
+    readOnly: false,
+    disabled: false,
+    indeterminate: false,
+    multiple: false,
+    inline: false,
+    error: '',
+    hint: '',
+  },
+  argTypes: {
+    label: { control: 'text', description: 'Children of `Form.Label`' },
+    type: {
+      control: 'select',
+      options: [...inputTypes, 'textarea', 'select'],
+      description: '`type` of `Form.Control`, or `textarea` for `Form.Textarea` and `select` for `Form.Select`',
+    },
+    size: { control: 'select', options: ['small', 'medium', 'large'], description: '`size` on the control' },
+    noBorder: { control: 'boolean', description: '`noBorder` on the control' },
+    readOnly: { control: 'boolean', description: '`readOnly` on the control' },
+    disabled: { control: 'boolean', description: '`disabled` on the control' },
+    indeterminate: {
+      control: 'boolean',
+      if: { arg: 'type', eq: 'checkbox' },
+      description: 'Set the `indeterminate` property of the checkbox from a ref',
+    },
+    multiple: { control: 'boolean', if: { arg: 'type', eq: 'select' }, description: '`multiple` on `Form.Select`' },
+    inline: { control: 'boolean', description: '`inline` on `Form.Group`' },
+    error: { control: 'text', description: 'Children of `Form.Error`. Also sets `error` on `Form.Group`' },
+    hint: { control: 'text', description: 'Children of `Form.Hint`' },
+  },
+  render: ({ label, type, size, noBorder, readOnly, disabled, indeterminate, multiple, inline, error, hint }) => {
+    const controlProps = {
+      size,
+      noBorder: noBorder || undefined,
+      readOnly: readOnly || undefined,
+      disabled: disabled || undefined,
+    }
+    const toggle = type === 'checkbox' || type === 'radio'
+    const formLabel = <Form.Label>{label}</Form.Label>
+    let control
+    if (type === 'textarea') {
+      control = <Form.Textarea {...controlProps} placeholder="Textarea" />
+    } else if (type === 'select') {
+      control = (
+        <Form.Select {...controlProps} multiple={multiple || undefined}>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </Form.Select>
+      )
+    } else {
+      control = (
+        <Form.Control
+          {...controlProps}
+          type={type}
+          placeholder={textTypes.includes(type) ? type[0].toUpperCase() + type.slice(1) : undefined}
+          ref={type === 'checkbox' && indeterminate ? makeIndeterminate : undefined}
+        />
+      )
+    }
+
+    return (
+      <Form.Group inline={inline || undefined} error={error ? true : undefined}>
+        {toggle ? control : formLabel}
+        {toggle ? formLabel : control}
+        {error && <Form.Error>{error}</Form.Error>}
+        {hint && <Form.Hint>{hint}</Form.Hint>}
+      </Form.Group>
+    )
+  },
+} satisfies Meta<FormArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: () => (
+export const Default: Story = {}
+
+export const Label: Story = {
+  render: ({ label }) => (
     <Form.Group>
-      <Form.Label>Name</Form.Label>
-      <Form.Control placeholder="Jane Doe" />
-      <Form.Hint>As it should appear on your profile.</Form.Hint>
+      <Form.Label>{label}</Form.Label>
     </Form.Group>
   ),
 }
 
-export const Sizes: Story = {
+export const Input: Story = {
+  render: () => <Form.Control type="text" placeholder="Text" />,
+}
+
+export const Inline: Story = {
+  args: { inline: true },
+}
+
+export const Textarea: Story = {
+  args: { type: 'textarea' },
+}
+
+export const Dropdown: Story = {
+  args: { type: 'select' },
+}
+
+export const Color: Story = {
+  args: { type: 'color' },
+}
+
+export const Radio: Story = {
+  args: { type: 'radio' },
+}
+
+export const Checkbox: Story = {
+  args: { type: 'checkbox' },
+}
+
+export const ErrorSummary: Story = {
   render: () => (
-    <div className="op-stack gap-md">
+    <Form.ErrorSummary>
+      <h2>2 errors prohibited this from being saved</h2>
+      <ul>
+        <li>Tags rank is not a number</li>
+        <li>Title can't be blank</li>
+      </ul>
+    </Form.ErrorSummary>
+  ),
+}
+
+export const InputError: Story = {
+  args: { error: "Can't be blank" },
+}
+
+export const InputHint: Story = {
+  args: { hint: 'Very helpful hint' },
+}
+
+export const NoBorder: Story = {
+  args: { noBorder: true },
+}
+
+export const Size: Story = {
+  render: () => (
+    <div className="op-stack gap-none">
       <Form.Group>
         <Form.Label>Small</Form.Label>
         <Form.Control size="small" placeholder="Text" />
@@ -40,99 +192,10 @@ export const Sizes: Story = {
   ),
 }
 
-export const Inline: Story = {
-  render: () => (
-    <Form.Group inline>
-      <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="you@example.com" />
-    </Form.Group>
-  ),
+export const ReadOnly: Story = {
+  args: { readOnly: true },
 }
 
-export const Textarea: Story = {
-  render: () => (
-    <Form.Group>
-      <Form.Label>Bio</Form.Label>
-      <Form.Textarea placeholder="Tell us about yourself" />
-    </Form.Group>
-  ),
-}
-
-export const Select: Story = {
-  render: () => (
-    <Form.Group>
-      <Form.Label>Favorite planet</Form.Label>
-      <Form.Select defaultValue="earth">
-        <option value="mercury">Mercury</option>
-        <option value="venus">Venus</option>
-        <option value="earth">Earth</option>
-        <option value="mars">Mars</option>
-      </Form.Select>
-    </Form.Group>
-  ),
-}
-
-export const CheckboxAndRadio: Story = {
-  render: () => (
-    <div className="op-stack gap-xxs">
-      <Form.Group>
-        <Form.Control type="checkbox" defaultChecked />
-        <Form.Label>Subscribe to updates</Form.Label>
-      </Form.Group>
-      <Form.Group>
-        <Form.Control type="radio" name="form-plan" value="monthly" defaultChecked />
-        <Form.Label>Monthly plan</Form.Label>
-      </Form.Group>
-      <Form.Group>
-        <Form.Control type="radio" name="form-plan" value="annual" />
-        <Form.Label>Annual plan</Form.Label>
-      </Form.Group>
-    </div>
-  ),
-}
-
-export const WithError: Story = {
-  render: () => (
-    <Form.Group error>
-      <Form.Label>Title</Form.Label>
-      <Form.Control defaultValue="" />
-      <Form.Error>Can't be blank</Form.Error>
-    </Form.Group>
-  ),
-}
-
-export const NoBorder: Story = {
-  render: () => (
-    <Form.Group>
-      <Form.Label>Notes</Form.Label>
-      <Form.Control noBorder placeholder="Text" />
-    </Form.Group>
-  ),
-}
-
-export const DisabledAndReadOnly: Story = {
-  render: () => (
-    <div className="op-stack gap-md">
-      <Form.Group>
-        <Form.Label>Disabled</Form.Label>
-        <Form.Control disabled placeholder="Text" />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Read-only</Form.Label>
-        <Form.Control readOnly defaultValue="Read-only value" />
-      </Form.Group>
-    </div>
-  ),
-}
-
-export const ErrorSummary: Story = {
-  render: () => (
-    <Form.ErrorSummary>
-      <h2>2 errors prohibited this from being saved</h2>
-      <ul>
-        <li>Rank is not a number</li>
-        <li>Title can't be blank</li>
-      </ul>
-    </Form.ErrorSummary>
-  ),
+export const IndeterminateCheckbox: Story = {
+  args: { type: 'checkbox', indeterminate: true },
 }

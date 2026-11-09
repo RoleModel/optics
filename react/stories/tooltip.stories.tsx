@@ -2,62 +2,79 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Button } from '@/registry/optics/ui/button'
 import { Icon } from '@/registry/optics/ui/icon'
-import { Tooltip } from '@/registry/optics/ui/tooltip'
+import { Tooltip, type TooltipPosition } from '@/registry/optics/ui/tooltip'
+
+interface TooltipArgs {
+  text: string
+  position?: TooltipPosition
+  delay?: number
+  example: 'text' | 'button' | 'icon'
+}
 
 const meta = {
   title: 'Components/Tooltip',
-  component: Tooltip,
-  tags: ['autodocs'],
   args: {
-    text: 'Saves your changes',
-    children: <Button variant="primary">Save</Button>,
+    text: 'A basic tooltip',
+    example: 'text',
   },
   argTypes: {
-    children: { control: false },
-    text: { control: 'text' },
-    position: { control: 'select', options: ['top', 'right', 'bottom', 'left'] },
-    delay: { control: 'number' },
+    text: { control: 'text', description: '`text` of `Tooltip`, shown on hover and focus' },
+    position: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left'],
+      description: 'Side of the trigger the tooltip appears on. Without one it is `top`',
+    },
+    delay: { control: 'number', description: 'Milliseconds before the tooltip opens. Without one it is 300' },
+    example: {
+      control: 'select',
+      options: ['text', 'button', 'icon'],
+      description: 'Not a prop. The element the tooltip is on',
+    },
   },
-} satisfies Meta<typeof Tooltip>
+  render: ({ text, position, delay, example }) => (
+    <Tooltip text={text} position={position} delay={delay}>
+      {example === 'button' ? (
+        <Button variant="primary">A Button Example</Button>
+      ) : example === 'icon' ? (
+        <Icon name="info" label="Information" tabIndex={0} />
+      ) : (
+        <p tabIndex={0}>A Text Example</p>
+      )}
+    </Tooltip>
+  ),
+} satisfies Meta<TooltipArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 
-export const Positions: Story = {
-  render: (args) => (
-    <div className="op-cluster gap-md">
-      <Tooltip {...args} text="Top" position="top">
-        <Button>Top</Button>
-      </Tooltip>
-      <Tooltip {...args} text="Right" position="right">
-        <Button>Right</Button>
-      </Tooltip>
-      <Tooltip {...args} text="Bottom" position="bottom">
-        <Button>Bottom</Button>
-      </Tooltip>
-      <Tooltip {...args} text="Left" position="left">
-        <Button>Left</Button>
-      </Tooltip>
-    </div>
-  ),
+export const Top: Story = {
+  args: { text: 'A basic top tooltip', position: 'top' },
+}
+
+export const Right: Story = {
+  args: { text: 'A basic right tooltip', position: 'right' },
+}
+
+export const Bottom: Story = {
+  args: { text: 'A basic bottom tooltip', position: 'bottom' },
+}
+
+export const Left: Story = {
+  args: { text: 'A basic left tooltip', position: 'left' },
+}
+
+export const OnButton: Story = {
+  name: 'Button',
+  args: { text: 'A button tooltip', example: 'button' },
 }
 
 export const OnIcon: Story = {
-  args: {
-    text: 'More information',
-    children: <Icon name="info" label="Information" tabIndex={0} />,
-  },
+  name: 'Icon',
+  args: { text: 'An icon tooltip', example: 'icon' },
 }
 
-export const DisabledButton: Story = {
-  args: {
-    text: 'You need edit access',
-    children: (
-      <span tabIndex={0}>
-        <Button disabled>Edit</Button>
-      </span>
-    ),
-  },
+export const LotsOfText: Story = {
+  args: { text: 'An example of a tooltip with a lot of content that will wrap' },
 }

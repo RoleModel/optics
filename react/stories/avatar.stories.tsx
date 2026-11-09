@@ -2,58 +2,55 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Avatar } from '@/registry/optics/ui/avatar'
 
-const imageUrl = 'https://picsum.photos/id/64/200/200'
+interface AvatarArgs {
+  size: 'small' | 'medium' | 'large'
+  disabled: boolean
+  imageSource: string
+  fallback: string
+  useLink: boolean
+}
 
 const meta = {
   title: 'Components/Avatar',
-  component: Avatar.Root,
-  tags: ['autodocs'],
-} satisfies Meta<typeof Avatar.Root>
+  args: {
+    size: 'large',
+    disabled: false,
+    imageSource: 'https://picsum.photos/id/1/400/400',
+    fallback: 'JD',
+    useLink: true,
+  },
+  argTypes: {
+    size: { control: 'select', options: ['small', 'medium', 'large'], description: '`size` on `Avatar.Root`' },
+    disabled: { control: 'boolean', description: '`disabled` on `Avatar.Root`' },
+    imageSource: { control: 'text', description: '`src` of `Avatar.Image`. Clear it to see the fallback' },
+    fallback: { control: 'text', description: 'Children of `Avatar.Fallback`, shown until the image loads' },
+    useLink: { control: 'boolean', description: 'Render `Avatar.Root` as an `a` with `render`' },
+  },
+  render: ({ size, disabled, imageSource, fallback, useLink }) => (
+    <Avatar.Root size={size} disabled={disabled || undefined} render={useLink ? <a href="#" /> : undefined}>
+      <Avatar.Image src={imageSource} alt="Avatar" />
+      <Avatar.Fallback>{fallback}</Avatar.Fallback>
+    </Avatar.Root>
+  ),
+} satisfies Meta<AvatarArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: () => (
-    <Avatar.Root>
-      <Avatar.Image src={imageUrl} alt="Jane Doe" />
-      <Avatar.Fallback>JD</Avatar.Fallback>
-    </Avatar.Root>
-  ),
+export const Default: Story = {}
+
+export const Small: Story = {
+  args: { size: 'small' },
 }
 
-export const Sizes: Story = {
-  render: () => (
-    <div className="op-cluster gap-md items-center">
-      <Avatar.Root size="small">
-        <Avatar.Image src={imageUrl} alt="Jane Doe" />
-        <Avatar.Fallback>JD</Avatar.Fallback>
-      </Avatar.Root>
-      <Avatar.Root size="medium">
-        <Avatar.Image src={imageUrl} alt="Jane Doe" />
-        <Avatar.Fallback>JD</Avatar.Fallback>
-      </Avatar.Root>
-      <Avatar.Root size="large">
-        <Avatar.Image src={imageUrl} alt="Jane Doe" />
-        <Avatar.Fallback>JD</Avatar.Fallback>
-      </Avatar.Root>
-    </div>
-  ),
-}
-
-export const Fallback: Story = {
-  render: () => (
-    <Avatar.Root size="large">
-      <Avatar.Fallback>JD</Avatar.Fallback>
-    </Avatar.Root>
-  ),
+export const Medium: Story = {
+  args: { size: 'medium' },
 }
 
 export const Disabled: Story = {
-  render: () => (
-    <Avatar.Root size="large" disabled>
-      <Avatar.Image src={imageUrl} alt="Jane Doe" />
-      <Avatar.Fallback>JD</Avatar.Fallback>
-    </Avatar.Root>
-  ),
+  args: { disabled: true },
+}
+
+export const WithoutLink: Story = {
+  args: { useLink: false },
 }

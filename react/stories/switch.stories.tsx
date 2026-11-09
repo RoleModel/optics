@@ -3,54 +3,53 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Form } from '@/registry/optics/ui/form'
 import { Switch } from '@/registry/optics/ui/switch'
 
+interface SwitchArgs {
+  label: string
+  size?: 'small' | 'large'
+  disabled: boolean
+}
+
 const meta = {
   title: 'Components/Switch',
-  component: Switch,
-  tags: ['autodocs'],
   args: {
-    'aria-label': 'Toggle',
+    label: 'Switch Text',
+    disabled: false,
   },
   argTypes: {
-    size: { control: 'select', options: [undefined, 'small', 'large'] },
-    disabled: { control: 'boolean' },
-    defaultChecked: { control: 'boolean' },
+    label: { control: 'text', description: 'Text of the `Form.Label` linked to the switch' },
+    size: {
+      control: 'select',
+      options: ['small', 'large'],
+      description: '`size` of `Switch`. Without one the switch is large',
+    },
+    disabled: { control: 'boolean', description: '`disabled` on `Switch`' },
   },
-} satisfies Meta<typeof Switch>
+  render: ({ label, size, disabled }, { id }) => {
+    // Each story needs its own id so the label toggles the right switch on the docs page.
+    const switchId = `switch-${id.split('--')[1]}`
+
+    return (
+      <Form.Group inline>
+        <Switch id={switchId} size={size} disabled={disabled || undefined} />
+        <Form.Label htmlFor={switchId}>{label}</Form.Label>
+      </Form.Group>
+    )
+  },
+} satisfies Meta<SwitchArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 
-export const Sizes: Story = {
-  render: (args) => (
-    <div className="op-stack gap-md">
-      <div className="op-cluster gap-md">
-        <Switch {...args} size="small" />
-        <Switch {...args} size="small" defaultChecked />
-      </div>
-      <div className="op-cluster gap-md">
-        <Switch {...args} size="large" />
-        <Switch {...args} size="large" defaultChecked />
-      </div>
-    </div>
-  ),
+export const Small: Story = {
+  args: { size: 'small' },
+}
+
+export const Large: Story = {
+  args: { size: 'large' },
 }
 
 export const Disabled: Story = {
-  render: (args) => (
-    <div className="op-cluster gap-md">
-      <Switch {...args} disabled />
-      <Switch {...args} disabled defaultChecked />
-    </div>
-  ),
-}
-
-export const WithLabel: Story = {
-  render: (args) => (
-    <Form.Group inline>
-      <Switch {...args} aria-label={undefined} id="switch-with-label" />
-      <Form.Label htmlFor="switch-with-label">Email notifications</Form.Label>
-    </Form.Group>
-  ),
+  args: { disabled: true },
 }

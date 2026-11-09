@@ -1,0 +1,74 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as ClusterStories from './cluster.stories'
+
+<Meta of={ClusterStories} />
+
+# Cluster
+
+A wrapping row of spaced items, effectively `.flex .flex-wrap .items-center .gap-md` together. It renders the [Optics cluster](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-cluster--docs) utility class.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/cluster.json
+```
+
+## Playground
+
+<Canvas of={ClusterStories.Default} />
+<Controls of={ClusterStories.Default} />
+
+## Props
+
+| Prop    | Values                                          | Adds      |
+| ------- | ----------------------------------------------- | --------- |
+| `align` | `stretch`, `start`, `center`, `end`, `baseline` | `items-*` |
+| `gap`   | `none`, `xxs`, `xs`, `sm`, `md`, `lg`, `xl`     | `gap-*`   |
+
+`Cluster` renders `div.op-cluster` and passes any other `div` attribute through. The examples on this page are in a `15rem` tall container.
+
+## Variations
+
+### Without
+
+A plain `div` without the cluster utility.
+
+<Canvas of={ClusterStories.Without} />
+
+### Cluster Property
+
+`Cluster` renders `.op-cluster`. Creates a flex cluster.
+
+<Canvas of={ClusterStories.Default} />
+
+### Align Items Stretch
+
+`align="stretch"` adds `.items-stretch`. Stretches each item across the cross axis. This is the default alignment and doesn't need to be set unless you are overriding something set differently.
+
+<Canvas of={ClusterStories.AlignStretch} />
+
+### Align Items Start
+
+`align="start"` adds `.items-start`. Places each item at the start of the cross axis.
+
+<Canvas of={ClusterStories.AlignStart} />
+
+### Align Items Center
+
+`align="center"` adds `.items-center`. Places each item at the center of the cross axis.
+
+<Canvas of={ClusterStories.AlignCenter} />
+
+### Align Items End
+
+`align="end"` adds `.items-end`. Places each item at the end of the cross axis.
+
+<Canvas of={ClusterStories.AlignEnd} />
+
+### Align Items Baseline
+
+`align="baseline"` adds `.items-baseline`. Places each item at the text baseline of the cross axis.
+
+<Canvas of={ClusterStories.AlignBaseline} />
+
+## Customizing
+
+`Cluster` only adds classes. See the [CSS cluster docs](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-cluster--docs) for how the utility is built.

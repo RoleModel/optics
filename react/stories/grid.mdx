@@ -1,0 +1,70 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as GridStories from './grid.stories'
+
+<Meta of={GridStories} />
+
+# Grid
+
+A dynamic grid layout, for simple layouts with a minimum column size or evenly divided columns from 2 to 6. It renders the [Optics grid](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-grid--docs) utility class.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/grid.json
+```
+
+## Playground
+
+<Canvas of={GridStories.Default} />
+<Controls of={GridStories.Default} />
+
+## Props
+
+| Prop      | Values                                      | Adds                |
+| --------- | ------------------------------------------- | ------------------- |
+| `columns` | `2`, `3`, `4`, `5`, `6`                     | `op-grid--*-column` |
+| `gap`     | `none`, `xxs`, `xs`, `sm`, `md`, `lg`, `xl` | `gap-*`             |
+
+`Grid` renders `div.op-grid` and passes any other `div` attribute through. The examples on this page are in a `10rem` tall container.
+
+## Variations
+
+### Without
+
+A plain `div` with the same children, for comparison.
+
+<Canvas of={GridStories.Without} />
+
+### Default
+
+Without `columns`, the grid fits as many columns as it can, each at least `--op-space-4x-large` wide.
+
+<Canvas of={GridStories.Default} />
+
+### Two columns
+
+<Canvas of={GridStories.TwoColumns} />
+
+### Three columns
+
+<Canvas of={GridStories.ThreeColumns} />
+
+### Four columns
+
+<Canvas of={GridStories.FourColumns} />
+
+### Five columns
+
+<Canvas of={GridStories.FiveColumns} />
+
+### Six columns
+
+<Canvas of={GridStories.SixColumns} />
+
+### Gap
+
+`gap` sets the space between the cells, from `none` to `xl`. See [Gap](https://docs.optics.rolemodel.design/?path=/docs/utilities-gap--docs) for the size of each step.
+
+<Canvas of={GridStories.Gap} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Grid](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-grid--docs) for the utility classes.

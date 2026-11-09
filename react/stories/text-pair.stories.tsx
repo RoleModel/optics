@@ -2,67 +2,59 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { TextPair } from '@/registry/optics/ui/text-pair'
 
+type Size = 'small' | 'medium' | 'large'
+
+interface TextPairArgs {
+  inline: boolean
+  titleText: string
+  titleSize?: Size
+  subtitleText: string
+  subtitleSize?: Size
+}
+
 const meta = {
   title: 'Components/Text Pair',
-  component: TextPair.Root,
-  tags: ['autodocs'],
-} satisfies Meta<typeof TextPair.Root>
+  args: {
+    inline: false,
+    titleText: 'This is the Title',
+    subtitleText: 'This is the Subtitle',
+  },
+  argTypes: {
+    inline: { control: 'boolean', description: '`inline` on `TextPair.Root`' },
+    titleText: { control: 'text', description: 'Text of `TextPair.Title`' },
+    titleSize: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+      description: '`size` of `TextPair.Title`. Without one the title is medium',
+    },
+    subtitleText: { control: 'text', description: 'Text of `TextPair.Subtitle`' },
+    subtitleSize: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+      description: '`size` of `TextPair.Subtitle`. Without one the subtitle is small',
+    },
+  },
+  render: ({ inline, titleText, titleSize, subtitleText, subtitleSize }) => (
+    <TextPair.Root inline={inline || undefined}>
+      <TextPair.Title size={titleSize}>{titleText}</TextPair.Title>
+      <TextPair.Subtitle size={subtitleSize}>{subtitleText}</TextPair.Subtitle>
+    </TextPair.Root>
+  ),
+} satisfies Meta<TextPairArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: () => (
-    <TextPair.Root>
-      <TextPair.Title>Jane Doe</TextPair.Title>
-      <TextPair.Subtitle>Product Designer</TextPair.Subtitle>
-    </TextPair.Root>
-  ),
-}
+export const Default: Story = {}
 
 export const Inline: Story = {
-  render: () => (
-    <TextPair.Root inline>
-      <TextPair.Title>Temperature:</TextPair.Title>
-      <TextPair.Subtitle>72℉</TextPair.Subtitle>
-    </TextPair.Root>
-  ),
+  args: { inline: true, titleText: 'Temperature:', subtitleText: '72℉' },
 }
 
-export const TitleSizes: Story = {
-  render: () => (
-    <div className="op-cluster gap-xl">
-      <TextPair.Root>
-        <TextPair.Title size="small">Small title</TextPair.Title>
-        <TextPair.Subtitle>Subtitle</TextPair.Subtitle>
-      </TextPair.Root>
-      <TextPair.Root>
-        <TextPair.Title size="medium">Medium title</TextPair.Title>
-        <TextPair.Subtitle>Subtitle</TextPair.Subtitle>
-      </TextPair.Root>
-      <TextPair.Root>
-        <TextPair.Title size="large">Large title</TextPair.Title>
-        <TextPair.Subtitle>Subtitle</TextPair.Subtitle>
-      </TextPair.Root>
-    </div>
-  ),
+export const TitleSize: Story = {
+  args: { inline: true, titleText: 'Large Title', titleSize: 'large' },
 }
 
-export const SubtitleSizes: Story = {
-  render: () => (
-    <div className="op-cluster gap-xl">
-      <TextPair.Root>
-        <TextPair.Title>Title</TextPair.Title>
-        <TextPair.Subtitle size="small">Small subtitle</TextPair.Subtitle>
-      </TextPair.Root>
-      <TextPair.Root>
-        <TextPair.Title>Title</TextPair.Title>
-        <TextPair.Subtitle size="medium">Medium subtitle</TextPair.Subtitle>
-      </TextPair.Root>
-      <TextPair.Root>
-        <TextPair.Title>Title</TextPair.Title>
-        <TextPair.Subtitle size="large">Large subtitle</TextPair.Subtitle>
-      </TextPair.Root>
-    </div>
-  ),
+export const SubtitleSize: Story = {
+  args: { inline: true, subtitleText: 'Large Subtitle', subtitleSize: 'large' },
 }

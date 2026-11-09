@@ -5,10 +5,13 @@ import { Spinner } from '@/registry/optics/ui/spinner'
 const meta = {
   title: 'Components/Spinner',
   component: Spinner,
-  tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: [undefined, 'x-small', 'small', 'medium', 'large'] },
-    label: { control: 'text' },
+    size: {
+      control: 'select',
+      options: ['x-small', 'small', 'medium', 'large'],
+      description: 'Size modifier. Without one the spinner is large',
+    },
+    label: { control: 'text', description: 'Screen reader text inside the spinner, default `Loading`' },
   },
 } satisfies Meta<typeof Spinner>
 
@@ -17,13 +20,18 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 
-export const Sizes: Story = {
-  render: (args) => (
-    <div className="op-cluster gap-lg items-center">
-      <Spinner {...args} size="x-small" />
-      <Spinner {...args} size="small" />
-      <Spinner {...args} size="medium" />
-      <Spinner {...args} size="large" />
-    </div>
-  ),
+export const XSmall: Story = {
+  args: { size: 'x-small' },
+}
+
+export const Small: Story = {
+  args: { size: 'small' },
+}
+
+export const Medium: Story = {
+  args: { size: 'medium' },
+}
+
+export const Large: Story = {
+  args: { size: 'large' },
 }

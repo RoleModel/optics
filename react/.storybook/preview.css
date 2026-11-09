@@ -1,6 +1,20 @@
 @import '../../src/optics.css';
 @import '../../src/addons/fonts/material_symbols_outlined_variable.css';
 
+/* Prism marks JSX tags with .tag, which picks up the Optics .tag component styles. */
+pre .token.tag {
+  display: inline;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  user-select: text;
+  white-space: inherit;
+}
+
 .sbdocs-preview .docs-story {
   background-color: var(--op-color-background);
   color: var(--op-color-on-background);

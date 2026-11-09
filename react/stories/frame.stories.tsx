@@ -1,31 +1,63 @@
+import type { CSSProperties } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { Frame } from '@/registry/optics/ui/frame'
+import { Frame, type FrameProps } from '@/registry/optics/ui/frame'
 
-const aspects = ['square', 'landscape', 'portrait', '4-3', '3-4', '3-2', '2-3'] as const
+type FrameArgs = Pick<FrameProps, 'aspect'> & { inlineSize: string }
+
+const image = (
+  <img
+    src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&q=80"
+    alt="A dog looking at the camera"
+  />
+)
 
 const meta = {
   title: 'Layout/Frame',
-  component: Frame,
-  tags: ['autodocs'],
+  parameters: { layout: 'padded' },
+  decorators: [
+    (Story) => (
+      <div style={{ maxInlineSize: '20rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
   args: {
-    children: <img src="https://picsum.photos/id/1/400/400" alt="Laptop on a desk" />,
+    inlineSize: '',
   },
   argTypes: {
-    children: { control: false },
-    aspect: { control: 'select', options: [undefined, ...aspects] },
+    aspect: {
+      control: 'select',
+      options: ['square', 'landscape', 'portrait', '4-3', '3-4', '3-2', '2-3'],
+      description: 'Aspect ratio of the frame: `op-frame--*`. Defaults to `square`',
+    },
+    inlineSize: {
+      control: 'text',
+      description: 'Sets `--_op-frame-inline-size`, the maximum inline size of the frame. Defaults to `100%`',
+    },
   },
-  render: (args) => (
-    <div style={{ inlineSize: '16rem' }}>
-      <Frame {...args} />
-    </div>
+  render: ({ aspect, inlineSize }) => (
+    <Frame
+      aspect={aspect}
+      style={inlineSize ? ({ '--_op-frame-inline-size': inlineSize } as CSSProperties) : undefined}
+    >
+      {image}
+    </Frame>
   ),
-} satisfies Meta<typeof Frame>
+} satisfies Meta<FrameArgs>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
+
+export const Without: Story = {
+  render: () => <div>{image}</div>,
+}
+
+export const Square: Story = {
+  args: { aspect: 'square' },
+}
 
 export const Landscape: Story = {
   args: { aspect: 'landscape' },
@@ -35,15 +67,22 @@ export const Portrait: Story = {
   args: { aspect: 'portrait' },
 }
 
-export const AspectRatios: Story = {
-  render: (args) => (
-    <div className="op-cluster gap-md items-start">
-      {aspects.map((aspect) => (
-        <div key={aspect} className="op-stack gap-xs" style={{ inlineSize: '8rem' }}>
-          <Frame {...args} aspect={aspect} />
-          <span>{aspect}</span>
-        </div>
-      ))}
-    </div>
-  ),
+export const FourThree: Story = {
+  args: { aspect: '4-3' },
+}
+
+export const ThreeFour: Story = {
+  args: { aspect: '3-4' },
+}
+
+export const ThreeTwo: Story = {
+  args: { aspect: '3-2' },
+}
+
+export const TwoThree: Story = {
+  args: { aspect: '2-3' },
+}
+
+export const CustomInlineSize: Story = {
+  args: { aspect: 'square', inlineSize: '50%' },
 }

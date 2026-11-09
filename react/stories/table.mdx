@@ -1,0 +1,101 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as TableStories from './table.stories'
+
+<Meta of={TableStories} />
+
+# Table
+
+Simple styling for tables and their content. It renders the [Optics table](https://docs.optics.rolemodel.design/?path=/docs/components-table--docs) classes.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/table.json
+```
+
+## Playground
+
+<Canvas of={TableStories.Default} />
+<Controls of={TableStories.Default} />
+
+## Props
+
+`Table` renders a `table.table`. Write `thead`, `tbody`, `tfoot`, and their rows as plain elements inside it. Any other `table` attribute is passed through.
+
+| Prop      | Values                              | Default   |
+| --------- | ----------------------------------- | --------- |
+| `variant` | `primary`, `danger`                 |           |
+| `layout`  | `auto`, `fixed`                     | `auto`    |
+| `density` | `default`, `comfortable`, `compact` | `default` |
+| `striped` | `even`, `odd`                       |           |
+| `sticky`  | `header`, `footer`, `both`          |           |
+
+## Variations
+
+### Default
+
+`Table` gives a table the default style.
+
+<Canvas of={TableStories.Default} />
+
+### Primary
+
+`variant="primary"` uses the primary color in the header.
+
+<Canvas of={TableStories.Primary} />
+
+### Danger
+
+`variant="danger"` uses the danger alert color in the header.
+
+<Canvas of={TableStories.Danger} />
+
+### Layout
+
+`layout="auto"` and `layout="fixed"` (with auto being the default) set the table layout. Auto sizes the columns to their contents. Fixed divides the width evenly between the columns.
+
+<Canvas of={TableStories.FixedLayout} />
+
+### Density
+
+`density="default"`, `density="comfortable"`, and `density="compact"` (with default being the default) change the cell padding to expand or contract how much space the table uses.
+
+<Canvas of={TableStories.ComfortableDensity} />
+
+<Canvas of={TableStories.CompactDensity} />
+
+### Striping
+
+`striped="even"` and `striped="odd"` shade every other row with a light color on the neutral scale.
+
+<Canvas of={TableStories.StripedEven} />
+
+<Canvas of={TableStories.StripedOdd} />
+
+### Sticky Header/Footer
+
+`sticky="header"`, `sticky="footer"`, and `sticky="both"` make the table header, footer, or both sticky. By default they stick to the top and bottom of the viewport.
+
+They work best inside a container with a fixed height. Wrap the table in a `div.table.table--container` and set its height, so the body rows scroll between the sticky header and footer.
+
+```tsx
+<div className="table table--container" style={{ height: '20vh' }}>
+  <Table sticky="both">{/* ... */}</Table>
+</div>
+```
+
+<Canvas of={TableStories.StickyHeader} />
+
+<Canvas of={TableStories.StickyFooter} />
+
+<Canvas of={TableStories.StickyBoth} />
+
+### With Pagination
+
+The [Pagination](?path=/docs/components-pagination--docs) component gives a table a way to move through a large dataset.
+
+Here it is in the table footer.
+
+<Canvas of={TableStories.PaginationInFooter} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Table API](https://docs.optics.rolemodel.design/?path=/docs/components-table--docs#table-api) for the CSS variables.

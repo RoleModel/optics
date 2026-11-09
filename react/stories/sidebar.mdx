@@ -1,0 +1,149 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as SidebarStories from './sidebar.stories'
+
+<Meta of={SidebarStories} />
+
+# Sidebar
+
+A navigation sidebar in a drawer, compact, or rail size. It renders the [Optics sidebar](https://docs.optics.rolemodel.design/?path=/docs/components-sidebar--docs) classes.
+
+To fit a sidebar into your application layout, see [Layout With Sidebar](https://docs.optics.rolemodel.design/?path=/docs/recipes-layout--sidebar). These examples put it in a `div.app-with-sidebar` with a fixed height so it fits on this page.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/sidebar.json
+```
+
+## Playground
+
+<Canvas of={SidebarStories.Default} />
+<Controls of={SidebarStories.Default} />
+
+## Parts
+
+| Part              | Renders            | Props                                                               |
+| ----------------- | ------------------ | ------------------------------------------------------------------- |
+| `Sidebar.Root`    | `nav.sidebar`      | `size`: `drawer`, `compact`, `rail`. `variant`: `primary`. `padded` |
+| `Sidebar.Brand`   | `a.sidebar__brand` | Any `a` attribute. Put an `img` inside                              |
+| `Sidebar.Content` | `sidebar__content` | `justify`: `start`, `center`, `end`. Default is `start`             |
+
+Put a borderless [Button](?path=/docs/components-button--docs) with an `Icon` and a label in `Sidebar.Content` for each link. The size of the sidebar changes how the buttons look:
+
+- Drawer shows the normal button style, aligned left
+- Compact stacks the icon above the label
+- Rail shows only the icon and hides the label
+
+To make the sidebar responsive, change `size` as the window resizes, for example `drawer` above 1024px, `compact` above 768px, and `rail` below that.
+
+## Variations
+
+### Default
+
+`Sidebar.Root` without a `variant` uses the neutral color from your theme.
+
+<div className="flex gap-sm">
+  <div>
+    <Canvas of={SidebarStories.DefaultDrawer} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.DefaultCompact} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.DefaultRail} />
+  </div>
+</div>
+
+### Primary
+
+`variant="primary"` uses the primary color from your theme.
+
+<div className="flex gap-sm">
+  <div>
+    <Canvas of={SidebarStories.PrimaryDrawer} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.PrimaryCompact} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.PrimaryRail} />
+  </div>
+</div>
+
+### Padded
+
+`padded` adds padding to the top and bottom of the sidebar.
+
+<div className="flex gap-sm">
+  <div>
+    <Canvas of={SidebarStories.PaddedDrawer} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.PaddedCompact} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.PaddedRail} />
+  </div>
+</div>
+
+### Brand
+
+`Sidebar.Brand` holds an image, such as your application's logo.
+
+The brand is optional, and the sidebar content adjusts without it.
+
+<div className="flex gap-sm">
+  <div>
+    <Canvas of={SidebarStories.NoBrandDrawer} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.NoBrandCompact} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.NoBrandRail} />
+  </div>
+</div>
+
+### Content
+
+`Sidebar.Content` holds the buttons. Position it with `justify="start"`, `justify="center"`, or `justify="end"`, with start being the default.
+
+<div className="flex gap-sm">
+  <div>
+    <Canvas of={SidebarStories.CenteredDrawer} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.CenteredCompact} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.CenteredRail} />
+  </div>
+</div>
+
+<div className="flex gap-sm">
+  <div>
+    <Canvas of={SidebarStories.EndDrawer} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.EndCompact} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.EndRail} />
+  </div>
+</div>
+
+A second `Sidebar.Content` with `justify="end"` pins its buttons, such as a logout button, to the bottom.
+
+<div className="flex gap-sm">
+  <div>
+    <Canvas of={SidebarStories.LogoutDrawer} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.LogoutCompact} />
+  </div>
+  <div>
+    <Canvas of={SidebarStories.LogoutRail} />
+  </div>
+</div>
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Sidebar API](https://docs.optics.rolemodel.design/?path=/docs/components-sidebar--docs#sidebar-api) for the CSS variables.

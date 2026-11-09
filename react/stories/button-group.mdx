@@ -1,0 +1,71 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as ButtonGroupStories from './button-group.stories'
+
+<Meta of={ButtonGroupStories} />
+
+# Button Group
+
+A container that joins a collection of [Buttons](?path=/docs/components-button--docs). It works with every button variation. It renders the [Optics button group](https://docs.optics.rolemodel.design/?path=/docs/components-buttongroup--docs) classes.
+
+Button Group is for grouping related actions or navigational buttons. Use [Segmented Control](?path=/docs/components-segmented-control--docs) for form option selection instead.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/button-group.json
+```
+
+## Playground
+
+<Canvas of={ButtonGroupStories.Default} />
+<Controls of={ButtonGroupStories.Default} />
+
+## Props
+
+`ButtonGroup` renders a `div.btn-group` with `role="group"` and takes any `div` attribute. Style the buttons inside it with the `Button` props.
+
+## Variations
+
+### Default
+
+<Canvas of={ButtonGroupStories.Default} />
+
+### Button Group Toolbar
+
+Wrap several `ButtonGroup`s in a `div` with `btn-group-toolbar` to connect groups that wrap. Add a gap utility for space between the groups.
+
+<Canvas of={ButtonGroupStories.Toolbar} />
+
+### Primary
+
+<Canvas of={ButtonGroupStories.Primary} />
+
+### Destructive
+
+<Canvas of={ButtonGroupStories.Destructive} />
+
+### Warning
+
+<Canvas of={ButtonGroupStories.Warning} />
+
+### Active
+
+<Canvas of={ButtonGroupStories.Active} />
+
+### No Border
+
+<Canvas of={ButtonGroupStories.NoBorder} />
+
+### Disabled
+
+<Canvas of={ButtonGroupStories.Disabled} />
+
+### Pill
+
+<Canvas of={ButtonGroupStories.Pill} />
+
+### Size
+
+<Canvas of={ButtonGroupStories.Size} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Button Group API](https://docs.optics.rolemodel.design/?path=/docs/components-buttongroup--docs#button-group-api) for the CSS variables.

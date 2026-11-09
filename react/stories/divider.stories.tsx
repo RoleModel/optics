@@ -5,61 +5,65 @@ import { Divider } from '@/registry/optics/ui/divider'
 const meta = {
   title: 'Components/Divider',
   component: Divider,
-  tags: ['autodocs'],
   parameters: { layout: 'padded' },
   argTypes: {
-    vertical: { control: 'boolean' },
-    size: { control: 'select', options: [undefined, 'small', 'medium', 'large'] },
-    spacing: { control: 'select', options: [undefined, 'small', 'medium', 'large'] },
+    vertical: { control: 'boolean', description: 'Divide content side by side instead of stacked' },
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+      description: 'Thickness of the line. Unset looks like `small`',
+    },
+    spacing: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+      description: 'Margin on each side of the line. Unset is none',
+    },
   },
+  render: (args) =>
+    args.vertical ? (
+      <div className="op-cluster gap-xs">
+        <span>Left</span>
+        <Divider {...args} />
+        <span>Right</span>
+      </div>
+    ) : (
+      <div className="op-stack gap-xs">
+        <span>Above</span>
+        <Divider {...args} />
+        <span>Below</span>
+      </div>
+    ),
 } satisfies Meta<typeof Divider>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  render: (args) => (
-    <div>
-      <p>Above the divider</p>
-      <Divider {...args} />
-      <p>Below the divider</p>
-    </div>
-  ),
+export const Default: Story = {}
+
+export const Vertical: Story = {
+  args: { vertical: true },
 }
 
-export const Sizes: Story = {
-  render: (args) => (
-    <div className="op-stack gap-lg">
-      <Divider {...args} size="small" />
-      <Divider {...args} size="medium" />
-      <Divider {...args} size="large" />
+export const Size: Story = {
+  render: () => (
+    <div className="op-stack gap-md">
+      <Divider size="small" />
+      <Divider size="medium" />
+      <Divider size="large" />
     </div>
   ),
 }
 
 export const Spacing: Story = {
-  render: (args) => (
-    <div>
-      <p>Small spacing</p>
-      <Divider {...args} spacing="small" />
-      <p>Medium spacing</p>
-      <Divider {...args} spacing="medium" />
-      <p>Large spacing</p>
-      <Divider {...args} spacing="large" />
-      <p>End</p>
-    </div>
-  ),
-}
-
-export const Vertical: Story = {
-  args: { vertical: true },
-  render: (args) => (
-    <div className="op-cluster gap-md">
-      <span>Left</span>
-      <Divider {...args} />
-      <span>Middle</span>
-      <Divider {...args} />
-      <span>Right</span>
+  render: () => (
+    <div className="op-stack gap-none">
+      <span>Small spacing</span>
+      <Divider spacing="small" />
+      <span>Medium spacing</span>
+      <Divider spacing="medium" />
+      <span>Large spacing</span>
+      <Divider spacing="large" />
+      <span>End</span>
     </div>
   ),
 }

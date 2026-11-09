@@ -1,0 +1,60 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as FlankStories from './flank.stories'
+
+<Meta of={FlankStories} />
+
+# Flank
+
+A horizontal row with an item flanked by another large item. It renders the [Optics flank](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-flank--docs) utility class.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/flank.json
+```
+
+## Playground
+
+<Canvas of={FlankStories.Default} />
+<Controls of={FlankStories.Default} />
+
+## Props
+
+| Prop  | Values                                      | Adds            |
+| ----- | ------------------------------------------- | --------------- |
+| `end` | `true`                                      | `op-flank--end` |
+| `gap` | `none`, `xxs`, `xs`, `sm`, `md`, `lg`, `xl` | `gap-*`         |
+
+`Flank` renders `div.op-flank` and passes any other `div` attribute through.
+
+## Variations
+
+### Without
+
+A plain `div` with the same children, for comparison.
+
+<Canvas of={FlankStories.Without} />
+
+### Flank Property
+
+`Flank` creates a flex row where the first item keeps its size and the last item takes the remaining space.
+
+<Canvas of={FlankStories.Default} />
+
+### Flank End
+
+`end` flips which side of the container the item is flanked to: the last item keeps its size and the first item takes the remaining space.
+
+<Canvas of={FlankStories.FlankEnd} />
+
+### Example Flank
+
+`Flank` with an avatar and text pair to demonstrate a common use case.
+
+<Canvas of={FlankStories.AvatarExample} />
+
+`end` to show an alternate example.
+
+<Canvas of={FlankStories.AvatarExampleEnd} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Flank](https://docs.optics.rolemodel.design/?path=/docs/utilities-advanced-flank--docs) and [Flex](https://docs.optics.rolemodel.design/?path=/docs/utilities-flex--docs) for the utility classes.

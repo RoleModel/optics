@@ -1,0 +1,42 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks'
+import * as ConfirmDialogStories from './confirm-dialog.stories'
+
+<Meta of={ConfirmDialogStories} />
+
+# Confirm Dialog
+
+A custom alert or confirm dialog built on the native `dialog` element and invoker commands. It renders the [Optics confirm dialog](https://docs.optics.rolemodel.design/?path=/docs/components-confirm-dialog--docs) classes.
+
+```sh
+npx shadcn@latest add https://docs.optics.rolemodel.design/r/confirm-dialog.json
+```
+
+## Playground
+
+<Canvas of={ConfirmDialogStories.Default} />
+<Controls of={ConfirmDialogStories.Default} />
+
+## Parts
+
+| Part                    | Renders                                                                  | Props                                                        |
+| ----------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ConfirmDialog.Trigger` | `button.btn`                                                             | `for`: the `id` of the dialog to open, and any `Button` prop |
+| `ConfirmDialog.Root`    | `dialog.confirm-dialog-wrapper` with a backdrop and `div.confirm-dialog` | `id`, and any `dialog` attribute                             |
+| `ConfirmDialog.Header`  | `div.confirm-dialog__header`                                             |                                                              |
+| `ConfirmDialog.Body`    | `div.confirm-dialog__body`                                               |                                                              |
+| `ConfirmDialog.Footer`  | `div.confirm-dialog__footer`                                             |                                                              |
+| `ConfirmDialog.Close`   | `button.btn`                                                             | Closes the dialog on click, and any `Button` prop            |
+
+## Variations
+
+### Default
+
+`ConfirmDialog.Root` wraps the entire dialog. It lives on your page always, and adds `confirm-dialog-wrapper--active` while the dialog is open, with a backdrop to help focus on the dialog.
+
+Inside it, `ConfirmDialog.Header`, `ConfirmDialog.Body`, and `ConfirmDialog.Footer` are built like the [Card](?path=/docs/components-card--docs) sections.
+
+<Canvas of={ConfirmDialogStories.Default} />
+
+## Customizing
+
+The component only adds classes, so you style it the same way as the CSS version. See [Confirm Dialog API](https://docs.optics.rolemodel.design/?path=/docs/components-confirm-dialog--docs#confirm-dialog-api) for the CSS variables.
