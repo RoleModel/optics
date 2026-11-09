@@ -47,6 +47,20 @@ Files import each other as `@/registry/optics/ui/<name>`. The shadcn CLI rewrite
 5. [x] Storybook composition and CI
 6. [x] Verify: typecheck, `yarn sanity-check`, both Storybooks in the browser, a test install from the registry into a new Vite app
 
+7. [x] Docs pages match the CSS docs (see [Docs pages](#docs-pages))
+
+## Status
+
+- Branch `worktree-react-components`, in the worktree `.claude/worktrees/react-components`. Two commits on top of `main`: `67ad068` (components and registry) and `e7adf02` (docs pages and layout props). Not pushed, no PR.
+- `.claude/launch.json` in the worktree has `storybook` (6006) and `storybook-react` (6007). The preview tool reads the main checkout's `launch.json`, so from a worktree session start them with `yarn storybook` and `yarn storybook:react` instead.
+
+## Next steps
+
+1. Review both Storybooks: `yarn storybook` and `yarn storybook:react`, then open http://localhost:6006 (React stories are under "React").
+2. Push the branch and open a PR to `main`.
+3. After merge, a release redeploys the docs site. Then check that `https://docs.optics.rolemodel.design/r/button.json` and `/react` load, and test an install into a fresh app (setup steps in [Introduction.mdx](../../react/stories/Introduction.mdx)).
+4. Decide on the open issues below.
+
 ## Open issues
 
 - `breadcrumbs__separator` has no styles in `src/components/breadcrumbs.css`. The CSS-only story has the same gap.
